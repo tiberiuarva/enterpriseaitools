@@ -2,11 +2,13 @@
 
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useState } from "react";
+import { JsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { assistantsComparisons, type AssistantsSubcategory } from "@/lib/assistants-comparisons";
+import { siteUrl } from "@/lib/metadata";
 import type { Platform, Tool, UpdateEntry } from "@/lib/types";
 
 const subcategoryOrder: AssistantsSubcategory[] = ["coding", "productivity", "build-your-own"];
@@ -43,8 +45,11 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const warnings = activeTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const comparison = assistantsComparisons[activeTab];
 
+  const jsonLd = buildToolListJsonLd(tools, title, description, `${siteUrl}/assistants/`);
+
   return (
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+      <JsonLd data={jsonLd} />
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
         <div className="flex items-start gap-4">
           <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">

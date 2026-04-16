@@ -1,9 +1,11 @@
 import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
 import { FilteredCategorySections } from "@/components/filtered-category-sections";
+import { JsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
+import { siteUrl } from "@/lib/metadata";
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
@@ -39,8 +41,11 @@ export function CategoryPage({ category, title, description, iconName, tools, up
   const warningTools = sortByName(tools.filter((tool) => tool.licenseWarning || tool.statusNote));
   const visibleUpdates = updates.slice(0, 5);
 
+  const jsonLd = buildToolListJsonLd(tools, title, description, `${siteUrl}/${category}/`);
+
   return (
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+      <JsonLd data={jsonLd} />
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
         <div className="flex items-start gap-4">
           <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
