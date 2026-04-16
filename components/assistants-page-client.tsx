@@ -61,11 +61,15 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
       <PlatformCategoryBar category="assistants" platforms={platforms} />
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
-        <div className="flex flex-wrap gap-2">
+        <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
           {subcategoryOrder.map((subcategory) => (
             <button
               key={subcategory}
               type="button"
+              role="tab"
+              aria-selected={activeTab === subcategory}
+              aria-controls={`tabpanel-${subcategory}`}
+              id={`tab-${subcategory}`}
               onClick={() => setActiveTab(subcategory)}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                 activeTab === subcategory
@@ -79,7 +83,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
         </div>
       </section>
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+      <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
         <h2 className="text-lg font-semibold">{comparison.title}</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
           Source-backed side-by-side comparison for the cloud vendor offerings in the {subcategoryLabels[activeTab].toLowerCase()} assistants segment.

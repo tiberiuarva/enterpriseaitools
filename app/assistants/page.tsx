@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AssistantsPage as AssistantsContentPage } from "@/components/assistants-page";
+import { AssistantsPageClient } from "@/components/assistants-page-client";
 import { HomeShell } from "@/components/home-shell";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 export default function AssistantsPage() {
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/assistants">
-      <AssistantsContentPage
+      <AssistantsPageClient
         title="AI Assistants"
         description={categoryDescriptions.assistants}
         tools={getToolsByCategory("assistants")}
