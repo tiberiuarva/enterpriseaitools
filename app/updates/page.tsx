@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeShell } from "@/components/home-shell";
+import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, updates } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -21,34 +22,9 @@ export default function UpdatesPage() {
           </p>
         </section>
 
-        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="space-y-6">
-            {updates.map((update) => (
-              <article key={update.id} className="flex gap-4 border-l-2 border-[var(--color-border)] pl-4">
-                <div className="w-28 shrink-0 text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
-                  {update.date}
-                </div>
-                <div>
-                  <div className="text-base font-semibold text-[var(--color-text-primary)]">
-                    {update.toolName}
-                  </div>
-                  <div className="mt-1 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
-                    {update.category} · {update.type}
-                  </div>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
-                  <a
-                    href={update.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
-                  >
-                    Source
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <div className="mt-6">
+          <UpdatesFeed updates={updates} />
+        </div>
       </main>
     </HomeShell>
   );
