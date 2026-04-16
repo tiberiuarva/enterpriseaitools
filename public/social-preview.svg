@@ -1,0 +1,58 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1628"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="760" y1="120" x2="1100" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="120" x2="520" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="32" fill="url(#bg)"/>
+  <rect x="48" y="48" width="1104" height="534" rx="28" stroke="#334155" stroke-width="2"/>
+
+  <g opacity="0.12">
+    <path d="M0 120H1200" stroke="#CBD5E1"/>
+    <path d="M0 300H1200" stroke="#CBD5E1"/>
+    <path d="M0 480H1200" stroke="#CBD5E1"/>
+    <path d="M180 0V630" stroke="#CBD5E1"/>
+    <path d="M420 0V630" stroke="#CBD5E1"/>
+    <path d="M660 0V630" stroke="#CBD5E1"/>
+    <path d="M900 0V630" stroke="#CBD5E1"/>
+  </g>
+
+  <rect x="80" y="84" width="154" height="154" rx="40" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <path d="M124 136C124 116.118 140.118 100 160 100H266V136H166C159.373 136 154 141.373 154 148V172H250V208H154V256C154 262.627 159.373 268 166 268H266V304H160C140.118 304 124 287.882 124 268V136Z" fill="url(#accent)"/>
+  <circle cx="266" cy="136" r="18" fill="#10B981"/>
+  <circle cx="266" cy="256" r="18" fill="#10B981"/>
+
+  <text x="80" y="370" fill="#06B6D4" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3.2">ENTERPRISE AI TOOLING LANDSCAPE</text>
+  <text x="80" y="442" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="800">enterpriseai.tools</text>
+  <text x="80" y="492" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">Track Microsoft Foundry, AWS Bedrock, Google Vertex AI,</text>
+  <text x="80" y="530" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500">and the leading open source tools across agents, orchestration, governance, and assistants.</text>
+
+  <rect x="760" y="112" width="352" height="382" rx="28" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+  <rect x="792" y="148" width="288" height="56" rx="16" fill="#0F172A" stroke="#334155"/>
+  <text x="820" y="184" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Platforms</text>
+  <text x="1046" y="184" fill="#06B6D4" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="end">3</text>
+
+  <rect x="792" y="222" width="288" height="56" rx="16" fill="#0F172A" stroke="#334155"/>
+  <text x="820" y="258" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Categories</text>
+  <text x="1046" y="258" fill="#3B82F6" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="end">4</text>
+
+  <rect x="792" y="296" width="288" height="56" rx="16" fill="#0F172A" stroke="#334155"/>
+  <text x="820" y="332" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Tracked tools</text>
+  <text x="1046" y="332" fill="#10B981" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" text-anchor="end">41+</text>
+
+  <rect x="792" y="370" width="288" height="92" rx="20" fill="#0A1628" stroke="#334155"/>
+  <text x="820" y="406" fill="#F1F5F9" font-family="JetBrains Mono, monospace" font-size="18">azure / aws / gcp</text>
+  <text x="820" y="438" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="18">oss / governance / copilots</text>
+
+  <rect x="80" y="560" width="276" height="6" rx="3" fill="#3B82F6"/>
+</svg>

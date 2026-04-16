@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="LangFlow logo badge">
+  <rect width="64" height="64" rx="16" fill="white"/>
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="#D1FAE5" stroke="#059669" stroke-width="2"/>
+  <path d="M16 48 C24 34, 30 24, 48 16" stroke="#059669" stroke-opacity="0.14" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <text x="32" y="30" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#059669">LA</text>
+  <text x="32" y="47" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="7" font-weight="700" fill="#0F172A">LangFlow</text>
+</svg>
