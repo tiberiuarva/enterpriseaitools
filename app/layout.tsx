@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/social-preview.svg",
+        url: "/social-preview.png",
         width: 1200,
         height: 630,
         alt: "enterpriseai.tools social preview",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/social-preview.svg"],
+    images: ["/social-preview.png"],
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
