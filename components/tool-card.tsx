@@ -83,7 +83,13 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         {tool.lastRelease ? <span>Released {tool.lastRelease}</span> : null}
       </div>
 
-      <div className={`mt-4 flex items-center ${compact ? "justify-between" : "justify-between"} gap-3`}>
+      {tool.status !== "active" ? (
+        <div className="mt-3 rounded-md border border-[var(--color-warning)]/30 bg-[var(--color-warning)]/10 px-2.5 py-1.5 text-xs font-medium text-[var(--color-warning)]">
+          {tool.status === "archived" ? "Archived" : tool.status === "maintenance" ? "Maintenance mode" : "Deprecated"}{tool.statusNote ? ` \u2014 ${tool.statusNote}` : ""}
+        </div>
+      ) : null}
+
+      <div className={`mt-4 flex items-center justify-between gap-3`}>
         {tool.version ? (
           <code className="rounded-md bg-[var(--color-bg-surface)] px-2 py-1 text-[13px] text-[var(--color-text-primary)]">
             {tool.version}
