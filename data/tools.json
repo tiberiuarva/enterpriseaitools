@@ -849,9 +849,6 @@
         "Free tier for light usage",
         "Enterprise controls available"
       ],
-      "clouds": [
-        "azure"
-      ],
       "license": "Proprietary",
       "docsUrl": "https://docs.github.com/copilot",
       "websiteUrl": "https://github.com/features/copilot",
