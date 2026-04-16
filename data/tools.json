@@ -1,0 +1,1159 @@
+{
+  "lastUpdated": "2026-04-15",
+  "tools": [
+    {
+      "id": "microsoft-foundry-agent-service",
+      "name": "Microsoft Foundry Agent Service",
+      "category": "agents",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Fully managed agent platform with deep Microsoft 365 integration and broad model access.",
+      "strengths": [
+        "One-click Teams and M365 deployment",
+        "Supports MCP, A2A, and OpenAPI",
+        "Access to 11,000+ models"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/azure/ai-foundry/",
+      "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+      "pricing": "Free platform access; pay for tokens and tools.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "C#",
+        "JavaScript",
+        "TypeScript",
+        "Java"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "azure",
+        "mcp",
+        "a2a",
+        "managed"
+      ],
+      "logoUrl": "/logos/microsoft-foundry-agent-service.svg"
+    },
+    {
+      "id": "aws-bedrock-agents",
+      "name": "AWS Bedrock Agents",
+      "category": "agents",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "Modular AWS agent platform combining guided Bedrock Agents with framework-agnostic AgentCore deployment.",
+      "strengths": [
+        "Framework-agnostic deployment via AgentCore",
+        "MicroVM isolation model",
+        "Deep AWS integration"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/bedrock/",
+      "websiteUrl": "https://aws.amazon.com/bedrock/agents/",
+      "pricing": "Pay-per-use for Bedrock and AgentCore features.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "Go",
+        ".NET"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "aws",
+        "managed",
+        "agentcore"
+      ],
+      "logoUrl": "/logos/aws-bedrock-agents.svg"
+    },
+    {
+      "id": "google-agent-builder-adk",
+      "name": "Google Agent Builder + ADK",
+      "category": "agents",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Open platform pairing the Agent Development Kit with managed agent services on Vertex AI.",
+      "strengths": [
+        "Open-source ADK",
+        "Google Search grounding",
+        "MCP, A2A, and OpenAPI support"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary service + open source SDK",
+      "docsUrl": "https://docs.cloud.google.com/agent-builder/overview",
+      "websiteUrl": "https://cloud.google.com/vertex-ai",
+      "pricing": "Pay-per-use on Vertex AI.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "Java",
+        "Go",
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "gcp",
+        "vertex-ai",
+        "adk"
+      ],
+      "logoUrl": "/logos/google-agent-builder-adk.svg"
+    },
+    {
+      "id": "crewai",
+      "name": "CrewAI",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "crewAI Inc.",
+      "description": "Open source multi-agent framework focused on autonomous teams and task coordination.",
+      "strengths": [
+        "Large open source adoption",
+        "MIT licensed",
+        "Built for multi-agent coordination"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/crewAIInc/crewAI",
+      "githubStars": 48914,
+      "version": "1.14.1",
+      "docsUrl": "https://docs.crewai.com/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "agents",
+        "opensource",
+        "framework"
+      ],
+      "logoUrl": "/logos/crewai.svg"
+    },
+    {
+      "id": "autogen",
+      "name": "AutoGen",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Microsoft",
+      "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
+      "strengths": [
+        "Large adoption",
+        "MIT licensed",
+        "Well-known multi-agent patterns"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/microsoft/autogen",
+      "githubStars": 57096,
+      "version": "0.7.5",
+      "docsUrl": "https://microsoft.github.io/autogen/",
+      "pricingModel": "free",
+      "status": "maintenance",
+      "statusNote": "Maintenance mode. Microsoft merged AutoGen with Semantic Kernel into the Microsoft Agent Framework.",
+      "tags": [
+        "agents",
+        "opensource",
+        "microsoft",
+        "maintenance"
+      ],
+      "logoUrl": "/logos/autogen.svg"
+    },
+    {
+      "id": "llamaindex",
+      "name": "LlamaIndex",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "LlamaIndex Inc.",
+      "description": "Agent and retrieval framework with strong indexing, data connectors, and orchestration support.",
+      "strengths": [
+        "Strong retrieval tooling",
+        "MIT licensed",
+        "Large ecosystem"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/run-llama/llama_index",
+      "githubStars": 48601,
+      "version": "0.14.20",
+      "docsUrl": "https://docs.llamaindex.ai/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "agents",
+        "rag",
+        "opensource"
+      ],
+      "logoUrl": "/logos/llamaindex.svg"
+    },
+    {
+      "id": "semantic-kernel",
+      "name": "Semantic Kernel",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Microsoft",
+      "description": "Microsoft orchestration SDK evolving into the unified Microsoft Agent Framework direction.",
+      "strengths": [
+        "Broad language support",
+        "MIT licensed",
+        "Strong Microsoft ecosystem fit"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/microsoft/semantic-kernel",
+      "githubStars": 27706,
+      "version": "1.41.2",
+      "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Evolving into the Microsoft Agent Framework.",
+      "tags": [
+        "agents",
+        "microsoft",
+        "opensource"
+      ],
+      "logoUrl": "/logos/semantic-kernel.svg"
+    },
+    {
+      "id": "langgraph",
+      "name": "LangGraph",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "LangChain",
+      "description": "Stateful agent orchestration framework with graph-based execution and durable workflows.",
+      "strengths": [
+        "Popular graph abstraction",
+        "Strong agent workflow patterns",
+        "Active ecosystem"
+      ],
+      "license": "Proprietary core",
+      "licenseWarning": "LangGraph core package uses a proprietary license. Auxiliary packages are MIT. Enterprises must review licensing carefully.",
+      "githubUrl": "https://github.com/langchain-ai/langgraph",
+      "githubStars": 29298,
+      "version": "1.1.7a2",
+      "docsUrl": "https://langchain-ai.github.io/langgraph/",
+      "pricingModel": "freemium",
+      "status": "active",
+      "tags": [
+        "agents",
+        "graph",
+        "license-caution"
+      ],
+      "logoUrl": "/logos/langgraph.svg"
+    },
+    {
+      "id": "mastra",
+      "name": "Mastra",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Mastra AI",
+      "description": "Agent framework focused on composable workflows, tooling, and modern developer ergonomics.",
+      "strengths": [
+        "Apache 2.0 plus enterprise path",
+        "Fast growth",
+        "Modern DX"
+      ],
+      "license": "Apache 2.0 + EE",
+      "githubUrl": "https://github.com/mastra-ai/mastra",
+      "githubStars": 23011,
+      "version": "1.24.0",
+      "docsUrl": "https://mastra.ai/docs",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "agents",
+        "opensource",
+        "framework"
+      ],
+      "logoUrl": "/logos/mastra.svg"
+    },
+    {
+      "id": "openai-agents-sdk",
+      "name": "OpenAI Agents SDK",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "OpenAI",
+      "description": "Production successor to Swarm for agentic OpenAI workflows with broader model support.",
+      "strengths": [
+        "MIT licensed",
+        "Production successor to Swarm",
+        "Broad LLM compatibility"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/openai/openai-agents-python",
+      "githubStars": 20784,
+      "version": "0.13.6",
+      "docsUrl": "https://openai.github.io/openai-agents-python/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "OpenAI Swarm was replaced by the Agents SDK.",
+      "tags": [
+        "agents",
+        "openai",
+        "sdk"
+      ],
+      "logoUrl": "/logos/openai-agents-sdk.svg"
+    },
+    {
+      "id": "atomic-agents",
+      "name": "Atomic Agents",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "BrainBlend AI",
+      "description": "Minimalist agent framework emphasizing composability and predictable building blocks.",
+      "strengths": [
+        "MIT licensed",
+        "Composable design",
+        "Focused API surface"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+      "githubStars": 5812,
+      "version": "2.7.5",
+      "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "agents",
+        "opensource"
+      ],
+      "logoUrl": "/logos/atomic-agents.svg"
+    },
+    {
+      "id": "beeai-framework",
+      "name": "BeeAI Framework",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Linux Foundation",
+      "description": "Open agent framework formerly known as Bee Agent Framework, now under Linux Foundation governance.",
+      "strengths": [
+        "Apache 2.0 licensed",
+        "Foundation governance",
+        "Active rename transition"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/i-am-bee/beeai-framework",
+      "githubStars": 3216,
+      "version": "0.1.79",
+      "docsUrl": "https://framework.beeai.dev/introduction/welcome",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Renamed from Bee Agent Framework; governance moved from IBM to Linux Foundation.",
+      "tags": [
+        "agents",
+        "opensource",
+        "linux-foundation"
+      ],
+      "logoUrl": "/logos/beeai-framework.svg"
+    },
+    {
+      "id": "azure-logic-apps",
+      "name": "Azure Logic Apps",
+      "category": "orchestration",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "iPaaS workflow automation service with AI-enhanced orchestration and broad connector coverage.",
+      "strengths": [
+        "1,400+ connectors",
+        "Strong Azure integration",
+        "Flexible hosting modes"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/azure/logic-apps/",
+      "websiteUrl": "https://azure.microsoft.com/en-us/products/logic-apps/",
+      "pricing": "Pay-per-action or Standard hosting.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "azure",
+        "workflow"
+      ],
+      "logoUrl": "/logos/azure-logic-apps.svg"
+    },
+    {
+      "id": "aws-step-functions",
+      "name": "AWS Step Functions",
+      "category": "orchestration",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "Serverless state machine orchestration service for AWS-native workflows and automation.",
+      "strengths": [
+        "AWS service integration",
+        "Serverless execution",
+        "Strong automation fit"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/step-functions/",
+      "websiteUrl": "https://aws.amazon.com/step-functions/",
+      "pricing": "$0.025 per 1K transitions (Standard).",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "aws",
+        "workflow"
+      ],
+      "logoUrl": "/logos/aws-step-functions.svg"
+    },
+    {
+      "id": "google-cloud-workflows",
+      "name": "Google Cloud Workflows",
+      "category": "orchestration",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Serverless workflow orchestration for Google Cloud services and HTTP APIs.",
+      "strengths": [
+        "Simple serverless orchestration",
+        "GCP-native fit",
+        "HTTP API support"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://cloud.google.com/workflows/docs",
+      "websiteUrl": "https://cloud.google.com/workflows",
+      "pricing": "$0.01 per 1K internal steps; $0.025 per 1K external steps.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "gcp",
+        "workflow"
+      ],
+      "logoUrl": "/logos/google-cloud-workflows.svg"
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "n8n",
+      "description": "Workflow automation platform with strong self-hosting support and broad integration coverage.",
+      "strengths": [
+        "Very large adoption",
+        "Self-hostable",
+        "Strong workflow automation ecosystem"
+      ],
+      "license": "Sustainable Use License",
+      "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
+      "githubUrl": "https://github.com/n8n-io/n8n",
+      "githubStars": 184096,
+      "version": "2.16.0",
+      "docsUrl": "https://docs.n8n.io/",
+      "websiteUrl": "https://n8n.io/",
+      "pricingModel": "freemium",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "automation",
+        "self-hosted",
+        "source-available"
+      ],
+      "logoUrl": "/logos/n8n.svg"
+    },
+    {
+      "id": "langflow",
+      "name": "LangFlow",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "LangFlow / DataStax",
+      "description": "Visual flow builder for LLM pipelines and agent workflows with self-hosting support.",
+      "strengths": [
+        "Large adoption",
+        "MIT licensed",
+        "Visual workflow builder"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/langflow-ai/langflow",
+      "githubStars": 146952,
+      "version": "1.9.0",
+      "docsUrl": "https://docs.langflow.org/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "DataStax Cloud is shutting down April 9, 2026. Self-hosting remains available.",
+      "tags": [
+        "orchestration",
+        "visual",
+        "self-hosted"
+      ],
+      "logoUrl": "/logos/langflow.svg"
+    },
+    {
+      "id": "dify",
+      "name": "Dify",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Dify",
+      "description": "Application development and workflow platform for LLM apps with plugin and enterprise features.",
+      "strengths": [
+        "Large adoption",
+        "Self-hostable",
+        "Plugin architecture"
+      ],
+      "license": "Modified Apache 2.0",
+      "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
+      "githubUrl": "https://github.com/langgenius/dify",
+      "githubStars": 137810,
+      "version": "1.13.3",
+      "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
+      "pricingModel": "freemium",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "self-hosted",
+        "license-caution"
+      ],
+      "logoUrl": "/logos/dify.svg"
+    },
+    {
+      "id": "flowise",
+      "name": "Flowise",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Flowise",
+      "description": "Low-code orchestration and agent workflow builder now under Workday ownership.",
+      "strengths": [
+        "Apache 2.0 licensed",
+        "Visual workflows",
+        "Self-hostable"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/FlowiseAI/Flowise",
+      "githubStars": 51918,
+      "version": "3.1.2",
+      "docsUrl": "https://docs.flowiseai.com/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "low-code",
+        "self-hosted"
+      ],
+      "logoUrl": "/logos/flowise.svg"
+    },
+    {
+      "id": "haystack",
+      "name": "Haystack",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "deepset",
+      "description": "LLM pipeline and retrieval orchestration framework rebranded toward the Haystack Enterprise Platform story.",
+      "strengths": [
+        "Apache 2.0 licensed",
+        "Mature pipeline patterns",
+        "Self-hostable"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/deepset-ai/haystack",
+      "githubStars": 24833,
+      "version": "2.27.0",
+      "docsUrl": "https://docs.haystack.deepset.ai/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "pipelines",
+        "rag"
+      ],
+      "logoUrl": "/logos/haystack.svg"
+    },
+    {
+      "id": "rivet",
+      "name": "Rivet",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Rivet",
+      "description": "Workflow builder for AI pipelines with desktop-first self-hosting support.",
+      "strengths": [
+        "MIT licensed",
+        "Desktop-friendly",
+        "Visual workflow builder"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/Ironclad/rivet",
+      "githubStars": 4536,
+      "version": "1.11.3",
+      "docsUrl": "https://rivet.ironcladapp.com/",
+      "pricingModel": "free",
+      "status": "maintenance",
+      "statusNote": "No releases in 8+ months. Appears to be in maintenance or slow development.",
+      "tags": [
+        "orchestration",
+        "visual",
+        "maintenance"
+      ],
+      "logoUrl": "/logos/rivet.svg"
+    },
+    {
+      "id": "azure-ai-content-safety",
+      "name": "Azure AI Content Safety",
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Content moderation and safety service with configurable severity scoring and on-prem options.",
+      "strengths": [
+        "On-premises containers",
+        "Configurable severity scoring",
+        "Azure SDK integration"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/azure/ai-services/content-safety/overview",
+      "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/",
+      "pricing": "Pay-per-text-unit with free tier.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "governance",
+        "azure",
+        "safety"
+      ],
+      "logoUrl": "/logos/azure-ai-content-safety.svg"
+    },
+    {
+      "id": "aws-bedrock-guardrails",
+      "name": "AWS Bedrock Guardrails",
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "Configurable safety layer for filtering, PII handling, hallucination reduction, and policy controls.",
+      "strengths": [
+        "Automated Reasoning",
+        "85% price cut noted in guide",
+        "Strong Bedrock integration"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+      "websiteUrl": "https://aws.amazon.com/bedrock/guardrails/",
+      "pricing": "$0.15 per 1K text units after price cut.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "governance",
+        "aws",
+        "guardrails"
+      ],
+      "logoUrl": "/logos/aws-bedrock-guardrails.svg"
+    },
+    {
+      "id": "google-model-armor",
+      "name": "Google Model Armor",
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Model-agnostic prompt and response safety screening layer across Google enterprise infrastructure.",
+      "strengths": [
+        "Model-agnostic screening",
+        "Google security integration",
+        "Enterprise API fit"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://cloud.google.com/security-command-center/docs/model-armor-overview",
+      "websiteUrl": "https://cloud.google.com/",
+      "pricing": "Pay-as-you-go.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "governance",
+        "gcp",
+        "safety"
+      ],
+      "logoUrl": "/logos/google-model-armor.svg"
+    },
+    {
+      "id": "nemo-guardrails",
+      "name": "NeMo Guardrails",
+      "category": "governance",
+      "type": "opensource",
+      "vendor": "NVIDIA",
+      "description": "Open source guardrails framework for LLM and agent safety with a dedicated Colang DSL.",
+      "strengths": [
+        "Apache 2.0 licensed",
+        "Active project status",
+        "Purpose-built guardrails DSL"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
+      "githubStars": 5977,
+      "docsUrl": "https://docs.nvidia.com/nemo/guardrails/",
+      "pricing": "Free OSS plus NVIDIA NIM options.",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Repository moved from NVIDIA/NeMo-Guardrails to NVIDIA-NeMo/Guardrails.",
+      "tags": [
+        "governance",
+        "guardrails",
+        "opensource",
+        "nvidia"
+      ],
+      "logoUrl": "/logos/nemo-guardrails.svg",
+      "version": "0.21.0"
+    },
+    {
+      "id": "guardrails-ai",
+      "name": "Guardrails AI",
+      "category": "governance",
+      "type": "opensource",
+      "vendor": "Guardrails AI",
+      "description": "Validation-focused guardrails framework with a large validator ecosystem and freemium model.",
+      "strengths": [
+        "MIT licensed",
+        "50+ validators",
+        "Active ecosystem"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/guardrails-ai/guardrails",
+      "githubStars": 6675,
+      "docsUrl": "https://guardrailsai.com/docs",
+      "pricingModel": "freemium",
+      "status": "active",
+      "tags": [
+        "governance",
+        "validators",
+        "opensource"
+      ],
+      "logoUrl": "/logos/guardrails-ai.svg",
+      "version": "0.10.0"
+    },
+    {
+      "id": "llm-guard",
+      "name": "LLM Guard",
+      "category": "governance",
+      "type": "opensource",
+      "vendor": "Palo Alto Networks",
+      "description": "Open source safety filtering toolkit whose development has slowed following acquisition activity.",
+      "strengths": [
+        "MIT licensed",
+        "Free OSS availability",
+        "Useful safety primitives"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/protectai/llm-guard",
+      "githubStars": 2823,
+      "docsUrl": "https://protectai.github.io/llm-guard/",
+      "pricingModel": "free",
+      "status": "maintenance",
+      "statusNote": "Development slowed significantly post acquisition. Last meaningful commit noted as December 2025 in the guide.",
+      "tags": [
+        "governance",
+        "opensource",
+        "maintenance"
+      ],
+      "logoUrl": "/logos/llm-guard.svg",
+      "version": "0.3.16"
+    },
+    {
+      "id": "rebuff",
+      "name": "Rebuff",
+      "category": "governance",
+      "type": "opensource",
+      "vendor": "Palo Alto Networks",
+      "description": "Prompt injection defense project archived in May 2025 and not recommended for new projects.",
+      "strengths": [
+        "Apache 2.0 licensed",
+        "Simple OSS availability",
+        "Historically notable"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/protectai/rebuff",
+      "githubStars": 1459,
+      "docsUrl": "https://github.com/protectai/rebuff",
+      "pricingModel": "free",
+      "status": "archived",
+      "statusNote": "Archived May 16, 2025. Do not recommend for new projects.",
+      "tags": [
+        "governance",
+        "archived",
+        "opensource"
+      ],
+      "logoUrl": "/logos/rebuff.svg",
+      "version": "0.1.1"
+    },
+    {
+      "id": "lakera-guard",
+      "name": "Lakera Guard",
+      "category": "governance",
+      "type": "commercial",
+      "vendor": "Check Point",
+      "description": "Commercial LLM security layer integrating into broader cloud security offerings after acquisition.",
+      "strengths": [
+        "Commercial support",
+        "Security platform alignment",
+        "Freemium entry path"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://lakera.ai/",
+      "websiteUrl": "https://lakera.ai/",
+      "pricingModel": "freemium",
+      "status": "active",
+      "tags": [
+        "governance",
+        "commercial",
+        "security"
+      ],
+      "logoUrl": "/logos/lakera-guard.svg"
+    },
+    {
+      "id": "arthur-genai-engine",
+      "name": "Arthur GenAI Engine",
+      "category": "governance",
+      "type": "commercial",
+      "vendor": "Arthur",
+      "description": "Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.",
+      "strengths": [
+        "Enterprise governance focus",
+        "Commercial support",
+        "Agent governance positioning"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.arthur.ai/",
+      "websiteUrl": "https://www.arthur.ai/",
+      "pricingModel": "contact",
+      "status": "active",
+      "statusNote": "Rebranded from Arthur AI to Arthur GenAI Engine and pivoted toward agent discovery and governance.",
+      "tags": [
+        "governance",
+        "commercial",
+        "arthur"
+      ],
+      "logoUrl": "/logos/arthur-genai-engine.svg"
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "GitHub/Microsoft",
+      "description": "Coding assistant platform delivered through IDE plugins with individual, business, and enterprise tiers.",
+      "strengths": [
+        "Broad IDE adoption",
+        "Free tier for light usage",
+        "Enterprise controls available"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.github.com/copilot",
+      "websiteUrl": "https://github.com/features/copilot",
+      "pricing": "Individual $10/mo; Business $39/user/mo; Enterprise custom.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "assistants",
+        "coding",
+        "copilot"
+      ],
+      "logoUrl": "/logos/github-copilot.svg"
+    },
+    {
+      "id": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.",
+      "strengths": [
+        "AWS-native development fit",
+        "Free tier",
+        "Enterprise plans available"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+      "websiteUrl": "https://aws.amazon.com/q/developer/",
+      "pricing": "$19/user/mo Pro; $39 Pro+.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "assistants",
+        "coding",
+        "aws"
+      ],
+      "logoUrl": "/logos/amazon-q-developer.svg"
+    },
+    {
+      "id": "gemini-code-assist",
+      "name": "Gemini Code Assist",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
+      "strengths": [
+        "Large free tier",
+        "Google ecosystem fit",
+        "Enterprise tier available"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://cloud.google.com/gemini/docs/codeassist/overview",
+      "websiteUrl": "https://cloud.google.com/products/gemini/code-assist",
+      "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "assistants",
+        "coding",
+        "gcp"
+      ],
+      "logoUrl": "/logos/gemini-code-assist.svg"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "commercial",
+      "vendor": "Anysphere",
+      "description": "Standalone AI coding IDE with rapid enterprise growth and credit-based pricing controversy.",
+      "strengths": [
+        "Strong adoption",
+        "Standalone IDE UX",
+        "High-end coding focus"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://cursor.com/",
+      "websiteUrl": "https://cursor.com/",
+      "pricing": "$20 Pro; $60 Pro+; $200 Ultra.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Switched to credit-based pricing in June 2025, causing backlash.",
+      "tags": [
+        "assistants",
+        "coding",
+        "cursor"
+      ],
+      "logoUrl": "/logos/cursor.svg"
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "commercial",
+      "vendor": "Cognition AI",
+      "description": "Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.",
+      "strengths": [
+        "Standalone IDE",
+        "Known coding assistant brand",
+        "Enterprise path available"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://windsurf.com/",
+      "websiteUrl": "https://windsurf.com/",
+      "pricing": "$20 Pro; $200 Max.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "OpenAI acquisition deal collapsed; Google hired key staff; Cognition acquired remaining product and brand.",
+      "tags": [
+        "assistants",
+        "coding",
+        "windsurf"
+      ],
+      "logoUrl": "/logos/windsurf.svg"
+    },
+    {
+      "id": "microsoft-365-copilot",
+      "name": "Microsoft 365 Copilot",
+      "category": "assistants",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Productivity assistant tightly integrated with Microsoft 365, Graph, and enterprise workflow data.",
+      "strengths": [
+        "Deepest M365 integration",
+        "Graph data access",
+        "Enterprise assistant packaging"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/microsoft-365-copilot/",
+      "websiteUrl": "https://adoption.microsoft.com/en-us/microsoft-365-copilot/",
+      "pricing": "$30/user/mo full AI tier.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "assistants",
+        "productivity",
+        "microsoft"
+      ],
+      "logoUrl": "/logos/microsoft-365-copilot.svg"
+    },
+    {
+      "id": "gemini-for-workspace",
+      "name": "Gemini for Workspace",
+      "category": "assistants",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Workspace assistant now bundled across plans with Google productivity and collaboration integration.",
+      "strengths": [
+        "Workspace-native fit",
+        "Bundled packaging",
+        "Clear productivity focus"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini",
+      "websiteUrl": "https://workspace.google.com/solutions/ai/",
+      "pricing": "$14/user/mo Standard full AI tier.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Bundled into Workspace plans in January 2025 with higher base pricing.",
+      "tags": [
+        "assistants",
+        "productivity",
+        "google"
+      ],
+      "logoUrl": "/logos/gemini-for-workspace.svg"
+    },
+    {
+      "id": "amazon-q-business",
+      "name": "Amazon Q Business",
+      "category": "assistants",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "Enterprise business assistant with many data connectors and the lowest entry pricing in this segment.",
+      "strengths": [
+        "40+ data connectors",
+        "Low entry price",
+        "Standalone business assistant"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html",
+      "websiteUrl": "https://aws.amazon.com/q/business/",
+      "pricing": "$20/user/mo Pro, $3/user/mo Lite entry.",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "assistants",
+        "productivity",
+        "aws"
+      ],
+      "logoUrl": "/logos/amazon-q-business.svg"
+    },
+    {
+      "id": "copilot-studio",
+      "name": "Copilot Studio",
+      "category": "assistants",
+      "subcategory": "build-your-own",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Low-code platform for building and publishing copilots and agents across Microsoft channels.",
+      "strengths": [
+        "Low-code builder",
+        "Teams and Power Platform integration",
+        "Multiple publishing channels"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/microsoft-copilot-studio/",
+      "websiteUrl": "https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/",
+      "pricing": "Free with M365 Copilot; $200/mo standalone.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Formerly Power Virtual Agents (renamed Nov 2023).",
+      "tags": [
+        "assistants",
+        "build-your-own",
+        "low-code"
+      ],
+      "logoUrl": "/logos/copilot-studio.svg"
+    },
+    {
+      "id": "amazon-q-apps",
+      "name": "Amazon Q Apps",
+      "category": "assistants",
+      "subcategory": "build-your-own",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "No-code AI app builder delivered as a feature within Amazon Q Business Pro.",
+      "strengths": [
+        "No-code creation",
+        "Natural-language app building",
+        "Connected to Q Business"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html",
+      "websiteUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/",
+      "pricing": "Included in Amazon Q Business Pro.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Feature within Q Business Pro, not a standalone product.",
+      "tags": [
+        "assistants",
+        "build-your-own",
+        "no-code"
+      ],
+      "logoUrl": "/logos/amazon-q-apps.svg"
+    },
+    {
+      "id": "gemini-enterprise",
+      "name": "Gemini Enterprise",
+      "category": "assistants",
+      "subcategory": "build-your-own",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Enterprise agentic AI platform and successor packaging for the former Agentspace product line.",
+      "strengths": [
+        "No-code enterprise agent path",
+        "Broad enterprise integrations",
+        "Google assistant consolidation"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini",
+      "websiteUrl": "https://workspace.google.com/solutions/ai/",
+      "pricing": "$21/user/mo Business; contact for higher tiers.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Agentspace has been absorbed into Gemini Enterprise.",
+      "tags": [
+        "assistants",
+        "build-your-own",
+        "google"
+      ],
+      "logoUrl": "/logos/gemini-enterprise.svg"
+    }
+  ]
+}
