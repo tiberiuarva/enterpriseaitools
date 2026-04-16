@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeShell } from "@/components/home-shell";
+import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, updates } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -17,38 +18,13 @@ export default function UpdatesPage() {
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">Weekly updates</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Changelog-style feed sourced from <code>/data/updates.json</code>.
+            Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.
           </p>
         </section>
 
-        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="space-y-6">
-            {updates.map((update) => (
-              <article key={update.id} className="flex gap-4 border-l-2 border-[var(--color-border)] pl-4">
-                <div className="w-28 shrink-0 text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
-                  {update.date}
-                </div>
-                <div>
-                  <div className="text-base font-semibold text-[var(--color-text-primary)]">
-                    {update.toolName}
-                  </div>
-                  <div className="mt-1 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
-                    {update.category} · {update.type}
-                  </div>
-                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
-                  <a
-                    href={update.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-2 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
-                  >
-                    Source
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <div className="mt-6">
+          <UpdatesFeed updates={updates} />
+        </div>
       </main>
     </HomeShell>
   );

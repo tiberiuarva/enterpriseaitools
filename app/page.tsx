@@ -117,8 +117,8 @@ export default function Home() {
           <WarningBox>
             Platform-level naming changed repeatedly. Always use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and <strong>Gemini Enterprise</strong>.
           </WarningBox>
-          <WarningBox variant="info" title="Current build focus">
-            The new Platforms layer is now wired into navigation, homepage context, and category entry points. Full dataset expansion remains in progress.
+          <WarningBox variant="info" title="Open source">
+            This project is open source. Data contributions are welcome via pull request — all entries must include source URLs and verified facts.
           </WarningBox>
         </section>
       </main>

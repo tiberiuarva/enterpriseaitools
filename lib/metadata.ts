@@ -8,7 +8,7 @@ export { siteUrl };
 const defaultTitle = "enterpriseai.tools";
 const defaultDescription =
   "Enterprise AI tooling landscape tracker comparing cloud vendor services with open source and commercial alternatives.";
-const defaultSocialImage = "/social-preview.svg";
+const defaultSocialImage = "/social-preview.png";
 
 export function buildMetadata({
   title,

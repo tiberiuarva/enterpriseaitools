@@ -81,6 +81,7 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.toolName}</div>
                 <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
+                <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
               </div>
             ))}
           </div>

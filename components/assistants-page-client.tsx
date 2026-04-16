@@ -2,11 +2,13 @@
 
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useState } from "react";
+import { JsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { assistantsComparisons, type AssistantsSubcategory } from "@/lib/assistants-comparisons";
+import { siteUrl } from "@/lib/metadata";
 import type { Platform, Tool, UpdateEntry } from "@/lib/types";
 
 const subcategoryOrder: AssistantsSubcategory[] = ["coding", "productivity", "build-your-own"];
@@ -43,8 +45,11 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const warnings = activeTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const comparison = assistantsComparisons[activeTab];
 
+  const jsonLd = buildToolListJsonLd(tools, title, description, `${siteUrl}/assistants/`);
+
   return (
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+      <JsonLd data={jsonLd} />
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
         <div className="flex items-start gap-4">
           <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
@@ -61,11 +66,15 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
       <PlatformCategoryBar category="assistants" platforms={platforms} />
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
-        <div className="flex flex-wrap gap-2">
+        <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
           {subcategoryOrder.map((subcategory) => (
             <button
               key={subcategory}
               type="button"
+              role="tab"
+              aria-selected={activeTab === subcategory}
+              aria-controls={`tabpanel-${subcategory}`}
+              id={`tab-${subcategory}`}
               onClick={() => setActiveTab(subcategory)}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                 activeTab === subcategory
@@ -79,7 +88,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
         </div>
       </section>
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+      <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
         <h2 className="text-lg font-semibold">{comparison.title}</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
           Source-backed side-by-side comparison for the cloud vendor offerings in the {subcategoryLabels[activeTab].toLowerCase()} assistants segment.
@@ -134,6 +143,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.toolName}</div>
                 <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
+                <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
               </div>
             ))}
           </div>

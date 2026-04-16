@@ -800,7 +800,7 @@
         "Freemium entry path"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://lakera.ai/",
+      "docsUrl": "https://platform.lakera.ai/docs/api",
       "websiteUrl": "https://lakera.ai/",
       "pricingModel": "freemium",
       "status": "active",
@@ -824,7 +824,7 @@
         "Agent governance positioning"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://www.arthur.ai/",
+      "docsUrl": "https://docs.arthur.ai/",
       "websiteUrl": "https://www.arthur.ai/",
       "pricingModel": "contact",
       "status": "active",
@@ -848,9 +848,6 @@
         "Broad IDE adoption",
         "Free tier for light usage",
         "Enterprise controls available"
-      ],
-      "clouds": [
-        "azure"
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.github.com/copilot",
@@ -1113,7 +1110,7 @@
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html",
-      "websiteUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/",
+      "websiteUrl": "https://aws.amazon.com/q/business/",
       "pricing": "Included in Amazon Q Business Pro.",
       "pricingModel": "paid",
       "status": "active",

@@ -3,7 +3,12 @@ import type { Platform, ToolCategory } from "@/lib/types";
 
 function getLabel(platform: Platform, category: ToolCategory) {
   if (category === "assistants") {
-    return platform.categoryMapping.assistantsBuildYourOwn.label;
+    const labels = [
+      platform.categoryMapping.assistantsCoding.label,
+      platform.categoryMapping.assistantsProductivity.label,
+      platform.categoryMapping.assistantsBuildYourOwn.label,
+    ];
+    return labels.join(", ");
   }
 
   return platform.categoryMapping[category].label;

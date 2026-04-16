@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ':*)",
+      "Bash(node -e \"const nf = require\\('next/font/google'\\); console.log\\(typeof nf\\)\")",
+      "Bash(npm ci:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
