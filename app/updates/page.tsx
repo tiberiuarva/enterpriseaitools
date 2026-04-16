@@ -17,7 +17,7 @@ export default function UpdatesPage() {
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">Weekly updates</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Changelog-style feed sourced from <code>/data/updates.json</code>.
+            Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.
           </p>
         </section>
 
