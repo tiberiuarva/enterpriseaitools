@@ -1,0 +1,13 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/logos/*", "/*.svg", "/*.png", "/*.ico", "/*.json"]
+  },
+  "globalHeaders": {
+    "Cache-Control": "public, max-age=0, must-revalidate"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".svg": "image/svg+xml"
+  }
+}
