@@ -15,10 +15,14 @@ const typeBadgeStyles: Record<Tool["type"], string> = {
   commercial: "bg-[color:rgba(6,182,212,0.14)] text-[var(--color-secondary)]",
 };
 
+const cloudNames: Record<string, string> = {
+  azure: "Azure",
+  aws: "AWS",
+  gcp: "GCP",
+};
+
 function formatCloudName(cloud: string) {
-  if (cloud === "gcp") return "GCP";
-  if (cloud === "aws") return "AWS";
-  return "Azure";
+  return cloudNames[cloud] ?? cloud.toUpperCase();
 }
 
 function formatTypeLabel(type: Tool["type"]) {
@@ -32,7 +36,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
 
   return (
-    <article className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4 [content-visibility:auto] [contain-intrinsic-size:260px]" : "p-6 [content-visibility:auto] [contain-intrinsic-size:360px]"}`}>
+    <article className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4" : "p-6"}`}>
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
           <LogoBadge name={tool.name} logoUrl={tool.logoUrl} size={compact ? "sm" : "md"} className="shrink-0" />
@@ -50,8 +54,8 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
 
       {visibleStrengths.length > 0 ? (
         <ul className="mt-4 space-y-2">
-          {visibleStrengths.map((strength) => (
-            <li key={strength} className="flex items-start gap-2 text-sm text-[var(--color-text-primary)]">
+          {visibleStrengths.map((strength, index) => (
+            <li key={`${tool.id}-strength-${index}`} className="flex items-start gap-2 text-sm text-[var(--color-text-primary)]">
               <Check className="mt-0.5 shrink-0 text-[var(--color-success)]" size={14} />
               <span>{strength}</span>
             </li>

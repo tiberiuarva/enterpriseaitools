@@ -1,9 +1,11 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/enterpriseai-tools";
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/enterpriseai-tools";
 
 export function withBasePath(path: string) {
   if (!path.startsWith("/")) return path;
   if (path === "/") return `${basePath}/`;
-  return `${basePath}${path}`;
+  // Ensure trailing slash consistency with Next.js trailingSlash: true
+  const suffixed = path.endsWith("/") ? path : `${path}/`;
+  return `${basePath}${suffixed}`;
 }
 
 export const navItems = [

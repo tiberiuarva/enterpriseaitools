@@ -121,7 +121,6 @@ export function FilterBar({
           >
             <option value="name">Name (A-Z)</option>
             <option value="stars">Stars (high-low)</option>
-            <option value="updated">Last updated (recent first)</option>
           </select>
         </div>
       </div>

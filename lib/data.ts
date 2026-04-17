@@ -3,9 +3,9 @@ import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
-export const tools = toolsData.tools as Tool[];
-export const platforms = platformsData.platforms as Platform[];
-export const updates = updatesData.updates as UpdateEntry[];
+export const tools: Tool[] = toolsData.tools as Tool[];
+export const platforms: Platform[] = platformsData.platforms as Platform[];
+export const updates: UpdateEntry[] = updatesData.updates as UpdateEntry[];
 export const lastUpdated = toolsData.lastUpdated;
 
 export const categoryDescriptions: Record<ToolCategory, string> = {
@@ -23,13 +23,8 @@ export function getUpdatesByCategory(category: ToolCategory | "platforms") {
   return updates.filter((update) => update.category === category);
 }
 
-export function getPlatformsForCategory(category: ToolCategory) {
-  const categoryKey =
-    category === "assistants"
-      ? ["assistantsCoding", "assistantsProductivity", "assistantsBuildYourOwn"]
-      : [category];
-
-  return platforms.filter((platform) =>
-    categoryKey.some((key) => key in platform.categoryMapping),
-  );
+// All platforms currently map to all categories, so no filtering needed.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function getPlatformsForCategory(_category: ToolCategory) {
+  return platforms;
 }

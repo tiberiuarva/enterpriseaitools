@@ -22,7 +22,7 @@ export type Tool = {
   githubStars?: number;
   version?: string;
   lastRelease?: string;
-  docsUrl: string;
+  docsUrl?: string;
   websiteUrl?: string;
   pricing?: string;
   pricingModel?: PricingModel;

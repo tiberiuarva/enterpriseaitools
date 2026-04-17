@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { withBasePath } from "@/lib/site";
 
 type LogoBadgeProps = {
@@ -14,9 +17,10 @@ const sizeClasses = {
 } as const;
 
 export function LogoBadge({ name, logoUrl, size = "md", className = "" }: LogoBadgeProps) {
+  const [failed, setFailed] = useState(false);
   const classes = `${sizeClasses[size]} ${className}`.trim();
 
-  if (logoUrl) {
+  if (logoUrl && !failed) {
     return (
       <div className={`overflow-hidden border border-[var(--color-border)] bg-white ${classes}`}>
         <img
@@ -24,6 +28,7 @@ export function LogoBadge({ name, logoUrl, size = "md", className = "" }: LogoBa
           alt={`${name} logo`}
           loading="lazy"
           decoding="async"
+          onError={() => setFailed(true)}
           className="h-full w-full object-cover"
         />
       </div>

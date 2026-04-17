@@ -40,7 +40,6 @@ export function WarningBox({ variant = "warning", title, children }: WarningBoxP
 
   return (
     <section
-      role="note"
       aria-labelledby={headingId}
       className={`rounded-xl border-l-4 ${style.border} ${style.bg} p-4`}
     >

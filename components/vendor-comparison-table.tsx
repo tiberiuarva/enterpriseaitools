@@ -30,7 +30,7 @@ export function VendorComparisonTable({
                 {row.attribute}
               </th>
               {row.values.map((value, valueIndex) => (
-                <td key={`${row.attribute}-${valueIndex}`} className="border-b border-[var(--color-border)] px-4 py-3 text-[var(--color-text-secondary)]">
+                <td key={`${row.attribute}-${vendors[valueIndex]}`} className="border-b border-[var(--color-border)] px-4 py-3 text-[var(--color-text-secondary)]">
                   {value}
                 </td>
               ))}

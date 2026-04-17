@@ -12,7 +12,7 @@ import { HomeShell } from "@/components/home-shell";
 import { PlatformStrip } from "@/components/platform-strip";
 import { StatPill } from "@/components/stat-pill";
 import { WarningBox } from "@/components/warning-box";
-import { lastUpdated, platforms, tools, updates } from "@/lib/data";
+import { getToolsByCategory, lastUpdated, platforms, tools, updates } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 
@@ -51,7 +51,7 @@ const categoryMeta = {
 export default function Home() {
   const latestUpdate = updates[0];
   const categoryCards = Object.entries(categoryMeta).map(([key, meta]) => {
-    const categoryTools = tools.filter((tool) => tool.category === key);
+    const categoryTools = getToolsByCategory(key as import("@/lib/types").ToolCategory);
 
     return {
       ...meta,

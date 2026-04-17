@@ -38,6 +38,9 @@ const themeScript = `(() => {
     try { window.localStorage.setItem(storageKey, next); } catch {}
   });
 })();`;
+// Note: This script is injected via dangerouslySetInnerHTML as a static string.
+// It must run before hydration to avoid theme flash. The global click listener
+// is intentional — Header is a server component that renders once per page load.
 
 export function Header({ currentPath = "/" }: HeaderProps) {
   return (

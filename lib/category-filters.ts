@@ -4,7 +4,7 @@ export type CategoryFilterState = {
   type: "all" | ToolType;
   cloud: "all" | "azure" | "aws" | "gcp";
   license: string;
-  sort: "name" | "stars" | "updated";
+  sort: "name" | "stars";
 };
 
 export function parseCategoryFilterState(searchParams?: Record<string, string | string[] | undefined>): CategoryFilterState {
@@ -17,7 +17,7 @@ export function parseCategoryFilterState(searchParams?: Record<string, string | 
     type: type === "vendor" || type === "opensource" || type === "commercial" ? type : "all",
     cloud: cloud === "azure" || cloud === "aws" || cloud === "gcp" ? cloud : "all",
     license,
-    sort: sort === "stars" || sort === "updated" ? sort : "name",
+    sort: sort === "stars" ? sort : "name",
   };
 }
 
@@ -28,7 +28,6 @@ export function filterTools(tools: Tool[], state: CategoryFilterState) {
     .filter((tool) => state.license === "all" || tool.license === state.license)
     .sort((a, b) => {
       if (state.sort === "stars") return (b.githubStars ?? 0) - (a.githubStars ?? 0);
-      if (state.sort === "updated") return (b.lastRelease ?? "").localeCompare(a.lastRelease ?? "");
       return a.name.localeCompare(b.name);
     });
 }

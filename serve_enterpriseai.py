@@ -5,7 +5,7 @@ import gzip
 import io
 import os
 
-ROOT = Path('/home/n8nadmin/.openclaw/workspace-enterpriseai-tools/repo/out')
+ROOT = Path(os.getenv('SERVE_ROOT', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out')))
 PREFIX = '/enterpriseai-tools'
 
 class Handler(SimpleHTTPRequestHandler):
@@ -84,6 +84,6 @@ class Handler(SimpleHTTPRequestHandler):
     def log_message(self, format, *args):
         print('%s - - [%s] %s' % (self.address_string(), self.log_date_time_string(), format % args))
 
-server = ThreadingHTTPServer(('0.0.0.0', 3005), Handler)
-print('Serving enterpriseai.tools preview on 0.0.0.0:3005 with prefix', PREFIX)
+server = ThreadingHTTPServer(('127.0.0.1', 3005), Handler)
+print('Serving enterpriseai.tools preview on 127.0.0.1:3005 with prefix', PREFIX)
 server.serve_forever()

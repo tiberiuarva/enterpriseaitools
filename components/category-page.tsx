@@ -61,7 +61,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
 
       <PlatformCategoryBar category={category} platforms={platforms} />
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
         <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
           {comparison
@@ -86,7 +86,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
         <FilteredCategorySections tools={tools} updates={updates} />
       ) : (
         <>
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
+          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
             <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -97,7 +97,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
           </section>
 
           {warningTools.length > 0 ? (
-            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:320px]">
+            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <h2 className="text-lg font-semibold">Important notes</h2>
               <div className="mt-4 space-y-3">
                 {warningTools.map((tool) => (
@@ -110,7 +110,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
           ) : null}
 
           {updates.length > 0 ? (
-            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:360px]">
+            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <h2 className="text-lg font-semibold">Recent updates</h2>
               <div className="mt-4 space-y-4">
                 {visibleUpdates.map((update) => (
