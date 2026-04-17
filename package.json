@@ -5,14 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "python3 serve_enterpriseai.py",
     "lint": "eslint",
     "open-pr": "bash scripts/open-pr.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",
-    "publish-preview": "bash scripts/publish-preview.sh",
     "check-deploy-readiness": "bash scripts/check-deploy-readiness.sh",
     "check-custom-domain-readiness": "bash scripts/check-custom-domain-readiness.sh",
-    "smoke-test-export": "bash scripts/smoke-test-export.sh",
     "smoke-test-live-site": "bash scripts/smoke-test-live-site.sh"
   },
   "dependencies": {
