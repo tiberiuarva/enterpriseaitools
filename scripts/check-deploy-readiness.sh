@@ -63,10 +63,10 @@ import sys
 mode = sys.argv[1]
 pkg = json.loads(pathlib.Path('package.json').read_text())
 scripts = pkg.get('scripts', {})
-missing = [name for name in ('build', 'lint', 'publish-preview', 'open-pr', 'smoke-test-export') if name not in scripts]
+missing = [name for name in ('build', 'lint', 'publish-preview', 'open-pr', 'smoke-test-export', 'smoke-test-live-site') if name not in scripts]
 if missing:
     raise SystemExit(f"FAIL package.json missing scripts: {', '.join(missing)}")
-print('PASS package.json exposes build/lint/publish-preview/open-pr/smoke-test-export scripts')
+print('PASS package.json exposes build/lint/publish-preview/open-pr/smoke-test-export/smoke-test-live-site scripts')
 
 config = json.loads(pathlib.Path('staticwebapp.config.json').read_text())
 exclude = set(config.get('navigationFallback', {}).get('exclude', []))

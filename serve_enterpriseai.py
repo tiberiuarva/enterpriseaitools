@@ -5,12 +5,20 @@ import gzip
 import io
 import os
 
-ROOT = Path('/home/n8nadmin/.openclaw/workspace-enterpriseai-tools/repo/out')
+REPO_ROOT = Path('/home/n8nadmin/.openclaw/workspace-enterpriseai-tools/repo')
+FALLBACK_ROOT = REPO_ROOT / 'out'
+ROOT_LINK = REPO_ROOT / '.preview' / 'current'
 PREFIX = '/enterpriseai-tools'
+
+
+def resolve_root() -> Path:
+    if ROOT_LINK.exists():
+        return ROOT_LINK.resolve()
+    return FALLBACK_ROOT
 
 class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, directory=str(ROOT), **kwargs)
+        super().__init__(*args, directory=str(resolve_root()), **kwargs)
 
     compressed_types = {
         'text/html',
@@ -33,7 +41,8 @@ class Handler(SimpleHTTPRequestHandler):
         if clean_path in ('', '/'):
             clean_path = '/index.html'
 
-        candidate = ROOT / clean_path.lstrip('/')
+        root = resolve_root()
+        candidate = root / clean_path.lstrip('/')
 
         if candidate.is_dir():
             index_file = candidate / 'index.html'
@@ -41,11 +50,11 @@ class Handler(SimpleHTTPRequestHandler):
                 candidate = index_file
         elif not candidate.exists():
             if not candidate.suffix:
-                html_candidate = ROOT / clean_path.lstrip('/') / 'index.html'
+                html_candidate = root / clean_path.lstrip('/') / 'index.html'
                 if html_candidate.exists():
                     candidate = html_candidate
                 else:
-                    flat_html = ROOT / f"{clean_path.lstrip('/')}.html"
+                    flat_html = root / f"{clean_path.lstrip('/')}.html"
                     if flat_html.exists():
                         candidate = flat_html
 
@@ -85,5 +94,5 @@ class Handler(SimpleHTTPRequestHandler):
         print('%s - - [%s] %s' % (self.address_string(), self.log_date_time_string(), format % args))
 
 server = ThreadingHTTPServer(('0.0.0.0', 3005), Handler)
-print('Serving enterpriseai.tools preview on 0.0.0.0:3005 with prefix', PREFIX)
+print('Serving enterpriseai.tools preview on 0.0.0.0:3005 with prefix', PREFIX, 'from', resolve_root())
 server.serve_forever()

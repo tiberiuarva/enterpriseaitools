@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { UpdateEntry } from "@/lib/types";
 
@@ -11,6 +12,13 @@ const categoryOptions = [
   { label: "Governance", value: "governance" },
   { label: "Assistants", value: "assistants" },
 ] as const;
+
+function formatUpdateLabel(value: string) {
+  return value
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
 
 export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -55,18 +63,35 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
                 <div className="text-base font-semibold text-[var(--color-text-primary)]">
                   {update.toolName}
                 </div>
-                <div className="mt-1 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
-                  {update.category} · {update.type}
+                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
+                  <span>{formatUpdateLabel(update.category)}</span>
+                  <span aria-hidden="true">•</span>
+                  <span>{formatUpdateLabel(update.type)}</span>
+                  {update.impact ? (
+                    <>
+                      <span aria-hidden="true">•</span>
+                      <span>{formatUpdateLabel(update.impact)} impact</span>
+                    </>
+                  ) : null}
                 </div>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
-                <a
-                  href={update.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
-                >
-                  Source
-                </a>
+                <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                  {update.sourceTitle ? (
+                    <span className="text-[var(--color-text-secondary)]">
+                      Source: <span className="font-medium text-[var(--color-text-primary)]">{update.sourceTitle}</span>
+                    </span>
+                  ) : null}
+                  <a
+                    href={update.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 font-medium text-[var(--color-primary)] hover:underline"
+                    aria-label={`Open source for ${update.toolName} in a new tab`}
+                  >
+                    Read source
+                    <ArrowUpRight size={16} />
+                  </a>
+                </div>
               </div>
             </article>
           ))}

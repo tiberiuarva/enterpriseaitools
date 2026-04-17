@@ -15,6 +15,7 @@ Run:
 ```bash
 npm run check-custom-domain-readiness
 npm run smoke-test-export -- root
+npm run smoke-test-live-site -- root
 ```
 
 What it verifies from inside the repo:

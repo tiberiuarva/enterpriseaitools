@@ -139,6 +139,24 @@ Repo-local export smoke test for the preview/subpath shape:
 3. verifies canonical URLs still point at `https://enterpriseai.tools/...`
 4. verifies exported asset and route links are prefixed with `/enterpriseai-tools`
 
+### `npm run smoke-test-live-site -- subpath`
+
+Live deployment smoke test for the preview/subpath URL:
+
+1. checks `/`, `/platforms/`, `/agents/`, and `/updates/` return HTTP 200 HTML
+2. verifies known public assets (`robots.txt`, `sitemap.xml`, social preview, logo asset) return HTTP 200
+3. verifies canonical URLs still point at `https://enterpriseai.tools/...`
+4. verifies the deployed HTML still uses `/enterpriseai-tools`-prefixed routes/assets
+
+### `npm run smoke-test-live-site -- root`
+
+Live deployment smoke test for the root-domain launch URL:
+
+1. defaults to `https://enterpriseai.tools`
+2. checks the main routes return HTTP 200 HTML
+3. verifies known public assets return HTTP 200
+4. fails if any preview-only `/enterpriseai-tools` references leak into the live HTML
+
 ### `npm run test-full-cycle`
 
 Dry-run verification for the repeatable maintenance path:

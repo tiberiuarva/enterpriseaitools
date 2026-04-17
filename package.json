@@ -12,7 +12,8 @@
     "publish-preview": "bash scripts/publish-preview.sh",
     "check-deploy-readiness": "bash scripts/check-deploy-readiness.sh",
     "check-custom-domain-readiness": "bash scripts/check-custom-domain-readiness.sh",
-    "smoke-test-export": "bash scripts/smoke-test-export.sh"
+    "smoke-test-export": "bash scripts/smoke-test-export.sh",
+    "smoke-test-live-site": "bash scripts/smoke-test-live-site.sh"
   },
   "dependencies": {
     "lucide-react": "^0.511.0",

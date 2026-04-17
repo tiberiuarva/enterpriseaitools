@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { withBasePath } from "@/lib/site";
 
 type LogoBadgeProps = {
@@ -13,18 +15,25 @@ const sizeClasses = {
   lg: "h-10 w-10 rounded-xl text-base",
 } as const;
 
+const imageSizes = {
+  sm: 24,
+  md: 32,
+  lg: 40,
+} as const;
+
 export function LogoBadge({ name, logoUrl, size = "md", className = "" }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
 
   if (logoUrl) {
     return (
       <div className={`overflow-hidden border border-[var(--color-border)] bg-white ${classes}`}>
-        <img
+        <Image
           src={withBasePath(logoUrl)}
           alt={`${name} logo`}
+          width={imageSizes[size]}
+          height={imageSizes[size]}
           loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain p-0.5"
         />
       </div>
     );

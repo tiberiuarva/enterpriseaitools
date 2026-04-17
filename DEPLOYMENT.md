@@ -35,6 +35,13 @@ npm run smoke-test-export -- root
 npm run smoke-test-export -- subpath
 ```
 
+For any live environment you can reach, also verify the deployed URL directly:
+
+```bash
+npm run smoke-test-live-site -- subpath
+npm run smoke-test-live-site -- root
+```
+
 For the remaining root-domain handoff, also run:
 
 ```bash

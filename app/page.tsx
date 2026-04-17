@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  ArrowUpRight,
   Bot,
   BriefcaseBusiness,
   CalendarClock,
@@ -12,7 +13,7 @@ import { HomeShell } from "@/components/home-shell";
 import { PlatformStrip } from "@/components/platform-strip";
 import { StatPill } from "@/components/stat-pill";
 import { WarningBox } from "@/components/warning-box";
-import { lastUpdated, platforms, tools, updates } from "@/lib/data";
+import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 
@@ -48,8 +49,14 @@ const categoryMeta = {
   },
 } as const;
 
+function formatUpdateLabel(value: string) {
+  return value
+    .split("-")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
 export default function Home() {
-  const latestUpdate = updates[0];
   const categoryCards = Object.entries(categoryMeta).map(([key, meta]) => {
     const categoryTools = tools.filter((tool) => tool.category === key);
 
@@ -91,16 +98,44 @@ export default function Home() {
               <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
                 Latest update · {latestUpdate.date}
               </div>
-              <div className="mt-2 text-base font-semibold">{latestUpdate.toolName}</div>
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
+                <span>{formatUpdateLabel(latestUpdate.category)}</span>
+                <span aria-hidden="true">•</span>
+                <span>{formatUpdateLabel(latestUpdate.type)}</span>
+                {latestUpdate.impact ? (
+                  <>
+                    <span aria-hidden="true">•</span>
+                    <span>{formatUpdateLabel(latestUpdate.impact)} impact</span>
+                  </>
+                ) : null}
+              </div>
+              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.toolName}</div>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 {latestUpdate.summary}
               </p>
-              <a
-                className="mt-3 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
-                href={withBasePath("/updates")}
-              >
-                View all updates
-              </a>
+              {latestUpdate.sourceTitle ? (
+                <p className="mt-3 text-sm text-[var(--color-text-secondary)]">
+                  Source: <span className="font-medium text-[var(--color-text-primary)]">{latestUpdate.sourceTitle}</span>
+                </p>
+              ) : null}
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a
+                  className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90"
+                  href={withBasePath("/updates")}
+                >
+                  Open updates feed
+                </a>
+                <a
+                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+                  href={latestUpdate.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open source for ${latestUpdate.toolName} in a new tab`}
+                >
+                  Read source
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
             </div>
           </section>
         ) : null}

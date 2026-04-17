@@ -52,6 +52,7 @@ require_file README.md
 require_file DEPLOYMENT.md
 require_file CUSTOM_DOMAIN.md
 require_file scripts/smoke-test-export.sh
+require_file scripts/smoke-test-live-site.sh
 require_file "$WORKFLOW_FILE"
 require_file "$NEXT_CONFIG"
 
@@ -59,6 +60,7 @@ require_contains README.md 'do **not** set `NEXT_PUBLIC_BASE_PATH`' 'README docu
 require_contains DEPLOYMENT.md 'Custom domain (`enterpriseai.tools`)' 'DEPLOYMENT.md includes custom domain section'
 require_contains CUSTOM_DOMAIN.md 'npm run check-custom-domain-readiness' 'CUSTOM_DOMAIN.md documents the custom-domain readiness command'
 require_contains CUSTOM_DOMAIN.md 'npm run smoke-test-export -- root' 'CUSTOM_DOMAIN.md documents the root export smoke test'
+require_contains CUSTOM_DOMAIN.md 'npm run smoke-test-live-site -- root' 'CUSTOM_DOMAIN.md documents the root live-site smoke test'
 require_contains "$WORKFLOW_FILE" 'azure_static_web_apps_api_token' 'workflow expects Azure SWA token secret'
 require_contains "$WORKFLOW_FILE" 'NEXT_PUBLIC_BASE_PATH' 'workflow can forward NEXT_PUBLIC_BASE_PATH when explicitly set'
 require_contains "$NEXT_CONFIG" 'process.env.NEXT_PUBLIC_BASE_PATH' 'next.config.ts reads NEXT_PUBLIC_BASE_PATH from the environment'

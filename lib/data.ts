@@ -5,7 +5,10 @@ import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 export const tools = toolsData.tools as Tool[];
 export const platforms = platformsData.platforms as Platform[];
-export const updates = updatesData.updates as UpdateEntry[];
+export const updates = [...(updatesData.updates as UpdateEntry[])].sort((a, b) =>
+  b.date.localeCompare(a.date) || a.toolName.localeCompare(b.toolName),
+);
+export const latestUpdate = updates[0] ?? null;
 export const lastUpdated = toolsData.lastUpdated;
 
 export const categoryDescriptions: Record<ToolCategory, string> = {
