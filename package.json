@@ -5,22 +5,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "python3 serve_enterpriseai.py",
+    "lint": "eslint",
+    "open-pr": "bash scripts/open-pr.sh",
+    "test-full-cycle": "bash scripts/test-full-cycle.sh",
+    "publish-preview": "bash scripts/publish-preview.sh",
+    "check-deploy-readiness": "bash scripts/check-deploy-readiness.sh",
+    "check-custom-domain-readiness": "bash scripts/check-custom-domain-readiness.sh"
   },
   "dependencies": {
-    "lucide-react": "^1.8.0",
-    "next": "16.2.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "lucide-react": "^0.511.0",
+    "next": "16.0.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.3",
+    "eslint-config-next": "16.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
