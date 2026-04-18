@@ -1,47 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { SkipLinkFocus } from "@/components/skip-link-focus";
 import { siteUrl } from "@/lib/metadata";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-});
-
-const skipLinkScript = `(() => {
-  const focusMain = () => {
-    const main = document.getElementById('main-content');
-    if (main instanceof HTMLElement) {
-      main.focus({ preventScroll: true });
-      main.scrollIntoView({ block: 'start' });
-    }
-  };
-
-  const focusMainFromHash = () => {
-    if (window.location.hash === '#main-content') {
-      window.requestAnimationFrame(focusMain);
-    }
-  };
-
-  document.addEventListener('click', (event) => {
-    const target = event.target;
-    if (!(target instanceof Element)) return;
-    const link = target.closest('a.skip-link');
-    if (link) {
-      window.setTimeout(focusMain, 0);
-    }
-  });
-
-  window.addEventListener('hashchange', focusMainFromHash);
-  window.addEventListener('load', focusMainFromHash);
-})();`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -107,12 +67,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`dark h-full antialiased ${inter.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang="en" className="dark h-full antialiased">
       <body className="min-h-full">
-        <script dangerouslySetInnerHTML={{ __html: skipLinkScript }} />
+        <SkipLinkFocus />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

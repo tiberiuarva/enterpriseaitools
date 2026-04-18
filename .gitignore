@@ -25,6 +25,7 @@
 *.pem
 .tmp/
 .preview/
+.claude/
 
 # debug
 npm-debug.log*
