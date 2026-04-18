@@ -10,9 +10,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  NEXT_PUBLIC_BASE_PATH: ${{ vars.NEXT_PUBLIC_BASE_PATH }}
-
 jobs:
   build_and_deploy_job:
     if: github.event_name != 'pull_request' || github.event.action != 'closed'
