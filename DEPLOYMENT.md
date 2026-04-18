@@ -52,3 +52,29 @@ Operator fix path:
 3. Update the GitHub repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`
 4. Confirm the Azure Static Web App is connected to this repository
 5. Re-run the workflow and verify the deploy step reaches a successful upload
+
+## Operator verification checklist
+
+After updating the Azure app wiring / token, verify in this order:
+
+1. GitHub Actions `Azure Static Web Apps CI/CD` succeeds on the relevant branch or PR
+2. The Azure deploy step no longer reports `No matching Static Web App was found or the api key was invalid.`
+3. The generated site is reachable at the Azure default hostname or intended production hostname
+4. Run the repo smoke test against production:
+
+```bash
+npm run smoke-test-live-site -- root https://www.enterpriseai.tools
+```
+
+5. Only after deploy is green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+
+## What is already verified locally
+
+The following are already green from this repo and do not need further code changes unless the workflow behavior changes:
+
+```bash
+npm run lint
+npm run build
+npm run check-deploy-readiness
+npm run check-custom-domain-readiness
+```
