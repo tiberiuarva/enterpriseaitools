@@ -7,6 +7,7 @@
     "build": "next build",
     "lint": "eslint",
     "open-pr": "bash scripts/open-pr.sh",
+    "publish-preview": "bash scripts/publish-preview.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",
     "check-deploy-readiness": "bash scripts/check-deploy-readiness.sh",
     "check-custom-domain-readiness": "bash scripts/check-custom-domain-readiness.sh",

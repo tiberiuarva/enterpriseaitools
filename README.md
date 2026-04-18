@@ -16,6 +16,7 @@ npm run lint
 npm run build
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
+npm run publish-preview
 ```
 
 ## PR helper
@@ -56,10 +57,12 @@ Expected build shape:
 ```bash
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
+npm run publish-preview
 npm run smoke-test-live-site -- root https://www.enterpriseai.tools
 ```
 
 ## Notes
 
 - Some logos are still placeholders and should be replaced with sourced official assets where defensible.
+- Current Azure deploy blocker on PR #5: `Deploy to Azure Static Web Apps` fails with `No matching Static Web App was found or the api key was invalid.` This is an external Azure/GitHub secret wiring issue, not a local build/export failure.
 - Custom-domain acceptance and DNS cutover remain external Azure/DNS tasks.

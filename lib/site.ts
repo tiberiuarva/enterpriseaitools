@@ -1,3 +1,6 @@
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim();
+export const basePath = rawBasePath && rawBasePath !== '/' ? rawBasePath.replace(/\/$/, '') : '';
+
 export const navItems = [
   { href: '/', label: 'Home' },
   { href: '/platforms', label: 'Platforms' },
@@ -14,5 +17,11 @@ export const githubStargazersUrl = 'https://github.com/tiberiuarva/enterpriseait
 export const platformPageHref = '/platforms';
 
 export function withBasePath(path: string) {
-  return path || '/';
+  if (!path) {
+    return basePath || '/';
+  }
+  if (!basePath || !path.startsWith('/')) {
+    return path;
+  }
+  return path === '/' ? `${basePath}/` : `${basePath}${path}`;
 }
