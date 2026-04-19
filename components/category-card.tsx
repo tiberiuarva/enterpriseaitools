@@ -26,6 +26,12 @@ const previewToolIcons = {
   commercial: BriefcaseBusiness,
 } as const;
 
+function formatTypeLabel(type: Tool["type"]) {
+  if (type === "opensource") return "Open source";
+  if (type === "vendor") return "Vendor";
+  return "Commercial";
+}
+
 export function CategoryCard({ href, icon: Icon, name, description, count, previewTools }: CategoryCardProps) {
   return (
     <a
@@ -55,6 +61,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
             <span
               key={tool.id}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
+              aria-label={`${tool.name} · ${formatTypeLabel(tool.type)}`}
             >
               <span
                 className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${previewToolIconWrapStyles[tool.type]}`}
@@ -62,7 +69,9 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
               >
                 <PreviewToolIcon size={11} />
               </span>
-              <span>{tool.name}</span>
+              <span className="text-[var(--color-text-primary)]">{tool.name}</span>
+              <span aria-hidden="true" className="text-[var(--color-text-tertiary)]">•</span>
+              <span className="uppercase tracking-[0.08em] text-[10px] font-semibold">{formatTypeLabel(tool.type)}</span>
             </span>
           );
         })}
