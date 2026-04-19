@@ -90,6 +90,8 @@ Short-term:
 - keep one normalized container treatment for tool/platform imagery
 - style fallbacks so they are visibly intentional
 - do not silently mix differently styled placeholder badges with official marks as if they are equivalent
+- render `logoKind: fallback` entries as text-first monogram badges instead of asset files, so reviewed fallbacks are visibly distinct from reviewed image assets
+- allow legacy records with no `logoKind` yet to keep their current image treatment until the audit classifies them explicitly
 
 Medium-term:
 - reduce logo prominence on tool cards if the asset audit shows too many fallbacks/questionable marks

@@ -451,6 +451,39 @@
       "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoKind": "fallback",
       "reviewedAt": "2026-04-19"
+    },
+    {
+      "name": "Microsoft Foundry",
+      "category": "platforms",
+      "vendor": "Microsoft",
+      "logoUrl": "/logos/microsoft-foundry.svg",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Generated placeholder badge in repo, not a reviewed official product mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
+    },
+    {
+      "name": "AWS Bedrock",
+      "category": "platforms",
+      "vendor": "AWS",
+      "logoUrl": "/logos/aws-bedrock.svg",
+      "status": "classified",
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon from Icon-package_01302026.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
+    },
+    {
+      "name": "Google Vertex AI",
+      "category": "platforms",
+      "vendor": "Google",
+      "logoUrl": "/logos/google-vertex-ai.svg",
+      "status": "classified",
+      "sourceUrl": "https://cloud.google.com/icons",
+      "notes": "Official Google Cloud product/service icon from the Google Cloud icon library.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
     }
   ]
 }
