@@ -9,6 +9,7 @@ type LogoBadgeProps = {
   logoKind: LogoKind;
   size?: "sm" | "md" | "lg";
   className?: string;
+  decorative?: boolean;
 };
 
 const sizeClasses = {
@@ -55,7 +56,7 @@ function buildMonogram(name: string) {
     .join("");
 }
 
-export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
+export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "", decorative = false }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const monogram = buildMonogram(name);
   const imageLogoUrl = logoUrl && imageKinds.has(logoKind) ? logoUrl : undefined;
@@ -73,10 +74,10 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
         : `overflow-hidden border border-[var(--color-border)] bg-white ${classes}`;
 
     return (
-      <div className={containerClasses} title={imageTitle}>
+      <div className={containerClasses} title={decorative ? undefined : imageTitle} aria-hidden={decorative || undefined}>
         <Image
           src={withBasePath(imageLogoUrl)}
-          alt={imageTitle}
+          alt={decorative ? "" : `${name} logo`}
           width={imageSizes[size]}
           height={imageSizes[size]}
           loading="lazy"
@@ -94,9 +95,9 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
   return (
     <div
       className={`flex items-center justify-center border border-[color:rgba(59,130,246,0.18)] bg-[linear-gradient(180deg,rgba(59,130,246,0.10),rgba(59,130,246,0.18))] font-semibold tracking-[0.08em] text-[var(--color-primary)] ${classes}`}
-      role="img"
-      aria-label={`${name} fallback monogram`}
-      title={`${name} reviewed fallback monogram`}
+      role={decorative ? undefined : "img"}
+      aria-hidden={decorative || undefined}
+      aria-label={decorative ? undefined : `${name} logo`}
     >
       <span aria-hidden="true">{monogram}</span>
     </div>

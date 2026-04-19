@@ -101,7 +101,7 @@ export default function PlatformsPage() {
           {platforms.map((platform) => (
             <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex items-center gap-3">
-                <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind!} size="lg" />
+                <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind!} size="lg" decorative />
                 <div>
                   <h2 className="text-lg font-semibold">{platform.name}</h2>
                   <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>

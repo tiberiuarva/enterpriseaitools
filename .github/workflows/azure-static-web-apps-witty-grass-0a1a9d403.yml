@@ -28,6 +28,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check logo provenance
+        run: npm run check-logo-provenance
       - name: Lint
         run: npm run lint
       - name: Build static site
