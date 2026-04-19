@@ -1,0 +1,82 @@
+[
+  {
+    "path": "/",
+    "changeFrequency": "weekly",
+    "priority": 1,
+    "titleContains": "Enterprise AI tools landscape tracker",
+    "descriptionContains": "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI",
+    "requiresCollectionPage": false,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": false
+  },
+  {
+    "path": "/platforms",
+    "changeFrequency": "weekly",
+    "priority": 0.9,
+    "titleContains": "AI Platforms & Model Hubs",
+    "descriptionContains": "Microsoft Foundry, AWS Bedrock, and Google Vertex AI",
+    "requiresCollectionPage": true,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/agents",
+    "changeFrequency": "weekly",
+    "priority": 0.9,
+    "titleContains": "AI Agent Frameworks",
+    "descriptionContains": "Compare Microsoft Foundry Agent Service, AWS Bedrock Agents",
+    "requiresCollectionPage": true,
+    "requiresItemList": true,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/orchestration",
+    "changeFrequency": "weekly",
+    "priority": 0.9,
+    "titleContains": "AI Orchestration",
+    "descriptionContains": "Compare Azure Logic Apps, AWS Step Functions, Google Cloud Workflows",
+    "requiresCollectionPage": true,
+    "requiresItemList": true,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/governance",
+    "changeFrequency": "weekly",
+    "priority": 0.9,
+    "titleContains": "AI Governance",
+    "descriptionContains": "Compare Azure AI Content Safety, AWS Bedrock Guardrails, Google Model Armor",
+    "requiresCollectionPage": true,
+    "requiresItemList": true,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/assistants",
+    "changeFrequency": "weekly",
+    "priority": 0.9,
+    "titleContains": "AI Assistants",
+    "descriptionContains": "Compare coding assistants, productivity copilots",
+    "requiresCollectionPage": true,
+    "requiresItemList": true,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/updates",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "titleContains": "Weekly updates",
+    "descriptionContains": "Changelog-style updates for enterprise AI tooling",
+    "requiresCollectionPage": true,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/about",
+    "changeFrequency": "monthly",
+    "priority": 0.5,
+    "titleContains": "About enterpriseai.tools",
+    "descriptionContains": "Project background, contribution rules, and sourcing standards",
+    "requiresCollectionPage": true,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  }
+]

@@ -26,6 +26,7 @@ Production deploy expectations:
 Repo-local checks:
 
 ```bash
+npm run check-seo-readiness
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
 npm run smoke-test-live-site -- root https://www.enterpriseai.tools

@@ -14,6 +14,7 @@ npm run dev
 ```bash
 npm run lint
 npm run build
+npm run check-seo-readiness
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
 npm run publish-preview

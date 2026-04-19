@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "node scripts/generate-seo-artifacts.mjs && next build",
     "lint": "eslint",
+    "check-seo-readiness": "node scripts/check-seo-readiness.mjs",
     "open-pr": "bash scripts/open-pr.sh",
     "publish-preview": "bash scripts/publish-preview.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",

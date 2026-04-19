@@ -1,17 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import toolsData from "../data/tools.json" with { type: "json" };
-
-const siteRoutes = [
-  { path: "/", changeFrequency: "weekly", priority: 1 },
-  { path: "/platforms", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/agents", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/orchestration", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/governance", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/assistants", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/updates", changeFrequency: "weekly", priority: 0.7 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.5 },
-];
+import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://enterpriseai.tools").replace(/\/$/, "");
 const lastModified = toolsData.lastUpdated;
