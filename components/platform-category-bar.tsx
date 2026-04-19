@@ -8,6 +8,18 @@ const CATEGORY_CONTEXT_LABELS: Record<ToolCategory, string> = {
   assistants: "assistant tooling",
 };
 
+function getPlatformContextLabel(platform: Platform, category: ToolCategory) {
+  if (category === "assistants") {
+    return [
+      platform.categoryMapping.assistantsCoding.label,
+      platform.categoryMapping.assistantsProductivity.label,
+      platform.categoryMapping.assistantsBuildYourOwn.label,
+    ].join(" · ");
+  }
+
+  return platform.categoryMapping[category].label;
+}
+
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   const categoryLabel = CATEGORY_CONTEXT_LABELS[category];
 
@@ -26,9 +38,10 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
             <a
               key={platform.id}
               href={withBasePath("/platforms")}
-              className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              className="inline-flex min-w-[12rem] flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
             >
-              {platform.name}
+              <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
+              <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category)}</span>
             </a>
           ))}
         </div>
