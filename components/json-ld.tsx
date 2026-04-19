@@ -61,6 +61,24 @@ export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   };
 }
 
+export function buildCollectionPageJsonLd({
+  name,
+  url,
+  description,
+}: {
+  name: string;
+  url: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    url,
+    description,
+  };
+}
+
 export function buildWebSiteJsonLd({
   name,
   url,

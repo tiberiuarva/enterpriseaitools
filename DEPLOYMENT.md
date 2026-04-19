@@ -35,38 +35,45 @@ External checks still required:
 - workflow run succeeds on `main`
 - Azure SWA receives the artifact
 - live site returns HTTP 200 on required routes/assets
+- production robots/sitemap/canonical responses match the intended root domain
 
-## Known blocking failure mode
+## Production launch + SEO verification checklist
 
-Current observed GitHub Actions failure on PR #5:
-- `Deploy to Azure Static Web Apps`
-- `Reason: No matching Static Web App was found or the api key was invalid.`
+After merging to `main` and/or updating the Azure app wiring, verify in this order:
 
-What that means operationally:
-- the GitHub secret `AZURE_STATIC_WEB_APPS_API_TOKEN` does not match the intended Azure Static Web App, or
-- the repo/branch is not wired to the expected Azure Static Web App instance.
-
-Operator fix path:
-1. In Azure Static Web Apps, open the intended production app for `enterpriseai.tools`
-2. Regenerate or copy the deployment token from that exact app
-3. Update the GitHub repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`
-4. Confirm the Azure Static Web App is connected to this repository
-5. Re-run the workflow and verify the deploy step reaches a successful upload
-
-## Operator verification checklist
-
-After updating the Azure app wiring / token, verify in this order:
-
-1. GitHub Actions `Azure Static Web Apps CI/CD` succeeds on the relevant branch or PR
-2. The Azure deploy step no longer reports `No matching Static Web App was found or the api key was invalid.`
-3. The generated site is reachable at the Azure default hostname or intended production hostname
-4. Run the repo smoke test against production:
+1. GitHub Actions `Azure Static Web Apps CI/CD` succeeds on the relevant branch or `main`
+2. The generated site is reachable at the Azure default hostname or intended production hostname
+3. Run the repo smoke test against production:
 
 ```bash
 npm run smoke-test-live-site -- root https://www.enterpriseai.tools
 ```
 
-5. Only after deploy is green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+4. Verify crawlability/indexability on the production domain:
+   - `https://www.enterpriseai.tools/robots.txt` returns HTTP 200
+   - `https://www.enterpriseai.tools/sitemap.xml` returns HTTP 200
+   - canonical tags point at the intended production root domain
+   - major hubs (`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/governance/`, `/assistants/`, `/updates/`, `/about/`) render expected titles/descriptions
+5. Validate structured data on the main indexed hubs (at minimum `WebSite`, `Organization`, `BreadcrumbList`, `CollectionPage`, and `ItemList` where applicable)
+6. In Google Search Console / Bing Webmaster Tools after the domain is stable:
+   - verify the production property
+   - submit `https://www.enterpriseai.tools/sitemap.xml`
+   - inspect the core hub URLs for indexability
+   - monitor coverage/crawl issues before making broader content changes
+7. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+
+## Historical failure mode (resolved on the PR branch)
+
+A prior PR-stage blocker was:
+- `Deploy to Azure Static Web Apps`
+- `Reason: No matching Static Web App was found or the api key was invalid.`
+
+That failure mode is retained here as operator context only. If it reappears, the likely fix path is still:
+1. In Azure Static Web Apps, open the intended production app for `enterpriseai.tools`
+2. Regenerate or copy the deployment token from that exact app
+3. Update the GitHub repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`
+4. Confirm the Azure Static Web App is connected to this repository
+5. Re-run the workflow and verify the deploy step reaches a successful upload
 
 ## What is already verified locally
 

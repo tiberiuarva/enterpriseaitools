@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
+import { RelatedHubs } from "@/components/related-hubs";
 import { githubRepoUrl } from "@/lib/site";
 import { lastUpdated } from "@/lib/data";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteUrl } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About",
+  title: "About enterpriseai.tools",
   description:
     "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
   path: "/about",
 });
 
 export default function AboutPage() {
+  const pageUrl = `${siteUrl}/about/`;
+  const description =
+    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
+  const jsonLd = [
+    buildBreadcrumbJsonLd([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: "About enterpriseai.tools", url: pageUrl },
+    ]),
+    buildCollectionPageJsonLd({
+      name: "About enterpriseai.tools",
+      url: pageUrl,
+      description,
+    }),
+  ];
+
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/about">
       <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <JsonLd data={jsonLd} />
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -78,6 +96,46 @@ export default function AboutPage() {
               View GitHub repository
             </a>
           </div>
+        </section>
+
+        <section className="mt-6">
+          <RelatedHubs
+            currentPath="/about"
+            title="Start from the main indexed hubs"
+            intro="Use the main hub pages to browse the tracked platform/category landscape after reviewing sourcing and contribution rules."
+            hubs={[
+              {
+                href: "/platforms",
+                title: "Platforms",
+                description: "Compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer.",
+              },
+              {
+                href: "/agents",
+                title: "AI Agent Frameworks",
+                description: "Explore managed cloud agent services and open source agent frameworks.",
+              },
+              {
+                href: "/orchestration",
+                title: "AI Orchestration",
+                description: "Review workflow engines, pipelines, and automation layers.",
+              },
+              {
+                href: "/governance",
+                title: "AI Governance",
+                description: "Inspect guardrails, safety controls, and policy tooling.",
+              },
+              {
+                href: "/assistants",
+                title: "AI Assistants",
+                description: "Browse coding, productivity, and build-your-own assistant comparisons.",
+              },
+              {
+                href: "/updates",
+                title: "Weekly updates",
+                description: "Track releases, deprecations, acquisitions, and other notable enterprise AI changes.",
+              },
+            ]}
+          />
         </section>
       </main>
     </HomeShell>

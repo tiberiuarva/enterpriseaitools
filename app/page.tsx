@@ -18,6 +18,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
+  title: "Enterprise AI tools landscape tracker",
   description:
     "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.",
 });

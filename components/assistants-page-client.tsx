@@ -2,8 +2,9 @@
 
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useState } from "react";
-import { JsonLd, buildBreadcrumbJsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
+import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
@@ -51,6 +52,11 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
       { name: "Home", url: `${siteUrl}/` },
       { name: title, url: pageUrl },
     ]),
+    buildCollectionPageJsonLd({
+      name: title,
+      url: pageUrl,
+      description,
+    }),
     buildToolListJsonLd(tools, title, description, pageUrl),
   ];
 
@@ -156,6 +162,29 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
           </div>
         </section>
       ) : null}
+
+      <RelatedHubs
+        currentPath="/assistants"
+        title="Explore adjacent hubs"
+        intro="Move from assistants into the platform foundation layer, the weekly change log, or the contribution/sourcing guide."
+        hubs={[
+          {
+            href: "/platforms",
+            title: "Platforms",
+            description: "Compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer beneath assistant tooling.",
+          },
+          {
+            href: "/updates",
+            title: "Weekly updates",
+            description: "Review recent releases, renames, and acquisitions affecting coding, productivity, and build-your-own assistants.",
+          },
+          {
+            href: "/about",
+            title: "About and contribution rules",
+            description: "See the sourcing standards and contribution process before editing the tracked assistants dataset.",
+          },
+        ]}
+      />
     </main>
   );
 }

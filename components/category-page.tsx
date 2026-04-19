@@ -1,7 +1,8 @@
 import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
 import { FilteredCategorySections } from "@/components/filtered-category-sections";
-import { JsonLd, buildBreadcrumbJsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
+import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
@@ -47,6 +48,11 @@ export function CategoryPage({ category, title, description, iconName, tools, up
       { name: "Home", url: `${siteUrl}/` },
       { name: title, url: pageUrl },
     ]),
+    buildCollectionPageJsonLd({
+      name: title,
+      url: pageUrl,
+      description,
+    }),
     buildToolListJsonLd(tools, title, description, pageUrl),
   ];
 
@@ -131,6 +137,29 @@ export function CategoryPage({ category, title, description, iconName, tools, up
               </div>
             </section>
           ) : null}
+
+          <RelatedHubs
+            currentPath={`/${category}`}
+            title="Explore adjacent hubs"
+            intro="Compare the active category against the platform foundation layer, the cross-category updates feed, and the sourcing/contribution guide."
+            hubs={[
+              {
+                href: "/platforms",
+                title: "Platforms",
+                description: "Review Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer behind this category.",
+              },
+              {
+                href: "/updates",
+                title: "Weekly updates",
+                description: "Check the changelog-style feed for releases, deprecations, acquisitions, and other notable market changes.",
+              },
+              {
+                href: "/about",
+                title: "About and contribution rules",
+                description: "See sourcing standards, contribution rules, and project scope before adding or updating tracked tools.",
+              },
+            ]}
+          />
         </>
       )}
     </main>

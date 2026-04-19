@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { LogoBadge } from "@/components/logo-badge";
+import { RelatedHubs } from "@/components/related-hubs";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, platforms } from "@/lib/data";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
 
@@ -64,9 +66,24 @@ const mappingRows: Array<{ label: string; cells: [PlatformMapping, PlatformMappi
 ];
 
 export default function PlatformsPage() {
+  const pageUrl = `${siteUrl}/platforms/`;
+  const description = "Side-by-side comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer for enterprise AI tools.";
+  const jsonLd = [
+    buildBreadcrumbJsonLd([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: "AI Platforms & Model Hubs", url: pageUrl },
+    ]),
+    buildCollectionPageJsonLd({
+      name: "AI Platforms & Model Hubs",
+      url: pageUrl,
+      description,
+    }),
+  ];
+
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/platforms">
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+        <JsonLd data={jsonLd} />
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
           <p className="mt-3 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -142,6 +159,44 @@ export default function PlatformsPage() {
             </table>
           </div>
         </section>
+
+        <RelatedHubs
+          currentPath="/platforms"
+          title="Explore category hubs"
+          intro="Use the category hubs to drill from the cloud foundation layer into tracked agent, orchestration, governance, assistant, and update pages."
+          hubs={[
+            {
+              href: "/agents",
+              title: "AI Agent Frameworks",
+              description: "Compare managed cloud agent stacks with open source agent frameworks used in enterprise deployments.",
+            },
+            {
+              href: "/orchestration",
+              title: "AI Orchestration",
+              description: "Review workflow engines, pipeline builders, and automation layers connected to the platform layer.",
+            },
+            {
+              href: "/governance",
+              title: "AI Governance",
+              description: "Check guardrails, safety controls, and policy tooling mapped across the major cloud vendors.",
+            },
+            {
+              href: "/assistants",
+              title: "AI Assistants",
+              description: "Explore coding assistants, productivity copilots, and build-your-own assistant platforms.",
+            },
+            {
+              href: "/updates",
+              title: "Weekly updates",
+              description: "Follow releases, deprecations, acquisitions, and other market changes across the tracked landscape.",
+            },
+            {
+              href: "/about",
+              title: "About and contribution rules",
+              description: "Review sourcing standards, contribution rules, and project scope before editing tracked platform data.",
+            },
+          ]}
+        />
       </main>
     </HomeShell>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
+import { RelatedHubs } from "@/components/related-hubs";
 import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
@@ -15,10 +16,19 @@ export const metadata: Metadata = buildMetadata({
 
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
-  const jsonLd = buildBreadcrumbJsonLd([
-    { name: "Home", url: `${siteUrl}/` },
-    { name: "Weekly updates", url: `${siteUrl}/updates/` },
-  ]);
+  const pageUrl = `${siteUrl}/updates/`;
+  const jsonLd = [
+    buildBreadcrumbJsonLd([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: "Weekly updates", url: pageUrl },
+    ]),
+    buildCollectionPageJsonLd({
+      name: "Weekly updates",
+      url: pageUrl,
+      description:
+        "Changelog-style updates for enterprise AI tooling, including releases, deprecations, acquisitions, and notable market changes.",
+    }),
+  ];
 
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/updates">
@@ -51,6 +61,46 @@ export default function UpdatesPage() {
 
         <div className="mt-6">
           <UpdatesFeed updates={updates} />
+        </div>
+
+        <div className="mt-6">
+          <RelatedHubs
+            currentPath="/updates"
+            title="Continue into the tracked hubs"
+            intro="Use the updates feed as a change log, then pivot into the relevant comparison hubs or the contribution guide."
+            hubs={[
+              {
+                href: "/platforms",
+                title: "Platforms",
+                description: "Return to the cloud foundation layer to compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI.",
+              },
+              {
+                href: "/agents",
+                title: "AI Agent Frameworks",
+                description: "Jump into managed agent platforms and open source frameworks after reading agent-related updates.",
+              },
+              {
+                href: "/orchestration",
+                title: "AI Orchestration",
+                description: "Review workflow engines and automation layers after orchestration-related product changes.",
+              },
+              {
+                href: "/governance",
+                title: "AI Governance",
+                description: "Inspect guardrails and policy tooling after governance or safety updates land.",
+              },
+              {
+                href: "/assistants",
+                title: "AI Assistants",
+                description: "Move into coding, productivity, and build-your-own assistant comparisons after assistant-related updates.",
+              },
+              {
+                href: "/about",
+                title: "About and contribution rules",
+                description: "Review sourcing and contribution rules before proposing additions or corrections.",
+              },
+            ]}
+          />
         </div>
       </main>
     </HomeShell>

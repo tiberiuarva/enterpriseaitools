@@ -64,6 +64,6 @@ npm run smoke-test-live-site -- root https://www.enterpriseai.tools
 ## Notes
 
 - Some logos are still placeholders and should be replaced with sourced official assets where defensible.
-- Current Azure deploy blocker on PR #5: `Deploy to Azure Static Web Apps` fails with `No matching Static Web App was found or the api key was invalid.` This is an external Azure/GitHub secret wiring issue, not a local build/export failure.
+- Production remains an Azure Static Web Apps root-domain deploy. Use `DEPLOYMENT.md` for the launch + SEO verification checklist, then `CUSTOM_DOMAIN.md`, then rerun `npm run smoke-test-live-site -- root https://www.enterpriseai.tools`.
 - Custom-domain acceptance and DNS cutover remain external Azure/DNS tasks.
-- If the Azure secret/app wiring is updated, use `DEPLOYMENT.md` first, then `CUSTOM_DOMAIN.md`, then rerun `npm run smoke-test-live-site -- root https://www.enterpriseai.tools`.
+- A prior Azure deploy mismatch (`No matching Static Web App was found or the api key was invalid.`) is now historical context, not the current repo-side state; keep it only as an operator troubleshooting note.
