@@ -9,10 +9,6 @@ import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/l
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Tool, UpdateEntry } from "@/lib/types";
 
-function sortByName(tools: Tool[]) {
-  return [...tools].sort((a, b) => a.name.localeCompare(b.name));
-}
-
 type FilteredCategorySectionsProps = {
   tools: Tool[];
   updates: UpdateEntry[];
@@ -41,7 +37,7 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
     return next;
   }, [tools, typeFilter, licenseFilter, sortBy, cloudFilters]);
 
-  const vendorTools = useMemo(() => sortByName(effectiveTools.filter((tool) => tool.type === "vendor")), [effectiveTools]);
+  const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const visibleUpdates = updates.slice(0, 5);
