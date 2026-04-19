@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { hasAuditedImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import type { LogoKind } from "@/lib/types";
 
@@ -27,8 +28,6 @@ const imageSizes = {
 // Keep this list deliberately short and ASCII-only. It exists to trim obvious filler words,
 // not to normalize brand semantics across languages or strip tokens like "AI".
 const monogramStopwords = new Set(["the", "and", "for"]);
-const imageKinds = new Set<LogoKind>(["official-product", "official-vendor", "service-icon", "project-logo"]);
-
 function splitNameTokens(name: string) {
   return name.match(/[\p{L}\p{N}]+/gu) ?? [];
 }
@@ -59,7 +58,7 @@ function buildMonogram(name: string) {
 export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "", decorative = false }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const monogram = buildMonogram(name);
-  const imageLogoUrl = logoUrl && imageKinds.has(logoKind) ? logoUrl : undefined;
+  const imageLogoUrl = logoUrl && hasAuditedImageLogo(logoKind) ? logoUrl : undefined;
   const imageTitle =
     logoKind === "service-icon"
       ? `${name} service icon`

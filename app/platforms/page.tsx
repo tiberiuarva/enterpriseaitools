@@ -6,6 +6,7 @@ import { RelatedHubs } from "@/components/related-hubs";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, platforms } from "@/lib/data";
+import { hasAuditedImageLogo } from "@/lib/logo";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
@@ -99,28 +100,30 @@ export default function PlatformsPage() {
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
           {platforms.map((platform) => {
-            const hasAuditedImageLogo = platform.logoKind !== "fallback";
+            const showImageLogo = hasAuditedImageLogo(platform.logoKind);
 
             return (
-            <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-              <div className="flex items-center gap-3">
-                {hasAuditedImageLogo ? <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative /> : null}
-                <div>
-                  <h2 className="text-lg font-semibold">{platform.name}</h2>
-                  <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
+              <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+                <div className="flex min-w-0 items-center gap-3">
+                  {showImageLogo ? (
+                    <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
+                  ) : null}
+                  <div className="min-w-0">
+                    <h2 className="truncate text-lg font-semibold">{platform.name}</h2>
+                    <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
+                  </div>
                 </div>
-              </div>
-              <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
-              <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
-                <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
-              </div>
-              <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
-              </div>
-              <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
-                Docs
-              </a>
-            </article>
+                <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
+                <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
+                </div>
+                <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
+                </div>
+                <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                  Docs
+                </a>
+              </article>
             );
           })}
         </section>
