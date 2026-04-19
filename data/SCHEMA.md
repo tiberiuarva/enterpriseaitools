@@ -40,6 +40,10 @@ Top-level shape:
 | `status` | `active \| maintenance \| deprecated \| archived` | yes | Current lifecycle state |
 | `statusNote` | string | no | Explanation for non-active states |
 | `logoUrl` | string | no | Relative asset path under `/public/logos/` |
+| `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | What the asset actually is |
+| `logoSourceUrl` | string | no | Primary source URL for provenance |
+| `logoNotes` | string | no | Audit note for ambiguity or fallback rationale |
+| `logoReviewedAt` | string | no | ISO date when logo provenance was last checked |
 | `tags` | string[] | no | Search/filter helpers |
 
 ## `platforms.json`
@@ -74,6 +78,10 @@ Top-level shape:
 | `lastUpdated` | string | yes | ISO date |
 | `tagline` | string | yes | Homepage platforms strip line |
 | `logoUrl` | string | no | Relative asset path under `/public/logos/` |
+| `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | What the asset actually is |
+| `logoSourceUrl` | string | no | Primary source URL for provenance |
+| `logoNotes` | string | no | Audit note for ambiguity or fallback rationale |
+| `logoReviewedAt` | string | no | ISO date when logo provenance was last checked |
 | `categoryMapping` | object | yes | Mapping from platform subservice to site category links |
 
 ## `updates.json`

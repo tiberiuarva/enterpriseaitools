@@ -6,369 +6,451 @@
       "category": "agents",
       "vendor": "Microsoft",
       "logoUrl": "/logos/microsoft-foundry-agent-service.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "AWS Bedrock Agents",
       "category": "agents",
       "vendor": "AWS",
       "logoUrl": "/logos/aws-bedrock-agents.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Google Agent Builder + ADK",
       "category": "agents",
       "vendor": "Google",
       "logoUrl": "/logos/google-agent-builder-adk.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "CrewAI",
       "category": "agents",
       "vendor": "crewAI Inc.",
       "logoUrl": "/logos/crewai.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "AutoGen",
       "category": "agents",
       "vendor": "Microsoft",
       "logoUrl": "/logos/autogen.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "LlamaIndex",
       "category": "agents",
       "vendor": "LlamaIndex Inc.",
       "logoUrl": "/logos/llamaindex.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Semantic Kernel",
       "category": "agents",
       "vendor": "Microsoft",
       "logoUrl": "/logos/semantic-kernel.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "LangGraph",
       "category": "agents",
       "vendor": "LangChain",
       "logoUrl": "/logos/langgraph.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Mastra",
       "category": "agents",
       "vendor": "Mastra AI",
       "logoUrl": "/logos/mastra.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "OpenAI Agents SDK",
       "category": "agents",
       "vendor": "OpenAI",
       "logoUrl": "/logos/openai-agents-sdk.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Atomic Agents",
       "category": "agents",
       "vendor": "BrainBlend AI",
       "logoUrl": "/logos/atomic-agents.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "BeeAI Framework",
       "category": "agents",
       "vendor": "Linux Foundation",
       "logoUrl": "/logos/beeai-framework.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Azure Logic Apps",
       "category": "orchestration",
       "vendor": "Microsoft",
       "logoUrl": "/logos/azure-logic-apps.svg",
-      "status": "unclassified",
-      "sourceUrl": null,
-      "notes": ""
+      "status": "classified",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+      "notes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "AWS Step Functions",
       "category": "orchestration",
       "vendor": "AWS",
       "logoUrl": "/logos/aws-step-functions.svg",
-      "status": "unclassified",
-      "sourceUrl": null,
-      "notes": ""
+      "status": "classified",
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon from Icon-package_01302026.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Google Cloud Workflows",
       "category": "orchestration",
       "vendor": "Google",
       "logoUrl": "/logos/google-cloud-workflows.svg",
-      "status": "unclassified",
-      "sourceUrl": null,
-      "notes": ""
+      "status": "classified",
+      "sourceUrl": "https://cloud.google.com/icons",
+      "notes": "Official Google Cloud workflow icon from the Google Cloud icon library.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "n8n",
       "category": "orchestration",
       "vendor": "n8n",
       "logoUrl": "/logos/n8n.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "LangFlow",
       "category": "orchestration",
       "vendor": "LangFlow / DataStax",
       "logoUrl": "/logos/langflow.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Dify",
       "category": "orchestration",
       "vendor": "Dify",
       "logoUrl": "/logos/dify.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Flowise",
       "category": "orchestration",
       "vendor": "Flowise",
       "logoUrl": "/logos/flowise.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Haystack",
       "category": "orchestration",
       "vendor": "deepset",
       "logoUrl": "/logos/haystack.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Rivet",
       "category": "orchestration",
       "vendor": "Rivet",
       "logoUrl": "/logos/rivet.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Azure AI Content Safety",
       "category": "governance",
       "vendor": "Microsoft",
       "logoUrl": "/logos/azure-ai-content-safety.svg",
-      "status": "unclassified",
-      "sourceUrl": null,
-      "notes": ""
+      "status": "classified",
+      "sourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+      "notes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "AWS Bedrock Guardrails",
       "category": "governance",
       "vendor": "AWS",
       "logoUrl": "/logos/aws-bedrock-guardrails.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Google Model Armor",
       "category": "governance",
       "vendor": "Google",
       "logoUrl": "/logos/google-model-armor.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "NeMo Guardrails",
       "category": "governance",
       "vendor": "NVIDIA",
       "logoUrl": "/logos/nemo-guardrails.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Guardrails AI",
       "category": "governance",
       "vendor": "Guardrails AI",
       "logoUrl": "/logos/guardrails-ai.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "LLM Guard",
       "category": "governance",
       "vendor": "Palo Alto Networks",
       "logoUrl": "/logos/llm-guard.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Rebuff",
       "category": "governance",
       "vendor": "Palo Alto Networks",
       "logoUrl": "/logos/rebuff.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Lakera Guard",
       "category": "governance",
       "vendor": "Check Point",
       "logoUrl": "/logos/lakera-guard.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Arthur GenAI Engine",
       "category": "governance",
       "vendor": "Arthur",
       "logoUrl": "/logos/arthur-genai-engine.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "GitHub Copilot",
       "category": "assistants",
       "vendor": "GitHub/Microsoft",
       "logoUrl": "/logos/github-copilot.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Amazon Q Developer",
       "category": "assistants",
       "vendor": "AWS",
       "logoUrl": "/logos/amazon-q-developer.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Gemini Code Assist",
       "category": "assistants",
       "vendor": "Google",
       "logoUrl": "/logos/gemini-code-assist.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Cursor",
       "category": "assistants",
       "vendor": "Anysphere",
       "logoUrl": "/logos/cursor.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Windsurf",
       "category": "assistants",
       "vendor": "Cognition AI",
       "logoUrl": "/logos/windsurf.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Microsoft 365 Copilot",
       "category": "assistants",
       "vendor": "Microsoft",
       "logoUrl": "/logos/microsoft-365-copilot.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Gemini for Workspace",
       "category": "assistants",
       "vendor": "Google",
       "logoUrl": "/logos/gemini-for-workspace.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Amazon Q Business",
       "category": "assistants",
       "vendor": "AWS",
       "logoUrl": "/logos/amazon-q-business.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Copilot Studio",
       "category": "assistants",
       "vendor": "Microsoft",
       "logoUrl": "/logos/copilot-studio.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Amazon Q Apps",
       "category": "assistants",
       "vendor": "AWS",
       "logoUrl": "/logos/amazon-q-apps.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     },
     {
       "name": "Gemini Enterprise",
       "category": "assistants",
       "vendor": "Google",
       "logoUrl": "/logos/gemini-enterprise.svg",
-      "status": "unclassified",
+      "status": "classified",
       "sourceUrl": null,
-      "notes": ""
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-19"
     }
   ]
 }

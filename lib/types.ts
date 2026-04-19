@@ -30,6 +30,10 @@ export type Tool = {
   status: ToolStatus;
   statusNote?: string;
   logoUrl?: string;
+  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+  logoSourceUrl?: string;
+  logoNotes?: string;
+  logoReviewedAt?: string;
   tags?: string[];
 };
 
@@ -57,6 +61,10 @@ export type Platform = {
   lastUpdated: string;
   tagline: string;
   logoUrl?: string;
+  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+  logoSourceUrl?: string;
+  logoNotes?: string;
+  logoReviewedAt?: string;
   categoryMapping: {
     agents: PlatformMapping;
     orchestration: PlatformMapping;

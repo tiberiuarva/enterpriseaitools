@@ -6,6 +6,7 @@ type CategoryPreviewTool = {
   id: string;
   name: string;
   logoUrl?: string;
+  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
 };
 
 type CategoryCardProps = {
@@ -44,7 +45,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
             key={tool.id}
             className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
           >
-            <LogoBadge name={tool.name} logoUrl={tool.logoUrl} size="sm" />
+            <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" />
             <span>{tool.name}</span>
           </span>
         ))}
