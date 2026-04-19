@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import { JsonLd, buildOrganizationJsonLd, buildWebSiteJsonLd } from "@/components/json-ld";
 import { SkipLinkFocus } from "@/components/skip-link-focus";
 import { siteUrl } from "@/lib/metadata";
@@ -12,11 +12,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-jetbrains-mono",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -98,7 +93,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className={`dark h-full antialiased ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`dark h-full antialiased ${inter.variable}`}>
       <body className="min-h-full">
         <JsonLd data={jsonLd} />
         <SkipLinkFocus />
