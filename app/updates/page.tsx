@@ -7,12 +7,20 @@ import { lastUpdated, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { navItems, withBasePath } from "@/lib/site";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Weekly updates",
-  description:
-    "Changelog-style updates for enterprise AI tooling, including releases, deprecations, acquisitions, and notable market changes.",
-  path: "/updates",
-});
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: "Weekly updates",
+    description:
+      "Changelog-style updates for enterprise AI tooling, including releases, deprecations, acquisitions, and notable market changes.",
+    path: "/updates",
+  }),
+  alternates: {
+    ...buildMetadata({ path: "/updates" }).alternates,
+    types: {
+      "application/atom+xml": [{ title: "enterpriseai.tools weekly updates feed", url: `${siteUrl}/updates.xml` }],
+    },
+  },
+};
 
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
@@ -42,10 +50,21 @@ export default function UpdatesPage() {
         </section>
 
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Browse the core hubs</h2>
-          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Use the updates feed as a change log, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
-          </p>
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div>
+              <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Browse the core hubs</h2>
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+                Use the updates feed as a change log, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
+              </p>
+            </div>
+            <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-3 text-sm text-[var(--color-text-secondary)] lg:max-w-sm">
+              Prefer a machine-readable change feed?{" "}
+              <a href={`${siteUrl}/updates.xml`} className="font-medium text-[var(--color-primary)] hover:underline">
+                Subscribe to the Atom feed
+              </a>
+              .
+            </div>
+          </div>
           <div className="mt-4 flex flex-wrap gap-3">
             {hubLinks.map((item) => (
               <a

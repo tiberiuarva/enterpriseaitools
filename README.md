@@ -20,6 +20,11 @@ npm run check-custom-domain-readiness
 npm run publish-preview
 ```
 
+Generated SEO artifacts during build:
+- `public/robots.txt`
+- `public/sitemap.xml`
+- `public/updates.xml` (Atom feed for the updates stream)
+
 ## PR helper
 
 The repo includes a helper to create or update a PR for the current branch.

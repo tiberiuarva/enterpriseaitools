@@ -53,6 +53,7 @@ npm run smoke-test-live-site -- root https://www.enterpriseai.tools
 4. Verify crawlability/indexability on the production domain:
    - `https://www.enterpriseai.tools/robots.txt` returns HTTP 200
    - `https://www.enterpriseai.tools/sitemap.xml` returns HTTP 200
+   - `https://www.enterpriseai.tools/updates.xml` returns HTTP 200
    - canonical tags point at the intended production root domain
    - major hubs (`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/governance/`, `/assistants/`, `/updates/`, `/about/`) render expected titles/descriptions
 5. Validate structured data on the main indexed hubs (at minimum `WebSite`, `Organization`, `BreadcrumbList`, `CollectionPage`, and `ItemList` where applicable)

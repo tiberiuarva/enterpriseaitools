@@ -88,14 +88,16 @@ After production domain is live and stable:
 - [x] Strengthen updates-page internal links into hub pages
 
 ### P2
-- [ ] Review metadata copy for every page type against actual search intent
-- [ ] Add stronger related-links modules between category and platform hubs
-- [ ] Evaluate `CollectionPage` schema coverage across non-category hubs
-- [ ] Add production-domain SEO verification checklist to deployment docs
+- [x] Review metadata copy for every page type against actual search intent and encode the rules in `seo-route-inventory.json`
+- [x] Add stronger related-links modules between category and platform hubs
+- [x] Evaluate `CollectionPage` schema coverage across non-category hubs
+- [x] Add production-domain SEO verification checklist to deployment docs
+- [x] Validate metadata uniqueness/lengths and Atom feed discoverability in `npm run check-seo-readiness`
 
 ### P3
 - [ ] Add live performance/Core Web Vitals checks to the launch workflow
 - [ ] Track search-console metrics after production indexation starts
+- [x] Expose a machine-readable updates feed (`/updates.xml`) as part of the discoverability system
 - [ ] Expand content architecture beyond top-level hubs when there is source-backed material worth indexing
 
 ## Validation expectations
