@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
-import { LogoBadge } from "@/components/logo-badge";
+import { PlatformMark } from "@/components/platform-mark";
 import { RelatedHubs } from "@/components/related-hubs";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, platforms } from "@/lib/data";
-import { hasAuditedImageLogo } from "@/lib/logo";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
@@ -100,14 +99,10 @@ export default function PlatformsPage() {
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
           {platforms.map((platform) => {
-            const showImageLogo = hasAuditedImageLogo(platform.logoKind);
-
             return (
               <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
                 <div className="flex min-w-0 items-center gap-3">
-                  {showImageLogo ? (
-                    <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
-                  ) : null}
+                  <PlatformMark name={platform.name} vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
                   <div className="min-w-0">
                     <h2 className="truncate text-lg font-semibold">{platform.name}</h2>
                     <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
