@@ -45,7 +45,8 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const visibleUpdates = updates.slice(0, 5);
-  const showVendorSection = typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
+  const showVendorSection = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
+  const showVendorComparison = showVendorSection && Boolean(comparison) && cloudFilters.length === 0;
 
   return (
     <>
@@ -70,12 +71,14 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
           <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            {comparison
+            {showVendorComparison
               ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-              : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
+              : comparison
+                ? "Vendor tool cards shown below. Clear the cloud filter to restore the three-way vendor comparison table."
+                : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
           </p>
 
-          {comparison ? (
+          {showVendorComparison && comparison ? (
             <div className="mt-5">
               <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
             </div>

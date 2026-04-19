@@ -16,6 +16,7 @@
   --color-bg-hover: rgba(255, 255, 255, 0.04);
   --color-text-inverse: #ffffff;
   --color-bg-light: #f8fafc;
+  /* Keep in sync with the shared header h-16 wrapper in components/header.tsx. */
   --site-header-height: 4rem;
 }
 
