@@ -56,21 +56,13 @@ The Open Graph and Twitter Card image is `/social-preview.svg`. Twitter, LinkedI
 
 ---
 
-### C-3: Web fonts (Inter, JetBrains Mono) never loaded
-**File:** `app/globals.css:40–43`, `tailwind.config.ts:31–34`  
+### C-3: Web fonts were not loaded at audit time (resolved)
+**File:** `app/layout.tsx`, `app/globals.css`, `tailwind.config.ts`  
 **Effort:** Small (< 1 hour)
 
-The CSS references `Inter` and `JetBrains Mono` as font families, and both Tailwind and `@theme inline` register them as `--font-sans` and `--font-mono`. However, no `<link>` tags, `@font-face` rules, or `next/font` imports load these fonts from anywhere. Every user sees the system font fallback (`ui-sans-serif`, `system-ui`, etc.) instead of the intended Bloomberg-Terminal-inspired mono aesthetic.
+At audit time, the CSS referenced `Inter` and `JetBrains Mono` without loading either font. That issue was later addressed: `Inter` is now loaded via `next/font/google`, and the non-critical `JetBrains Mono` webfont was intentionally removed from the runtime path to reduce homepage preload weight. Monospace styling now uses a system fallback stack instead.
 
-**Impact when fixed:** Fonts render as designed; the data-dense, technical character of the site is preserved across all machines.
-
-**Fix:** Add `next/font/google` imports in `app/layout.tsx`:
-```tsx
-import { Inter, JetBrains_Mono } from "next/font/google";
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
-```
-Apply the CSS variables to `<html>` with `className` prop.
+**Current state:** Resolved. Keep `Inter` loaded through `next/font/google`; keep monospace UI/code styles on the explicit system mono stack unless a future change can prove a custom mono font does not hurt live performance.
 
 ---
 
