@@ -92,7 +92,8 @@ Short-term:
 - do not silently mix differently styled placeholder badges with official marks as if they are equivalent
 - render `logoKind: fallback` entries as text-first monogram badges instead of asset files, so reviewed fallbacks are visibly distinct from reviewed image assets
 - render `logoKind: service-icon` entries as image assets with an explicit service-icon affordance so they are not confused with product/project marks
-- require all rendered site records to carry an explicit `logoKind`; do not keep a silent undefined fallback path in the UI
+- require all rendered site records to carry explicit reviewed metadata: `logoKind` + `logoReviewedAt`; do not keep a silent undefined fallback path in the UI
+- omit `logoUrl` on `fallback` rows so the data does not carry dead image references that the UI will never render
 
 Medium-term:
 - reduce logo prominence on tool cards if the asset audit shows too many fallbacks/questionable marks

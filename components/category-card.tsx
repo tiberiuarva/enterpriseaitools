@@ -4,9 +4,7 @@ import { withBasePath } from "@/lib/site";
 
 import type { Tool } from "@/lib/types";
 
-type CategoryPreviewTool = Pick<Tool, "id" | "name" | "logoUrl" | "logoKind"> & {
-  logoKind: NonNullable<Tool["logoKind"]>;
-};
+type CategoryPreviewTool = Pick<Tool, "id" | "name" | "logoUrl" | "logoKind">;
 
 type CategoryCardProps = {
   href: string;

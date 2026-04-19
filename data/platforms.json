@@ -36,7 +36,6 @@
       "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
       "lastUpdated": "2026-04-11",
       "tagline": "Broadest model catalog plus agents, governance, and sovereign deployment options.",
-      "logoUrl": "/logos/microsoft-foundry.svg",
       "categoryMapping": {
         "agents": {
           "label": "Foundry Agent Service",

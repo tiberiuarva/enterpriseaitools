@@ -11,12 +11,6 @@ export type LogoKind = "official-product" | "official-vendor" | "service-icon" |
 
 export type LogoAuditMetadata =
   | {
-      logoKind?: undefined;
-      logoSourceUrl?: undefined;
-      logoNotes?: string;
-      logoReviewedAt?: undefined;
-    }
-  | {
       logoKind: "fallback";
       logoSourceUrl?: undefined;
       logoNotes?: string;

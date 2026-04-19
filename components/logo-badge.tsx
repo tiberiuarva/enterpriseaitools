@@ -97,7 +97,7 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
       className={`flex items-center justify-center border border-[color:rgba(59,130,246,0.18)] bg-[linear-gradient(180deg,rgba(59,130,246,0.10),rgba(59,130,246,0.18))] font-semibold tracking-[0.08em] text-[var(--color-primary)] ${classes}`}
       role={decorative ? undefined : "img"}
       aria-hidden={decorative || undefined}
-      aria-label={decorative ? undefined : `${name} logo`}
+      aria-label={decorative ? undefined : `${name} monogram badge`}
     >
       <span aria-hidden="true">{monogram}</span>
     </div>
