@@ -1,9 +1,12 @@
-import { Boxes, BriefcaseBusiness, Building2, type LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { LogoBadge } from "@/components/logo-badge";
+import { hasAuditedImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
+import { formatToolTypeLabel, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
 
 import type { Tool } from "@/lib/types";
 
-type CategoryPreviewTool = Pick<Tool, "id" | "name" | "type">;
+type CategoryPreviewTool = Pick<Tool, "id" | "name" | "type" | "logoUrl" | "logoKind">;
 
 type CategoryCardProps = {
   href: string;
@@ -13,24 +16,6 @@ type CategoryCardProps = {
   count: number;
   previewTools: CategoryPreviewTool[];
 };
-
-const previewToolIconWrapStyles: Record<Tool["type"], string> = {
-  vendor: "bg-[color:rgba(59,130,246,0.12)] text-[var(--color-primary)]",
-  opensource: "bg-[color:rgba(16,185,129,0.12)] text-[var(--color-success)]",
-  commercial: "bg-[color:rgba(6,182,212,0.12)] text-[var(--color-secondary)]",
-};
-
-const previewToolIcons = {
-  vendor: Building2,
-  opensource: Boxes,
-  commercial: BriefcaseBusiness,
-} as const;
-
-function formatTypeLabel(type: Tool["type"]) {
-  if (type === "opensource") return "Open source";
-  if (type === "vendor") return "Vendor";
-  return "Commercial";
-}
 
 export function CategoryCard({ href, icon: Icon, name, description, count, previewTools }: CategoryCardProps) {
   return (
@@ -55,23 +40,28 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
 
       <div className="mt-4 flex flex-wrap gap-2">
         {previewTools.map((tool) => {
-          const PreviewToolIcon = previewToolIcons[tool.type];
+          const PreviewToolIcon = toolTypeIcons[tool.type];
+          const showImageLogo = hasAuditedImageLogo(tool.logoKind) && Boolean(tool.logoUrl);
 
           return (
             <span
               key={tool.id}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
-              aria-label={`${tool.name} · ${formatTypeLabel(tool.type)}`}
+              aria-label={`${tool.name} · ${formatToolTypeLabel(tool.type)}`}
             >
-              <span
-                className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${previewToolIconWrapStyles[tool.type]}`}
-                aria-hidden="true"
-              >
-                <PreviewToolIcon size={11} />
-              </span>
+              {showImageLogo ? (
+                <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
+              ) : (
+                <span
+                  className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${toolTypeIconWrapStyles[tool.type]}`}
+                  aria-hidden="true"
+                >
+                  <PreviewToolIcon size={11} />
+                </span>
+              )}
               <span className="text-[var(--color-text-primary)]">{tool.name}</span>
-              <span aria-hidden="true" className="text-[var(--color-text-tertiary)]">•</span>
-              <span className="uppercase tracking-[0.08em] text-[10px] font-semibold">{formatTypeLabel(tool.type)}</span>
+              <span aria-hidden="true" className="text-[var(--color-text-secondary)]/60">•</span>
+              <span className="uppercase tracking-[0.08em] text-[10px] font-semibold">{formatToolTypeLabel(tool.type)}</span>
             </span>
           );
         })}

@@ -68,6 +68,8 @@ export default function Home() {
         id: tool.id,
         name: tool.name,
         type: tool.type,
+        logoUrl: tool.logoUrl,
+        logoKind: tool.logoKind,
       })),
     };
   });
