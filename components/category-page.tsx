@@ -1,5 +1,5 @@
 import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
-import { FilteredCategoryPageSections } from "@/components/filtered-category-page-sections";
+import { FilteredCategorySections } from "@/components/filtered-category-sections";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
@@ -75,7 +75,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
       <PlatformCategoryBar category={category} platforms={platforms} />
 
       {enableFiltering ? (
-        <FilteredCategoryPageSections tools={tools} updates={updates} comparison={comparison} />
+        <FilteredCategorySections tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">

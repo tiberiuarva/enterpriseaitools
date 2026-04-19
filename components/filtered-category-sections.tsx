@@ -3,11 +3,23 @@
 import { useMemo, useState } from "react";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
+import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
+import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Tool, UpdateEntry } from "@/lib/types";
 
-export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; updates: UpdateEntry[] }) {
+function sortByName(tools: Tool[]) {
+  return [...tools].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+type FilteredCategorySectionsProps = {
+  tools: Tool[];
+  updates: UpdateEntry[];
+  comparison?: CategoryComparison;
+};
+
+export function FilteredCategorySections({ tools, updates, comparison }: FilteredCategorySectionsProps) {
   const [typeFilter, setTypeFilter] = useState<CategoryFilterState["type"]>("all");
   const [cloudFilters, setCloudFilters] = useState<string[]>([]);
   const [licenseFilter, setLicenseFilter] = useState("all");
@@ -29,22 +41,53 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
     return next;
   }, [tools, typeFilter, licenseFilter, sortBy, cloudFilters]);
 
+  const vendorTools = useMemo(() => sortByName(effectiveTools.filter((tool) => tool.type === "vendor")), [effectiveTools]);
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
+  const visibleUpdates = updates.slice(0, 5);
+  const showVendorSection = typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
 
   return (
     <>
-      <FilterBar
-        typeFilter={typeFilter}
-        onTypeFilterChange={setTypeFilter}
-        cloudFilters={cloudFilters}
-        onCloudFiltersChange={setCloudFilters}
-        licenseFilter={licenseFilter}
-        onLicenseFilterChange={setLicenseFilter}
-        sortBy={sortBy}
-        onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
-        availableLicenses={availableLicenses}
-      />
+      <section
+        className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
+        style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
+      >
+        <FilterBar
+          typeFilter={typeFilter}
+          onTypeFilterChange={setTypeFilter}
+          cloudFilters={cloudFilters}
+          onCloudFiltersChange={setCloudFilters}
+          licenseFilter={licenseFilter}
+          onLicenseFilterChange={setLicenseFilter}
+          sortBy={sortBy}
+          onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
+          availableLicenses={availableLicenses}
+        />
+      </section>
+
+      {showVendorSection ? (
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+          <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            {comparison
+              ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+              : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
+          </p>
+
+          {comparison ? (
+            <div className="mt-5">
+              <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+            </div>
+          ) : null}
+
+          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {vendorTools.map((tool) => (
+              <ToolCard key={tool.id} tool={tool} compact />
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
         <h2 className="text-lg font-semibold">Filtered open source and third-party tools</h2>
@@ -56,7 +99,13 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
               <ToolCard key={tool.id} tool={tool} compact />
             ))}
           </div>
-        ) : null}
+        ) : (
+          <div className="mt-5">
+            <WarningBox variant="info">
+              No tools match the current filter combination. Adjust type, cloud, license, or sort to broaden the result set.
+            </WarningBox>
+          </div>
+        )}
       </section>
 
       {warningTools.length > 0 ? (
@@ -72,11 +121,11 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
         </section>
       ) : null}
 
-      {updates.length > 0 ? (
+      {visibleUpdates.length > 0 ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:360px]">
           <h2 className="text-lg font-semibold">Recent updates</h2>
           <div className="mt-4 space-y-4">
-            {updates.slice(0, 5).map((update) => (
+            {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.toolName}</div>
