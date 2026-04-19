@@ -1,7 +1,14 @@
 import type { Tool } from "@/lib/types";
 
+type JsonLdValue = Record<string, unknown> | Array<Record<string, unknown>>;
+
 type JsonLdProps = {
-  data: Record<string, unknown>;
+  data: JsonLdValue;
+};
+
+type BreadcrumbItem = {
+  name: string;
+  url: string;
 };
 
 export function JsonLd({ data }: JsonLdProps) {
@@ -38,5 +45,57 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
           : {}),
       },
     })),
+  };
+}
+
+export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildWebSiteJsonLd({
+  name,
+  url,
+  description,
+}: {
+  name: string;
+  url: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name,
+    url,
+    description,
+  };
+}
+
+export function buildOrganizationJsonLd({
+  name,
+  url,
+  description,
+  sameAs,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  sameAs?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name,
+    url,
+    description,
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
   };
 }

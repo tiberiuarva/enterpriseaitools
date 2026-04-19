@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { JsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, updates } from "@/lib/data";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteUrl } from "@/lib/metadata";
+import { navItems, withBasePath } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "Weekly updates",
@@ -12,14 +14,39 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function UpdatesPage() {
+  const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
+  const jsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", url: `${siteUrl}/` },
+    { name: "Weekly updates", url: `${siteUrl}/updates/` },
+  ]);
+
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/updates">
       <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <JsonLd data={jsonLd} />
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">Weekly updates</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
             Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.
           </p>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Browse the core hubs</h2>
+          <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            Use the updates feed as a change log, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            {hubLinks.map((item) => (
+              <a
+                key={item.href}
+                href={withBasePath(item.href)}
+                className="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </section>
 
         <div className="mt-6">

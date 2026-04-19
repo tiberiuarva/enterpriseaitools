@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/generate-seo-artifacts.mjs && next build",
     "lint": "eslint",
     "open-pr": "bash scripts/open-pr.sh",
     "publish-preview": "bash scripts/publish-preview.sh",

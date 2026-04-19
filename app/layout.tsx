@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
+import { JsonLd, buildOrganizationJsonLd, buildWebSiteJsonLd } from "@/components/json-ld";
 import { SkipLinkFocus } from "@/components/skip-link-focus";
 import { siteUrl } from "@/lib/metadata";
+import { githubRepoUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -66,9 +68,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const description =
+    "Enterprise AI tooling landscape tracker comparing cloud vendor services with open source and commercial alternatives.";
+  const jsonLd = [
+    buildWebSiteJsonLd({
+      name: "enterpriseai.tools",
+      url: siteUrl,
+      description,
+    }),
+    buildOrganizationJsonLd({
+      name: "Artix Cloud",
+      url: siteUrl,
+      description: "Maintainer of enterpriseai.tools.",
+      sameAs: [githubRepoUrl],
+    }),
+  ];
+
   return (
     <html lang="en" className="dark h-full antialiased">
       <body className="min-h-full">
+        <JsonLd data={jsonLd} />
         <SkipLinkFocus />
         <a href="#main-content" className="skip-link">
           Skip to main content

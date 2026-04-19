@@ -2,7 +2,7 @@
 
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useState } from "react";
-import { JsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { ToolCard } from "@/components/tool-card";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
@@ -45,7 +45,14 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const warnings = activeTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const comparison = assistantsComparisons[activeTab];
 
-  const jsonLd = buildToolListJsonLd(tools, title, description, `${siteUrl}/assistants/`);
+  const pageUrl = `${siteUrl}/assistants/`;
+  const jsonLd = [
+    buildBreadcrumbJsonLd([
+      { name: "Home", url: `${siteUrl}/` },
+      { name: title, url: pageUrl },
+    ]),
+    buildToolListJsonLd(tools, title, description, pageUrl),
+  ];
 
   return (
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
