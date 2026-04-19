@@ -36,7 +36,9 @@
         "a2a",
         "managed"
       ],
-      "logoUrl": "/logos/microsoft-foundry-agent-service.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "aws-bedrock-agents",
@@ -72,7 +74,9 @@
         "managed",
         "agentcore"
       ],
-      "logoUrl": "/logos/aws-bedrock-agents.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "google-agent-builder-adk",
@@ -107,7 +111,9 @@
         "vertex-ai",
         "adk"
       ],
-      "logoUrl": "/logos/google-agent-builder-adk.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "crewai",
@@ -133,7 +139,9 @@
         "opensource",
         "framework"
       ],
-      "logoUrl": "/logos/crewai.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "autogen",
@@ -161,7 +169,9 @@
         "microsoft",
         "maintenance"
       ],
-      "logoUrl": "/logos/autogen.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "llamaindex",
@@ -187,7 +197,9 @@
         "rag",
         "opensource"
       ],
-      "logoUrl": "/logos/llamaindex.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "semantic-kernel",
@@ -214,7 +226,9 @@
         "microsoft",
         "opensource"
       ],
-      "logoUrl": "/logos/semantic-kernel.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "langgraph",
@@ -241,7 +255,9 @@
         "graph",
         "license-caution"
       ],
-      "logoUrl": "/logos/langgraph.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "mastra",
@@ -267,7 +283,9 @@
         "opensource",
         "framework"
       ],
-      "logoUrl": "/logos/mastra.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "openai-agents-sdk",
@@ -294,7 +312,9 @@
         "openai",
         "sdk"
       ],
-      "logoUrl": "/logos/openai-agents-sdk.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "atomic-agents",
@@ -319,7 +339,9 @@
         "agents",
         "opensource"
       ],
-      "logoUrl": "/logos/atomic-agents.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "beeai-framework",
@@ -346,7 +368,9 @@
         "opensource",
         "linux-foundation"
       ],
-      "logoUrl": "/logos/beeai-framework.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "azure-logic-apps",
@@ -374,7 +398,11 @@
         "azure",
         "workflow"
       ],
-      "logoUrl": "/logos/azure-logic-apps.svg"
+      "logoUrl": "/logos/azure-logic-apps.svg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+      "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "aws-step-functions",
@@ -402,7 +430,11 @@
         "aws",
         "workflow"
       ],
-      "logoUrl": "/logos/aws-step-functions.svg"
+      "logoUrl": "/logos/aws-step-functions.svg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "google-cloud-workflows",
@@ -430,7 +462,11 @@
         "gcp",
         "workflow"
       ],
-      "logoUrl": "/logos/google-cloud-workflows.svg"
+      "logoUrl": "/logos/google-cloud-workflows.svg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://cloud.google.com/icons",
+      "logoNotes": "Official Google Cloud workflow icon from the Google Cloud icon library.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "n8n",
@@ -459,7 +495,9 @@
         "self-hosted",
         "source-available"
       ],
-      "logoUrl": "/logos/n8n.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "langflow",
@@ -486,7 +524,9 @@
         "visual",
         "self-hosted"
       ],
-      "logoUrl": "/logos/langflow.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "dify",
@@ -513,7 +553,9 @@
         "self-hosted",
         "license-caution"
       ],
-      "logoUrl": "/logos/dify.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "flowise",
@@ -539,7 +581,9 @@
         "low-code",
         "self-hosted"
       ],
-      "logoUrl": "/logos/flowise.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "haystack",
@@ -565,7 +609,9 @@
         "pipelines",
         "rag"
       ],
-      "logoUrl": "/logos/haystack.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "rivet",
@@ -592,7 +638,9 @@
         "visual",
         "maintenance"
       ],
-      "logoUrl": "/logos/rivet.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "azure-ai-content-safety",
@@ -620,7 +668,11 @@
         "azure",
         "safety"
       ],
-      "logoUrl": "/logos/azure-ai-content-safety.svg"
+      "logoUrl": "/logos/azure-ai-content-safety.svg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+      "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "aws-bedrock-guardrails",
@@ -648,7 +700,9 @@
         "aws",
         "guardrails"
       ],
-      "logoUrl": "/logos/aws-bedrock-guardrails.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "google-model-armor",
@@ -676,7 +730,9 @@
         "gcp",
         "safety"
       ],
-      "logoUrl": "/logos/google-model-armor.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "nemo-guardrails",
@@ -704,8 +760,10 @@
         "opensource",
         "nvidia"
       ],
-      "logoUrl": "/logos/nemo-guardrails.svg",
-      "version": "0.21.0"
+      "version": "0.21.0",
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "guardrails-ai",
@@ -730,8 +788,10 @@
         "validators",
         "opensource"
       ],
-      "logoUrl": "/logos/guardrails-ai.svg",
-      "version": "0.10.0"
+      "version": "0.10.0",
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "llm-guard",
@@ -757,8 +817,10 @@
         "opensource",
         "maintenance"
       ],
-      "logoUrl": "/logos/llm-guard.svg",
-      "version": "0.3.16"
+      "version": "0.3.16",
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "rebuff",
@@ -784,8 +846,10 @@
         "archived",
         "opensource"
       ],
-      "logoUrl": "/logos/rebuff.svg",
-      "version": "0.1.1"
+      "version": "0.1.1",
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "lakera-guard",
@@ -809,7 +873,9 @@
         "commercial",
         "security"
       ],
-      "logoUrl": "/logos/lakera-guard.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "arthur-genai-engine",
@@ -834,7 +900,9 @@
         "commercial",
         "arthur"
       ],
-      "logoUrl": "/logos/arthur-genai-engine.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "github-copilot",
@@ -860,7 +928,9 @@
         "coding",
         "copilot"
       ],
-      "logoUrl": "/logos/github-copilot.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "amazon-q-developer",
@@ -889,7 +959,9 @@
         "coding",
         "aws"
       ],
-      "logoUrl": "/logos/amazon-q-developer.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "gemini-code-assist",
@@ -918,7 +990,9 @@
         "coding",
         "gcp"
       ],
-      "logoUrl": "/logos/gemini-code-assist.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "cursor",
@@ -945,7 +1019,9 @@
         "coding",
         "cursor"
       ],
-      "logoUrl": "/logos/cursor.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "windsurf",
@@ -972,7 +1048,9 @@
         "coding",
         "windsurf"
       ],
-      "logoUrl": "/logos/windsurf.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "microsoft-365-copilot",
@@ -1001,7 +1079,9 @@
         "productivity",
         "microsoft"
       ],
-      "logoUrl": "/logos/microsoft-365-copilot.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "gemini-for-workspace",
@@ -1031,7 +1111,9 @@
         "productivity",
         "google"
       ],
-      "logoUrl": "/logos/gemini-for-workspace.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "amazon-q-business",
@@ -1060,7 +1142,9 @@
         "productivity",
         "aws"
       ],
-      "logoUrl": "/logos/amazon-q-business.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "copilot-studio",
@@ -1090,7 +1174,9 @@
         "build-your-own",
         "low-code"
       ],
-      "logoUrl": "/logos/copilot-studio.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "amazon-q-apps",
@@ -1120,7 +1206,9 @@
         "build-your-own",
         "no-code"
       ],
-      "logoUrl": "/logos/amazon-q-apps.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "gemini-enterprise",
@@ -1150,7 +1238,9 @@
         "build-your-own",
         "google"
       ],
-      "logoUrl": "/logos/gemini-enterprise.svg"
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     }
   ]
 }

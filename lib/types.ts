@@ -6,6 +6,23 @@ export type UpdateType = "release" | "acquisition" | "deprecation" | "rename" | 
 export type UpdateImpact = "high" | "medium" | "low";
 export type UpdateCategory = ToolCategory | "platforms";
 
+export type ISODateString = string; // Calendar ISO date only: YYYY-MM-DD.
+export type LogoKind = "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+
+export type LogoAuditMetadata =
+  | {
+      logoKind: "fallback";
+      logoSourceUrl?: undefined;
+      logoNotes?: string;
+      logoReviewedAt: ISODateString;
+    }
+  | {
+      logoKind: Exclude<LogoKind, "fallback">;
+      logoSourceUrl: string;
+      logoNotes?: string;
+      logoReviewedAt: ISODateString;
+    };
+
 export type Tool = {
   id: string;
   name: string;
@@ -31,7 +48,7 @@ export type Tool = {
   statusNote?: string;
   logoUrl?: string;
   tags?: string[];
-};
+} & LogoAuditMetadata;
 
 export type PlatformMapping = {
   label: string;
@@ -65,7 +82,7 @@ export type Platform = {
     assistantsProductivity: PlatformMapping;
     assistantsBuildYourOwn: PlatformMapping;
   };
-};
+} & LogoAuditMetadata;
 
 export type UpdateEntry = {
   id: string;

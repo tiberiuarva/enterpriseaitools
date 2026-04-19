@@ -36,7 +36,6 @@
       "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
       "lastUpdated": "2026-04-11",
       "tagline": "Broadest model catalog plus agents, governance, and sovereign deployment options.",
-      "logoUrl": "/logos/microsoft-foundry.svg",
       "categoryMapping": {
         "agents": {
           "label": "Foundry Agent Service",
@@ -62,7 +61,10 @@
           "label": "Copilot Studio",
           "href": "/assistants"
         }
-      }
+      },
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "aws-bedrock",
@@ -121,7 +123,11 @@
           "label": "Amazon Q Apps",
           "href": "/assistants"
         }
-      }
+      },
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
+      "logoReviewedAt": "2026-04-19"
     },
     {
       "id": "google-vertex-ai",
@@ -184,7 +190,11 @@
           "label": "Gemini Enterprise",
           "href": "/assistants"
         }
-      }
+      },
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://cloud.google.com/icons",
+      "logoNotes": "Official Google Cloud product/service icon from the Google Cloud icon library.",
+      "logoReviewedAt": "2026-04-19"
     }
   ]
 }
