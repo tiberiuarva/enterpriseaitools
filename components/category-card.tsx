@@ -37,15 +37,19 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
-        {previewTools.map((tool) => (
-          <span
-            key={tool.id}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
-          >
-            <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
-            <span>{tool.name}</span>
-          </span>
-        ))}
+        {previewTools.map((tool) => {
+          const hasAuditedImageLogo = tool.logoKind !== "fallback";
+
+          return (
+            <span
+              key={tool.id}
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
+            >
+              {hasAuditedImageLogo ? <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative /> : null}
+              <span>{tool.name}</span>
+            </span>
+          );
+        })}
       </div>
 
       <div className="mt-5 text-sm font-medium text-[var(--color-primary)]">View all →</div>

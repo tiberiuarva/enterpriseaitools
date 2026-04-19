@@ -98,10 +98,13 @@ export default function PlatformsPage() {
         />
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
-          {platforms.map((platform) => (
+          {platforms.map((platform) => {
+            const hasAuditedImageLogo = platform.logoKind !== "fallback";
+
+            return (
             <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex items-center gap-3">
-                <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
+                {hasAuditedImageLogo ? <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative /> : null}
                 <div>
                   <h2 className="text-lg font-semibold">{platform.name}</h2>
                   <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
@@ -118,7 +121,8 @@ export default function PlatformsPage() {
                 Docs
               </a>
             </article>
-          ))}
+            );
+          })}
         </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
