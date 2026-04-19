@@ -80,6 +80,10 @@ for (const { label, kind, items } of files) {
 }
 
 const inventoryKeys = new Set(inventory.map((item) => `${item.category}:${item.name}`));
+const siteKeys = new Set([
+  ...tools.map((item) => `${item.category}:${item.name}`),
+  ...platforms.map((item) => `platforms:${item.name}`),
+]);
 
 for (const item of tools) {
   const key = `${item.category}:${item.name}`;
@@ -94,6 +98,14 @@ for (const item of platforms) {
 
   if (!inventoryKeys.has(key)) {
     errors.push(`platforms:${item.id} is missing inventory row ${key}`);
+  }
+}
+
+for (const item of inventory) {
+  const key = `${item.category}:${item.name}`;
+
+  if (!siteKeys.has(key)) {
+    errors.push(`logo-inventory:${key} has no matching tools/platforms entry`);
   }
 }
 

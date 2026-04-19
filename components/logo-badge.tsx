@@ -6,7 +6,7 @@ import type { LogoKind } from "@/lib/types";
 type LogoBadgeProps = {
   name: string;
   logoUrl?: string;
-  logoKind?: LogoKind;
+  logoKind: LogoKind;
   size?: "sm" | "md" | "lg";
   className?: string;
 };
@@ -23,7 +23,10 @@ const imageSizes = {
   lg: 40,
 } as const;
 
+// Keep this list deliberately short and ASCII-only. It exists to trim obvious filler words,
+// not to normalize brand semantics across languages or strip tokens like "AI".
 const monogramStopwords = new Set(["the", "and", "for"]);
+const imageKinds = new Set<LogoKind>(["official-product", "official-vendor", "service-icon", "project-logo"]);
 
 function splitNameTokens(name: string) {
   return name.match(/[\p{L}\p{N}]+/gu) ?? [];
@@ -55,21 +58,35 @@ function buildMonogram(name: string) {
 export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const monogram = buildMonogram(name);
-  // Keep rendering audited non-fallback assets, but intentionally let legacy records with undefined logoKind
-  // keep using their current image until each entry is reviewed and explicitly classified.
-  const imageLogoUrl = logoUrl && logoKind !== "fallback" ? logoUrl : undefined;
+  const imageLogoUrl = logoUrl && imageKinds.has(logoKind) ? logoUrl : undefined;
+  const imageTitle =
+    logoKind === "service-icon"
+      ? `${name} service icon`
+      : logoKind === "official-vendor"
+        ? `${name} vendor logo`
+        : `${name} logo`;
 
   if (imageLogoUrl) {
+    const containerClasses =
+      logoKind === "service-icon"
+        ? `relative overflow-hidden border border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))] ${classes}`
+        : `overflow-hidden border border-[var(--color-border)] bg-white ${classes}`;
+
     return (
-      <div className={`overflow-hidden border border-[var(--color-border)] bg-white ${classes}`}>
+      <div className={containerClasses} title={imageTitle}>
         <Image
           src={withBasePath(imageLogoUrl)}
-          alt={`${name} logo`}
+          alt={imageTitle}
           width={imageSizes[size]}
           height={imageSizes[size]}
           loading="lazy"
           className="h-full w-full object-contain p-0.5"
         />
+        {logoKind === "service-icon" ? (
+          <span className="absolute right-0.5 top-0.5 rounded bg-[var(--color-primary)] px-1 py-[1px] text-[8px] font-semibold uppercase tracking-[0.08em] text-white">
+            svc
+          </span>
+        ) : null}
       </div>
     );
   }
@@ -78,7 +95,8 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
     <div
       className={`flex items-center justify-center border border-[color:rgba(59,130,246,0.18)] bg-[linear-gradient(180deg,rgba(59,130,246,0.10),rgba(59,130,246,0.18))] font-semibold tracking-[0.08em] text-[var(--color-primary)] ${classes}`}
       role="img"
-      aria-label={`${name} monogram`}
+      aria-label={`${name} fallback monogram`}
+      title={`${name} reviewed fallback monogram`}
     >
       <span aria-hidden="true">{monogram}</span>
     </div>

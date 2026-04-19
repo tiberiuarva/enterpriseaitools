@@ -8,7 +8,7 @@ type CategoryPreviewTool = {
   id: string;
   name: string;
   logoUrl?: string;
-  logoKind?: LogoKind;
+  logoKind: LogoKind;
 };
 
 type CategoryCardProps = {

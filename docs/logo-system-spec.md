@@ -67,7 +67,7 @@ Fallback rules:
 
 Default fallback for this project:
 - neutral badge container
-- first-letter monogram only when no reviewed asset exists
+- short text monogram derived from the reviewed display name when no reviewed asset exists
 - explicit metadata `logoKind: fallback`
 
 ### 5) Asset standards
@@ -91,7 +91,8 @@ Short-term:
 - style fallbacks so they are visibly intentional
 - do not silently mix differently styled placeholder badges with official marks as if they are equivalent
 - render `logoKind: fallback` entries as text-first monogram badges instead of asset files, so reviewed fallbacks are visibly distinct from reviewed image assets
-- allow legacy records with no `logoKind` yet to keep their current image treatment until the audit classifies them explicitly
+- render `logoKind: service-icon` entries as image assets with an explicit service-icon affordance so they are not confused with product/project marks
+- require all rendered site records to carry an explicit `logoKind`; do not keep a silent undefined fallback path in the UI
 
 Medium-term:
 - reduce logo prominence on tool cards if the asset audit shows too many fallbacks/questionable marks

@@ -113,6 +113,8 @@ Rules:
 - `logo-inventory.json` is the audit worksheet; `tools.json` and `platforms.json` are the render sources.
 - Keep the field naming differences explicit: inventory uses `sourceUrl` / `notes` / `reviewedAt`, while site data uses `logoSourceUrl` / `logoNotes` / `logoReviewedAt`.
 - If `status` is `classified`, populate `logoKind` and `reviewedAt`.
+- `logoKind: fallback` means the current checked-in asset is intentionally treated as a reviewed fallback, not that an official mark can never exist.
+- `logoKind: service-icon` means the rendered asset comes from a vendor service/icon library and should be presented distinctly from a product/project logo in UI treatment.
 
 ## `updates.json`
 
