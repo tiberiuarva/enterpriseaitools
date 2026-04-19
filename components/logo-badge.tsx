@@ -1,9 +1,7 @@
 import Image from "next/image";
 
 import { withBasePath } from "@/lib/site";
-import type { Platform, Tool } from "@/lib/types";
-
-type LogoKind = NonNullable<Tool["logoKind"] | Platform["logoKind"]>;
+import type { LogoKind } from "@/lib/types";
 
 type LogoBadgeProps = {
   name: string;
@@ -58,13 +56,13 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const monogram = buildMonogram(name);
   // Keep rendering audited non-fallback assets, but default unclassified legacy records to images until they are reviewed.
-  const shouldRenderImage = Boolean(logoUrl && logoKind !== "fallback");
+  const imageLogoUrl = logoUrl && logoKind !== "fallback" ? logoUrl : undefined;
 
-  if (shouldRenderImage) {
+  if (imageLogoUrl) {
     return (
       <div className={`overflow-hidden border border-[var(--color-border)] bg-white ${classes}`}>
         <Image
-          src={withBasePath(logoUrl!)}
+          src={withBasePath(imageLogoUrl)}
           alt={`${name} logo`}
           width={imageSizes[size]}
           height={imageSizes[size]}
@@ -79,7 +77,6 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
     <div
       className={`flex items-center justify-center border border-[color:rgba(59,130,246,0.18)] bg-[linear-gradient(180deg,rgba(59,130,246,0.10),rgba(59,130,246,0.18))] font-semibold tracking-[0.08em] text-[var(--color-primary)] ${classes}`}
       aria-label={`${name} fallback monogram`}
-      title={logoKind === "fallback" ? `${name} uses a reviewed fallback badge` : `${name} monogram`}
     >
       {monogram}
     </div>

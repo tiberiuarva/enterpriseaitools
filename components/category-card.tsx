@@ -2,11 +2,13 @@ import type { LucideIcon } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
 import { withBasePath } from "@/lib/site";
 
+import type { LogoKind } from "@/lib/types";
+
 type CategoryPreviewTool = {
   id: string;
   name: string;
   logoUrl?: string;
-  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+  logoKind?: LogoKind;
 };
 
 type CategoryCardProps = {

@@ -43,7 +43,7 @@ Top-level shape:
 | `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | What the asset actually is |
 | `logoSourceUrl` | string | no | Primary source URL for provenance |
 | `logoNotes` | string | no | Audit note for ambiguity or fallback rationale |
-| `logoReviewedAt` | string | no | ISO date when logo provenance was last checked |
+| `logoReviewedAt` | string | no* | ISO date when logo provenance was last checked. Required when `logoKind` is set. |
 | `tags` | string[] | no | Search/filter helpers |
 
 ## `platforms.json`
@@ -81,7 +81,7 @@ Top-level shape:
 | `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | What the asset actually is |
 | `logoSourceUrl` | string | no | Primary source URL for provenance |
 | `logoNotes` | string | no | Audit note for ambiguity or fallback rationale |
-| `logoReviewedAt` | string | no | ISO date when logo provenance was last checked |
+| `logoReviewedAt` | string | no* | ISO date when logo provenance was last checked. Required when `logoKind` is set. |
 | `categoryMapping` | object | yes | Mapping from platform subservice to site category links |
 
 ## `logo-inventory.json`

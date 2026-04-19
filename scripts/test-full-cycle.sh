@@ -57,6 +57,7 @@ cat > "$PR_BODY_FILE" <<EOF
 - keep automation path reviewable and scriptable
 
 ## Validation
+- [x] npm run check-logo-provenance
 - [x] npm run lint
 - [x] npm run build
 - [x] public preview returns HTTP 200
@@ -65,6 +66,9 @@ cat > "$PR_BODY_FILE" <<EOF
 ## Notes
 - This script runs in dry-run mode by default and does not create or merge a PR.
 EOF
+
+echo "==> npm run check-logo-provenance"
+npm run check-logo-provenance
 
 echo "==> npm run lint"
 npm run lint

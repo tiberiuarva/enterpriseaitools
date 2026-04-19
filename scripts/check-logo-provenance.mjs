@@ -12,26 +12,43 @@ function isIsoDate(value) {
 }
 
 const files = [
-  { label: "tools", items: readJson("data/tools.json").tools },
-  { label: "platforms", items: readJson("data/platforms.json").platforms },
+  { label: "tools", kind: "site-data", items: readJson("data/tools.json").tools },
+  { label: "platforms", kind: "site-data", items: readJson("data/platforms.json").platforms },
+  { label: "logo-inventory", kind: "inventory", items: readJson("data/logo-inventory.json").items },
 ];
 
 const errors = [];
 
-for (const { label, items } of files) {
+for (const { label, kind, items } of files) {
   for (const item of items) {
-    const prefix = `${label}:${item.id}`;
+    const itemId = item.id ?? item.name;
+    const prefix = `${label}:${itemId}`;
+    const reviewedAt = kind === "inventory" ? item.reviewedAt : item.logoReviewedAt;
+    const sourceUrl = kind === "inventory" ? item.sourceUrl : item.logoSourceUrl;
 
-    if (item.logoKind && !item.logoReviewedAt) {
-      errors.push(`${prefix} has logoKind=${item.logoKind} without logoReviewedAt`);
+    if (item.logoKind && !reviewedAt) {
+      errors.push(`${prefix} has logoKind=${item.logoKind} without reviewedAt metadata`);
     }
 
-    if (item.logoReviewedAt && !isIsoDate(item.logoReviewedAt)) {
-      errors.push(`${prefix} has non-ISO logoReviewedAt=${item.logoReviewedAt}`);
+    if (reviewedAt && !isIsoDate(reviewedAt)) {
+      errors.push(`${prefix} has non-ISO reviewedAt=${reviewedAt}`);
     }
 
-    if (item.logoSourceUrl && typeof item.logoSourceUrl !== "string") {
-      errors.push(`${prefix} has non-string logoSourceUrl`);
+    if (kind === "inventory" && item.status === "classified") {
+      if (!item.logoKind) {
+        errors.push(`${prefix} is classified without logoKind`);
+      }
+      if (!reviewedAt) {
+        errors.push(`${prefix} is classified without reviewedAt`);
+      }
+    }
+
+    if (item.logoKind === "fallback" && sourceUrl) {
+      errors.push(`${prefix} is fallback but still has sourceUrl=${sourceUrl}`);
+    }
+
+    if (sourceUrl !== undefined && sourceUrl !== null && typeof sourceUrl !== "string") {
+      errors.push(`${prefix} has non-string sourceUrl`);
     }
   }
 }

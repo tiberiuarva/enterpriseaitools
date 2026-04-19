@@ -7,6 +7,7 @@ export type UpdateImpact = "high" | "medium" | "low";
 export type UpdateCategory = ToolCategory | "platforms";
 
 export type ISODateString = string; // Expected format: YYYY-MM-DD.
+export type LogoKind = "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
 
 export type Tool = {
   id: string;
@@ -32,7 +33,7 @@ export type Tool = {
   status: ToolStatus;
   statusNote?: string;
   logoUrl?: string;
-  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+  logoKind?: LogoKind;
   logoSourceUrl?: string;
   logoNotes?: string;
   logoReviewedAt?: ISODateString;
@@ -63,7 +64,7 @@ export type Platform = {
   lastUpdated: string;
   tagline: string;
   logoUrl?: string;
-  logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
+  logoKind?: LogoKind;
   logoSourceUrl?: string;
   logoNotes?: string;
   logoReviewedAt?: ISODateString;
