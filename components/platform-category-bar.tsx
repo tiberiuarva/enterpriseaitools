@@ -19,7 +19,7 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-text-secondary)]">Platforms</div>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">Compare the cloud foundation layer behind this {categoryLabel} view.</p>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">Compare the cloud foundation layer behind this {categoryLabel} stack.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {platforms.map((platform) => (
