@@ -1,5 +1,5 @@
 import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
-import { FilteredCategorySections } from "@/components/filtered-category-sections";
+import { FilteredCategoryPageSections } from "@/components/filtered-category-page-sections";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
@@ -74,31 +74,31 @@ export function CategoryPage({ category, title, description, iconName, tools, up
 
       <PlatformCategoryBar category={category} platforms={platforms} />
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
-        <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
-        <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-          {comparison
-            ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-            : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
-        </p>
-
-        {comparison ? (
-          <div className="mt-5">
-            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
-          </div>
-        ) : null}
-
-        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {vendorTools.map((tool) => (
-            <ToolCard key={tool.id} tool={tool} compact />
-          ))}
-        </div>
-      </section>
-
       {enableFiltering ? (
-        <FilteredCategorySections tools={tools} updates={updates} />
+        <FilteredCategoryPageSections tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
+          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+            <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+            <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+              {comparison
+                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+                : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
+            </p>
+
+            {comparison ? (
+              <div className="mt-5">
+                <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+              </div>
+            ) : null}
+
+            <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {vendorTools.map((tool) => (
+                <ToolCard key={tool.id} tool={tool} compact />
+              ))}
+            </div>
+          </section>
+
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
