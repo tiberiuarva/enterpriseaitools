@@ -1,5 +1,4 @@
 import { Check, ExternalLink, Globe, Star } from "lucide-react";
-import { LogoBadge } from "@/components/logo-badge";
 import { withBasePath } from "@/lib/site";
 import type { Tool } from "@/lib/types";
 
@@ -30,17 +29,13 @@ function formatTypeLabel(type: Tool["type"]) {
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
   const docsHref = tool.docsUrl ?? tool.websiteUrl;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
-  const hasAuditedImageLogo = tool.logoKind !== "fallback";
 
   return (
     <article className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4 [content-visibility:auto] [contain-intrinsic-size:260px]" : "p-6 [content-visibility:auto] [contain-intrinsic-size:360px]"}`}>
       <div className="flex items-start justify-between gap-4">
-        <div className="flex min-w-0 items-center gap-3">
-          {hasAuditedImageLogo ? <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" decorative /> : null}
-          <div className="min-w-0">
-            <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
-            {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
-          </div>
+        <div className="min-w-0">
+          <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
+          {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
         </div>
         <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${typeBadgeStyles[tool.type]}`}>
           {formatTypeLabel(tool.type)}
