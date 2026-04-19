@@ -1,8 +1,15 @@
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
+const CATEGORY_CONTEXT_LABELS: Record<ToolCategory, string> = {
+  agents: "agent framework",
+  orchestration: "orchestration",
+  governance: "governance",
+  assistants: "assistant tooling",
+};
+
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
-  const categoryLabel = category === "assistants" ? "assistant tooling" : category;
+  const categoryLabel = CATEGORY_CONTEXT_LABELS[category];
 
   return (
     <nav
