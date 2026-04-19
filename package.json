@@ -8,6 +8,7 @@
     "lint": "eslint",
     "check-seo-readiness": "node scripts/check-seo-readiness.mjs",
     "check-live-performance": "node scripts/check-live-performance.mjs",
+    "check-logo-provenance": "node scripts/check-logo-provenance.mjs",
     "open-pr": "bash scripts/open-pr.sh",
     "publish-preview": "bash scripts/publish-preview.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",

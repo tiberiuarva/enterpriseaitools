@@ -6,6 +6,8 @@ export type UpdateType = "release" | "acquisition" | "deprecation" | "rename" | 
 export type UpdateImpact = "high" | "medium" | "low";
 export type UpdateCategory = ToolCategory | "platforms";
 
+export type ISODateString = string; // Expected format: YYYY-MM-DD.
+
 export type Tool = {
   id: string;
   name: string;
@@ -33,7 +35,7 @@ export type Tool = {
   logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
   logoSourceUrl?: string;
   logoNotes?: string;
-  logoReviewedAt?: string;
+  logoReviewedAt?: ISODateString;
   tags?: string[];
 };
 
@@ -64,7 +66,7 @@ export type Platform = {
   logoKind?: "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
   logoSourceUrl?: string;
   logoNotes?: string;
-  logoReviewedAt?: string;
+  logoReviewedAt?: ISODateString;
   categoryMapping: {
     agents: PlatformMapping;
     orchestration: PlatformMapping;

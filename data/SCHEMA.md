@@ -84,6 +84,36 @@ Top-level shape:
 | `logoReviewedAt` | string | no | ISO date when logo provenance was last checked |
 | `categoryMapping` | object | yes | Mapping from platform subservice to site category links |
 
+## `logo-inventory.json`
+
+Top-level shape:
+
+```json
+{
+  "generatedAt": "2026-04-19T12:00:00.000Z",
+  "items": []
+}
+```
+
+### Logo inventory item fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `name` | string | yes | Display name as currently used in the site data |
+| `category` | `agents \| orchestration \| governance \| assistants \| platforms` | yes | Audit grouping only |
+| `vendor` | string | no | Parent company or maintainer |
+| `logoUrl` | string | no | Relative asset path under `/public/logos/` |
+| `status` | `classified \| unclassified` | yes | Whether provenance was reviewed yet |
+| `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | Mirrors the site data meaning |
+| `sourceUrl` | string \| null | yes | Primary source used during audit; `null` when the item is intentionally still a fallback |
+| `notes` | string | no | Audit note, ambiguity, or fallback rationale |
+| `reviewedAt` | string | no | ISO date when provenance was last checked |
+
+Rules:
+- `logo-inventory.json` is the audit worksheet; `tools.json` and `platforms.json` are the render sources.
+- Keep the field naming differences explicit: inventory uses `sourceUrl` / `notes` / `reviewedAt`, while site data uses `logoSourceUrl` / `logoNotes` / `logoReviewedAt`.
+- If `status` is `classified`, populate `logoKind` and `reviewedAt`.
+
 ## `updates.json`
 
 Top-level shape:

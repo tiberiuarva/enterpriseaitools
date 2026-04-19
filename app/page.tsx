@@ -64,7 +64,12 @@ export default function Home() {
     return {
       ...meta,
       count: categoryTools.length,
-      previewTools: categoryTools.slice(0, 3).map((tool) => ({ id: tool.id, name: tool.name, logoUrl: tool.logoUrl })),
+      previewTools: categoryTools.slice(0, 3).map((tool) => ({
+        id: tool.id,
+        name: tool.name,
+        logoUrl: tool.logoUrl,
+        logoKind: tool.logoKind,
+      })),
     };
   });
 

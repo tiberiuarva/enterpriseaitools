@@ -26,11 +26,24 @@ const imageSizes = {
 } as const;
 
 function buildMonogram(name: string) {
-  const tokens = name
+  const rawTokens = name
     .split(/[^A-Za-z0-9]+/)
     .map((token) => token.trim())
-    .filter(Boolean)
-    .filter((token) => !["ai", "the", "and", "for"].includes(token.toLowerCase()));
+    .filter(Boolean);
+
+  const tokens = rawTokens.filter((token, index) => {
+    const lower = token.toLowerCase();
+
+    if (["the", "and", "for"].includes(lower)) {
+      return false;
+    }
+
+    if (lower === "ai" && rawTokens.length > 2 && index !== 0) {
+      return false;
+    }
+
+    return true;
+  });
 
   if (tokens.length === 0) return "?";
   if (tokens.length === 1) return tokens[0].slice(0, 2).toUpperCase();
@@ -44,6 +57,7 @@ function buildMonogram(name: string) {
 export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const monogram = buildMonogram(name);
+  // Keep rendering audited non-fallback assets, but default unclassified legacy records to images until they are reviewed.
   const shouldRenderImage = Boolean(logoUrl && logoKind !== "fallback");
 
   if (shouldRenderImage) {
