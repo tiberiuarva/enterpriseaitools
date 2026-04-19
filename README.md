@@ -15,6 +15,7 @@ npm run dev
 npm run lint
 npm run build
 npm run check-seo-readiness
+npm run check-live-performance -- https://n8n-65532.westeurope.cloudapp.azure.com/enterpriseai-tools
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
 npm run publish-preview
@@ -48,10 +49,10 @@ This repo no longer treats `/enterpriseai-tools` on the test VM as a deployment 
 ### Azure Static Web Apps
 
 Checked-in workflow:
-- `.github/workflows/azure-static-web-apps-blue-stone-07d50c303.yml`
+- `.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml`
 
 Expected GitHub secret:
-- `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- `AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403`
 
 Expected build shape:
 - static export uploaded from `out/`
@@ -63,6 +64,7 @@ Expected build shape:
 ```bash
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
+npm run check-live-performance -- https://www.enterpriseai.tools
 npm run publish-preview
 npm run smoke-test-live-site -- root https://www.enterpriseai.tools
 ```

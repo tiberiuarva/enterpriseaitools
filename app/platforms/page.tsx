@@ -97,7 +97,7 @@ export default function PlatformsPage() {
           rows={comparisonRows}
         />
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
           {platforms.map((platform) => (
             <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex items-center gap-3">
@@ -121,7 +121,7 @@ export default function PlatformsPage() {
           ))}
         </section>
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
           <WarningBox>
             Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
           </WarningBox>
@@ -130,7 +130,7 @@ export default function PlatformsPage() {
           </WarningBox>
         </section>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
           <h2 className="text-lg font-semibold">How platforms connect to categories</h2>
           <div className="mt-4 overflow-x-auto">
             <table className="min-w-full text-sm">

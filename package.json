@@ -7,6 +7,7 @@
     "build": "node scripts/generate-seo-artifacts.mjs && next build",
     "lint": "eslint",
     "check-seo-readiness": "node scripts/check-seo-readiness.mjs",
+    "check-live-performance": "node scripts/check-live-performance.mjs",
     "open-pr": "bash scripts/open-pr.sh",
     "publish-preview": "bash scripts/publish-preview.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",
@@ -15,8 +16,6 @@
     "smoke-test-live-site": "bash scripts/smoke-test-live-site.sh"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
     "lucide-react": "^0.511.0",
     "next": "^16.2.4",
     "react": "19.2.4",
@@ -30,6 +29,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "^16.2.4",
+    "lighthouse": "^13.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

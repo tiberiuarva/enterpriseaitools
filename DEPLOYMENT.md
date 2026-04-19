@@ -11,10 +11,10 @@ Production deploy target:
 The checked-in workflow builds the static export and uploads the prebuilt `out/` directory.
 
 Workflow file:
-- `.github/workflows/azure-static-web-apps-blue-stone-07d50c303.yml`
+- `.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml`
 
 Required GitHub secret:
-- `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- `AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403`
 
 Production deploy expectations:
 - root-domain deployment only
@@ -27,6 +27,7 @@ Repo-local checks:
 
 ```bash
 npm run check-seo-readiness
+npm run check-live-performance -- https://www.enterpriseai.tools
 npm run check-deploy-readiness
 npm run check-custom-domain-readiness
 npm run smoke-test-live-site -- root https://www.enterpriseai.tools
@@ -57,7 +58,14 @@ npm run smoke-test-live-site -- root https://www.enterpriseai.tools
    - canonical tags point at the intended production root domain
    - major hubs (`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/governance/`, `/assistants/`, `/updates/`, `/about/`) render expected titles/descriptions
 5. Validate structured data on the main indexed hubs (at minimum `WebSite`, `Organization`, `BreadcrumbList`, `CollectionPage`, and `ItemList` where applicable)
-6. In Google Search Console / Bing Webmaster Tools after the domain is stable:
+6. Run the live Lighthouse gate against the deployed hostname and review any regressions before calling launch complete:
+
+```bash
+npm run check-live-performance -- https://www.enterpriseai.tools
+```
+
+Default coverage is `/`, `/platforms`, and `/agents`; pass explicit routes if another hub needs checking.
+7. In Google Search Console / Bing Webmaster Tools after the domain is stable:
    - verify the production property
    - submit `https://www.enterpriseai.tools/sitemap.xml`
    - inspect the core hub URLs for indexability

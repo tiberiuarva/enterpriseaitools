@@ -95,10 +95,13 @@ After production domain is live and stable:
 - [x] Validate metadata uniqueness/lengths and Atom feed discoverability in `npm run check-seo-readiness`
 
 ### P3
-- [ ] Add live performance/Core Web Vitals checks to the launch workflow
+- [x] Add live performance/Core Web Vitals checks to the launch workflow
 - [ ] Track search-console metrics after production indexation starts
 - [x] Expose a machine-readable updates feed (`/updates.xml`) as part of the discoverability system
 - [ ] Expand content architecture beyond top-level hubs when there is source-backed material worth indexing
+
+Implementation note:
+- `npm run check-live-performance -- <base-url> [route ...]` now runs Lighthouse against a live deployed/preview hostname and fails on score regressions (default routes: `/`, `/platforms`, `/agents`).
 
 ## Validation expectations
 For SEO-related PRs, run at minimum:
