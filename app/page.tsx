@@ -67,6 +67,7 @@ export default function Home() {
       previewTools: categoryTools.slice(0, 3).map((tool) => ({
         id: tool.id,
         name: tool.name,
+        type: tool.type,
       })),
     };
   });
