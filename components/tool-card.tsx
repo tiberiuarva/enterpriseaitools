@@ -1,4 +1,4 @@
-import { Check, ExternalLink, Globe, Star } from "lucide-react";
+import { Boxes, BriefcaseBusiness, Building2, Check, ExternalLink, Globe, Star } from "lucide-react";
 import { withBasePath } from "@/lib/site";
 import type { Tool } from "@/lib/types";
 
@@ -13,6 +13,18 @@ const typeBadgeStyles: Record<Tool["type"], string> = {
   opensource: "bg-[color:rgba(16,185,129,0.14)] text-[var(--color-success)]",
   commercial: "bg-[color:rgba(6,182,212,0.14)] text-[var(--color-secondary)]",
 };
+
+const typeIconWrapStyles: Record<Tool["type"], string> = {
+  vendor: "bg-[color:rgba(59,130,246,0.12)] text-[var(--color-primary)]",
+  opensource: "bg-[color:rgba(16,185,129,0.12)] text-[var(--color-success)]",
+  commercial: "bg-[color:rgba(6,182,212,0.12)] text-[var(--color-secondary)]",
+};
+
+const typeIcons = {
+  vendor: Building2,
+  opensource: Boxes,
+  commercial: BriefcaseBusiness,
+} as const;
 
 function formatCloudName(cloud: string) {
   if (cloud === "gcp") return "GCP";
@@ -29,13 +41,24 @@ function formatTypeLabel(type: Tool["type"]) {
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
   const docsHref = tool.docsUrl ?? tool.websiteUrl;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
+  const TypeIcon = typeIcons[tool.type];
 
   return (
-    <article className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4 [content-visibility:auto] [contain-intrinsic-size:260px]" : "p-6 [content-visibility:auto] [contain-intrinsic-size:360px]"}`}>
+    <article
+      className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4 [content-visibility:auto] [contain-intrinsic-size:260px]" : "p-6 [content-visibility:auto] [contain-intrinsic-size:360px]"}`}
+    >
       <div className="flex items-start justify-between gap-4">
-        <div className="min-w-0">
-          <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
-          {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
+        <div className="flex min-w-0 items-start gap-3">
+          <div
+            className={`flex shrink-0 items-center justify-center rounded-xl ${compact ? "h-10 w-10" : "h-12 w-12"} ${typeIconWrapStyles[tool.type]}`}
+            aria-hidden="true"
+          >
+            <TypeIcon size={compact ? 18 : 20} />
+          </div>
+          <div className="min-w-0">
+            <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
+            {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
+          </div>
         </div>
         <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${typeBadgeStyles[tool.type]}`}>
           {formatTypeLabel(tool.type)}
@@ -81,15 +104,14 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
 
       {tool.status !== "active" ? (
         <div className="mt-3 rounded-md border border-[var(--color-warning)]/30 bg-[var(--color-warning)]/10 px-2.5 py-1.5 text-xs font-medium text-[var(--color-warning)]">
-          {tool.status === "archived" ? "Archived" : tool.status === "maintenance" ? "Maintenance mode" : "Deprecated"}{tool.statusNote ? ` \u2014 ${tool.statusNote}` : ""}
+          {tool.status === "archived" ? "Archived" : tool.status === "maintenance" ? "Maintenance mode" : "Deprecated"}
+          {tool.statusNote ? ` — ${tool.statusNote}` : ""}
         </div>
       ) : null}
 
-      <div className={`mt-4 flex items-center justify-between gap-3`}>
+      <div className="mt-4 flex items-center justify-between gap-3">
         {tool.version ? (
-          <code className="rounded-md bg-[var(--color-bg-surface)] px-2 py-1 text-[13px] text-[var(--color-text-primary)]">
-            {tool.version}
-          </code>
+          <code className="rounded-md bg-[var(--color-bg-surface)] px-2 py-1 text-[13px] text-[var(--color-text-primary)]">{tool.version}</code>
         ) : (
           <span className="text-xs text-[var(--color-text-secondary)]">No version listed</span>
         )}
