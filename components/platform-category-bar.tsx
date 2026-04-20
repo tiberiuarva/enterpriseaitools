@@ -3,13 +3,6 @@ import type { Platform, ToolCategory } from "@/lib/types";
 
 type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
 
-const CATEGORY_CONTEXT_LABELS: Record<ToolCategory, string> = {
-  agents: "agent frameworks",
-  orchestration: "orchestration stacks",
-  governance: "governance tooling",
-  assistants: "assistant tooling",
-};
-
 function getAssistantContextLabels(platform: Platform) {
   return [
     platform.categoryMapping.assistantsCoding.label,
@@ -27,8 +20,6 @@ function getPlatformHref(platform: Platform) {
 }
 
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
-  const categoryLabel = CATEGORY_CONTEXT_LABELS[category];
-
   return (
     <nav
       aria-label="Platform coverage"
@@ -37,33 +28,34 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div>
           <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-text-secondary)]">Platforms</div>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">Compare cloud platforms covering this {categoryLabel} view.</p>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">Cloud platforms covering this category.</p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <ul className="flex flex-wrap gap-2" role="list">
           {platforms.map((platform) => (
-            <a
-              key={platform.id}
-              href={getPlatformHref(platform)}
-              className="inline-flex min-w-0 flex-1 basis-56 flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] md:min-w-[12rem] md:flex-none"
-            >
-              <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
-              {category === "assistants" ? (
-                <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)]">
-                  {getAssistantContextLabels(platform).map((label) => (
-                    <span
-                      key={label}
-                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5"
-                    >
-                      {label}
-                    </span>
-                  ))}
-                </span>
-              ) : (
-                <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
-              )}
-            </a>
+            <li key={platform.id} className="basis-56 md:min-w-[12rem] md:flex-none">
+              <a
+                href={getPlatformHref(platform)}
+                className="inline-flex min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              >
+                <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
+                {category === "assistants" ? (
+                  <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)]">
+                    {getAssistantContextLabels(platform).map((label) => (
+                      <span
+                        key={label}
+                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5"
+                      >
+                        {label}
+                      </span>
+                    ))}
+                  </span>
+                ) : (
+                  <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
+                )}
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </nav>
   );
