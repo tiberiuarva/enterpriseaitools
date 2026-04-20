@@ -72,7 +72,9 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
               ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
               : comparison
                 ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
-                : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
+                : hasActiveNarrowingFilter
+                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
+                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
           </p>
 
           {showVendorComparison && comparison ? (
