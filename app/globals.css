@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  --site-header-height: 4rem;
   --color-bg-primary: #0a1628;
   --color-bg-surface: #111827;
   --color-bg-card: #1e293b;
