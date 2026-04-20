@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
-import { VendorComparisonTable } from "@/components/vendor-comparison-table";
+import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
 import type { CategoryComparison } from "@/lib/category-comparisons";
@@ -70,41 +70,22 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
       </section>
 
       {showVendorSection ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
-          <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
-          <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-[var(--color-text-secondary)]">
-              {showVendorComparison
-                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-                : comparison
-                  ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
-                  : hasActiveNarrowingFilter
-                    ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
-                    : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
-            </p>
-            {hasActiveNarrowingFilter ? (
-              <button
-                type="button"
-                onClick={resetNarrowingFilters}
-                className="inline-flex shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-              >
-                Clear cloud/license filters
-              </button>
-            ) : null}
-          </div>
-
-          {showVendorComparison && comparison ? (
-            <div className="mt-5">
-              <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
-            </div>
-          ) : null}
-
-          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {vendorTools.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} compact />
-            ))}
-          </div>
-        </section>
+        <VendorToolsSection
+          vendorTools={vendorTools}
+          comparison={comparison}
+          showComparison={showVendorComparison}
+          description={
+            showVendorComparison
+              ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+              : comparison
+                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
+                : hasActiveNarrowingFilter
+                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
+                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
+          }
+          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
+          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
+        />
       ) : null}
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
