@@ -39,11 +39,11 @@ function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
 function getCategoryLabel(category: ToolCategory) {
   switch (category) {
     case "agents":
-      return "agent frameworks";
+      return "agent platforms";
     case "orchestration":
-      return "orchestration tools";
+      return "orchestration tooling";
     case "governance":
-      return "governance tools";
+      return "governance tooling";
     case "assistants":
       return "assistant platforms";
     default:
@@ -52,11 +52,18 @@ function getCategoryLabel(category: ToolCategory) {
 }
 
 function getCoverageIntro(category: ToolCategory) {
-  if (category === "assistants") {
-    return "Cloud platforms mapped across coding, productivity, and build-your-own assistants.";
+  switch (category) {
+    case "assistants":
+      return "Cloud platforms mapped across coding, productivity, and build-your-own assistants.";
+    case "agents":
+      return "Cloud platforms with first-party agent platform coverage in this landscape.";
+    case "orchestration":
+      return "Cloud platforms with first-party orchestration coverage in this landscape.";
+    case "governance":
+      return "Cloud platforms with first-party governance coverage in this landscape.";
+    default:
+      return "Cloud platforms represented in this landscape.";
   }
-
-  return `Cloud platforms covering the tracked ${getCategoryLabel(category)} in this category.`;
 }
 
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
