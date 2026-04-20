@@ -30,6 +30,12 @@ function getPlatformSummary(platform: Platform, category: ToolCategory) {
   return getPlatformContextLabel(platform, category as PlatformMappedCategory);
 }
 
+function getAssistantDetailSummary(platform: Platform) {
+  return getAssistantContextLabels(platform)
+    .map(({ detailLabel }) => detailLabel)
+    .join(" · ");
+}
+
 function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
   const summary = getPlatformSummary(platform, category);
 
@@ -85,17 +91,22 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
               >
                 <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">{platform.name}</span>
                 {category === "assistants" ? (
-                  <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
-                    {getAssistantContextLabels(platform).map(({ shortLabel, detailLabel }) => (
-                      <span
-                        key={shortLabel}
-                        title={detailLabel}
-                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5 transition group-hover:border-[var(--color-primary)]/30 group-focus-visible:border-[var(--color-primary)]/30"
-                      >
-                        {shortLabel}
-                      </span>
-                    ))}
-                  </span>
+                  <>
+                    <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
+                      {getAssistantContextLabels(platform).map(({ shortLabel, detailLabel }) => (
+                        <span
+                          key={shortLabel}
+                          title={detailLabel}
+                          className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5 transition group-hover:border-[var(--color-primary)]/30 group-focus-visible:border-[var(--color-primary)]/30"
+                        >
+                          {shortLabel}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="mt-2 text-[11px] leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
+                      {getAssistantDetailSummary(platform)}
+                    </span>
+                  </>
                 ) : (
                   <span className="mt-1 text-xs text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
                 )}
