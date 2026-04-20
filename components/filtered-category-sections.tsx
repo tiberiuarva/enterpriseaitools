@@ -21,6 +21,11 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const [licenseFilter, setLicenseFilter] = useState("all");
   const [sortBy, setSortBy] = useState<CategoryFilterState["sort"]>("name");
 
+  function resetNarrowingFilters() {
+    setCloudFilters([]);
+    setLicenseFilter("all");
+  }
+
   const availableLicenses = useMemo(() => getAvailableLicenses(tools), [tools]);
   const effectiveTools = useMemo(() => {
     let next = filterTools(tools, {
@@ -67,15 +72,26 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
       {showVendorSection ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
           <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            {showVendorComparison
-              ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-              : comparison
-                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
-                : hasActiveNarrowingFilter
-                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
-                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
-          </p>
+          <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-[var(--color-text-secondary)]">
+              {showVendorComparison
+                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+                : comparison
+                  ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
+                  : hasActiveNarrowingFilter
+                    ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
+                    : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
+            </p>
+            {hasActiveNarrowingFilter ? (
+              <button
+                type="button"
+                onClick={resetNarrowingFilters}
+                className="inline-flex shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              >
+                Clear cloud/license filters
+              </button>
+            ) : null}
+          </div>
 
           {showVendorComparison && comparison ? (
             <div className="mt-5">
@@ -102,10 +118,19 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
             ))}
           </div>
         ) : (
-          <div className="mt-5">
+          <div className="mt-5 space-y-3">
             <WarningBox variant="info">
               No tools match the current filter combination. Adjust type, cloud, license, or sort to broaden the result set.
             </WarningBox>
+            {hasActiveNarrowingFilter ? (
+              <button
+                type="button"
+                onClick={resetNarrowingFilters}
+                className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              >
+                Clear cloud/license filters
+              </button>
+            ) : null}
           </div>
         )}
       </section>
