@@ -8,6 +8,7 @@ type VendorToolsSectionProps = {
   comparison?: CategoryComparison;
   description: string;
   showComparison?: boolean;
+  showToolCards?: boolean;
   clearFiltersLabel?: string;
   onClearFilters?: () => void;
 };
@@ -17,6 +18,7 @@ export function VendorToolsSection({
   comparison,
   description,
   showComparison = false,
+  showToolCards = true,
   clearFiltersLabel,
   onClearFilters,
 }: VendorToolsSectionProps) {
@@ -44,11 +46,13 @@ export function VendorToolsSection({
         </div>
       ) : null}
 
-      <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {vendorTools.map((tool) => (
-          <ToolCard key={tool.id} tool={tool} compact />
-        ))}
-      </div>
+      {showToolCards ? (
+        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {vendorTools.map((tool) => (
+            <ToolCard key={tool.id} tool={tool} compact />
+          ))}
+        </div>
+      ) : null}
     </section>
   );
 }

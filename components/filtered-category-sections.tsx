@@ -45,10 +45,11 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
-  const visibleUpdates = updates.slice(0, 5);
-  const showVendorSection = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
+  const visibleUpdates = useMemo(() => updates.slice(0, 5), [updates]);
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
-  const showVendorComparison = showVendorSection && Boolean(comparison) && !hasActiveNarrowingFilter;
+  const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
+  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter;
+  const showVendorSection = showVendorCards || showVendorComparison;
 
   return (
     <>
@@ -76,13 +77,16 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
           showComparison={showVendorComparison}
           description={
             showVendorComparison
-              ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+              ? showVendorCards
+                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+                : "Source-backed side-by-side comparison for the three cloud vendor offerings in this category. Vendor tool cards are hidden by the current type filter."
               : comparison
                 ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
                 : hasActiveNarrowingFilter
                   ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
                   : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
           }
+          showToolCards={showVendorCards}
           clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
           onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
         />
