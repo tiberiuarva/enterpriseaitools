@@ -19,6 +19,10 @@ function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${platform.id}`);
 }
 
+function getPlatformLinkLabel(platform: Platform) {
+  return `Open ${platform.name} platform details`;
+}
+
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   return (
     <nav
@@ -32,6 +36,7 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
             <li key={platform.id}>
               <a
                 href={getPlatformHref(platform)}
+                aria-label={getPlatformLinkLabel(platform)}
                 className="group inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
                 <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)]">{platform.name}</span>
