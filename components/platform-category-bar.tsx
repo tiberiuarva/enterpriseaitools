@@ -36,14 +36,37 @@ function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
   return `Open ${platform.name} platform details. ${summary}.`;
 }
 
+function getCategoryLabel(category: ToolCategory) {
+  switch (category) {
+    case "agents":
+      return "agent frameworks";
+    case "orchestration":
+      return "orchestration tools";
+    case "governance":
+      return "governance tools";
+    case "assistants":
+      return "assistant platforms";
+    default:
+      return "this category";
+  }
+}
+
+function getCoverageIntro(category: ToolCategory) {
+  if (category === "assistants") {
+    return "Cloud platforms mapped across coding, productivity, and build-your-own assistants.";
+  }
+
+  return `Cloud platforms covering the tracked ${getCategoryLabel(category)} in this category.`;
+}
+
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   return (
     <nav
-      aria-label="Platform coverage"
+      aria-label={`${getCategoryLabel(category)} platform coverage`}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-3">
-        <p className="text-sm text-[var(--color-text-secondary)]">Cloud platforms covering this category.</p>
+        <p className="text-sm text-[var(--color-text-secondary)]">{getCoverageIntro(category)}</p>
         <ul className="grid grid-cols-1 gap-2 md:grid-cols-3" role="list">
           {platforms.map((platform) => (
             <li key={platform.id}>
