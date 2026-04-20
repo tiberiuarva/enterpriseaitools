@@ -79,7 +79,13 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-3">
-        <p className="text-sm text-[var(--color-text-secondary)]">{getCoverageIntro(category)}</p>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-baseline justify-between gap-3">
+            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">Platform coverage</h2>
+            <span className="text-xs text-[var(--color-text-secondary)]">{platforms.length} cloud platforms</span>
+          </div>
+          <p className="text-sm text-[var(--color-text-secondary)]">{getCoverageIntro(category)}</p>
+        </div>
         <ul className="grid grid-cols-1 gap-2 md:grid-cols-3" role="list">
           {platforms.map((platform) => (
             <li key={platform.id}>
