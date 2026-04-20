@@ -72,6 +72,25 @@ function getCoverageIntro(category: ToolCategory) {
   }
 }
 
+function getCoverageHeading(category: ToolCategory) {
+  switch (category) {
+    case "assistants":
+      return "Assistant platform coverage";
+    case "agents":
+      return "Agent platform coverage";
+    case "orchestration":
+      return "Orchestration platform coverage";
+    case "governance":
+      return "Governance platform coverage";
+    default:
+      return "Platform coverage";
+  }
+}
+
+function getPlatformCountLabel(platformCount: number) {
+  return `${platformCount} cloud platform${platformCount === 1 ? "" : "s"}`;
+}
+
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   return (
     <nav
@@ -81,8 +100,8 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
           <div className="flex items-baseline justify-between gap-3">
-            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">Platform coverage</h2>
-            <span className="text-xs text-[var(--color-text-secondary)]">{platforms.length} cloud platforms</span>
+            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{getCoverageHeading(category)}</h2>
+            <span className="text-xs text-[var(--color-text-secondary)]">{getPlatformCountLabel(platforms.length)}</span>
           </div>
           <p className="text-sm text-[var(--color-text-secondary)]">{getCoverageIntro(category)}</p>
         </div>
