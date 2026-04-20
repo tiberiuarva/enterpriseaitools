@@ -14,11 +14,11 @@ export const toolTypeIconWrapStyles: Record<ToolType, string> = {
   commercial: "bg-[color:rgba(6,182,212,0.12)] text-[var(--color-secondary)]",
 };
 
-export const toolTypeIcons = {
+export const toolTypeIcons: Record<ToolType, typeof Building2> = {
   vendor: Building2,
   opensource: Boxes,
   commercial: BriefcaseBusiness,
-} as const;
+};
 
 export function formatToolTypeLabel(type: ToolType) {
   if (type === "opensource") return "Open Source";

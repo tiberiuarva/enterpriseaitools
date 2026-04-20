@@ -4,12 +4,7 @@ import { hasAuditedImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeBadgeStyles, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
 import type { Tool } from "@/lib/types";
-
-const cloudBadgeStyles: Record<string, string> = {
-  azure: "border-[color:#0078D4] text-[color:#0078D4]",
-  aws: "border-[color:#FF9900] text-[color:#FF9900]",
-  gcp: "border-[color:#4285F4] text-[color:#4285F4]",
-};
+import { cloudBadgeStyles, getVendorColorKey } from "@/lib/vendor-colors";
 
 function formatCloudName(cloud: string) {
   if (cloud === "gcp") return "GCP";
@@ -64,14 +59,18 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
 
       {tool.clouds && tool.clouds.length > 0 ? (
         <div className="mt-4 flex flex-wrap gap-2">
-          {tool.clouds.map((cloud) => (
-            <span
-              key={cloud}
-              className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold ${cloudBadgeStyles[cloud] ?? "border-[var(--color-border)] text-[var(--color-text-secondary)]"}`}
-            >
-              {formatCloudName(cloud)}
-            </span>
-          ))}
+          {tool.clouds.map((cloud) => {
+            const vendorColorKey = getVendorColorKey(cloud);
+
+            return (
+              <span
+                key={cloud}
+                className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold ${vendorColorKey ? cloudBadgeStyles[vendorColorKey] : "border-[var(--color-border)] text-[var(--color-text-secondary)]"}`}
+              >
+                {formatCloudName(cloud)}
+              </span>
+            );
+          })}
         </div>
       ) : null}
 
