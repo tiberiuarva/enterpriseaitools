@@ -48,6 +48,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
               key={tool.id}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
               aria-label={`${tool.name} · ${formatToolTypeLabel(tool.type)}`}
+              title={formatToolTypeLabel(tool.type)}
             >
               {showImageLogo ? (
                 <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
@@ -60,8 +61,6 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
                 </span>
               )}
               <span className="text-[var(--color-text-primary)]">{tool.name}</span>
-              <span aria-hidden="true" className="text-[var(--color-text-secondary)]/60">•</span>
-              <span className="uppercase tracking-[0.08em] text-[10px] font-semibold">{formatToolTypeLabel(tool.type)}</span>
             </span>
           );
         })}

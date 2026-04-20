@@ -9,7 +9,6 @@ type PlatformMarkProps = {
   vendor: string;
   logoUrl?: string;
   logoKind: LogoKind;
-  size?: "lg";
 };
 
 const vendorFallbackStyles: Record<string, string> = {
@@ -19,12 +18,18 @@ const vendorFallbackStyles: Record<string, string> = {
 };
 
 function getVendorFallbackStyles(vendor: string) {
-  return vendorFallbackStyles[vendor.toLowerCase()] ?? "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]";
+  const vendorKey = vendor.toLowerCase();
+
+  if (vendorKey.includes("microsoft")) return vendorFallbackStyles.microsoft;
+  if (vendorKey.includes("amazon") || vendorKey.includes("aws")) return vendorFallbackStyles.amazon;
+  if (vendorKey.includes("google") || vendorKey.includes("gcp")) return vendorFallbackStyles.google;
+
+  return "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]";
 }
 
-export function PlatformMark({ name, vendor, logoUrl, logoKind, size = "lg" }: PlatformMarkProps) {
+export function PlatformMark({ name, vendor, logoUrl, logoKind }: PlatformMarkProps) {
   if (logoUrl && hasAuditedImageLogo(logoKind)) {
-    return <LogoBadge name={name} logoUrl={logoUrl} logoKind={logoKind} size={size} decorative />;
+    return <LogoBadge name={name} logoUrl={logoUrl} logoKind={logoKind} size="lg" decorative />;
   }
 
   return (
