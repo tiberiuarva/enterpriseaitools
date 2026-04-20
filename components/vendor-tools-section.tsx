@@ -22,7 +22,7 @@ export function VendorToolsSection({
   clearFiltersLabel,
   onClearFilters,
 }: VendorToolsSectionProps) {
-  if (vendorTools.length === 0) return null;
+  if (!showComparison && (!showToolCards || vendorTools.length === 0)) return null;
 
   return (
     <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
