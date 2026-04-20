@@ -32,22 +32,22 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
             <li key={platform.id}>
               <a
                 href={getPlatformHref(platform)}
-                className="inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                className="group inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
-                <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
+                <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)]">{platform.name}</span>
                 {category === "assistants" ? (
-                  <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)]">
+                  <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80">
                     {getAssistantContextLabels(platform).map((label) => (
                       <span
                         key={label}
-                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5"
+                        className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5 transition group-hover:border-[var(--color-primary)]/30"
                       >
                         {label}
                       </span>
                     ))}
                   </span>
                 ) : (
-                  <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
+                  <span className="mt-1 text-xs text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
                 )}
               </a>
             </li>
