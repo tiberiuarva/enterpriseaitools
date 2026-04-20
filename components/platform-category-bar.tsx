@@ -1,8 +1,37 @@
-import { ArrowUpRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
 type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
+
+type CoverageCopy = {
+  heading: string;
+  intro: string;
+  navLabel: string;
+};
+
+const coverageCopy: Record<ToolCategory, CoverageCopy> = {
+  agents: {
+    heading: "Agent platform coverage",
+    intro: "Cloud platforms with first-party agent platform coverage in this landscape.",
+    navLabel: "Platform coverage for AI agent frameworks",
+  },
+  orchestration: {
+    heading: "Orchestration platform coverage",
+    intro: "Cloud platforms with first-party orchestration coverage in this landscape.",
+    navLabel: "Platform coverage for AI orchestration",
+  },
+  governance: {
+    heading: "Governance platform coverage",
+    intro: "Cloud platforms with first-party governance coverage in this landscape.",
+    navLabel: "Platform coverage for AI governance",
+  },
+  assistants: {
+    heading: "Assistant platform coverage",
+    intro: "Cloud platforms mapped across coding, productivity, and build-your-own assistants.",
+    navLabel: "Platform coverage for AI assistants",
+  },
+};
 
 function getAssistantContextLabels(platform: Platform) {
   return [
@@ -42,68 +71,25 @@ function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
   return `Open ${platform.name} platform details. ${summary}.`;
 }
 
-function getCoverageNavLabel(category: ToolCategory) {
-  switch (category) {
-    case "agents":
-      return "Platform coverage for AI agent frameworks";
-    case "orchestration":
-      return "Platform coverage for AI orchestration";
-    case "governance":
-      return "Platform coverage for AI governance";
-    case "assistants":
-      return "Platform coverage for AI assistants";
-    default:
-      return "Platform coverage";
-  }
-}
-
-function getCoverageIntro(category: ToolCategory) {
-  switch (category) {
-    case "assistants":
-      return "Cloud platforms mapped across coding, productivity, and build-your-own assistants.";
-    case "agents":
-      return "Cloud platforms with first-party agent platform coverage in this landscape.";
-    case "orchestration":
-      return "Cloud platforms with first-party orchestration coverage in this landscape.";
-    case "governance":
-      return "Cloud platforms with first-party governance coverage in this landscape.";
-    default:
-      return "Cloud platforms represented in this landscape.";
-  }
-}
-
-function getCoverageHeading(category: ToolCategory) {
-  switch (category) {
-    case "assistants":
-      return "Assistant platform coverage";
-    case "agents":
-      return "Agent platform coverage";
-    case "orchestration":
-      return "Orchestration platform coverage";
-    case "governance":
-      return "Governance platform coverage";
-    default:
-      return "Platform coverage";
-  }
-}
-
 function getPlatformCountLabel(platformCount: number) {
   return `${platformCount} cloud platform${platformCount === 1 ? "" : "s"}`;
 }
 
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
+  const copy = coverageCopy[category];
+
   return (
     <nav
-      aria-label={getCoverageNavLabel(category)}
+      aria-label={copy.navLabel}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-3">
         <div className="flex flex-col gap-1">
           <div className="flex items-baseline justify-between gap-3">
-            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{getCoverageHeading(category)}</h2>
+            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</h2>
             <span className="text-xs text-[var(--color-text-secondary)]">{getPlatformCountLabel(platforms.length)}</span>
           </div>
-          <p className="text-sm text-[var(--color-text-secondary)]">{getCoverageIntro(category)}</p>
+          <p className="text-sm text-[var(--color-text-secondary)]">{copy.intro}</p>
         </div>
         <ul className="grid grid-cols-1 gap-2 md:grid-cols-3" role="list">
           {platforms.map((platform) => (
@@ -137,7 +123,7 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
                 )}
                 <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
                   View platform details
-                  <ArrowUpRight size={14} aria-hidden="true" />
+                  <ChevronRight size={14} aria-hidden="true" />
                 </span>
               </a>
             </li>
