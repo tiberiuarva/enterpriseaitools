@@ -25,17 +25,14 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       aria-label="Platform coverage"
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div>
-          <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-text-secondary)]">Platforms</div>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">Cloud platforms covering this category.</p>
-        </div>
-        <ul className="flex flex-wrap gap-2" role="list">
+      <div className="flex flex-col gap-3">
+        <p className="text-sm text-[var(--color-text-secondary)]">Cloud platforms covering this category.</p>
+        <ul className="grid grid-cols-1 gap-2 md:grid-cols-3" role="list">
           {platforms.map((platform) => (
-            <li key={platform.id} className="basis-56 md:min-w-[12rem] md:flex-none">
+            <li key={platform.id}>
               <a
                 href={getPlatformHref(platform)}
-                className="inline-flex min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                className="inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
                 <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
                 {category === "assistants" ? (
