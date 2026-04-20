@@ -1,29 +1,23 @@
 export type VendorColorKey = "azure" | "aws" | "gcp";
 
-const vendorTextColors: Record<VendorColorKey, string> = {
-  azure: "#0078D4",
-  aws: "#FF9900",
-  gcp: "#4285F4",
-};
-
 export const cloudBadgeStyles: Record<VendorColorKey, string> = {
-  azure: `border-[color:${vendorTextColors.azure}] text-[color:${vendorTextColors.azure}]`,
-  aws: `border-[color:${vendorTextColors.aws}] text-[color:${vendorTextColors.aws}]`,
-  gcp: `border-[color:${vendorTextColors.gcp}] text-[color:${vendorTextColors.gcp}]`,
+  azure: "border-[color:#0078D4] text-[color:#0078D4]",
+  aws: "border-[color:#FF9900] text-[color:#FF9900]",
+  gcp: "border-[color:#4285F4] text-[color:#4285F4]",
 };
 
 export const platformFallbackStyles: Record<VendorColorKey, string> = {
-  azure: `border-[color:rgba(0,120,212,0.22)] bg-[linear-gradient(180deg,rgba(0,120,212,0.10),rgba(0,120,212,0.18))] text-[color:${vendorTextColors.azure}]`,
-  aws: `border-[color:rgba(255,153,0,0.22)] bg-[linear-gradient(180deg,rgba(255,153,0,0.10),rgba(255,153,0,0.18))] text-[color:${vendorTextColors.aws}]`,
-  gcp: `border-[color:rgba(66,133,244,0.22)] bg-[linear-gradient(180deg,rgba(66,133,244,0.10),rgba(66,133,244,0.18))] text-[color:${vendorTextColors.gcp}]`,
+  azure: "border-[color:rgba(0,120,212,0.22)] bg-[linear-gradient(180deg,rgba(0,120,212,0.10),rgba(0,120,212,0.18))] text-[color:#0078D4]",
+  aws: "border-[color:rgba(255,153,0,0.22)] bg-[linear-gradient(180deg,rgba(255,153,0,0.10),rgba(255,153,0,0.18))] text-[color:#FF9900]",
+  gcp: "border-[color:rgba(66,133,244,0.22)] bg-[linear-gradient(180deg,rgba(66,133,244,0.10),rgba(66,133,244,0.18))] text-[color:#4285F4]",
 };
 
 export function getVendorColorKey(value: string): VendorColorKey | null {
   const normalized = value.trim().toLowerCase();
 
-  if (["azure", "microsoft"].includes(normalized) || normalized.includes("microsoft")) return "azure";
-  if (["aws", "amazon"].includes(normalized) || normalized.includes("amazon") || normalized.includes("aws")) return "aws";
-  if (["gcp", "google", "google cloud"].includes(normalized) || normalized.includes("google") || normalized.includes("gcp")) return "gcp";
+  if (normalized === "azure" || normalized.includes("microsoft")) return "azure";
+  if (normalized.includes("amazon") || normalized.includes("aws")) return "aws";
+  if (normalized.includes("google") || normalized.includes("gcp")) return "gcp";
 
   return null;
 }
