@@ -42,18 +42,18 @@ function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
   return `Open ${platform.name} platform details. ${summary}.`;
 }
 
-function getCategoryLabel(category: ToolCategory) {
+function getCoverageNavLabel(category: ToolCategory) {
   switch (category) {
     case "agents":
-      return "agent platforms";
+      return "Platform coverage for AI agent frameworks";
     case "orchestration":
-      return "orchestration tooling";
+      return "Platform coverage for AI orchestration";
     case "governance":
-      return "governance tooling";
+      return "Platform coverage for AI governance";
     case "assistants":
-      return "assistant platforms";
+      return "Platform coverage for AI assistants";
     default:
-      return "this category";
+      return "Platform coverage";
   }
 }
 
@@ -75,7 +75,7 @@ function getCoverageIntro(category: ToolCategory) {
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   return (
     <nav
-      aria-label={`${getCategoryLabel(category)} platform coverage`}
+      aria-label={getCoverageNavLabel(category)}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-3">
