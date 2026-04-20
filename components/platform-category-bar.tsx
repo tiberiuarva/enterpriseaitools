@@ -1,6 +1,8 @@
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
+type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
+
 const CATEGORY_CONTEXT_LABELS: Record<ToolCategory, string> = {
   agents: "agent frameworks",
   orchestration: "orchestration stacks",
@@ -8,11 +10,15 @@ const CATEGORY_CONTEXT_LABELS: Record<ToolCategory, string> = {
   assistants: "assistant tooling",
 };
 
-function getPlatformContextLabel(platform: Platform, category: ToolCategory) {
-  if (category === "assistants") {
-    return "Coding · productivity · build-your-own";
-  }
+function getAssistantContextLabels(platform: Platform) {
+  return [
+    platform.categoryMapping.assistantsCoding.label,
+    platform.categoryMapping.assistantsProductivity.label,
+    platform.categoryMapping.assistantsBuildYourOwn.label,
+  ];
+}
 
+function getPlatformContextLabel(platform: Platform, category: PlatformMappedCategory) {
   return platform.categoryMapping[category].label;
 }
 
@@ -41,7 +47,20 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
               className="inline-flex min-w-0 flex-1 basis-56 flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] md:min-w-[12rem] md:flex-none"
             >
               <span className="text-sm font-medium text-[var(--color-text-primary)]">{platform.name}</span>
-              <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category)}</span>
+              {category === "assistants" ? (
+                <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)]">
+                  {getAssistantContextLabels(platform).map((label) => (
+                    <span
+                      key={label}
+                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span className="mt-1 text-xs text-[var(--color-text-secondary)]">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
+              )}
             </a>
           ))}
         </div>
