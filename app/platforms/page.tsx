@@ -98,29 +98,27 @@ export default function PlatformsPage() {
         />
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
-          {platforms.map((platform) => {
-            return (
-              <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-                <div className="flex min-w-0 items-center gap-3">
-                  <PlatformMark name={platform.name} vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
-                  <div className="min-w-0">
-                    <h2 className="truncate text-lg font-semibold">{platform.name}</h2>
-                    <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
-                  </div>
+          {platforms.map((platform) => (
+            <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+              <div className="flex min-w-0 items-center gap-3">
+                <PlatformMark name={platform.name} vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
+                <div className="min-w-0">
+                  <h2 className="truncate text-lg font-semibold">{platform.name}</h2>
+                  <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
                 </div>
-                <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
-                <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
-                </div>
-                <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
-                </div>
-                <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
-                  Docs
-                </a>
-              </article>
-            );
-          })}
+              </div>
+              <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
+              <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
+                <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
+              </div>
+              <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
+                <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
+              </div>
+              <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                Docs
+              </a>
+            </article>
+          ))}
         </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
