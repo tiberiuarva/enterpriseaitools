@@ -42,7 +42,8 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const visibleUpdates = updates.slice(0, 5);
   const showVendorSection = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
-  const showVendorComparison = showVendorSection && Boolean(comparison) && cloudFilters.length === 0;
+  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+  const showVendorComparison = showVendorSection && Boolean(comparison) && !hasActiveNarrowingFilter;
 
   return (
     <>
@@ -70,7 +71,7 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
             {showVendorComparison
               ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
               : comparison
-                ? "Vendor tool cards shown below. Clear the cloud filter to restore the three-way vendor comparison table."
+                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
                 : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."}
           </p>
 
