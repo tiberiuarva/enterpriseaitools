@@ -49,20 +49,14 @@ function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${platform.id}`);
 }
 
-function getPlatformSummary(platform: Platform, category: ToolCategory) {
+function getPlatformSummary(platform: Platform, category: ToolCategory, variant: "summary" | "detail" = "summary") {
   if (category === "assistants") {
     return getAssistantContextLabels(platform)
-      .map(({ shortLabel, detailLabel }) => `${shortLabel}: ${detailLabel}`)
+      .map(({ shortLabel, detailLabel }) => (variant === "detail" ? detailLabel : `${shortLabel}: ${detailLabel}`))
       .join(" · ");
   }
 
   return getPlatformContextLabel(platform, category as PlatformMappedCategory);
-}
-
-function getAssistantDetailSummary(platform: Platform) {
-  return getAssistantContextLabels(platform)
-    .map(({ detailLabel }) => detailLabel)
-    .join(" · ");
 }
 
 function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
@@ -115,7 +109,7 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
                       ))}
                     </span>
                     <span className="mt-2 text-[11px] leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
-                      {getAssistantDetailSummary(platform)}
+                      {getPlatformSummary(platform, category, "detail")}
                     </span>
                   </>
                 ) : (
