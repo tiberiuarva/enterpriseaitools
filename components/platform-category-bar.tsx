@@ -5,29 +5,24 @@ type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
 
 type CoverageCopy = {
   heading: string;
-  intro: string;
   navLabel: string;
 };
 
 const coverageCopy: Record<ToolCategory, CoverageCopy> = {
   agents: {
     heading: "Agent platform coverage",
-    intro: "Cloud platforms with first-party agent platform coverage in this landscape.",
     navLabel: "Platform coverage for AI agent frameworks",
   },
   orchestration: {
     heading: "Orchestration platform coverage",
-    intro: "Cloud platforms with first-party orchestration coverage in this landscape.",
     navLabel: "Platform coverage for AI orchestration",
   },
   governance: {
     heading: "Governance platform coverage",
-    intro: "Cloud platforms with first-party governance coverage in this landscape.",
     navLabel: "Platform coverage for AI governance",
   },
   assistants: {
     heading: "Assistant platform coverage",
-    intro: "Cloud platforms mapped across coding, productivity, and build-your-own assistants.",
     navLabel: "Platform coverage for AI assistants",
   },
 };
@@ -62,10 +57,6 @@ function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
   return `Open ${platform.name} platform details. ${getPlatformSummary(platform, category)}.`;
 }
 
-function getPlatformCountLabel(platformCount: number) {
-  return `${platformCount} cloud platform${platformCount === 1 ? "" : "s"}`;
-}
-
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
   const copy = coverageCopy[category];
 
@@ -74,14 +65,8 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       aria-label={copy.navLabel}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-col gap-1">
-          <div className="flex items-baseline justify-between gap-3">
-            <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</h2>
-            <span className="text-xs text-[var(--color-text-secondary)]">{getPlatformCountLabel(platforms.length)}</span>
-          </div>
-          <p className="text-sm text-[var(--color-text-secondary)]">{copy.intro}</p>
-        </div>
+      <div className="flex flex-col gap-2">
+        <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</h2>
         <ul className={`grid grid-cols-1 gap-2 ${platforms.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {platforms.map((platform) => (
             <li key={platform.id}>
