@@ -1,6 +1,6 @@
 import { Check, ExternalLink, Globe, Star } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
-import { hasAuditedImageLogo } from "@/lib/logo";
+import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeBadgeStyles, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
 import type { Tool } from "@/lib/types";
@@ -9,14 +9,16 @@ import { cloudBadgeStyles, getVendorColorKey } from "@/lib/vendor-colors";
 function formatCloudName(cloud: string) {
   if (cloud === "gcp") return "GCP";
   if (cloud === "aws") return "AWS";
-  return "Azure";
+  if (cloud === "azure") return "Azure";
+
+  return cloud;
 }
 
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
   const docsHref = tool.docsUrl ?? tool.websiteUrl;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
   const TypeIcon = toolTypeIcons[tool.type];
-  const showImageLogo = hasAuditedImageLogo(tool.logoKind) && Boolean(tool.logoUrl);
+  const showImageLogo = shouldShowImageLogo(tool);
 
   return (
     <article

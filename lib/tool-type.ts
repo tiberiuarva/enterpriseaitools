@@ -1,20 +1,26 @@
-import { Boxes, BriefcaseBusiness, Building2 } from "lucide-react";
+import { Boxes, BriefcaseBusiness, Building2, type LucideIcon } from "lucide-react";
 
 import type { ToolType } from "@/lib/types";
 
+const toolTypeTextClasses: Record<ToolType, string> = {
+  vendor: "text-[var(--color-primary)]",
+  opensource: "text-[var(--color-success)]",
+  commercial: "text-[var(--color-secondary)]",
+};
+
 export const toolTypeBadgeStyles: Record<ToolType, string> = {
-  vendor: "bg-[color:rgba(59,130,246,0.14)] text-[var(--color-primary)]",
-  opensource: "bg-[color:rgba(16,185,129,0.14)] text-[var(--color-success)]",
-  commercial: "bg-[color:rgba(6,182,212,0.14)] text-[var(--color-secondary)]",
+  vendor: `bg-[color:rgba(59,130,246,0.14)] ${toolTypeTextClasses.vendor}`,
+  opensource: `bg-[color:rgba(16,185,129,0.14)] ${toolTypeTextClasses.opensource}`,
+  commercial: `bg-[color:rgba(6,182,212,0.14)] ${toolTypeTextClasses.commercial}`,
 };
 
 export const toolTypeIconWrapStyles: Record<ToolType, string> = {
-  vendor: "bg-[color:rgba(59,130,246,0.12)] text-[var(--color-primary)]",
-  opensource: "bg-[color:rgba(16,185,129,0.12)] text-[var(--color-success)]",
-  commercial: "bg-[color:rgba(6,182,212,0.12)] text-[var(--color-secondary)]",
+  vendor: `bg-[color:rgba(59,130,246,0.12)] ${toolTypeTextClasses.vendor}`,
+  opensource: `bg-[color:rgba(16,185,129,0.12)] ${toolTypeTextClasses.opensource}`,
+  commercial: `bg-[color:rgba(6,182,212,0.12)] ${toolTypeTextClasses.commercial}`,
 };
 
-export const toolTypeIcons: Record<ToolType, typeof Building2> = {
+export const toolTypeIcons: Record<ToolType, LucideIcon> = {
   vendor: Building2,
   opensource: Boxes,
   commercial: BriefcaseBusiness,

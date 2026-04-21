@@ -1,6 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
-import { hasAuditedImageLogo } from "@/lib/logo";
+import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
 
@@ -41,7 +41,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
       <div className="mt-4 flex flex-wrap gap-2">
         {previewTools.map((tool) => {
           const PreviewToolIcon = toolTypeIcons[tool.type];
-          const showImageLogo = hasAuditedImageLogo(tool.logoKind) && Boolean(tool.logoUrl);
+          const showImageLogo = shouldShowImageLogo(tool);
 
           return (
             <span

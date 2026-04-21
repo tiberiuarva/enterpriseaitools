@@ -1,5 +1,7 @@
 export type VendorColorKey = "azure" | "aws" | "gcp";
 
+const vendorColorKeys = new Set<VendorColorKey>(["azure", "aws", "gcp"]);
+
 export const cloudBadgeStyles: Record<VendorColorKey, string> = {
   azure: "border-[color:#0078D4] text-[color:#0078D4]",
   aws: "border-[color:#FF9900] text-[color:#FF9900]",
@@ -15,7 +17,8 @@ export const platformFallbackStyles: Record<VendorColorKey, string> = {
 export function getVendorColorKey(value: string): VendorColorKey | null {
   const normalized = value.trim().toLowerCase();
 
-  if (normalized === "azure" || normalized.includes("microsoft")) return "azure";
+  if (vendorColorKeys.has(normalized as VendorColorKey)) return normalized as VendorColorKey;
+  if (normalized.includes("microsoft")) return "azure";
   if (normalized.includes("amazon") || normalized.includes("aws")) return "aws";
   if (normalized.includes("google") || normalized.includes("gcp")) return "gcp";
 
