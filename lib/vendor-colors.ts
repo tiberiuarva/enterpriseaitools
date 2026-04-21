@@ -14,10 +14,19 @@ export const platformFallbackStyles: Record<VendorColorKey, string> = {
   gcp: "border-[color:rgba(66,133,244,0.22)] bg-[linear-gradient(180deg,rgba(66,133,244,0.10),rgba(66,133,244,0.18))] text-[color:#4285F4]",
 };
 
-export function getVendorColorKey(value: string): VendorColorKey | null {
+export function getCloudVendorColorKey(value: string): VendorColorKey | null {
   const normalized = value.trim().toLowerCase();
 
-  if (vendorColorKeys.has(normalized as VendorColorKey)) return normalized as VendorColorKey;
+  return vendorColorKeys.has(normalized as VendorColorKey) ? (normalized as VendorColorKey) : null;
+}
+
+export function getVendorColorKey(value: string): VendorColorKey | null {
+  const exactMatch = getCloudVendorColorKey(value);
+
+  if (exactMatch) return exactMatch;
+
+  const normalized = value.trim().toLowerCase();
+
   if (normalized.includes("microsoft")) return "azure";
   if (normalized.includes("amazon") || normalized.includes("aws")) return "aws";
   if (normalized.includes("google") || normalized.includes("gcp")) return "gcp";

@@ -2,22 +2,34 @@ import { Boxes, BriefcaseBusiness, Building2, type LucideIcon } from "lucide-rea
 
 import type { ToolType } from "@/lib/types";
 
-const toolTypeTextClasses: Record<ToolType, string> = {
-  vendor: "text-[var(--color-primary)]",
-  opensource: "text-[var(--color-success)]",
-  commercial: "text-[var(--color-secondary)]",
+const toolTypeTokens: Record<ToolType, { textClass: string; badgeClass: string; iconWrapClass: string }> = {
+  vendor: {
+    textClass: "text-[var(--color-primary)]",
+    badgeClass: "bg-[color:rgba(59,130,246,0.14)]",
+    iconWrapClass: "bg-[color:rgba(59,130,246,0.12)]",
+  },
+  opensource: {
+    textClass: "text-[var(--color-success)]",
+    badgeClass: "bg-[color:rgba(16,185,129,0.14)]",
+    iconWrapClass: "bg-[color:rgba(16,185,129,0.12)]",
+  },
+  commercial: {
+    textClass: "text-[var(--color-secondary)]",
+    badgeClass: "bg-[color:rgba(6,182,212,0.14)]",
+    iconWrapClass: "bg-[color:rgba(6,182,212,0.12)]",
+  },
 };
 
 export const toolTypeBadgeStyles: Record<ToolType, string> = {
-  vendor: `bg-[color:rgba(59,130,246,0.14)] ${toolTypeTextClasses.vendor}`,
-  opensource: `bg-[color:rgba(16,185,129,0.14)] ${toolTypeTextClasses.opensource}`,
-  commercial: `bg-[color:rgba(6,182,212,0.14)] ${toolTypeTextClasses.commercial}`,
+  vendor: `${toolTypeTokens.vendor.badgeClass} ${toolTypeTokens.vendor.textClass}`,
+  opensource: `${toolTypeTokens.opensource.badgeClass} ${toolTypeTokens.opensource.textClass}`,
+  commercial: `${toolTypeTokens.commercial.badgeClass} ${toolTypeTokens.commercial.textClass}`,
 };
 
 export const toolTypeIconWrapStyles: Record<ToolType, string> = {
-  vendor: `bg-[color:rgba(59,130,246,0.12)] ${toolTypeTextClasses.vendor}`,
-  opensource: `bg-[color:rgba(16,185,129,0.12)] ${toolTypeTextClasses.opensource}`,
-  commercial: `bg-[color:rgba(6,182,212,0.12)] ${toolTypeTextClasses.commercial}`,
+  vendor: `${toolTypeTokens.vendor.iconWrapClass} ${toolTypeTokens.vendor.textClass}`,
+  opensource: `${toolTypeTokens.opensource.iconWrapClass} ${toolTypeTokens.opensource.textClass}`,
+  commercial: `${toolTypeTokens.commercial.iconWrapClass} ${toolTypeTokens.commercial.textClass}`,
 };
 
 export const toolTypeIcons: Record<ToolType, LucideIcon> = {

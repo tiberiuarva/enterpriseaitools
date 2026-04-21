@@ -4,12 +4,14 @@ import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeBadgeStyles, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
 import type { Tool } from "@/lib/types";
-import { cloudBadgeStyles, getVendorColorKey } from "@/lib/vendor-colors";
+import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
 function formatCloudName(cloud: string) {
-  if (cloud === "gcp") return "GCP";
-  if (cloud === "aws") return "AWS";
-  if (cloud === "azure") return "Azure";
+  const normalized = cloud.trim().toLowerCase();
+
+  if (normalized === "gcp") return "GCP";
+  if (normalized === "aws") return "AWS";
+  if (normalized === "azure") return "Azure";
 
   return cloud;
 }
@@ -62,7 +64,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
       {tool.clouds && tool.clouds.length > 0 ? (
         <div className="mt-4 flex flex-wrap gap-2">
           {tool.clouds.map((cloud) => {
-            const vendorColorKey = getVendorColorKey(cloud);
+            const vendorColorKey = getCloudVendorColorKey(cloud);
 
             return (
               <span
