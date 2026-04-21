@@ -53,18 +53,19 @@ function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${platform.id}`);
 }
 
-function getPlatformSummary(platform: Platform, category: PlatformMappedCategory) {
-  return getPlatformContextLabel(platform, category);
+function getPlatformSummary(platform: Platform, category: ToolCategory) {
+  if (category === "assistants") {
+    return getAssistantPlatformSummary(platform);
+  }
+
+  const mappedCategory: PlatformMappedCategory = category;
+  return getPlatformContextLabel(platform, mappedCategory);
 }
 
 function getAssistantPlatformSummary(platform: Platform) {
   return getAssistantContextLabels(platform)
     .map(({ detailLabel }) => detailLabel)
     .join(" · ");
-}
-
-function getPlatformLinkLabel(platform: Platform, summary: string) {
-  return `Open ${platform.name} platform details. ${summary}.`;
 }
 
 export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
@@ -81,41 +82,37 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-2">
-        <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</h2>
+        <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</h3>
         <ul className={`grid grid-cols-1 gap-2 ${columnClass}`}>
           {platforms.map((platform) => {
             const assistantContextLabels = getAssistantContextLabels(platform);
-            const summary = category === "assistants"
-              ? getAssistantPlatformSummary(platform)
-              : getPlatformSummary(platform, category);
+            const summary = getPlatformSummary(platform, category);
 
             return (
               <li key={platform.id}>
                 <a
                   href={getPlatformHref(platform)}
-                  aria-label={getPlatformLinkLabel(platform, summary)}
-                  className="group inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+                  className="group flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
                 >
                   <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">{platform.name}</span>
                   {category === "assistants" ? (
                     <>
-                      <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
-                        {assistantContextLabels.map(({ shortLabel, detailLabel }) => (
+                      <span className="mt-1 flex flex-wrap gap-1 text-[11px] text-[var(--color-text-secondary)] transition group-hover:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)] group-focus-visible:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
+                        {assistantContextLabels.map(({ shortLabel }) => (
                           <span
                             key={shortLabel}
-                            title={detailLabel}
-                            className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5 transition group-hover:border-[var(--color-primary)]/30 group-focus-visible:border-[var(--color-primary)]/30"
+                            className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-1.5 py-0.5 transition group-hover:border-[color:color-mix(in_oklab,var(--color-primary)_30%,var(--color-border))] group-focus-visible:border-[color:color-mix(in_oklab,var(--color-primary)_30%,var(--color-border))]"
                           >
                             {shortLabel}
                           </span>
                         ))}
                       </span>
-                      <span className="mt-2 text-[11px] leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
+                      <span className="mt-2 text-[11px] leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)] group-focus-visible:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)]">
                         {summary}
                       </span>
                     </>
                   ) : (
-                    <span className="mt-1 text-xs text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">{summary}</span>
+                    <span className="mt-1 text-xs text-[var(--color-text-secondary)] transition group-hover:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)] group-focus-visible:text-[color:color-mix(in_oklab,var(--color-primary)_80%,transparent)]">{summary}</span>
                   )}
                 </a>
               </li>
