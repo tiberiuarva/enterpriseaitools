@@ -1,4 +1,3 @@
-import { ChevronRight } from "lucide-react";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
@@ -49,10 +48,10 @@ function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${platform.id}`);
 }
 
-function getPlatformSummary(platform: Platform, category: ToolCategory, variant: "summary" | "detail" = "summary") {
+function getPlatformSummary(platform: Platform, category: ToolCategory) {
   if (category === "assistants") {
     return getAssistantContextLabels(platform)
-      .map(({ shortLabel, detailLabel }) => (variant === "detail" ? detailLabel : `${shortLabel}: ${detailLabel}`))
+      .map(({ detailLabel }) => detailLabel)
       .join(" · ");
   }
 
@@ -60,9 +59,7 @@ function getPlatformSummary(platform: Platform, category: ToolCategory, variant:
 }
 
 function getPlatformLinkLabel(platform: Platform, category: ToolCategory) {
-  const summary = getPlatformSummary(platform, category);
-
-  return `Open ${platform.name} platform details. ${summary}.`;
+  return `Open ${platform.name} platform details. ${getPlatformSummary(platform, category)}.`;
 }
 
 function getPlatformCountLabel(platformCount: number) {
@@ -85,13 +82,12 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
           </div>
           <p className="text-sm text-[var(--color-text-secondary)]">{copy.intro}</p>
         </div>
-        <ul className="grid grid-cols-1 gap-2 md:grid-cols-3" role="list">
+        <ul className={`grid grid-cols-1 gap-2 ${platforms.length >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
           {platforms.map((platform) => (
             <li key={platform.id}>
               <a
                 href={getPlatformHref(platform)}
                 aria-label={getPlatformLinkLabel(platform, category)}
-                title={getPlatformSummary(platform, category)}
                 className="group inline-flex h-full min-w-0 w-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
               >
                 <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">{platform.name}</span>
@@ -109,16 +105,12 @@ export function PlatformCategoryBar({ category, platforms }: { category: ToolCat
                       ))}
                     </span>
                     <span className="mt-2 text-[11px] leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">
-                      {getPlatformSummary(platform, category, "detail")}
+                      {getPlatformSummary(platform, category)}
                     </span>
                   </>
                 ) : (
                   <span className="mt-1 text-xs text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)]/80 group-focus-visible:text-[var(--color-primary)]/80">{getPlatformContextLabel(platform, category as PlatformMappedCategory)}</span>
                 )}
-                <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
-                  View platform details
-                  <ChevronRight size={14} aria-hidden="true" />
-                </span>
               </a>
             </li>
           ))}

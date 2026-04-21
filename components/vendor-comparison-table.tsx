@@ -8,7 +8,7 @@ export function VendorComparisonTable({
   rows: ComparisonRow[];
 }) {
   return (
-    <div className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+    <div className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] [content-visibility:auto] [contain-intrinsic-size:1200px]">
       <table className="min-w-full border-collapse text-sm">
         <caption className="sr-only">Comparison table for {vendors.join(", ")}</caption>
         <thead>

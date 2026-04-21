@@ -28,7 +28,7 @@ export function RelatedHubs({
   }
 
   return (
-    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:320px]">
       <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">{title}</h2>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{intro}</p>
       <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
