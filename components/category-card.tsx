@@ -52,10 +52,10 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
                 <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" />
               ) : (
                 <span
-                  className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${toolTypeTintStyles[tool.type]}`}
+                  className={`inline-flex h-6 w-6 items-center justify-center rounded-md ${toolTypeTintStyles[tool.type]}`}
                   aria-hidden="true"
                 >
-                  <PreviewToolIcon size={11} />
+                  <PreviewToolIcon size={12} />
                 </span>
               )}
               <span>{tool.name}</span>

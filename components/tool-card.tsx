@@ -32,10 +32,10 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" />
           ) : (
             <div
-              className={`flex shrink-0 items-center justify-center rounded-xl ${compact ? "h-10 w-10" : "h-12 w-12"} ${toolTypeTintStyles[tool.type]}`}
+              className={`flex shrink-0 items-center justify-center ${compact ? "h-6 w-6 rounded-md" : "h-8 w-8 rounded-lg"} ${toolTypeTintStyles[tool.type]}`}
               aria-hidden="true"
             >
-              <TypeIcon size={compact ? 18 : 20} />
+              <TypeIcon size={compact ? 12 : 16} />
             </div>
           )}
           <div className="min-w-0">
