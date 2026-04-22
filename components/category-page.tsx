@@ -72,7 +72,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
         </div>
       </section>
 
-      <PlatformCategoryBar category={category} platforms={platforms} />
+      <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
 
       {enableFiltering ? (
         <FilteredCategorySections tools={tools} updates={updates} comparison={comparison} />

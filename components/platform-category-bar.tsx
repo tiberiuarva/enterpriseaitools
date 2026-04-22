@@ -65,7 +65,7 @@ export function PlatformCategoryBar({
   }
 
   const copy = coverageCopy[category];
-  const columnClass = platforms.length === 4 ? "md:grid-cols-2 lg:grid-cols-2" : platforms.length >= 3 ? "md:grid-cols-3" : platforms.length === 2 ? "md:grid-cols-2" : "md:grid-cols-1";
+  const columnClass = platforms.length === 4 ? "md:grid-cols-2" : platforms.length >= 3 ? "md:grid-cols-3" : platforms.length === 2 ? "md:grid-cols-2" : "";
   const Heading = headingLevel === 3 ? "h3" : "h2";
 
   return (
