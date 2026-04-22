@@ -4,10 +4,6 @@ const imageKinds = new Set<LogoKind>(["official-product", "official-vendor", "se
 
 type LogoDisplayTarget = Pick<Tool, "logoKind" | "logoUrl"> | Pick<Platform, "logoKind" | "logoUrl">;
 
-export function hasAuditedImageLogo(logoKind: LogoKind) {
-  return imageKinds.has(logoKind);
-}
-
 export function shouldShowImageLogo(target: LogoDisplayTarget) {
-  return hasAuditedImageLogo(target.logoKind) && Boolean(target.logoUrl);
+  return imageKinds.has(target.logoKind) && Boolean(target.logoUrl);
 }
