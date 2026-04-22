@@ -76,7 +76,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
         </div>
       </section>
 
-      <PlatformCategoryBar category="assistants" platforms={platforms} />
+      <PlatformCategoryBar category="assistants" platforms={platforms} headingLevel={3} />
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
         <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
