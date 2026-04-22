@@ -6,15 +6,14 @@ import type { LogoKind } from "@/lib/types";
 import { getPlatformFallbackStyles } from "@/lib/vendor-colors";
 
 type PlatformMarkProps = {
-  name: string;
   vendor: string;
   logoUrl?: string;
   logoKind: LogoKind;
 };
 
-export function PlatformMark({ name, vendor, logoUrl, logoKind }: PlatformMarkProps) {
+export function PlatformMark({ vendor, logoUrl, logoKind }: PlatformMarkProps) {
   if (shouldShowImageLogo({ logoKind, logoUrl })) {
-    return <LogoBadge name={name} logoUrl={logoUrl} logoKind={logoKind} size="lg" decorative />;
+    return <LogoBadge logoUrl={logoUrl} logoKind={logoKind} size="lg" />;
   }
 
   return (

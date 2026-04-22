@@ -13,7 +13,7 @@ export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
         >
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <PlatformMark name={platform.name} vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
+              <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
               <div className="min-w-0">
                 <div className="truncate text-base font-semibold text-[var(--color-text-primary)]">{platform.name}</div>
                 <div className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</div>

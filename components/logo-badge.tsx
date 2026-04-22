@@ -5,12 +5,10 @@ import { withBasePath } from "@/lib/site";
 import type { LogoKind } from "@/lib/types";
 
 type LogoBadgeProps = {
-  name: string;
   logoUrl?: string;
   logoKind: LogoKind;
   size?: "sm" | "md" | "lg";
   className?: string;
-  decorative?: boolean;
 };
 
 const sizeClasses = {
@@ -25,19 +23,13 @@ const imageSizes = {
   lg: 40,
 } as const;
 
-export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "", decorative = false }: LogoBadgeProps) {
+export function LogoBadge({ logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
   if (!shouldShowImageLogo({ logoKind, logoUrl })) {
     return null;
   }
 
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const imageLogoUrl = logoUrl!;
-  const imageTitle =
-    logoKind === "service-icon"
-      ? `${name} service icon`
-      : logoKind === "official-vendor"
-        ? `${name} vendor logo`
-        : `${name} logo`;
 
   const containerClasses =
     logoKind === "service-icon"
@@ -45,10 +37,10 @@ export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = ""
       : `overflow-hidden border border-[var(--color-border)] bg-white ${classes}`;
 
   return (
-    <div className={containerClasses} title={decorative ? undefined : imageTitle} aria-hidden={decorative || undefined}>
+    <div className={containerClasses} aria-hidden="true">
       <Image
         src={withBasePath(imageLogoUrl)}
-        alt={decorative ? "" : `${name} logo`}
+        alt=""
         width={imageSizes[size]}
         height={imageSizes[size]}
         loading="lazy"

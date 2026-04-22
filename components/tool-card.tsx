@@ -29,7 +29,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-start gap-3">
           {showImageLogo ? (
-            <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" decorative />
+            <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" />
           ) : (
             <div
               className={`flex shrink-0 items-center justify-center rounded-xl ${compact ? "h-10 w-10" : "h-12 w-12"} ${toolTypeTintStyles[tool.type]}`}

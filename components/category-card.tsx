@@ -49,7 +49,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
             >
               {showImageLogo ? (
-                <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
+                <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" />
               ) : (
                 <span
                   className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${toolTypeTintStyles[tool.type]}`}

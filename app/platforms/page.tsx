@@ -101,7 +101,7 @@ export default function PlatformsPage() {
           {platforms.map((platform) => (
             <article key={platform.id} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex min-w-0 items-center gap-3">
-                <PlatformMark name={platform.name} vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
+                <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
                 <div className="min-w-0">
                   <h2 className="truncate text-lg font-semibold">{platform.name}</h2>
                   <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
