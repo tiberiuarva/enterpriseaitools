@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
 import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
-import { formatToolTypeLabel, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
+import { formatToolTypeLabel, toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
 
 import type { Tool } from "@/lib/types";
 
@@ -54,7 +54,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
                 <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
               ) : (
                 <span
-                  className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${toolTypeIconWrapStyles[tool.type]}`}
+                  className={`inline-flex h-5 w-5 items-center justify-center rounded-full ${toolTypeTintStyles[tool.type]}`}
                   aria-hidden="true"
                 >
                   <PreviewToolIcon size={11} />

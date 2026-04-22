@@ -23,9 +23,6 @@ export const toolTypeTintStyles: Record<ToolType, string> = {
   commercial: `${toolTypeTokens.commercial.tintClass} ${toolTypeTokens.commercial.textClass}`,
 };
 
-export const toolTypeBadgeStyles = toolTypeTintStyles;
-export const toolTypeIconWrapStyles = toolTypeTintStyles;
-
 export const toolTypeIcons: Record<ToolType, LucideIcon> = {
   vendor: Building2,
   opensource: Boxes,

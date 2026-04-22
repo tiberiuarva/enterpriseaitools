@@ -2,7 +2,7 @@ import { Check, ExternalLink, Globe, Star } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
 import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
-import { formatToolTypeLabel, toolTypeBadgeStyles, toolTypeIcons, toolTypeIconWrapStyles } from "@/lib/tool-type";
+import { formatToolTypeLabel, toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
 import type { Tool } from "@/lib/types";
 import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
@@ -32,7 +32,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" decorative />
           ) : (
             <div
-              className={`flex shrink-0 items-center justify-center rounded-xl ${compact ? "h-10 w-10" : "h-12 w-12"} ${toolTypeIconWrapStyles[tool.type]}`}
+              className={`flex shrink-0 items-center justify-center rounded-xl ${compact ? "h-10 w-10" : "h-12 w-12"} ${toolTypeTintStyles[tool.type]}`}
               aria-hidden="true"
             >
               <TypeIcon size={compact ? 18 : 20} />
@@ -43,7 +43,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
           </div>
         </div>
-        <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${toolTypeBadgeStyles[tool.type]}`}>
+        <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${toolTypeTintStyles[tool.type]}`}>
           {formatToolTypeLabel(tool.type)}
         </span>
       </div>
