@@ -17,17 +17,14 @@ const toolTypeTokens: Record<ToolType, { textClass: string; tintClass: string }>
   },
 };
 
-export const toolTypeBadgeStyles: Record<ToolType, string> = {
+export const toolTypeTintStyles: Record<ToolType, string> = {
   vendor: `${toolTypeTokens.vendor.tintClass} ${toolTypeTokens.vendor.textClass}`,
   opensource: `${toolTypeTokens.opensource.tintClass} ${toolTypeTokens.opensource.textClass}`,
   commercial: `${toolTypeTokens.commercial.tintClass} ${toolTypeTokens.commercial.textClass}`,
 };
 
-export const toolTypeIconWrapStyles: Record<ToolType, string> = {
-  vendor: `${toolTypeTokens.vendor.tintClass} ${toolTypeTokens.vendor.textClass}`,
-  opensource: `${toolTypeTokens.opensource.tintClass} ${toolTypeTokens.opensource.textClass}`,
-  commercial: `${toolTypeTokens.commercial.tintClass} ${toolTypeTokens.commercial.textClass}`,
-};
+export const toolTypeBadgeStyles = toolTypeTintStyles;
+export const toolTypeIconWrapStyles = toolTypeTintStyles;
 
 export const toolTypeIcons: Record<ToolType, LucideIcon> = {
   vendor: Building2,
