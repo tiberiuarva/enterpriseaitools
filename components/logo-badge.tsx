@@ -23,9 +23,11 @@ const imageSizes = {
   lg: 40,
 } as const;
 
+const baseContainerClasses = "overflow-hidden border";
+
 const containerClassesByKind = {
-  "service-icon": "overflow-hidden border border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))]",
-  default: "overflow-hidden border border-[var(--color-border)] bg-white",
+  "service-icon": "border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))]",
+  default: "border-[var(--color-border)] bg-white",
 } as const;
 
 export function LogoBadge({ logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
@@ -35,7 +37,7 @@ export function LogoBadge({ logoUrl, logoKind, size = "md", className = "" }: Lo
 
   const classes = `${sizeClasses[size]} ${className}`.trim();
   const imageLogoUrl = logoUrl!;
-  const containerClasses = `${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
+  const containerClasses = `${baseContainerClasses} ${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
 
   return (
     <div className={containerClasses} aria-hidden="true">
