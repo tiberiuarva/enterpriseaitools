@@ -12,9 +12,9 @@ type LogoBadgeProps = {
 };
 
 const sizeClasses = {
-  sm: "h-6 w-6 rounded-md text-[10px]",
-  md: "h-8 w-8 rounded-lg text-sm",
-  lg: "h-10 w-10 rounded-xl text-base",
+  sm: "h-6 w-6 rounded-md",
+  md: "h-8 w-8 rounded-lg",
+  lg: "h-10 w-10 rounded-xl",
 } as const;
 
 const imageSizes = {
