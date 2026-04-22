@@ -43,8 +43,8 @@ export function Header({ currentPath = "/" }: HeaderProps) {
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/95 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/95 backdrop-blur">
+        <div className="mx-auto flex h-[var(--site-header-height)] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
           <a href={withBasePath("/")} className="text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
             enterpriseai.tools
           </a>

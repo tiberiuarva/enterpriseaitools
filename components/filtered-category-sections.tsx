@@ -3,15 +3,28 @@
 import { useMemo, useState } from "react";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
+import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
+import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Tool, UpdateEntry } from "@/lib/types";
 
-export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; updates: UpdateEntry[] }) {
+type FilteredCategorySectionsProps = {
+  tools: Tool[];
+  updates: UpdateEntry[];
+  comparison?: CategoryComparison;
+};
+
+export function FilteredCategorySections({ tools, updates, comparison }: FilteredCategorySectionsProps) {
   const [typeFilter, setTypeFilter] = useState<CategoryFilterState["type"]>("all");
   const [cloudFilters, setCloudFilters] = useState<string[]>([]);
   const [licenseFilter, setLicenseFilter] = useState("all");
   const [sortBy, setSortBy] = useState<CategoryFilterState["sort"]>("name");
+
+  function resetNarrowingFilters() {
+    setCloudFilters([]);
+    setLicenseFilter("all");
+  }
 
   const availableLicenses = useMemo(() => getAvailableLicenses(tools), [tools]);
   const effectiveTools = useMemo(() => {
@@ -29,22 +42,55 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
     return next;
   }, [tools, typeFilter, licenseFilter, sortBy, cloudFilters]);
 
+  const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
+  const visibleUpdates = useMemo(() => updates.slice(0, 5), [updates]);
+  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+  const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
+  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter;
+  const showVendorSection = showVendorCards || showVendorComparison;
 
   return (
     <>
-      <FilterBar
-        typeFilter={typeFilter}
-        onTypeFilterChange={setTypeFilter}
-        cloudFilters={cloudFilters}
-        onCloudFiltersChange={setCloudFilters}
-        licenseFilter={licenseFilter}
-        onLicenseFilterChange={setLicenseFilter}
-        sortBy={sortBy}
-        onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
-        availableLicenses={availableLicenses}
-      />
+      <section
+        className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
+        style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
+      >
+        <FilterBar
+          typeFilter={typeFilter}
+          onTypeFilterChange={setTypeFilter}
+          cloudFilters={cloudFilters}
+          onCloudFiltersChange={setCloudFilters}
+          licenseFilter={licenseFilter}
+          onLicenseFilterChange={setLicenseFilter}
+          sortBy={sortBy}
+          onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
+          availableLicenses={availableLicenses}
+        />
+      </section>
+
+      {showVendorSection ? (
+        <VendorToolsSection
+          vendorTools={vendorTools}
+          comparison={comparison}
+          showComparison={showVendorComparison}
+          description={
+            showVendorComparison
+              ? showVendorCards
+                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
+                : "Source-backed side-by-side comparison for the three cloud vendor offerings in this category. Vendor tool cards are hidden by the current type filter."
+              : comparison
+                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
+                : hasActiveNarrowingFilter
+                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
+                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
+          }
+          showToolCards={showVendorCards}
+          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
+          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
+        />
+      ) : null}
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
         <h2 className="text-lg font-semibold">Filtered open source and third-party tools</h2>
@@ -56,7 +102,22 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
               <ToolCard key={tool.id} tool={tool} compact />
             ))}
           </div>
-        ) : null}
+        ) : (
+          <div className="mt-5 space-y-3">
+            <WarningBox variant="info">
+              No tools match the current filter combination. Adjust type, cloud, license, or sort to broaden the result set.
+            </WarningBox>
+            {hasActiveNarrowingFilter ? (
+              <button
+                type="button"
+                onClick={resetNarrowingFilters}
+                className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              >
+                Clear cloud/license filters
+              </button>
+            ) : null}
+          </div>
+        )}
       </section>
 
       {warningTools.length > 0 ? (
@@ -72,11 +133,11 @@ export function FilteredCategorySections({ tools, updates }: { tools: Tool[]; up
         </section>
       ) : null}
 
-      {updates.length > 0 ? (
+      {visibleUpdates.length > 0 ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:360px]">
           <h2 className="text-lg font-semibold">Recent updates</h2>
           <div className="mt-4 space-y-4">
-            {updates.slice(0, 5).map((update) => (
+            {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.toolName}</div>
