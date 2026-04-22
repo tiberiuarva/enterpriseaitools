@@ -11,7 +11,14 @@ type CoverageCopy = {
   navLabel: string;
 };
 
+type PlatformCategoryBarProps = {
+  category: ToolCategory;
+  platforms: Platform[];
+  headingLevel: HeadingLevel;
+};
+
 const gridColumnClassesByPlatformCount: Record<number, string> = {
+  1: "",
   2: "md:grid-cols-2",
   3: "md:grid-cols-3",
   4: "md:grid-cols-2",
@@ -61,12 +68,8 @@ function getAssistantPlatformSummary(platform: Platform) {
 export function PlatformCategoryBar({
   category,
   platforms,
-  headingLevel = 2,
-}: {
-  category: ToolCategory;
-  platforms: Platform[];
-  headingLevel?: HeadingLevel;
-}) {
+  headingLevel,
+}: PlatformCategoryBarProps) {
   if (platforms.length === 0) {
     return null;
   }
@@ -82,7 +85,7 @@ export function PlatformCategoryBar({
     >
       <div className="flex flex-col gap-2">
         <Heading className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</Heading>
-        <ul className={`grid grid-cols-1 gap-2 ${columnClass}`}>
+        <ul className={["grid grid-cols-1 gap-2", columnClass].filter(Boolean).join(" ")}>
           {platforms.map((platform) => {
             const summary = getPlatformSummary(platform, category);
             const summaryClass = category === "assistants" ? "mt-2 text-xs leading-5" : "mt-1 text-xs";
@@ -91,7 +94,7 @@ export function PlatformCategoryBar({
               <li key={platform.id}>
                 <a
                   href={getPlatformHref(platform)}
-                  className="group flex h-full min-w-0 flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-left transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+                  className="group flex h-full min-w-0 flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
                 >
                   <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">{platform.name}</span>
                   <span className={`${summaryClass} text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]`}>
