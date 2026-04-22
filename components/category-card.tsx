@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
 import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
-import { formatToolTypeLabel, toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
+import { toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
 
 import type { Tool } from "@/lib/types";
 
@@ -38,7 +38,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
         </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2" aria-hidden="true">
         {previewTools.map((tool) => {
           const PreviewToolIcon = toolTypeIcons[tool.type];
           const showImageLogo = shouldShowImageLogo(tool);
@@ -47,8 +47,6 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
             <span
               key={tool.id}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
-              aria-label={`${tool.name} · ${formatToolTypeLabel(tool.type)}`}
-              title={formatToolTypeLabel(tool.type)}
             >
               {showImageLogo ? (
                 <LogoBadge name={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" decorative />
