@@ -1,4 +1,3 @@
-import { createElement } from "react";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
@@ -66,8 +65,8 @@ export function PlatformCategoryBar({
   }
 
   const copy = coverageCopy[category];
-  const columnClass = platforms.length >= 3 ? "md:grid-cols-3" : platforms.length === 2 ? "md:grid-cols-2" : "md:grid-cols-1";
-  const headingTag = headingLevel === 3 ? "h3" : "h2";
+  const columnClass = platforms.length === 4 ? "md:grid-cols-2 lg:grid-cols-3" : platforms.length >= 3 ? "md:grid-cols-3" : platforms.length === 2 ? "md:grid-cols-2" : "md:grid-cols-1";
+  const Heading = headingLevel === 3 ? "h3" : "h2";
 
   return (
     <nav
@@ -75,7 +74,7 @@ export function PlatformCategoryBar({
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-2">
-        {createElement(headingTag, { className: "text-sm font-semibold text-[var(--color-text-primary)]" }, copy.heading)}
+        <Heading className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</Heading>
         <ul className={`grid grid-cols-1 gap-2 ${columnClass}`}>
           {platforms.map((platform) => {
             const summary = getPlatformSummary(platform, category);

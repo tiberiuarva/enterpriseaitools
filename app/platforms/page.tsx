@@ -99,7 +99,7 @@ export default function PlatformsPage() {
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
           {platforms.map((platform) => (
-            <article id={platform.id} key={platform.id} className="scroll-mt-[calc(var(--site-header-height)+1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <article id={platform.id} key={platform.id} className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex items-center gap-3">
                 <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
                 <div>
