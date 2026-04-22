@@ -7,7 +7,7 @@ import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, platforms } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
-import { getPlatformFragmentId } from "@/lib/platform-fragments";
+import { assertUniquePlatformFragmentIds, getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
 
@@ -67,6 +67,8 @@ const mappingRows: Array<{ label: string; cells: [PlatformMapping, PlatformMappi
 ];
 
 export default function PlatformsPage() {
+  assertUniquePlatformFragmentIds(platforms.map((platform) => platform.id));
+
   const pageUrl = `${siteUrl}/platforms/`;
   const description = "Side-by-side comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer for enterprise AI tools.";
   const jsonLd = [
@@ -101,27 +103,35 @@ export default function PlatformsPage() {
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {platforms.map((platform) => {
             const platformFragmentId = getPlatformFragmentId(platform.id);
+            const platformHeadingId = `${platformFragmentId}-heading`;
 
             return (
-            <article id={platformFragmentId} key={platform.id} className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-              <div className="flex items-center gap-3">
-                <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
-                <div>
-                  <h2 className="text-lg font-semibold">{platform.name}</h2>
-                  <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
+              <article
+                id={platformFragmentId}
+                key={platform.id}
+                aria-labelledby={platformHeadingId}
+                className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
+                  <div>
+                    <h2 id={platformHeadingId} className="text-lg font-semibold">
+                      {platform.name}
+                    </h2>
+                    <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
+                  </div>
                 </div>
-              </div>
-              <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
-              <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
-                <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
-              </div>
-              <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
-              </div>
-              <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
-                Docs
-              </a>
-            </article>
+                <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
+                <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
+                </div>
+                <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
+                </div>
+                <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                  Docs
+                </a>
+              </article>
             );
           })}
         </section>

@@ -11,6 +11,12 @@ type CoverageCopy = {
   navLabel: string;
 };
 
+const gridColumnClassesByPlatformCount: Record<number, string> = {
+  2: "md:grid-cols-2",
+  3: "md:grid-cols-3",
+  4: "md:grid-cols-2",
+};
+
 const coverageCopy: Record<ToolCategory, CoverageCopy> = {
   agents: {
     heading: "Agent platform coverage",
@@ -66,7 +72,7 @@ export function PlatformCategoryBar({
   }
 
   const copy = coverageCopy[category];
-  const columnClass = platforms.length === 4 ? "md:grid-cols-2" : platforms.length >= 3 ? "md:grid-cols-3" : platforms.length === 2 ? "md:grid-cols-2" : "";
+  const columnClass = gridColumnClassesByPlatformCount[platforms.length] ?? (platforms.length >= 5 ? "md:grid-cols-3" : "");
   const Heading = headingLevel === 3 ? "h3" : "h2";
 
   return (
