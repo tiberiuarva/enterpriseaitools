@@ -60,7 +60,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
                   <PreviewToolIcon size={11} />
                 </span>
               )}
-              <span className="text-[var(--color-text-primary)]">{tool.name}</span>
+              <span>{tool.name}</span>
             </span>
           );
         })}
