@@ -7,6 +7,7 @@ import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, platforms } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
+import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
 
@@ -97,9 +98,12 @@ export default function PlatformsPage() {
           rows={comparisonRows}
         />
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3 [content-visibility:auto] [contain-intrinsic-size:820px]">
-          {platforms.map((platform) => (
-            <article id={platform.id} key={platform.id} className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          {platforms.map((platform) => {
+            const platformFragmentId = getPlatformFragmentId(platform.id);
+
+            return (
+            <article id={platformFragmentId} key={platform.id} className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
               <div className="flex items-center gap-3">
                 <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
                 <div>
@@ -118,7 +122,8 @@ export default function PlatformsPage() {
                 Docs
               </a>
             </article>
-          ))}
+            );
+          })}
         </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">

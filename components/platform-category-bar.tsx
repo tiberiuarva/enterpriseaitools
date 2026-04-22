@@ -1,3 +1,4 @@
+import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
@@ -36,7 +37,7 @@ function getPlatformContextLabel(platform: Platform, category: PlatformMappedCat
 }
 
 function getPlatformHref(platform: Platform) {
-  return withBasePath(`/platforms#${platform.id}`);
+  return withBasePath(`/platforms#${getPlatformFragmentId(platform.id)}`);
 }
 
 function getPlatformSummary(platform: Platform, category: ToolCategory) {
