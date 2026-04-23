@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15",
+  "lastUpdated": "2026-04-23",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -141,7 +141,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "autogen",
@@ -171,7 +176,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "llamaindex",
@@ -199,7 +209,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "semantic-kernel",
@@ -228,7 +243,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "langgraph",
@@ -242,8 +262,8 @@
         "Strong agent workflow patterns",
         "Active ecosystem"
       ],
-      "license": "Proprietary core",
-      "licenseWarning": "LangGraph core package uses a proprietary license. Auxiliary packages are MIT. Enterprises must review licensing carefully.",
+      "license": "MIT",
+      "licenseWarning": "Core LangGraph repository is MIT-licensed; review any separately licensed LangChain commercial services independently.",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 29298,
       "version": "1.1.7a2",
@@ -257,7 +277,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "mastra",
@@ -271,7 +296,7 @@
         "Fast growth",
         "Modern DX"
       ],
-      "license": "Apache 2.0 + EE",
+      "license": "Apache 2.0 core + EE paths",
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 23011,
       "version": "1.24.0",
@@ -285,7 +310,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License."
     },
     {
       "id": "openai-agents-sdk",
@@ -314,7 +345,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "atomic-agents",
@@ -341,7 +377,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "beeai-framework",
@@ -370,7 +411,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "azure-logic-apps",
@@ -497,7 +543,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "langflow",
@@ -526,7 +577,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "dify",
@@ -555,7 +611,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "flowise",
@@ -583,7 +644,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "haystack",
@@ -611,7 +677,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "rivet",
@@ -640,7 +711,12 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "azure-ai-content-safety",
@@ -763,7 +839,12 @@
       "version": "0.21.0",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "guardrails-ai",
@@ -791,7 +872,12 @@
       "version": "0.10.0",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "llm-guard",
@@ -820,7 +906,12 @@
       "version": "0.3.16",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "rebuff",
@@ -849,7 +940,12 @@
       "version": "0.1.1",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ]
     },
     {
       "id": "lakera-guard",
@@ -951,7 +1047,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
       "websiteUrl": "https://aws.amazon.com/q/developer/",
-      "pricing": "$19/user/mo Pro; $39 Pro+.",
+      "pricing": "$19/user/mo Pro; $39/user/mo Pro+.",
       "pricingModel": "paid",
       "status": "active",
       "tags": [
