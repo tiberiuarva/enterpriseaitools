@@ -1,21 +1,20 @@
 import Image from "next/image";
 
+import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
 import type { LogoKind } from "@/lib/types";
 
 type LogoBadgeProps = {
-  name: string;
   logoUrl?: string;
   logoKind: LogoKind;
   size?: "sm" | "md" | "lg";
   className?: string;
-  decorative?: boolean;
 };
 
 const sizeClasses = {
-  sm: "h-6 w-6 rounded-md text-[10px]",
-  md: "h-8 w-8 rounded-lg text-sm",
-  lg: "h-10 w-10 rounded-xl text-base",
+  sm: "h-6 w-6 rounded-md",
+  md: "h-8 w-8 rounded-lg",
+  lg: "h-10 w-10 rounded-xl",
 } as const;
 
 const imageSizes = {
@@ -24,82 +23,32 @@ const imageSizes = {
   lg: 40,
 } as const;
 
-// Keep this list deliberately short and ASCII-only. It exists to trim obvious filler words,
-// not to normalize brand semantics across languages or strip tokens like "AI".
-const monogramStopwords = new Set(["the", "and", "for"]);
-const imageKinds = new Set<LogoKind>(["official-product", "official-vendor", "service-icon", "project-logo"]);
+const baseContainerClasses = "overflow-hidden border";
 
-function splitNameTokens(name: string) {
-  return name.match(/[\p{L}\p{N}]+/gu) ?? [];
-}
+const containerClassesByKind = {
+  "service-icon": "border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))]",
+  default: "border-[var(--color-border)] bg-white",
+} as const;
 
-function buildMonogram(name: string) {
-  const rawTokens = splitNameTokens(name)
-    .map((token) => token.trim())
-    .filter(Boolean);
-
-  const tokens = rawTokens.filter((token) => !monogramStopwords.has(token.toLowerCase()));
-
-  if (tokens.length === 0) {
-    const firstCharacter = name.trim().match(/[\p{L}\p{N}]/u)?.[0];
-
-    return firstCharacter ? firstCharacter.toUpperCase() : "?";
+export function LogoBadge({ logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
+  if (!shouldShowImageLogo({ logoKind, logoUrl })) {
+    return null;
   }
 
-  if (tokens.length === 1) {
-    return Array.from(tokens[0]).slice(0, 2).join("").toUpperCase();
-  }
-
-  return tokens
-    .slice(0, 2)
-    .map((token) => Array.from(token)[0]?.toUpperCase() ?? "")
-    .join("");
-}
-
-export function LogoBadge({ name, logoUrl, logoKind, size = "md", className = "", decorative = false }: LogoBadgeProps) {
   const classes = `${sizeClasses[size]} ${className}`.trim();
-  const monogram = buildMonogram(name);
-  const imageLogoUrl = logoUrl && imageKinds.has(logoKind) ? logoUrl : undefined;
-  const imageTitle =
-    logoKind === "service-icon"
-      ? `${name} service icon`
-      : logoKind === "official-vendor"
-        ? `${name} vendor logo`
-        : `${name} logo`;
-
-  if (imageLogoUrl) {
-    const containerClasses =
-      logoKind === "service-icon"
-        ? `relative overflow-hidden border border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))] ${classes}`
-        : `overflow-hidden border border-[var(--color-border)] bg-white ${classes}`;
-
-    return (
-      <div className={containerClasses} title={decorative ? undefined : imageTitle} aria-hidden={decorative || undefined}>
-        <Image
-          src={withBasePath(imageLogoUrl)}
-          alt={decorative ? "" : `${name} logo`}
-          width={imageSizes[size]}
-          height={imageSizes[size]}
-          loading="lazy"
-          className="h-full w-full object-contain p-0.5"
-        />
-        {logoKind === "service-icon" ? (
-          <span className="absolute right-0.5 top-0.5 rounded bg-[var(--color-primary)] px-1 py-[1px] text-[8px] font-semibold uppercase tracking-[0.08em] text-white">
-            svc
-          </span>
-        ) : null}
-      </div>
-    );
-  }
+  const imageLogoUrl = logoUrl!;
+  const containerClasses = `${baseContainerClasses} ${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
 
   return (
-    <div
-      className={`flex items-center justify-center border border-[color:rgba(59,130,246,0.18)] bg-[linear-gradient(180deg,rgba(59,130,246,0.10),rgba(59,130,246,0.18))] font-semibold tracking-[0.08em] text-[var(--color-primary)] ${classes}`}
-      role={decorative ? undefined : "img"}
-      aria-hidden={decorative || undefined}
-      aria-label={decorative ? undefined : `${name} monogram badge`}
-    >
-      <span aria-hidden="true">{monogram}</span>
+    <div className={containerClasses} aria-hidden="true">
+      <Image
+        src={withBasePath(imageLogoUrl)}
+        alt=""
+        width={imageSizes[size]}
+        height={imageSizes[size]}
+        loading="lazy"
+        className="h-full w-full object-contain p-0.5"
+      />
     </div>
   );
 }

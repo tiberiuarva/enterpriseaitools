@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
-import { LogoBadge } from "@/components/logo-badge";
+import { PlatformMark } from "@/components/platform-mark";
 import { RelatedHubs } from "@/components/related-hubs";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
@@ -112,10 +112,10 @@ export default function PlatformsPage() {
                 aria-labelledby={platformHeadingId}
                 className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
               >
-                <div className="flex items-center gap-3">
-                  <LogoBadge name={platform.name} logoUrl={platform.logoUrl} logoKind={platform.logoKind} size="lg" decorative />
-                  <div>
-                    <h2 id={platformHeadingId} className="text-lg font-semibold">
+                <div className="flex min-w-0 items-center gap-3">
+                  <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
+                  <div className="min-w-0">
+                    <h2 id={platformHeadingId} className="truncate text-lg font-semibold">
                       {platform.name}
                     </h2>
                     <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
