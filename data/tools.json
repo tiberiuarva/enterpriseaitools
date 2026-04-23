@@ -251,6 +251,47 @@
       ]
     },
     {
+      "id": "microsoft-agent-framework",
+      "name": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Microsoft",
+      "description": "Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.",
+      "strengths": [
+        "MIT licensed",
+        "Python and .NET support",
+        "Graph-based workflows and DevUI"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/microsoft/agent-framework",
+      "githubStars": 9755,
+      "version": "1.1.1",
+      "lastRelease": "2026-04-23",
+      "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Microsoft positions Agent Framework as the migration target for Semantic Kernel and AutoGen users.",
+      "tags": [
+        "agents",
+        "microsoft",
+        "opensource",
+        "framework"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-23",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "languages": [
+        "Python",
+        "C#",
+        ".NET"
+      ]
+    },
+    {
       "id": "langgraph",
       "name": "LangGraph",
       "category": "agents",
@@ -548,6 +589,46 @@
         "aws",
         "azure",
         "gcp"
+      ]
+    },
+    {
+      "id": "paperclip",
+      "name": "Paperclip",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Paperclip",
+      "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
+      "strengths": [
+        "MIT licensed",
+        "Built-in budgets and governance",
+        "Persistent multi-agent control plane"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/paperclipai/paperclip",
+      "githubStars": 58174,
+      "version": "v2026.416.0",
+      "lastRelease": "2026-04-16",
+      "docsUrl": "https://paperclip.ing/docs",
+      "websiteUrl": "https://paperclip.ing/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "opensource",
+        "multi-agent",
+        "governance"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-23",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript"
       ]
     },
     {
