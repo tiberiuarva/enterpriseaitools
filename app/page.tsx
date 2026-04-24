@@ -6,6 +6,7 @@ import {
   CalendarClock,
   GitBranch,
   Landmark,
+  Layers3,
   ShieldCheck,
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
@@ -104,13 +105,18 @@ export default function Home() {
         </section>
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="max-w-4xl">
-            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
-            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-              These three platforms are the base stack behind much of the rest of the market. Each card below shows the
-              cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
-              often pair with it from open source or commercial tools.
-            </p>
+          <div className="flex items-start gap-4">
+            <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
+              <Layers3 size={28} />
+            </div>
+            <div className="max-w-4xl">
+              <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                These three platforms are the base stack behind much of the rest of the market. Each card below shows the
+                cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
+                often pair with it from open source or commercial tools.
+              </p>
+            </div>
           </div>
 
           <div className="mt-5">

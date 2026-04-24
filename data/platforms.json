@@ -62,9 +62,10 @@
           "href": "/assistants"
         }
       },
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoUrl": "/logos/microsoft-foundry.jpg",
+      "logoKind": "service-icon",
+      "logoNotes": "User-supplied Microsoft Foundry logo asset provided on 2026-04-24 for site use.",
+      "logoReviewedAt": "2026-04-24"
     },
     {
       "id": "aws-bedrock",
