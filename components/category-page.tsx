@@ -75,7 +75,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
       <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
 
       {enableFiltering ? (
-        <FilteredCategorySections tools={tools} updates={updates} comparison={comparison} />
+        <FilteredCategorySections category={category} tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
