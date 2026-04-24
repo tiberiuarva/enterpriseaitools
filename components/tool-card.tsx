@@ -1,8 +1,7 @@
 import { Check, ExternalLink, Globe, Star } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
-import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
-import { formatToolTypeLabel, toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
+import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
 import type { Tool } from "@/lib/types";
 import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
@@ -19,25 +18,13 @@ function formatCloudName(cloud: string) {
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
   const docsHref = tool.docsUrl ?? tool.websiteUrl;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
-  const TypeIcon = toolTypeIcons[tool.type];
-  const showImageLogo = shouldShowImageLogo(tool);
-
   return (
     <article
       className={`rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] transition-shadow hover:shadow-lg hover:[border-color:var(--color-primary)] ${compact ? "p-4 [content-visibility:auto] [contain-intrinsic-size:260px]" : "p-6 [content-visibility:auto] [contain-intrinsic-size:360px]"}`}
     >
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-start gap-3">
-          {showImageLogo ? (
-            <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" />
-          ) : (
-            <div
-              className={`flex shrink-0 items-center justify-center ${compact ? "h-6 w-6 rounded-md" : "h-8 w-8 rounded-lg"} ${toolTypeTintStyles[tool.type]}`}
-              aria-hidden="true"
-            >
-              <TypeIcon size={compact ? 12 : 16} />
-            </div>
-          )}
+          <LogoBadge label={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size={compact ? "sm" : "md"} className="shrink-0" />
           <div className="min-w-0">
             <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
             {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
