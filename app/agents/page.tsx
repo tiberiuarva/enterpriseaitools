@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CategoryPage } from "@/components/category-page";
 import { HomeShell } from "@/components/home-shell";
+import { categoryComparisons } from "@/lib/category-comparisons";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -22,6 +23,7 @@ export default function AgentsPage() {
         tools={getToolsByCategory("agents")}
         updates={getUpdatesByCategory("agents")}
         platforms={getPlatformsForCategory("agents")}
+        comparison={categoryComparisons.agents}
         enableFiltering
       />
     </HomeShell>
