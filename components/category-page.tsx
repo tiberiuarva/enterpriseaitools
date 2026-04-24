@@ -129,17 +129,6 @@ export function CategoryPage({ category, title, description, iconName, tools, up
             </section>
           ) : null}
 
-          <VendorToolsSection
-            vendorTools={vendorTools}
-            comparison={comparison}
-            showComparison={Boolean(comparison)}
-            description={
-              comparison
-                ? "Native cloud offerings for this category, followed by a side-by-side vendor comparison table."
-                : "Native cloud offerings for this category. Detailed vendor comparison rows are still being added for this category."
-            }
-          />
-
           <RelatedHubs
             currentPath={`/${category}`}
             title="Explore adjacent hubs"
