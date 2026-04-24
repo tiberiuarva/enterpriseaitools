@@ -104,26 +104,29 @@ export default function Home() {
         </section>
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-4xl">
-              <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                These three platforms are the base stack behind much of the rest of the market. Each card below shows the
-                cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
-                often pair with it from open source or commercial tools.
-              </p>
-            </div>
+          <div className="max-w-4xl">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+              These three platforms are the base stack behind much of the rest of the market. Each card below shows the
+              cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
+              often pair with it from open source or commercial tools.
+            </p>
+          </div>
+
+          <div className="mt-5">
+            <PlatformStrip platforms={platforms} />
+          </div>
+
+          <div className="mt-5">
             <a
               href={withBasePath("/platforms")}
-              className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+              className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
             >
               Open platform comparison
               <ArrowUpRight size={16} />
             </a>
           </div>
         </section>
-
-        <PlatformStrip platforms={platforms} />
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {categoryCards.map((category) => (
