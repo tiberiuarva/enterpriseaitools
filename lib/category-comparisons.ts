@@ -17,41 +17,41 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "Fully managed agent platform with deep M365 integration",
-          "Modular: Agents (guided) + AgentCore (framework-agnostic)",
-          "Open ADK + managed Agent Engine",
+          "Fully managed agent platform with deep Microsoft 365 integration",
+          "Modular stack combining guided agents with framework-agnostic runtime services",
+          "Open ADK paired with a managed agent runtime",
         ],
       },
       {
         attribute: "SDK Languages",
         values: [
           "Python, C#, JS/TS, Java",
-          "Python (primary), all AWS SDKs",
+          "Python-first via Bedrock plus broader AWS SDK coverage",
           "Python, Java, Go, TypeScript",
         ],
       },
       {
-        attribute: "Model Catalog",
+        attribute: "Model access",
         values: [
-          "11,000+ models",
-          "100+ foundation models",
-          "200+ via Model Garden",
+          "Broad Microsoft-hosted and partner model catalog",
+          "Broad managed foundation model catalog inside Bedrock",
+          "Vertex AI model access plus Model Garden coverage",
         ],
       },
       {
-        attribute: "Pricing",
+        attribute: "Pricing shape",
         values: [
-          "Free platform; pay for tokens + tools",
-          "Pay-per-use (vCPU/sec, Gateway, Memory)",
-          "Pay-per-use (vCPU-hr, GiB-hr)",
+          "Consumption pricing around model and tool usage",
+          "Usage-based pricing across agent/runtime features",
+          "Usage-based pricing across runtime and platform resources",
         ],
       },
       {
-        attribute: "Free Credits",
+        attribute: "Entry credits",
         values: [
-          "$200 Azure",
-          "$200 AWS",
-          "$300 GCP + Express Mode",
+          "Azure trial credits available",
+          "AWS trial credits available",
+          "Google Cloud trial credits available",
         ],
       },
       {
@@ -65,9 +65,9 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Differentiator",
         values: [
-          "One-click M365/Teams deploy; 1,400+ connectors",
-          "Max framework agnosticism; microVM isolation",
-          "Open-source ADK (7M+ downloads); Search grounding",
+          "Strong Microsoft ecosystem integration and deployment path into enterprise workflows",
+          "Framework choice with runtime isolation and modular AWS building blocks",
+          "Open ADK path with strong grounding/search tie-ins across Google tooling",
         ],
       },
       {
@@ -110,8 +110,8 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Connectors / integrations",
         values: [
-          "1,400+ (broadest)",
-          "220+ AWS services",
+          "Broad connector ecosystem",
+          "Deep AWS service integration",
           "GCP services + HTTP APIs",
         ],
       },
@@ -123,8 +123,8 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         attribute: "Latest update",
         values: [
           "GenAI Copilot automation",
-          "28 new integrations + AgentCore (Mar 2026)",
-          "Incremental updates",
+          "Recent Bedrock/agent ecosystem expansion",
+          "Incremental platform updates",
         ],
       },
     ],
