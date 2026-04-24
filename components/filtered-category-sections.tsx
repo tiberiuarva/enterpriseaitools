@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
+import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
@@ -172,6 +173,7 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
   const showVendorSection = showVendorCards || showVendorComparison;
+  const showStandaloneAgentsComparison = category === "agents" && showVendorComparison && comparison;
 
   return (
     <>
@@ -192,22 +194,34 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
         />
       </section>
 
+      {showStandaloneAgentsComparison ? (
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+          <h2 className="text-lg font-semibold">Vendor comparison</h2>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
+          </p>
+          <div className="mt-5">
+            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+          </div>
+        </section>
+      ) : null}
+
       {showVendorSection ? (
         <VendorToolsSection
           vendorTools={vendorTools}
           comparison={comparison}
-          showComparison={showVendorComparison}
+          showComparison={category === "agents" ? false : showVendorComparison}
           description={
             category === "agents"
               ? hasActiveNarrowingFilter
-                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison after the vendor tool cards in this section."
-                : "Cloud-native agent offerings are grouped near the top of the page, with the vendor comparison directly below the vendor tool cards in the same section."
+                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
+                : "Cloud-native agent offerings are grouped here near the top of the page, before the broader open source and third-party landscape below."
               : showVendorComparison
                 ? showVendorCards
                   ? "Cloud-native vendor offerings are shown first here, before the broader open source and third-party landscape below."
                   : "The three-way vendor comparison is available here because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter."
                 : comparison
-                  ? "Cloud-native vendor offerings stay near the top of this page. Clear cloud and license filters to restore the three-way vendor comparison table."
+                  ? "Cloud-native vendor offerings stay at the top of this section order. Clear cloud and license filters to restore the three-way vendor comparison table."
                   : hasActiveNarrowingFilter
                     ? "Vendor tool cards stay visible near the top and respect the current filters. Detailed vendor comparison rows are still being added for this category."
                     : "Vendor tool cards are shown near the top of the page. Detailed vendor comparison rows are still being added for this category."
