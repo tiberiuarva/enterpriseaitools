@@ -17,41 +17,41 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "Fully managed agent platform with deep Microsoft 365 integration",
-          "Modular stack combining guided agents with framework-agnostic runtime services",
-          "Open ADK paired with a managed agent runtime",
+          "Fully managed agent platform inside Microsoft Foundry",
+          "Managed Bedrock agents paired with the AgentCore runtime layer",
+          "Vertex AI agent tooling paired with the open ADK",
         ],
       },
       {
         attribute: "SDK Languages",
         values: [
           "Python, C#, JS/TS, Java",
-          "Python-first via Bedrock plus broader AWS SDK coverage",
+          "Python-first plus broader AWS SDK coverage",
           "Python, Java, Go, TypeScript",
         ],
       },
       {
         attribute: "Model access",
         values: [
-          "Broad Microsoft-hosted and partner model catalog",
-          "Broad managed foundation model catalog inside Bedrock",
-          "Vertex AI model access plus Model Garden coverage",
+          "11,000+ models through Microsoft Foundry",
+          "100+ managed foundation models in Bedrock",
+          "200+ models through Vertex AI and Model Garden",
         ],
       },
       {
         attribute: "Pricing shape",
         values: [
-          "Consumption pricing around model and tool usage",
-          "Usage-based pricing across agent/runtime features",
-          "Usage-based pricing across runtime and platform resources",
+          "Platform is free to explore; usage is billed around model and tool consumption",
+          "Pay-per-token plus usage-based agent/runtime features",
+          "Pay-per-token plus usage-based runtime and platform resources",
         ],
       },
       {
         attribute: "Entry credits",
         values: [
-          "Azure trial credits available",
-          "AWS trial credits available",
-          "Google Cloud trial credits available",
+          "$200 Azure credit",
+          "$200 AWS credit",
+          "$300 GCP credit + AI Studio free playground",
         ],
       },
       {
@@ -65,9 +65,9 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Differentiator",
         values: [
-          "Strong Microsoft ecosystem integration and deployment path into enterprise workflows",
-          "Framework choice with runtime isolation and modular AWS building blocks",
-          "Open ADK path with strong grounding/search tie-ins across Google tooling",
+          "Strong Microsoft 365 and enterprise workflow integration",
+          "Framework-agnostic runtime approach with strong AWS-native fit",
+          "ADK + Vertex AI combination with strong grounding and search tie-ins",
         ],
       },
       {
@@ -86,7 +86,7 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "iPaaS workflow automation with AI capabilities",
+          "iPaaS workflow automation with AI-adjacent integration depth",
           "Serverless state machine for AWS service orchestration",
           "Serverless workflow orchestration for GCP services",
         ],
@@ -110,7 +110,7 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Connectors / integrations",
         values: [
-          "Broad connector ecosystem",
+          "Broad connector ecosystem across enterprise apps and Azure services",
           "Deep AWS service integration",
           "GCP services + HTTP APIs",
         ],
@@ -120,11 +120,11 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         values: ["Partial (Standard plan)", "No", "No"],
       },
       {
-        attribute: "Latest update",
+        attribute: "Current positioning",
         values: [
-          "GenAI Copilot automation",
-          "Recent Bedrock/agent ecosystem expansion",
-          "Incremental platform updates",
+          "Best when broad connector coverage matters",
+          "Best when orchestration stays mostly inside AWS",
+          "Best when simple GCP-native workflow orchestration is enough",
         ],
       },
     ],
@@ -152,16 +152,16 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         attribute: "Pricing",
         values: [
           "Pay-per-text-unit; free tier",
-          "$0.15/1K text units (85% price cut)",
+          "$0.15/1K text units after the recent Bedrock Guardrails price cut",
           "Pay-as-you-go",
         ],
       },
       {
         attribute: "Unique capability",
         values: [
-          "On-premises containers + on-device deployment",
-          "Automated Reasoning (formal logic, provable)",
-          "Apigee + GKE + Security Command Center",
+          "On-premises containers + on-device deployment path",
+          "Automated Reasoning for formal-policy style checks",
+          "Apigee + GKE + Security Command Center integration path",
         ],
       },
       {
