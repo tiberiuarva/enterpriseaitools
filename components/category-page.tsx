@@ -119,7 +119,8 @@ export function CategoryPage({ category, title, description, iconName, tools, up
                 {visibleUpdates.map((update) => (
                   <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
                     <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
-                    <div className="mt-1 font-semibold">{update.toolName}</div>
+                    <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
+                    <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{update.toolName}</div>
                     <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
                     <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
                   </div>

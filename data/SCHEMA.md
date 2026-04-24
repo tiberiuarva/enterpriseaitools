@@ -139,6 +139,7 @@ Entries must be ordered newest first.
 | `toolName` | string | yes | Denormalized display name |
 | `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
 | `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition` | yes | Update type |
+| `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |
 | `sourceTitle` | string | no | Human-readable source title |

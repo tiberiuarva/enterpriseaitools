@@ -116,7 +116,8 @@ export default function Home() {
                   </>
                 ) : null}
               </div>
-              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.toolName}</div>
+              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.title ?? latestUpdate.toolName}</div>
+              <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{latestUpdate.toolName}</div>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 {latestUpdate.summary}
               </p>
