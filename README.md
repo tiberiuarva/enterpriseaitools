@@ -16,11 +16,11 @@ The lens is practitioner-first, with particular attention to what works inside r
 
 ## What's tracked
 
-- Platforms — Microsoft Foundry, AWS Bedrock, Google Vertex AI (the foundation layer)
-- Agents — 12 managed agent services and open source frameworks
-- Orchestration — 9 workflow engines and automation platforms
-- Governance — 9 guardrails, safety controls, and policy tools
-- Assistants — 11 coding copilots, productivity assistants, and build-your-own platforms
+- Platforms — Microsoft Foundry, AWS Bedrock, Google Vertex AI, with the Google AI Studio vs Vertex AI distinction called out where it matters
+- Agents — current dataset of managed agent platforms/services and open source frameworks
+- Orchestration — current dataset of workflow engines and automation platforms
+- Governance — current dataset of guardrails, safety controls, and policy tools
+- Assistants — current dataset of coding copilots, productivity assistants, and build-your-own platforms
 
 Every tool entry includes: official docs link, GitHub stars and version (open source), license with caveats noted, cloud availability, pricing summary, and current status (active, maintenance, archived).
 
@@ -32,6 +32,27 @@ Every tool entry includes: official docs link, GitHub stars and version (open so
 - Weekly updates focus on what matters. Acquisitions, deprecations, license changes, pricing changes, and regulatory developments come before patch releases.
 - Data-dense over decorative. Inspired by Bloomberg Terminal and the CNCF Landscape. Zero marketing fluff.
 
+## Data model
+
+Core tracked data lives in:
+
+- `data/platforms.json` — the three cloud foundation platforms
+- `data/tools.json` — category tool records, metadata, and comparison attributes
+- `data/updates.json` — weekly releases, deprecations, acquisitions, pricing changes, and other tracked market events
+
+Schemas and field expectations are documented in `data/SCHEMA.md`.
+
+## Update workflow
+
+The normal update flow is:
+
+1. Weekly research identifies source-backed changes across platforms and tracked tools
+2. Proposed data changes are reviewed before application
+3. Changes ship through pull requests, not direct production edits
+4. The public updates feed reflects the approved changes once merged
+
+See `AGENTS.md` for how the Radar automation agent handles weekly updates.
+
 ## Contribute
 
 Contributions are welcome via pull request. The bar is simple: every data change must include a verifiable source URL.
@@ -41,8 +62,6 @@ Common contributions:
 - Correct a data point: edit the relevant JSON file and include the source URL in the PR
 - Add a weekly update: edit `data/updates.json` with a valid `sourceUrl`
 - Report an error: open an issue with the source that proves the current data is wrong
-
-See `AGENTS.md` for how the Radar automation agent handles weekly updates.
 
 ## Tech stack
 
@@ -58,7 +77,7 @@ npm ci
 npm run dev
 ```
 
-Full validation pipeline:
+## Validation
 
 ```bash
 npm run lint
