@@ -61,6 +61,13 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         </ul>
       ) : null}
 
+      {tool.practitionerNote ? (
+        <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">Practitioner note</p>
+          <p className="mt-1 text-sm text-[var(--color-text-primary)]">{tool.practitionerNote}</p>
+        </div>
+      ) : null}
+
       {tool.clouds && tool.clouds.length > 0 ? (
         <div className="mt-4 flex flex-wrap gap-2">
           {tool.clouds.map((cloud) => {
