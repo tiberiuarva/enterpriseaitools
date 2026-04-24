@@ -9,8 +9,9 @@
       "type": "release",
       "summary": "CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.",
       "sourceUrl": "https://github.com/crewAIInc/crewAI/releases",
-      "sourceTitle": "Releases · crewAIInc/crewAI",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 crewAIInc/crewAI",
+      "impact": "medium",
+      "title": "CrewAI pre-release adds Bedrock strict-mode fixes"
     },
     {
       "id": "update-2026-04-14-02",
@@ -21,8 +22,9 @@
       "type": "release",
       "summary": "Flowise's April 14 release focused on security hardening, including a fix for a hardcoded CORS wildcard on the TTS endpoint and additional MCP server configuration protections.",
       "sourceUrl": "https://github.com/FlowiseAI/Flowise/releases",
-      "sourceTitle": "Releases · FlowiseAI/Flowise",
-      "impact": "high"
+      "sourceTitle": "Releases \u00b7 FlowiseAI/Flowise",
+      "impact": "high",
+      "title": "Flowise release tightens security around CORS and MCP config"
     },
     {
       "id": "update-2026-04-13-01",
@@ -33,8 +35,9 @@
       "type": "release",
       "summary": "n8n published pre-release 2.17.0 on April 13 with AI-builder credential-context changes plus fixes across PostHog, NASA, Peekalink, Clearbit, and Uptime Robot integrations.",
       "sourceUrl": "https://github.com/n8n-io/n8n/releases",
-      "sourceTitle": "Releases · n8n-io/n8n",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 n8n-io/n8n",
+      "impact": "medium",
+      "title": "n8n 2.17.0 pre-release expands AI-builder integration fixes"
     },
     {
       "id": "update-2026-04-11-01",
@@ -46,7 +49,8 @@
       "summary": "Microsoft highlighted March 2026 Foundry updates including SDK 2.0 GA, Agent Service GA, and new GPT-5.4 model availability in the platform's What's New stream.",
       "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry",
       "sourceTitle": "Microsoft Foundry docs: What's new for April 2026 - Microsoft Foundry | Microsoft Learn",
-      "impact": "high"
+      "impact": "high",
+      "title": "Microsoft Foundry highlights Agent Service GA and SDK 2.0"
     },
     {
       "id": "update-2026-04-09-01",
@@ -57,8 +61,9 @@
       "type": "release",
       "summary": "The OpenAI Agents SDK April 9 release hardened SQLite and SQLAlchemy session handling and expanded tracing documentation, signaling continued stabilization of the production agent stack.",
       "sourceUrl": "https://github.com/openai/openai-agents-python/releases",
-      "sourceTitle": "Releases · openai/openai-agents-python",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 openai/openai-agents-python",
+      "impact": "medium",
+      "title": "OpenAI Agents SDK release hardens tracing and SQL session handling"
     },
     {
       "id": "update-2026-04-08-01",
@@ -69,8 +74,9 @@
       "type": "release",
       "summary": "Semantic Kernel's April 8 release included prompt-template serialization improvements and dependency updates, keeping Microsoft's orchestration SDK active as Agent Framework work continues.",
       "sourceUrl": "https://github.com/microsoft/semantic-kernel/releases",
-      "sourceTitle": "Releases · microsoft/semantic-kernel",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 microsoft/semantic-kernel",
+      "impact": "medium",
+      "title": "Semantic Kernel refreshes prompt serialization and dependencies"
     },
     {
       "id": "update-2026-04-07-01",
@@ -81,8 +87,9 @@
       "type": "release",
       "summary": "Langflow's April 7 release added Windows Playwright coverage to nightly builds and refreshed desktop documentation, indicating continued maintenance after the DataStax-to-IBM deal.",
       "sourceUrl": "https://github.com/langflow-ai/langflow/releases",
-      "sourceTitle": "Releases · langflow-ai/langflow",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 langflow-ai/langflow",
+      "impact": "medium",
+      "title": "Langflow release adds Windows Playwright coverage"
     },
     {
       "id": "update-2026-04-01-01",
@@ -93,8 +100,9 @@
       "type": "release",
       "summary": "Haystack's April 1 release highlighted automatic list joining inside pipelines, simplifying multi-input workflow construction without extra glue components.",
       "sourceUrl": "https://github.com/deepset-ai/haystack/releases",
-      "sourceTitle": "Releases · deepset-ai/haystack",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 deepset-ai/haystack",
+      "impact": "medium",
+      "title": "Haystack simplifies multi-input pipelines with automatic list joining"
     },
     {
       "id": "update-2026-03-27-01",
@@ -105,8 +113,9 @@
       "type": "release",
       "summary": "Dify v1.13.3 shipped on March 27 with workflow, streaming, and knowledge-retrieval stability fixes, reinforcing its push toward more reliable production orchestration.",
       "sourceUrl": "https://github.com/langgenius/dify/releases",
-      "sourceTitle": "Releases · langgenius/dify",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 langgenius/dify",
+      "impact": "medium",
+      "title": "Dify 1.13.3 ships workflow and retrieval stability fixes"
     },
     {
       "id": "update-2026-03-25-01",
@@ -118,7 +127,8 @@
       "summary": "GitHub announced that, from April 24, interaction data from Copilot Free, Pro, and Pro+ users will be used for model improvement unless users opt out, making data-governance review more important for enterprises.",
       "sourceUrl": "https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/",
       "sourceTitle": "Updates to GitHub Copilot interaction data usage policy",
-      "impact": "high"
+      "impact": "high",
+      "title": "GitHub Copilot expands model-training use of interaction data"
     },
     {
       "id": "update-2026-03-16-01",
@@ -129,8 +139,9 @@
       "type": "release",
       "summary": "LlamaIndex's March 16 release notes show coordinated package updates across the agent stack, including AgentMesh and Azure-related modules, alongside deprecation of Python 3.9 support.",
       "sourceUrl": "https://github.com/run-llama/llama_index/releases",
-      "sourceTitle": "Releases · run-llama/llama_index",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 run-llama/llama_index",
+      "impact": "medium",
+      "title": "LlamaIndex coordinates agent-stack package updates and drops Python 3.9"
     },
     {
       "id": "update-2026-03-12-01",
@@ -141,8 +152,9 @@
       "type": "release",
       "summary": "NeMo Guardrails' March 12 release introduced IORails for parallel input/output safety execution, plus OpenAI-compatible server support and standalone async rail validation.",
       "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails/releases",
-      "sourceTitle": "Releases · NVIDIA-NeMo/Guardrails",
-      "impact": "medium"
+      "sourceTitle": "Releases \u00b7 NVIDIA-NeMo/Guardrails",
+      "impact": "medium",
+      "title": "NeMo Guardrails adds parallel IORails safety execution"
     },
     {
       "id": "update-2025-09-16-01",
@@ -154,7 +166,8 @@
       "summary": "Check Point announced an agreement to acquire Lakera, positioning the startup's AI-native protection stack inside a broader end-to-end enterprise AI security portfolio.",
       "sourceUrl": "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
       "sourceTitle": "Check Point Acquires Lakera to Deliver End-to-End AI Security for Enterprises",
-      "impact": "high"
+      "impact": "high",
+      "title": "Check Point moves to acquire Lakera"
     },
     {
       "id": "update-2025-02-25-01",
@@ -166,7 +179,8 @@
       "summary": "IBM said it would acquire DataStax, explicitly naming Langflow as part of the transaction and tying the low-code AI builder into IBM's watsonx roadmap.",
       "sourceUrl": "https://newsroom.ibm.com/2025-02-25-ibm-to-acquire-datastax,-deepening-watsonx-capabilities-and-addressing-generative-ai-data-needs-for-the-enterprise",
       "sourceTitle": "IBM to Acquire DataStax, Deepening watsonx Capabilities and Addressing Generative AI Data Needs for the Enterprise",
-      "impact": "high"
+      "impact": "high",
+      "title": "IBM announces DataStax acquisition, bringing Langflow into scope"
     }
   ]
 }

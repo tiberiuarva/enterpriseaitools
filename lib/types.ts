@@ -92,6 +92,7 @@ export type UpdateEntry = {
   toolName: string;
   category: UpdateCategory;
   type: UpdateType;
+  title?: string;
   summary: string;
   sourceUrl: string;
   sourceTitle?: string;
