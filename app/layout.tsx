@@ -86,7 +86,7 @@ export default function RootLayout({
     buildOrganizationJsonLd({
       name: "enterpriseai.tools",
       url: siteUrl,
-      description: "Maintainer of enterpriseai.tools.",
+      description: "Open source landscape tracker for enterprise AI tooling.",
       sameAs: [githubRepoUrl],
     }),
   ];

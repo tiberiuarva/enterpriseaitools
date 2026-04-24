@@ -86,6 +86,15 @@ npm run check-seo-readiness
 npm run check-deploy-readiness
 ```
 
+## Deployment checks
+
+```bash
+npm run check-custom-domain-readiness
+npm run check-live-performance -- https://www.enterpriseai.tools
+npm run publish-preview
+npm run smoke-test-live-site -- root https://www.enterpriseai.tools
+```
+
 Deployment and domain guides: `DEPLOYMENT.md` and `CUSTOM_DOMAIN.md`.
 
 ## Maintainer

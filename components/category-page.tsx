@@ -124,8 +124,8 @@ export function CategoryPage({ category, title, description, iconName, tools, up
             showComparison={Boolean(comparison)}
             description={
               comparison
-                ? "The vendor-specific detail sits below the broader category set so visitors can first understand the non-vendor landscape, then compare the native cloud offerings side by side."
-                : "Vendor tool cards are grouped below the broader category set. Detailed vendor comparison rows are still being added for this category."
+                ? "Native cloud offerings for this category, followed by a side-by-side vendor comparison table."
+                : "Native cloud offerings for this category. Detailed vendor comparison rows are still being added for this category."
             }
           />
 

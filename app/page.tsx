@@ -89,6 +89,10 @@ export default function Home() {
                 Updated weekly. Data-dense. No fluff. Compare the foundation platforms first, then move into agent,
                 orchestration, governance, and assistant layers.
               </p>
+              <p className="mt-3 max-w-3xl text-xs leading-5 text-[var(--color-text-secondary)]">
+                Naming moves fast here: use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and
+                <strong> Gemini Enterprise</strong> as the current product names.
+              </p>
             </div>
 
             <div className="flex flex-wrap gap-3">

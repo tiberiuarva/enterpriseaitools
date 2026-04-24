@@ -159,13 +159,13 @@ export default function PlatformsPage() {
                   </div>
                 </dl>
 
-                <div className="mt-4 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
-                  {platform.formerNames.length > 0 ? (
+                {platform.formerNames.length > 0 ? (
+                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
                     <span className="rounded-full border border-[var(--color-border)] px-2.5 py-1">
                       Former names: {platform.formerNames.join(" · ")}
                     </span>
-                  ) : null}
-                </div>
+                  </div>
+                ) : null}
 
                 <div className="mt-4 flex flex-wrap gap-3">
                   <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
