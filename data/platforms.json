@@ -62,9 +62,11 @@
           "href": "/assistants"
         }
       },
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoUrl": "/logos/microsoft-foundry.jpg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+      "logoNotes": "Reviewed Microsoft product image/logo asset sourced from the official Azure AI Foundry product page and stored locally for site use.",
+      "logoReviewedAt": "2026-04-24"
     },
     {
       "id": "aws-bedrock",
@@ -97,7 +99,7 @@
       "websiteUrl": "https://aws.amazon.com/bedrock/",
       "lastUpdated": "2026-04-11",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
-      "logoUrl": "/logos/aws-bedrock.svg",
+      "logoUrl": "/logos/aws-bedrock.jpg",
       "categoryMapping": {
         "agents": {
           "label": "Bedrock Agents + AgentCore",
