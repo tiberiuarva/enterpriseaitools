@@ -66,6 +66,12 @@ const mappingRows: Array<{ label: string; cells: [PlatformMapping, PlatformMappi
   },
 ];
 
+const platformBestFit: Record<string, string> = {
+  "microsoft-foundry": "Microsoft-heavy enterprise environments",
+  "aws-bedrock": "AWS-native teams wanting broad infrastructure alignment",
+  "google-vertex-ai": "Google-heavy or ADK-first teams",
+};
+
 export default function PlatformsPage() {
   assertUniquePlatformFragmentIds(platforms.map((platform) => platform.id));
 
@@ -105,6 +111,7 @@ export default function PlatformsPage() {
           {platforms.map((platform) => {
             const platformFragmentId = getPlatformFragmentId(platform.id);
             const platformHeadingId = `${platformFragmentId}-heading`;
+            const bestFit = platformBestFit[platform.id];
 
             return (
               <article
@@ -128,42 +135,10 @@ export default function PlatformsPage() {
                   <strong className="text-[var(--color-text-primary)]">Why teams pick it:</strong> {platform.tagline}
                 </p>
 
-                <dl className="mt-4 space-y-2 text-sm text-[var(--color-text-secondary)]">
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Model catalog:</dt>{" "}
-                    <dd className="inline">{platform.modelCount}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Protocols:</dt>{" "}
-                    <dd className="inline">{platform.protocols.join(", ")}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">SDKs:</dt>{" "}
-                    <dd className="inline">{platform.sdkLanguages.join(", ")}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Pricing:</dt>{" "}
-                    <dd className="inline">{platform.pricing}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Free tier:</dt>{" "}
-                    <dd className="inline">{platform.freeTier}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Regions:</dt>{" "}
-                    <dd className="inline">{platform.regions}</dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-semibold text-[var(--color-text-primary)]">On-prem / sovereign fit:</dt>{" "}
-                    <dd className="inline">{platform.onPremises}</dd>
-                  </div>
-                </dl>
-
-                {platform.formerNames.length > 0 ? (
-                  <div className="mt-4 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
-                    <span className="rounded-full border border-[var(--color-border)] px-2.5 py-1">
-                      Former names: {platform.formerNames.join(" · ")}
-                    </span>
+                {bestFit ? (
+                  <div className="mt-4 inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
+                    <span className="text-[var(--color-text-primary)]">Best fit:</span>
+                    <span className="ml-1">{bestFit}</span>
                   </div>
                 ) : null}
 
