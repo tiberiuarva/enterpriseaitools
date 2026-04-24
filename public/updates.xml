@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-04-15T00:00:00.000Z</updated>
+  <updated>2026-04-23T00:00:00.000Z</updated>
   <link href="https://enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>

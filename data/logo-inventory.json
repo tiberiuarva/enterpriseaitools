@@ -446,6 +446,26 @@
       "notes": "Official Google Cloud product/service icon from the Google Cloud icon library.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-04-19"
+    },
+    {
+      "name": "Microsoft Agent Framework",
+      "category": "agents",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-23"
+    },
+    {
+      "name": "Paperclip",
+      "category": "orchestration",
+      "vendor": "Paperclip",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-04-23"
     }
   ]
 }
