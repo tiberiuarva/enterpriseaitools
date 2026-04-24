@@ -98,7 +98,7 @@
       "websiteUrl": "https://aws.amazon.com/bedrock/",
       "lastUpdated": "2026-04-11",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
-      "logoUrl": "/logos/aws-bedrock.svg",
+      "logoUrl": "/logos/aws-bedrock.jpg",
       "categoryMapping": {
         "agents": {
           "label": "Bedrock Agents + AgentCore",
