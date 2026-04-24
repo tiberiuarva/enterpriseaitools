@@ -852,7 +852,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
       "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when teams already run on Azure and need turnkey moderation and safety classifiers, but it is narrower than a full policy/governance control plane."
     },
     {
       "id": "aws-bedrock-guardrails",
@@ -882,7 +883,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit for Bedrock-centric deployments that want managed prompt/content guardrails close to model invocation instead of a separate governance stack."
     },
     {
       "id": "google-model-armor",
@@ -912,7 +914,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth evaluating for Google-first estates that need managed prompt and response protection, especially around injection and unsafe content controls."
     },
     {
       "id": "nemo-guardrails",
@@ -948,7 +951,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service."
     },
     {
       "id": "guardrails-ai",
@@ -981,7 +985,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform."
     },
     {
       "id": "llm-guard",
@@ -1015,7 +1020,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline."
     },
     {
       "id": "rebuff",
@@ -1049,7 +1055,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Most relevant as a lightweight prompt-injection defense layer in custom stacks, not as a broad end-to-end AI governance product."
     },
     {
       "id": "lakera-guard",
@@ -1075,7 +1082,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces."
     },
     {
       "id": "arthur-genai-engine",
@@ -1102,7 +1110,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone."
     },
     {
       "id": "github-copilot",
