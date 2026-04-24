@@ -40,17 +40,17 @@ export function VendorToolsSection({
         ) : null}
       </div>
 
-      {showComparison && comparison ? (
-        <div className="mt-5">
-          <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
-        </div>
-      ) : null}
-
       {showToolCards ? (
         <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {vendorTools.map((tool) => (
             <ToolCard key={tool.id} tool={tool} compact />
           ))}
+        </div>
+      ) : null}
+
+      {showComparison && comparison ? (
+        <div className="mt-6">
+          <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
         </div>
       ) : null}
     </section>

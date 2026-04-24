@@ -12,7 +12,6 @@ import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformStrip } from "@/components/platform-strip";
 import { StatPill } from "@/components/stat-pill";
-import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -87,7 +86,7 @@ export default function Home() {
                 Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-                Updated weekly. Data-dense. No fluff. Start with the foundation platforms, then move down into agent,
+                Updated weekly. Data-dense. No fluff. Compare the foundation platforms first, then move into agent,
                 orchestration, governance, and assistant layers.
               </p>
             </div>
@@ -101,13 +100,13 @@ export default function Home() {
         </section>
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-3xl">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-4xl">
               <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                These are the base cloud AI stacks that sit underneath much of the rest of the market. They combine model
-                catalogs, APIs, agent runtimes, safety controls, and deployment infrastructure. The category pages then show
-                what each platform offers directly versus what teams often pair with it from open source or commercial tools.
+                These three platforms are the base stack behind much of the rest of the market. Each card below shows the
+                cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
+                often pair with it from open source or commercial tools.
               </p>
             </div>
             <a
@@ -118,30 +117,6 @@ export default function Home() {
               <ArrowUpRight size={16} />
             </a>
           </div>
-
-          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
-              <div className="text-sm font-semibold text-[var(--color-text-primary)]">1. Pick the base stack</div>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI by model access, agent tooling, governance,
-                SDKs, and enterprise deployment fit.
-              </p>
-            </div>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
-              <div className="text-sm font-semibold text-[var(--color-text-primary)]">2. Compare category layers</div>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Use the category hubs to separate native cloud services from open source and third-party options in agents,
-                orchestration, governance, and assistants.
-              </p>
-            </div>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
-              <div className="text-sm font-semibold text-[var(--color-text-primary)]">3. Track market movement</div>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                The updates feed captures releases, deprecations, acquisitions, pricing changes, and model launches that
-                affect the comparison landscape over time.
-              </p>
-            </div>
-          </div>
         </section>
 
         <PlatformStrip platforms={platforms} />
@@ -150,15 +125,6 @@ export default function Home() {
           {categoryCards.map((category) => (
             <CategoryCard key={category.href} {...category} />
           ))}
-        </section>
-
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <WarningBox>
-            Platform-level naming changed repeatedly. Always use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and <strong>Gemini Enterprise</strong>.
-          </WarningBox>
-          <WarningBox variant="info" title="Open source">
-            This project is open source. Data contributions are welcome via pull request — all entries must include source URLs and verified facts.
-          </WarningBox>
         </section>
 
         {latestUpdate ? (
