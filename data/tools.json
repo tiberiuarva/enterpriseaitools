@@ -1139,7 +1139,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path."
     },
     {
       "id": "amazon-q-developer",
@@ -1170,7 +1171,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows."
     },
     {
       "id": "gemini-code-assist",
@@ -1201,7 +1203,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth considering for Google Cloud-centric teams, but enterprise rollout quality still depends heavily on how much of the stack already lives in Google tooling."
     },
     {
       "id": "cursor",
@@ -1230,7 +1233,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots."
     },
     {
       "id": "windsurf",
@@ -1259,7 +1263,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing."
     },
     {
       "id": "microsoft-365-copilot",
@@ -1290,7 +1295,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Natural fit when the real value is inside Microsoft 365 workflows and Graph-connected knowledge, not just generic chat over documents."
     },
     {
       "id": "gemini-for-workspace",
@@ -1322,7 +1328,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Pragmatic for Google Workspace estates that want AI features embedded in existing docs, mail, and meetings without a separate assistant rollout."
     },
     {
       "id": "amazon-q-business",
@@ -1353,7 +1360,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout."
     },
     {
       "id": "copilot-studio",
@@ -1385,7 +1393,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best when business teams need to assemble Microsoft-native copilots quickly, provided architecture and environment sprawl are still governed centrally."
     },
     {
       "id": "amazon-q-apps",
@@ -1417,7 +1426,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform."
     },
     {
       "id": "gemini-enterprise",
@@ -1449,7 +1459,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth evaluating for Google-first organizations that want assistant and agent capabilities under one commercial umbrella, but packaging maturity should still be checked closely."
     }
   ]
 }
