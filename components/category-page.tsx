@@ -36,6 +36,7 @@ function sortByName(tools: Tool[]) {
 
 export function CategoryPage({ category, title, description, iconName, tools, updates, platforms, comparison, enableFiltering = false }: CategoryPageProps) {
   const Icon = iconMap[iconName];
+  const vendorTools = sortByName(tools.filter((tool) => tool.type === "vendor"));
   const nonVendorTools = sortByName(tools.filter((tool) => tool.type !== "vendor"));
   const warningTools = sortByName(tools.filter((tool) => tool.licenseWarning || tool.statusNote));
   const visibleUpdates = updates.slice(0, 5);
@@ -75,6 +76,21 @@ export function CategoryPage({ category, title, description, iconName, tools, up
       ) : (
         <>
           <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
+          {vendorTools.length > 0 ? (
+            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:640px]">
+              <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+                {comparison
+                  ? "Compare the cloud-native vendor offerings first, then use the broader open source and third-party list below to assess alternatives."
+                  : "Cloud-native vendor tools are grouped first here, with the broader open source and third-party landscape listed below."}
+              </p>
+              <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {vendorTools.map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} compact />
+                ))}
+              </div>
+            </section>
+          ) : null}
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
