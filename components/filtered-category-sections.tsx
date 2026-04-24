@@ -194,28 +194,16 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
         />
       </section>
 
-      {showStandaloneAgentsComparison ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
-          <h2 className="text-lg font-semibold">Vendor comparison</h2>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
-          </p>
-          <div className="mt-5">
-            <VendorComparisonTable vendors={comparison!.vendors} rows={comparison!.rows} />
-          </div>
-        </section>
-      ) : null}
-
       {showVendorSection ? (
         <VendorToolsSection
           vendorTools={vendorTools}
           comparison={comparison}
-          showComparison={category === "agents" ? false : showVendorComparison}
+          showComparison={showVendorComparison}
           description={
             category === "agents"
               ? hasActiveNarrowingFilter
-                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
-                : "Cloud-native agent offerings are grouped near the top of the page, before the broader open source and third-party landscape below."
+                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison after the vendor tool cards in this section."
+                : "Cloud-native agent offerings are grouped near the top of the page, with the vendor comparison directly below the vendor tool cards in the same section."
               : showVendorComparison
                 ? showVendorCards
                   ? "Cloud-native vendor offerings are shown first here, before the broader open source and third-party landscape below."
