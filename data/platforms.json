@@ -64,7 +64,8 @@
       },
       "logoUrl": "/logos/microsoft-foundry.jpg",
       "logoKind": "service-icon",
-      "logoNotes": "User-supplied Microsoft Foundry logo asset provided on 2026-04-24 for site use.",
+      "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+      "logoNotes": "Reviewed Microsoft product image/logo asset sourced from the official Azure AI Foundry product page and stored locally for site use.",
       "logoReviewedAt": "2026-04-24"
     },
     {

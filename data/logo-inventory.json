@@ -419,11 +419,12 @@
       "name": "Microsoft Foundry",
       "category": "platforms",
       "vendor": "Microsoft",
+      "logoUrl": "/logos/microsoft-foundry.jpg",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+      "notes": "Reviewed Microsoft product image/logo asset sourced from the official Azure AI Foundry product page and stored locally for site use.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-04-24"
     },
     {
       "name": "AWS Bedrock",
