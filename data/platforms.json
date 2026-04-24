@@ -100,6 +100,10 @@
       "lastUpdated": "2026-04-11",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
       "logoUrl": "/logos/aws-bedrock.jpg",
+      "logoKind": "service-icon",
+      "logoSourceUrl": "https://aws.amazon.com/bedrock/",
+      "logoNotes": "Reviewed AWS Bedrock product image/logo asset stored locally for site use from the official AWS Bedrock product page on 2026-04-24.",
+      "logoReviewedAt": "2026-04-24",
       "categoryMapping": {
         "agents": {
           "label": "Bedrock Agents + AgentCore",
@@ -125,11 +129,7 @@
           "label": "Amazon Q Apps",
           "href": "/assistants"
         }
-      },
-      "logoKind": "service-icon",
-      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
-      "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
-      "logoReviewedAt": "2026-04-19"
+      }
     },
     {
       "id": "google-vertex-ai",

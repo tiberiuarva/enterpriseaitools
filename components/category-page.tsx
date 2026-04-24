@@ -4,7 +4,6 @@ import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolList
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
-import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { siteUrl } from "@/lib/metadata";
 import type { CategoryComparison } from "@/lib/category-comparisons";
@@ -72,23 +71,26 @@ export function CategoryPage({ category, title, description, iconName, tools, up
         </div>
       </section>
 
-      <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
-
       {enableFiltering ? (
         <FilteredCategorySections category={category} tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
-          <VendorToolsSection
-            vendorTools={vendorTools}
-            comparison={comparison}
-            showComparison={Boolean(comparison)}
-            description={
-              comparison
-                ? "Compare the cloud-native vendor offerings first, then use the broader open source and third-party list below to assess alternatives."
-                : "Cloud-native vendor tools are grouped first here, with the broader open source and third-party landscape listed below."
-            }
-          />
-
+          <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
+          {vendorTools.length > 0 ? (
+            <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:640px]">
+              <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+                {comparison
+                  ? "Compare the cloud-native vendor offerings first, then use the broader open source and third-party list below to assess alternatives."
+                  : "Cloud-native vendor tools are grouped first here, with the broader open source and third-party landscape listed below."}
+              </p>
+              <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {vendorTools.map((tool) => (
+                  <ToolCard key={tool.id} tool={tool} compact />
+                ))}
+              </div>
+            </section>
+          ) : null}
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
