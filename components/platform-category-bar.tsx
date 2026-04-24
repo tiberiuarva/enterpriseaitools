@@ -6,41 +6,17 @@ type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
 type AssistantMappingKey = "assistantsCoding" | "assistantsProductivity" | "assistantsBuildYourOwn";
 type HeadingLevel = 2 | 3;
 
-type CoverageCopy = {
-  heading: string;
-  navLabel: string;
-};
-
 type PlatformCategoryBarProps = {
   category: ToolCategory;
   platforms: Platform[];
   headingLevel: HeadingLevel;
 };
 
-const gridColumnClassesByPlatformCount: Record<number, string> = {
-  1: "",
-  2: "md:grid-cols-2",
-  3: "md:grid-cols-3",
-  4: "md:grid-cols-2",
-};
-
-const coverageCopy: Record<ToolCategory, CoverageCopy> = {
-  agents: {
-    heading: "Agent platform coverage",
-    navLabel: "Platform coverage for AI agent frameworks",
-  },
-  orchestration: {
-    heading: "Orchestration platform coverage",
-    navLabel: "Platform coverage for AI orchestration",
-  },
-  governance: {
-    heading: "Governance platform coverage",
-    navLabel: "Platform coverage for AI governance",
-  },
-  assistants: {
-    heading: "Assistant platform coverage",
-    navLabel: "Platform coverage for AI assistants",
-  },
+const coverageCopy: Record<ToolCategory, string> = {
+  agents: "Runs on",
+  orchestration: "Runs on",
+  governance: "Runs on",
+  assistants: "Runs on",
 };
 
 const assistantMappingKeys: AssistantMappingKey[] = ["assistantsCoding", "assistantsProductivity", "assistantsBuildYourOwn"];
@@ -68,42 +44,34 @@ function getAssistantPlatformSummary(platform: Platform) {
 export function PlatformCategoryBar({
   category,
   platforms,
-  headingLevel,
 }: PlatformCategoryBarProps) {
   if (platforms.length === 0) {
     return null;
   }
 
-  const copy = coverageCopy[category];
-  const columnClass = gridColumnClassesByPlatformCount[platforms.length] ?? (platforms.length >= 5 ? "md:grid-cols-3" : "");
-  const Heading = headingLevel === 3 ? "h3" : "h2";
-
   return (
     <nav
-      aria-label={copy.navLabel}
+      aria-label={`Platform coverage for ${category}`}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
-      <div className="flex flex-col gap-2">
-        <Heading className="text-sm font-semibold text-[var(--color-text-primary)]">{copy.heading}</Heading>
-        <ul className={["grid grid-cols-1 gap-2", columnClass].filter(Boolean).join(" ")}>
-          {platforms.map((platform) => {
-            const summary = getPlatformSummary(platform, category);
-            const summaryClass = category === "assistants" ? "mt-2 text-xs leading-5" : "mt-1 text-xs";
-
-            return (
-              <li key={platform.id}>
-                <a
-                  href={getPlatformHref(platform)}
-                  className="group flex h-full min-w-0 flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
-                >
-                  <span className="text-sm font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">{platform.name}</span>
-                  <span className={`${summaryClass} text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]`}>
-                    {summary}
-                  </span>
-                </a>
-              </li>
-            );
-          })}
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div className="shrink-0 text-sm font-semibold text-[var(--color-text-primary)]">{coverageCopy[category]}</div>
+        <ul className="flex flex-1 flex-wrap gap-2">
+          {platforms.map((platform) => (
+            <li key={platform.id}>
+              <a
+                href={getPlatformHref(platform)}
+                className="group inline-flex min-w-0 max-w-full items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+              >
+                <span className="shrink-0 font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
+                  {platform.name}
+                </span>
+                <span className="truncate text-xs text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
+                  {getPlatformSummary(platform, category)}
+                </span>
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
