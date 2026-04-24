@@ -169,7 +169,7 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const visibleUpdates = useMemo(() => updates.slice(0, 5), [updates]);
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
-  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter;
+  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
   const showVendorSection = showVendorCards || showVendorComparison;
 
   return (
@@ -190,28 +190,6 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
           availableLicenses={availableLicenses}
         />
       </section>
-
-      {showVendorSection ? (
-        <VendorToolsSection
-          vendorTools={vendorTools}
-          comparison={comparison}
-          showComparison={showVendorComparison}
-          description={
-            showVendorComparison
-              ? showVendorCards
-                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-                : "Source-backed side-by-side comparison for the three cloud vendor offerings in this category. Vendor tool cards are hidden by the current type filter."
-              : comparison
-                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
-                : hasActiveNarrowingFilter
-                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
-                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
-          }
-          showToolCards={showVendorCards}
-          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
-          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
-        />
-      ) : null}
 
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
         <h2 className="text-lg font-semibold">Filtered open source and third-party tools</h2>
@@ -269,6 +247,28 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
             ))}
           </div>
         </section>
+      ) : null}
+
+      {showVendorSection ? (
+        <VendorToolsSection
+          vendorTools={vendorTools}
+          comparison={comparison}
+          showComparison={showVendorComparison}
+          description={
+            showVendorComparison
+              ? showVendorCards
+                ? "Vendor-native detail stays lower on the page so the broader category list comes first. The three-way comparison returns only when cloud and license filters are cleared."
+                : "The three-way vendor comparison is available here because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter."
+              : comparison
+                ? "Vendor detail is intentionally pushed lower on the page. Clear cloud and license filters to restore the three-way vendor comparison table."
+                : hasActiveNarrowingFilter
+                  ? "Vendor tool cards are still shown lower on the page and respect the current filters. Detailed vendor comparison rows are still being added for this category."
+                  : "Vendor tool cards are shown lower on the page. Detailed vendor comparison rows are still being added for this category."
+          }
+          showToolCards={showVendorCards}
+          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
+          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
+        />
       ) : null}
     </>
   );

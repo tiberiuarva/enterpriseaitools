@@ -78,17 +78,6 @@ export function CategoryPage({ category, title, description, iconName, tools, up
         <FilteredCategorySections tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
-          <VendorToolsSection
-            vendorTools={vendorTools}
-            comparison={comparison}
-            showComparison={Boolean(comparison)}
-            description={
-              comparison
-                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-                : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
-            }
-          />
-
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
@@ -128,6 +117,17 @@ export function CategoryPage({ category, title, description, iconName, tools, up
               </div>
             </section>
           ) : null}
+
+          <VendorToolsSection
+            vendorTools={vendorTools}
+            comparison={comparison}
+            showComparison={Boolean(comparison)}
+            description={
+              comparison
+                ? "The vendor-specific detail sits below the broader category set so visitors can first understand the non-vendor landscape, then compare the native cloud offerings side by side."
+                : "Vendor tool cards are grouped below the broader category set. Detailed vendor comparison rows are still being added for this category."
+            }
+          />
 
           <RelatedHubs
             currentPath={`/${category}`}

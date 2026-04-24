@@ -95,10 +95,28 @@ export default function PlatformsPage() {
           </p>
         </section>
 
-        <VendorComparisonTable
-          vendors={["Microsoft Foundry", "AWS Bedrock", "Google Vertex AI"]}
-          rows={comparisonRows}
-        />
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Start here if you are choosing a stack</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              This page is best read top-down: first understand what each platform is trying to be, then see how it maps into agents,
+              orchestration, governance, and assistants, and only then drop into the detailed comparison table.
+            </p>
+          </div>
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">What varies most</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              The biggest differences are model access, how opinionated the agent/runtime layer is, whether governance is native or layered,
+              and how much enterprise infrastructure each cloud already gives your team.
+            </p>
+          </div>
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Use this with the category hubs</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              The platform choice tells you the base stack. The category pages show where native services stop and where open source or third-party tools may still be the better fit.
+            </p>
+          </div>
+        </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {platforms.map((platform) => {
@@ -121,32 +139,70 @@ export default function PlatformsPage() {
                     <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
                   </div>
                 </div>
+
                 <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
-                <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
+                <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">Why teams pick it:</strong> {platform.tagline}
+                </p>
+
+                <dl className="mt-4 space-y-2 text-sm text-[var(--color-text-secondary)]">
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Model catalog:</dt>{" "}
+                    <dd className="inline">{platform.modelCount}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Protocols:</dt>{" "}
+                    <dd className="inline">{platform.protocols.join(", ")}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">SDKs:</dt>{" "}
+                    <dd className="inline">{platform.sdkLanguages.join(", ")}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Pricing:</dt>{" "}
+                    <dd className="inline">{platform.pricing}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Free tier:</dt>{" "}
+                    <dd className="inline">{platform.freeTier}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">Regions:</dt>{" "}
+                    <dd className="inline">{platform.regions}</dd>
+                  </div>
+                  <div>
+                    <dt className="inline font-semibold text-[var(--color-text-primary)]">On-prem / sovereign fit:</dt>{" "}
+                    <dd className="inline">{platform.onPremises}</dd>
+                  </div>
+                </dl>
+
+                <div className="mt-4 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
+                  {platform.formerNames.length > 0 ? (
+                    <span className="rounded-full border border-[var(--color-border)] px-2.5 py-1">
+                      Former names: {platform.formerNames.join(" · ")}
+                    </span>
+                  ) : null}
                 </div>
-                <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                    Docs
+                  </a>
+                  <a href={platform.websiteUrl} target="_blank" rel="noreferrer" className="inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                    Product page
+                  </a>
                 </div>
-                <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
-                  Docs
-                </a>
               </article>
             );
           })}
         </section>
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
-          <WarningBox>
-            Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
-          </WarningBox>
-          <WarningBox variant="warning" title="Google naming caution">
-            Do not confuse Google AI Studio (free playground) with Vertex AI Studio (enterprise). Agentspace is now <strong>Gemini Enterprise</strong>.
-          </WarningBox>
-        </section>
-
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
-          <h2 className="text-lg font-semibold">How platforms connect to categories</h2>
+          <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>
+          <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            This is the bridge between the platform layer and the category pages. It shows the native product a visitor is most likely
+            looking for inside each cloud before comparing it against open source and third-party alternatives.
+          </p>
           <div className="mt-4 overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead>
@@ -172,6 +228,30 @@ export default function PlatformsPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </section>
+
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
+          <WarningBox>
+            Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
+          </WarningBox>
+          <WarningBox variant="warning" title="Google naming caution">
+            Do not confuse Google AI Studio (free playground) with Vertex AI Studio (enterprise). Agentspace is now <strong>Gemini Enterprise</strong>.
+          </WarningBox>
+        </section>
+
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
+          <div className="max-w-4xl">
+            <h2 className="text-lg font-semibold">Detailed vendor comparison</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+              Use the full table below once you already understand the platform roles above. This is the detail layer for direct vendor-to-vendor comparison, not the best entry point for first-time visitors.
+            </p>
+          </div>
+          <div className="mt-5">
+            <VendorComparisonTable
+              vendors={["Microsoft Foundry", "AWS Bedrock", "Google Vertex AI"]}
+              rows={comparisonRows}
+            />
           </div>
         </section>
 

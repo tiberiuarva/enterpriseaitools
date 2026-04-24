@@ -13,10 +13,10 @@ type PlatformCategoryBarProps = {
 };
 
 const coverageCopy: Record<ToolCategory, string> = {
-  agents: "Runs on",
-  orchestration: "Runs on",
-  governance: "Runs on",
-  assistants: "Runs on",
+  agents: "Cloud-native mappings",
+  orchestration: "Cloud-native mappings",
+  governance: "Cloud-native mappings",
+  assistants: "Cloud-native mappings",
 };
 
 const assistantMappingKeys: AssistantMappingKey[] = ["assistantsCoding", "assistantsProductivity", "assistantsBuildYourOwn"];
