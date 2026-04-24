@@ -17,41 +17,41 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "Fully managed agent platform inside Microsoft Foundry",
-          "Managed Bedrock agents paired with the AgentCore runtime layer",
-          "Vertex AI agent tooling paired with the open ADK",
+          "Fully managed agent platform with deep M365 integration",
+          "Modular: Agents (guided) + AgentCore (framework-agnostic)",
+          "Open ADK + managed Agent Engine",
         ],
       },
       {
         attribute: "SDK Languages",
         values: [
           "Python, C#, JS/TS, Java",
-          "Python-first plus broader AWS SDK coverage",
+          "Python (primary), all AWS SDKs",
           "Python, Java, Go, TypeScript",
         ],
       },
       {
-        attribute: "Model access",
+        attribute: "Model Catalog",
         values: [
-          "11,000+ models through Microsoft Foundry",
-          "100+ managed foundation models in Bedrock",
-          "200+ models through Vertex AI and Model Garden",
+          "11,000+ models",
+          "100+ foundation models",
+          "200+ via Model Garden",
         ],
       },
       {
-        attribute: "Pricing shape",
+        attribute: "Pricing",
         values: [
-          "Platform is free to explore; usage is billed around model and tool consumption",
-          "Pay-per-token plus usage-based agent/runtime features",
-          "Pay-per-token plus usage-based runtime and platform resources",
+          "Free platform; pay for tokens + tools",
+          "Pay-per-use (vCPU/sec, Gateway, Memory)",
+          "Pay-per-use (vCPU-hr, GiB-hr)",
         ],
       },
       {
-        attribute: "Entry credits",
+        attribute: "Free Credits",
         values: [
-          "$200 Azure credit",
-          "$200 AWS credit",
-          "$300 GCP credit + AI Studio free playground",
+          "$200 Azure",
+          "$200 AWS",
+          "$300 GCP + Express Mode",
         ],
       },
       {
@@ -65,9 +65,9 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Differentiator",
         values: [
-          "Strong Microsoft 365 and enterprise workflow integration",
-          "Framework-agnostic runtime approach with strong AWS-native fit",
-          "ADK + Vertex AI combination with strong grounding and search tie-ins",
+          "One-click M365/Teams deploy; 1,400+ connectors",
+          "Max framework agnosticism; microVM isolation",
+          "Open-source ADK (7M+ downloads); Search grounding",
         ],
       },
       {
