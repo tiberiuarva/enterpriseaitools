@@ -129,11 +129,7 @@
           "label": "Amazon Q Apps",
           "href": "/assistants"
         }
-      },
-      "logoKind": "service-icon",
-      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
-      "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
-      "logoReviewedAt": "2026-04-19"
+      }
     },
     {
       "id": "google-vertex-ai",
