@@ -12,7 +12,7 @@ export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
           className="group flex h-full flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
         >
           <div className="flex items-start justify-between gap-3">
-            <div className="flex min-w-0 items-center gap-3">
+            <div className="flex min-w-0 items-start gap-3">
               <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
               <div className="min-w-0">
                 <div className="truncate text-base font-semibold text-[var(--color-text-primary)]">{platform.name}</div>

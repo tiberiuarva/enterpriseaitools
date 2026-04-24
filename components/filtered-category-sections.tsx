@@ -194,6 +194,12 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
         />
       </section>
 
+      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+        <div className="text-sm text-[var(--color-text-secondary)]">
+          Cloud-native mappings for this category
+        </div>
+      </section>
+
       {showStandaloneAgentsComparison ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
           <h2 className="text-lg font-semibold">Vendor comparison</h2>

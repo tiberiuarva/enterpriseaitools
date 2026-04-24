@@ -70,12 +70,11 @@ export function CategoryPage({ category, title, description, iconName, tools, up
         </div>
       </section>
 
-      <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
-
       {enableFiltering ? (
         <FilteredCategorySections category={category} tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
+          <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
