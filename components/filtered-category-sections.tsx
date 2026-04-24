@@ -194,6 +194,44 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
         />
       </section>
 
+      {showStandaloneAgentsComparison ? (
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+          <h2 className="text-lg font-semibold">Vendor comparison</h2>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
+          </p>
+          <div className="mt-5">
+            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+          </div>
+        </section>
+      ) : null}
+
+      {showVendorSection ? (
+        <VendorToolsSection
+          vendorTools={vendorTools}
+          comparison={comparison}
+          showComparison={category === "agents" ? false : showVendorComparison}
+          description={
+            category === "agents"
+              ? hasActiveNarrowingFilter
+                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
+                : "Cloud-native agent offerings are grouped near the top of the page, before the broader open source and third-party landscape below."
+              : showVendorComparison
+                ? showVendorCards
+                  ? "Cloud-native vendor offerings are shown first here, before the broader open source and third-party landscape below."
+                  : "The three-way vendor comparison is available here because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter."
+                : comparison
+                  ? "Cloud-native vendor offerings stay near the top of this page. Clear cloud and license filters to restore the three-way vendor comparison table."
+                  : hasActiveNarrowingFilter
+                    ? "Vendor tool cards stay visible near the top and respect the current filters. Detailed vendor comparison rows are still being added for this category."
+                    : "Vendor tool cards are shown near the top of the page. Detailed vendor comparison rows are still being added for this category."
+          }
+          showToolCards={showVendorCards}
+          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
+          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
+        />
+      ) : null}
+
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
         <h2 className="text-lg font-semibold">Filtered open source and third-party tools</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} matching non-vendor tools in this filtered view.</p>
@@ -250,44 +288,6 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
             ))}
           </div>
         </section>
-      ) : null}
-
-      {showStandaloneAgentsComparison ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
-          <h2 className="text-lg font-semibold">Vendor comparison</h2>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
-          </p>
-          <div className="mt-5">
-            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
-          </div>
-        </section>
-      ) : null}
-
-      {showVendorSection ? (
-        <VendorToolsSection
-          vendorTools={vendorTools}
-          comparison={comparison}
-          showComparison={category === "agents" ? false : showVendorComparison}
-          description={
-            category === "agents"
-              ? hasActiveNarrowingFilter
-                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
-                : "Cloud-native agent offerings are grouped here after the broader market view and after the direct vendor comparison above."
-              : showVendorComparison
-                ? showVendorCards
-                  ? "Vendor-native detail stays lower on the page so the broader category list comes first. The three-way comparison returns only when cloud and license filters are cleared."
-                  : "The three-way vendor comparison is available here because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter."
-                : comparison
-                  ? "Vendor detail is intentionally pushed lower on the page. Clear cloud and license filters to restore the three-way vendor comparison table."
-                  : hasActiveNarrowingFilter
-                    ? "Vendor tool cards are still shown lower on the page and respect the current filters. Detailed vendor comparison rows are still being added for this category."
-                    : "Vendor tool cards are shown lower on the page. Detailed vendor comparison rows are still being added for this category."
-          }
-          showToolCards={showVendorCards}
-          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
-          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
-        />
       ) : null}
     </>
   );
