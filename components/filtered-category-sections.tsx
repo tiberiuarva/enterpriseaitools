@@ -23,6 +23,13 @@ type FilterStateSnapshot = {
   sortBy: CategoryFilterState["sort"];
 };
 
+const defaultFilterState: FilterStateSnapshot = {
+  typeFilter: "all",
+  cloudFilters: [],
+  licenseFilter: "all",
+  sortBy: "name",
+};
+
 function parseCloudFilters(searchParams: URLSearchParams) {
   const values = searchParams.getAll("cloud");
 
@@ -55,12 +62,7 @@ function readFilterState(searchParams: URLSearchParams): FilterStateSnapshot {
 
 function readFilterStateFromWindow(): FilterStateSnapshot {
   if (typeof window === "undefined") {
-    return {
-      typeFilter: "all",
-      cloudFilters: [],
-      licenseFilter: "all",
-      sortBy: "name",
-    };
+    return defaultFilterState;
   }
 
   return readFilterState(new URLSearchParams(window.location.search));
@@ -97,10 +99,17 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const router = useRouter();
   const pathname = usePathname();
   const didMountRef = useRef(false);
-  const [filterState, setFilterState] = useState<FilterStateSnapshot>(() => readFilterStateFromWindow());
+  const [filterState, setFilterState] = useState<FilterStateSnapshot>(defaultFilterState);
+  const [hasSyncedFromUrl, setHasSyncedFromUrl] = useState(false);
 
   useEffect(() => {
-    didMountRef.current = true;
+    const syncFromUrl = () => {
+      setFilterState(readFilterStateFromWindow());
+      setHasSyncedFromUrl(true);
+      didMountRef.current = true;
+    };
+
+    const timeoutId = window.setTimeout(syncFromUrl, 0);
 
     const handlePopState = () => {
       setFilterState(readFilterStateFromWindow());
@@ -109,12 +118,13 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
     window.addEventListener("popstate", handlePopState);
 
     return () => {
+      window.clearTimeout(timeoutId);
       window.removeEventListener("popstate", handlePopState);
     };
   }, []);
 
   useEffect(() => {
-    if (!didMountRef.current || typeof window === "undefined") {
+    if (!didMountRef.current || !hasSyncedFromUrl || typeof window === "undefined") {
       return;
     }
 
@@ -126,7 +136,7 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
     }
 
     router.replace(nextQuery ? `${pathname}?${nextQuery}` : pathname, { scroll: false });
-  }, [filterState, pathname, router]);
+  }, [filterState, hasSyncedFromUrl, pathname, router]);
 
   function updateFilterState(partial: Partial<FilterStateSnapshot>) {
     setFilterState((current) => ({ ...current, ...partial }));
