@@ -10,7 +10,17 @@ export const updates = [...(updatesData.updates as UpdateEntry[])].sort((a, b) =
 );
 export const lastUpdated = toolsData.lastUpdated;
 
-export const latestUpdate = updates[0] ?? null;
+function isWithinLast30Days(dateString: string) {
+  const now = new Date();
+  const date = new Date(`${dateString}T00:00:00Z`);
+  const diffMs = now.getTime() - date.getTime();
+  const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+
+  return diffMs >= 0 && diffMs <= thirtyDaysMs;
+}
+
+const latestHighImpactUpdate = updates.find((update) => update.impact === "high" && isWithinLast30Days(update.date));
+export const latestUpdate = latestHighImpactUpdate ?? updates[0] ?? null;
 
 export const categoryDescriptions: Record<ToolCategory, string> = {
   agents: "Managed cloud agent platforms and open source agent frameworks.",
