@@ -12,12 +12,7 @@ type PlatformCategoryBarProps = {
   headingLevel: HeadingLevel;
 };
 
-const coverageCopy: Record<ToolCategory, string> = {
-  agents: "Runs on",
-  orchestration: "Runs on",
-  governance: "Runs on",
-  assistants: "Runs on",
-};
+const coverageLabel = "Cloud-native mappings";
 
 const assistantMappingKeys: AssistantMappingKey[] = ["assistantsCoding", "assistantsProductivity", "assistantsBuildYourOwn"];
 
@@ -55,7 +50,7 @@ export function PlatformCategoryBar({
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
       <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="shrink-0 text-sm font-semibold text-[var(--color-text-primary)]">{coverageCopy[category]}</div>
+        <div className="shrink-0 text-sm font-semibold text-[var(--color-text-primary)]">{coverageLabel}</div>
         <ul className="flex flex-1 flex-wrap gap-2">
           {platforms.map((platform) => (
             <li key={platform.id}>

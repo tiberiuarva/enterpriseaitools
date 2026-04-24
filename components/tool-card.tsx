@@ -93,9 +93,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
       <div className="mt-4 flex items-center justify-between gap-3">
         {tool.version ? (
           <code className="rounded-md bg-[var(--color-bg-surface)] px-2 py-1 text-[13px] text-[var(--color-text-primary)]">{tool.version}</code>
-        ) : (
-          <span className="text-xs text-[var(--color-text-secondary)]">No version listed</span>
-        )}
+        ) : null}
 
         {docsHref ? (
           <a

@@ -9,7 +9,7 @@ export function Footer({ lastUpdated }: FooterProps) {
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-sm text-[var(--color-text-secondary)] sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div>
-          Built by <span className="font-medium text-[var(--color-text-primary)]">Artix Cloud</span>
+          Open source enterprise AI landscape tracker
         </div>
         <div className="inline-flex w-fit rounded-full border border-[var(--color-border)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-primary)]">
           MIT License

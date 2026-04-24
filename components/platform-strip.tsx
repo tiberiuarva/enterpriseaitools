@@ -4,12 +4,12 @@ import type { Platform } from "@/lib/types";
 
 export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
   return (
-    <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-3">
       {platforms.map((platform) => (
         <a
           key={platform.id}
           href={withBasePath(platformPageHref)}
-          className="group rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
+          className="group flex h-full flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
         >
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
@@ -26,6 +26,6 @@ export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
           <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.tagline}</p>
         </a>
       ))}
-    </section>
+    </div>
   );
 }
