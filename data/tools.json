@@ -502,7 +502,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
       "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best when the core problem is governed enterprise workflow automation with Azure connectors, not frontier agent behaviour or open-ended autonomy."
     },
     {
       "id": "aws-step-functions",
@@ -534,7 +535,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
       "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong fit for AWS-native production workflows that need explicit state, retries, and operational control rather than a higher-level AI builder UX."
     },
     {
       "id": "google-cloud-workflows",
@@ -566,7 +568,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://cloud.google.com/icons",
       "logoNotes": "Official Google Cloud workflow icon from the Google Cloud icon library.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Pragmatic choice for GCP-centric teams orchestrating APIs and services, but usually not the first pick for richer agent-builder experiences."
     },
     {
       "id": "n8n",
@@ -602,7 +605,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management."
     },
     {
       "id": "paperclip",
@@ -642,7 +646,8 @@
       "languages": [
         "TypeScript",
         "JavaScript"
-      ]
+      ],
+      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks."
     },
     {
       "id": "langflow",
@@ -676,7 +681,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift."
     },
     {
       "id": "dify",
@@ -710,7 +716,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely."
     },
     {
       "id": "flowise",
@@ -743,7 +750,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Practical low-code orchestration layer for teams moving quickly, provided they validate security posture and ownership-roadmap fit for production use."
     },
     {
       "id": "haystack",
@@ -776,7 +784,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation."
     },
     {
       "id": "rivet",
@@ -810,7 +819,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Can still work for narrow visual pipeline use cases, but the maintenance signal makes it a cautious choice for new enterprise standardisation."
     },
     {
       "id": "azure-ai-content-safety",
