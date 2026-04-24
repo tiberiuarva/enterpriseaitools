@@ -86,7 +86,7 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "iPaaS workflow automation with AI capabilities",
+          "iPaaS workflow automation with AI-adjacent integration depth",
           "Serverless state machine for AWS service orchestration",
           "Serverless workflow orchestration for GCP services",
         ],
@@ -110,8 +110,8 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Connectors / integrations",
         values: [
-          "1,400+ (broadest)",
-          "220+ AWS services",
+          "Broad connector ecosystem across enterprise apps and Azure services",
+          "Deep AWS service integration",
           "GCP services + HTTP APIs",
         ],
       },
@@ -120,11 +120,11 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         values: ["Partial (Standard plan)", "No", "No"],
       },
       {
-        attribute: "Latest update",
+        attribute: "Current positioning",
         values: [
-          "GenAI Copilot automation",
-          "28 new integrations + AgentCore (Mar 2026)",
-          "Incremental updates",
+          "Best when broad connector coverage matters",
+          "Best when orchestration stays mostly inside AWS",
+          "Best when simple GCP-native workflow orchestration is enough",
         ],
       },
     ],
@@ -152,16 +152,16 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         attribute: "Pricing",
         values: [
           "Pay-per-text-unit; free tier",
-          "$0.15/1K text units (85% price cut)",
+          "$0.15/1K text units after the recent Bedrock Guardrails price cut",
           "Pay-as-you-go",
         ],
       },
       {
         attribute: "Unique capability",
         values: [
-          "On-premises containers + on-device deployment",
-          "Automated Reasoning (formal logic, provable)",
-          "Apigee + GKE + Security Command Center",
+          "On-premises containers + on-device deployment path",
+          "Automated Reasoning for formal-policy style checks",
+          "Apigee + GKE + Security Command Center integration path",
         ],
       },
       {
