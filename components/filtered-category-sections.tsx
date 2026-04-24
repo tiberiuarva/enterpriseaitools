@@ -172,8 +172,8 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
+  const showStandaloneAgentsComparison = category === "agents" && showVendorComparison && Boolean(comparison);
   const showVendorSection = showVendorCards || showVendorComparison;
-  const showStandaloneAgentsComparison = category === "agents" && showVendorComparison && comparison;
 
   return (
     <>
@@ -201,7 +201,7 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
             Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
           </p>
           <div className="mt-5">
-            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+            <VendorComparisonTable vendors={comparison!.vendors} rows={comparison!.rows} />
           </div>
         </section>
       ) : null}
