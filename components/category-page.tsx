@@ -4,7 +4,6 @@ import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolList
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
-import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { siteUrl } from "@/lib/metadata";
 import type { CategoryComparison } from "@/lib/category-comparisons";
@@ -37,7 +36,6 @@ function sortByName(tools: Tool[]) {
 
 export function CategoryPage({ category, title, description, iconName, tools, updates, platforms, comparison, enableFiltering = false }: CategoryPageProps) {
   const Icon = iconMap[iconName];
-  const vendorTools = sortByName(tools.filter((tool) => tool.type === "vendor"));
   const nonVendorTools = sortByName(tools.filter((tool) => tool.type !== "vendor"));
   const warningTools = sortByName(tools.filter((tool) => tool.licenseWarning || tool.statusNote));
   const visibleUpdates = updates.slice(0, 5);
