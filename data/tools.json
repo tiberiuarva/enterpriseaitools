@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-23",
+  "lastUpdated": "2026-04-24",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -38,7 +38,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack."
     },
     {
       "id": "aws-bedrock-agents",
@@ -76,7 +77,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong choice for AWS-centric teams that want managed agent primitives and infrastructure alignment without standardising on one open source framework."
     },
     {
       "id": "google-agent-builder-adk",
@@ -113,7 +115,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when Vertex AI, search, and Google-first app surfaces matter, but maturity and enterprise standardisation still need close validation."
     },
     {
       "id": "crewai",
@@ -146,7 +149,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries."
     },
     {
       "id": "autogen",
@@ -181,7 +185,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance."
     },
     {
       "id": "llamaindex",
@@ -214,7 +219,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows."
     },
     {
       "id": "semantic-kernel",
@@ -248,7 +254,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths."
     },
     {
       "id": "microsoft-agent-framework",
@@ -289,7 +296,8 @@
         "Python",
         "C#",
         ".NET"
-      ]
+      ],
+      "practitionerNote": "Worth watching for teams standardising on Microsoft agent patterns, but adoption should still be treated as early and architecture-led."
     },
     {
       "id": "langgraph",
@@ -323,7 +331,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy."
     },
     {
       "id": "mastra",
@@ -357,7 +366,8 @@
         "azure",
         "gcp"
       ],
-      "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License."
+      "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.",
+      "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks."
     },
     {
       "id": "openai-agents-sdk",
@@ -391,7 +401,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default."
     },
     {
       "id": "atomic-agents",
@@ -423,7 +434,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling."
     },
     {
       "id": "beeai-framework",
@@ -457,7 +469,8 @@
         "aws",
         "azure",
         "gcp"
-      ]
+      ],
+      "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation."
     },
     {
       "id": "azure-logic-apps",

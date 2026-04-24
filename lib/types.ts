@@ -32,6 +32,7 @@ export type Tool = {
   vendor?: string;
   description: string;
   strengths: string[];
+  practitionerNote?: string;
   clouds?: string[];
   license: string;
   licenseWarning?: string;

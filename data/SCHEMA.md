@@ -25,6 +25,7 @@ Top-level shape:
 | `vendor` | string | no | Parent company or maintainer |
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |
+| `practitionerNote` | string | no | Concise editorial implementation note grounded in the tool's deployment fit, trade-offs, or enterprise usage pattern |
 | `clouds` | string[] | no | Any of `azure`, `aws`, `gcp` |
 | `license` | string | yes | Exact license label |
 | `licenseWarning` | string | no | Caveat for source-available, proprietary core, branding, etc. |
