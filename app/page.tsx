@@ -138,7 +138,7 @@ export default function Home() {
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
             <div className="border-l-4 border-[var(--color-primary)] pl-4">
               <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
-                Featured update · {latestUpdate.date}
+                Latest update · {latestUpdate.date}
               </div>
               <div className="mt-2 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
                 <span>{formatUpdateLabel(latestUpdate.category)}</span>

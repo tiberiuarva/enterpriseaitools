@@ -272,7 +272,7 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
           description={
             category === "agents"
               ? hasActiveNarrowingFilter
-                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
+                ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison section."
                 : "Cloud-native agent offerings are grouped here after the broader market view and after the direct vendor comparison above."
               : showVendorComparison
                 ? showVendorCards

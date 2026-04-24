@@ -49,6 +49,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-11-01</id>
+    <title>Microsoft Foundry — feature</title>
+    <updated>2026-04-11T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-11-01" />
+    <summary>Microsoft highlighted April 2026 Foundry platform updates including SDK 2.0 GA, Agent Service GA, and expanded GPT-5.4 availability in the official What&apos;s New stream.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, high" />
+    <source>
+      <id>https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry</id>
+      <title>Microsoft Foundry docs: What&apos;s new for April 2026 - Microsoft Foundry | Microsoft Learn</title>
+      <link href="https://learn.microsoft.com/en-us/azure/foundry/whats-new-foundry" />
+    </source>
+  </entry>
+  <entry>
     <id>https://enterpriseai.tools/updates/#update-2026-04-09-01</id>
     <title>OpenAI Agents SDK — release</title>
     <updated>2026-04-09T00:00:00.000Z</updated>
