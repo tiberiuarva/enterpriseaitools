@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
@@ -15,17 +16,127 @@ type FilteredCategorySectionsProps = {
   comparison?: CategoryComparison;
 };
 
-export function FilteredCategorySections({ tools, updates, comparison }: FilteredCategorySectionsProps) {
-  const [typeFilter, setTypeFilter] = useState<CategoryFilterState["type"]>("all");
-  const [cloudFilters, setCloudFilters] = useState<string[]>([]);
-  const [licenseFilter, setLicenseFilter] = useState("all");
-  const [sortBy, setSortBy] = useState<CategoryFilterState["sort"]>("name");
+type FilterStateSnapshot = {
+  typeFilter: CategoryFilterState["type"];
+  cloudFilters: string[];
+  licenseFilter: string;
+  sortBy: CategoryFilterState["sort"];
+};
 
-  function resetNarrowingFilters() {
-    setCloudFilters([]);
-    setLicenseFilter("all");
+function parseCloudFilters(searchParams: URLSearchParams) {
+  const values = searchParams.getAll("cloud");
+
+  if (values.length === 0) {
+    return [];
   }
 
+  return Array.from(
+    new Set(
+      values
+        .flatMap((value) => value.split(","))
+        .map((value) => value.trim().toLowerCase())
+        .filter((value): value is "azure" | "aws" | "gcp" => value === "azure" || value === "aws" || value === "gcp"),
+    ),
+  );
+}
+
+function readFilterState(searchParams: URLSearchParams): FilterStateSnapshot {
+  const type = searchParams.get("type");
+  const license = searchParams.get("license");
+  const sort = searchParams.get("sort");
+
+  return {
+    typeFilter: type === "vendor" || type === "opensource" || type === "commercial" ? type : "all",
+    cloudFilters: parseCloudFilters(searchParams),
+    licenseFilter: license && license.length > 0 ? license : "all",
+    sortBy: sort === "stars" || sort === "updated" ? sort : "name",
+  };
+}
+
+function readFilterStateFromWindow(): FilterStateSnapshot {
+  if (typeof window === "undefined") {
+    return {
+      typeFilter: "all",
+      cloudFilters: [],
+      licenseFilter: "all",
+      sortBy: "name",
+    };
+  }
+
+  return readFilterState(new URLSearchParams(window.location.search));
+}
+
+function buildFilterQuery({
+  typeFilter,
+  cloudFilters,
+  licenseFilter,
+  sortBy,
+}: FilterStateSnapshot) {
+  const next = new URLSearchParams();
+
+  if (typeFilter !== "all") {
+    next.set("type", typeFilter);
+  }
+
+  if (cloudFilters.length > 0) {
+    next.set("cloud", [...cloudFilters].sort().join(","));
+  }
+
+  if (licenseFilter !== "all") {
+    next.set("license", licenseFilter);
+  }
+
+  if (sortBy !== "name") {
+    next.set("sort", sortBy);
+  }
+
+  return next.toString();
+}
+
+export function FilteredCategorySections({ tools, updates, comparison }: FilteredCategorySectionsProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const didMountRef = useRef(false);
+  const [filterState, setFilterState] = useState<FilterStateSnapshot>(() => readFilterStateFromWindow());
+
+  useEffect(() => {
+    didMountRef.current = true;
+
+    const handlePopState = () => {
+      setFilterState(readFilterStateFromWindow());
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!didMountRef.current || typeof window === "undefined") {
+      return;
+    }
+
+    const nextQuery = buildFilterQuery(filterState);
+    const currentQuery = window.location.search.replace(/^\?/, "");
+
+    if (nextQuery === currentQuery) {
+      return;
+    }
+
+    router.replace(nextQuery ? `${pathname}?${nextQuery}` : pathname, { scroll: false });
+  }, [filterState, pathname, router]);
+
+  function updateFilterState(partial: Partial<FilterStateSnapshot>) {
+    setFilterState((current) => ({ ...current, ...partial }));
+  }
+
+  function resetNarrowingFilters() {
+    updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+  }
+
+  const { typeFilter, cloudFilters, licenseFilter, sortBy } = filterState;
   const availableLicenses = useMemo(() => getAvailableLicenses(tools), [tools]);
   const effectiveTools = useMemo(() => {
     let next = filterTools(tools, {
@@ -59,13 +170,13 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
       >
         <FilterBar
           typeFilter={typeFilter}
-          onTypeFilterChange={setTypeFilter}
+          onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
           cloudFilters={cloudFilters}
-          onCloudFiltersChange={setCloudFilters}
+          onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
           licenseFilter={licenseFilter}
-          onLicenseFilterChange={setLicenseFilter}
+          onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
           sortBy={sortBy}
-          onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
+          onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
           availableLicenses={availableLicenses}
         />
       </section>
