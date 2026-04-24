@@ -75,20 +75,9 @@ export function CategoryPage({ category, title, description, iconName, tools, up
       <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
 
       {enableFiltering ? (
-        <FilteredCategorySections tools={tools} updates={updates} comparison={comparison} />
+        <FilteredCategorySections category={category} tools={tools} updates={updates} comparison={comparison} />
       ) : (
         <>
-          <VendorToolsSection
-            vendorTools={vendorTools}
-            comparison={comparison}
-            showComparison={Boolean(comparison)}
-            description={
-              comparison
-                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-                : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
-            }
-          />
-
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
             <h2 className="text-lg font-semibold">Open source and third-party tools</h2>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} tracked tools in this category.</p>
@@ -128,6 +117,17 @@ export function CategoryPage({ category, title, description, iconName, tools, up
               </div>
             </section>
           ) : null}
+
+          <VendorToolsSection
+            vendorTools={vendorTools}
+            comparison={comparison}
+            showComparison={Boolean(comparison)}
+            description={
+              comparison
+                ? "Native cloud offerings for this category, followed by a side-by-side vendor comparison table."
+                : "Native cloud offerings for this category. Detailed vendor comparison rows are still being added for this category."
+            }
+          />
 
           <RelatedHubs
             currentPath={`/${category}`}

@@ -66,6 +66,12 @@ const mappingRows: Array<{ label: string; cells: [PlatformMapping, PlatformMappi
   },
 ];
 
+const platformBestFit: Record<string, string> = {
+  "microsoft-foundry": "Microsoft-heavy enterprise environments",
+  "aws-bedrock": "AWS-native teams wanting broad infrastructure alignment",
+  "google-vertex-ai": "Google-heavy or ADK-first teams",
+};
+
 export default function PlatformsPage() {
   assertUniquePlatformFragmentIds(platforms.map((platform) => platform.id));
 
@@ -89,21 +95,23 @@ export default function PlatformsPage() {
         <JsonLd data={jsonLd} />
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
-          <p className="mt-3 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Microsoft Foundry, AWS Bedrock, and Google Vertex AI are the foundation layer beneath the rest of the landscape.
-            They host model catalogs, agent runtimes, safety services, and deployment infrastructure.
-          </p>
+          <div className="mt-3 max-w-4xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+            <p>
+              Microsoft Foundry, AWS Bedrock, and Google Vertex AI are the foundation layer beneath the rest of the landscape.
+              They package model access, agent services, safety controls, SDKs, and deployment infrastructure differently.
+            </p>
+            <p>
+              Read this page top-down: compare the platforms first, use the category mapping section to see where each cloud lands in agents,
+              orchestration, governance, and assistants, then use the detailed comparison table for deeper vendor-to-vendor evaluation.
+            </p>
+          </div>
         </section>
-
-        <VendorComparisonTable
-          vendors={["Microsoft Foundry", "AWS Bedrock", "Google Vertex AI"]}
-          rows={comparisonRows}
-        />
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {platforms.map((platform) => {
             const platformFragmentId = getPlatformFragmentId(platform.id);
             const platformHeadingId = `${platformFragmentId}-heading`;
+            const bestFit = platformBestFit[platform.id];
 
             return (
               <article
@@ -121,32 +129,37 @@ export default function PlatformsPage() {
                     <p className="text-xs text-[var(--color-text-secondary)]">{platform.vendor}</p>
                   </div>
                 </div>
+
                 <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.description}</p>
-                <div className="mt-4 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">Protocols:</strong> {platform.protocols.join(", ")}
+                <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                  <strong className="text-[var(--color-text-primary)]">Why teams pick it:</strong> {platform.tagline}
+                </p>
+
+                {bestFit ? (
+                  <div className="mt-4 inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
+                    <span className="text-[var(--color-text-primary)]">Best fit:</span>
+                    <span className="ml-1">{bestFit}</span>
+                  </div>
+                ) : null}
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                    Docs
+                  </a>
+                  <a href={platform.websiteUrl} target="_blank" rel="noreferrer" className="inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
+                    Product page
+                  </a>
                 </div>
-                <div className="mt-2 text-sm text-[var(--color-text-secondary)]">
-                  <strong className="text-[var(--color-text-primary)]">SDKs:</strong> {platform.sdkLanguages.join(", ")}
-                </div>
-                <a href={platform.docsUrl} target="_blank" rel="noreferrer" className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">
-                  Docs
-                </a>
               </article>
             );
           })}
         </section>
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
-          <WarningBox>
-            Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
-          </WarningBox>
-          <WarningBox variant="warning" title="Google naming caution">
-            Do not confuse Google AI Studio (free playground) with Vertex AI Studio (enterprise). Agentspace is now <strong>Gemini Enterprise</strong>.
-          </WarningBox>
-        </section>
-
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
-          <h2 className="text-lg font-semibold">How platforms connect to categories</h2>
+          <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>
+          <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            This bridges the platform layer with the category hubs, so visitors can quickly see the native cloud product most relevant to each tracked category.
+          </p>
           <div className="mt-4 overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead>
@@ -173,6 +186,30 @@ export default function PlatformsPage() {
               </tbody>
             </table>
           </div>
+        </section>
+
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
+          <div className="max-w-4xl">
+            <h2 className="text-lg font-semibold">Detailed vendor comparison</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+              Use the full table below after the platform summaries above. This is the detail layer for direct vendor-to-vendor comparison rather than the best entry point for first-time visitors.
+            </p>
+          </div>
+          <div className="mt-5">
+            <VendorComparisonTable
+              vendors={["Microsoft Foundry", "AWS Bedrock", "Google Vertex AI"]}
+              rows={comparisonRows}
+            />
+          </div>
+        </section>
+
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
+          <WarningBox>
+            Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
+          </WarningBox>
+          <WarningBox variant="warning" title="Google naming caution">
+            Do not confuse Google AI Studio (free playground) with Vertex AI Studio (enterprise). Agentspace is now <strong>Gemini Enterprise</strong>.
+          </WarningBox>
         </section>
 
         <RelatedHubs

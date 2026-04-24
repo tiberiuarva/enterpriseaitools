@@ -41,6 +41,13 @@ export default function AboutPage() {
           </p>
         </section>
 
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">Editor</h2>
+          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+            Maintained by Tiberiu Arva, an AI architect working in enterprise financial services. The lens is practitioner-first: what actually works in real enterprise environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
+          </p>
+        </section>
+
         <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">Project goals</h2>
