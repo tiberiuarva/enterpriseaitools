@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { LogoBadge } from "@/components/logo-badge";
 import { withBasePath } from "@/lib/site";
 import type { LogoKind } from "@/lib/types";
@@ -13,11 +12,9 @@ export function PlatformMark({ vendor, logoUrl, logoKind }: PlatformMarkProps) {
   if (logoUrl) {
     return (
       <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[var(--color-border)] bg-white p-1.5">
-        <Image
+        <img
           src={withBasePath(logoUrl)}
           alt=""
-          width={48}
-          height={48}
           loading="lazy"
           className="h-full w-full object-contain"
         />
