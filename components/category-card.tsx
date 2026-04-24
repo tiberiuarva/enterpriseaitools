@@ -1,12 +1,10 @@
 import type { LucideIcon } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
-import { shouldShowImageLogo } from "@/lib/logo";
 import { withBasePath } from "@/lib/site";
-import { toolTypeIcons, toolTypeTintStyles } from "@/lib/tool-type";
 
 import type { Tool } from "@/lib/types";
 
-type CategoryPreviewTool = Pick<Tool, "id" | "name" | "type" | "logoUrl" | "logoKind">;
+type CategoryPreviewTool = Pick<Tool, "id" | "name" | "logoUrl" | "logoKind">;
 
 type CategoryCardProps = {
   href: string;
@@ -40,24 +38,12 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
 
       <div className="mt-4 flex flex-wrap gap-2" aria-hidden="true">
         {previewTools.map((tool) => {
-          const PreviewToolIcon = toolTypeIcons[tool.type];
-          const showImageLogo = shouldShowImageLogo(tool);
-
           return (
             <span
               key={tool.id}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
             >
-              {showImageLogo ? (
-                <LogoBadge logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" />
-              ) : (
-                <span
-                  className={`inline-flex h-6 w-6 items-center justify-center rounded-md ${toolTypeTintStyles[tool.type]}`}
-                  aria-hidden="true"
-                >
-                  <PreviewToolIcon size={12} />
-                </span>
-              )}
+              <LogoBadge label={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" />
               <span>{tool.name}</span>
             </span>
           );
