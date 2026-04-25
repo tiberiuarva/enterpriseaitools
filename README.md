@@ -12,7 +12,7 @@ Enterprise architects evaluating AI tooling face the same friction every time: v
 
 This tracker exists to cut through that. It compares what the three cloud vendors (Microsoft Foundry, AWS Bedrock, Google Vertex AI) offer alongside the leading open source alternatives, across four categories: agent frameworks, orchestration, governance, and assistants. Every data point is source-backed. Updates ship weekly.
 
-The lens is practitioner-first, with particular attention to what works inside regulated environments — EU AI Act, DORA, SR 11-7, BCBS 239 constraints that shape real decisions but rarely appear in vendor comparisons.
+The lens is practitioner-first, with particular attention to what actually works in real enterprise environments.
 
 ## What's tracked
 
@@ -29,7 +29,7 @@ Every tool entry includes: official docs link, GitHub stars and version (open so
 - Source-backed or not published. Every claim links to an official source. If a data point cannot be verified, it is flagged or omitted.
 - License accuracy matters. A tool labeled "MIT" that is actually source-available with commercial restrictions is a serious error, not a detail.
 - Naming changes get tracked. Microsoft Foundry has been renamed three times since 2023. Amazon Q Developer was CodeWhisperer. Gemini Enterprise was Agentspace. This site uses current canonical names.
-- Weekly updates focus on what matters. Acquisitions, deprecations, license changes, pricing changes, and regulatory developments come before patch releases.
+- Weekly updates focus on what matters. Acquisitions, deprecations, license changes, pricing changes, and major platform changes come before patch releases.
 - Data-dense over decorative. Inspired by Bloomberg Terminal and the CNCF Landscape. Zero marketing fluff.
 
 ## Data model
@@ -99,7 +99,7 @@ Deployment and domain guides: `DEPLOYMENT.md` and `CUSTOM_DOMAIN.md`.
 
 ## Maintainer
 
-Maintained by [Tiberiu Arva](https://www.linkedin.com/in/tiberiuarva/), an AI architect working in EU regulated financial services. The site is built by [Artix Cloud](https://www.artixcloud.com/).
+Maintained by [Tiberiu Arva](https://www.linkedin.com/in/tiberiuarva/), an AI architect focused on enterprise AI systems.
 
 ## License
 
