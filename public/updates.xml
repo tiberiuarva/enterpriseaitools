@@ -7,6 +7,76 @@
   <link href="https://enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>
   <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-22-01</id>
+    <title>Google Agent Builder + ADK — rename</title>
+    <updated>2026-04-22T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-22-01" />
+    <summary>Google launched Gemini Enterprise Agent Platform, folding Vertex AI and Agent Builder capabilities under a renamed platform with Agent Runtime, Agent Registry, Agent Identity, and related governance surfaces.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, rename, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-24-03</id>
+    <title>LangFlow — release</title>
+    <updated>2026-04-24T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-03" />
+    <summary>LangFlow 1.9.1 shipped security fixes for MCP path traversal, cross-user disclosure, upload auth, IDOR, XSS handling, and webhook auth defaults, alongside Gemini 3 tool-calling updates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.9.1</id>
+      <title>Release 1.9.1 · langflow-ai/langflow · GitHub</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.9.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-20-01</id>
+    <title>Haystack — release</title>
+    <updated>2026-04-20T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-20-01" />
+    <summary>Haystack 2.28.0 introduced breaking API changes around request exception handling, LLM initialization, and agent invocation signatures, with new runtime State injection for tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v2.28.0</id>
+      <title>Release v2.28.0 · deepset-ai/haystack · GitHub</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v2.28.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-24-02</id>
+    <title>CrewAI — release</title>
+    <updated>2026-04-24T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-02" />
+    <summary>CrewAI 1.14.3 added Bedrock V4 support, checkpoint and fork support for standalone agents, Azure DefaultAzureCredential fallback, and security dependency patches.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.3</id>
+      <title>Release 1.14.3 · crewAIInc/crewAI · GitHub</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://enterpriseai.tools/updates/#update-2026-04-24-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-04-24T00:00:00.000Z</updated>
+    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-01" />
+    <summary>Microsoft Agent Framework Python 1.2.0 added a functional workflow API, OpenTelemetry support for GitHubCopilotAgent, and an A2A bridge, extending interoperability and observability for production agent deployments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0</id>
+      <title>Release python-1.2.0 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0" />
+    </source>
+  </entry>
+  <entry>
     <id>https://enterpriseai.tools/updates/#update-2026-04-14-01</id>
     <title>CrewAI pre-release adds Bedrock strict-mode fixes</title>
     <updated>2026-04-14T00:00:00.000Z</updated>
