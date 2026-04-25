@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
-import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
@@ -172,7 +171,6 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
-  const showStandaloneAgentsComparison = category === "agents" && showVendorComparison && Boolean(comparison);
   const showVendorSection = showVendorCards || showVendorComparison;
 
   return (
