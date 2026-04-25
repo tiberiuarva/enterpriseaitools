@@ -69,7 +69,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const warnings = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
-  const showVendorComparison = !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
+  const showVendorComparison = !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
   const showVendorSection = showVendorCards || showVendorComparison;
 
   const pageUrl = `${siteUrl}/assistants/`;
