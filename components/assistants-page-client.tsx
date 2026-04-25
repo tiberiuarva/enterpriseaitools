@@ -30,12 +30,23 @@ type AssistantsPageClientProps = {
   platforms: Platform[];
 };
 
+type AssistantFilterState = {
+  typeFilter: CategoryFilterState["type"];
+  cloudFilters: string[];
+  licenseFilter: string;
+  sortBy: CategoryFilterState["sort"];
+};
+
+const defaultFilterState: AssistantFilterState = {
+  typeFilter: "all",
+  cloudFilters: [],
+  licenseFilter: "all",
+  sortBy: "name",
+};
+
 export function AssistantsPageClient({ title, description, tools, updates, platforms }: AssistantsPageClientProps) {
   const [activeTab, setActiveTab] = useState<AssistantsSubcategory>("coding");
-  const [typeFilter, setTypeFilter] = useState<CategoryFilterState["type"]>("all");
-  const [cloudFilters, setCloudFilters] = useState<string[]>([]);
-  const [licenseFilter, setLicenseFilter] = useState("all");
-  const [sortBy, setSortBy] = useState<CategoryFilterState["sort"]>("name");
+  const [filterState, setFilterState] = useState<AssistantFilterState>(defaultFilterState);
 
   const toolsBySubcategory = useMemo(() => {
     return Object.fromEntries(
@@ -49,6 +60,9 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const activeTools = toolsBySubcategory[activeTab];
   const comparison = assistantsComparisons[activeTab];
   const availableLicenses = useMemo(() => getAvailableLicenses(activeTools), [activeTools]);
+  const { typeFilter, cloudFilters, licenseFilter, sortBy } = filterState;
+  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+
   const effectiveTools = useMemo(() => {
     let next = filterTools(activeTools, {
       type: typeFilter,
@@ -64,13 +78,39 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
     return next;
   }, [activeTools, typeFilter, licenseFilter, sortBy, cloudFilters]);
 
-  const vendorTools = effectiveTools.filter((tool) => tool.type === "vendor");
-  const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
-  const warnings = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
-  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+  const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
+  const nonVendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type !== "vendor"), [effectiveTools]);
+  const warnings = useMemo(() => effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote), [effectiveTools]);
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
-  const showVendorSection = showVendorCards || showVendorComparison;
+
+  function updateFilterState(partial: Partial<AssistantFilterState>) {
+    setFilterState((current) => ({ ...current, ...partial }));
+  }
+
+  function resetNarrowingFilters() {
+    updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+  }
+
+  function getVendorSectionDescription() {
+    if (hasActiveNarrowingFilter) {
+      return `Cloud vendor ${subcategoryLabels[activeTab].toLowerCase()} assistants stay visible under the current filters. Clear cloud and license filters to restore the side-by-side vendor comparison.`;
+    }
+
+    if (showVendorComparison) {
+      return `Cloud vendor ${subcategoryLabels[activeTab].toLowerCase()} assistants stay near the top, with the side-by-side vendor comparison directly above the matching tool cards.`;
+    }
+
+    return `Matching cloud vendor ${subcategoryLabels[activeTab].toLowerCase()} assistants stay grouped near the top of the page.`;
+  }
+
+  function getAdditionalToolsHeading() {
+    if (hasActiveNarrowingFilter || typeFilter !== "all" || sortBy !== "name") {
+      return activeTab === "coding" ? "Filtered commercial alternatives" : "Filtered additional tools";
+    }
+
+    return activeTab === "coding" ? "Commercial alternatives" : "Additional tools";
+  }
 
   const pageUrl = `${siteUrl}/assistants/`;
   const jsonLd = [
@@ -85,11 +125,6 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
     }),
     buildToolListJsonLd(tools, title, description, pageUrl),
   ];
-
-  function resetNarrowingFilters() {
-    setCloudFilters([]);
-    setLicenseFilter("all");
-  }
 
   return (
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
@@ -121,10 +156,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
               id={`tab-${subcategory}`}
               onClick={() => {
                 setActiveTab(subcategory);
-                setTypeFilter("all");
-                setCloudFilters([]);
-                setLicenseFilter("all");
-                setSortBy("name");
+                setFilterState(defaultFilterState);
               }}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                 activeTab === subcategory
@@ -138,31 +170,48 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
         </div>
       </section>
 
-      <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur" style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}>
+      <section
+        className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
+        style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
+      >
         <FilterBar
           typeFilter={typeFilter}
-          onTypeFilterChange={(value) => setTypeFilter(value)}
+          onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
           cloudFilters={cloudFilters}
-          onCloudFiltersChange={setCloudFilters}
+          onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
           licenseFilter={licenseFilter}
-          onLicenseFilterChange={setLicenseFilter}
+          onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
           sortBy={sortBy}
-          onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
+          onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
           availableLicenses={availableLicenses}
         />
       </section>
 
+      {comparison && (showVendorCards || showVendorComparison) ? (
+        <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
+          <VendorToolsSection
+            vendorTools={vendorTools}
+            comparison={comparison}
+            showComparison={showVendorComparison}
+            description={getVendorSectionDescription()}
+            showToolCards={showVendorCards}
+            clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
+            onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
+          />
+        </section>
+      ) : null}
+
       <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-        <h2 className="text-lg font-semibold">Filtered additional tools</h2>
+        <h2 className="text-lg font-semibold">{getAdditionalToolsHeading()}</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
           {nonVendorTools.length > 0
-            ? `${nonVendorTools.length} matching non-vendor tools in the ${subcategoryLabels[activeTab].toLowerCase()} segment.`
-            : `No additional non-vendor tools match the current ${subcategoryLabels[activeTab].toLowerCase()} filter combination.`}
+            ? `${nonVendorTools.length} matching tools in this subcategory.`
+            : "No additional non-vendor tools match the current assistants filters in this subcategory."}
         </p>
         {nonVendorTools.length > 0 ? (
           <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {nonVendorTools.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} compact />
+              <ToolCard key={tool.id} tool={tool} />
             ))}
           </div>
         ) : (
@@ -211,26 +260,6 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
             ))}
           </div>
         </section>
-      ) : null}
-
-      {showVendorSection ? (
-        <VendorToolsSection
-          vendorTools={vendorTools}
-          comparison={{ vendors: comparison.vendors, rows: comparison.rows }}
-          showComparison={showVendorComparison}
-          description={
-            showVendorComparison
-              ? showVendorCards
-                ? `Vendor-native ${subcategoryLabels[activeTab].toLowerCase()} assistant detail stays lower on the page so the broader market view comes first. The vendor comparison returns only when cloud and license filters are cleared.`
-                : `The three-way ${subcategoryLabels[activeTab].toLowerCase()} vendor comparison is still available because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter.`
-              : hasActiveNarrowingFilter
-                ? `Vendor ${subcategoryLabels[activeTab].toLowerCase()} assistant cards stay visible lower on the page and respect the current filters. Clear cloud and license filters to restore the direct vendor comparison table.`
-                : `Vendor ${subcategoryLabels[activeTab].toLowerCase()} assistant cards stay visible lower on the page. Change the type filter back from open source/commercial to restore the direct vendor comparison table.`
-          }
-          showToolCards={showVendorCards}
-          clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
-          onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
-        />
       ) : null}
 
       <RelatedHubs
