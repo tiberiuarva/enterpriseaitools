@@ -83,6 +83,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
   const warnings = useMemo(() => effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote), [effectiveTools]);
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
+  const visibleUpdates = updates.slice(0, 5);
 
   function updateFilterState(partial: Partial<AssistantFilterState>) {
     setFilterState((current) => ({ ...current, ...partial }));
@@ -144,36 +145,35 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
 
       <PlatformCategoryBar category="assistants" platforms={platforms} headingLevel={3} />
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
-        <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
-          {subcategoryOrder.map((subcategory) => (
-            <button
-              key={subcategory}
-              type="button"
-              role="tab"
-              aria-selected={activeTab === subcategory}
-              aria-controls={`tabpanel-${subcategory}`}
-              id={`tab-${subcategory}`}
-              onClick={() => {
-                setActiveTab(subcategory);
-                setFilterState(defaultFilterState);
-              }}
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                activeTab === subcategory
-                  ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
-                  : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-              }`}
-            >
-              {subcategoryLabels[subcategory]}
-            </button>
-          ))}
-        </div>
-      </section>
-
       <section
         className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
         style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
       >
+        <div className="border-b border-[var(--color-border)] p-4">
+          <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
+            {subcategoryOrder.map((subcategory) => (
+              <button
+                key={subcategory}
+                type="button"
+                role="tab"
+                aria-selected={activeTab === subcategory}
+                aria-controls={`tabpanel-${subcategory}`}
+                id={`tab-${subcategory}`}
+                onClick={() => {
+                  setActiveTab(subcategory);
+                  setFilterState(defaultFilterState);
+                }}
+                className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+                  activeTab === subcategory
+                    ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
+                    : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                }`}
+              >
+                {subcategoryLabels[subcategory]}
+              </button>
+            ))}
+          </div>
+        </div>
         <FilterBar
           typeFilter={typeFilter}
           onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
@@ -245,11 +245,11 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
         </section>
       ) : null}
 
-      {updates.length > 0 ? (
+      {visibleUpdates.length > 0 ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Recent updates</h2>
           <div className="mt-4 space-y-4">
-            {updates.slice(0, 5).map((update) => (
+            {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
