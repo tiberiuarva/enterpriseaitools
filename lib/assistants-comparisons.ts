@@ -28,11 +28,11 @@ export const assistantsComparisons: Record<AssistantsSubcategory, AssistantsComp
       },
       {
         attribute: "IP indemnity",
-        values: ["Business+", "Pro Standard+", "Unclear"],
+        values: ["Business+", "Pro", "Unclear"],
       },
       {
         attribute: "SOC 2",
-        values: ["Yes", "Yes", "Unverified"],
+        values: ["Yes", "Yes", "Yes"],
       },
     ],
   },

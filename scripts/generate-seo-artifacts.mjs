@@ -4,7 +4,7 @@ import toolsData from "../data/tools.json" with { type: "json" };
 import updatesData from "../data/updates.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://enterpriseai.tools").replace(/\/$/, "");
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 const lastModified = toolsData.lastUpdated;
 const publicDir = path.resolve("public");
 
@@ -42,7 +42,8 @@ function generateUpdatesAtomFeed() {
     .map((update) => {
       const entryUrl = `${toAbsoluteUrl("/updates")}#${update.id}`;
       const categories = [update.category, update.type, update.impact].filter(Boolean).join(", ");
-      return `  <entry>\n    <id>${escapeXml(entryUrl)}</id>\n    <title>${escapeXml(`${update.toolName} — ${update.type}`)}</title>\n    <updated>${isoDate(update.date)}</updated>\n    <link href="${escapeXml(entryUrl)}" />\n    <summary>${escapeXml(update.summary)}</summary>\n    <author><name>enterpriseai.tools</name></author>\n    <category term="${escapeXml(categories)}" />\n    <source>\n      <id>${escapeXml(update.sourceUrl)}</id>\n      <title>${escapeXml(update.sourceTitle || update.sourceUrl)}</title>\n      <link href="${escapeXml(update.sourceUrl)}" />\n    </source>\n  </entry>`;
+      const entryTitle = update.title?.trim() || `${update.toolName} — ${update.type}`;
+      return `  <entry>\n    <id>${escapeXml(entryUrl)}</id>\n    <title>${escapeXml(entryTitle)}</title>\n    <updated>${isoDate(update.date)}</updated>\n    <link href="${escapeXml(entryUrl)}" />\n    <summary>${escapeXml(update.summary)}</summary>\n    <author><name>enterpriseai.tools</name></author>\n    <category term="${escapeXml(categories)}" />\n    <source>\n      <id>${escapeXml(update.sourceUrl)}</id>\n      <title>${escapeXml(update.sourceTitle || update.sourceUrl)}</title>\n      <link href="${escapeXml(update.sourceUrl)}" />\n    </source>\n  </entry>`;
     })
     .join("\n");
 

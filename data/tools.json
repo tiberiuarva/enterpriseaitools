@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15",
+  "lastUpdated": "2026-04-24",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -38,7 +38,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack."
     },
     {
       "id": "aws-bedrock-agents",
@@ -76,7 +77,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong choice for AWS-centric teams that want managed agent primitives and infrastructure alignment without standardising on one open source framework."
     },
     {
       "id": "google-agent-builder-adk",
@@ -113,7 +115,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when Vertex AI, search, and Google-first app surfaces matter, but maturity and enterprise standardisation still need close validation."
     },
     {
       "id": "crewai",
@@ -129,8 +132,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
-      "githubStars": 48914,
-      "version": "1.14.1",
+      "githubStars": 49840,
+      "version": "1.14.3",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -141,7 +144,14 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
+      "lastRelease": "2026-04-24"
     },
     {
       "id": "autogen",
@@ -157,7 +167,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/autogen",
-      "githubStars": 57096,
+      "githubStars": 57416,
       "version": "0.7.5",
       "docsUrl": "https://microsoft.github.io/autogen/",
       "pricingModel": "free",
@@ -171,7 +181,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance."
     },
     {
       "id": "llamaindex",
@@ -187,7 +203,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/run-llama/llama_index",
-      "githubStars": 48601,
+      "githubStars": 48900,
       "version": "0.14.20",
       "docsUrl": "https://docs.llamaindex.ai/",
       "pricingModel": "free",
@@ -199,7 +215,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows."
     },
     {
       "id": "semantic-kernel",
@@ -215,7 +237,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/semantic-kernel",
-      "githubStars": 27706,
+      "githubStars": 27778,
       "version": "1.41.2",
       "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
       "pricingModel": "free",
@@ -228,7 +250,55 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths."
+    },
+    {
+      "id": "microsoft-agent-framework",
+      "name": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Microsoft",
+      "description": "Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.",
+      "strengths": [
+        "MIT licensed",
+        "Python and .NET support",
+        "Graph-based workflows and DevUI"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/microsoft/agent-framework",
+      "githubStars": 9801,
+      "version": "1.2.0",
+      "lastRelease": "2026-04-24",
+      "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Microsoft positions Agent Framework as the migration target for Semantic Kernel and AutoGen users.",
+      "tags": [
+        "agents",
+        "microsoft",
+        "opensource",
+        "framework"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-23",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "languages": [
+        "Python",
+        "C#",
+        ".NET"
+      ],
+      "practitionerNote": "Worth watching for teams standardising on Microsoft agent patterns, but adoption should still be treated as early and architecture-led."
     },
     {
       "id": "langgraph",
@@ -242,10 +312,10 @@
         "Strong agent workflow patterns",
         "Active ecosystem"
       ],
-      "license": "Proprietary core",
-      "licenseWarning": "LangGraph core package uses a proprietary license. Auxiliary packages are MIT. Enterprises must review licensing carefully.",
+      "license": "MIT",
+      "licenseWarning": "Core LangGraph repository is MIT-licensed; review any separately licensed LangChain commercial services independently.",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
-      "githubStars": 29298,
+      "githubStars": 30308,
       "version": "1.1.7a2",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
@@ -257,7 +327,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy."
     },
     {
       "id": "mastra",
@@ -271,9 +347,9 @@
         "Fast growth",
         "Modern DX"
       ],
-      "license": "Apache 2.0 + EE",
+      "license": "Apache 2.0 core + EE paths",
       "githubUrl": "https://github.com/mastra-ai/mastra",
-      "githubStars": 23011,
+      "githubStars": 23304,
       "version": "1.24.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
@@ -285,7 +361,14 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.",
+      "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks."
     },
     {
       "id": "openai-agents-sdk",
@@ -301,7 +384,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
-      "githubStars": 20784,
+      "githubStars": 25046,
       "version": "0.13.6",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
@@ -314,7 +397,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default."
     },
     {
       "id": "atomic-agents",
@@ -330,7 +419,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/BrainBlend-AI/atomic-agents",
-      "githubStars": 5812,
+      "githubStars": 5844,
       "version": "2.7.5",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
       "pricingModel": "free",
@@ -341,7 +430,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling."
     },
     {
       "id": "beeai-framework",
@@ -357,7 +452,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/i-am-bee/beeai-framework",
-      "githubStars": 3216,
+      "githubStars": 3224,
       "version": "0.1.79",
       "docsUrl": "https://framework.beeai.dev/introduction/welcome",
       "pricingModel": "free",
@@ -370,7 +465,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation."
     },
     {
       "id": "azure-logic-apps",
@@ -402,7 +503,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
       "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best when the core problem is governed enterprise workflow automation with Azure connectors, not frontier agent behaviour or open-ended autonomy."
     },
     {
       "id": "aws-step-functions",
@@ -434,7 +536,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
       "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong fit for AWS-native production workflows that need explicit state, retries, and operational control rather than a higher-level AI builder UX."
     },
     {
       "id": "google-cloud-workflows",
@@ -466,7 +569,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://cloud.google.com/icons",
       "logoNotes": "Official Google Cloud workflow icon from the Google Cloud icon library.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Pragmatic choice for GCP-centric teams orchestrating APIs and services, but usually not the first pick for richer agent-builder experiences."
     },
     {
       "id": "n8n",
@@ -483,7 +587,7 @@
       "license": "Sustainable Use License",
       "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
       "githubUrl": "https://github.com/n8n-io/n8n",
-      "githubStars": 184096,
+      "githubStars": 185522,
       "version": "2.16.0",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
@@ -497,7 +601,54 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management."
+    },
+    {
+      "id": "paperclip",
+      "name": "Paperclip",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Paperclip",
+      "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
+      "strengths": [
+        "MIT licensed",
+        "Built-in budgets and governance",
+        "Persistent multi-agent control plane"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/paperclipai/paperclip",
+      "githubStars": 58650,
+      "version": "v2026.416.0",
+      "lastRelease": "2026-04-16",
+      "docsUrl": "https://paperclip.ing/docs",
+      "websiteUrl": "https://paperclip.ing/",
+      "pricingModel": "free",
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "opensource",
+        "multi-agent",
+        "governance"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
+      "logoReviewedAt": "2026-04-23",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "languages": [
+        "TypeScript",
+        "JavaScript"
+      ],
+      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks."
     },
     {
       "id": "langflow",
@@ -513,8 +664,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
-      "githubStars": 146952,
-      "version": "1.9.0",
+      "githubStars": 147343,
+      "version": "1.9.1",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -526,7 +677,14 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
+      "lastRelease": "2026-04-24"
     },
     {
       "id": "dify",
@@ -543,7 +701,7 @@
       "license": "Modified Apache 2.0",
       "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
       "githubUrl": "https://github.com/langgenius/dify",
-      "githubStars": 137810,
+      "githubStars": 139094,
       "version": "1.13.3",
       "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
       "pricingModel": "freemium",
@@ -555,7 +713,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely."
     },
     {
       "id": "flowise",
@@ -571,7 +735,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
-      "githubStars": 51918,
+      "githubStars": 52253,
       "version": "3.1.2",
       "docsUrl": "https://docs.flowiseai.com/",
       "pricingModel": "free",
@@ -583,7 +747,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Practical low-code orchestration layer for teams moving quickly, provided they validate security posture and ownership-roadmap fit for production use."
     },
     {
       "id": "haystack",
@@ -599,8 +769,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
-      "githubStars": 24833,
-      "version": "2.27.0",
+      "githubStars": 24981,
+      "version": "2.28.0",
       "docsUrl": "https://docs.haystack.deepset.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -611,7 +781,14 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
+      "lastRelease": "2026-04-20"
     },
     {
       "id": "rivet",
@@ -627,7 +804,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/Ironclad/rivet",
-      "githubStars": 4536,
+      "githubStars": 4544,
       "version": "1.11.3",
       "docsUrl": "https://rivet.ironcladapp.com/",
       "pricingModel": "free",
@@ -640,7 +817,13 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Can still work for narrow visual pipeline use cases, but the maintenance signal makes it a cautious choice for new enterprise standardisation."
     },
     {
       "id": "azure-ai-content-safety",
@@ -672,7 +855,8 @@
       "logoKind": "service-icon",
       "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
       "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when teams already run on Azure and need turnkey moderation and safety classifiers, but it is narrower than a full policy/governance control plane."
     },
     {
       "id": "aws-bedrock-guardrails",
@@ -702,7 +886,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit for Bedrock-centric deployments that want managed prompt/content guardrails close to model invocation instead of a separate governance stack."
     },
     {
       "id": "google-model-armor",
@@ -732,7 +917,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth evaluating for Google-first estates that need managed prompt and response protection, especially around injection and unsafe content controls."
     },
     {
       "id": "nemo-guardrails",
@@ -748,7 +934,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
-      "githubStars": 5977,
+      "githubStars": 6036,
       "docsUrl": "https://docs.nvidia.com/nemo/guardrails/",
       "pricing": "Free OSS plus NVIDIA NIM options.",
       "pricingModel": "free",
@@ -763,7 +949,13 @@
       "version": "0.21.0",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service."
     },
     {
       "id": "guardrails-ai",
@@ -779,7 +971,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/guardrails-ai/guardrails",
-      "githubStars": 6675,
+      "githubStars": 6754,
       "docsUrl": "https://guardrailsai.com/docs",
       "pricingModel": "freemium",
       "status": "active",
@@ -791,7 +983,13 @@
       "version": "0.10.0",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform."
     },
     {
       "id": "llm-guard",
@@ -807,7 +1005,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/protectai/llm-guard",
-      "githubStars": 2823,
+      "githubStars": 2866,
       "docsUrl": "https://protectai.github.io/llm-guard/",
       "pricingModel": "free",
       "status": "maintenance",
@@ -820,7 +1018,13 @@
       "version": "0.3.16",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline."
     },
     {
       "id": "rebuff",
@@ -836,7 +1040,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/protectai/rebuff",
-      "githubStars": 1459,
+      "githubStars": 1466,
       "docsUrl": "https://github.com/protectai/rebuff",
       "pricingModel": "free",
       "status": "archived",
@@ -849,7 +1053,13 @@
       "version": "0.1.1",
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "practitionerNote": "Most relevant as a lightweight prompt-injection defense layer in custom stacks, not as a broad end-to-end AI governance product."
     },
     {
       "id": "lakera-guard",
@@ -875,7 +1085,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces."
     },
     {
       "id": "arthur-genai-engine",
@@ -902,7 +1113,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone."
     },
     {
       "id": "github-copilot",
@@ -930,7 +1142,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path."
     },
     {
       "id": "amazon-q-developer",
@@ -951,7 +1164,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
       "websiteUrl": "https://aws.amazon.com/q/developer/",
-      "pricing": "$19/user/mo Pro; $39 Pro+.",
+      "pricing": "$19/user/mo Pro; $39/user/mo Pro+.",
       "pricingModel": "paid",
       "status": "active",
       "tags": [
@@ -961,7 +1174,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows."
     },
     {
       "id": "gemini-code-assist",
@@ -992,7 +1206,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth considering for Google Cloud-centric teams, but enterprise rollout quality still depends heavily on how much of the stack already lives in Google tooling."
     },
     {
       "id": "cursor",
@@ -1021,7 +1236,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots."
     },
     {
       "id": "windsurf",
@@ -1050,7 +1266,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing."
     },
     {
       "id": "microsoft-365-copilot",
@@ -1081,7 +1298,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Natural fit when the real value is inside Microsoft 365 workflows and Graph-connected knowledge, not just generic chat over documents."
     },
     {
       "id": "gemini-for-workspace",
@@ -1113,7 +1331,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Pragmatic for Google Workspace estates that want AI features embedded in existing docs, mail, and meetings without a separate assistant rollout."
     },
     {
       "id": "amazon-q-business",
@@ -1144,7 +1363,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout."
     },
     {
       "id": "copilot-studio",
@@ -1176,7 +1396,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Best when business teams need to assemble Microsoft-native copilots quickly, provided architecture and environment sprawl are still governed centrally."
     },
     {
       "id": "amazon-q-apps",
@@ -1208,7 +1429,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform."
     },
     {
       "id": "gemini-enterprise",
@@ -1240,7 +1462,8 @@
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19"
+      "logoReviewedAt": "2026-04-19",
+      "practitionerNote": "Worth evaluating for Google-first organizations that want assistant and agent capabilities under one commercial umbrella, but packaging maturity should still be checked closely."
     }
   ]
 }

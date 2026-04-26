@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "aws bedrock",
     "google vertex ai",
   ],
-  authors: [{ name: "Artix Cloud" }],
-  creator: "Artix Cloud",
-  publisher: "Artix Cloud",
+  authors: [{ name: "enterpriseai.tools" }],
+  creator: "enterpriseai.tools",
+  publisher: "enterpriseai.tools",
   category: "technology",
   robots: {
     index: true,
@@ -84,9 +84,9 @@ export default function RootLayout({
       description,
     }),
     buildOrganizationJsonLd({
-      name: "Artix Cloud",
+      name: "enterpriseai.tools",
       url: siteUrl,
-      description: "Maintainer of enterpriseai.tools.",
+      description: "Open source landscape tracker for enterprise AI tooling.",
       sameAs: [githubRepoUrl],
     }),
   ];

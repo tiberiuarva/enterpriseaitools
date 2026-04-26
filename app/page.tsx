@@ -6,13 +6,13 @@ import {
   CalendarClock,
   GitBranch,
   Landmark,
+  Layers3,
   ShieldCheck,
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformStrip } from "@/components/platform-strip";
 import { StatPill } from "@/components/stat-pill";
-import { WarningBox } from "@/components/warning-box";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -67,6 +67,7 @@ export default function Home() {
       previewTools: categoryTools.slice(0, 3).map((tool) => ({
         id: tool.id,
         name: tool.name,
+        type: tool.type,
         logoUrl: tool.logoUrl,
         logoKind: tool.logoKind,
       })),
@@ -86,7 +87,12 @@ export default function Home() {
                 Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-                Updated weekly. Data-dense. No fluff. Start with the three cloud foundation platforms, then drill into the category layers.
+                Updated weekly. Data-dense. No fluff. Compare the foundation platforms first, then move into agent,
+                orchestration, governance, and assistant layers.
+              </p>
+              <p className="mt-3 max-w-3xl text-xs leading-5 text-[var(--color-text-secondary)]">
+                Naming moves fast here: use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and
+                <strong> Gemini Enterprise</strong> as the current product names.
               </p>
             </div>
 
@@ -96,6 +102,42 @@ export default function Home() {
               <StatPill icon={CalendarClock} label="Updated" value={lastUpdated} />
             </div>
           </div>
+        </section>
+
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <div className="flex items-start gap-4">
+            <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
+              <Layers3 size={28} />
+            </div>
+            <div className="max-w-4xl">
+              <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                These three platforms are the base stack behind much of the rest of the market. Each card below shows the
+                cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
+                often pair with it from open source or commercial tools.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-5">
+            <PlatformStrip platforms={platforms} />
+          </div>
+
+          <div className="mt-5">
+            <a
+              href={withBasePath("/platforms")}
+              className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+            >
+              Open platform comparison
+              <ArrowUpRight size={16} />
+            </a>
+          </div>
+        </section>
+
+        <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {categoryCards.map((category) => (
+            <CategoryCard key={category.href} {...category} />
+          ))}
         </section>
 
         {latestUpdate ? (
@@ -115,7 +157,8 @@ export default function Home() {
                   </>
                 ) : null}
               </div>
-              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.toolName}</div>
+              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.title ?? latestUpdate.toolName}</div>
+              <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{latestUpdate.toolName}</div>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 {latestUpdate.summary}
               </p>
@@ -145,23 +188,6 @@ export default function Home() {
             </div>
           </section>
         ) : null}
-
-        <PlatformStrip platforms={platforms} />
-
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {categoryCards.map((category) => (
-            <CategoryCard key={category.href} {...category} />
-          ))}
-        </section>
-
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <WarningBox>
-            Platform-level naming changed repeatedly. Always use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and <strong>Gemini Enterprise</strong>.
-          </WarningBox>
-          <WarningBox variant="info" title="Open source">
-            This project is open source. Data contributions are welcome via pull request — all entries must include source URLs and verified facts.
-          </WarningBox>
-        </section>
       </main>
     </HomeShell>
   );

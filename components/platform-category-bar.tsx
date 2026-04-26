@@ -1,35 +1,74 @@
+import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
-function getLabel(platform: Platform, category: ToolCategory) {
-  if (category === "assistants") {
-    const labels = [
-      platform.categoryMapping.assistantsCoding.label,
-      platform.categoryMapping.assistantsProductivity.label,
-      platform.categoryMapping.assistantsBuildYourOwn.label,
-    ];
-    return labels.join(", ");
-  }
+type PlatformMappedCategory = Exclude<ToolCategory, "assistants">;
+type AssistantMappingKey = "assistantsCoding" | "assistantsProductivity" | "assistantsBuildYourOwn";
+type HeadingLevel = 2 | 3;
 
+type PlatformCategoryBarProps = {
+  category: ToolCategory;
+  platforms: Platform[];
+  headingLevel: HeadingLevel;
+};
+
+const coverageLabel = "Cloud-native mappings";
+
+const assistantMappingKeys: AssistantMappingKey[] = ["assistantsCoding", "assistantsProductivity", "assistantsBuildYourOwn"];
+
+function getPlatformContextLabel(platform: Platform, category: PlatformMappedCategory) {
   return platform.categoryMapping[category].label;
 }
 
-export function PlatformCategoryBar({ category, platforms }: { category: ToolCategory; platforms: Platform[] }) {
+function getPlatformHref(platform: Platform) {
+  return withBasePath(`/platforms#${getPlatformFragmentId(platform.id)}`);
+}
+
+function getPlatformSummary(platform: Platform, category: ToolCategory) {
+  if (category === "assistants") {
+    return getAssistantPlatformSummary(platform);
+  }
+
+  return getPlatformContextLabel(platform, category);
+}
+
+function getAssistantPlatformSummary(platform: Platform) {
+  return assistantMappingKeys.map((key) => platform.categoryMapping[key].label).join(" · ");
+}
+
+export function PlatformCategoryBar({
+  category,
+  platforms,
+}: PlatformCategoryBarProps) {
+  if (platforms.length === 0) {
+    return null;
+  }
+
   return (
     <nav
-      aria-label="Platform coverage"
-      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-text-secondary)]"
+      aria-label={`Platform coverage for ${category}`}
+      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
-      <span className="font-medium text-[var(--color-text-primary)]">Runs on:</span>{" "}
-      {platforms.map((platform, index) => (
-        <span key={platform.id}>
-          <a href={withBasePath("/platforms")} className="text-[var(--color-primary)] hover:underline">
-            {platform.name}
-          </a>
-          <span className="text-[var(--color-text-secondary)]"> ({getLabel(platform, category)})</span>
-          {index < platforms.length - 1 ? " | " : ""}
-        </span>
-      ))}
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div className="shrink-0 text-sm font-semibold text-[var(--color-text-primary)]">{coverageLabel}</div>
+        <ul className="flex flex-1 flex-wrap gap-2">
+          {platforms.map((platform) => (
+            <li key={platform.id}>
+              <a
+                href={getPlatformHref(platform)}
+                className="group flex min-w-0 max-w-full flex-wrap items-center gap-x-2 gap-y-1 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+              >
+                <span className="font-medium text-[var(--color-text-primary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
+                  {platform.name}
+                </span>
+                <span className="min-w-0 break-words text-xs leading-5 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-primary)] group-focus-visible:text-[var(--color-primary)]">
+                  {getPlatformSummary(platform, category)}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

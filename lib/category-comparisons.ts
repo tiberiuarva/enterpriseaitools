@@ -12,35 +12,71 @@ export type CategoryComparison = {
 
 export const categoryComparisons: Partial<Record<ToolCategory, CategoryComparison>> = {
   agents: {
-    vendors: ["Microsoft Foundry Agent Service", "AWS Bedrock Agents", "Google Agent Builder + ADK"],
+    vendors: ["Microsoft Foundry Agent Service", "AWS Bedrock Agents + AgentCore", "Google Agent Builder + ADK"],
     rows: [
       {
         attribute: "Description",
         values: [
-          "Managed enterprise agent platform inside Microsoft Foundry",
-          "Managed Bedrock agents plus framework-agnostic AgentCore runtime",
-          "Vertex AI managed agent tooling paired with the open-source ADK",
+          "Fully managed agent platform with deep M365 integration",
+          "Modular: Agents (guided) + AgentCore (framework-agnostic)",
+          "Open ADK + managed Agent Engine",
         ],
       },
       {
-        attribute: "Protocol support",
-        values: ["MCP, A2A, OpenAPI", "MCP, A2A", "MCP, A2A, OpenAPI"],
+        attribute: "SDK Languages",
+        values: [
+          "Python, C#, JS/TS, Java",
+          "Python (primary), all AWS SDKs",
+          "Python, Java, Go, TypeScript",
+        ],
       },
       {
-        attribute: "Model access",
-        values: ["11,000+ catalog via Microsoft Foundry", "100+ Bedrock models", "200+ through Model Garden"],
+        attribute: "Model Catalog",
+        values: [
+          "11,000+ models",
+          "100+ foundation models",
+          "200+ via Model Garden",
+        ],
       },
       {
-        attribute: "Deployment / runtime",
-        values: ["Managed service with M365 and Teams integration", "Managed agents + AgentCore deployment runtime", "Managed agent builder on Vertex AI"],
+        attribute: "Pricing",
+        values: [
+          "Free platform; pay for tokens + tools",
+          "Pay-per-use (vCPU/sec, Gateway, Memory)",
+          "Pay-per-use (vCPU-hr, GiB-hr)",
+        ],
       },
       {
-        attribute: "Strength",
-        values: ["Deep Microsoft 365 enterprise integration", "Strong AWS-native operational fit", "Open ADK plus Google search / workspace grounding"],
+        attribute: "Free Credits",
+        values: [
+          "$200 Azure",
+          "$200 AWS",
+          "$300 GCP + Express Mode",
+        ],
       },
       {
-        attribute: "Latest update",
-        values: ["Agent Service GA + SDK 2.0 + GPT-5.4 availability", "AgentCore GA expansion", "ADK open-sourced + Gemini 3.1 platform push"],
+        attribute: "Protocols",
+        values: [
+          "MCP, A2A, OpenAPI",
+          "MCP, A2A",
+          "MCP, A2A, OpenAPI",
+        ],
+      },
+      {
+        attribute: "Differentiator",
+        values: [
+          "One-click M365/Teams deploy; 1,400+ connectors",
+          "Max framework agnosticism; microVM isolation",
+          "Open-source ADK (7M+ downloads); Search grounding",
+        ],
+      },
+      {
+        attribute: "Best for",
+        values: [
+          "Microsoft-heavy enterprises",
+          "AWS-heavy enterprises wanting framework choice",
+          "Google-heavy or open-source-first teams",
+        ],
       },
     ],
   },
@@ -50,7 +86,7 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Description",
         values: [
-          "iPaaS workflow automation with AI capabilities",
+          "iPaaS workflow automation with AI-adjacent integration depth",
           "Serverless state machine for AWS service orchestration",
           "Serverless workflow orchestration for GCP services",
         ],
@@ -74,8 +110,8 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
       {
         attribute: "Connectors / integrations",
         values: [
-          "1,400+ (broadest)",
-          "220+ AWS services",
+          "Broad connector ecosystem across enterprise apps and Azure services",
+          "Deep AWS service integration",
           "GCP services + HTTP APIs",
         ],
       },
@@ -84,11 +120,11 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         values: ["Partial (Standard plan)", "No", "No"],
       },
       {
-        attribute: "Latest update",
+        attribute: "Current positioning",
         values: [
-          "GenAI Copilot automation",
-          "28 new integrations + AgentCore (Mar 2026)",
-          "Incremental updates",
+          "Best when broad connector coverage matters",
+          "Best when orchestration stays mostly inside AWS",
+          "Best when simple GCP-native workflow orchestration is enough",
         ],
       },
     ],
@@ -116,16 +152,16 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
         attribute: "Pricing",
         values: [
           "Pay-per-text-unit; free tier",
-          "$0.15/1K text units (85% price cut)",
+          "$0.15/1K text units after the recent Bedrock Guardrails price cut",
           "Pay-as-you-go",
         ],
       },
       {
         attribute: "Unique capability",
         values: [
-          "On-premises containers + on-device deployment",
-          "Automated Reasoning (formal logic, provable)",
-          "Apigee + GKE + Security Command Center",
+          "On-premises containers + on-device deployment path",
+          "Automated Reasoning for formal-policy style checks",
+          "Apigee + GKE + Security Command Center integration path",
         ],
       },
       {

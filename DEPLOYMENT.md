@@ -37,7 +37,7 @@ External checks still required:
 - workflow run succeeds on `main`
 - Azure SWA receives the artifact
 - live site returns HTTP 200 on required routes/assets
-- production robots/sitemap/canonical responses match the intended root domain
+- production robots/sitemap/canonical responses match the intended canonical root domain (`https://www.enterpriseai.tools`)
 
 ## Production launch + SEO verification checklist
 
@@ -55,7 +55,7 @@ npm run smoke-test-live-site -- root https://www.enterpriseai.tools
    - `https://www.enterpriseai.tools/robots.txt` returns HTTP 200
    - `https://www.enterpriseai.tools/sitemap.xml` returns HTTP 200
    - `https://www.enterpriseai.tools/updates.xml` returns HTTP 200
-   - canonical tags point at the intended production root domain
+   - canonical tags point at `https://www.enterpriseai.tools`
    - major hubs (`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/governance/`, `/assistants/`, `/updates/`, `/about/`) render expected titles/descriptions
 5. Validate structured data on the main indexed hubs (at minimum `WebSite`, `Organization`, `BreadcrumbList`, `CollectionPage`, and `ItemList` where applicable)
 6. Run the live Lighthouse gate against the deployed hostname and review any regressions before calling launch complete:

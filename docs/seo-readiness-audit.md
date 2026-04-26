@@ -24,7 +24,7 @@ Initial technical/content SEO audit based on the current repo and static export 
 - route-level metadata exists for homepage and category/about pages via `buildMetadata()`.
 - canonical URLs are generated centrally in `lib/metadata.ts`.
 - Open Graph and Twitter metadata are present.
-- `metadataBase` is configured from `NEXT_PUBLIC_SITE_URL` fallbacking to `https://enterpriseai.tools`.
+- `metadataBase` is configured from `NEXT_PUBLIC_SITE_URL` fallbacking to `https://www.enterpriseai.tools`.
 
 ### Structured data
 - JSON-LD support exists.

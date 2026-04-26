@@ -32,6 +32,7 @@ export type Tool = {
   vendor?: string;
   description: string;
   strengths: string[];
+  practitionerNote?: string;
   clouds?: string[];
   license: string;
   licenseWarning?: string;
@@ -91,6 +92,7 @@ export type UpdateEntry = {
   toolName: string;
   category: UpdateCategory;
   type: UpdateType;
+  title?: string;
   summary: string;
   sourceUrl: string;
   sourceTitle?: string;

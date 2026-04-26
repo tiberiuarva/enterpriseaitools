@@ -25,6 +25,7 @@ Top-level shape:
 | `vendor` | string | no | Parent company or maintainer |
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |
+| `practitionerNote` | string | no | Concise editorial implementation note grounded in the tool's deployment fit, trade-offs, or enterprise usage pattern |
 | `clouds` | string[] | no | Any of `azure`, `aws`, `gcp` |
 | `license` | string | yes | Exact license label |
 | `licenseWarning` | string | no | Caveat for source-available, proprietary core, branding, etc. |
@@ -138,6 +139,7 @@ Entries must be ordered newest first.
 | `toolName` | string | yes | Denormalized display name |
 | `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
 | `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition` | yes | Update type |
+| `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |
 | `sourceTitle` | string | no | Human-readable source title |

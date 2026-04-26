@@ -1,31 +1,154 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
 import { ToolCard } from "@/components/tool-card";
+import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
 import type { CategoryComparison } from "@/lib/category-comparisons";
-import type { Tool, UpdateEntry } from "@/lib/types";
+import type { Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 type FilteredCategorySectionsProps = {
+  category: ToolCategory;
   tools: Tool[];
   updates: UpdateEntry[];
   comparison?: CategoryComparison;
 };
 
-export function FilteredCategorySections({ tools, updates, comparison }: FilteredCategorySectionsProps) {
-  const [typeFilter, setTypeFilter] = useState<CategoryFilterState["type"]>("all");
-  const [cloudFilters, setCloudFilters] = useState<string[]>([]);
-  const [licenseFilter, setLicenseFilter] = useState("all");
-  const [sortBy, setSortBy] = useState<CategoryFilterState["sort"]>("name");
+type FilterStateSnapshot = {
+  typeFilter: CategoryFilterState["type"];
+  cloudFilters: string[];
+  licenseFilter: string;
+  sortBy: CategoryFilterState["sort"];
+};
 
-  function resetNarrowingFilters() {
-    setCloudFilters([]);
-    setLicenseFilter("all");
+const defaultFilterState: FilterStateSnapshot = {
+  typeFilter: "all",
+  cloudFilters: [],
+  licenseFilter: "all",
+  sortBy: "name",
+};
+
+function parseCloudFilters(searchParams: URLSearchParams) {
+  const values = searchParams.getAll("cloud");
+
+  if (values.length === 0) {
+    return [];
   }
 
+  return Array.from(
+    new Set(
+      values
+        .flatMap((value) => value.split(","))
+        .map((value) => value.trim().toLowerCase())
+        .filter((value): value is "azure" | "aws" | "gcp" => value === "azure" || value === "aws" || value === "gcp"),
+    ),
+  );
+}
+
+function readFilterState(searchParams: URLSearchParams): FilterStateSnapshot {
+  const type = searchParams.get("type");
+  const license = searchParams.get("license");
+  const sort = searchParams.get("sort");
+
+  return {
+    typeFilter: type === "vendor" || type === "opensource" || type === "commercial" ? type : "all",
+    cloudFilters: parseCloudFilters(searchParams),
+    licenseFilter: license && license.length > 0 ? license : "all",
+    sortBy: sort === "stars" || sort === "updated" ? sort : "name",
+  };
+}
+
+function readFilterStateFromWindow(): FilterStateSnapshot {
+  if (typeof window === "undefined") {
+    return defaultFilterState;
+  }
+
+  return readFilterState(new URLSearchParams(window.location.search));
+}
+
+function buildFilterQuery({
+  typeFilter,
+  cloudFilters,
+  licenseFilter,
+  sortBy,
+}: FilterStateSnapshot) {
+  const next = new URLSearchParams();
+
+  if (typeFilter !== "all") {
+    next.set("type", typeFilter);
+  }
+
+  if (cloudFilters.length > 0) {
+    next.set("cloud", [...cloudFilters].sort().join(","));
+  }
+
+  if (licenseFilter !== "all") {
+    next.set("license", licenseFilter);
+  }
+
+  if (sortBy !== "name") {
+    next.set("sort", sortBy);
+  }
+
+  return next.toString();
+}
+
+export function FilteredCategorySections({ category, tools, updates, comparison }: FilteredCategorySectionsProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const didMountRef = useRef(false);
+  const [filterState, setFilterState] = useState<FilterStateSnapshot>(defaultFilterState);
+  const [hasSyncedFromUrl, setHasSyncedFromUrl] = useState(false);
+
+  useEffect(() => {
+    const syncFromUrl = () => {
+      setFilterState(readFilterStateFromWindow());
+      setHasSyncedFromUrl(true);
+      didMountRef.current = true;
+    };
+
+    const timeoutId = window.setTimeout(syncFromUrl, 0);
+
+    const handlePopState = () => {
+      setFilterState(readFilterStateFromWindow());
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!didMountRef.current || !hasSyncedFromUrl || typeof window === "undefined") {
+      return;
+    }
+
+    const nextQuery = buildFilterQuery(filterState);
+    const currentQuery = window.location.search.replace(/^\?/, "");
+
+    if (nextQuery === currentQuery) {
+      return;
+    }
+
+    router.replace(nextQuery ? `${pathname}?${nextQuery}` : pathname, { scroll: false });
+  }, [filterState, hasSyncedFromUrl, pathname, router]);
+
+  function updateFilterState(partial: Partial<FilterStateSnapshot>) {
+    setFilterState((current) => ({ ...current, ...partial }));
+  }
+
+  function resetNarrowingFilters() {
+    updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+  }
+
+  const { typeFilter, cloudFilters, licenseFilter, sortBy } = filterState;
   const availableLicenses = useMemo(() => getAvailableLicenses(tools), [tools]);
   const effectiveTools = useMemo(() => {
     let next = filterTools(tools, {
@@ -48,8 +171,31 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
   const visibleUpdates = useMemo(() => updates.slice(0, 5), [updates]);
   const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
-  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter;
+  const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
   const showVendorSection = showVendorCards || showVendorComparison;
+  const showStandaloneAgentsComparison = category === "agents" && Boolean(comparison) && showVendorComparison;
+
+  function getVendorSectionDescription() {
+    if (category === "agents") {
+      return hasActiveNarrowingFilter
+        ? "Cloud-native agent offerings stay visible under the filter controls. Clear cloud and license filters to restore the full vendor comparison above."
+        : "Cloud-native agent offerings are grouped here near the top of the page, before the broader open source and third-party landscape below.";
+    }
+
+    if (showVendorComparison) {
+      return showVendorCards
+        ? "Cloud-native vendor offerings are shown first here, before the broader open source and third-party landscape below."
+        : "The three-way vendor comparison is available here because cloud and license filters are cleared. Vendor tool cards are hidden by the current type filter.";
+    }
+
+    if (comparison) {
+      return "Cloud-native vendor offerings stay near the top of this page. Clear cloud and license filters to restore the three-way vendor comparison table.";
+    }
+
+    return hasActiveNarrowingFilter
+      ? "Vendor tool cards stay visible near the top and respect the current filters. Detailed vendor comparison rows are still being added for this category."
+      : "Vendor tool cards are shown near the top of the page. Detailed vendor comparison rows are still being added for this category.";
+  }
 
   return (
     <>
@@ -59,33 +205,35 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
       >
         <FilterBar
           typeFilter={typeFilter}
-          onTypeFilterChange={setTypeFilter}
+          onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
           cloudFilters={cloudFilters}
-          onCloudFiltersChange={setCloudFilters}
+          onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
           licenseFilter={licenseFilter}
-          onLicenseFilterChange={setLicenseFilter}
+          onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
           sortBy={sortBy}
-          onSortByChange={(value) => setSortBy(value as CategoryFilterState["sort"])}
+          onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
           availableLicenses={availableLicenses}
         />
       </section>
+
+      {showStandaloneAgentsComparison && comparison ? (
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+          <h2 className="text-lg font-semibold">Vendor comparison</h2>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            Compare the three cloud-native agent stacks directly before drilling into the individual vendor tool cards below.
+          </p>
+          <div className="mt-5">
+            <VendorComparisonTable vendors={comparison.vendors} rows={comparison.rows} />
+          </div>
+        </section>
+      ) : null}
 
       {showVendorSection ? (
         <VendorToolsSection
           vendorTools={vendorTools}
           comparison={comparison}
-          showComparison={showVendorComparison}
-          description={
-            showVendorComparison
-              ? showVendorCards
-                ? "Source-backed side-by-side comparison for the three cloud vendor offerings in this category."
-                : "Source-backed side-by-side comparison for the three cloud vendor offerings in this category. Vendor tool cards are hidden by the current type filter."
-              : comparison
-                ? "Vendor tool cards shown below. Clear cloud and license filters to restore the three-way vendor comparison table."
-                : hasActiveNarrowingFilter
-                  ? "Vendor tool cards shown below. Current filters still apply here, and detailed vendor comparison rows are still being added for this category."
-                  : "Vendor tool cards shown below. Detailed vendor comparison rows are still being added for this category."
-          }
+          showComparison={category === "agents" ? false : showVendorComparison}
+          description={getVendorSectionDescription()}
           showToolCards={showVendorCards}
           clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
           onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
@@ -140,7 +288,8 @@ export function FilteredCategorySections({ tools, updates, comparison }: Filtere
             {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
                 <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
-                <div className="mt-1 font-semibold">{update.toolName}</div>
+                <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
+                <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{update.toolName}</div>
                 <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
                 <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
               </div>

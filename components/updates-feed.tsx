@@ -61,9 +61,11 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
               </div>
               <div>
                 <div className="text-base font-semibold text-[var(--color-text-primary)]">
-                  {update.toolName}
+                  {update.title ?? update.toolName}
                 </div>
                 <div className="mt-1 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
+                  <span>{update.toolName}</span>
+                  <span aria-hidden="true">•</span>
                   <span>{formatUpdateLabel(update.category)}</span>
                   <span aria-hidden="true">•</span>
                   <span>{formatUpdateLabel(update.type)}</span>

@@ -8,8 +8,9 @@ export const platforms = platformsData.platforms as Platform[];
 export const updates = [...(updatesData.updates as UpdateEntry[])].sort((a, b) =>
   b.date.localeCompare(a.date) || a.toolName.localeCompare(b.toolName),
 );
-export const latestUpdate = updates[0] ?? null;
 export const lastUpdated = toolsData.lastUpdated;
+
+export const latestUpdate = updates[0] ?? null;
 
 export const categoryDescriptions: Record<ToolCategory, string> = {
   agents: "Managed cloud agent platforms and open source agent frameworks.",

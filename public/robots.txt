@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://enterpriseai.tools/sitemap.xml
+Sitemap: https://www.enterpriseai.tools/sitemap.xml
