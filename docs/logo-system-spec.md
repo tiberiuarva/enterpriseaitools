@@ -128,6 +128,7 @@ Classification workflow:
 - keep `data/logo-inventory.json` as the working audit file
 - extend schema/types for logo provenance metadata
 - classify existing assets conservatively rather than optimistically
+- generate and review `docs/logo-audit-report.md` via `npm run report-logo-audit` before claiming progress on this workstream
 - only start broad UI/logo replacement after the inventory is real
 
 ## Non-goals
