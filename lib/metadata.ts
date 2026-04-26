@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://enterpriseai.tools";
+const rawSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools";
 const siteUrl = rawSiteUrl.endsWith("/") ? rawSiteUrl.slice(0, -1) : rawSiteUrl;
 
 export { siteUrl };
