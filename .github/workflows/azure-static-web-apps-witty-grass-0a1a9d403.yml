@@ -30,6 +30,8 @@ jobs:
         run: npm ci
       - name: Check logo provenance
         run: npm run check-logo-provenance
+      - name: Check logo audit report sync
+        run: npm run check-logo-audit-report
       - name: Lint
         run: npm run lint
       - name: Build static site

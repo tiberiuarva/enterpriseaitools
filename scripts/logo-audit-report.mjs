@@ -52,7 +52,7 @@ for (const row of siteRows) {
 
 const totals = initRow();
 for (const category of categoryOrder) {
-  const bucket = counts.get(category) ?? initRow();
+  const bucket = counts.get(category);
   totals.total += bucket.total;
   for (const kind of logoKindOrder) {
     totals[kind] += bucket[kind];
@@ -94,7 +94,7 @@ lines.push("");
 lines.push("| Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |");
 lines.push("| --- | ---: | ---: | ---: | ---: | ---: | ---: |");
 for (const category of categoryOrder) {
-  const bucket = counts.get(category) ?? initRow();
+  const bucket = counts.get(category);
   lines.push(
     `| ${category} | ${bucket.total} | ${bucket.fallback} (${formatPercent(bucket.fallback, bucket.total)}) | ${bucket["service-icon"]} | ${bucket["project-logo"]} | ${bucket["official-product"]} | ${bucket["official-vendor"]} |`,
   );
@@ -113,12 +113,16 @@ lines.push("## Highest-priority cleanup signal");
 lines.push("");
 
 const highestFallback = categoryOrder
-  .map((category) => ({ category, ...counts.get(category) }))
-  .filter((row) => row && row.total > 0)
+  .map((category, orderIndex) => ({ category, orderIndex, ...counts.get(category) }))
+  .filter((row) => row.total > 0)
   .sort((a, b) => {
     const ratioDiff = b.fallback / b.total - a.fallback / a.total;
     if (ratioDiff !== 0) return ratioDiff;
-    return b.fallback - a.fallback;
+
+    const fallbackCountDiff = b.fallback - a.fallback;
+    if (fallbackCountDiff !== 0) return fallbackCountDiff;
+
+    return a.orderIndex - b.orderIndex;
   })[0];
 
 if (highestFallback) {
