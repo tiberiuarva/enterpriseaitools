@@ -4,7 +4,7 @@ import toolsData from "../data/tools.json" with { type: "json" };
 import updatesData from "../data/updates.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://enterpriseai.tools").replace(/\/$/, "");
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 const lastModified = toolsData.lastUpdated;
 const publicDir = path.resolve("public");
 

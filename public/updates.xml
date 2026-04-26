@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <id>https://enterpriseai.tools/updates.xml</id>
+  <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
   <updated>2026-04-24T00:00:00.000Z</updated>
-  <link href="https://enterpriseai.tools/updates.xml" rel="self" />
-  <link href="https://enterpriseai.tools/updates/" rel="alternate" />
+  <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-22-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-01</id>
     <title>Google Agent Builder + ADK — rename</title>
     <updated>2026-04-22T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-22-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-01" />
     <summary>Google launched Gemini Enterprise Agent Platform, folding Vertex AI and Agent Builder capabilities under a renamed platform with Agent Runtime, Agent Registry, Agent Identity, and related governance surfaces.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, rename, high" />
@@ -21,10 +21,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-24-03</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-24-03</id>
     <title>LangFlow — release</title>
     <updated>2026-04-24T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-03" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-24-03" />
     <summary>LangFlow 1.9.1 shipped security fixes for MCP path traversal, cross-user disclosure, upload auth, IDOR, XSS handling, and webhook auth defaults, alongside Gemini 3 tool-calling updates.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, high" />
@@ -35,10 +35,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-20-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-20-01</id>
     <title>Haystack — release</title>
     <updated>2026-04-20T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-20-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-20-01" />
     <summary>Haystack 2.28.0 introduced breaking API changes around request exception handling, LLM initialization, and agent invocation signatures, with new runtime State injection for tools.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, high" />
@@ -49,10 +49,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-24-02</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-24-02</id>
     <title>CrewAI — release</title>
     <updated>2026-04-24T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-02" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-24-02" />
     <summary>CrewAI 1.14.3 added Bedrock V4 support, checkpoint and fork support for standalone agents, Azure DefaultAzureCredential fallback, and security dependency patches.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
@@ -63,10 +63,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-24-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-24-01</id>
     <title>Microsoft Agent Framework — release</title>
     <updated>2026-04-24T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-24-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-24-01" />
     <summary>Microsoft Agent Framework Python 1.2.0 added a functional workflow API, OpenTelemetry support for GitHubCopilotAgent, and an A2A bridge, extending interoperability and observability for production agent deployments.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, high" />
@@ -77,10 +77,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-14-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-14-01</id>
     <title>CrewAI pre-release adds Bedrock strict-mode fixes</title>
     <updated>2026-04-14T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-14-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-14-01" />
     <summary>CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
@@ -91,10 +91,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-14-02</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-14-02</id>
     <title>Flowise release tightens security around CORS and MCP config</title>
     <updated>2026-04-14T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-14-02" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-14-02" />
     <summary>Flowise&apos;s April 14 release focused on security hardening, including a fix for a hardcoded CORS wildcard on the TTS endpoint and additional MCP server configuration protections.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, high" />
@@ -105,10 +105,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-13-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-13-01</id>
     <title>n8n 2.17.0 pre-release expands AI-builder integration fixes</title>
     <updated>2026-04-13T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-13-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-13-01" />
     <summary>n8n published pre-release 2.17.0 on April 13 with AI-builder credential-context changes plus fixes across PostHog, NASA, Peekalink, Clearbit, and Uptime Robot integrations.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, medium" />
@@ -119,10 +119,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-09-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-09-01</id>
     <title>OpenAI Agents SDK release hardens tracing and SQL session handling</title>
     <updated>2026-04-09T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-09-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-09-01" />
     <summary>The OpenAI Agents SDK April 9 release hardened SQLite and SQLAlchemy session handling and expanded tracing documentation, signaling continued stabilization of the production agent stack.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
@@ -133,10 +133,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-08-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-08-01</id>
     <title>Semantic Kernel refreshes prompt serialization and dependencies</title>
     <updated>2026-04-08T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-08-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-08-01" />
     <summary>Semantic Kernel&apos;s April 8 release included prompt-template serialization improvements and dependency updates, keeping Microsoft&apos;s orchestration SDK active as Agent Framework work continues.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
@@ -147,10 +147,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-07-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-07-01</id>
     <title>Langflow release adds Windows Playwright coverage</title>
     <updated>2026-04-07T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-07-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-07-01" />
     <summary>Langflow&apos;s April 7 release added Windows Playwright coverage to nightly builds and refreshed desktop documentation, indicating continued maintenance after the DataStax-to-IBM deal.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, medium" />
@@ -161,10 +161,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-04-01-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-01-01</id>
     <title>Haystack simplifies multi-input pipelines with automatic list joining</title>
     <updated>2026-04-01T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-04-01-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-01-01" />
     <summary>Haystack&apos;s April 1 release highlighted automatic list joining inside pipelines, simplifying multi-input workflow construction without extra glue components.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, medium" />
@@ -175,10 +175,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-03-27-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-27-01</id>
     <title>Dify 1.13.3 ships workflow and retrieval stability fixes</title>
     <updated>2026-03-27T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-03-27-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-27-01" />
     <summary>Dify v1.13.3 shipped on March 27 with workflow, streaming, and knowledge-retrieval stability fixes, reinforcing its push toward more reliable production orchestration.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, medium" />
@@ -189,10 +189,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-03-25-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-25-01</id>
     <title>GitHub Copilot expands model-training use of interaction data</title>
     <updated>2026-03-25T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-03-25-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-25-01" />
     <summary>GitHub announced that, from April 24, interaction data from Copilot Free, Pro, and Pro+ users will be used for model improvement unless users opt out, making data-governance review more important for enterprises.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, high" />
@@ -203,10 +203,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-03-16-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-16-01</id>
     <title>LlamaIndex coordinates agent-stack package updates and drops Python 3.9</title>
     <updated>2026-03-16T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-03-16-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-16-01" />
     <summary>LlamaIndex&apos;s March 16 release notes show coordinated package updates across the agent stack, including AgentMesh and Azure-related modules, alongside deprecation of Python 3.9 support.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
@@ -217,10 +217,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2026-03-12-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-12-01</id>
     <title>NeMo Guardrails adds parallel IORails safety execution</title>
     <updated>2026-03-12T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2026-03-12-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-12-01" />
     <summary>NeMo Guardrails&apos; March 12 release introduced IORails for parallel input/output safety execution, plus OpenAI-compatible server support and standalone async rail validation.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, release, medium" />
@@ -231,10 +231,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2025-09-16-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2025-09-16-01</id>
     <title>Check Point moves to acquire Lakera</title>
     <updated>2025-09-16T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2025-09-16-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2025-09-16-01" />
     <summary>Check Point announced an agreement to acquire Lakera, positioning the startup&apos;s AI-native protection stack inside a broader end-to-end enterprise AI security portfolio.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, acquisition, high" />
@@ -245,10 +245,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://enterpriseai.tools/updates/#update-2025-02-25-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2025-02-25-01</id>
     <title>IBM announces DataStax acquisition, bringing Langflow into scope</title>
     <updated>2025-02-25T00:00:00.000Z</updated>
-    <link href="https://enterpriseai.tools/updates/#update-2025-02-25-01" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2025-02-25-01" />
     <summary>IBM said it would acquire DataStax, explicitly naming Langflow as part of the transaction and tying the low-code AI builder into IBM&apos;s watsonx roadmap.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, acquisition, high" />

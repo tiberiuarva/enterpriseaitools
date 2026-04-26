@@ -71,7 +71,7 @@ The updates page should help crawlers and users move into the main category hubs
 
 ### 5) Search Console / webmaster readiness
 After production domain is live and stable:
-1. verify `https://enterpriseai.tools/` and/or `https://www.enterpriseai.tools/`
+1. verify `https://www.enterpriseai.tools/` as the canonical production property (and separately confirm the apex redirects there if still configured)
 2. submit sitemap
 3. verify robots fetch
 4. inspect core hub URLs for indexability
