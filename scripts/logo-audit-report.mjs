@@ -12,13 +12,16 @@ const tools = readJson("data/tools.json").tools;
 const platforms = readJson("data/platforms.json").platforms;
 const inventory = readJson("data/logo-inventory.json").items;
 
+const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
+const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
+const allowedStatuses = new Set(["classified", "unclassified"]);
+const allowedCategories = new Set(categoryOrder);
+const allowedLogoKinds = new Set(logoKindOrder);
+
 const siteRows = [
   ...tools.map((item) => ({ category: item.category, logoKind: item.logoKind })),
   ...platforms.map((item) => ({ category: "platforms", logoKind: item.logoKind })),
 ];
-
-const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
-const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
 
 function initRow() {
   return {
@@ -34,12 +37,17 @@ function initRow() {
 const counts = new Map(categoryOrder.map((category) => [category, initRow()]));
 
 for (const row of siteRows) {
-  const bucket = counts.get(row.category) ?? initRow();
-  bucket.total += 1;
-  if (row.logoKind in bucket) {
-    bucket[row.logoKind] += 1;
+  if (!allowedCategories.has(row.category)) {
+    throw new Error(`Unknown category in site data: ${row.category}`);
   }
-  counts.set(row.category, bucket);
+
+  if (!allowedLogoKinds.has(row.logoKind)) {
+    throw new Error(`Unknown logoKind in site data for ${row.category}: ${row.logoKind}`);
+  }
+
+  const bucket = counts.get(row.category);
+  bucket.total += 1;
+  bucket[row.logoKind] += 1;
 }
 
 const totals = initRow();
@@ -51,10 +59,24 @@ for (const category of categoryOrder) {
   }
 }
 
+for (const item of inventory) {
+  if (!allowedCategories.has(item.category)) {
+    throw new Error(`Unknown category in logo inventory: ${item.category}`);
+  }
+
+  if (!allowedLogoKinds.has(item.logoKind)) {
+    throw new Error(`Unknown logoKind in logo inventory for ${item.category}:${item.name}: ${item.logoKind}`);
+  }
+
+  if (!allowedStatuses.has(item.status)) {
+    throw new Error(`Unknown status in logo inventory for ${item.category}:${item.name}: ${item.status}`);
+  }
+}
+
 const inventorySummary = {
   total: inventory.length,
   classified: inventory.filter((item) => item.status === "classified").length,
-  unclassified: inventory.filter((item) => item.status !== "classified").length,
+  unclassified: inventory.filter((item) => item.status === "unclassified").length,
 };
 
 function formatPercent(numerator, denominator) {
@@ -65,7 +87,7 @@ function formatPercent(numerator, denominator) {
 const lines = [];
 lines.push("# Logo audit report");
 lines.push("");
-lines.push(`Generated: ${new Date().toISOString()}`);
+lines.push("Generated from current repo data via `npm run report-logo-audit`. No wall-clock timestamp is embedded so diffs only reflect data/reporting changes.");
 lines.push("");
 lines.push("## Site coverage by category");
 lines.push("");

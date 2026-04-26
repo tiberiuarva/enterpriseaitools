@@ -1,6 +1,6 @@
 # Logo audit report
 
-Generated: 2026-04-26T09:01:58.186Z
+Generated from current repo data via `npm run report-logo-audit`. No wall-clock timestamp is embedded so diffs only reflect data/reporting changes.
 
 ## Site coverage by category
 
