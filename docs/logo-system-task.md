@@ -125,6 +125,7 @@ That is the reliable path.
 
 ## Candidate follow-up deliverables
 - `docs/logo-system-spec.md`
+- `docs/logo-audit-report.md`
 - `data/logo-inventory.json` or `data/logo-audit.json`
 - schema extension for provenance/fallback status
 - normalized `LogoBadge` rendering rules

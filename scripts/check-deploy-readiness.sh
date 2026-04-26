@@ -27,6 +27,10 @@ pass "workflow matches root-domain static export contract"
 [[ -x scripts/smoke-test-live-site.sh ]] || fail "scripts/smoke-test-live-site.sh missing or not executable"
 pass "required repo scripts exist"
 
+npm run check-logo-provenance >/dev/null
+npm run check-logo-audit-report >/dev/null
+pass "logo provenance and audit-report sync checks pass"
+
 npm run build >/dev/null
 [[ -f out/index.html ]] || fail "missing export output after build"
 pass "static export builds successfully"

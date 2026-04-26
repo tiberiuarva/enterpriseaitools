@@ -9,6 +9,8 @@
     "check-seo-readiness": "node scripts/check-seo-readiness.mjs",
     "check-live-performance": "node scripts/check-live-performance.mjs",
     "check-logo-provenance": "node scripts/check-logo-provenance.mjs",
+    "check-logo-audit-report": "node scripts/check-logo-audit-report.mjs",
+    "report-logo-audit": "node scripts/logo-audit-report.mjs",
     "open-pr": "bash scripts/open-pr.sh",
     "publish-preview": "bash scripts/publish-preview.sh",
     "test-full-cycle": "bash scripts/test-full-cycle.sh",
