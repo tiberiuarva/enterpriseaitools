@@ -313,7 +313,6 @@
         "Active ecosystem"
       ],
       "license": "MIT",
-      "licenseWarning": "Core LangGraph repository is MIT-licensed; review any separately licensed LangChain commercial services independently.",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 30308,
       "version": "1.1.7a2",
@@ -322,8 +321,7 @@
       "status": "active",
       "tags": [
         "agents",
-        "graph",
-        "license-caution"
+        "graph"
       ],
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
