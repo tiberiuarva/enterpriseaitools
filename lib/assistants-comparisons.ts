@@ -28,7 +28,7 @@ export const assistantsComparisons: Record<AssistantsSubcategory, AssistantsComp
       },
       {
         attribute: "IP indemnity",
-        values: ["Business+", "Pro", "Unclear"],
+        values: ["Business+", "Excludes Developer Free Tier", "Unclear"],
       },
       {
         attribute: "SOC 2",
