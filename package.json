@@ -16,6 +16,7 @@
     "test-full-cycle": "bash scripts/test-full-cycle.sh",
     "check-deploy-readiness": "bash scripts/check-deploy-readiness.sh",
     "check-custom-domain-readiness": "bash scripts/check-custom-domain-readiness.sh",
+    "check-preview-health": "bash scripts/check-preview-health.sh",
     "smoke-test-live-site": "bash scripts/smoke-test-live-site.sh"
   },
   "dependencies": {
