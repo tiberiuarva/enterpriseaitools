@@ -9,7 +9,7 @@ type PlatformMarkProps = {
 };
 
 export function PlatformMark({ vendor, logoUrl, logoKind }: PlatformMarkProps) {
-  if (logoUrl) {
+  if (logoKind !== "fallback" && logoUrl) {
     return (
       <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[var(--color-border)] bg-white p-1.5">
         <img src={withBasePath(logoUrl)} alt="" loading="lazy" className="h-full w-full object-contain" />
@@ -17,5 +17,5 @@ export function PlatformMark({ vendor, logoUrl, logoKind }: PlatformMarkProps) {
     );
   }
 
-  return <LogoBadge label={vendor} logoUrl={logoUrl} logoKind={logoKind} size="lg" />;
+  return <LogoBadge label={vendor} logoUrl={logoUrl} logoKind={logoKind} size="lg" emphasize={false} />;
 }
