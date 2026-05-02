@@ -32,7 +32,7 @@ for path in / /platforms/ /agents/ /updates/; do
   echo "PASS $url"
 done
 
-for path in /robots.txt /sitemap.xml /social-preview.svg; do
+for path in /robots.txt /sitemap.xml /social-preview.png; do
   url="${BASE_URL}${path}"
   check_200 "$url" || { echo "FAIL $url"; exit 1; }
   echo "PASS $url"

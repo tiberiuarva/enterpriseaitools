@@ -1,6 +1,162 @@
 {
   "updates": [
     {
+      "id": "update-2026-05-02-01",
+      "date": "2026-05-02",
+      "toolId": "google-agent-builder-adk",
+      "toolName": "Google Agent Builder + ADK",
+      "category": "agents",
+      "type": "feature",
+      "summary": "Google made 50+ fully managed MCP servers available for Google Cloud services, expanding protocol-aligned tool integration options for Vertex AI and Gemini Enterprise agent builds.",
+      "sourceUrl": "https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone",
+      "sourceTitle": "50+ fully managed MCP servers now available for Google Cloud services",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-05-01-02",
+      "date": "2026-05-01",
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "LangFlow 1.9.2 added telemetry to deployment APIs and shipped fixes across env var resolution, Google embeddings dimensions, and related deployment/runtime paths.",
+      "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.9.2",
+      "sourceTitle": "Release 1.9.2 \u00b7 langflow-ai/langflow \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-05-01-01",
+      "date": "2026-05-01",
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "category": "agents",
+      "type": "release",
+      "summary": "OpenAI Agents SDK 0.15.0 changed refusal handling to raise ModelRefusalError explicitly instead of surfacing empty outputs, a behavior change that can affect run-loop integrations.",
+      "sourceUrl": "https://github.com/openai/openai-agents-python/releases/tag/v0.15.0",
+      "sourceTitle": "Release v0.15.0 \u00b7 openai/openai-agents-python \u00b7 GitHub",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-04-30-01",
+      "date": "2026-04-30",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.14.4 added Azure OpenAI Responses API support, Azure AI Inference credential-scope forwarding, Vertex AI workload identity guidance, and new research/search tools integrations.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.4",
+      "sourceTitle": "Release 1.14.4 \u00b7 crewAIInc/crewAI \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-29-02",
+      "date": "2026-04-29",
+      "toolId": "dify",
+      "toolName": "Dify",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Dify 1.14.0 introduced collaborative workflow editing with synced graph updates and presence indicators, while keeping collaboration disabled by default for self-hosted deployments.",
+      "sourceUrl": "https://github.com/langgenius/dify/releases/tag/1.14.0",
+      "sourceTitle": "Release v1.14.0 \u00b7 langgenius/dify \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-29-01",
+      "date": "2026-04-29",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework Python 1.2.2 added an Azure AI Content Understanding context provider for documents, images, audio, and video, expanding enterprise attachment analysis paths.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.2.2",
+      "sourceTitle": "Release python-1.2.2 \u00b7 microsoft/agent-framework \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-28-02",
+      "date": "2026-04-28",
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Paperclip v2026.428.0 added pause/resume controls for agents in the sidebar and improved handling for long issue threads, extending day-2 control-plane usability.",
+      "sourceUrl": "https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0",
+      "sourceTitle": "Release v2026.428.0 \u00b7 paperclipai/paperclip \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-28-01",
+      "date": "2026-04-28",
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "category": "agents",
+      "type": "release",
+      "summary": "Semantic Kernel Python 1.41.3 added SQL Server field and table name escaping and extended in-memory collection filter blocklists, tightening connector safety for production use.",
+      "sourceUrl": "https://github.com/microsoft/semantic-kernel/releases/tag/python-1.41.3",
+      "sourceTitle": "Release python-1.41.3 \u00b7 microsoft/semantic-kernel \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-24-03",
+      "date": "2026-04-24",
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "LangFlow 1.9.1 shipped security fixes for MCP path traversal, cross-user disclosure, upload auth, IDOR, XSS handling, and webhook auth defaults, alongside Gemini 3 tool-calling updates.",
+      "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.9.1",
+      "sourceTitle": "Release 1.9.1 \u00b7 langflow-ai/langflow \u00b7 GitHub",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-04-24-02",
+      "date": "2026-04-24",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.14.3 added Bedrock V4 support, checkpoint and fork support for standalone agents, Azure DefaultAzureCredential fallback, and security dependency patches.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.3",
+      "sourceTitle": "Release 1.14.3 \u00b7 crewAIInc/crewAI \u00b7 GitHub",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-24-01",
+      "date": "2026-04-24",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework Python 1.2.0 added a functional workflow API, OpenTelemetry support for GitHubCopilotAgent, and an A2A bridge, extending interoperability and observability for production agent deployments.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0",
+      "sourceTitle": "Release python-1.2.0 \u00b7 microsoft/agent-framework \u00b7 GitHub",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-04-22-03",
+      "date": "2026-04-22",
+      "toolId": "aws-bedrock-agents",
+      "toolName": "AWS Bedrock Agents",
+      "category": "agents",
+      "type": "feature",
+      "summary": "AWS announced Amazon Bedrock AgentCore availability in the South America (S\u00e3o Paulo) Region, extending managed agent runtime coverage into an additional geography.",
+      "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/",
+      "sourceTitle": "Amazon Bedrock AgentCore is now available in the South America (S\u00e3o Paulo) Region",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-04-22-02",
+      "date": "2026-04-22",
+      "toolId": "microsoft-foundry-agent-service",
+      "toolName": "Microsoft Foundry Agent Service",
+      "category": "agents",
+      "type": "feature",
+      "summary": "Microsoft announced hosted agents preview, Toolbox preview, memory preview, and Foundry Toolkit for VS Code GA as part of the developer path from local builds to production deployment.",
+      "sourceUrl": "https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/",
+      "sourceTitle": "From Local to Production: The Complete Developer Journey for Building, Composing, and Deploying AI Agents",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-04-22-01",
       "date": "2026-04-22",
       "toolId": "google-agent-builder-adk",
@@ -13,18 +169,6 @@
       "impact": "high"
     },
     {
-      "id": "update-2026-04-24-03",
-      "date": "2026-04-24",
-      "toolId": "langflow",
-      "toolName": "LangFlow",
-      "category": "orchestration",
-      "type": "release",
-      "summary": "LangFlow 1.9.1 shipped security fixes for MCP path traversal, cross-user disclosure, upload auth, IDOR, XSS handling, and webhook auth defaults, alongside Gemini 3 tool-calling updates.",
-      "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.9.1",
-      "sourceTitle": "Release 1.9.1 · langflow-ai/langflow · GitHub",
-      "impact": "high"
-    },
-    {
       "id": "update-2026-04-20-01",
       "date": "2026-04-20",
       "toolId": "haystack",
@@ -33,45 +177,8 @@
       "type": "release",
       "summary": "Haystack 2.28.0 introduced breaking API changes around request exception handling, LLM initialization, and agent invocation signatures, with new runtime State injection for tools.",
       "sourceUrl": "https://github.com/deepset-ai/haystack/releases/tag/v2.28.0",
-      "sourceTitle": "Release v2.28.0 · deepset-ai/haystack · GitHub",
+      "sourceTitle": "Release v2.28.0 \u00b7 deepset-ai/haystack \u00b7 GitHub",
       "impact": "high"
-    },
-    {
-      "id": "update-2026-04-24-02",
-      "date": "2026-04-24",
-      "toolId": "crewai",
-      "toolName": "CrewAI",
-      "category": "agents",
-      "type": "release",
-      "summary": "CrewAI 1.14.3 added Bedrock V4 support, checkpoint and fork support for standalone agents, Azure DefaultAzureCredential fallback, and security dependency patches.",
-      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.3",
-      "sourceTitle": "Release 1.14.3 · crewAIInc/crewAI · GitHub",
-      "impact": "medium"
-    },
-    {
-      "id": "update-2026-04-24-01",
-      "date": "2026-04-24",
-      "toolId": "microsoft-agent-framework",
-      "toolName": "Microsoft Agent Framework",
-      "category": "agents",
-      "type": "release",
-      "summary": "Microsoft Agent Framework Python 1.2.0 added a functional workflow API, OpenTelemetry support for GitHubCopilotAgent, and an A2A bridge, extending interoperability and observability for production agent deployments.",
-      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0",
-      "sourceTitle": "Release python-1.2.0 · microsoft/agent-framework · GitHub",
-      "impact": "high"
-    },
-    {
-      "id": "update-2026-04-14-01",
-      "date": "2026-04-14",
-      "toolId": "crewai",
-      "toolName": "CrewAI",
-      "category": "agents",
-      "type": "release",
-      "summary": "CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.",
-      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases",
-      "sourceTitle": "Releases · crewAIInc/crewAI",
-      "impact": "medium",
-      "title": "CrewAI pre-release adds Bedrock strict-mode fixes"
     },
     {
       "id": "update-2026-04-14-02",
@@ -82,9 +189,22 @@
       "type": "release",
       "summary": "Flowise's April 14 release focused on security hardening, including a fix for a hardcoded CORS wildcard on the TTS endpoint and additional MCP server configuration protections.",
       "sourceUrl": "https://github.com/FlowiseAI/Flowise/releases",
-      "sourceTitle": "Releases · FlowiseAI/Flowise",
+      "sourceTitle": "Releases \u00b7 FlowiseAI/Flowise",
       "impact": "high",
       "title": "Flowise release tightens security around CORS and MCP config"
+    },
+    {
+      "id": "update-2026-04-14-01",
+      "date": "2026-04-14",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases",
+      "sourceTitle": "Releases \u00b7 crewAIInc/crewAI",
+      "impact": "medium",
+      "title": "CrewAI pre-release adds Bedrock strict-mode fixes"
     },
     {
       "id": "update-2026-04-13-01",
@@ -95,7 +215,7 @@
       "type": "release",
       "summary": "n8n published pre-release 2.17.0 on April 13 with AI-builder credential-context changes plus fixes across PostHog, NASA, Peekalink, Clearbit, and Uptime Robot integrations.",
       "sourceUrl": "https://github.com/n8n-io/n8n/releases",
-      "sourceTitle": "Releases · n8n-io/n8n",
+      "sourceTitle": "Releases \u00b7 n8n-io/n8n",
       "impact": "medium",
       "title": "n8n 2.17.0 pre-release expands AI-builder integration fixes"
     },
@@ -108,7 +228,7 @@
       "type": "release",
       "summary": "The OpenAI Agents SDK April 9 release hardened SQLite and SQLAlchemy session handling and expanded tracing documentation, signaling continued stabilization of the production agent stack.",
       "sourceUrl": "https://github.com/openai/openai-agents-python/releases",
-      "sourceTitle": "Releases · openai/openai-agents-python",
+      "sourceTitle": "Releases \u00b7 openai/openai-agents-python",
       "impact": "medium",
       "title": "OpenAI Agents SDK release hardens tracing and SQL session handling"
     },
@@ -121,7 +241,7 @@
       "type": "release",
       "summary": "Semantic Kernel's April 8 release included prompt-template serialization improvements and dependency updates, keeping Microsoft's orchestration SDK active as Agent Framework work continues.",
       "sourceUrl": "https://github.com/microsoft/semantic-kernel/releases",
-      "sourceTitle": "Releases · microsoft/semantic-kernel",
+      "sourceTitle": "Releases \u00b7 microsoft/semantic-kernel",
       "impact": "medium",
       "title": "Semantic Kernel refreshes prompt serialization and dependencies"
     },
@@ -134,7 +254,7 @@
       "type": "release",
       "summary": "Langflow's April 7 release added Windows Playwright coverage to nightly builds and refreshed desktop documentation, indicating continued maintenance after the DataStax-to-IBM deal.",
       "sourceUrl": "https://github.com/langflow-ai/langflow/releases",
-      "sourceTitle": "Releases · langflow-ai/langflow",
+      "sourceTitle": "Releases \u00b7 langflow-ai/langflow",
       "impact": "medium",
       "title": "Langflow release adds Windows Playwright coverage"
     },
@@ -147,7 +267,7 @@
       "type": "release",
       "summary": "Haystack's April 1 release highlighted automatic list joining inside pipelines, simplifying multi-input workflow construction without extra glue components.",
       "sourceUrl": "https://github.com/deepset-ai/haystack/releases",
-      "sourceTitle": "Releases · deepset-ai/haystack",
+      "sourceTitle": "Releases \u00b7 deepset-ai/haystack",
       "impact": "medium",
       "title": "Haystack simplifies multi-input pipelines with automatic list joining"
     },
@@ -160,7 +280,7 @@
       "type": "release",
       "summary": "Dify v1.13.3 shipped on March 27 with workflow, streaming, and knowledge-retrieval stability fixes, reinforcing its push toward more reliable production orchestration.",
       "sourceUrl": "https://github.com/langgenius/dify/releases",
-      "sourceTitle": "Releases · langgenius/dify",
+      "sourceTitle": "Releases \u00b7 langgenius/dify",
       "impact": "medium",
       "title": "Dify 1.13.3 ships workflow and retrieval stability fixes"
     },
@@ -186,7 +306,7 @@
       "type": "release",
       "summary": "LlamaIndex's March 16 release notes show coordinated package updates across the agent stack, including AgentMesh and Azure-related modules, alongside deprecation of Python 3.9 support.",
       "sourceUrl": "https://github.com/run-llama/llama_index/releases",
-      "sourceTitle": "Releases · run-llama/llama_index",
+      "sourceTitle": "Releases \u00b7 run-llama/llama_index",
       "impact": "medium",
       "title": "LlamaIndex coordinates agent-stack package updates and drops Python 3.9"
     },
@@ -199,7 +319,7 @@
       "type": "release",
       "summary": "NeMo Guardrails' March 12 release introduced IORails for parallel input/output safety execution, plus OpenAI-compatible server support and standalone async rail validation.",
       "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails/releases",
-      "sourceTitle": "Releases · NVIDIA-NeMo/Guardrails",
+      "sourceTitle": "Releases \u00b7 NVIDIA-NeMo/Guardrails",
       "impact": "medium",
       "title": "NeMo Guardrails adds parallel IORails safety execution"
     },

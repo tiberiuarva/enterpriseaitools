@@ -132,8 +132,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
-      "githubStars": 50460,
-      "version": "1.14.3",
+      "githubStars": 50462,
+      "version": "1.14.4",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -151,7 +151,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-04-24"
+      "lastRelease": "2026-04-30"
     },
     {
       "id": "autogen",
@@ -167,7 +167,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/autogen",
-      "githubStars": 57649,
+      "githubStars": 57651,
       "version": "0.7.5",
       "docsUrl": "https://microsoft.github.io/autogen/",
       "pricingModel": "free",
@@ -238,7 +238,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/semantic-kernel",
       "githubStars": 27827,
-      "version": "1.41.2",
+      "version": "1.41.3",
       "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
       "pricingModel": "free",
       "status": "active",
@@ -256,7 +256,8 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths."
+      "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths.",
+      "lastRelease": "2026-04-28"
     },
     {
       "id": "microsoft-agent-framework",
@@ -272,9 +273,9 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
-      "githubStars": 10034,
-      "version": "1.2.0",
-      "lastRelease": "2026-04-24",
+      "githubStars": 10035,
+      "version": "1.2.2",
+      "lastRelease": "2026-04-29",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -314,7 +315,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
-      "githubStars": 31022,
+      "githubStars": 31025,
       "version": "1.1.7a2",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
@@ -347,7 +348,7 @@
       ],
       "license": "Apache 2.0 core + EE paths",
       "githubUrl": "https://github.com/mastra-ai/mastra",
-      "githubStars": 23473,
+      "githubStars": 23477,
       "version": "1.24.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
@@ -382,8 +383,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
-      "githubStars": 25732,
-      "version": "0.13.6",
+      "githubStars": 25735,
+      "version": "0.15.0",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -401,7 +402,8 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default."
+      "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
+      "lastRelease": "2026-05-01"
     },
     {
       "id": "atomic-agents",
@@ -585,7 +587,7 @@
       "license": "Sustainable Use License",
       "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
       "githubUrl": "https://github.com/n8n-io/n8n",
-      "githubStars": 186437,
+      "githubStars": 186442,
       "version": "2.16.0",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
@@ -621,9 +623,9 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/paperclipai/paperclip",
-      "githubStars": 61540,
-      "version": "v2026.416.0",
-      "lastRelease": "2026-04-16",
+      "githubStars": 61559,
+      "version": "v2026.428.0",
+      "lastRelease": "2026-04-28",
       "docsUrl": "https://paperclip.ing/docs",
       "websiteUrl": "https://paperclip.ing/",
       "pricingModel": "free",
@@ -663,7 +665,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
       "githubStars": 147613,
-      "version": "1.9.1",
+      "version": "1.9.2",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -682,7 +684,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-04-24"
+      "lastRelease": "2026-05-01"
     },
     {
       "id": "dify",
@@ -699,8 +701,8 @@
       "license": "Modified Apache 2.0",
       "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
       "githubUrl": "https://github.com/langgenius/dify",
-      "githubStars": 139850,
-      "version": "1.13.3",
+      "githubStars": 139855,
+      "version": "1.14.0",
       "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
       "pricingModel": "freemium",
       "status": "active",
@@ -717,7 +719,8 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely."
+      "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely.",
+      "lastRelease": "2026-04-29"
     },
     {
       "id": "flowise",
@@ -733,7 +736,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
-      "githubStars": 52480,
+      "githubStars": 52479,
       "version": "3.1.2",
       "docsUrl": "https://docs.flowiseai.com/",
       "pricingModel": "free",
