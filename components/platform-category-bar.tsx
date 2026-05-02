@@ -10,18 +10,24 @@ type PlatformCategoryBarProps = {
   headingLevel: HeadingLevel;
 };
 
-const coverageLabel = "Cloud platforms";
-
 function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${getPlatformFragmentId(platform.id)}`);
 }
 
-function getCategorySummary(category: ToolCategory) {
+function getHeadingText(category: ToolCategory) {
   if (category === "assistants") {
-    return "See coding, productivity, and build-your-own mappings on the platforms page.";
+    return "Cloud platforms";
   }
 
-  return "Jump to the platform layer for the native cloud offering behind this category.";
+  return "Cloud platforms in this category";
+}
+
+function getCategorySummary(category: ToolCategory) {
+  if (category === "assistants") {
+    return "Compare the underlying vendor stack on the platforms page; assistant-specific details stay in the comparison sections below.";
+  }
+
+  return "Compare the native cloud services behind this category on the platforms page.";
 }
 
 export function PlatformCategoryBar({
@@ -39,7 +45,7 @@ export function PlatformCategoryBar({
     >
       <div className="flex flex-col gap-3">
         <div>
-          <div className="text-sm font-semibold text-[var(--color-text-primary)]">{coverageLabel}</div>
+          <div className="text-sm font-semibold text-[var(--color-text-primary)]">{getHeadingText(category)}</div>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{getCategorySummary(category)}</p>
         </div>
         <ul className="flex flex-wrap gap-2">
