@@ -146,10 +146,10 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
       <PlatformCategoryBar category="assistants" platforms={platforms} headingLevel={3} />
 
       <section
-        className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
-        style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
+        className="sticky z-20 -mx-2 px-2 pb-2 pt-1 sm:mx-0 sm:px-0 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))]"
+        style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
-        <div className="border-b border-[var(--color-border)] p-4">
+        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">
           <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
             {subcategoryOrder.map((subcategory) => (
               <button
@@ -174,17 +174,19 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
             ))}
           </div>
         </div>
-        <FilterBar
-          typeFilter={typeFilter}
-          onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
-          cloudFilters={cloudFilters}
-          onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
-          licenseFilter={licenseFilter}
-          onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
-          sortBy={sortBy}
-          onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
-          availableLicenses={availableLicenses}
-        />
+        <div className="mt-4">
+          <FilterBar
+            typeFilter={typeFilter}
+            onTypeFilterChange={(value) => updateFilterState({ typeFilter: value })}
+            cloudFilters={cloudFilters}
+            onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
+            licenseFilter={licenseFilter}
+            onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
+            sortBy={sortBy}
+            onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
+            availableLicenses={availableLicenses}
+          />
+        </div>
       </section>
 
       {comparison && (showVendorCards || showVendorComparison) ? (

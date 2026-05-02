@@ -49,7 +49,7 @@ export function FilterBar({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">
       <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-center">
           <fieldset className="flex flex-wrap gap-2">
