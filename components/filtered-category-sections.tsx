@@ -200,8 +200,8 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
   return (
     <>
       <section
-        className="sticky z-10 rounded-xl border border-[var(--color-border)] bg-[color:color-mix(in_srgb,var(--color-bg-card)_92%,transparent)] backdrop-blur"
-        style={{ top: "calc(var(--site-header-height, 4rem) + 0.5rem)" }}
+        className="sticky z-20 -mx-2 px-2 pb-2 pt-1 sm:mx-0 sm:px-0 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))]"
+        style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
         <FilterBar
           typeFilter={typeFilter}
