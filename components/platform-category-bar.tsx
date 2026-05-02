@@ -15,15 +15,19 @@ function getPlatformHref(platform: Platform) {
 }
 
 function getHeadingText(category: ToolCategory) {
-  return category === "assistants" ? "Cloud platforms for this assistant set" : "Cloud platforms in this category";
+  if (category === "assistants") {
+    return "Cloud platforms";
+  }
+
+  return "Cloud platforms in this category";
 }
 
 function getCategorySummary(category: ToolCategory) {
   if (category === "assistants") {
-    return "Use these platform pages for the underlying vendor stack; assistant-specific platform details live in each comparison section below.";
+    return "Compare the underlying vendor stack on the platforms page; assistant-specific details stay in the comparison sections below.";
   }
 
-  return "Use the platform layer to compare the native cloud services behind this category.";
+  return "Compare the native cloud services behind this category on the platforms page.";
 }
 
 export function PlatformCategoryBar({
