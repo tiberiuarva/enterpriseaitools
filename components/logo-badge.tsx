@@ -10,12 +10,19 @@ type LogoBadgeProps = {
   logoKind: LogoKind;
   size?: "sm" | "md" | "lg";
   className?: string;
+  emphasize?: boolean;
 };
 
 const sizeClasses = {
   sm: "h-6 w-6 rounded-md text-[10px]",
   md: "h-8 w-8 rounded-lg text-[11px]",
   lg: "h-10 w-10 rounded-xl text-xs",
+} as const;
+
+const subtleSizeClasses = {
+  sm: "h-5 w-5 rounded-md text-[9px]",
+  md: "h-6 w-6 rounded-md text-[10px]",
+  lg: "h-8 w-8 rounded-lg text-[11px]",
 } as const;
 
 const imageSizes = {
@@ -47,8 +54,9 @@ function getFallbackMonogram(label: string) {
   return monogram || "AI";
 }
 
-export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "" }: LogoBadgeProps) {
-  const classes = `${sizeClasses[size]} ${className}`.trim();
+export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "", emphasize = true }: LogoBadgeProps) {
+  const dimensionClasses = emphasize ? sizeClasses[size] : subtleSizeClasses[size];
+  const classes = `${dimensionClasses} ${className}`.trim();
 
   if (!shouldShowImageLogo({ logoKind, logoUrl })) {
     return (

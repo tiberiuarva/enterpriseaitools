@@ -99,6 +99,9 @@ Medium-term:
 - reduce logo prominence on tool cards if the asset audit shows too many fallbacks/questionable marks
 - prefer text clarity over decorative imagery
 
+Current implementation decision:
+- on dense list surfaces (tool cards, category preview chips, fallback-only platform marks), render logos in a reduced-emphasis size so placeholder-heavy categories do not visually overpower the content while the audit/replacement work is still incomplete
+
 ### 7) Audit workflow
 
 For each tool/platform asset, record:
