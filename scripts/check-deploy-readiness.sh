@@ -33,7 +33,8 @@ pass "logo provenance and audit-report sync checks pass"
 
 npm run build >/dev/null
 [[ -f out/index.html ]] || fail "missing export output after build"
-pass "static export builds successfully"
+npm run check-generated-artifacts >/dev/null
+pass "static export builds successfully and tracked generated artifacts stay in sync"
 
 echo "External confirmation still required:"
 echo "- GitHub Actions secret AZURE_STATIC_WEB_APPS_API_TOKEN is configured"

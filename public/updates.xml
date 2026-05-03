@@ -2,22 +2,120 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-04-24T00:00:00.000Z</updated>
+  <updated>2026-05-02T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-01</id>
-    <title>Google Agent Builder + ADK — rename</title>
-    <updated>2026-04-22T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-01" />
-    <summary>Google launched Gemini Enterprise Agent Platform, folding Vertex AI and Agent Builder capabilities under a renamed platform with Agent Runtime, Agent Registry, Agent Identity, and related governance surfaces.</summary>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-02-01</id>
+    <title>Google Agent Builder + ADK — feature</title>
+    <updated>2026-05-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-02-01" />
+    <summary>Google made 50+ fully managed MCP servers available for Google Cloud services, expanding protocol-aligned tool integration options for Vertex AI and Gemini Enterprise agent builds.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, rename, high" />
+    <category term="agents, feature, high" />
     <source>
-      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
-      <title>Gemini Enterprise Agent Platform release notes</title>
-      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone</id>
+      <title>50+ fully managed MCP servers now available for Google Cloud services</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-01-02</id>
+    <title>LangFlow — release</title>
+    <updated>2026-05-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-01-02" />
+    <summary>LangFlow 1.9.2 added telemetry to deployment APIs and shipped fixes across env var resolution, Google embeddings dimensions, and related deployment/runtime paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.9.2</id>
+      <title>Release 1.9.2 · langflow-ai/langflow · GitHub</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.9.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-01-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-05-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-01-01" />
+    <summary>OpenAI Agents SDK 0.15.0 changed refusal handling to raise ModelRefusalError explicitly instead of surfacing empty outputs, a behavior change that can affect run-loop integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.15.0</id>
+      <title>Release v0.15.0 · openai/openai-agents-python · GitHub</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-30-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-04-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-30-01" />
+    <summary>CrewAI 1.14.4 added Azure OpenAI Responses API support, Azure AI Inference credential-scope forwarding, Vertex AI workload identity guidance, and new research/search tools integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.4</id>
+      <title>Release 1.14.4 · crewAIInc/crewAI · GitHub</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.4" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-29-02</id>
+    <title>Dify — release</title>
+    <updated>2026-04-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-29-02" />
+    <summary>Dify 1.14.0 introduced collaborative workflow editing with synced graph updates and presence indicators, while keeping collaboration disabled by default for self-hosted deployments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langgenius/dify/releases/tag/1.14.0</id>
+      <title>Release v1.14.0 · langgenius/dify · GitHub</title>
+      <link href="https://github.com/langgenius/dify/releases/tag/1.14.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-29-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-04-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-29-01" />
+    <summary>Microsoft Agent Framework Python 1.2.2 added an Azure AI Content Understanding context provider for documents, images, audio, and video, expanding enterprise attachment analysis paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.2.2</id>
+      <title>Release python-1.2.2 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.2.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-28-02</id>
+    <title>Paperclip — release</title>
+    <updated>2026-04-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-28-02" />
+    <summary>Paperclip v2026.428.0 added pause/resume controls for agents in the sidebar and improved handling for long issue threads, extending day-2 control-plane usability.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0</id>
+      <title>Release v2026.428.0 · paperclipai/paperclip · GitHub</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-28-01</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-04-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-28-01" />
+    <summary>Semantic Kernel Python 1.41.3 added SQL Server field and table name escaping and extended in-memory collection filter blocklists, tightening connector safety for production use.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/python-1.41.3</id>
+      <title>Release python-1.41.3 · microsoft/semantic-kernel · GitHub</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/python-1.41.3" />
     </source>
   </entry>
   <entry>
@@ -32,20 +130,6 @@
       <id>https://github.com/langflow-ai/langflow/releases/tag/v1.9.1</id>
       <title>Release 1.9.1 · langflow-ai/langflow · GitHub</title>
       <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.9.1" />
-    </source>
-  </entry>
-  <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-04-20-01</id>
-    <title>Haystack — release</title>
-    <updated>2026-04-20T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-20-01" />
-    <summary>Haystack 2.28.0 introduced breaking API changes around request exception handling, LLM initialization, and agent invocation signatures, with new runtime State injection for tools.</summary>
-    <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, high" />
-    <source>
-      <id>https://github.com/deepset-ai/haystack/releases/tag/v2.28.0</id>
-      <title>Release v2.28.0 · deepset-ai/haystack · GitHub</title>
-      <link href="https://github.com/deepset-ai/haystack/releases/tag/v2.28.0" />
     </source>
   </entry>
   <entry>
@@ -77,17 +161,59 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-04-14-01</id>
-    <title>CrewAI pre-release adds Bedrock strict-mode fixes</title>
-    <updated>2026-04-14T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-14-01" />
-    <summary>CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.</summary>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-01-03</id>
+    <title>AWS Bedrock Agents — feature</title>
+    <updated>2026-05-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-01-03" />
+    <summary>AWS announced Amazon Bedrock AgentCore availability in the South America (São Paulo) Region, extending managed agent runtime coverage into an additional geography.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, release, medium" />
+    <category term="agents, feature, medium" />
     <source>
-      <id>https://github.com/crewAIInc/crewAI/releases</id>
-      <title>Releases · crewAIInc/crewAI</title>
-      <link href="https://github.com/crewAIInc/crewAI/releases" />
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/</id>
+      <title>Amazon Bedrock AgentCore is now available in the South America (São Paulo) Region</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-02</id>
+    <title>Microsoft Foundry Agent Service — feature</title>
+    <updated>2026-04-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-02" />
+    <summary>Microsoft announced hosted agents preview, Toolbox preview, memory preview, and Foundry Toolkit for VS Code GA as part of the developer path from local builds to production deployment.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, high" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/</id>
+      <title>From Local to Production: The Complete Developer Journey for Building, Composing, and Deploying AI Agents</title>
+      <link href="https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-01</id>
+    <title>Google Agent Builder + ADK — rename</title>
+    <updated>2026-04-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-01" />
+    <summary>Google launched Gemini Enterprise Agent Platform, folding Vertex AI and Agent Builder capabilities under a renamed platform with Agent Runtime, Agent Registry, Agent Identity, and related governance surfaces.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, rename, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-20-01</id>
+    <title>Haystack — release</title>
+    <updated>2026-04-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-20-01" />
+    <summary>Haystack 2.28.0 introduced breaking API changes around request exception handling, LLM initialization, and agent invocation signatures, with new runtime State injection for tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v2.28.0</id>
+      <title>Release v2.28.0 · deepset-ai/haystack · GitHub</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v2.28.0" />
     </source>
   </entry>
   <entry>
@@ -102,6 +228,20 @@
       <id>https://github.com/FlowiseAI/Flowise/releases</id>
       <title>Releases · FlowiseAI/Flowise</title>
       <link href="https://github.com/FlowiseAI/Flowise/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-14-01</id>
+    <title>CrewAI pre-release adds Bedrock strict-mode fixes</title>
+    <updated>2026-04-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-14-01" />
+    <summary>CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases</id>
+      <title>Releases · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases" />
     </source>
   </entry>
   <entry>

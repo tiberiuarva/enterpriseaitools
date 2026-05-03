@@ -36,6 +36,8 @@ jobs:
         run: npm run lint
       - name: Build static site
         run: npm run build
+      - name: Check generated SEO artifacts
+        run: npm run check-generated-artifacts
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
