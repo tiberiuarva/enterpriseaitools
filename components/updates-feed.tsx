@@ -2,7 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
-import type { UpdateEntry } from "@/lib/types";
+import type { UpdateEntry, UpdateImpact } from "@/lib/types";
 
 const categoryOptions = [
   { label: "All", value: "all" },
@@ -13,6 +13,13 @@ const categoryOptions = [
   { label: "Assistants", value: "assistants" },
 ] as const;
 
+const viewOptions = [
+  { label: "High impact", value: "high-impact" },
+  { label: "All updates", value: "all-updates" },
+] as const;
+
+type FeedView = (typeof viewOptions)[number]["value"];
+
 function formatUpdateLabel(value: string) {
   return value
     .split("-")
@@ -20,18 +27,70 @@ function formatUpdateLabel(value: string) {
     .join(" ");
 }
 
+function getImpactTone(impact?: UpdateImpact) {
+  switch (impact) {
+    case "high":
+      return "border-rose-200 bg-rose-50 text-rose-700 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-200";
+    case "medium":
+      return "border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200";
+    default:
+      return "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]";
+  }
+}
+
 export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
   const [categoryFilter, setCategoryFilter] = useState("all");
+  const [view, setView] = useState<FeedView>("high-impact");
 
   const filtered = useMemo(
     () => categoryFilter === "all" ? updates : updates.filter((u) => u.category === categoryFilter),
     [updates, categoryFilter],
   );
 
+  const visibleUpdates = useMemo(() => {
+    if (view === "all-updates") {
+      return filtered;
+    }
+
+    return filtered.filter((update) => update.impact === "high");
+  }, [filtered, view]);
+
+  const hiddenCount = filtered.length - visibleUpdates.length;
+  const showingHighImpact = view === "high-impact";
+
   return (
     <>
       <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
-        <fieldset className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Market intelligence feed</h2>
+            <p className="mt-1 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+              Default view shows only the highest-impact market moves. Expand to the full log when you need lower-signal releases and routine product churn.
+            </p>
+          </div>
+          <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-1">
+            <fieldset className="flex flex-wrap gap-1">
+              <legend className="sr-only">Choose updates feed view</legend>
+              {viewOptions.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  aria-pressed={view === option.value}
+                  onClick={() => setView(option.value)}
+                  className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
+                    view === option.value
+                      ? "bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
+                      : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
+                  }`}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </fieldset>
+          </div>
+        </div>
+
+        <fieldset className="mt-4 flex flex-wrap gap-2">
           <legend className="sr-only">Filter updates by category</legend>
           {categoryOptions.map((option) => (
             <button
@@ -52,52 +111,77 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
       </div>
 
       <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-        <p className="mb-4 text-sm text-[var(--color-text-secondary)]">{filtered.length} updates shown.</p>
-        <div className="space-y-6">
-          {filtered.map((update) => (
-            <article key={update.id} className="flex gap-4 border-l-2 border-[var(--color-border)] pl-4">
-              <div className="w-28 shrink-0 text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
-                {update.date}
-              </div>
-              <div>
-                <div className="text-base font-semibold text-[var(--color-text-primary)]">
-                  {update.title ?? update.toolName}
-                </div>
-                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
-                  <span>{update.toolName}</span>
-                  <span aria-hidden="true">•</span>
-                  <span>{formatUpdateLabel(update.category)}</span>
-                  <span aria-hidden="true">•</span>
-                  <span>{formatUpdateLabel(update.type)}</span>
-                  {update.impact ? (
-                    <>
-                      <span aria-hidden="true">•</span>
-                      <span>{formatUpdateLabel(update.impact)} impact</span>
-                    </>
-                  ) : null}
-                </div>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
-                <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-                  {update.sourceTitle ? (
-                    <span className="text-[var(--color-text-secondary)]">
-                      Source: <span className="font-medium text-[var(--color-text-primary)]">{update.sourceTitle}</span>
-                    </span>
-                  ) : null}
-                  <a
-                    href={update.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 font-medium text-[var(--color-primary)] hover:underline"
-                    aria-label={`Open source for ${update.toolName} in a new tab`}
-                  >
-                    Read source
-                    <ArrowUpRight size={16} />
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
+        <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+          <p className="text-sm text-[var(--color-text-secondary)]">
+            {showingHighImpact
+              ? `${visibleUpdates.length} high-impact updates shown${hiddenCount > 0 ? `, ${hiddenCount} lower-signal updates hidden` : ""}.`
+              : `${visibleUpdates.length} updates shown.`}
+          </p>
+          {showingHighImpact && hiddenCount > 0 ? (
+            <button
+              type="button"
+              onClick={() => setView("all-updates")}
+              className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+            >
+              Show full log
+            </button>
+          ) : null}
         </div>
+
+        {visibleUpdates.length > 0 ? (
+          <div className="space-y-6">
+            {visibleUpdates.map((update) => (
+              <article key={update.id} className="flex gap-4 border-l-2 border-[var(--color-border)] pl-4">
+                <div className="w-28 shrink-0 text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
+                  {update.date}
+                </div>
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="text-base font-semibold text-[var(--color-text-primary)]">
+                      {update.title ?? update.toolName}
+                    </div>
+                    {update.impact ? (
+                      <span
+                        className={`inline-flex rounded-full border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${getImpactTone(update.impact)}`}
+                      >
+                        {update.impact} impact
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-1 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
+                    <span>{update.toolName}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{formatUpdateLabel(update.category)}</span>
+                    <span aria-hidden="true">•</span>
+                    <span>{formatUpdateLabel(update.type)}</span>
+                  </div>
+                  <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
+                  <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                    {update.sourceTitle ? (
+                      <span className="text-[var(--color-text-secondary)]">
+                        Source: <span className="font-medium text-[var(--color-text-primary)]">{update.sourceTitle}</span>
+                      </span>
+                    ) : null}
+                    <a
+                      href={update.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 font-medium text-[var(--color-primary)] hover:underline"
+                      aria-label={`Open source for ${update.toolName} in a new tab`}
+                    >
+                      Read source
+                      <ArrowUpRight size={16} />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4 text-sm text-[var(--color-text-secondary)]">
+            No updates match this filter in the current view. Try another category or switch to the full log.
+          </div>
+        )}
       </section>
     </>
   );
