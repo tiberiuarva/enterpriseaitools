@@ -9,14 +9,14 @@ import { buildMetadata, siteUrl } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "About enterpriseai.tools",
   description:
-    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
+    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
   path: "/about",
 });
 
 export default function AboutPage() {
   const pageUrl = `${siteUrl}/about/`;
   const description =
-    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
+    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -78,8 +78,8 @@ export default function AboutPage() {
               <li>Every tool entry must link to official documentation or the canonical repository.</li>
               <li>Versions, release recency, star counts, and pricing must be verifiable from primary sources on the day they are added.</li>
               <li>Licenses are recorded exactly as published, including source-available and dual-license caveats where they materially affect adoption.</li>
-              <li>Weekly updates require a <code>sourceUrl</code> and should summarize a concrete product, governance, pricing, release, or market event.</li>
-              <li>If a claim is uncertain, it should be marked uncertain or left out until it can be verified.</li>
+              <li>Weekly updates require a <code>sourceUrl</code> — no exceptions — and should summarize a concrete product, governance, pricing, release, or market event.</li>
+              <li>If a claim is uncertain, leave it out until it can be verified.</li>
             </ul>
           </div>
 
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">What qualifies for inclusion</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-              <li>A tool must be relevant to enterprise AI delivery, governance, orchestration, assistants, or the cloud platform layer behind them.</li>
+              <li>A tool must be relevant to enterprise AI delivery, governance, orchestration, assistants, or the cloud platform layer that powers them.</li>
               <li>There must be enough public evidence to describe the product accurately: official docs, product page, or a maintained repo.</li>
               <li>Early or niche tools can be included when they are strategically relevant, but archived or maintenance-state projects should be labeled clearly.</li>
               <li>Pure research demos, abandoned experiments, and vague stealth products are out of scope until they have real public product evidence.</li>
