@@ -9,14 +9,14 @@ import { buildMetadata, siteUrl } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "About enterpriseai.tools",
   description:
-    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
+    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
   path: "/about",
 });
 
 export default function AboutPage() {
   const pageUrl = `${siteUrl}/about/`;
   const description =
-    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
+    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -75,23 +75,47 @@ export default function AboutPage() {
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">Data sourcing standards</h2>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-              <li>Every tool entry must link to official documentation or repository.</li>
-              <li>GitHub star counts and version numbers must be verifiable at time of entry.</li>
-              <li>Pricing information must come from official product or docs pages.</li>
-              <li>Weekly updates require a <code>sourceUrl</code> &mdash; no exceptions.</li>
-              <li>License labels must be exact (MIT, Apache 2.0, Proprietary, etc.).</li>
+              <li>Every tool entry must link to official documentation or the canonical repository.</li>
+              <li>Versions, release recency, star counts, and pricing must be verifiable from primary sources on the day they are added.</li>
+              <li>Licenses are recorded exactly as published, including source-available and dual-license caveats where they materially affect adoption.</li>
+              <li>Weekly updates require a <code>sourceUrl</code> — no exceptions — and should summarize a concrete product, governance, pricing, release, or market event.</li>
+              <li>If a claim is uncertain, leave it out until it can be verified.</li>
+            </ul>
+          </div>
+
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">Methodology</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>Track the managed cloud foundation first, then compare open source and commercial alternatives in the same category.</li>
+              <li>Prefer official docs, release notes, pricing pages, vendor blogs, and primary repositories over secondary summaries.</li>
+              <li>Keep category coverage opinionated and bounded: the goal is enterprise-relevant tooling, not exhaustive AI cataloging.</li>
+              <li>Use practitioner notes to capture deployment fit, trade-offs, and maturity signals without turning them into unsupported feature claims.</li>
+              <li>Ship changes through reviewable pull requests so data, copy, and structural updates stay auditable.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">What qualifies for inclusion</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>A tool must be relevant to enterprise AI delivery, governance, orchestration, assistants, or the cloud platform layer that powers them.</li>
+              <li>There must be enough public evidence to describe the product accurately: official docs, product page, or a maintained repo.</li>
+              <li>Early or niche tools can be included when they are strategically relevant, but archived or maintenance-state projects should be labeled clearly.</li>
+              <li>Pure research demos, abandoned experiments, and vague stealth products are out of scope until they have real public product evidence.</li>
             </ul>
           </div>
 
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">Contribute</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-              Contributions are welcome via pull request. All data changes must be evidence-backed and include verifiable source URLs.
+              Contributions are welcome via pull request. Data changes should stay evidence-backed, narrowly scoped, and easy to review.
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-              <li>To add a tool: edit <code>data/tools.json</code> following the schema in <code>data/SCHEMA.md</code>.</li>
-              <li>To add a weekly update: edit <code>data/updates.json</code> with a <code>sourceUrl</code>.</li>
-              <li>To report an error: open an issue on GitHub.</li>
+              <li>To add or edit a tool: update <code>data/tools.json</code> using the schema in <code>data/SCHEMA.md</code>.</li>
+              <li>To add a market update: edit <code>data/updates.json</code> and include the source URL plus a factual summary.</li>
+              <li>To report an error or request a tool: open an issue with the source links that support the correction.</li>
+              <li>Keep claims precise. If a pricing tier, compliance statement, or support matrix item is ambiguous, call it out explicitly instead of guessing.</li>
             </ul>
             <a
               href={githubRepoUrl}
