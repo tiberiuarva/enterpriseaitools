@@ -8,7 +8,21 @@ export const platforms = platformsData.platforms as Platform[];
 export const updates = [...(updatesData.updates as UpdateEntry[])].sort((a, b) =>
   b.date.localeCompare(a.date) || a.toolName.localeCompare(b.toolName),
 );
-export const lastUpdated = toolsData.lastUpdated;
+
+function getLatestPlatformReviewedDate() {
+  const reviewedDates = platforms
+    .map((platform) => platform.logoReviewedAt)
+    .filter((value): value is string => typeof value === "string" && value.length > 0);
+
+  return reviewedDates.length > 0 ? reviewedDates.sort().at(-1) ?? null : null;
+}
+
+const latestDataDate = [toolsData.lastUpdated, updates[0]?.date, getLatestPlatformReviewedDate()]
+  .filter((value): value is string => typeof value === "string" && value.length > 0)
+  .sort()
+  .at(-1);
+
+export const lastUpdated = latestDataDate ?? toolsData.lastUpdated;
 
 export const latestUpdate = updates[0] ?? null;
 
