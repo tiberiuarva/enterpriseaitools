@@ -5,7 +5,7 @@
   <updated>2026-05-02T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
-  <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-05-02-01</id>
     <title>Google Agent Builder + ADK — feature</title>

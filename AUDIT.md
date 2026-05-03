@@ -230,7 +230,7 @@ The build guide specifies an `/about` page covering "Project background, contrib
 
 The page subtitle reads: *"Changelog-style feed sourced from `\`/data/updates.json\``."* This is an internal implementation detail irrelevant to end users.
 
-**Fix:** Replace with: *"Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling."*
+**Fix:** Replace with: *"High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes."*
 
 ---
 
