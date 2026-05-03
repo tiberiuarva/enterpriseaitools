@@ -144,7 +144,7 @@ export function CategoryPage({ category, title, description, iconName, tools, up
               {
                 href: "/updates",
                 title: "Weekly updates",
-                description: "Check the changelog-style feed for releases, deprecations, acquisitions, and other notable market changes.",
+                description: "Check the market-intelligence feed for high-impact moves, plus the expandable full log for releases, deprecations, acquisitions, and other notable changes.",
               },
               {
                 href: "/about",
