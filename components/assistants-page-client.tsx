@@ -267,7 +267,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
       <RelatedHubs
         currentPath="/assistants"
         title="Explore adjacent hubs"
-        intro="Move from assistants into the platform foundation layer, the weekly change log, or the contribution/sourcing guide."
+        intro="Move from assistants into the platform foundation layer, the weekly market-intelligence feed, or the contribution/sourcing guide."
         hubs={[
           {
             href: "/platforms",
@@ -277,7 +277,7 @@ export function AssistantsPageClient({ title, description, tools, updates, platf
           {
             href: "/updates",
             title: "Weekly updates",
-            description: "Review recent releases, renames, and acquisitions affecting coding, productivity, and build-your-own assistants.",
+            description: "Review the high-impact market-intelligence view or expand into the full log for releases, renames, and acquisitions affecting coding, productivity, and build-your-own assistants.",
           },
           {
             href: "/about",

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: "Weekly updates",
     description:
-      "Changelog-style updates for enterprise AI tooling, including releases, deprecations, acquisitions, and notable market changes.",
+      "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
     path: "/updates",
   }),
   alternates: {
@@ -34,7 +34,7 @@ export default function UpdatesPage() {
       name: "Weekly updates",
       url: pageUrl,
       description:
-        "Changelog-style updates for enterprise AI tooling, including releases, deprecations, acquisitions, and notable market changes.",
+        "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
     }),
   ];
 
@@ -45,7 +45,7 @@ export default function UpdatesPage() {
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">Weekly updates</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.
+            High-impact market intelligence for enterprise AI tooling, with an expandable full log for routine releases and lower-signal product changes.
           </p>
         </section>
 
@@ -54,7 +54,7 @@ export default function UpdatesPage() {
             <div>
               <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Browse the core hubs</h2>
               <p className="mt-2 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-                Use the updates feed as a change log, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
+                Start with the high-impact market view, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
               </p>
             </div>
             <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-3 text-sm text-[var(--color-text-secondary)] lg:max-w-sm">
@@ -86,7 +86,7 @@ export default function UpdatesPage() {
           <RelatedHubs
             currentPath="/updates"
             title="Continue into the tracked hubs"
-            intro="Use the updates feed as a change log, then pivot into the relevant comparison hubs or the contribution guide."
+            intro="Use the high-impact feed as a market scan, then pivot into the relevant comparison hubs or the contribution guide."
             hubs={[
               {
                 href: "/platforms",

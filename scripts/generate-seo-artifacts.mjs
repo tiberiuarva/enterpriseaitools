@@ -47,7 +47,7 @@ function generateUpdatesAtomFeed() {
     })
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/updates.xml</id>\n  <title>enterpriseai.tools weekly updates</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/updates.xml" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>Changelog-style feed of releases, acquisitions, and notable changes in enterprise AI tooling.</subtitle>\n${entries}\n</feed>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/updates.xml</id>\n  <title>enterpriseai.tools weekly updates</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/updates.xml" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>\n${entries}\n</feed>\n`;
 }
 
 function generateRobotsTxt() {
