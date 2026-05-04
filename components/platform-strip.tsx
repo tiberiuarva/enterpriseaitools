@@ -1,16 +1,20 @@
 import { PlatformMark } from "@/components/platform-mark";
+import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { platformPageHref, withBasePath } from "@/lib/site";
 import type { Platform } from "@/lib/types";
 
 export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
   return (
     <div className="grid grid-cols-1 items-stretch gap-4 md:grid-cols-3">
-      {platforms.map((platform) => (
-        <a
-          key={platform.id}
-          href={withBasePath(platformPageHref)}
-          className="group flex h-full flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
-        >
+      {platforms.map((platform) => {
+        const platformHref = `${platformPageHref}#${getPlatformFragmentId(platform.id)}`;
+
+        return (
+          <a
+            key={platform.id}
+            href={withBasePath(platformHref)}
+            className="group flex h-full flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
+          >
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-start gap-3">
               <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
@@ -23,9 +27,10 @@ export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
               {platform.modelCount}
             </div>
           </div>
-          <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.tagline}</p>
-        </a>
-      ))}
+            <p className="mt-4 text-sm leading-6 text-[var(--color-text-secondary)]">{platform.tagline}</p>
+          </a>
+        );
+      })}
     </div>
   );
 }
