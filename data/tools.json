@@ -1187,9 +1187,9 @@
       "vendor": "Google",
       "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
       "strengths": [
-        "Large free tier",
+        "Enterprise-grade security",
         "Google ecosystem fit",
-        "Enterprise tier available"
+        "Enterprise codebase customization"
       ],
       "clouds": [
         "gcp"
