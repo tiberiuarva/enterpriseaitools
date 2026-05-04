@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-24",
+  "lastUpdated": "2026-05-04",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -1187,9 +1187,9 @@
       "vendor": "Google",
       "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
       "strengths": [
-        "Enterprise-grade security",
+        "VPC-SC + IP indemnification",
         "Google ecosystem fit",
-        "Enterprise codebase customization"
+        "Private codebase customization"
       ],
       "clouds": [
         "gcp"
