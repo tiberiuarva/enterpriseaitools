@@ -32,6 +32,17 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  function navigateTo(href: string) {
+    setIsOpen(false);
+
+    const details = containerRef.current?.closest("details");
+    if (details instanceof HTMLDetailsElement) {
+      details.open = false;
+    }
+
+    window.location.assign(href);
+  }
+
   const results = useMemo(() => {
     const filtered = entries.filter((entry) => matchesEntry(entry, query));
     return filtered.slice(0, query.trim().length > 0 ? 8 : 6);
@@ -49,7 +60,7 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
   }, []);
 
   return (
-    <div ref={containerRef} className={`relative ${compact ? "w-full" : "hidden w-full max-w-sm lg:block"}`}>
+    <div ref={containerRef} className={`relative ${compact ? "w-full" : "hidden w-full max-w-sm md:block"}`}>
       <label className="sr-only" htmlFor={compact ? "site-search-mobile" : "site-search-desktop"}>
         Search tools and platforms
       </label>
@@ -65,6 +76,12 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
             setIsOpen(true);
           }}
           onKeyDown={(event) => {
+            if (event.key === "Enter" && results.length > 0) {
+              event.preventDefault();
+              navigateTo(results[0].href);
+              return;
+            }
+
             if (event.key === "Escape") {
               setIsOpen(false);
               (event.target as HTMLInputElement).blur();
@@ -86,7 +103,10 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
                 <li key={entry.id}>
                   <a
                     href={entry.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      navigateTo(entry.href);
+                    }}
                     className="block rounded-lg px-3 py-2 transition hover:bg-[var(--color-bg-card)]"
                   >
                     <div className="flex items-center justify-between gap-3">
