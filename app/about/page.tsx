@@ -98,6 +98,33 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">How we frame the market</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Foundation first</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                The cloud foundation is not just hosting. It usually sets identity, model routing, policy surface, procurement path, and the default path into production.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Layers above the cloud</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Agent frameworks, orchestration tools, and assistant products are assessed as delivery layers that either reinforce or challenge the control of the base platform.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Enterprise signal over hype</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                We prioritise signs that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+        </section>
+
         <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold">What qualifies for inclusion</h2>
