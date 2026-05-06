@@ -40,14 +40,14 @@ export default function AboutPage() {
             enterprise platforms, and open source alternatives.
           </p>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Edited by Tiberiu Arva, an AI architect in enterprise financial services. The coverage is intentionally practitioner-first: source-backed, regulated-enterprise aware, and focused on what teams can actually operationalise.
+            Edited by Tiberiu Arva, an AI architect in enterprise financial services with a regulated-enterprise delivery lens.
           </p>
         </section>
 
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Editor</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            Maintained by Tiberiu Arva, an AI architect working in enterprise financial services. The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
+            The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
           </p>
         </section>
 
@@ -114,15 +114,12 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Enterprise signal over hype</h3>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Governance boundary</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 We prioritise signs that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.
               </p>
             </div>
           </div>
-        </section>
-
-        <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
         </section>
 
         <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
