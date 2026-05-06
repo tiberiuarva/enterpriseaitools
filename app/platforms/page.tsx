@@ -101,6 +101,10 @@ export default function PlatformsPage() {
               They package model access, agent services, safety controls, SDKs, and deployment infrastructure differently.
             </p>
             <p>
+              For regulated enterprises, this is the control-plane decision before any individual tool choice. The platform sets the baseline for identity,
+              network boundaries, model access patterns, logging, regional deployment options, and how much governance is available natively versus assembled later.
+            </p>
+            <p>
               Read this page top-down: compare the platforms first, use the category mapping section to see where each cloud lands in agents,
               orchestration, governance, and assistants, then use the detailed comparison table for deeper vendor-to-vendor evaluation.
             </p>

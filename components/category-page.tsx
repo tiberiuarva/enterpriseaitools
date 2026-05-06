@@ -15,6 +15,7 @@ type CategoryPageProps = {
   category: ToolCategory;
   title: string;
   description: string;
+  introParagraphs?: string[];
   iconName: IconName;
   tools: Tool[];
   updates: UpdateEntry[];
@@ -34,7 +35,7 @@ function sortByName(tools: Tool[]) {
   return [...tools].sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export function CategoryPage({ category, title, description, iconName, tools, updates, platforms, comparison, enableFiltering = false }: CategoryPageProps) {
+export function CategoryPage({ category, title, description, introParagraphs, iconName, tools, updates, platforms, comparison, enableFiltering = false }: CategoryPageProps) {
   const Icon = iconMap[iconName];
   const vendorTools = sortByName(tools.filter((tool) => tool.type === "vendor"));
   const nonVendorTools = sortByName(tools.filter((tool) => tool.type !== "vendor"));
@@ -66,6 +67,13 @@ export function CategoryPage({ category, title, description, iconName, tools, up
           <div>
             <h1 className="text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">{title}</h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{description}</p>
+            {introParagraphs && introParagraphs.length > 0 ? (
+              <div className="mt-3 max-w-4xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                {introParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            ) : null}
             <div className="mt-3 text-sm text-[var(--color-text-secondary)]">{tools.length} tools in current dataset</div>
           </div>
         </div>
