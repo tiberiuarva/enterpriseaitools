@@ -39,12 +39,15 @@ export default function AboutPage() {
             An open source landscape tracker comparing enterprise AI tooling across cloud vendors,
             enterprise platforms, and open source alternatives.
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            Edited by Tiberiu Arva, an AI architect in enterprise financial services. The coverage is intentionally practitioner-first: source-backed, regulated-enterprise aware, and focused on what teams can actually operationalise.
+          </p>
         </section>
 
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Editor</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            Maintained by Tiberiu Arva, an AI architect working in enterprise financial services. The lens is practitioner-first: what actually works in real enterprise environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
+            Maintained by Tiberiu Arva, an AI architect working in enterprise financial services. The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
           </p>
         </section>
 
