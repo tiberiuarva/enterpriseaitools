@@ -19,6 +19,10 @@ export default function GovernancePage() {
         category="governance"
         title="AI Governance"
         description={categoryDescriptions.governance}
+        introParagraphs={[
+          "Governance tooling matters most when enterprise teams need defensible controls around prompts, outputs, access, logging, and policy enforcement across multiple models and application teams.",
+          "This category mixes cloud-native guardrails with independent safety vendors. Compare them by scope: some are lightweight content filters, while others are closer to a broader oversight layer for high-risk or regulated deployments.",
+        ]}
         iconName="shield-check"
         tools={getToolsByCategory("governance")}
         updates={getUpdatesByCategory("governance")}

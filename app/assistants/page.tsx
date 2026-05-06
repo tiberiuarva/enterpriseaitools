@@ -17,6 +17,10 @@ export default function AssistantsPage() {
       <AssistantsPageClient
         title="AI Assistants"
         description={categoryDescriptions.assistants}
+        introParagraphs={[
+          "Enterprise assistant rollouts usually fail on workflow and control issues before model quality is the blocker. The practical questions are deployment surface, data boundaries, admin controls, auditability, and how much lock-in comes with the assistant experience.",
+          "Use this page to separate coding, productivity, and build-your-own assistant options. In regulated organisations, those three buying decisions often land with different owners, risk tolerances, and integration requirements.",
+        ]}
         tools={getToolsByCategory("assistants")}
         updates={getUpdatesByCategory("assistants")}
         platforms={getPlatformsForCategory("assistants")}
