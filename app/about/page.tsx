@@ -39,12 +39,15 @@ export default function AboutPage() {
             An open source landscape tracker comparing enterprise AI tooling across cloud vendors,
             enterprise platforms, and open source alternatives.
           </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            Edited by Tiberiu Arva, an AI architect in enterprise financial services with a regulated-enterprise delivery lens.
+          </p>
         </section>
 
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Editor</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            Maintained by Tiberiu Arva, an AI architect working in enterprise financial services. The lens is practitioner-first: what actually works in real enterprise environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
+            The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
           </p>
         </section>
 
@@ -92,6 +95,30 @@ export default function AboutPage() {
               <li>Use practitioner notes to capture deployment fit, trade-offs, and maturity signals without turning them into unsupported feature claims.</li>
               <li>Ship changes through reviewable pull requests so data, copy, and structural updates stay auditable.</li>
             </ul>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">How we frame the market</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Foundation first</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                The cloud foundation is not just hosting. It usually sets identity, model routing, policy surface, procurement path, and the default path into production.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Layers above the cloud</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Agent frameworks, orchestration tools, and assistant products are assessed as delivery layers that either reinforce or challenge the control of the base platform.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Governance boundary</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                We prioritise signs that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.
+              </p>
+            </div>
           </div>
         </section>
 

@@ -134,6 +134,38 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <div className="max-w-4xl">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">How the market is splitting</h2>
+            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+              Most enterprise AI stacks now break into three decisions: which cloud foundation sets the control plane,
+              which delivery layer handles agents and orchestration, and which governance layer keeps the estate inside
+              policy. This tracker is structured around those actual buying and architecture seams.
+            </p>
+          </div>
+
+          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">1. Foundation cloud</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Microsoft, AWS, and Google increasingly define identity, model access, security controls, and the path to production.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">2. Delivery layer</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Agent frameworks, workflow engines, and assistant surfaces sit above that base and compete on speed, openness, and operational fit.
+              </p>
+            </div>
+            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">3. Governance boundary</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Safety tooling matters most where it intersects with real approval flows, logging, data handling, and regulated-enterprise controls.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {categoryCards.map((category) => (
             <CategoryCard key={category.href} {...category} />
