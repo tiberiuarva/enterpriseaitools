@@ -68,9 +68,9 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
             <h1 className="text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">{title}</h1>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{description}</p>
             {introParagraphs && introParagraphs.length > 0 ? (
-              <div className="mt-3 max-w-4xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-                {introParagraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+              <div className="mt-3 max-w-3xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                {introParagraphs.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
                 ))}
               </div>
             ) : null}
