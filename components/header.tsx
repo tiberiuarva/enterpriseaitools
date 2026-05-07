@@ -1,4 +1,6 @@
 import { Menu, Moon, Star, Sun } from "lucide-react";
+import { HeaderSearch } from "@/components/header-search";
+import { headerSearchEntries } from "@/lib/search";
 import { githubStargazersUrl, navItems, withBasePath } from "@/lib/site";
 
 type HeaderProps = {
@@ -45,9 +47,11 @@ export function Header({ currentPath = "/" }: HeaderProps) {
       <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       <header className="sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/95 backdrop-blur">
         <div className="mx-auto flex h-[var(--site-header-height)] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <a href={withBasePath("/")} className="text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
+          <a href={withBasePath("/")} className="shrink-0 text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
             enterpriseai.tools
           </a>
+
+          <HeaderSearch entries={headerSearchEntries} />
 
           <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
             {navItems.map((item) => {
@@ -105,6 +109,9 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               </summary>
               <nav aria-label="Mobile" className="absolute right-0 mt-2 min-w-56 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] p-3 shadow-xl">
                 <div className="flex flex-col gap-1">
+                  <div className="mb-2">
+                    <HeaderSearch entries={headerSearchEntries} compact />
+                  </div>
                   {navItems.map((item) => {
                     const isCurrent = item.href === currentPath;
 
