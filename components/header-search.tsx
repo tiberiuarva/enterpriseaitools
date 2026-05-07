@@ -5,6 +5,7 @@ import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent } from "react";
 import type { SearchEntry } from "@/lib/search";
+import { basePath } from "@/lib/site";
 
 type HeaderSearchProps = {
   entries: SearchEntry[];
@@ -27,6 +28,26 @@ function matchesEntry(entry: SearchEntry, query: string) {
   }
 
   return entry.keywords.some((keyword) => normalize(keyword).includes(normalizedQuery));
+}
+
+function getRouterHref(href: string) {
+  if (!basePath) {
+    return href;
+  }
+
+  if (href === basePath) {
+    return "/";
+  }
+
+  if (href === `${basePath}/`) {
+    return "/";
+  }
+
+  if (href.startsWith(`${basePath}/`)) {
+    return href.slice(basePath.length);
+  }
+
+  return href;
 }
 
 export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
@@ -74,7 +95,7 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
   function navigateTo(href: string) {
     closeSearch();
     closeDetailsMenu();
-    router.push(href);
+    router.push(getRouterHref(href));
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
