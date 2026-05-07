@@ -59,4 +59,4 @@ export const headerSearchEntries: SearchEntry[] = [
       ...(tool.clouds ?? []),
     ]),
   })),
-].sort((a, b) => a.label.localeCompare(b.label));
+].sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: "base" }));
