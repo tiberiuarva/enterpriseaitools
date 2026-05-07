@@ -2,7 +2,7 @@
 
 import { Search } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import type { KeyboardEvent, MouseEvent as ReactMouseEvent } from "react";
 import type { SearchEntry } from "@/lib/search";
 import { basePath } from "@/lib/site";
@@ -50,8 +50,17 @@ function getRouterHref(href: string) {
   return href;
 }
 
+function getHrefParts(href: string) {
+  const [path, hash] = href.split("#", 2);
+  return {
+    path: path || "/",
+    hash: hash ? `#${hash}` : "",
+  };
+}
+
 export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const listboxId = useId();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +75,6 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
 
     return entries.filter((entry) => matchesEntry(entry, query)).slice(0, 8);
   }, [entries, hasQuery, query]);
-
 
   useEffect(() => {
     function handlePointerDown(event: PointerEvent) {
@@ -93,9 +101,18 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
   }
 
   function navigateTo(href: string) {
+    const routerHref = getRouterHref(href);
+    const { path, hash } = getHrefParts(routerHref);
+
     closeSearch();
     closeDetailsMenu();
-    router.push(getRouterHref(href));
+
+    if (path === pathname && hash) {
+      window.location.hash = hash;
+      return;
+    }
+
+    router.push(routerHref);
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
@@ -125,7 +142,7 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
 
     if (event.key === "Enter") {
       event.preventDefault();
-      navigateTo(results[highlightedIndex]?.href ?? results[0].href);
+      navigateTo(results[highlightedIndex].href);
     }
   }
 
@@ -144,13 +161,14 @@ export function HeaderSearch({ entries, compact = false }: HeaderSearchProps) {
           role="combobox"
           aria-autocomplete="list"
           aria-expanded={isOpen && hasQuery}
-          aria-controls={listboxId}
+          aria-controls={isOpen && hasQuery && results.length > 0 ? listboxId : undefined}
           aria-activedescendant={activeDescendant}
           value={query}
           onFocus={() => setIsOpen(true)}
           onChange={(event) => {
             setQuery(event.target.value);
             setActiveIndex(0);
+            setIsOpen(true);
           }}
           onKeyDown={handleKeyDown}
           placeholder="Search tools and platforms"
