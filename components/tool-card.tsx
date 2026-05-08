@@ -2,7 +2,7 @@ import { Check, ExternalLink, Globe, Star } from "lucide-react";
 import { LogoBadge } from "@/components/logo-badge";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
-import type { Tool } from "@/lib/types";
+import type { PricingModel, Tool } from "@/lib/types";
 import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
 function formatCloudName(cloud: string) {
@@ -15,8 +15,28 @@ function formatCloudName(cloud: string) {
   return cloud;
 }
 
+function formatPricingModelLabel(pricingModel: PricingModel) {
+  switch (pricingModel) {
+    case "free":
+      return "Free";
+    case "freemium":
+      return "Freemium";
+    case "paid":
+      return "Paid";
+    case "contact":
+      return "Contact sales";
+  }
+}
+
+function normalizeHref(href: string) {
+  return href.startsWith("/") ? withBasePath(href) : href;
+}
+
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
-  const docsHref = tool.docsUrl ?? tool.websiteUrl;
+  const chipClass = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
+  const docsHref = normalizeHref(tool.docsUrl);
+  const websiteHref = tool.websiteUrl ? normalizeHref(tool.websiteUrl) : undefined;
+  const hasSeparateWebsite = websiteHref && websiteHref !== docsHref;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
   return (
     <article
@@ -80,7 +100,9 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             {tool.githubStars.toLocaleString()}
           </span>
         ) : null}
-        <span className="rounded-full border border-[var(--color-border)] px-2.5 py-1">{tool.license}</span>
+        <span className={chipClass}>{tool.license}</span>
+        {tool.pricingModel ? <span className={chipClass}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
+        {tool.version ? <span className={chipClass}>Version {tool.version}</span> : null}
         {tool.lastRelease ? <span>Released {tool.lastRelease}</span> : null}
       </div>
 
@@ -91,22 +113,28 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         </div>
       ) : null}
 
-      <div className="mt-4 flex items-center justify-between gap-3">
-        {tool.version ? (
-          <code className="rounded-md bg-[var(--color-bg-surface)] px-2 py-1 text-[13px] text-[var(--color-text-primary)]">{tool.version}</code>
-        ) : null}
-
-        {docsHref ? (
+      <div className="mt-4 flex flex-wrap items-center justify-end gap-3">
+        {hasSeparateWebsite ? (
           <a
-            href={docsHref.startsWith("/") ? withBasePath(docsHref) : docsHref}
+            href={websiteHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:underline"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] hover:underline"
           >
-            {tool.websiteUrl && !tool.docsUrl ? <Globe size={14} /> : <ExternalLink size={14} />}
-            Docs
+            <Globe size={14} />
+            Website
           </a>
         ) : null}
+
+        <a
+          href={docsHref}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:underline"
+        >
+          <ExternalLink size={14} />
+          Docs
+        </a>
       </div>
     </article>
   );
