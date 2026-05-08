@@ -15,6 +15,7 @@ const GENERIC_STRENGTH_PATTERNS = [
   /^large adoption$/i,
   /^large open source adoption$/i,
   /^active ecosystem$/i,
+  /^active project status$/i,
   /^commercial support$/i,
   /^free oss availability$/i,
   /^simple oss availability$/i,
@@ -28,10 +29,20 @@ const toolsJson = JSON.parse(await fs.readFile(toolsPath, "utf8"));
 const tools = toolsJson.tools ?? [];
 
 const genericStrengthFindings = [];
+const missingStrengthFindings = [];
 const missingCloudBadgeCandidates = [];
 
 for (const tool of tools) {
   const strengths = tool.strengths ?? [];
+
+  if (strengths.length === 0) {
+    missingStrengthFindings.push({
+      id: tool.id,
+      name: tool.name,
+      category: tool.category,
+    });
+  }
+
   const genericStrengthHits = strengths.filter((strength) =>
     GENERIC_STRENGTH_PATTERNS.some((pattern) => pattern.test(strength)),
   );
@@ -45,7 +56,7 @@ for (const tool of tools) {
     });
   }
 
-  if (!tool.clouds?.length && !tool.cloudBadgeReviewed) {
+  if (!tool.clouds?.length && !tool.cloudBadgeReviewedAt) {
     missingCloudBadgeCandidates.push({
       id: tool.id,
       name: tool.name,
@@ -53,6 +64,14 @@ for (const tool of tools) {
       type: tool.type,
       vendor: tool.vendor ?? null,
     });
+  }
+}
+
+if (missingStrengthFindings.length > 0) {
+  console.error("Tool-card strengths missing:");
+
+  for (const finding of missingStrengthFindings) {
+    console.error(`- ${finding.category}/${finding.id} (${finding.name})`);
   }
 }
 
@@ -73,10 +92,15 @@ if (missingCloudBadgeCandidates.length > 0) {
   }
 }
 
-if (genericStrengthFindings.length > 0) {
+const hasFailingFindings = missingStrengthFindings.length > 0 || genericStrengthFindings.length > 0;
+
+if (hasFailingFindings) {
+  console.error(
+    `Tool-card data check FAILED: ${missingStrengthFindings.length} tools missing strengths; ${genericStrengthFindings.length} tools still using generic strength placeholders.`,
+  );
   process.exitCode = 1;
 } else if (missingCloudBadgeCandidates.length > 0) {
-  console.log("Tool-card data check passed: no generic strength placeholders found.");
+  console.log("Tool-card data check passed: no missing/generic strengths; cloud-badge candidates still need review.");
 } else {
-  console.log("Tool-card data check passed: no generic strength placeholders found, and the current cloud-badge review set is complete.");
+  console.log("Tool-card data check passed: no missing/generic strengths, and the current cloud-badge review set is complete.");
 }

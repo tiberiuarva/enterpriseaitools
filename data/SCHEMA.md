@@ -26,7 +26,8 @@ Top-level shape:
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |
 | `practitionerNote` | string | no | Concise editorial implementation note grounded in the tool's deployment fit, trade-offs, or enterprise usage pattern |
-| `clouds` | string[] | no | Any of `azure`, `aws`, `gcp` |
+| `clouds` | string[] | no | Any of `azure`, `aws`, `gcp` when the tool is meaningfully cloud-specific in the tracker UI |
+| `cloudBadgeReviewedAt` | string | no | Calendar ISO date (`YYYY-MM-DD`) for an explicit cloud-badge review when the tool is intentionally left cloud-neutral |
 | `license` | string | yes | Exact license label |
 | `licenseWarning` | string | no | Caveat for source-available, proprietary core, branding, etc. |
 | `githubUrl` | string | no | Official repository URL |

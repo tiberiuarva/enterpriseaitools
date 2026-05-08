@@ -931,7 +931,7 @@
       "strengths": [
         "Purpose-built guardrails DSL",
         "Conversation flow controls",
-        "Active project status"
+        "NVIDIA ecosystem alignment"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
@@ -1088,7 +1088,7 @@
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
       "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces.",
-      "cloudBadgeReviewed": true
+      "cloudBadgeReviewedAt": "2026-05-08"
     },
     {
       "id": "arthur-genai-engine",
@@ -1117,7 +1117,7 @@
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
       "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone.",
-      "cloudBadgeReviewed": true
+      "cloudBadgeReviewedAt": "2026-05-08"
     },
     {
       "id": "github-copilot",
@@ -1147,9 +1147,7 @@
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
       "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path.",
-      "clouds": [
-        "azure"
-      ]
+      "cloudBadgeReviewedAt": "2026-05-08"
     },
     {
       "id": "amazon-q-developer",
@@ -1244,7 +1242,7 @@
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
       "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots.",
-      "cloudBadgeReviewed": true
+      "cloudBadgeReviewedAt": "2026-05-08"
     },
     {
       "id": "windsurf",
@@ -1275,7 +1273,7 @@
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
       "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
-      "cloudBadgeReviewed": true
+      "cloudBadgeReviewedAt": "2026-05-08"
     },
     {
       "id": "microsoft-365-copilot",
