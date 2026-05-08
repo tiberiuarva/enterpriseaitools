@@ -127,7 +127,7 @@
       "description": "Open source multi-agent framework focused on autonomous teams and task coordination.",
       "strengths": [
         "Large open source adoption",
-        "MIT licensed",
+        "Crew-based task coordination",
         "Built for multi-agent coordination"
       ],
       "license": "MIT",
@@ -161,8 +161,8 @@
       "vendor": "Microsoft",
       "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
       "strengths": [
-        "Large adoption",
-        "MIT licensed",
+        "Conversable agent patterns",
+        "Microsoft research lineage",
         "Well-known multi-agent patterns"
       ],
       "license": "MIT",
@@ -198,7 +198,7 @@
       "description": "Agent and retrieval framework with strong indexing, data connectors, and orchestration support.",
       "strengths": [
         "Strong retrieval tooling",
-        "MIT licensed",
+        "Rich data connectors",
         "Large ecosystem"
       ],
       "license": "MIT",
@@ -232,7 +232,7 @@
       "description": "Microsoft orchestration SDK evolving into the unified Microsoft Agent Framework direction.",
       "strengths": [
         "Broad language support",
-        "MIT licensed",
+        "Plugin and memory abstractions",
         "Strong Microsoft ecosystem fit"
       ],
       "license": "MIT",
@@ -267,7 +267,7 @@
       "vendor": "Microsoft",
       "description": "Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.",
       "strengths": [
-        "MIT licensed",
+        "Multi-language SDKs",
         "Python and .NET support",
         "Graph-based workflows and DevUI"
       ],
@@ -311,7 +311,7 @@
       "strengths": [
         "Popular graph abstraction",
         "Strong agent workflow patterns",
-        "Active ecosystem"
+        "LangChain ecosystem fit"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
@@ -377,9 +377,9 @@
       "vendor": "OpenAI",
       "description": "Production successor to Swarm for agentic OpenAI workflows with broader model support.",
       "strengths": [
-        "MIT licensed",
+        "Hosted tracing support",
         "Production successor to Swarm",
-        "Broad LLM compatibility"
+        "Handoffs and tool orchestration"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
@@ -413,7 +413,7 @@
       "vendor": "BrainBlend AI",
       "description": "Minimalist agent framework emphasizing composability and predictable building blocks.",
       "strengths": [
-        "MIT licensed",
+        "Schema-first building blocks",
         "Composable design",
         "Focused API surface"
       ],
@@ -446,9 +446,9 @@
       "vendor": "Linux Foundation",
       "description": "Open agent framework formerly known as Bee Agent Framework, now under Linux Foundation governance.",
       "strengths": [
-        "Apache 2.0 licensed",
-        "Foundation governance",
-        "Active rename transition"
+        "Linux Foundation governance",
+        "Agent-oriented framework primitives",
+        "IBM/BeeAI lineage"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/i-am-bee/beeai-framework",
@@ -581,7 +581,7 @@
       "description": "Workflow automation platform with strong self-hosting support and broad integration coverage.",
       "strengths": [
         "Very large adoption",
-        "Self-hostable",
+        "Self-hosted or cloud deployment",
         "Strong workflow automation ecosystem"
       ],
       "license": "Sustainable Use License",
@@ -617,9 +617,9 @@
       "vendor": "Paperclip",
       "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
       "strengths": [
-        "MIT licensed",
+        "Persistent multi-agent control plane",
         "Built-in budgets and governance",
-        "Persistent multi-agent control plane"
+        "Human approval gates"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/paperclipai/paperclip",
@@ -658,9 +658,9 @@
       "vendor": "LangFlow / DataStax",
       "description": "Visual flow builder for LLM pipelines and agent workflows with self-hosting support.",
       "strengths": [
-        "Large adoption",
-        "MIT licensed",
-        "Visual workflow builder"
+        "Visual workflow canvas",
+        "LangChain ecosystem fit",
+        "Self-hostable deployment"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
@@ -694,8 +694,8 @@
       "vendor": "Dify",
       "description": "Application development and workflow platform for LLM apps with plugin and enterprise features.",
       "strengths": [
-        "Large adoption",
-        "Self-hostable",
+        "App + workflow surface in one stack",
+        "Self-hostable deployment",
         "Plugin architecture"
       ],
       "license": "Modified Apache 2.0",
@@ -730,9 +730,9 @@
       "vendor": "Flowise",
       "description": "Low-code orchestration and agent workflow builder now under Workday ownership.",
       "strengths": [
-        "Apache 2.0 licensed",
+        "Apache 2.0 open source",
         "Visual workflows",
-        "Self-hostable"
+        "Self-hostable deployment"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
@@ -764,9 +764,9 @@
       "vendor": "deepset",
       "description": "LLM pipeline and retrieval orchestration framework rebranded toward the Haystack Enterprise Platform story.",
       "strengths": [
-        "Apache 2.0 licensed",
+        "Apache 2.0 open source",
         "Mature pipeline patterns",
-        "Self-hostable"
+        "Strong retrieval orientation"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
@@ -799,9 +799,9 @@
       "vendor": "Rivet",
       "description": "Workflow builder for AI pipelines with desktop-first self-hosting support.",
       "strengths": [
-        "MIT licensed",
+        "Visual pipeline builder",
         "Desktop-friendly",
-        "Visual workflow builder"
+        "MIT open source"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/Ironclad/rivet",
@@ -929,9 +929,9 @@
       "vendor": "NVIDIA",
       "description": "Open source guardrails framework for LLM and agent safety with a dedicated Colang DSL.",
       "strengths": [
-        "Apache 2.0 licensed",
-        "Active project status",
-        "Purpose-built guardrails DSL"
+        "Purpose-built guardrails DSL",
+        "Conversation flow controls",
+        "Active project status"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
@@ -966,9 +966,9 @@
       "vendor": "Guardrails AI",
       "description": "Validation-focused guardrails framework with a large validator ecosystem and freemium model.",
       "strengths": [
-        "MIT licensed",
         "50+ validators",
-        "Active ecosystem"
+        "Structured output guardrails",
+        "Python-first integration"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/guardrails-ai/guardrails",
@@ -1000,8 +1000,8 @@
       "vendor": "Palo Alto Networks",
       "description": "Open source safety filtering toolkit whose development has slowed following acquisition activity.",
       "strengths": [
-        "MIT licensed",
-        "Free OSS availability",
+        "Prompt/output scanning",
+        "PII and toxicity detectors",
         "Useful safety primitives"
       ],
       "license": "MIT",
@@ -1035,8 +1035,8 @@
       "vendor": "Palo Alto Networks",
       "description": "Prompt injection defense project archived in May 2025 and not recommended for new projects.",
       "strengths": [
-        "Apache 2.0 licensed",
-        "Simple OSS availability",
+        "Prompt-injection focus",
+        "Archived OSS reference point",
         "Historically notable"
       ],
       "license": "Apache 2.0",
@@ -1070,7 +1070,7 @@
       "vendor": "Check Point",
       "description": "Commercial LLM security layer integrating into broader cloud security offerings after acquisition.",
       "strengths": [
-        "Commercial support",
+        "Managed prompt-injection defense",
         "Security platform alignment",
         "Freemium entry path"
       ],
@@ -1098,7 +1098,7 @@
       "description": "Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.",
       "strengths": [
         "Enterprise governance focus",
-        "Commercial support",
+        "Observability and evaluation fit",
         "Agent governance positioning"
       ],
       "license": "Proprietary",
@@ -1144,7 +1144,10 @@
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path."
+      "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path.",
+      "clouds": [
+        "azure"
+      ]
     },
     {
       "id": "amazon-q-developer",
@@ -1250,7 +1253,7 @@
       "description": "Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.",
       "strengths": [
         "Standalone IDE",
-        "Known coding assistant brand",
+        "Agentic coding workflows",
         "Enterprise path available"
       ],
       "license": "Proprietary",
