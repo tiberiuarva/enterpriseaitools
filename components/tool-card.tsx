@@ -5,6 +5,14 @@ import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
 import type { PricingModel, Tool } from "@/lib/types";
 import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
+const CHIP_CLASS = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
+const PRICING_MODEL_LABELS: Record<PricingModel, string> = {
+  free: "Free",
+  freemium: "Freemium",
+  paid: "Paid",
+  contact: "Contact sales",
+};
+
 function formatCloudName(cloud: string) {
   const normalized = cloud.trim().toLowerCase();
 
@@ -16,27 +24,21 @@ function formatCloudName(cloud: string) {
 }
 
 function formatPricingModelLabel(pricingModel: PricingModel) {
-  switch (pricingModel) {
-    case "free":
-      return "Free";
-    case "freemium":
-      return "Freemium";
-    case "paid":
-      return "Paid";
-    case "contact":
-      return "Contact sales";
-  }
+  return PRICING_MODEL_LABELS[pricingModel];
 }
 
 function normalizeHref(href: string) {
-  return href.startsWith("/") ? withBasePath(href) : href;
+  return href.startsWith("/") && !href.startsWith("//") ? withBasePath(href) : href;
+}
+
+function normalizeComparableHref(href: string) {
+  return href.replace(/\/+$/, "");
 }
 
 export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: boolean }) {
-  const chipClass = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
   const docsHref = normalizeHref(tool.docsUrl);
   const websiteHref = tool.websiteUrl ? normalizeHref(tool.websiteUrl) : undefined;
-  const hasSeparateWebsite = websiteHref && websiteHref !== docsHref;
+  const hasSeparateWebsite = websiteHref ? normalizeComparableHref(websiteHref) !== normalizeComparableHref(docsHref) : false;
   const visibleStrengths = tool.strengths.slice(0, compact ? 2 : 3);
   return (
     <article
@@ -100,10 +102,10 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             {tool.githubStars.toLocaleString()}
           </span>
         ) : null}
-        <span className={chipClass}>{tool.license}</span>
-        {tool.pricingModel ? <span className={chipClass}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
-        {tool.version ? <span className={chipClass}>Version {tool.version}</span> : null}
-        {tool.lastRelease ? <span>Released {tool.lastRelease}</span> : null}
+        <span className={CHIP_CLASS}>{tool.license}</span>
+        {tool.pricingModel ? <span className={CHIP_CLASS}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
+        {tool.version ? <span className={CHIP_CLASS}>Version {tool.version}</span> : null}
+        {tool.lastRelease ? <span className={CHIP_CLASS}>Released {tool.lastRelease}</span> : null}
       </div>
 
       {tool.status !== "active" ? (
