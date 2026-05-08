@@ -34,6 +34,7 @@ export type Tool = {
   strengths: string[];
   practitionerNote?: string;
   clouds?: string[];
+  cloudBadgeReviewedAt?: ISODateString;
   license: string;
   licenseWarning?: string;
   githubUrl?: string;
