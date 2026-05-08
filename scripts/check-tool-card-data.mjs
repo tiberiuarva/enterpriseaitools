@@ -1,29 +1,28 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 
-const repoRoot = path.resolve(process.cwd());
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(scriptDir, "..");
 const toolsPath = path.join(repoRoot, "data", "tools.json");
 
-const GENERIC_STRENGTHS = new Set([
-  "MIT licensed",
-  "Apache 2.0 licensed",
-  "Large adoption",
-  "Active ecosystem",
-  "Commercial support",
-  "Free OSS availability",
-  "Self-hostable",
-  "Visual workflow builder",
-  "Known coding assistant brand",
-  "Simple OSS availability",
-]);
-
-const REVIEWED_NO_CLOUD_BADGE = new Set([
-  "lakera-guard",
-  "arthur-genai-engine",
-  "cursor",
-  "windsurf",
-]);
+const GENERIC_STRENGTH_PATTERNS = [
+  /^mit licensed$/i,
+  /^mit open source$/i,
+  /^apache 2\.0 licensed$/i,
+  /^apache 2\.0 open source$/i,
+  /^large adoption$/i,
+  /^large open source adoption$/i,
+  /^active ecosystem$/i,
+  /^commercial support$/i,
+  /^free oss availability$/i,
+  /^simple oss availability$/i,
+  /^visual workflow builder$/i,
+  /^known coding assistant brand$/i,
+  /^self-host(?:able|ed)(?: deployment)?$/i,
+  /^self-hosted or cloud deployment$/i,
+];
 
 const toolsJson = JSON.parse(await fs.readFile(toolsPath, "utf8"));
 const tools = toolsJson.tools ?? [];
@@ -32,7 +31,10 @@ const genericStrengthFindings = [];
 const missingCloudBadgeCandidates = [];
 
 for (const tool of tools) {
-  const genericStrengthHits = (tool.strengths ?? []).filter((strength) => GENERIC_STRENGTHS.has(strength));
+  const strengths = tool.strengths ?? [];
+  const genericStrengthHits = strengths.filter((strength) =>
+    GENERIC_STRENGTH_PATTERNS.some((pattern) => pattern.test(strength)),
+  );
 
   if (genericStrengthHits.length > 0) {
     genericStrengthFindings.push({
@@ -43,7 +45,7 @@ for (const tool of tools) {
     });
   }
 
-  if (!tool.clouds?.length && !REVIEWED_NO_CLOUD_BADGE.has(tool.id)) {
+  if (!tool.clouds?.length && !tool.cloudBadgeReviewed) {
     missingCloudBadgeCandidates.push({
       id: tool.id,
       name: tool.name,
@@ -62,18 +64,19 @@ if (genericStrengthFindings.length > 0) {
   }
 }
 
+// Advisory only for this incremental pass: missing cloud badges are reported for review, not CI-failing yet.
 if (missingCloudBadgeCandidates.length > 0) {
   console.log("Cloud badge review candidates (reported, not failing):");
 
   for (const finding of missingCloudBadgeCandidates) {
     console.log(`- ${finding.category}/${finding.id} [${finding.type}] ${finding.name}${finding.vendor ? ` — ${finding.vendor}` : ""}`);
   }
-} else {
-  console.log("Cloud badge review complete for the current tool-card pass.");
 }
 
 if (genericStrengthFindings.length > 0) {
   process.exitCode = 1;
-} else {
+} else if (missingCloudBadgeCandidates.length > 0) {
   console.log("Tool-card data check passed: no generic strength placeholders found.");
+} else {
+  console.log("Tool-card data check passed: no generic strength placeholders found, and the current cloud-badge review set is complete.");
 }

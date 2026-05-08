@@ -126,7 +126,7 @@
       "vendor": "crewAI Inc.",
       "description": "Open source multi-agent framework focused on autonomous teams and task coordination.",
       "strengths": [
-        "Large open source adoption",
+        "Large community ecosystem",
         "Crew-based task coordination",
         "Built for multi-agent coordination"
       ],
@@ -580,9 +580,9 @@
       "vendor": "n8n",
       "description": "Workflow automation platform with strong self-hosting support and broad integration coverage.",
       "strengths": [
-        "Very large adoption",
-        "Self-hosted or cloud deployment",
-        "Strong workflow automation ecosystem"
+        "Large integration catalog",
+        "Strong workflow automation ecosystem",
+        "Low-code orchestration builder"
       ],
       "license": "Sustainable Use License",
       "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
@@ -660,7 +660,7 @@
       "strengths": [
         "Visual workflow canvas",
         "LangChain ecosystem fit",
-        "Self-hostable deployment"
+        "API and playground handoff"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
@@ -695,7 +695,7 @@
       "description": "Application development and workflow platform for LLM apps with plugin and enterprise features.",
       "strengths": [
         "App + workflow surface in one stack",
-        "Self-hostable deployment",
+        "Built-in BaaS-style app publishing",
         "Plugin architecture"
       ],
       "license": "Modified Apache 2.0",
@@ -730,9 +730,9 @@
       "vendor": "Flowise",
       "description": "Low-code orchestration and agent workflow builder now under Workday ownership.",
       "strengths": [
-        "Apache 2.0 open source",
-        "Visual workflows",
-        "Self-hostable deployment"
+        "Low-code orchestration builder",
+        "Chatflow + agent workflow support",
+        "Wide model/provider connectivity"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
@@ -764,9 +764,9 @@
       "vendor": "deepset",
       "description": "LLM pipeline and retrieval orchestration framework rebranded toward the Haystack Enterprise Platform story.",
       "strengths": [
-        "Apache 2.0 open source",
         "Mature pipeline patterns",
-        "Strong retrieval orientation"
+        "Strong retrieval orientation",
+        "Production-oriented evaluation tooling"
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
@@ -801,7 +801,7 @@
       "strengths": [
         "Visual pipeline builder",
         "Desktop-friendly",
-        "MIT open source"
+        "Prompt graph debugging"
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/Ironclad/rivet",
@@ -1087,7 +1087,8 @@
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces."
+      "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces.",
+      "cloudBadgeReviewed": true
     },
     {
       "id": "arthur-genai-engine",
@@ -1115,7 +1116,8 @@
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone."
+      "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone.",
+      "cloudBadgeReviewed": true
     },
     {
       "id": "github-copilot",
@@ -1241,7 +1243,8 @@
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots."
+      "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots.",
+      "cloudBadgeReviewed": true
     },
     {
       "id": "windsurf",
@@ -1271,7 +1274,8 @@
       "logoKind": "fallback",
       "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
       "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing."
+      "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
+      "cloudBadgeReviewed": true
     },
     {
       "id": "microsoft-365-copilot",
