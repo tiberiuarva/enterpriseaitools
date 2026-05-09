@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Prohibited AI practices and AI literacy",
+    "appliesOn": "2025-02-02",
+    "summary": "Already applicable."
+  },
+  {
+    "label": "Governance rules and general-purpose AI model obligations",
+    "appliesOn": "2025-08-02",
+    "summary": "Already applicable."
+  },
+  {
+    "label": "Most AI Act obligations",
+    "appliesOn": "2026-08-02",
+    "summary": "Broad applicability date for most remaining AI Act obligations."
+  },
+  {
+    "label": "Certain remaining high-risk AI obligations",
+    "appliesOn": "2027-08-02",
+    "summary": "Final high-risk obligations apply."
+  }
+]

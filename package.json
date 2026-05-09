@@ -2,10 +2,14 @@
   "name": "enterpriseai-tools",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-seo-artifacts.mjs && next build",
     "lint": "eslint",
+    "test:eu-ai-act": "node --experimental-strip-types --test lib/eu-ai-act.test.ts",
     "check-seo-readiness": "node scripts/check-seo-readiness.mjs",
     "check-live-performance": "node scripts/check-live-performance.mjs",
     "check-logo-provenance": "node scripts/check-logo-provenance.mjs",

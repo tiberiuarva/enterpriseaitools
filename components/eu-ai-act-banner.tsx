@@ -1,0 +1,134 @@
+"use client";
+
+import { useEffect, useId, useState } from "react";
+import { ArrowRight, CalendarClock, Info } from "lucide-react";
+import {
+  EU_AI_ACT_OFFICIAL_URL,
+  formatUtcDate,
+  getCurrentAndNextMilestones,
+} from "@/lib/eu-ai-act";
+
+function getMsUntilNextUtcDay(now: Date) {
+  const nextUtcMidnight = Date.UTC(
+    now.getUTCFullYear(),
+    now.getUTCMonth(),
+    now.getUTCDate() + 1,
+  );
+
+  return nextUtcMidnight - now.getTime();
+}
+
+function useNow() {
+  const [now, setNow] = useState<Date | null>(null);
+
+  useEffect(() => {
+    let timer: number | undefined;
+
+    const scheduleNextUpdate = () => {
+      const nextNow = new Date();
+      setNow(nextNow);
+      timer = window.setTimeout(scheduleNextUpdate, getMsUntilNextUtcDay(nextNow));
+    };
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        if (timer !== undefined) {
+          window.clearTimeout(timer);
+        }
+        scheduleNextUpdate();
+      }
+    };
+
+    scheduleNextUpdate();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (timer !== undefined) {
+        window.clearTimeout(timer);
+      }
+    };
+  }, []);
+
+  return now;
+}
+
+export function EuAiActBanner() {
+  const bannerLabelId = useId();
+  const now = useNow();
+  // Keep SSR and the first client render byte-stable on this static site.
+  // The live UTC-sensitive milestone state only appears after hydration.
+  const milestoneState = now ? getCurrentAndNextMilestones(now) : null;
+  const daysLeft = milestoneState?.nextMilestone.daysUntil ?? null;
+  const isActiveToday = daysLeft === 0;
+  const milestonePrefix = milestoneState
+    ? milestoneState.hasUpcomingMilestone
+      ? isActiveToday
+        ? "Today's milestone:"
+        : "Next milestone:"
+      : "Latest published milestone:"
+    : null;
+  const statusLabel = milestoneState
+    ? milestoneState.hasUpcomingMilestone
+      ? isActiveToday
+        ? "Applies today (UTC)."
+        : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
+      : "Latest published milestone already applies."
+    : "Countdown loads after hydration.";
+
+  const latestCurrentMilestone = milestoneState?.hasUpcomingMilestone
+    ? milestoneState.currentMilestones.at(-1)
+    : null;
+  const currentSummary = latestCurrentMilestone
+    ? `Already in force: ${latestCurrentMilestone.label}.`
+    : null;
+  const milestoneLabel = milestoneState
+    ? `${milestoneState.nextMilestone.label} on ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}.`
+    : null;
+
+  return (
+    <aside
+      aria-labelledby={bannerLabelId}
+      className="min-h-[92px] border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]"
+    >
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="flex min-w-0 flex-1 gap-3">
+          <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
+            <Info size={18} aria-hidden="true" />
+          </div>
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-[var(--color-text-primary)]">
+              <span id={bannerLabelId}>EU AI Act countdown</span>
+              <span className="inline-flex min-w-[18ch] items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-primary)]">
+                <CalendarClock size={12} className="mr-1" aria-hidden="true" />
+                {statusLabel}
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+              {milestoneState ? (
+                <>
+                  <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span>{" "}
+                  {milestoneLabel} {milestoneState.nextMilestone.summary}
+                  {currentSummary ? ` ${currentSummary}` : ""}
+                </>
+              ) : (
+                "Official milestone copy loads after hydration."
+              )}
+            </p>
+          </div>
+        </div>
+
+        <a
+          href={EU_AI_ACT_OFFICIAL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:border-[var(--color-primary)] focus-visible:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+        >
+          Official timeline
+          <span className="sr-only"> (opens in a new tab)</span>
+          <ArrowRight size={14} aria-hidden="true" />
+        </a>
+      </div>
+    </aside>
+  );
+}
