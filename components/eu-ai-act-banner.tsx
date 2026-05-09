@@ -56,27 +56,33 @@ function useNow() {
 export function EuAiActBanner() {
   const bannerLabelId = useId();
   const now = useNow();
-  const { nextMilestone, currentMilestones, hasUpcomingMilestone } = getCurrentAndNextMilestones(now ?? undefined);
-  const daysLeft = nextMilestone.daysUntil;
+  const milestoneState = now ? getCurrentAndNextMilestones(now) : null;
+  const daysLeft = milestoneState?.nextMilestone.daysUntil ?? null;
   const isActiveToday = daysLeft === 0;
-  const milestonePrefix = hasUpcomingMilestone
-    ? isActiveToday
-      ? "Today's milestone:"
-      : "Next milestone:"
-    : "Latest published milestone:";
-  const statusLabel = now
-    ? hasUpcomingMilestone
+  const milestonePrefix = milestoneState
+    ? milestoneState.hasUpcomingMilestone
+      ? isActiveToday
+        ? "Today's milestone:"
+        : "Next milestone:"
+      : "Latest published milestone:"
+    : null;
+  const statusLabel = milestoneState
+    ? milestoneState.hasUpcomingMilestone
       ? isActiveToday
         ? "Applies today (UTC)."
         : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
       : "Latest published milestone already applies."
     : "Countdown loads after hydration.";
 
-  const latestCurrentMilestone = hasUpcomingMilestone ? currentMilestones.at(-1) : null;
+  const latestCurrentMilestone = milestoneState?.hasUpcomingMilestone
+    ? milestoneState.currentMilestones.at(-1)
+    : null;
   const currentSummary = latestCurrentMilestone
     ? `Already in force: ${latestCurrentMilestone.label}.`
     : null;
-  const milestoneLabel = `${nextMilestone.label} on ${formatUtcDate(nextMilestone.appliesOn)}.`;
+  const milestoneLabel = milestoneState
+    ? `${milestoneState.nextMilestone.label} on ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}.`
+    : null;
 
   return (
     <aside
@@ -97,9 +103,15 @@ export function EuAiActBanner() {
               </span>
             </div>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-              <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span>{" "}
-              {milestoneLabel} {nextMilestone.summary}
-              {currentSummary ? ` ${currentSummary}` : ""}
+              {milestoneState ? (
+                <>
+                  <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span>{" "}
+                  {milestoneLabel} {milestoneState.nextMilestone.summary}
+                  {currentSummary ? ` ${currentSummary}` : ""}
+                </>
+              ) : (
+                "Official milestone copy loads after hydration."
+              )}
             </p>
           </div>
         </div>
