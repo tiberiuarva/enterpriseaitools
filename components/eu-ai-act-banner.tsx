@@ -18,8 +18,8 @@ function getMsUntilNextUtcDay(now: Date) {
   return nextUtcMidnight - now.getTime();
 }
 
-function useNow() {
-  const [now, setNow] = useState<Date | null>(null);
+function useNow(initialNowIso: string) {
+  const [now, setNow] = useState(() => new Date(initialNowIso));
 
   useEffect(() => {
     let timer: number | undefined;
@@ -53,48 +53,12 @@ function useNow() {
   return now;
 }
 
-export function EuAiActBanner() {
-  const now = useNow();
+type EuAiActBannerProps = {
+  initialNowIso: string;
+};
 
-  if (!now) {
-    return (
-      <aside
-        aria-label="EU AI Act countdown"
-        className="min-h-[92px] border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]"
-      >
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-          <div className="flex min-w-0 flex-1 gap-3">
-            <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
-              <AlertTriangle size={18} aria-hidden="true" />
-            </div>
-            <div className="min-w-0">
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-[var(--color-text-primary)]">
-                <span>EU AI Act countdown</span>
-                <span className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-primary)]">
-                  <CalendarClock size={12} className="mr-1" aria-hidden="true" />
-                  Loading countdown…
-                </span>
-              </div>
-              <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-                Tracking the European Commission&apos;s published EU AI Act timeline in UTC.
-              </p>
-            </div>
-          </div>
-
-          <a
-            href={EU_AI_ACT_OFFICIAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-          >
-            Official timeline
-            <ArrowRight size={14} aria-hidden="true" />
-          </a>
-        </div>
-      </aside>
-    );
-  }
-
+export function EuAiActBanner({ initialNowIso }: EuAiActBannerProps) {
+  const now = useNow(initialNowIso);
   const { nextMilestone, currentMilestones, hasUpcomingMilestone } = getCurrentAndNextMilestones(now);
   const daysLeft = nextMilestone.daysUntil;
   const isActiveToday = daysLeft === 0;
@@ -133,7 +97,8 @@ export function EuAiActBanner() {
               </span>
             </div>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-              <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span> {nextMilestone.label} on {formatUtcDate(nextMilestone.appliesOn)}. {nextMilestone.summary}
+              <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span>{" "}
+              {nextMilestone.label} on {formatUtcDate(nextMilestone.appliesOn)}. {nextMilestone.summary}
               {currentSummary ? ` ${currentSummary}` : ""}
             </p>
           </div>
@@ -143,7 +108,7 @@ export function EuAiActBanner() {
           href={EU_AI_ACT_OFFICIAL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+          className="inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:border-[var(--color-primary)] focus-visible:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
         >
           Official timeline
           <ArrowRight size={14} aria-hidden="true" />

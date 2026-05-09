@@ -1,6 +1,6 @@
 export const EU_AI_ACT_OFFICIAL_URL = "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai";
 
-// Source of truth for milestone labels/dates: European Commission AI Act timeline above.
+// Source of truth for milestone labels/dates: European Commission AI Act timeline.
 
 export type EuAiActMilestone = {
   label: string;
@@ -31,7 +31,7 @@ const euAiActMilestones: EuAiActMilestone[] = [
   },
 ];
 
-function startOfUtcDay(value: Date) {
+function startOfUtcDayMs(value: Date) {
   return Date.UTC(value.getUTCFullYear(), value.getUTCMonth(), value.getUTCDate());
 }
 
@@ -49,8 +49,8 @@ export function formatUtcDate(dateString: string) {
 }
 
 export function getDaysUntil(dateString: string, now = new Date()) {
-  const target = startOfUtcDay(parseUtcDate(dateString));
-  const today = startOfUtcDay(now);
+  const target = startOfUtcDayMs(parseUtcDate(dateString));
+  const today = startOfUtcDayMs(now);
   return (target - today) / 86_400_000;
 }
 
