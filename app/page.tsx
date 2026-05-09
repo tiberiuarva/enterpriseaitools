@@ -12,6 +12,7 @@ import {
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformStrip } from "@/components/platform-strip";
+import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { buildMetadata } from "@/lib/metadata";
@@ -165,6 +166,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <ProtocolTrackingSection compact />
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {categoryCards.map((category) => (

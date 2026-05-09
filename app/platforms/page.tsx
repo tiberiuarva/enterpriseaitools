@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformMark } from "@/components/platform-mark";
+import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { RelatedHubs } from "@/components/related-hubs";
 import { VendorComparisonTable } from "@/components/vendor-comparison-table";
 import { WarningBox } from "@/components/warning-box";
@@ -158,6 +159,8 @@ export default function PlatformsPage() {
             );
           })}
         </section>
+
+        <ProtocolTrackingSection />
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>
