@@ -50,6 +50,11 @@ export default function AboutPage() {
             <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
               The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. The intended reader is not looking for a generic AI tools list; they are trying to decide what can survive procurement, security review, and production ownership.
             </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>Grounded in enterprise financial services and regulated delivery constraints.</li>
+              <li>Biased toward architecture, ownership, and control-plane trade-offs over launch marketing.</li>
+              <li>Claims are held to evidence standards before they make it into the dataset.</li>
+            </ul>
             <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
               Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
             </p>
@@ -63,6 +68,30 @@ export default function AboutPage() {
               <li>Security, governance, and procurement stakeholders reviewing tooling claims.</li>
               <li>Practitioners who need source-backed trade-offs, not vendor marketing.</li>
             </ul>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">Why this exists</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Most AI tooling lists are too shallow</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                They usually collapse managed platforms, point products, and open source frameworks into one undifferentiated catalog. That hides the control-plane and operating-model decisions that matter most in enterprise delivery.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Enterprise buyers need better filters</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                This tracker focuses on what changes implementation risk: identity boundaries, governance posture, deployment ownership, maturity signals, and how strongly a tool depends on a specific cloud foundation.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">The goal is decision support, not hype</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                The site is meant to help teams narrow serious options faster, then follow the source links before repeating any claim internally or standardising a tool.
+              </p>
+            </div>
           </div>
         </section>
 
