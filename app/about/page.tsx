@@ -9,14 +9,14 @@ import { buildMetadata, siteUrl } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "About enterpriseai.tools",
   description:
-    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.",
+    "Practitioner-focused background, methodology, and sourcing standards for the enterpriseai.tools enterprise AI tracker.",
   path: "/about",
 });
 
 export default function AboutPage() {
   const pageUrl = `${siteUrl}/about/`;
   const description =
-    "Project background, methodology, inclusion criteria, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI landscape tracker.";
+    "Practitioner-focused background, methodology, and sourcing standards for the enterpriseai.tools enterprise AI tracker.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -44,11 +44,55 @@ export default function AboutPage() {
           </p>
         </section>
 
+        <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.9fr)]">
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">Editor</h2>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              The editorial lens prioritizes deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. The intended reader is not looking for a generic AI tools list; they are trying to decide what can survive procurement, security review, and production ownership.
+            </p>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>Grounded in enterprise financial services and regulated delivery constraints.</li>
+              <li>Biased toward architecture, ownership, and control-plane trade-offs over launch marketing.</li>
+              <li>Claims are held to evidence standards before they make it into the dataset.</li>
+            </ul>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noopener noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">Who this is for</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>Platform and AI architects comparing delivery stacks.</li>
+              <li>Engineering leaders narrowing enterprise-safe defaults.</li>
+              <li>Security, governance, and procurement stakeholders reviewing tooling claims.</li>
+              <li>Practitioners comparing tools through delivery trade-offs rather than feature-list marketing.</li>
+            </ul>
+          </div>
+        </section>
+
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <h2 className="text-lg font-semibold">Editor</h2>
-          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            The editorial lens prioritises deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments. Connect on <a href="https://www.linkedin.com/in/tiberiuarva/" target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">LinkedIn</a>.
-          </p>
+          <h2 className="text-lg font-semibold">Why this exists</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Most AI tooling lists are too shallow</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                They usually collapse managed platforms, point products, and open source frameworks into one undifferentiated catalog. That hides the control-plane and operating-model decisions that matter most in enterprise delivery.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Enterprise buyers need better filters</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                This tracker focuses on what changes implementation risk: identity boundaries, governance posture, deployment ownership, maturity signals, and how strongly a tool depends on a specific cloud foundation.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">The goal is decision support, not hype</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                The site is meant to help teams narrow serious options faster without flattening important differences in ownership, maturity, and governance posture.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -63,14 +107,39 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-            <h2 className="text-lg font-semibold">What we track</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-              <li><strong>Platforms</strong> &mdash; the three cloud foundation layers.</li>
-              <li><strong>Agents</strong> &mdash; managed agent platforms and open source frameworks.</li>
-              <li><strong>Orchestration</strong> &mdash; workflow engines and automation platforms.</li>
-              <li><strong>Governance</strong> &mdash; guardrails, safety controls, and policy tooling.</li>
-              <li><strong>Assistants</strong> &mdash; coding copilots, productivity assistants, and build-your-own platforms.</li>
-            </ul>
+            <h2 className="text-lg font-semibold">How to use the tracker</h2>
+            <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <li>Start at <strong>Platforms</strong> to understand the cloud control plane and default production path.</li>
+              <li>Move into the category hubs to compare managed vendor options against open source and commercial alternatives.</li>
+              <li>Use practitioner notes and updates to assess maturity, operational fit, and recent market movement.</li>
+              <li>Follow the source links before repeating any claim internally or standardizing a tool.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">What we track</h2>
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Platforms</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">The three cloud foundation layers that shape model access, identity, and production defaults.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Agents</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">Managed agent services and code-first frameworks used to build autonomous or semi-autonomous systems.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Orchestration</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">Workflow engines and automation layers that define execution, approvals, retries, and integration boundaries.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Governance</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">Guardrails, safety controls, and policy tooling that influence whether AI systems can pass enterprise review.</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Assistants</h3>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">Coding copilots, productivity assistants, and build-your-own surfaces used by internal teams and end users.</p>
+            </div>
           </div>
         </section>
 
@@ -99,6 +168,16 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <h2 className="text-lg font-semibold">What this site is not</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+            <li>Not an exhaustive AI company database.</li>
+            <li>Not a benchmark lab or certification authority.</li>
+            <li>Not a substitute for checking the underlying source material yourself.</li>
+            <li>Not a substitute for internal legal, security, or procurement review.</li>
+          </ul>
+        </section>
+
+        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">How we frame the market</h2>
           <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
             <div>
@@ -116,7 +195,7 @@ export default function AboutPage() {
             <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Governance boundary</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                We prioritise signs that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.
+                We prioritize signs that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.
               </p>
             </div>
           </div>
@@ -147,7 +226,7 @@ export default function AboutPage() {
             <a
               href={githubRepoUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label="View GitHub repository in a new tab"
               className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
             >
