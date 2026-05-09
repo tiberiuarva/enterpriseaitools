@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { EuAiActBanner } from "@/components/eu-ai-act-banner";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -12,6 +13,7 @@ export function HomeShell({ lastUpdated, currentPath, children }: HomeShellProps
   return (
     <div className="min-h-screen bg-[var(--color-bg-primary)] text-[var(--color-text-primary)]">
       <Header currentPath={currentPath} />
+      <EuAiActBanner />
       <div className="min-h-[calc(100vh-64px)]">{children}</div>
       <Footer lastUpdated={lastUpdated} />
     </div>
