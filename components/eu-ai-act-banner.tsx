@@ -30,9 +30,20 @@ function useNow() {
       timer = window.setTimeout(scheduleNextUpdate, getMsUntilNextUtcDay(nextNow));
     };
 
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        if (timer !== undefined) {
+          window.clearTimeout(timer);
+        }
+        scheduleNextUpdate();
+      }
+    };
+
     scheduleNextUpdate();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       if (timer !== undefined) {
         window.clearTimeout(timer);
       }
@@ -98,8 +109,9 @@ export function EuAiActBanner() {
       : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
     : "Latest published milestone already applies.";
 
-  const currentSummary = currentMilestones.length
-    ? `${currentMilestones.at(-1)?.label} already applies.`
+  const latestCurrentMilestone = hasUpcomingMilestone ? currentMilestones.at(-1) : null;
+  const currentSummary = latestCurrentMilestone
+    ? `Already in force: ${latestCurrentMilestone.label}.`
     : null;
 
   return (

@@ -62,9 +62,10 @@ export function getCurrentAndNextMilestones(now = new Date()) {
 
   const nextUpcomingMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0);
   const hasUpcomingMilestone = Boolean(nextUpcomingMilestone);
-  const nextMilestone = nextUpcomingMilestone ?? datedMilestones[datedMilestones.length - 1];
+  const nextMilestone = nextUpcomingMilestone ?? datedMilestones.at(-1)!;
   const currentMilestones = datedMilestones.filter((milestone) => milestone.daysUntil < 0);
 
+  // We intentionally surface only the latest already-in-force tranche in banner copy.
   return {
     nextMilestone,
     currentMilestones,
