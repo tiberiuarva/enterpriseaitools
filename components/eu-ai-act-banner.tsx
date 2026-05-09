@@ -8,14 +8,35 @@ import {
   getCurrentAndNextMilestones,
 } from "@/lib/eu-ai-act";
 
+function getMsUntilNextUtcDay(now: Date) {
+  const nextUtcMidnight = Date.UTC(
+    now.getUTCFullYear(),
+    now.getUTCMonth(),
+    now.getUTCDate() + 1,
+  );
+
+  return nextUtcMidnight - now.getTime();
+}
+
 function useNow() {
   const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
-    const update = () => setNow(new Date());
-    update();
-    const timer = window.setInterval(update, 60_000);
-    return () => window.clearInterval(timer);
+    let timer: number | undefined;
+
+    const scheduleNextUpdate = () => {
+      const nextNow = new Date();
+      setNow(nextNow);
+      timer = window.setTimeout(scheduleNextUpdate, getMsUntilNextUtcDay(nextNow));
+    };
+
+    scheduleNextUpdate();
+
+    return () => {
+      if (timer !== undefined) {
+        window.clearTimeout(timer);
+      }
+    };
   }, []);
 
   return now;
@@ -26,7 +47,10 @@ export function EuAiActBanner() {
 
   if (!now) {
     return (
-      <aside className="border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]">
+      <aside
+        aria-label="EU AI Act countdown"
+        className="min-h-[92px] border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]"
+      >
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
           <div className="flex min-w-0 flex-1 gap-3">
             <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
@@ -60,23 +84,29 @@ export function EuAiActBanner() {
     );
   }
 
-  const { nextMilestone, currentMilestones } = getCurrentAndNextMilestones(now);
+  const { nextMilestone, currentMilestones, hasUpcomingMilestone } = getCurrentAndNextMilestones(now);
   const daysLeft = nextMilestone.daysUntil;
   const isActiveToday = daysLeft === 0;
-  const isFutureMilestone = daysLeft >= 0;
-  const milestonePrefix = isFutureMilestone ? "Next milestone:" : "Latest published milestone:";
-  const statusLabel = isActiveToday
-    ? "Applies today (UTC)."
-    : isFutureMilestone
-      ? `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
-      : "Latest published milestone already applies.";
+  const milestonePrefix = hasUpcomingMilestone
+    ? isActiveToday
+      ? "Today's milestone:"
+      : "Next milestone:"
+    : "Latest published milestone:";
+  const statusLabel = hasUpcomingMilestone
+    ? isActiveToday
+      ? "Applies today (UTC)."
+      : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
+    : "Latest published milestone already applies.";
 
   const currentSummary = currentMilestones.length
     ? `${currentMilestones.at(-1)?.label} already applies.`
-    : "Earlier AI Act milestones are already in force.";
+    : null;
 
   return (
-    <aside className="border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]">
+    <aside
+      aria-label="EU AI Act countdown"
+      className="min-h-[92px] border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]"
+    >
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex min-w-0 flex-1 gap-3">
           <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
@@ -91,7 +121,8 @@ export function EuAiActBanner() {
               </span>
             </div>
             <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-              <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span> {nextMilestone.label} on {formatUtcDate(nextMilestone.appliesOn)}. {nextMilestone.summary} {currentSummary}
+              <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span> {nextMilestone.label} on {formatUtcDate(nextMilestone.appliesOn)}. {nextMilestone.summary}
+              {currentSummary ? ` ${currentSummary}` : ""}
             </p>
           </div>
         </div>

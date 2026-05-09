@@ -1,12 +1,14 @@
 export const EU_AI_ACT_OFFICIAL_URL = "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai";
 
+// Source of truth for milestone labels/dates: European Commission AI Act timeline above.
+
 export type EuAiActMilestone = {
   label: string;
   appliesOn: string;
   summary: string;
 };
 
-export const euAiActMilestones: EuAiActMilestone[] = [
+const euAiActMilestones: EuAiActMilestone[] = [
   {
     label: "Prohibited AI practices and AI literacy",
     appliesOn: "2025-02-02",
@@ -58,11 +60,14 @@ export function getCurrentAndNextMilestones(now = new Date()) {
     daysUntil: getDaysUntil(milestone.appliesOn, now),
   }));
 
-  const nextMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0) ?? datedMilestones[datedMilestones.length - 1];
+  const nextUpcomingMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0);
+  const hasUpcomingMilestone = Boolean(nextUpcomingMilestone);
+  const nextMilestone = nextUpcomingMilestone ?? datedMilestones[datedMilestones.length - 1];
   const currentMilestones = datedMilestones.filter((milestone) => milestone.daysUntil < 0);
 
   return {
     nextMilestone,
     currentMilestones,
+    hasUpcomingMilestone,
   };
 }
