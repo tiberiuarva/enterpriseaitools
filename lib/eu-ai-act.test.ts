@@ -71,3 +71,20 @@ test("getCurrentAndNextMilestones sorts out-of-order milestone data before picki
     ["2025-08-02"],
   );
 });
+
+test("getCurrentAndNextMilestones keeps single-milestone fallback semantics stable", () => {
+  const milestone = {
+    label: "Only tranche",
+    appliesOn: "2027-08-02",
+    summary: "Single tranche.",
+  };
+
+  const upcomingResult = getCurrentAndNextMilestones(new Date("2027-08-01T00:00:00Z"), [milestone]);
+  assert.equal(upcomingResult.nextMilestone.appliesOn, "2027-08-02");
+  assert.deepEqual(upcomingResult.currentMilestones, []);
+
+  const pastResult = getCurrentAndNextMilestones(new Date("2027-08-03T00:00:00Z"), [milestone]);
+  assert.equal(pastResult.hasUpcomingMilestone, false);
+  assert.equal(pastResult.nextMilestone.appliesOn, "2027-08-02");
+  assert.deepEqual(pastResult.currentMilestones, []);
+});

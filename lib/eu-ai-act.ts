@@ -13,7 +13,7 @@ type DatedEuAiActMilestone = EuAiActMilestone & {
 };
 
 // Source of truth for milestone labels/dates: European Commission AI Act timeline.
-const euAiActMilestones = milestoneData satisfies EuAiActMilestone[];
+const euAiActMilestones: EuAiActMilestone[] = milestoneData;
 
 function startOfUtcDayMs(value: Date) {
   return Date.UTC(value.getUTCFullYear(), value.getUTCMonth(), value.getUTCDate());
@@ -56,12 +56,16 @@ export function getCurrentAndNextMilestones(
     }))
     .sort((a, b) => a.appliesOn.localeCompare(b.appliesOn));
 
+  if (datedMilestones.length === 0) {
+    throw new Error("EU AI Act milestone dataset is empty");
+  }
+
   const nextUpcomingMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0);
   const hasUpcomingMilestone = Boolean(nextUpcomingMilestone);
   const nextMilestone = nextUpcomingMilestone ?? datedMilestones.at(-1)!;
   const currentMilestones = hasUpcomingMilestone
     ? datedMilestones.filter((milestone) => milestone.daysUntil < 0)
-    : datedMilestones.filter((milestone) => milestone.appliesOn !== nextMilestone.appliesOn);
+    : datedMilestones.filter((milestone) => milestone !== nextMilestone);
 
   // We intentionally surface only the latest already-in-force tranche in banner copy.
   return {
