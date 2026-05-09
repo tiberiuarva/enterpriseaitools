@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { AlertTriangle, ArrowRight, CalendarClock } from "lucide-react";
+import { ArrowRight, CalendarClock, Info } from "lucide-react";
 import {
   EU_AI_ACT_OFFICIAL_URL,
   formatUtcDate,
@@ -56,6 +56,8 @@ function useNow() {
 export function EuAiActBanner() {
   const bannerLabelId = useId();
   const now = useNow();
+  // Keep SSR and the first client render byte-stable on this static site.
+  // The live UTC-sensitive milestone state only appears after hydration.
   const milestoneState = now ? getCurrentAndNextMilestones(now) : null;
   const daysLeft = milestoneState?.nextMilestone.daysUntil ?? null;
   const isActiveToday = daysLeft === 0;
@@ -92,7 +94,7 @@ export function EuAiActBanner() {
       <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex min-w-0 flex-1 gap-3">
           <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
-            <AlertTriangle size={18} aria-hidden="true" />
+            <Info size={18} aria-hidden="true" />
           </div>
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-[var(--color-text-primary)]">
