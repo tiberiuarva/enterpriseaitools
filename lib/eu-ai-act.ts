@@ -1,6 +1,6 @@
-export const EU_AI_ACT_OFFICIAL_URL = "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai";
+import milestoneData from "../data/eu-ai-act.json" with { type: "json" };
 
-// Source of truth for milestone labels/dates: European Commission AI Act timeline.
+export const EU_AI_ACT_OFFICIAL_URL = "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai";
 
 export type EuAiActMilestone = {
   label: string;
@@ -8,28 +8,12 @@ export type EuAiActMilestone = {
   summary: string;
 };
 
-const euAiActMilestones: EuAiActMilestone[] = [
-  {
-    label: "Prohibited AI practices and AI literacy",
-    appliesOn: "2025-02-02",
-    summary: "Already applicable.",
-  },
-  {
-    label: "Governance rules and general-purpose AI model obligations",
-    appliesOn: "2025-08-02",
-    summary: "Already applicable.",
-  },
-  {
-    label: "Most AI Act obligations",
-    appliesOn: "2026-08-02",
-    summary: "Broad applicability date for most remaining AI Act obligations.",
-  },
-  {
-    label: "Certain remaining high-risk AI obligations",
-    appliesOn: "2027-08-02",
-    summary: "Final high-risk obligations apply.",
-  },
-];
+type DatedEuAiActMilestone = EuAiActMilestone & {
+  daysUntil: number;
+};
+
+// Source of truth for milestone labels/dates: European Commission AI Act timeline.
+const euAiActMilestones = milestoneData satisfies EuAiActMilestone[];
 
 function startOfUtcDayMs(value: Date) {
   return Date.UTC(value.getUTCFullYear(), value.getUTCMonth(), value.getUTCDate());
@@ -48,13 +32,20 @@ export function formatUtcDate(dateString: string) {
   }).format(parseUtcDate(dateString));
 }
 
+/**
+ * @param dateString YYYY-MM-DD UTC date string from the official milestone dataset.
+ */
 export function getDaysUntil(dateString: string, now = new Date()) {
   const target = startOfUtcDayMs(parseUtcDate(dateString));
   const today = startOfUtcDayMs(now);
   return (target - today) / 86_400_000;
 }
 
-export function getCurrentAndNextMilestones(now = new Date()) {
+export function getCurrentAndNextMilestones(now = new Date()): {
+  nextMilestone: DatedEuAiActMilestone;
+  currentMilestones: DatedEuAiActMilestone[];
+  hasUpcomingMilestone: boolean;
+} {
   const datedMilestones = euAiActMilestones.map((milestone) => ({
     ...milestone,
     daysUntil: getDaysUntil(milestone.appliesOn, now),
@@ -62,7 +53,7 @@ export function getCurrentAndNextMilestones(now = new Date()) {
 
   const nextUpcomingMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0);
   const hasUpcomingMilestone = Boolean(nextUpcomingMilestone);
-  const nextMilestone = nextUpcomingMilestone ?? datedMilestones.at(-1)!;
+  const nextMilestone = nextUpcomingMilestone ?? datedMilestones[datedMilestones.length - 1];
   const currentMilestones = datedMilestones.filter((milestone) => milestone.daysUntil < 0);
 
   // We intentionally surface only the latest already-in-force tranche in banner copy.
