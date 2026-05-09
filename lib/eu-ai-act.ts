@@ -41,20 +41,27 @@ export function getDaysUntil(dateString: string, now = new Date()) {
   return (target - today) / 86_400_000;
 }
 
-export function getCurrentAndNextMilestones(now = new Date()): {
+export function getCurrentAndNextMilestones(
+  now = new Date(),
+  milestones: EuAiActMilestone[] = euAiActMilestones,
+): {
   nextMilestone: DatedEuAiActMilestone;
   currentMilestones: DatedEuAiActMilestone[];
   hasUpcomingMilestone: boolean;
 } {
-  const datedMilestones = euAiActMilestones.map((milestone) => ({
-    ...milestone,
-    daysUntil: getDaysUntil(milestone.appliesOn, now),
-  }));
+  const datedMilestones = milestones
+    .map((milestone) => ({
+      ...milestone,
+      daysUntil: getDaysUntil(milestone.appliesOn, now),
+    }))
+    .sort((a, b) => a.appliesOn.localeCompare(b.appliesOn));
 
   const nextUpcomingMilestone = datedMilestones.find((milestone) => milestone.daysUntil >= 0);
   const hasUpcomingMilestone = Boolean(nextUpcomingMilestone);
-  const nextMilestone = nextUpcomingMilestone ?? datedMilestones[datedMilestones.length - 1];
-  const currentMilestones = datedMilestones.filter((milestone) => milestone.daysUntil < 0);
+  const nextMilestone = nextUpcomingMilestone ?? datedMilestones.at(-1)!;
+  const currentMilestones = hasUpcomingMilestone
+    ? datedMilestones.filter((milestone) => milestone.daysUntil < 0)
+    : datedMilestones.filter((milestone) => milestone.appliesOn !== nextMilestone.appliesOn);
 
   // We intentionally surface only the latest already-in-force tranche in banner copy.
   return {

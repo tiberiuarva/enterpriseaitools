@@ -39,6 +39,35 @@ test("getCurrentAndNextMilestones falls back to the final tranche after all mile
   assert.equal(result.nextMilestone.daysUntil, -1);
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
-    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-08-02"],
+    ["2025-02-02", "2025-08-02", "2026-08-02"],
+  );
+});
+
+test("getCurrentAndNextMilestones sorts out-of-order milestone data before picking the next tranche", () => {
+  const result = getCurrentAndNextMilestones(
+    new Date("2026-08-01T00:00:00Z"),
+    [
+      {
+        label: "2027 tranche",
+        appliesOn: "2027-08-02",
+        summary: "Final tranche.",
+      },
+      {
+        label: "2025 tranche",
+        appliesOn: "2025-08-02",
+        summary: "Earlier tranche.",
+      },
+      {
+        label: "2026 tranche",
+        appliesOn: "2026-08-02",
+        summary: "Next tranche.",
+      },
+    ],
+  );
+
+  assert.equal(result.nextMilestone.appliesOn, "2026-08-02");
+  assert.deepEqual(
+    result.currentMilestones.map((milestone) => milestone.appliesOn),
+    ["2025-08-02"],
   );
 });

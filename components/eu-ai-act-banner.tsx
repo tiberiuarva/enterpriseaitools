@@ -18,8 +18,8 @@ function getMsUntilNextUtcDay(now: Date) {
   return nextUtcMidnight - now.getTime();
 }
 
-function useNow(initialNowIso: string) {
-  const [now, setNow] = useState(() => new Date(initialNowIso));
+function useNow() {
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
     let timer: number | undefined;
@@ -53,13 +53,9 @@ function useNow(initialNowIso: string) {
   return now;
 }
 
-type EuAiActBannerProps = {
-  initialNowIso: string;
-};
-
-export function EuAiActBanner({ initialNowIso }: EuAiActBannerProps) {
-  const now = useNow(initialNowIso);
-  const { nextMilestone, currentMilestones, hasUpcomingMilestone } = getCurrentAndNextMilestones(now);
+export function EuAiActBanner() {
+  const now = useNow();
+  const { nextMilestone, currentMilestones, hasUpcomingMilestone } = getCurrentAndNextMilestones(now ?? undefined);
   const daysLeft = nextMilestone.daysUntil;
   const isActiveToday = daysLeft === 0;
   const milestonePrefix = hasUpcomingMilestone
@@ -67,11 +63,13 @@ export function EuAiActBanner({ initialNowIso }: EuAiActBannerProps) {
       ? "Today's milestone:"
       : "Next milestone:"
     : "Latest published milestone:";
-  const statusLabel = hasUpcomingMilestone
-    ? isActiveToday
-      ? "Applies today (UTC)."
-      : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
-    : "Latest published milestone already applies.";
+  const statusLabel = now
+    ? hasUpcomingMilestone
+      ? isActiveToday
+        ? "Applies today (UTC)."
+        : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
+      : "Latest published milestone already applies."
+    : "Countdown loads after hydration.";
 
   const latestCurrentMilestone = hasUpcomingMilestone ? currentMilestones.at(-1) : null;
   const currentSummary = latestCurrentMilestone
