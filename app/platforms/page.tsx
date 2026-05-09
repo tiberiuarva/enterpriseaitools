@@ -160,7 +160,7 @@ export default function PlatformsPage() {
           })}
         </section>
 
-        <ProtocolTrackingSection />
+        <ProtocolTrackingSection currentPath="/platforms" />
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>

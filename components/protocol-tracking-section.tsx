@@ -10,10 +10,12 @@ const iconMap = {
 
 type ProtocolTrackingSectionProps = {
   compact?: boolean;
+  currentPath?: "/" | "/platforms";
 };
 
-export function ProtocolTrackingSection({ compact = false }: ProtocolTrackingSectionProps) {
+export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: ProtocolTrackingSectionProps) {
   const snapshots = getProtocolSnapshots();
+  const isPlatformsPage = currentPath === "/platforms";
 
   return (
     <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
@@ -21,7 +23,7 @@ export function ProtocolTrackingSection({ compact = false }: ProtocolTrackingSec
         <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Protocol tracking: MCP, A2A, and OpenAPI</h2>
         <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
           Protocol support is starting to shape enterprise platform choices. This snapshot tracks where the major cloud
-          foundations already expose protocol alignment and highlights the latest protocol-relevant updates already in the dataset.
+          foundations already expose protocol alignment and surfaces recent dataset mentions for MCP, A2A, and OpenAPI.
         </p>
       </div>
 
@@ -59,7 +61,7 @@ export function ProtocolTrackingSection({ compact = false }: ProtocolTrackingSec
 
               {!compact && snapshot.recentUpdates.length > 0 ? (
                 <div className="mt-4 border-t border-[var(--color-border)] pt-4">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">Recent signals</div>
+                  <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">Recent dataset mentions</div>
                   <div className="mt-3 space-y-3">
                     {snapshot.recentUpdates.map((update) => (
                       <div key={update.id}>
@@ -78,13 +80,13 @@ export function ProtocolTrackingSection({ compact = false }: ProtocolTrackingSec
 
       <div className="mt-5 flex flex-wrap gap-3">
         <a
-          href={withBasePath("/platforms")}
+          href={withBasePath(isPlatformsPage ? "/updates" : "/platforms")}
           className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90"
         >
-          Compare platform support
+          {isPlatformsPage ? "Browse weekly updates" : "Compare platform support"}
         </a>
         <a href={withBasePath("/updates")} className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline">
-          Review protocol-related updates
+          Open updates feed
         </a>
       </div>
     </section>
