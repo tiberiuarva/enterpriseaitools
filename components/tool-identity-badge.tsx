@@ -1,6 +1,13 @@
 import { Boxes } from "lucide-react";
 
+import { LogoBadge } from "@/components/logo-badge";
+import { shouldShowImageLogo } from "@/lib/logo";
+import type { LogoKind } from "@/lib/types";
+
 type ToolIdentityBadgeProps = {
+  label: string;
+  logoUrl?: string;
+  logoKind: LogoKind;
   size?: "sm" | "md";
   className?: string;
 };
@@ -15,7 +22,11 @@ const iconSize = {
   md: 16,
 } as const;
 
-export function ToolIdentityBadge({ size = "md", className = "" }: ToolIdentityBadgeProps) {
+export function ToolIdentityBadge({ label, logoUrl, logoKind, size = "md", className = "" }: ToolIdentityBadgeProps) {
+  if (shouldShowImageLogo({ logoKind, logoUrl })) {
+    return <LogoBadge label={label} logoUrl={logoUrl} logoKind={logoKind} size={size} className={className} />;
+  }
+
   return (
     <div
       aria-hidden="true"
