@@ -25,6 +25,18 @@ const subtleSizeClasses = {
   lg: "h-8 w-8 rounded-lg text-[11px]",
 } as const;
 
+const projectLogoSizeClasses = {
+  sm: "h-6 min-w-10 rounded-md px-1",
+  md: "h-8 min-w-14 rounded-lg px-1.5",
+  lg: "h-10 min-w-16 rounded-xl px-2",
+} as const;
+
+const subtleProjectLogoSizeClasses = {
+  sm: "h-5 min-w-8 rounded-md px-1",
+  md: "h-6 min-w-10 rounded-md px-1",
+  lg: "h-8 min-w-14 rounded-lg px-1.5",
+} as const;
+
 const imageSizes = {
   sm: 24,
   md: 32,
@@ -55,7 +67,14 @@ function getFallbackMonogram(label: string) {
 }
 
 export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "", emphasize = true }: LogoBadgeProps) {
-  const dimensionClasses = emphasize ? sizeClasses[size] : subtleSizeClasses[size];
+  const isProjectLogo = logoKind === "project-logo";
+  const dimensionClasses = isProjectLogo
+    ? emphasize
+      ? projectLogoSizeClasses[size]
+      : subtleProjectLogoSizeClasses[size]
+    : emphasize
+      ? sizeClasses[size]
+      : subtleSizeClasses[size];
   const classes = `${dimensionClasses} ${className}`.trim();
 
   if (!shouldShowImageLogo({ logoKind, logoUrl })) {
@@ -81,7 +100,7 @@ export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "
         width={imageSizes[size]}
         height={imageSizes[size]}
         loading="lazy"
-        className="h-full w-full object-contain p-0.5"
+        className={`h-full w-full object-contain ${isProjectLogo ? "p-1" : "p-0.5"}`}
       />
     </div>
   );
