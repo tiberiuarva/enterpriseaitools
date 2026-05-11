@@ -599,15 +599,17 @@
         "self-hosted",
         "source-available"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official n8n wordmark asset from the n8n brand guidelines download page (`logo-dark.svg`).",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management."
+      "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
+      "logoUrl": "/logos/n8n.svg",
+      "logoSourceUrl": "https://n8n.io/brandguidelines/"
     },
     {
       "id": "paperclip",
@@ -675,16 +677,18 @@
         "visual",
         "self-hosted"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Langflow logo asset from the Langflow website (`/images/logo.png`).",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-05-01"
+      "lastRelease": "2026-05-01",
+      "logoUrl": "/logos/langflow.png",
+      "logoSourceUrl": "https://www.langflow.org/"
     },
     {
       "id": "dify",
@@ -780,16 +784,18 @@
         "pipelines",
         "rag"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Haystack logo asset from the Haystack homepage (`/images/logos/haystack.png`).",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
       "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
-      "lastRelease": "2026-04-20"
+      "lastRelease": "2026-04-20",
+      "logoUrl": "/logos/haystack.png",
+      "logoSourceUrl": "https://haystack.deepset.ai/"
     },
     {
       "id": "rivet",

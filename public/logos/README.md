@@ -16,6 +16,9 @@ These files were replaced from official vendor icon packs:
 | `aws-step-functions.svg` | AWS Architecture Icons: https://aws.amazon.com/architecture/icons/ (`Icon-package_01302026.zip` → `Arch_AWS-Step-Functions_64.svg`) |
 | `google-vertex-ai.svg` | Google Cloud official icon library: https://cloud.google.com/icons (`core-products-icons.zip` → `VertexAI-512-color.svg`) |
 | `google-cloud-workflows.svg` | Google Cloud official legacy icon library: https://cloud.google.com/icons (`google-cloud-legacy-icons.zip` → `workflows.svg`) |
+| `n8n.svg` | n8n brand guidelines: https://n8n.io/brandguidelines/ (`logo-dark.svg`) |
+| `haystack.png` | Haystack official website: https://haystack.deepset.ai/ (`/images/logos/haystack.png`) |
+| `langflow.png` | Langflow official website: https://www.langflow.org/ (`/images/logo.png`) |
 
 ## Deliberately not force-replaced yet
 
