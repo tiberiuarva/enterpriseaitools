@@ -1,10 +1,9 @@
 import type { LucideIcon } from "lucide-react";
-import { LogoBadge } from "@/components/logo-badge";
 import { withBasePath } from "@/lib/site";
 
 import type { Tool } from "@/lib/types";
 
-type CategoryPreviewTool = Pick<Tool, "id" | "name" | "logoUrl" | "logoKind">;
+type CategoryPreviewTool = Pick<Tool, "id" | "name">;
 
 type CategoryCardProps = {
   href: string;
@@ -41,9 +40,8 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
           return (
             <span
               key={tool.id}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
+              className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
             >
-              <LogoBadge label={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="sm" emphasize={false} />
               <span>{tool.name}</span>
             </span>
           );
