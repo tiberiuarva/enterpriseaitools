@@ -26,15 +26,15 @@ const subtleSizeClasses = {
 } as const;
 
 const projectLogoSizeClasses = {
-  sm: "h-6 w-12 rounded-md px-1",
-  md: "h-8 w-16 rounded-lg px-1.5",
-  lg: "h-10 w-20 rounded-xl px-2",
+  sm: "h-6 w-14 rounded-md px-1",
+  md: "h-9 w-20 rounded-lg px-1.5",
+  lg: "h-10 w-24 rounded-xl px-2",
 } as const;
 
 const subtleProjectLogoSizeClasses = {
   sm: "h-5 w-10 rounded-md px-1",
-  md: "h-6 w-12 rounded-md px-1",
-  lg: "h-8 w-16 rounded-lg px-1.5",
+  md: "h-6 w-14 rounded-md px-1",
+  lg: "h-8 w-[4.5rem] rounded-lg px-1.5",
 } as const;
 
 const imageSizes = {
@@ -44,9 +44,9 @@ const imageSizes = {
 } as const;
 
 const projectLogoImageSizes = {
-  sm: { width: 48, height: 24 },
-  md: { width: 64, height: 32 },
-  lg: { width: 80, height: 40 },
+  sm: { width: 56, height: 24 },
+  md: { width: 80, height: 36 },
+  lg: { width: 96, height: 40 },
 } as const;
 
 const baseContainerClasses = "overflow-hidden border";
