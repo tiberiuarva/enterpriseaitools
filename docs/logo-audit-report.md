@@ -6,12 +6,12 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 | Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| agents | 13 | 13 (100%) | 0 | 0 | 0 | 0 |
-| orchestration | 10 | 4 (40%) | 3 | 3 | 0 | 0 |
+| agents | 13 | 12 (92%) | 0 | 1 | 0 | 0 |
+| orchestration | 10 | 2 (20%) | 3 | 5 | 0 | 0 |
 | governance | 9 | 8 (89%) | 1 | 0 | 0 | 0 |
 | assistants | 11 | 11 (100%) | 0 | 0 | 0 | 0 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
-| **All site records** | **46** | **36 (78%)** | **7** | **3** | **0** | **0** |
+| **All site records** | **46** | **33 (72%)** | **7** | **6** | **0** | **0** |
 
 ## Inventory status
 
@@ -21,6 +21,6 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 ## Highest-priority cleanup signal
 
-- Current worst category by fallback ratio: **agents** with **13/13** fallback entries (100%).
+- Current worst category by fallback ratio: **assistants** with **11/11** fallback entries (100%).
 - Treat this report as an audit gate: do not claim the logo system is cleaned up while fallback share remains high.
 

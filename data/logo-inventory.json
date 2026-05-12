@@ -36,10 +36,11 @@
       "category": "agents",
       "vendor": "crewAI Inc.",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://crewai.com/brand",
+      "notes": "Official CrewAI primary logo asset from the CrewAI brand resource center (`Logo.svg`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/crewai.svg"
     },
     {
       "name": "AutoGen",
@@ -181,20 +182,22 @@
       "category": "orchestration",
       "vendor": "Dify",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://docs.dify.ai/en/resources/about-dify/dify-brand-guidelines",
+      "notes": "Official Dify docs/brand-guidelines logo asset (`d05cfc6ebe48f725d171dc71c64a5d16.svg`) from the owner-controlled docs site.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/dify.svg"
     },
     {
       "name": "Flowise",
       "category": "orchestration",
       "vendor": "Flowise",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://docs.flowiseai.com/",
+      "notes": "Official Flowise docs-site icon asset (`Flowise Logo Dark High Res`) served from the owner-controlled documentation site. GitBook currently delivers the resized file as JPEG.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/flowise.jpg"
     },
     {
       "name": "Haystack",
