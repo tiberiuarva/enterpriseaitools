@@ -215,15 +215,17 @@
         "rag",
         "opensource"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official LlamaIndex brand asset from the LlamaIndex brand guidelines page (`llamaindex-wordmark-black.svg`).",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows."
+      "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows.",
+      "logoSourceUrl": "https://www.llamaindex.ai/brand",
+      "logoUrl": "/logos/llamaindex.svg"
     },
     {
       "id": "semantic-kernel",
@@ -360,16 +362,18 @@
         "opensource",
         "framework"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Mastra homepage/brand asset (`/brand/mastra-logo-wordmark.png`) from the owner-controlled site; the public rebrand post confirms this is the current logo system.",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
       "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.",
-      "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks."
+      "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
+      "logoSourceUrl": "https://mastra.ai/",
+      "logoUrl": "/logos/mastra.png"
     },
     {
       "id": "openai-agents-sdk",
@@ -465,15 +469,17 @@
         "opensource",
         "linux-foundation"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official BeeAI Framework docs-site logo asset (`beeai-framework-light.svg`) served from the owner-controlled Mintlify CDN.",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation."
+      "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation.",
+      "logoSourceUrl": "https://framework.beeai.dev/",
+      "logoUrl": "/logos/beeai-framework.svg"
     },
     {
       "id": "azure-logic-apps",

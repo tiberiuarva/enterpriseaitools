@@ -6,12 +6,12 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 | Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| agents | 13 | 12 (92%) | 0 | 1 | 0 | 0 |
+| agents | 13 | 9 (69%) | 0 | 4 | 0 | 0 |
 | orchestration | 10 | 2 (20%) | 3 | 5 | 0 | 0 |
 | governance | 9 | 8 (89%) | 1 | 0 | 0 | 0 |
 | assistants | 11 | 11 (100%) | 0 | 0 | 0 | 0 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
-| **All site records** | **46** | **33 (72%)** | **7** | **6** | **0** | **0** |
+| **All site records** | **46** | **30 (65%)** | **7** | **9** | **0** | **0** |
 
 ## Inventory status
 

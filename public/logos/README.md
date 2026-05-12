@@ -22,6 +22,9 @@ These files were replaced from owner-controlled official asset pages or download
 | `dify.svg` | Dify brand guidelines on the official docs site: https://docs.dify.ai/en/resources/about-dify/dify-brand-guidelines (`d05cfc6ebe48f725d171dc71c64a5d16.svg`) |
 | `crewai.svg` | CrewAI brand resource center: https://crewai.com/brand (`Logo.svg`) |
 | `flowise.jpg` | Flowise official docs-site icon asset: https://docs.flowiseai.com/ (`Flowise Logo Dark High Res` via the owner-controlled GitBook image endpoint; GitBook currently serves the resized file as JPEG). |
+| `llamaindex.svg` | LlamaIndex brand guidelines: https://www.llamaindex.ai/brand (`llamaindex-wordmark-black.svg`) |
+| `mastra.png` | Mastra official homepage/brand asset: https://mastra.ai/ (`/brand/mastra-logo-wordmark.png`); the public rebrand post confirms this is the current logo system. |
+| `beeai-framework.svg` | BeeAI Framework official docs-site logo: https://framework.beeai.dev/ (`beeai-framework-light.svg` served from the owner-controlled Mintlify CDN). |
 
 ## Deliberately not force-replaced yet
 

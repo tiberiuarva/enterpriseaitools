@@ -57,10 +57,11 @@
       "category": "agents",
       "vendor": "LlamaIndex Inc.",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.llamaindex.ai/brand",
+      "notes": "Official LlamaIndex brand asset from the LlamaIndex brand guidelines page (`llamaindex-wordmark-black.svg`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/llamaindex.svg"
     },
     {
       "name": "Semantic Kernel",
@@ -87,10 +88,11 @@
       "category": "agents",
       "vendor": "Mastra AI",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://mastra.ai/",
+      "notes": "Official Mastra homepage/brand asset (`/brand/mastra-logo-wordmark.png`) from the owner-controlled site; the public rebrand post confirms this is the current logo system.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/mastra.png"
     },
     {
       "name": "OpenAI Agents SDK",
@@ -117,10 +119,11 @@
       "category": "agents",
       "vendor": "Linux Foundation",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://framework.beeai.dev/",
+      "notes": "Official BeeAI Framework docs-site logo asset (`beeai-framework-light.svg`) served from the owner-controlled Mintlify CDN.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-12",
+      "logoUrl": "/logos/beeai-framework.svg"
     },
     {
       "name": "Azure Logic Apps",
