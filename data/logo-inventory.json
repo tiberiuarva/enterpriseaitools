@@ -171,7 +171,7 @@
       "vendor": "LangFlow / DataStax",
       "status": "classified",
       "sourceUrl": "https://www.langflow.org/",
-      "notes": "Official Langflow logo asset from the Langflow website (`/images/logo.png`).",
+      "notes": "Official Langflow website logo asset (`/images/logo.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-11",
       "logoUrl": "/logos/langflow.png"
@@ -202,7 +202,7 @@
       "vendor": "deepset",
       "status": "classified",
       "sourceUrl": "https://haystack.deepset.ai/",
-      "notes": "Official Haystack logo asset from the Haystack homepage (`/images/logos/haystack.png`).",
+      "notes": "Official Haystack website logo asset (`/images/logos/haystack.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-11",
       "logoUrl": "/logos/haystack.png"

@@ -17,8 +17,8 @@ These files were replaced from official vendor icon packs:
 | `google-vertex-ai.svg` | Google Cloud official icon library: https://cloud.google.com/icons (`core-products-icons.zip` → `VertexAI-512-color.svg`) |
 | `google-cloud-workflows.svg` | Google Cloud official legacy icon library: https://cloud.google.com/icons (`google-cloud-legacy-icons.zip` → `workflows.svg`) |
 | `n8n.svg` | n8n brand guidelines: https://n8n.io/brandguidelines/ (`logo-dark.svg`) |
-| `haystack.png` | Haystack official website: https://haystack.deepset.ai/ (`/images/logos/haystack.png`) |
-| `langflow.png` | Langflow official website: https://www.langflow.org/ (`/images/logo.png`) |
+| `haystack.png` | Haystack official website homepage asset: https://haystack.deepset.ai/ (`/images/logos/haystack.png`); no separate public brand-kit page was found at review time. |
+| `langflow.png` | Langflow official website homepage asset: https://www.langflow.org/ (`/images/logo.png`); no separate public brand-kit page was found at review time. |
 
 ## Deliberately not force-replaced yet
 
