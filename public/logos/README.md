@@ -4,9 +4,9 @@ This directory contains a mix of:
 - primary-source vendor/project logo assets where public reuse in technical/architecture documentation is documented by the owner, and
 - temporary generated placeholder badges for products where a defensible primary-source logo was not yet located.
 
-## Primary-source replacements added on 2026-04-17
+## Primary-source replacements
 
-These files were replaced from official vendor icon packs:
+These files were replaced from owner-controlled official asset pages or downloadable icon packs.
 
 | Local file | Source |
 | --- | --- |

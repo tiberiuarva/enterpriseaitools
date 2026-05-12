@@ -43,6 +43,12 @@ const imageSizes = {
   lg: 40,
 } as const;
 
+const projectLogoImageSizes = {
+  sm: { width: 48, height: 24 },
+  md: { width: 64, height: 32 },
+  lg: { width: 80, height: 40 },
+} as const;
+
 const baseContainerClasses = "overflow-hidden border";
 
 const containerClassesByKind = {
@@ -88,14 +94,17 @@ export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "
 
   const imageLogoUrl = logoUrl!;
   const containerClasses = `${baseContainerClasses} ${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
+  const imageDimensions = isProjectLogo
+    ? projectLogoImageSizes[size]
+    : { width: imageSizes[size], height: imageSizes[size] };
 
   return (
     <div className={containerClasses} aria-hidden="true">
       <Image
         src={withBasePath(imageLogoUrl)}
         alt=""
-        width={imageSizes[size]}
-        height={imageSizes[size]}
+        width={imageDimensions.width}
+        height={imageDimensions.height}
         loading="lazy"
         className={`h-full w-full object-contain ${isProjectLogo ? "p-1" : "p-0.5"}`}
       />
