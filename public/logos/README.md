@@ -4,9 +4,9 @@ This directory contains a mix of:
 - primary-source vendor/project logo assets where public reuse in technical/architecture documentation is documented by the owner, and
 - temporary generated placeholder badges for products where a defensible primary-source logo was not yet located.
 
-## Primary-source replacements added on 2026-04-17
+## Primary-source replacements
 
-These files were replaced from official vendor icon packs:
+These files were replaced from owner-controlled official asset pages or downloadable icon packs.
 
 | Local file | Source |
 | --- | --- |
@@ -16,6 +16,9 @@ These files were replaced from official vendor icon packs:
 | `aws-step-functions.svg` | AWS Architecture Icons: https://aws.amazon.com/architecture/icons/ (`Icon-package_01302026.zip` → `Arch_AWS-Step-Functions_64.svg`) |
 | `google-vertex-ai.svg` | Google Cloud official icon library: https://cloud.google.com/icons (`core-products-icons.zip` → `VertexAI-512-color.svg`) |
 | `google-cloud-workflows.svg` | Google Cloud official legacy icon library: https://cloud.google.com/icons (`google-cloud-legacy-icons.zip` → `workflows.svg`) |
+| `n8n.svg` | n8n brand guidelines: https://n8n.io/brandguidelines/ (`logo-dark.svg`) |
+| `haystack.png` | Haystack official website homepage asset: https://haystack.deepset.ai/ (`/images/logos/haystack.png`); no separate public brand-kit page was found at review time. |
+| `langflow.png` | Langflow official website homepage asset: https://www.langflow.org/ (`/images/logo.png`); no separate public brand-kit page was found at review time. |
 
 ## Deliberately not force-replaced yet
 

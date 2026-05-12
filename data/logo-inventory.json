@@ -159,20 +159,22 @@
       "category": "orchestration",
       "vendor": "n8n",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://n8n.io/brandguidelines/",
+      "notes": "Official n8n wordmark asset from the n8n brand guidelines download page (`logo-dark.svg`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-11",
+      "logoUrl": "/logos/n8n.svg"
     },
     {
       "name": "LangFlow",
       "category": "orchestration",
       "vendor": "LangFlow / DataStax",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.langflow.org/",
+      "notes": "Official Langflow website logo asset (`/images/logo.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-11",
+      "logoUrl": "/logos/langflow.png"
     },
     {
       "name": "Dify",
@@ -199,10 +201,11 @@
       "category": "orchestration",
       "vendor": "deepset",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://haystack.deepset.ai/",
+      "notes": "Official Haystack website logo asset (`/images/logos/haystack.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-11",
+      "logoUrl": "/logos/haystack.png"
     },
     {
       "name": "Rivet",

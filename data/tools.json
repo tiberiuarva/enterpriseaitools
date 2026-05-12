@@ -599,9 +599,11 @@
         "self-hosted",
         "source-available"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/n8n.svg",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://n8n.io/brandguidelines/",
+      "logoNotes": "Official n8n wordmark asset from the n8n brand guidelines download page (`logo-dark.svg`).",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",
@@ -675,9 +677,11 @@
         "visual",
         "self-hosted"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/langflow.png",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://www.langflow.org/",
+      "logoNotes": "Official Langflow website logo asset (`/images/logo.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",
@@ -780,9 +784,11 @@
         "pipelines",
         "rag"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/haystack.png",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://haystack.deepset.ai/",
+      "logoNotes": "Official Haystack website logo asset (`/images/logos/haystack.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
+      "logoReviewedAt": "2026-05-11",
       "clouds": [
         "aws",
         "azure",

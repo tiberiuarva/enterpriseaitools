@@ -25,10 +25,28 @@ const subtleSizeClasses = {
   lg: "h-8 w-8 rounded-lg text-[11px]",
 } as const;
 
+const projectLogoSizeClasses = {
+  sm: "h-6 w-12 rounded-md px-1",
+  md: "h-8 w-16 rounded-lg px-1.5",
+  lg: "h-10 w-20 rounded-xl px-2",
+} as const;
+
+const subtleProjectLogoSizeClasses = {
+  sm: "h-5 w-10 rounded-md px-1",
+  md: "h-6 w-12 rounded-md px-1",
+  lg: "h-8 w-16 rounded-lg px-1.5",
+} as const;
+
 const imageSizes = {
   sm: 24,
   md: 32,
   lg: 40,
+} as const;
+
+const projectLogoImageSizes = {
+  sm: { width: 48, height: 24 },
+  md: { width: 64, height: 32 },
+  lg: { width: 80, height: 40 },
 } as const;
 
 const baseContainerClasses = "overflow-hidden border";
@@ -55,7 +73,11 @@ function getFallbackMonogram(label: string) {
 }
 
 export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "", emphasize = true }: LogoBadgeProps) {
-  const dimensionClasses = emphasize ? sizeClasses[size] : subtleSizeClasses[size];
+  const isProjectLogo = logoKind === "project-logo";
+  const dimensionMap = isProjectLogo
+    ? { emphasize: projectLogoSizeClasses, subtle: subtleProjectLogoSizeClasses }
+    : { emphasize: sizeClasses, subtle: subtleSizeClasses };
+  const dimensionClasses = dimensionMap[emphasize ? "emphasize" : "subtle"][size];
   const classes = `${dimensionClasses} ${className}`.trim();
 
   if (!shouldShowImageLogo({ logoKind, logoUrl })) {
@@ -72,16 +94,19 @@ export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "
 
   const imageLogoUrl = logoUrl!;
   const containerClasses = `${baseContainerClasses} ${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
+  const imageDimensions = isProjectLogo
+    ? projectLogoImageSizes[size]
+    : { width: imageSizes[size], height: imageSizes[size] };
 
   return (
     <div className={containerClasses} aria-hidden="true">
       <Image
         src={withBasePath(imageLogoUrl)}
         alt=""
-        width={imageSizes[size]}
-        height={imageSizes[size]}
+        width={imageDimensions.width}
+        height={imageDimensions.height}
         loading="lazy"
-        className="h-full w-full object-contain p-0.5"
+        className={`h-full w-full object-contain ${isProjectLogo ? "p-1" : "p-0.5"}`}
       />
     </div>
   );
