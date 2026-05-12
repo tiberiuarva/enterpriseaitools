@@ -142,9 +142,11 @@
         "opensource",
         "framework"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/crewai.svg",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://crewai.com/brand",
+      "logoNotes": "Official CrewAI primary logo asset from the CrewAI brand resource center (`Logo.svg`).",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",
@@ -715,9 +717,11 @@
         "self-hosted",
         "license-caution"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/dify.svg",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://docs.dify.ai/en/resources/about-dify/dify-brand-guidelines",
+      "logoNotes": "Official Dify docs/brand-guidelines logo asset (`d05cfc6ebe48f725d171dc71c64a5d16.svg`) from the owner-controlled docs site.",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",
@@ -750,9 +754,11 @@
         "low-code",
         "self-hosted"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoUrl": "/logos/flowise.jpg",
+      "logoKind": "project-logo",
+      "logoSourceUrl": "https://docs.flowiseai.com/",
+      "logoNotes": "Official Flowise docs-site icon asset (`Flowise Logo Dark High Res`) served from the owner-controlled documentation site. GitBook currently delivers the resized file as JPEG.",
+      "logoReviewedAt": "2026-05-12",
       "clouds": [
         "aws",
         "azure",

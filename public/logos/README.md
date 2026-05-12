@@ -19,6 +19,9 @@ These files were replaced from owner-controlled official asset pages or download
 | `n8n.svg` | n8n brand guidelines: https://n8n.io/brandguidelines/ (`logo-dark.svg`) |
 | `haystack.png` | Haystack official website homepage asset: https://haystack.deepset.ai/ (`/images/logos/haystack.png`); no separate public brand-kit page was found at review time. |
 | `langflow.png` | Langflow official website homepage asset: https://www.langflow.org/ (`/images/logo.png`); no separate public brand-kit page was found at review time. |
+| `dify.svg` | Dify brand guidelines on the official docs site: https://docs.dify.ai/en/resources/about-dify/dify-brand-guidelines (`d05cfc6ebe48f725d171dc71c64a5d16.svg`) |
+| `crewai.svg` | CrewAI brand resource center: https://crewai.com/brand (`Logo.svg`) |
+| `flowise.jpg` | Flowise official docs-site icon asset: https://docs.flowiseai.com/ (`Flowise Logo Dark High Res` via the owner-controlled GitBook image endpoint; GitBook currently serves the resized file as JPEG). |
 
 ## Deliberately not force-replaced yet
 
