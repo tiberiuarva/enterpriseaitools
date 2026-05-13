@@ -28,6 +28,9 @@ These files were replaced from owner-controlled official asset pages or download
 | `langgraph.svg` | LangGraph official logo asset from the owner-controlled GitHub repo: https://github.com/langchain-ai/langgraph (`.github/images/logo-light.svg`). |
 | `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/BrainBlend-AI/atomic-agents (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use. |
 | `rivet.svg` | Rivet official app logo from the owner-controlled homepage: https://rivet.ironcladapp.com/ (`img/logo.svg`), intentionally rendered as a square service icon rather than a stretched project wordmark. |
+| `llm-guard.png` | LLM Guard official docs-site logo asset: https://protectai.github.io/llm-guard/ (`assets/logo.png`). |
+| `arthur-genai-engine.avif` | Arthur official homepage logo asset: https://www.arthur.ai/ (`arthur-logo-dark.avif`), used for the GenAI Engine entry after the January 2026 rebrand. |
+| `paperclip.svg` | Paperclip official homepage favicon/icon: https://paperclip.ing/ (`/favicon.svg`), intentionally rendered as a square service icon. |
 
 ## Deliberately not force-replaced yet
 

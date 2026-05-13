@@ -7,11 +7,11 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 | Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | agents | 13 | 7 (54%) | 0 | 6 | 0 | 0 |
-| orchestration | 10 | 1 (10%) | 4 | 5 | 0 | 0 |
-| governance | 9 | 8 (89%) | 1 | 0 | 0 | 0 |
+| orchestration | 10 | 0 (0%) | 5 | 5 | 0 | 0 |
+| governance | 9 | 6 (67%) | 1 | 2 | 0 | 0 |
 | assistants | 11 | 11 (100%) | 0 | 0 | 0 | 0 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
-| **All site records** | **46** | **27 (59%)** | **8** | **11** | **0** | **0** |
+| **All site records** | **46** | **24 (52%)** | **9** | **13** | **0** | **0** |
 
 ## Inventory status
 

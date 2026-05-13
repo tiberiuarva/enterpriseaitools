@@ -650,9 +650,9 @@
         "multi-agent",
         "governance"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-23",
+      "logoKind": "service-icon",
+      "logoNotes": "Official Paperclip favicon/icon asset from the owner-controlled homepage (`/favicon.svg`), intentionally rendered as a square service icon.",
+      "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
         "azure",
@@ -662,7 +662,9 @@
         "TypeScript",
         "JavaScript"
       ],
-      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks."
+      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
+      "logoUrl": "/logos/paperclip.svg",
+      "logoSourceUrl": "https://paperclip.ing/"
     },
     {
       "id": "langflow",
@@ -1041,15 +1043,17 @@
         "maintenance"
       ],
       "version": "0.3.16",
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official LLM Guard docs-site logo asset from the owner-controlled project docs (`assets/logo.png`).",
+      "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline."
+      "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline.",
+      "logoUrl": "/logos/llm-guard.png",
+      "logoSourceUrl": "https://protectai.github.io/llm-guard/"
     },
     {
       "id": "rebuff",
@@ -1137,11 +1141,13 @@
         "commercial",
         "arthur"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Arthur homepage logo asset from the owner-controlled site (`arthur-logo-dark.avif`), used for the GenAI Engine entry after the January 2026 rebrand.",
+      "logoReviewedAt": "2026-05-13",
       "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone.",
-      "cloudBadgeReviewedAt": "2026-05-08"
+      "cloudBadgeReviewedAt": "2026-05-08",
+      "logoUrl": "/logos/arthur-genai-engine.avif",
+      "logoSourceUrl": "https://www.arthur.ai/"
     },
     {
       "id": "github-copilot",
