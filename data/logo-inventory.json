@@ -280,12 +280,13 @@
     {
       "name": "LLM Guard",
       "category": "governance",
-      "vendor": "Palo Alto Networks",
+      "vendor": "Palo Alto Networks (Protect AI)",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://protectai.github.io/llm-guard/",
+      "notes": "Official LLM Guard docs-site logo asset from the owner-controlled Protect AI project docs (`assets/logo.png`), post-acquisition.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/llm-guard.png"
     },
     {
       "name": "Rebuff",
@@ -312,10 +313,11 @@
       "category": "governance",
       "vendor": "Arthur",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.arthur.ai/",
+      "notes": "Official Arthur homepage logo asset captured from the owner-controlled site after the January 2026 GenAI Engine rebrand (`arthur-logo-dark.avif` via the Arthur Webflow CDN).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/arthur-genai-engine.avif"
     },
     {
       "name": "GitHub Copilot",
@@ -475,10 +477,11 @@
       "category": "orchestration",
       "vendor": "Paperclip",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-23"
+      "sourceUrl": "https://paperclip.ing/favicon.svg",
+      "notes": "Official Paperclip favicon/icon asset from the owner-controlled homepage (`/favicon.svg`), verified byte-for-byte against the live source on 2026-05-13 and rendered as a square service icon.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/paperclip.svg"
     }
   ]
 }
