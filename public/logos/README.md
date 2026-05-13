@@ -25,6 +25,9 @@ These files were replaced from owner-controlled official asset pages or download
 | `llamaindex.svg` | LlamaIndex brand guidelines: https://www.llamaindex.ai/brand (`llamaindex-wordmark-black.svg`) |
 | `mastra.png` | Mastra official homepage/brand asset: https://mastra.ai/ (`/brand/mastra-logo-wordmark.png`); the public rebrand post confirms this is the current logo system. |
 | `beeai-framework.svg` | BeeAI Framework official docs-site logo: https://framework.beeai.dev/ (`beeai-framework-light.svg` served from the owner-controlled Mintlify CDN). |
+| `langgraph.svg` | LangGraph official logo asset from the owner-controlled GitHub repo: https://github.com/langchain-ai/langgraph (`.github/images/logo-dark.svg`). |
+| `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/BrainBlend-AI/atomic-agents (`.assets/logo.png`). |
+| `rivet.svg` | Rivet official app logo from the owner-controlled homepage: https://rivet.ironcladapp.com/ (`img/logo.svg`). |
 
 ## Deliberately not force-replaced yet
 

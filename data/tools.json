@@ -328,15 +328,17 @@
         "agents",
         "graph"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-dark.svg`).",
+      "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy."
+      "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
+      "logoUrl": "/logos/langgraph.svg",
+      "logoSourceUrl": "https://github.com/langchain-ai/langgraph"
     },
     {
       "id": "mastra",
@@ -434,15 +436,17 @@
         "agents",
         "opensource"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`).",
+      "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling."
+      "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling.",
+      "logoUrl": "/logos/atomic-agents.png",
+      "logoSourceUrl": "https://github.com/BrainBlend-AI/atomic-agents"
     },
     {
       "id": "beeai-framework",
@@ -834,15 +838,17 @@
         "visual",
         "maintenance"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`).",
+      "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Can still work for narrow visual pipeline use cases, but the maintenance signal makes it a cautious choice for new enterprise standardisation."
+      "practitionerNote": "Can still work for narrow visual pipeline use cases, but the maintenance signal makes it a cautious choice for new enterprise standardisation.",
+      "logoUrl": "/logos/rivet.svg",
+      "logoSourceUrl": "https://rivet.ironcladapp.com/"
     },
     {
       "id": "azure-ai-content-safety",
