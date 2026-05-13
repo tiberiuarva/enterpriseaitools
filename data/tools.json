@@ -664,7 +664,7 @@
       ],
       "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
       "logoUrl": "/logos/paperclip.svg",
-      "logoSourceUrl": "https://paperclip.ing/"
+      "logoSourceUrl": "https://paperclip.ing/favicon.svg"
     },
     {
       "id": "langflow",
@@ -1142,12 +1142,12 @@
         "arthur"
       ],
       "logoKind": "project-logo",
-      "logoNotes": "Official Arthur homepage logo asset from the owner-controlled site (`arthur-logo-dark.avif`), used for the GenAI Engine entry after the January 2026 rebrand.",
+      "logoNotes": "Official Arthur homepage logo asset from the owner-controlled Webflow CDN (`arthur-logo-dark.avif`), used for the GenAI Engine entry after the January 2026 rebrand.",
       "logoReviewedAt": "2026-05-13",
       "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone.",
       "cloudBadgeReviewedAt": "2026-05-08",
       "logoUrl": "/logos/arthur-genai-engine.avif",
-      "logoSourceUrl": "https://www.arthur.ai/"
+      "logoSourceUrl": "https://cdn.prod.website-files.com/6230fe4706acf355d38b2d54/65f1f0729cccedd4ee58a22f_4432740f72d95f5501ea19277805d621_arthur-logo-dark.avif"
     },
     {
       "id": "github-copilot",
