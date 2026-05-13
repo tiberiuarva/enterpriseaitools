@@ -329,7 +329,7 @@
         "graph"
       ],
       "logoKind": "project-logo",
-      "logoNotes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-dark.svg`).",
+      "logoNotes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-light.svg`).",
       "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
@@ -437,7 +437,7 @@
         "opensource"
       ],
       "logoKind": "project-logo",
-      "logoNotes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`).",
+      "logoNotes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
       "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
@@ -838,8 +838,8 @@
         "visual",
         "maintenance"
       ],
-      "logoKind": "project-logo",
-      "logoNotes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`).",
+      "logoKind": "service-icon",
+      "logoNotes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`). Kept as a square service icon because the published asset is a square mark rather than a wide wordmark.",
       "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",

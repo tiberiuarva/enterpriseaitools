@@ -79,7 +79,7 @@
       "vendor": "LangChain",
       "status": "classified",
       "sourceUrl": "https://github.com/langchain-ai/langgraph",
-      "notes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-dark.svg`).",
+      "notes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-light.svg`).",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/langgraph.svg"
@@ -111,7 +111,7 @@
       "vendor": "BrainBlend AI",
       "status": "classified",
       "sourceUrl": "https://github.com/BrainBlend-AI/atomic-agents",
-      "notes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`).",
+      "notes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/atomic-agents.png"
@@ -221,8 +221,8 @@
       "vendor": "Rivet",
       "status": "classified",
       "sourceUrl": "https://rivet.ironcladapp.com/",
-      "notes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`).",
-      "logoKind": "project-logo",
+      "notes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`). Kept as a square service icon because the published asset is a square mark rather than a wide wordmark.",
+      "logoKind": "service-icon",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/rivet.svg"
     },
