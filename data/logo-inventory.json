@@ -280,10 +280,10 @@
     {
       "name": "LLM Guard",
       "category": "governance",
-      "vendor": "Palo Alto Networks",
+      "vendor": "Palo Alto Networks (Protect AI)",
       "status": "classified",
       "sourceUrl": "https://protectai.github.io/llm-guard/",
-      "notes": "Official LLM Guard docs-site logo asset from the owner-controlled project docs (`assets/logo.png`).",
+      "notes": "Official LLM Guard docs-site logo asset from the owner-controlled Protect AI project docs (`assets/logo.png`), post-acquisition.",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/llm-guard.png"
@@ -313,8 +313,8 @@
       "category": "governance",
       "vendor": "Arthur",
       "status": "classified",
-      "sourceUrl": "https://cdn.prod.website-files.com/6230fe4706acf355d38b2d54/65f1f0729cccedd4ee58a22f_4432740f72d95f5501ea19277805d621_arthur-logo-dark.avif",
-      "notes": "Official Arthur homepage logo asset from the owner-controlled Webflow CDN (`arthur-logo-dark.avif`), used for the GenAI Engine entry after the January 2026 rebrand.",
+      "sourceUrl": "https://www.arthur.ai/",
+      "notes": "Official Arthur homepage logo asset captured from the owner-controlled site after the January 2026 GenAI Engine rebrand (`arthur-logo-dark.avif` via the Arthur Webflow CDN).",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/arthur-genai-engine.avif"
@@ -478,7 +478,7 @@
       "vendor": "Paperclip",
       "status": "classified",
       "sourceUrl": "https://paperclip.ing/favicon.svg",
-      "notes": "Official Paperclip favicon/icon asset from the owner-controlled homepage (`/favicon.svg`), intentionally rendered as a square service icon.",
+      "notes": "Official Paperclip favicon/icon asset from the owner-controlled homepage (`/favicon.svg`), verified byte-for-byte against the live source on 2026-05-13 and rendered as a square service icon.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/paperclip.svg"
