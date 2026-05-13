@@ -78,10 +78,11 @@
       "category": "agents",
       "vendor": "LangChain",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/langchain-ai/langgraph",
+      "notes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-light.svg`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/langgraph.svg"
     },
     {
       "name": "Mastra",
@@ -109,10 +110,11 @@
       "category": "agents",
       "vendor": "BrainBlend AI",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+      "notes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/atomic-agents.png"
     },
     {
       "name": "BeeAI Framework",
@@ -218,10 +220,11 @@
       "category": "orchestration",
       "vendor": "Rivet",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://rivet.ironcladapp.com/",
+      "notes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`). Kept as a square service icon because the published asset is a square mark rather than a wide wordmark.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-13",
+      "logoUrl": "/logos/rivet.svg"
     },
     {
       "name": "Azure AI Content Safety",
