@@ -344,30 +344,33 @@
       "category": "assistants",
       "vendor": "Google",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://codeassist.google/products/business",
+      "notes": "Official Gemini Code Assist wordmark asset from the owner-controlled Code Assist for Business site (`https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/gemini-code-assist.png"
     },
     {
       "name": "Cursor",
       "category": "assistants",
       "vendor": "Anysphere",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://cursor.com/",
+      "notes": "Official Cursor favicon/icon asset from the owner-controlled Cursor site (`/marketing-static/favicon.svg`). Kept as a square service icon because the published public asset is an app/favicon mark rather than a standalone wordmark.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/cursor.svg"
     },
     {
       "name": "Windsurf",
       "category": "assistants",
       "vendor": "Cognition AI",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://windsurf.com/",
+      "notes": "Official Windsurf favicon/icon asset from the owner-controlled Windsurf site (`/favicon.svg`). Kept as a square service icon because the public wordmark asset is white-only while the favicon is the clean published standalone mark.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/windsurf.svg"
     },
     {
       "name": "Microsoft 365 Copilot",

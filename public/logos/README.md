@@ -31,6 +31,9 @@ These files were replaced from owner-controlled official asset pages or download
 | `llm-guard.png` | LLM Guard official docs-site logo asset from the owner-controlled Protect AI docs: https://protectai.github.io/llm-guard/ (`assets/logo.png`), post-acquisition. |
 | `arthur-genai-engine.avif` | Arthur official homepage logo asset captured from https://www.arthur.ai/ after the January 2026 GenAI Engine rebrand (`arthur-logo-dark.avif` via the owner-controlled Webflow CDN). |
 | `paperclip.svg` | Paperclip official homepage favicon/icon: https://paperclip.ing/favicon.svg, verified byte-for-byte against the live source on 2026-05-13 and rendered as a square service icon. |
+| `cursor.svg` | Cursor official favicon/icon asset from the owner-controlled site: https://cursor.com/ (`/marketing-static/favicon.svg`), intentionally rendered as a square service icon. |
+| `windsurf.svg` | Windsurf official favicon/icon asset from the owner-controlled site: https://windsurf.com/ (`/favicon.svg`), intentionally rendered as a square service icon because the public wordmark asset is white-only. |
+| `gemini-code-assist.png` | Gemini Code Assist official wordmark asset from the owner-controlled Code Assist for Business site: https://codeassist.google/products/business (`https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png`). |
 
 ## Deliberately not force-replaced yet
 
