@@ -272,10 +272,11 @@
       "category": "governance",
       "vendor": "Guardrails AI",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/guardrails-ai/guardrails",
+      "notes": "Official Guardrails AI project logo from the owner-controlled GitHub repo (`docs/assets/Guardrails-ai-logo-for-white-bg.svg`), committed byte-for-byte.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/guardrails-ai.svg"
     },
     {
       "name": "LLM Guard",
@@ -303,10 +304,11 @@
       "category": "governance",
       "vendor": "Check Point",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.lakera.ai/lakera-guard",
+      "notes": "Official Lakera Guard icon asset from the owner-controlled Lakera Guard product page (`677da5b755934cb6289a0bb3_guard corner logo.svg` on the Lakera Webflow CDN), committed byte-for-byte as a square service icon.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/lakera-guard.svg"
     },
     {
       "name": "Arthur GenAI Engine",
