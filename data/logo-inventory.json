@@ -47,10 +47,11 @@
       "category": "agents",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/microsoft/autogen",
+      "notes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/autogen.svg"
     },
     {
       "name": "LlamaIndex",
@@ -68,10 +69,11 @@
       "category": "agents",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/microsoft/semantic-kernel",
+      "notes": "Official Semantic Kernel logo asset from the owner-controlled microsoft/semantic-kernel repo (`docs/images/sk_logo.png`).",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/semantic-kernel.png"
     },
     {
       "name": "LangGraph",
