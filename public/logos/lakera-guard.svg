@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Lakera Guard logo badge">
-  <rect width="64" height="64" rx="16" fill="white"/>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="#CFFAFE" stroke="#0891B2" stroke-width="2"/>
-  <path d="M16 48 C24 34, 30 24, 48 16" stroke="#0891B2" stroke-opacity="0.14" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <text x="32" y="30" text-anchor="middle" dominant-baseline="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#0891B2">LG</text>
-  <text x="32" y="47" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="7" font-weight="700" fill="#0F172A">Lakera Guard</text>
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="14.8044" height="14.8044" fill="white"/>
+<path d="M14.0634 0H8.84766V2.58721H12.195V5.95265H14.8035V0.740125C14.8035 0.331312 14.4722 0 14.0634 0Z" fill="#D6DADE"/>
+<path d="M12.195 12.2134H8.84766V14.8038H14.0634C14.4722 14.8038 14.8035 14.4725 14.8035 14.0637V8.84792H12.195V12.2127V12.2134Z" fill="#D6DADE"/>
+<path d="M2.60852 8.84856H0V14.0643C0 14.4731 0.331312 14.8044 0.740125 14.8044H5.95265V12.214H2.60852V8.84921V8.84856Z" fill="#D6DADE"/>
+<path d="M7.4444 5.38506L5.42773 7.40173L7.4444 9.41839L9.46107 7.40173L7.4444 5.38506Z" fill="#D6DADE"/>
+<path d="M2.60852 2.58721H5.95265V0H0.740125C0.331312 0 0 0.331312 0 0.740125V5.95265H2.60852V2.58721Z" fill="#D6DADE"/>
 </svg>

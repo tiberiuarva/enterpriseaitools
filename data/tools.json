@@ -1008,15 +1008,17 @@
         "opensource"
       ],
       "version": "0.10.0",
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Guardrails AI project logo from the owner-controlled GitHub repo (`docs/assets/Guardrails-ai-logo-for-white-bg.svg`), committed byte-for-byte.",
+      "logoReviewedAt": "2026-05-14",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform."
+      "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
+      "logoUrl": "/logos/guardrails-ai.svg",
+      "logoSourceUrl": "https://github.com/guardrails-ai/guardrails"
     },
     {
       "id": "llm-guard",
@@ -1112,11 +1114,13 @@
         "commercial",
         "security"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "service-icon",
+      "logoNotes": "Official Lakera Guard icon asset from the owner-controlled Lakera Guard product page (`677da5b755934cb6289a0bb3_guard corner logo.svg` on the Lakera Webflow CDN), committed byte-for-byte as a square service icon.",
+      "logoReviewedAt": "2026-05-14",
       "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces.",
-      "cloudBadgeReviewedAt": "2026-05-08"
+      "cloudBadgeReviewedAt": "2026-05-08",
+      "logoUrl": "/logos/lakera-guard.svg",
+      "logoSourceUrl": "https://www.lakera.ai/lakera-guard"
     },
     {
       "id": "arthur-genai-engine",
