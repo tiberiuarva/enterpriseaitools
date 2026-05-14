@@ -378,7 +378,7 @@
       "vendor": "Microsoft",
       "status": "classified",
       "sourceUrl": "https://adoption.microsoft.com/wp-content/uploads/2023/09/icon-copilot.svg",
-      "notes": "Official Microsoft Copilot icon asset from the owner-controlled Microsoft 365 adoption site (`icon-copilot.svg`), used here for Microsoft 365 Copilot branding.",
+      "notes": "Official Microsoft Copilot icon asset from the owner-controlled Microsoft 365 adoption site (`icon-copilot.svg`), reused for Microsoft 365 Copilot branding. Checked-in SVG adds title/accessibility metadata, so it is source-verified on 2026-05-14 but not byte-identical.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-14",
       "logoUrl": "/logos/microsoft-365-copilot.svg"
@@ -389,7 +389,7 @@
       "vendor": "Google",
       "status": "classified",
       "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png",
-      "notes": "Official Gemini product logo asset surfaced on the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`); Google uses this shared Gemini mark across Workspace Gemini packaging.",
+      "notes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Google uses this shared Gemini mark across Workspace Gemini packaging.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-14",
       "logoUrl": "/logos/gemini-shared.png"
@@ -410,7 +410,7 @@
       "vendor": "Microsoft",
       "status": "classified",
       "sourceUrl": "https://learn.microsoft.com/en-us/power-platform/guidance/icons",
-      "notes": "Official Copilot Studio icon from the Microsoft Power Platform icons pack (`Power-Platform-icons-scalable.zip` -> `CopilotStudio_scalable.svg`).",
+      "notes": "Official Copilot Studio icon from the Microsoft Power Platform icons pack (`Power-Platform-icons-scalable.zip` -> `CopilotStudio_scalable.svg`). Checked-in SVG adds title/accessibility metadata for inline use, so it is source-verified on 2026-05-14 but not byte-identical.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-14",
       "logoUrl": "/logos/copilot-studio.svg"
@@ -431,7 +431,7 @@
       "vendor": "Google",
       "status": "classified",
       "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png",
-      "notes": "Official Gemini product logo asset surfaced on the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`); Gemini Enterprise is currently packaged under the same shared Gemini visual identity.",
+      "notes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Gemini Enterprise currently uses the same shared Gemini visual identity.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-14",
       "logoUrl": "/logos/gemini-shared.png"
