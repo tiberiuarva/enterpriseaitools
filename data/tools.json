@@ -1239,7 +1239,7 @@
         "gcp"
       ],
       "logoKind": "project-logo",
-      "logoNotes": "Official Gemini Code Assist wordmark asset from the owner-controlled Code Assist for Business site (`https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png`).",
+      "logoNotes": "Official Gemini Code Assist wordmark asset from the owner-controlled Code Assist for Business site, verified byte-for-byte against `https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png` on 2026-05-14.",
       "logoReviewedAt": "2026-05-14",
       "practitionerNote": "Worth considering for Google Cloud-centric teams, but enterprise rollout quality still depends heavily on how much of the stack already lives in Google tooling.",
       "logoUrl": "/logos/gemini-code-assist.png",
@@ -1271,7 +1271,7 @@
         "cursor"
       ],
       "logoKind": "service-icon",
-      "logoNotes": "Official Cursor favicon/icon asset from the owner-controlled Cursor site (`/marketing-static/favicon.svg`). Kept as a square service icon because the published public asset is an app/favicon mark rather than a standalone wordmark.",
+      "logoNotes": "Official Cursor favicon/icon asset from the owner-controlled site (`/marketing-static/favicon.svg`). Checked-in copy is a normalized local SVG variant for site use (namespaced ids / title) rather than a byte-identical mirror.",
       "logoReviewedAt": "2026-05-14",
       "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots.",
       "cloudBadgeReviewedAt": "2026-05-08",
@@ -1304,7 +1304,7 @@
         "windsurf"
       ],
       "logoKind": "service-icon",
-      "logoNotes": "Official Windsurf favicon/icon asset from the owner-controlled Windsurf site (`/favicon.svg`). Kept as a square service icon because the public wordmark asset is white-only while the favicon is the clean published standalone mark.",
+      "logoNotes": "Official Windsurf favicon/icon asset from the owner-controlled site (`/favicon.svg`). Checked-in copy preserves the vendor-provided cream background tile and adds a title for accessibility, so it is source-verified but not byte-identical.",
       "logoReviewedAt": "2026-05-14",
       "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
       "cloudBadgeReviewedAt": "2026-05-08",
