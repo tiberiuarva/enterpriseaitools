@@ -1338,10 +1338,12 @@
         "productivity",
         "microsoft"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Natural fit when the real value is inside Microsoft 365 workflows and Graph-connected knowledge, not just generic chat over documents."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Microsoft Copilot icon asset from the owner-controlled Microsoft 365 adoption site (`icon-copilot.svg`), reused for Microsoft 365 Copilot branding. Checked-in SVG adds title/accessibility metadata, so it is source-verified on 2026-05-14 but not byte-identical.",
+      "logoReviewedAt": "2026-05-14",
+      "practitionerNote": "Natural fit when the real value is inside Microsoft 365 workflows and Graph-connected knowledge, not just generic chat over documents. Uses the shared Microsoft Copilot visual identity rather than a separate M365-specific product mark.",
+      "logoUrl": "/logos/microsoft-365-copilot.svg",
+      "logoSourceUrl": "https://adoption.microsoft.com/wp-content/uploads/2023/09/icon-copilot.svg"
     },
     {
       "id": "gemini-for-workspace",
@@ -1371,10 +1373,12 @@
         "productivity",
         "google"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Pragmatic for Google Workspace estates that want AI features embedded in existing docs, mail, and meetings without a separate assistant rollout."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Google uses this shared Gemini mark across Workspace Gemini packaging.",
+      "logoReviewedAt": "2026-05-14",
+      "practitionerNote": "Pragmatic for Google Workspace estates that want AI features embedded in existing docs, mail, and meetings without a separate assistant rollout.",
+      "logoUrl": "/logos/gemini-shared.png",
+      "logoSourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png"
     },
     {
       "id": "amazon-q-business",
@@ -1436,10 +1440,12 @@
         "build-your-own",
         "low-code"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Best when business teams need to assemble Microsoft-native copilots quickly, provided architecture and environment sprawl are still governed centrally."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Copilot Studio icon from the Microsoft Power Platform icons pack (`Power-Platform-icons-scalable.zip` -> `CopilotStudio_scalable.svg`). Checked-in SVG adds title/accessibility metadata for inline use, so it is source-verified on 2026-05-14 but not byte-identical.",
+      "logoReviewedAt": "2026-05-14",
+      "practitionerNote": "Best when business teams need to assemble Microsoft-native copilots quickly, provided architecture and environment sprawl are still governed centrally.",
+      "logoUrl": "/logos/copilot-studio.svg",
+      "logoSourceUrl": "https://learn.microsoft.com/en-us/power-platform/guidance/icons"
     },
     {
       "id": "amazon-q-apps",
@@ -1502,10 +1508,12 @@
         "build-your-own",
         "google"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Worth evaluating for Google-first organizations that want assistant and agent capabilities under one commercial umbrella, but packaging maturity should still be checked closely."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Gemini Enterprise currently uses the same shared Gemini visual identity.",
+      "logoReviewedAt": "2026-05-14",
+      "practitionerNote": "Worth evaluating for Google-first organizations that want assistant and agent capabilities under one commercial umbrella, but packaging maturity should still be checked closely.",
+      "logoUrl": "/logos/gemini-shared.png",
+      "logoSourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png"
     }
   ]
 }

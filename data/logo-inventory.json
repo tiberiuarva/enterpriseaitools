@@ -377,20 +377,22 @@
       "category": "assistants",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://adoption.microsoft.com/wp-content/uploads/2023/09/icon-copilot.svg",
+      "notes": "Official Microsoft Copilot icon asset from the owner-controlled Microsoft 365 adoption site (`icon-copilot.svg`), reused for Microsoft 365 Copilot branding. Checked-in SVG adds title/accessibility metadata, so it is source-verified on 2026-05-14 but not byte-identical.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/microsoft-365-copilot.svg"
     },
     {
       "name": "Gemini for Workspace",
       "category": "assistants",
       "vendor": "Google",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png",
+      "notes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Google uses this shared Gemini mark across Workspace Gemini packaging.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/gemini-shared.png"
     },
     {
       "name": "Amazon Q Business",
@@ -407,10 +409,11 @@
       "category": "assistants",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://learn.microsoft.com/en-us/power-platform/guidance/icons",
+      "notes": "Official Copilot Studio icon from the Microsoft Power Platform icons pack (`Power-Platform-icons-scalable.zip` -> `CopilotStudio_scalable.svg`). Checked-in SVG adds title/accessibility metadata for inline use, so it is source-verified on 2026-05-14 but not byte-identical.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/copilot-studio.svg"
     },
     {
       "name": "Amazon Q Apps",
@@ -427,10 +430,11 @@
       "category": "assistants",
       "vendor": "Google",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png",
+      "notes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Gemini Enterprise currently uses the same shared Gemini visual identity.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-14",
+      "logoUrl": "/logos/gemini-shared.png"
     },
     {
       "name": "Microsoft Foundry",
