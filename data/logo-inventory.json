@@ -332,20 +332,22 @@
       "category": "assistants",
       "vendor": "GitHub/Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://brand.github.com/brand-identity/copilot",
+      "notes": "Official Copilot icon asset from the GitHub brand toolkit (`GitHub_Logos.zip` -> `Copilot_Icon_Black.svg`). GitHub changed standalone Copilot logo treatments in 2025, but this icon remains in the official pack and is used here as the compact service mark.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/github-copilot.svg"
     },
     {
       "name": "Amazon Q Developer",
       "category": "assistants",
       "vendor": "AWS",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Gemini Code Assist",
@@ -407,10 +409,11 @@
       "category": "assistants",
       "vendor": "AWS",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Copilot Studio",
@@ -428,10 +431,11 @@
       "category": "assistants",
       "vendor": "AWS",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Gemini Enterprise",

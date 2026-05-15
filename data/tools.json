@@ -1189,11 +1189,13 @@
         "coding",
         "copilot"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "service-icon",
+      "logoNotes": "Official Copilot icon asset from the GitHub brand toolkit (`GitHub_Logos.zip` -> `Copilot_Icon_Black.svg`). GitHub changed standalone Copilot logo treatments in 2025, but this icon remains in the official pack and is used here as the compact service mark.",
+      "logoReviewedAt": "2026-05-15",
       "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path.",
-      "cloudBadgeReviewedAt": "2026-05-08"
+      "cloudBadgeReviewedAt": "2026-05-08",
+      "logoUrl": "/logos/github-copilot.svg",
+      "logoSourceUrl": "https://brand.github.com/brand-identity/copilot"
     },
     {
       "id": "amazon-q-developer",
@@ -1222,10 +1224,12 @@
         "coding",
         "aws"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows."
+      "logoKind": "service-icon",
+      "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows.",
+      "logoUrl": "/logos/amazon-q.svg",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
       "id": "gemini-code-assist",
@@ -1423,10 +1427,12 @@
         "productivity",
         "aws"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout."
+      "logoKind": "service-icon",
+      "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout.",
+      "logoUrl": "/logos/amazon-q.svg",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
       "id": "copilot-studio",
@@ -1491,10 +1497,12 @@
         "build-your-own",
         "no-code"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform."
+      "logoKind": "service-icon",
+      "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform.",
+      "logoUrl": "/logos/amazon-q.svg",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
       "id": "gemini-enterprise",
