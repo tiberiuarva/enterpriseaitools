@@ -211,6 +211,8 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
           sortBy={sortBy}
           onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
           availableLicenses={availableLicenses}
+          resultCount={effectiveTools.length}
+          resultLabel={effectiveTools.length === 1 ? "matching tool" : "matching tools"}
         />
       </section>
 
