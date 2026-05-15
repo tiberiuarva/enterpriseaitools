@@ -181,9 +181,11 @@
         "microsoft",
         "maintenance"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
+      "logoReviewedAt": "2026-05-14",
+      "logoSourceUrl": "https://github.com/microsoft/autogen",
+      "logoUrl": "/logos/autogen.svg",
       "clouds": [
         "aws",
         "azure",
@@ -252,9 +254,11 @@
         "microsoft",
         "opensource"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Semantic Kernel logo asset from the owner-controlled microsoft/semantic-kernel repo (`docs/images/sk_logo.png`).",
+      "logoReviewedAt": "2026-05-14",
+      "logoSourceUrl": "https://github.com/microsoft/semantic-kernel",
+      "logoUrl": "/logos/semantic-kernel.png",
       "clouds": [
         "aws",
         "azure",

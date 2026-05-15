@@ -27,6 +27,8 @@ These files were replaced from owner-controlled official asset pages or download
 | `beeai-framework.svg` | BeeAI Framework official docs-site logo: https://framework.beeai.dev/ (`beeai-framework-light.svg` served from the owner-controlled Mintlify CDN). |
 | `langgraph.svg` | LangGraph official logo asset from the owner-controlled GitHub repo: https://github.com/langchain-ai/langgraph (`.github/images/logo-light.svg`). |
 | `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/BrainBlend-AI/atomic-agents (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use. |
+| `autogen.svg` | AutoGen official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/autogen (`python/docs/src/_static/images/logo/logo.svg`), committed byte-for-byte. |
+| `semantic-kernel.png` | Semantic Kernel official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/semantic-kernel (`docs/images/sk_logo.png`), committed byte-for-byte. |
 | `rivet.svg` | Rivet official app logo from the owner-controlled homepage: https://rivet.ironcladapp.com/ (`img/logo.svg`), intentionally rendered as a square service icon rather than a stretched project wordmark. |
 | `llm-guard.png` | LLM Guard official docs-site logo asset from the owner-controlled Protect AI docs: https://protectai.github.io/llm-guard/ (`assets/logo.png`), post-acquisition. |
 | `lakera-guard.svg` | Lakera Guard official icon asset from the owner-controlled Lakera Guard product page: https://www.lakera.ai/lakera-guard/ (`677da5b755934cb6289a0bb3_guard corner logo.svg` on the Lakera Webflow CDN), committed byte-for-byte as a square service icon. |
