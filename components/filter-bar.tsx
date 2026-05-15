@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useId, useMemo } from "react";
 
 type FilterValue = "all" | "vendor" | "opensource" | "commercial";
 
@@ -14,6 +14,8 @@ type FilterBarProps = {
   sortBy: string;
   onSortByChange: (value: string) => void;
   availableLicenses: string[];
+  resultCount?: number;
+  resultLabel?: string;
 };
 
 const cloudOptions = ["azure", "aws", "gcp"] as const;
@@ -28,6 +30,8 @@ export function FilterBar({
   sortBy,
   onSortByChange,
   availableLicenses,
+  resultCount,
+  resultLabel = "matching tools",
 }: FilterBarProps) {
   const segmentedOptions = useMemo(
     () => [
@@ -38,6 +42,7 @@ export function FilterBar({
     ] as const,
     [],
   );
+  const summaryId = useId();
 
   function toggleCloud(cloud: string) {
     if (cloudFilters.includes(cloud)) {
@@ -49,7 +54,10 @@ export function FilterBar({
   }
 
   return (
-    <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">
+    <section
+      aria-label="Filter and sort tools"
+      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm"
+    >
       <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
         <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-center">
           <fieldset className="flex flex-wrap gap-2">
@@ -125,6 +133,12 @@ export function FilterBar({
           </select>
         </div>
       </div>
-    </div>
+
+      {resultCount !== undefined ? (
+        <p id={summaryId} className="mt-3 text-sm text-[var(--color-text-secondary)]" aria-live="polite">
+          Showing {resultCount} {resultLabel}.
+        </p>
+      ) : null}
+    </section>
   );
 }

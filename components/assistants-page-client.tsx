@@ -1,7 +1,7 @@
 "use client";
 
 import { BriefcaseBusiness } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { FilterBar } from "@/components/filter-bar";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
@@ -48,6 +48,11 @@ const defaultFilterState: AssistantFilterState = {
 export function AssistantsPageClient({ title, description, introParagraphs, tools, updates, platforms }: AssistantsPageClientProps) {
   const [activeTab, setActiveTab] = useState<AssistantsSubcategory>("coding");
   const [filterState, setFilterState] = useState<AssistantFilterState>(defaultFilterState);
+  const tabRefs = useRef<Record<AssistantsSubcategory, HTMLButtonElement | null>>({
+    coding: null,
+    productivity: null,
+    "build-your-own": null,
+  });
 
   const toolsBySubcategory = useMemo(() => {
     return Object.fromEntries(
@@ -86,12 +91,51 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   const showVendorComparison = !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial" && vendorTools.length > 0;
   const visibleUpdates = updates.slice(0, 5);
 
+  function setActiveSubcategory(subcategory: AssistantsSubcategory) {
+    setActiveTab(subcategory);
+    setFilterState(defaultFilterState);
+  }
+
   function updateFilterState(partial: Partial<AssistantFilterState>) {
     setFilterState((current) => ({ ...current, ...partial }));
   }
 
   function resetNarrowingFilters() {
     updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+  }
+
+  function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, subcategory: AssistantsSubcategory) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setActiveSubcategory(subcategory);
+      return;
+    }
+
+    const currentIndex = subcategoryOrder.indexOf(subcategory);
+
+    if (currentIndex === -1) {
+      return;
+    }
+
+    let nextIndex: number | null = null;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (currentIndex + 1) % subcategoryOrder.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (currentIndex - 1 + subcategoryOrder.length) % subcategoryOrder.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = subcategoryOrder.length - 1;
+    }
+
+    if (nextIndex === null) {
+      return;
+    }
+
+    event.preventDefault();
+    const nextSubcategory = subcategoryOrder[nextIndex];
+    tabRefs.current[nextSubcategory]?.focus();
   }
 
   function getVendorSectionDescription() {
@@ -162,15 +206,17 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             {subcategoryOrder.map((subcategory) => (
               <button
                 key={subcategory}
+                ref={(element) => {
+                  tabRefs.current[subcategory] = element;
+                }}
                 type="button"
                 role="tab"
+                tabIndex={activeTab === subcategory ? 0 : -1}
                 aria-selected={activeTab === subcategory}
                 aria-controls={`tabpanel-${subcategory}`}
                 id={`tab-${subcategory}`}
-                onClick={() => {
-                  setActiveTab(subcategory);
-                  setFilterState(defaultFilterState);
-                }}
+                onClick={() => setActiveSubcategory(subcategory)}
+                onKeyDown={(event) => handleTabKeyDown(event, subcategory)}
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                   activeTab === subcategory
                     ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
@@ -193,12 +239,14 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             sortBy={sortBy}
             onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
             availableLicenses={availableLicenses}
+            resultCount={effectiveTools.length}
+            resultLabel={effectiveTools.length === 1 ? `${subcategoryLabels[activeTab].toLowerCase()} assistant` : `${subcategoryLabels[activeTab].toLowerCase()} assistants`}
           />
         </div>
       </section>
 
-      {comparison && (showVendorCards || showVendorComparison) ? (
-        <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`}>
+      <div role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="space-y-6">
+        {comparison && (showVendorCards || showVendorComparison) ? (
           <VendorToolsSection
             vendorTools={vendorTools}
             comparison={comparison}
@@ -208,69 +256,69 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             clearFiltersLabel={hasActiveNarrowingFilter ? "Clear cloud/license filters" : undefined}
             onClearFilters={hasActiveNarrowingFilter ? resetNarrowingFilters : undefined}
           />
-        </section>
-      ) : null}
+        ) : null}
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-        <h2 className="text-lg font-semibold">{getAdditionalToolsHeading()}</h2>
-        <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-          {nonVendorTools.length > 0
-            ? `${nonVendorTools.length} matching tools in this subcategory.`
-            : "No additional non-vendor tools match the current assistants filters in this subcategory."}
-        </p>
-        {nonVendorTools.length > 0 ? (
-          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {nonVendorTools.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} />
-            ))}
-          </div>
-        ) : (
-          <div className="mt-5 space-y-3">
-            <WarningBox variant="info">
-              No non-vendor assistant tools match the current filter combination. Adjust type, cloud, license, or sort to broaden the result set.
-            </WarningBox>
-            {hasActiveNarrowingFilter ? (
-              <button
-                type="button"
-                onClick={resetNarrowingFilters}
-                className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
-              >
-                Clear cloud/license filters
-              </button>
-            ) : null}
-          </div>
-        )}
-      </section>
-
-      {warnings.length > 0 ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <h2 className="text-lg font-semibold">Important notes</h2>
-          <div className="mt-4 space-y-3">
-            {warnings.map((tool) => (
-              <WarningBox key={tool.id}>
-                <strong>{tool.name}:</strong> {tool.licenseWarning ?? tool.statusNote}
+          <h2 className="text-lg font-semibold">{getAdditionalToolsHeading()}</h2>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            {nonVendorTools.length > 0
+              ? `${nonVendorTools.length} matching tools in this subcategory.`
+              : "No additional non-vendor tools match the current assistants filters in this subcategory."}
+          </p>
+          {nonVendorTools.length > 0 ? (
+            <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {nonVendorTools.map((tool) => (
+                <ToolCard key={tool.id} tool={tool} />
+              ))}
+            </div>
+          ) : (
+            <div className="mt-5 space-y-3">
+              <WarningBox variant="info">
+                No non-vendor assistant tools match the current filter combination. Adjust type, cloud, license, or sort to broaden the result set.
               </WarningBox>
-            ))}
-          </div>
+              {hasActiveNarrowingFilter ? (
+                <button
+                  type="button"
+                  onClick={resetNarrowingFilters}
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                >
+                  Clear cloud/license filters
+                </button>
+              ) : null}
+            </div>
+          )}
         </section>
-      ) : null}
 
-      {visibleUpdates.length > 0 ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <h2 className="text-lg font-semibold">Recent updates</h2>
-          <div className="mt-4 space-y-4">
-            {visibleUpdates.map((update) => (
-              <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
-                <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
-                <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
-                <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{update.toolName}</div>
-                <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
-                <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
+        {warnings.length > 0 ? (
+          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">Important notes</h2>
+            <div className="mt-4 space-y-3">
+              {warnings.map((tool) => (
+                <WarningBox key={tool.id}>
+                  <strong>{tool.name}:</strong> {tool.licenseWarning ?? tool.statusNote}
+                </WarningBox>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {visibleUpdates.length > 0 ? (
+          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold">Recent updates</h2>
+            <div className="mt-4 space-y-4">
+              {visibleUpdates.map((update) => (
+                <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
+                  <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
+                  <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
+                  <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{update.toolName}</div>
+                  <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
+                  <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline">Source</a>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
+      </div>
 
       <RelatedHubs
         currentPath="/assistants"
