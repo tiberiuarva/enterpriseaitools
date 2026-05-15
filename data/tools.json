@@ -412,16 +412,18 @@
         "openai",
         "sdk"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "service-icon",
+      "logoNotes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as a compact service icon for the SDK surface rather than claiming a separate canonical vendor wordmark.",
+      "logoReviewedAt": "2026-05-15",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-05-01"
+      "lastRelease": "2026-05-01",
+      "logoUrl": "/logos/openai.svg",
+      "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents"
     },
     {
       "id": "atomic-agents",
@@ -954,10 +956,12 @@
         "gcp",
         "safety"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Worth evaluating for Google-first estates that need managed prompt and response protection, especially around injection and unsafe content controls."
+      "logoKind": "official-vendor",
+      "logoNotes": "Google Cloud does not expose a standalone public Model Armor logo on the official product page; this uses the owner-controlled Google Cloud header logo (`https://www.gstatic.com/cgc/google-cloud-logo.svg`) as the shared vendor mark for the service.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Worth evaluating for Google-first estates that need managed prompt and response protection, especially around injection and unsafe content controls.",
+      "logoUrl": "/logos/google-cloud.svg",
+      "logoSourceUrl": "https://cloud.google.com/security/products/model-armor"
     },
     {
       "id": "nemo-guardrails",
@@ -986,15 +990,17 @@
         "nvidia"
       ],
       "version": "0.21.0",
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "official-vendor",
+      "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
+      "logoReviewedAt": "2026-05-15",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service."
+      "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
+      "logoUrl": "/logos/nvidia.svg",
+      "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/"
     },
     {
       "id": "guardrails-ai",
