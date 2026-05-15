@@ -42,6 +42,17 @@ These files were replaced from owner-controlled official asset pages or download
 | `windsurf.svg` | Windsurf official favicon/icon asset from the owner-controlled site: https://windsurf.com/ (`/favicon.svg`), intentionally kept as the vendor-provided square service icon because the public wordmark asset is white-only. The checked-in copy adds a `<title>` for accessibility, so provenance was rechecked against the live source on 2026-05-14 but is not byte-for-byte identical. The cream background tile is vendor-provided in the source asset. |
 | `gemini-code-assist.png` | Gemini Code Assist official wordmark asset from the owner-controlled Code Assist for Business site: https://codeassist.google/products/business (`https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png`), verified byte-for-byte against the live source on 2026-05-14. |
 
+## Shared-brand reuse decisions
+
+Some products still do not expose a distinct public product mark, but their owner-controlled parent platform iconography is clear enough to use intentionally instead of keeping a fake placeholder badge.
+
+| Product | Local file reused | Why this is defensible |
+| --- | --- | --- |
+| `Microsoft Foundry Agent Service` | `microsoft-foundry.jpg` | Microsoft currently presents Agent Service as a Foundry subservice on the Azure AI Foundry product surface rather than with a separate public standalone mark. |
+| `AWS Bedrock Agents` | `aws-bedrock.svg` | AWS currently presents Agents as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
+| `AWS Bedrock Guardrails` | `aws-bedrock.svg` | AWS currently presents Guardrails as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
+| `Google Agent Builder + ADK` | `google-vertex-ai.svg` | Google currently positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon pack entry. |
+
 ## Deliberately not force-replaced yet
 
 Some current products do not have an obvious current primary-source standalone product mark in the checked official packs, or the available brand guidance is restrictive/ambiguous. Examples include GitHub Copilot product-specific artwork and several newer AI product variants.

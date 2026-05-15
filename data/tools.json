@@ -36,10 +36,12 @@
         "a2a",
         "managed"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Microsoft Foundry product image/logo asset from the Azure AI Foundry product page, intentionally reused for Foundry Agent Service because Microsoft presents it as a Foundry subservice rather than with a distinct public standalone mark.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack.",
+      "logoUrl": "/logos/microsoft-foundry.jpg",
+      "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/"
     },
     {
       "id": "aws-bedrock-agents",
@@ -75,10 +77,12 @@
         "managed",
         "agentcore"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Strong choice for AWS-centric teams that want managed agent primitives and infrastructure alignment without standardising on one open source framework."
+      "logoKind": "service-icon",
+      "logoNotes": "Official AWS architecture icon for Amazon Bedrock (`Arch_Amazon-Bedrock_64.svg` from the AWS Architecture Icons pack), intentionally reused for Bedrock Agents because AWS currently presents Agents as a Bedrock capability rather than with a separate public icon.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Strong choice for AWS-centric teams that want managed agent primitives and infrastructure alignment without standardising on one open source framework.",
+      "logoUrl": "/logos/aws-bedrock.svg",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
       "id": "google-agent-builder-adk",
@@ -113,10 +117,12 @@
         "vertex-ai",
         "adk"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Useful when Vertex AI, search, and Google-first app surfaces matter, but maturity and enterprise standardisation still need close validation."
+      "logoKind": "service-icon",
+      "logoNotes": "Official Google Cloud Vertex AI icon from the Google Cloud icon library, intentionally reused for Agent Builder + ADK because Google positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon entry.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Useful when Vertex AI, search, and Google-first app surfaces matter, but maturity and enterprise standardisation still need close validation.",
+      "logoUrl": "/logos/google-vertex-ai.svg",
+      "logoSourceUrl": "https://cloud.google.com/icons"
     },
     {
       "id": "crewai",
@@ -915,10 +921,12 @@
         "aws",
         "guardrails"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
-      "practitionerNote": "Best fit for Bedrock-centric deployments that want managed prompt/content guardrails close to model invocation instead of a separate governance stack."
+      "logoKind": "service-icon",
+      "logoNotes": "Official AWS architecture icon for Amazon Bedrock (`Arch_Amazon-Bedrock_64.svg` from the AWS Architecture Icons pack), intentionally reused for Bedrock Guardrails because AWS currently presents Guardrails as a Bedrock capability rather than with a separate public icon.",
+      "logoReviewedAt": "2026-05-15",
+      "practitionerNote": "Best fit for Bedrock-centric deployments that want managed prompt/content guardrails close to model invocation instead of a separate governance stack.",
+      "logoUrl": "/logos/aws-bedrock.svg",
+      "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
       "id": "google-model-armor",

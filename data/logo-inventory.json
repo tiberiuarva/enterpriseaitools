@@ -6,30 +6,33 @@
       "category": "agents",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+      "notes": "Official Microsoft Foundry product image/logo asset from the Azure AI Foundry product page, intentionally reused for Foundry Agent Service because Microsoft presents it as a Foundry subservice rather than with a distinct public standalone mark.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/microsoft-foundry.jpg"
     },
     {
       "name": "AWS Bedrock Agents",
       "category": "agents",
       "vendor": "AWS",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon for Amazon Bedrock (`Arch_Amazon-Bedrock_64.svg` from the AWS Architecture Icons pack), intentionally reused for Bedrock Agents because AWS currently presents Agents as a Bedrock capability rather than with a separate public icon.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/aws-bedrock.svg"
     },
     {
       "name": "Google Agent Builder + ADK",
       "category": "agents",
       "vendor": "Google",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://cloud.google.com/icons",
+      "notes": "Official Google Cloud Vertex AI icon from the Google Cloud icon library, intentionally reused for Agent Builder + ADK because Google positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon entry.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/google-vertex-ai.svg"
     },
     {
       "name": "CrewAI",
@@ -244,10 +247,11 @@
       "category": "governance",
       "vendor": "AWS",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://aws.amazon.com/architecture/icons/",
+      "notes": "Official AWS architecture icon for Amazon Bedrock (`Arch_Amazon-Bedrock_64.svg` from the AWS Architecture Icons pack), intentionally reused for Bedrock Guardrails because AWS currently presents Guardrails as a Bedrock capability rather than with a separate public icon.",
+      "logoKind": "service-icon",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/aws-bedrock.svg"
     },
     {
       "name": "Google Model Armor",
