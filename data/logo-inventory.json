@@ -6,8 +6,8 @@
       "category": "agents",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
-      "notes": "Official Microsoft Foundry product image/logo asset from the Azure AI Foundry product page, intentionally reused for Foundry Agent Service because Microsoft presents it as a Foundry subservice rather than with a distinct public standalone mark.",
+      "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-agent-service/",
+      "notes": "Official Microsoft Foundry product image/logo asset reused for Foundry Agent Service. Microsoft has a dedicated Agent Service product page, but the public visual identity still appears to reuse the broader Foundry branding rather than expose a distinct standalone mark.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-15",
       "logoUrl": "/logos/microsoft-foundry.jpg"

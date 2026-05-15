@@ -37,11 +37,11 @@
         "managed"
       ],
       "logoKind": "service-icon",
-      "logoNotes": "Official Microsoft Foundry product image/logo asset from the Azure AI Foundry product page, intentionally reused for Foundry Agent Service because Microsoft presents it as a Foundry subservice rather than with a distinct public standalone mark.",
+      "logoNotes": "Official Microsoft Foundry product image/logo asset reused for Foundry Agent Service. Microsoft has a dedicated Agent Service product page, but the public visual identity still appears to reuse the broader Foundry branding rather than expose a distinct standalone mark.",
       "logoReviewedAt": "2026-05-15",
       "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack.",
       "logoUrl": "/logos/microsoft-foundry.jpg",
-      "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/"
+      "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-agent-service/"
     },
     {
       "id": "aws-bedrock-agents",

@@ -48,7 +48,7 @@ Some products still do not expose a distinct public product mark, but their owne
 
 | Product | Local file reused | Why this is defensible |
 | --- | --- | --- |
-| `Microsoft Foundry Agent Service` | `microsoft-foundry.jpg` | Microsoft currently presents Agent Service as a Foundry subservice on the Azure AI Foundry product surface rather than with a separate public standalone mark. |
+| `Microsoft Foundry Agent Service` | `microsoft-foundry.jpg` | Microsoft has a dedicated Agent Service product page, but the public visual identity still appears to reuse broader Foundry branding rather than expose a distinct standalone mark. |
 | `AWS Bedrock Agents` | `aws-bedrock.svg` | AWS currently presents Agents as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
 | `AWS Bedrock Guardrails` | `aws-bedrock.svg` | AWS currently presents Guardrails as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
 | `Google Agent Builder + ADK` | `google-vertex-ai.svg` | Google currently positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon pack entry. |
