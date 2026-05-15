@@ -29,6 +29,7 @@ These files were replaced from owner-controlled official asset pages or download
 | `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/BrainBlend-AI/atomic-agents (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use. |
 | `autogen.svg` | AutoGen official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/autogen (`python/docs/src/_static/images/logo/logo.svg`), committed byte-for-byte. |
 | `semantic-kernel.png` | Semantic Kernel official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/semantic-kernel (`docs/images/sk_logo.png`), committed byte-for-byte. |
+| `microsoft-agent-framework.svg` | Microsoft Agent Framework official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/agent-framework (`python/packages/devui/frontend/public/agentframework.svg`), committed byte-for-byte. |
 | `rivet.svg` | Rivet official app logo from the owner-controlled homepage: https://rivet.ironcladapp.com/ (`img/logo.svg`), intentionally rendered as a square service icon rather than a stretched project wordmark. |
 | `llm-guard.png` | LLM Guard official docs-site logo asset from the owner-controlled Protect AI docs: https://protectai.github.io/llm-guard/ (`assets/logo.png`), post-acquisition. |
 | `lakera-guard.svg` | Lakera Guard official icon asset from the owner-controlled Lakera Guard product page: https://www.lakera.ai/lakera-guard/ (`677da5b755934cb6289a0bb3_guard corner logo.svg` on the Lakera Webflow CDN), committed byte-for-byte as a square service icon. |
@@ -44,6 +45,7 @@ These files were replaced from owner-controlled official asset pages or download
 | `openai.svg` | OpenAI developer favicon/icon asset from the owner-controlled OpenAI developer docs surface: https://developers.openai.com/api/docs/guides/agents (`/favicon.svg`). The checked-in copy is a local SVG extracted/normalized from that owner-controlled favicon surface for badge use, so provenance was rechecked on 2026-05-15 but is not documented as byte-for-byte identical. |
 | `google-cloud.svg` | Google Cloud shared vendor logo from the owner-controlled Google Cloud product surface: https://cloud.google.com/security/products/model-armor (`https://www.gstatic.com/cgc/google-cloud-logo.svg`), committed byte-for-byte as the shared Google Cloud mark for Model Armor. |
 | `nvidia.svg` | NVIDIA shared vendor logo asset referenced by the owner-controlled NeMo Guardrails docs theme: https://docs.nvidia.com/nemo/guardrails/latest/ (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`), committed byte-for-byte as the shared NVIDIA mark for NeMo Guardrails. |
+| `rebuff.png` | Rebuff official logo asset from the owner-controlled GitHub repo: https://github.com/protectai/rebuff (`server/public/logo.png`), committed here as an optimized downscaled copy for badge use. |
 
 ## Shared-brand reuse decisions
 

@@ -300,9 +300,9 @@
         "opensource",
         "framework"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-23",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Microsoft Agent Framework logo asset from the owner-controlled microsoft/agent-framework repo (`python/packages/devui/frontend/public/agentframework.svg`), committed byte-for-byte.",
+      "logoReviewedAt": "2026-05-15",
       "clouds": [
         "aws",
         "azure",
@@ -313,7 +313,9 @@
         "C#",
         ".NET"
       ],
-      "practitionerNote": "Worth watching for teams standardising on Microsoft agent patterns, but adoption should still be treated as early and architecture-led."
+      "practitionerNote": "Worth watching for teams standardising on Microsoft agent patterns, but adoption should still be treated as early and architecture-led.",
+      "logoUrl": "/logos/microsoft-agent-framework.svg",
+      "logoSourceUrl": "https://github.com/microsoft/agent-framework"
     },
     {
       "id": "langgraph",
@@ -1100,15 +1102,17 @@
         "opensource"
       ],
       "version": "0.1.1",
-      "logoKind": "fallback",
-      "logoNotes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoReviewedAt": "2026-04-19",
+      "logoKind": "project-logo",
+      "logoNotes": "Official Rebuff logo asset from the owner-controlled protectai/rebuff repo (`server/public/logo.png`), committed here as an optimized downscaled copy for badge use.",
+      "logoReviewedAt": "2026-05-15",
       "clouds": [
         "aws",
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Most relevant as a lightweight prompt-injection defense layer in custom stacks, not as a broad end-to-end AI governance product."
+      "practitionerNote": "Most relevant as a lightweight prompt-injection defense layer in custom stacks, not as a broad end-to-end AI governance product.",
+      "logoUrl": "/logos/rebuff.png",
+      "logoSourceUrl": "https://github.com/protectai/rebuff"
     },
     {
       "id": "lakera-guard",
