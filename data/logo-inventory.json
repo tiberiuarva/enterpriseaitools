@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-18T19:41:32.224Z",
+  "generatedAt": "2026-05-15T09:06:00.000Z",
   "items": [
     {
       "name": "Microsoft Foundry Agent Service",
@@ -105,10 +105,11 @@
       "category": "agents",
       "vendor": "OpenAI",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://developers.openai.com/api/docs/guides/agents",
+      "notes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as the shared vendor mark for the SDK surface.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/openai.svg"
     },
     {
       "name": "Atomic Agents",
@@ -258,20 +259,22 @@
       "category": "governance",
       "vendor": "Google",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://cloud.google.com/security/products/model-armor",
+      "notes": "Google Cloud does not expose a standalone public Model Armor logo on the official product page; this uses the owner-controlled Google Cloud header logo (`https://www.gstatic.com/cgc/google-cloud-logo.svg`) as the shared vendor mark for the service.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/google-cloud.svg"
     },
     {
       "name": "NeMo Guardrails",
       "category": "governance",
       "vendor": "NVIDIA",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
+      "notes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/nvidia.svg"
     },
     {
       "name": "Guardrails AI",
