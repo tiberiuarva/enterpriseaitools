@@ -412,8 +412,8 @@
         "openai",
         "sdk"
       ],
-      "logoKind": "official-vendor",
-      "logoNotes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as the shared vendor mark for the SDK surface.",
+      "logoKind": "service-icon",
+      "logoNotes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as a compact service icon for the SDK surface rather than claiming a separate canonical vendor wordmark.",
       "logoReviewedAt": "2026-05-15",
       "clouds": [
         "aws",

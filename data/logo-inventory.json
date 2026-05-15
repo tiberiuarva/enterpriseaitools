@@ -106,8 +106,8 @@
       "vendor": "OpenAI",
       "status": "classified",
       "sourceUrl": "https://developers.openai.com/api/docs/guides/agents",
-      "notes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as the shared vendor mark for the SDK surface.",
-      "logoKind": "official-vendor",
+      "notes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as a compact service icon for the SDK surface rather than claiming a separate canonical vendor wordmark.",
+      "logoKind": "service-icon",
       "reviewedAt": "2026-05-15",
       "logoUrl": "/logos/openai.svg"
     },
