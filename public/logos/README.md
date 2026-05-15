@@ -52,9 +52,12 @@ Some products still do not expose a distinct public product mark, but their owne
 | `AWS Bedrock Agents` | `aws-bedrock.svg` | AWS currently presents Agents as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
 | `AWS Bedrock Guardrails` | `aws-bedrock.svg` | AWS currently presents Guardrails as a Bedrock capability rather than with a separate public icon in the AWS Architecture Icons pack. |
 | `Google Agent Builder + ADK` | `google-vertex-ai.svg` | Google currently positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon pack entry. |
+| `Amazon Q Developer` | `amazon-q-developer.svg` | AWS exposes a single official Amazon Q architecture icon and presents Developer as an Amazon Q variant rather than with a separate public icon. |
+| `Amazon Q Business` | `amazon-q-business.svg` | AWS exposes a single official Amazon Q architecture icon and presents Business as an Amazon Q variant rather than with a separate public icon. |
+| `Amazon Q Apps` | `amazon-q-apps.svg` | AWS exposes a single official Amazon Q architecture icon and presents Q Apps as part of the Amazon Q family rather than with a separate public icon. |
 
 ## Deliberately not force-replaced yet
 
-Some current products do not have an obvious current primary-source standalone product mark in the checked official packs, or the available brand guidance is restrictive/ambiguous. Examples include GitHub Copilot product-specific artwork and several newer AI product variants.
+Some current products do not have an obvious current primary-source standalone product mark in the checked official packs, or the available brand guidance is restrictive/ambiguous. Remaining examples include a few newer AI product variants where the owner only documents the parent brand or where no current product mark has been found yet.
 
 Until a defensible official source is found, those files should remain placeholders rather than silently switching to third-party redraws or guessed marks.
