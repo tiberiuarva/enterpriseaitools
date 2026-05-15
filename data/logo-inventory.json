@@ -303,10 +303,11 @@
       "category": "governance",
       "vendor": "Palo Alto Networks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-19"
+      "sourceUrl": "https://github.com/protectai/rebuff",
+      "notes": "Official Rebuff logo asset from the owner-controlled protectai/rebuff repo (`server/public/logo.png`), committed here as an optimized downscaled copy for badge use.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/rebuff.png"
     },
     {
       "name": "Lakera Guard",
@@ -489,10 +490,11 @@
       "category": "agents",
       "vendor": "Microsoft",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Generated placeholder badge in repo, not a reviewed official product/project mark. Replace only after primary-source provenance is found.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-04-23"
+      "sourceUrl": "https://github.com/microsoft/agent-framework",
+      "notes": "Official Microsoft Agent Framework logo asset from the owner-controlled microsoft/agent-framework repo (`python/packages/devui/frontend/public/agentframework.svg`), committed byte-for-byte.",
+      "logoKind": "project-logo",
+      "reviewedAt": "2026-05-15",
+      "logoUrl": "/logos/microsoft-agent-framework.svg"
     },
     {
       "name": "Paperclip",
