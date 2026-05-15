@@ -347,7 +347,7 @@
       "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-15",
-      "logoUrl": "/logos/amazon-q-developer.svg"
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Gemini Code Assist",
@@ -413,7 +413,7 @@
       "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-15",
-      "logoUrl": "/logos/amazon-q-business.svg"
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Copilot Studio",
@@ -435,7 +435,7 @@
       "notes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-15",
-      "logoUrl": "/logos/amazon-q-apps.svg"
+      "logoUrl": "/logos/amazon-q.svg"
     },
     {
       "name": "Gemini Enterprise",

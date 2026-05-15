@@ -1228,7 +1228,7 @@
       "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoReviewedAt": "2026-05-15",
       "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows.",
-      "logoUrl": "/logos/amazon-q-developer.svg",
+      "logoUrl": "/logos/amazon-q.svg",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
@@ -1431,7 +1431,7 @@
       "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoReviewedAt": "2026-05-15",
       "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout.",
-      "logoUrl": "/logos/amazon-q-business.svg",
+      "logoUrl": "/logos/amazon-q.svg",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
@@ -1501,7 +1501,7 @@
       "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoReviewedAt": "2026-05-15",
       "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform.",
-      "logoUrl": "/logos/amazon-q-apps.svg",
+      "logoUrl": "/logos/amazon-q.svg",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/"
     },
     {
