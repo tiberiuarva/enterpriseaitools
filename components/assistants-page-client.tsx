@@ -1,8 +1,7 @@
 "use client";
 
 import { BriefcaseBusiness } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
-import type { KeyboardEvent } from "react";
+import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { FilterBar } from "@/components/filter-bar";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
@@ -106,6 +105,12 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   }
 
   function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, subcategory: AssistantsSubcategory) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setActiveSubcategory(subcategory);
+      return;
+    }
+
     const currentIndex = subcategoryOrder.indexOf(subcategory);
 
     if (currentIndex === -1) {
@@ -130,7 +135,6 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
 
     event.preventDefault();
     const nextSubcategory = subcategoryOrder[nextIndex];
-    setActiveSubcategory(nextSubcategory);
     tabRefs.current[nextSubcategory]?.focus();
   }
 
@@ -241,7 +245,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
         </div>
       </section>
 
-      <section role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="contents">
+      <div role="tabpanel" id={`tabpanel-${activeTab}`} aria-labelledby={`tab-${activeTab}`} className="space-y-6">
         {comparison && (showVendorCards || showVendorComparison) ? (
           <VendorToolsSection
             vendorTools={vendorTools}
@@ -314,7 +318,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             </div>
           </section>
         ) : null}
-      </section>
+      </div>
 
       <RelatedHubs
         currentPath="/assistants"

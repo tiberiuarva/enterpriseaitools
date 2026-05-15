@@ -56,7 +56,6 @@ export function FilterBar({
   return (
     <section
       aria-label="Filter and sort tools"
-      aria-describedby={resultCount !== undefined ? summaryId : undefined}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm"
     >
       <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
