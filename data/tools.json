@@ -480,7 +480,7 @@
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/i-am-bee/beeai-framework",
       "githubStars": 3255,
-      "version": "0.1.79",
+      "version": "0.1.80",
       "docsUrl": "https://framework.beeai.dev/introduction/welcome",
       "pricingModel": "free",
       "status": "active",
@@ -500,7 +500,8 @@
       ],
       "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation.",
       "logoSourceUrl": "https://framework.beeai.dev/",
-      "logoUrl": "/logos/beeai-framework.svg"
+      "logoUrl": "/logos/beeai-framework.svg",
+      "lastRelease": "2026-05-05"
     },
     {
       "id": "azure-logic-apps",
