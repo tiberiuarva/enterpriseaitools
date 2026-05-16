@@ -2,10 +2,94 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-05-04T00:00:00.000Z</updated>
+  <updated>2026-05-16T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-01</id>
+    <title>Google Vertex AI — model-addition</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-01" />
+    <summary>Google announced Gemini 3.1 Flash-Lite general availability on Gemini Enterprise Agent Platform, adding a lower-latency, lower-cost production model option for agent and orchestration workloads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available</id>
+      <title>Gemini 3.1 Flash-Lite is now generally available</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-02</id>
+    <title>LangFlow — release</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-02" />
+    <summary>LangFlow 1.9.3 shipped as a critical security release with SSRF protection, DNS rebinding prevention, dependency CVE fixes, and an explicit immediate-upgrade recommendation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.9.3</id>
+      <title>Release 1.9.3 · langflow-ai/langflow · GitHub</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.9.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-03</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-03" />
+    <summary>Microsoft Agent Framework 1.4.0 introduced breaking experimental skills API changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0</id>
+      <title>Release python-1.4.0 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-12-01</id>
+    <title>Microsoft Foundry — feature</title>
+    <updated>2026-05-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-12-01" />
+    <summary>Foundry Local 1.1 added live transcription, embeddings, and Responses API support, expanding Microsoft’s local/no-cloud deployment path for speech, RAG, and tool-calling workloads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, medium" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/foundry-local-v1-1/</id>
+      <title>Foundry Local 1.1: Live Transcription, Embeddings, and Responses API</title>
+      <link href="https://devblogs.microsoft.com/foundry/foundry-local-v1-1/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-12-02</id>
+    <title>LangGraph — release</title>
+    <updated>2026-05-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-12-02" />
+    <summary>LangGraph 1.2.0 promoted its alpha packages to official releases and added durable error-handler resume across host crashes, improving reliability for stateful production agent workflows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.0</id>
+      <title>Release langgraph==1.2.0 · langchain-ai/langgraph · GitHub</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-12-03</id>
+    <title>Dify — release</title>
+    <updated>2026-05-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-12-03" />
+    <summary>Dify 1.14.1 hardened self-hosted SECRET_KEY handling, protected internal metrics endpoints, fixed tenant-isolation issues, and refreshed dependencies for CVE-2026-42208 and related risks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langgenius/dify/releases/tag/1.14.1</id>
+      <title>Security hardening, workflow stability, and cleaner self-hosted deployments · langgenius/dify · GitHub</title>
+      <link href="https://github.com/langgenius/dify/releases/tag/1.14.1" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-05-02-01</id>
     <title>Google Agent Builder + ADK — feature</title>
