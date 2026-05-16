@@ -125,7 +125,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-05-06-01" />
     <summary>Mastra 1.32.0 introduced fine-grained authorization checks across agent runs, tool and workflow execution, memory thread access, server adapters, and MCP paths.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, high" />
+    <category term="agents, release, high" />
     <source>
       <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.32.0</id>
       <title>Release @mastra/core@1.32.0 · mastra-ai/mastra · GitHub</title>
