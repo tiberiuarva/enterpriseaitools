@@ -31,7 +31,7 @@
       "toolName": "Microsoft Agent Framework",
       "category": "agents",
       "type": "release",
-      "summary": "Microsoft Agent Framework 1.4.0 introduced breaking experimental skills API changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.",
+      "summary": "Microsoft Agent Framework 1.4.0 introduced experimental skills API breaking changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.",
       "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0",
       "sourceTitle": "Release python-1.4.0 \u00b7 microsoft/agent-framework \u00b7 GitHub",
       "impact": "high"

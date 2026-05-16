@@ -39,7 +39,7 @@
     <title>Microsoft Agent Framework — release</title>
     <updated>2026-05-15T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-03" />
-    <summary>Microsoft Agent Framework 1.4.0 introduced breaking experimental skills API changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.</summary>
+    <summary>Microsoft Agent Framework 1.4.0 introduced experimental skills API breaking changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, high" />
     <source>
