@@ -16,7 +16,7 @@ const generatedAt = inventoryData.generatedAt;
 
 const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
 const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
-const sourceSurfaceOrder = ["icon-pack", "repo", "docs-site", "vendor-site", "other"];
+const sourceSurfaceOrder = ["icon-pack", "repo", "github-hosted", "docs-site", "vendor-site", "other"];
 const allowedStatuses = new Set(["classified", "unclassified"]);
 const allowedCategories = new Set(categoryOrder);
 const allowedLogoKinds = new Set(logoKindOrder);
@@ -110,9 +110,21 @@ function classifySourceSurface(sourceUrl) {
   }
 
   // Intentionally limit repo classification to the canonical GitHub web hosts.
-  // Raw asset/CDN hosts such as raw.githubusercontent.com are treated separately.
   if (host === "github.com" || host === "www.github.com") {
     return "repo";
+  }
+
+  // Keep GitHub Pages / raw asset hosts out of the vendor-site bucket.
+  if (
+    host.endsWith(".github.io") ||
+    host === "raw.githubusercontent.com" ||
+    host === "user-images.githubusercontent.com" ||
+    host === "githubusercontent.com" ||
+    host.endsWith(".githubusercontent.com") ||
+    host === "githubassets.com" ||
+    host.endsWith(".githubassets.com")
+  ) {
+    return "github-hosted";
   }
 
   if (host.startsWith("docs.") || pathname === "/docs" || pathname.startsWith("/docs/")) {
@@ -205,7 +217,7 @@ lines.push(`- Unclassified: **${inventorySummary.unclassified}**`);
 lines.push("");
 lines.push("## Source-surface mix");
 lines.push("");
-lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, docs-site assets, or vendor-site marks pulled from product/marketing pages.");
+lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages.");
 lines.push("");
 lines.push("| Source surface | Count | Share |");
 lines.push("| --- | ---: | ---: |");
@@ -262,11 +274,12 @@ if (highestFallback?.fallback > 0) {
   );
 } else {
   const vendorSiteCount = sourceSurfaceCounts.get("vendor-site") ?? 0;
+  const githubHostedCount = sourceSurfaceCounts.get("github-hosted") ?? 0;
   const docsSiteCount = sourceSurfaceCounts.get("docs-site") ?? 0;
   const sharedReuseCount = sharedAssets.length;
 
   lines.push(
-    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${vendorSiteCount}** vendor-site marks, **${docsSiteCount}** docs-site marks, and **${sharedReuseCount}** shared-image reuse groups still need periodic review.`,
+    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${vendorSiteCount}** vendor-site marks, **${githubHostedCount}** GitHub-hosted marks, **${docsSiteCount}** docs-site marks, and **${sharedReuseCount}** shared-image reuse groups still need periodic review.`,
   );
 }
 

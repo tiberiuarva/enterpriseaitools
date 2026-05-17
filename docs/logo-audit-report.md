@@ -21,14 +21,15 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 ## Source-surface mix
 
-This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, docs-site assets, or vendor-site marks pulled from product/marketing pages.
+This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages.
 
 | Source surface | Count | Share |
 | --- | ---: | ---: |
 | icon-pack | 12 | 26% |
 | repo | 7 | 15% |
+| github-hosted | 1 | 2% |
 | docs-site | 3 | 7% |
-| vendor-site | 24 | 52% |
+| vendor-site | 23 | 50% |
 | other | 0 | 0% |
 
 ## Asset format mix
@@ -58,6 +59,6 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Highest-priority cleanup signal
 
-- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **24** vendor-site marks, **3** docs-site marks, and **5** shared-image reuse groups still need periodic review.
+- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **23** vendor-site marks, **1** GitHub-hosted marks, **3** docs-site marks, and **5** shared-image reuse groups still need periodic review.
 - Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix and shared-asset reuse are also acceptable.
 
