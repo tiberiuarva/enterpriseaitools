@@ -34,7 +34,7 @@
       ],
       "docsUrl": "https://learn.microsoft.com/azure/ai-foundry/",
       "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
-      "lastUpdated": "2026-04-22",
+      "lastUpdated": "2026-05-12",
       "tagline": "Broadest model catalog plus agents, governance, and sovereign deployment options.",
       "categoryMapping": {
         "agents": {
@@ -164,7 +164,7 @@
       ],
       "docsUrl": "https://cloud.google.com/vertex-ai/docs",
       "websiteUrl": "https://cloud.google.com/vertex-ai",
-      "lastUpdated": "2026-05-02",
+      "lastUpdated": "2026-05-15",
       "tagline": "Model Garden plus Gemini, Agent Development Kit, and enterprise MLOps in one stack.",
       "logoUrl": "/logos/google-vertex-ai.svg",
       "categoryMapping": {
