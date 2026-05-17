@@ -28,8 +28,8 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 | icon-pack | 12 | 26% |
 | repo | 7 | 15% |
 | github-hosted | 1 | 2% |
-| docs-site | 3 | 7% |
-| vendor-site | 23 | 50% |
+| docs-site | 4 | 9% |
+| vendor-site | 22 | 48% |
 | other | 0 | 0% |
 
 ## Asset format mix
@@ -59,6 +59,6 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Highest-priority cleanup signal
 
-- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **23** vendor-site marks, **1** GitHub-hosted marks, **3** docs-site marks, and **5** shared-image reuse groups still need periodic review.
-- Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix and shared-asset reuse are also acceptable.
+- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **22** vendor-site marks, **1** GitHub-hosted marks, **4** docs-site marks, and **5** shared-image reuse groups still need periodic review.
+- Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix, shared-asset reuse, and review freshness are also acceptable.
 

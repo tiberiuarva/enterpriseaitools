@@ -3,6 +3,19 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const REVIEW_FRESHNESS_DAYS = {
+  recent: 14,
+  stale: 30,
+};
+const ICON_PACK_RULES = [
+  { host: "aws.amazon.com", pathPrefix: "/architecture/icons" },
+  { host: "learn.microsoft.com", pathPrefix: "/en-us/azure/architecture/icons/" },
+  { host: "learn.microsoft.com", pathPrefix: "/en-us/power-platform/guidance/icons" },
+  { host: "cloud.google.com", pathPrefix: "/icons" },
+];
+const DOCS_HOST_PREFIXES = ["docs.", "developer.", "developers."];
+const DOCS_HOSTS = new Set(["learn.microsoft.com"]);
+const DOCS_PATH_SEGMENTS = ["/docs", "/guides"];
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(repoRoot, relativePath), "utf8"));
@@ -22,8 +35,20 @@ const allowedCategories = new Set(categoryOrder);
 const allowedLogoKinds = new Set(logoKindOrder);
 
 const siteRows = [
-  ...tools.map((item) => ({ name: item.name, category: item.category, logoKind: item.logoKind, logoUrl: item.logoUrl, logoSourceUrl: item.logoSourceUrl })),
-  ...platforms.map((item) => ({ name: item.name, category: "platforms", logoKind: item.logoKind, logoUrl: item.logoUrl, logoSourceUrl: item.logoSourceUrl })),
+  ...tools.map((item) => ({
+    name: item.name,
+    category: item.category,
+    logoKind: item.logoKind,
+    logoUrl: item.logoUrl,
+    logoSourceUrl: item.logoSourceUrl,
+  })),
+  ...platforms.map((item) => ({
+    name: item.name,
+    category: "platforms",
+    logoKind: item.logoKind,
+    logoUrl: item.logoUrl,
+    logoSourceUrl: item.logoSourceUrl,
+  })),
 ];
 
 function initRow() {
@@ -46,6 +71,10 @@ for (const row of siteRows) {
 
   if (!allowedLogoKinds.has(row.logoKind)) {
     throw new Error(`Unknown logoKind in site data for ${row.category}: ${row.logoKind}`);
+  }
+
+  if (!row.logoUrl) {
+    throw new Error(`Missing logoUrl in site data for ${row.category}:${row.name}`);
   }
 
   const bucket = counts.get(row.category);
@@ -74,6 +103,10 @@ for (const item of inventory) {
   if (!allowedStatuses.has(item.status)) {
     throw new Error(`Unknown status in logo inventory for ${item.category}:${item.name}: ${item.status}`);
   }
+
+  if (!item.reviewedAt) {
+    throw new Error(`Missing reviewedAt in logo inventory for ${item.category}:${item.name}`);
+  }
 }
 
 const inventorySummary = {
@@ -85,6 +118,10 @@ const inventorySummary = {
 function formatPercent(numerator, denominator) {
   if (!denominator) return "0%";
   return `${Math.round((numerator / denominator) * 100)}%`;
+}
+
+function isPathWithinSegment(pathname, segment) {
+  return pathname === segment || pathname.startsWith(`${segment}/`);
 }
 
 function classifySourceSurface(sourceUrl) {
@@ -99,13 +136,8 @@ function classifySourceSurface(sourceUrl) {
 
   const host = parsedUrl.hostname.toLowerCase();
   const pathname = parsedUrl.pathname;
-  const hostAndPath = `${host}${pathname}`;
 
-  if (
-    hostAndPath.includes("/architecture/icons") ||
-    hostAndPath.includes("cloud.google.com/icons") ||
-    hostAndPath.includes("guidance/icons")
-  ) {
+  if (ICON_PACK_RULES.some((rule) => host === rule.host && pathname.startsWith(rule.pathPrefix))) {
     return "icon-pack";
   }
 
@@ -127,7 +159,11 @@ function classifySourceSurface(sourceUrl) {
     return "github-hosted";
   }
 
-  if (host.startsWith("docs.") || pathname === "/docs" || pathname.startsWith("/docs/")) {
+  if (
+    DOCS_HOSTS.has(host) ||
+    DOCS_HOST_PREFIXES.some((prefix) => host.startsWith(prefix)) ||
+    DOCS_PATH_SEGMENTS.some((segment) => isPathWithinSegment(pathname, segment) || pathname.includes(`${segment}/`))
+  ) {
     return "docs-site";
   }
 
@@ -140,7 +176,16 @@ function classifySourceSurface(sourceUrl) {
 
 function getAssetExtension(logoUrl) {
   if (!logoUrl) return "none";
-  const match = logoUrl.match(/\.([a-z0-9]+)$/i);
+
+  const normalizedPath = (() => {
+    try {
+      return new URL(logoUrl, "https://enterpriseai.tools").pathname;
+    } catch {
+      return logoUrl.split(/[?#]/, 1)[0];
+    }
+  })();
+
+  const match = normalizedPath.match(/\.([a-z0-9]+)$/i);
   return match ? match[1].toLowerCase() : "other";
 }
 
@@ -152,9 +197,9 @@ const sourceSurfaceCounts = new Map(sourceSurfaceOrder.map((surface) => [surface
 const assetExtensionCounts = new Map();
 const sharedAssetMap = new Map();
 const agedReviewBuckets = {
-  within14Days: 0,
-  between15And30Days: 0,
-  over30Days: 0,
+  withinRecentWindow: 0,
+  betweenRecentAndStaleWindow: 0,
+  overStaleWindow: 0,
 };
 
 for (const row of siteRows) {
@@ -164,25 +209,20 @@ for (const row of siteRows) {
   const assetExtension = getAssetExtension(row.logoUrl);
   assetExtensionCounts.set(assetExtension, (assetExtensionCounts.get(assetExtension) ?? 0) + 1);
 
-  if (row.logoUrl) {
-    const bucket = sharedAssetMap.get(row.logoUrl) ?? [];
-    bucket.push(`${row.name} (${row.category})`);
-    sharedAssetMap.set(row.logoUrl, bucket);
-  }
+  const bucket = sharedAssetMap.get(row.logoUrl) ?? [];
+  bucket.push(`${row.name} (${row.category})`);
+  sharedAssetMap.set(row.logoUrl, bucket);
 }
 
 for (const item of inventory) {
-  if (!item.reviewedAt) {
-    continue;
-  }
-
+  // Future-dated reviews are clamped to 0 days so a small clock skew does not distort the buckets.
   const ageInDays = Math.max(0, daysBetween(item.reviewedAt, generatedAt));
-  if (ageInDays > 30) {
-    agedReviewBuckets.over30Days += 1;
-  } else if (ageInDays > 14) {
-    agedReviewBuckets.between15And30Days += 1;
+  if (ageInDays > REVIEW_FRESHNESS_DAYS.stale) {
+    agedReviewBuckets.overStaleWindow += 1;
+  } else if (ageInDays > REVIEW_FRESHNESS_DAYS.recent) {
+    agedReviewBuckets.betweenRecentAndStaleWindow += 1;
   } else {
-    agedReviewBuckets.within14Days += 1;
+    agedReviewBuckets.withinRecentWindow += 1;
   }
 }
 
@@ -248,9 +288,9 @@ if (sharedAssets.length === 0) {
 lines.push("");
 lines.push("## Review freshness");
 lines.push("");
-lines.push(`- Reviewed within the last 14 days of the inventory snapshot (${generatedAt.slice(0, 10)}): **${agedReviewBuckets.within14Days}**`);
-lines.push(`- Reviewed 15-30 days before the snapshot: **${agedReviewBuckets.between15And30Days}**`);
-lines.push(`- Reviewed more than 30 days before the snapshot: **${agedReviewBuckets.over30Days}**`);
+lines.push(`- Reviewed within the last ${REVIEW_FRESHNESS_DAYS.recent} days of the inventory snapshot (${generatedAt.slice(0, 10)}): **${agedReviewBuckets.withinRecentWindow}**`);
+lines.push(`- Reviewed ${REVIEW_FRESHNESS_DAYS.recent + 1}-${REVIEW_FRESHNESS_DAYS.stale} days before the snapshot: **${agedReviewBuckets.betweenRecentAndStaleWindow}**`);
+lines.push(`- Reviewed more than ${REVIEW_FRESHNESS_DAYS.stale} days before the snapshot: **${agedReviewBuckets.overStaleWindow}**`);
 lines.push("");
 lines.push("## Highest-priority cleanup signal");
 lines.push("");
@@ -283,7 +323,7 @@ if (highestFallback?.fallback > 0) {
   );
 }
 
-lines.push("- Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix and shared-asset reuse are also acceptable.");
+lines.push("- Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix, shared-asset reuse, and review freshness are also acceptable.");
 lines.push("");
 
 fs.writeFileSync(path.join(repoRoot, "docs/logo-audit-report.md"), `${lines.join("\n")}\n`);
