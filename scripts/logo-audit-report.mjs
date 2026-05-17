@@ -16,7 +16,7 @@ const generatedAt = inventoryData.generatedAt;
 
 const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
 const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
-const sourceSurfaceOrder = ["icon-pack", "repo", "docs-site", "homepage", "other"];
+const sourceSurfaceOrder = ["icon-pack", "repo", "docs-site", "vendor-site", "other"];
 const allowedStatuses = new Set(["classified", "unclassified"]);
 const allowedCategories = new Set(categoryOrder);
 const allowedLogoKinds = new Set(logoKindOrder);
@@ -90,14 +90,6 @@ function formatPercent(numerator, denominator) {
 function classifySourceSurface(sourceUrl) {
   if (!sourceUrl) return "other";
 
-  if (
-    sourceUrl.includes("/architecture/icons") ||
-    sourceUrl.includes("cloud.google.com/icons") ||
-    sourceUrl.includes("guidance/icons")
-  ) {
-    return "icon-pack";
-  }
-
   let parsedUrl;
   try {
     parsedUrl = new URL(sourceUrl);
@@ -106,17 +98,29 @@ function classifySourceSurface(sourceUrl) {
   }
 
   const host = parsedUrl.hostname.toLowerCase();
+  const pathname = parsedUrl.pathname;
+  const hostAndPath = `${host}${pathname}`;
 
+  if (
+    hostAndPath.includes("/architecture/icons") ||
+    hostAndPath.includes("cloud.google.com/icons") ||
+    hostAndPath.includes("guidance/icons")
+  ) {
+    return "icon-pack";
+  }
+
+  // Intentionally limit repo classification to the canonical GitHub web hosts.
+  // Raw asset/CDN hosts such as raw.githubusercontent.com are treated separately.
   if (host === "github.com" || host === "www.github.com") {
     return "repo";
   }
 
-  if (host.startsWith("docs.") || parsedUrl.pathname.includes("/docs/")) {
+  if (host.startsWith("docs.") || pathname === "/docs" || pathname.startsWith("/docs/")) {
     return "docs-site";
   }
 
   if (parsedUrl.protocol === "https:") {
-    return "homepage";
+    return "vendor-site";
   }
 
   return "other";
@@ -137,7 +141,7 @@ const assetExtensionCounts = new Map();
 const sharedAssetMap = new Map();
 const agedReviewBuckets = {
   within14Days: 0,
-  over14Days: 0,
+  between15And30Days: 0,
   over30Days: 0,
 };
 
@@ -160,11 +164,11 @@ for (const item of inventory) {
     continue;
   }
 
-  const ageInDays = daysBetween(item.reviewedAt, generatedAt);
+  const ageInDays = Math.max(0, daysBetween(item.reviewedAt, generatedAt));
   if (ageInDays > 30) {
     agedReviewBuckets.over30Days += 1;
   } else if (ageInDays > 14) {
-    agedReviewBuckets.over14Days += 1;
+    agedReviewBuckets.between15And30Days += 1;
   } else {
     agedReviewBuckets.within14Days += 1;
   }
@@ -201,7 +205,7 @@ lines.push(`- Unclassified: **${inventorySummary.unclassified}**`);
 lines.push("");
 lines.push("## Source-surface mix");
 lines.push("");
-lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, docs-site assets, or homepage-sourced marks.");
+lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, docs-site assets, or vendor-site marks pulled from product/marketing pages.");
 lines.push("");
 lines.push("| Source surface | Count | Share |");
 lines.push("| --- | ---: | ---: |");
@@ -233,7 +237,7 @@ lines.push("");
 lines.push("## Review freshness");
 lines.push("");
 lines.push(`- Reviewed within the last 14 days of the inventory snapshot (${generatedAt.slice(0, 10)}): **${agedReviewBuckets.within14Days}**`);
-lines.push(`- Reviewed 15-30 days before the snapshot: **${agedReviewBuckets.over14Days}**`);
+lines.push(`- Reviewed 15-30 days before the snapshot: **${agedReviewBuckets.between15And30Days}**`);
 lines.push(`- Reviewed more than 30 days before the snapshot: **${agedReviewBuckets.over30Days}**`);
 lines.push("");
 lines.push("## Highest-priority cleanup signal");
@@ -257,12 +261,12 @@ if (highestFallback?.fallback > 0) {
     `- Current worst category by fallback ratio: **${highestFallback.category}** with **${highestFallback.fallback}/${highestFallback.total}** fallback entries (${formatPercent(highestFallback.fallback, highestFallback.total)}).`,
   );
 } else {
-  const homepageCount = sourceSurfaceCounts.get("homepage") ?? 0;
+  const vendorSiteCount = sourceSurfaceCounts.get("vendor-site") ?? 0;
   const docsSiteCount = sourceSurfaceCounts.get("docs-site") ?? 0;
   const sharedReuseCount = sharedAssets.length;
 
   lines.push(
-    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${homepageCount}** homepage-sourced marks, **${docsSiteCount}** docs-site marks, and **${sharedReuseCount}** shared-image reuse groups still need periodic review.`,
+    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${vendorSiteCount}** vendor-site marks, **${docsSiteCount}** docs-site marks, and **${sharedReuseCount}** shared-image reuse groups still need periodic review.`,
   );
 }
 
