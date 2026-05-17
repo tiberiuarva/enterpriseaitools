@@ -137,7 +137,7 @@ function classifySourceSurface(sourceUrl) {
   const host = parsedUrl.hostname.toLowerCase();
   const pathname = parsedUrl.pathname;
 
-  if (ICON_PACK_RULES.some((rule) => host === rule.host && pathname.startsWith(rule.pathPrefix))) {
+  if (ICON_PACK_RULES.some((rule) => host === rule.host && isPathWithinSegment(pathname, rule.pathPrefix))) {
     return "icon-pack";
   }
 
@@ -146,8 +146,9 @@ function classifySourceSurface(sourceUrl) {
     return "repo";
   }
 
-  // Keep GitHub Pages / raw asset hosts out of the vendor-site bucket.
+  // Treat GitHub-owned brand/docs/CDN surfaces separately so they do not inflate vendor-site counts.
   if (
+    host === "brand.github.com" ||
     host.endsWith(".github.io") ||
     host === "raw.githubusercontent.com" ||
     host === "user-images.githubusercontent.com" ||
@@ -191,6 +192,10 @@ function getAssetExtension(logoUrl) {
 
 function daysBetween(start, end) {
   return Math.floor((new Date(end).getTime() - new Date(start).getTime()) / (1000 * 60 * 60 * 24));
+}
+
+function formatCountNoun(count, singular, plural = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : plural}`;
 }
 
 const sourceSurfaceCounts = new Map(sourceSurfaceOrder.map((surface) => [surface, 0]));
@@ -319,7 +324,7 @@ if (highestFallback?.fallback > 0) {
   const sharedReuseCount = sharedAssets.length;
 
   lines.push(
-    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${vendorSiteCount}** vendor-site marks, **${githubHostedCount}** GitHub-hosted marks, **${docsSiteCount}** docs-site marks, and **${sharedReuseCount}** shared-image reuse groups still need periodic review.`,
+    `- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **${formatCountNoun(vendorSiteCount, "vendor-site mark")}**, **${formatCountNoun(githubHostedCount, "GitHub-hosted mark")}**, **${formatCountNoun(docsSiteCount, "docs-site mark")}**, and **${formatCountNoun(sharedReuseCount, "shared-image reuse group")}** still need periodic review.`,
   );
 }
 
