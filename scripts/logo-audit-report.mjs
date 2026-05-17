@@ -9,13 +9,13 @@ const REVIEW_FRESHNESS_DAYS = {
 };
 const ICON_PACK_RULES = [
   { host: "aws.amazon.com", pathPrefix: "/architecture/icons" },
-  { host: "learn.microsoft.com", pathPrefix: "/en-us/azure/architecture/icons/" },
+  { host: "learn.microsoft.com", pathPrefix: "/en-us/azure/architecture/icons" },
   { host: "learn.microsoft.com", pathPrefix: "/en-us/power-platform/guidance/icons" },
   { host: "cloud.google.com", pathPrefix: "/icons" },
 ];
 const DOCS_HOST_PREFIXES = ["docs.", "developer.", "developers."];
 const DOCS_HOSTS = new Set(["learn.microsoft.com"]);
-const DOCS_PATH_SEGMENTS = ["/docs", "/guides"];
+const DOCS_PATH_SEGMENTS = ["docs", "guides"];
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(repoRoot, relativePath), "utf8"));
@@ -26,6 +26,10 @@ const platforms = readJson("data/platforms.json").platforms;
 const inventoryData = readJson("data/logo-inventory.json");
 const inventory = inventoryData.items;
 const generatedAt = inventoryData.generatedAt;
+
+if (!generatedAt) {
+  throw new Error("Missing generatedAt in data/logo-inventory.json");
+}
 
 const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
 const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
@@ -120,8 +124,21 @@ function formatPercent(numerator, denominator) {
   return `${Math.round((numerator / denominator) * 100)}%`;
 }
 
+function trimTrailingSlash(pathname) {
+  return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+}
+
 function isPathWithinSegment(pathname, segment) {
-  return pathname === segment || pathname.startsWith(`${segment}/`);
+  const normalizedPath = trimTrailingSlash(pathname);
+  const normalizedSegment = trimTrailingSlash(segment);
+  return normalizedPath === normalizedSegment || normalizedPath.startsWith(`${normalizedSegment}/`);
+}
+
+function hasPathSegment(pathname, segment) {
+  return trimTrailingSlash(pathname)
+    .split("/")
+    .filter(Boolean)
+    .includes(segment);
 }
 
 function classifySourceSurface(sourceUrl) {
@@ -163,12 +180,12 @@ function classifySourceSurface(sourceUrl) {
   if (
     DOCS_HOSTS.has(host) ||
     DOCS_HOST_PREFIXES.some((prefix) => host.startsWith(prefix)) ||
-    DOCS_PATH_SEGMENTS.some((segment) => isPathWithinSegment(pathname, segment) || pathname.includes(`${segment}/`))
+    DOCS_PATH_SEGMENTS.some((segment) => hasPathSegment(pathname, segment))
   ) {
     return "docs-site";
   }
 
-  if (parsedUrl.protocol === "https:") {
+  if (host) {
     return "vendor-site";
   }
 
@@ -220,7 +237,7 @@ for (const row of siteRows) {
 }
 
 for (const item of inventory) {
-  // Future-dated reviews are clamped to 0 days so a small clock skew does not distort the buckets.
+  // Bucket review age in whole UTC-based days; future-dated reviews clamp to 0 so small clock skew does not distort the buckets.
   const ageInDays = Math.max(0, daysBetween(item.reviewedAt, generatedAt));
   if (ageInDays > REVIEW_FRESHNESS_DAYS.stale) {
     agedReviewBuckets.overStaleWindow += 1;
