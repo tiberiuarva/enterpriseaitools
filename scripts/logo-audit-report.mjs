@@ -98,15 +98,24 @@ function classifySourceSurface(sourceUrl) {
     return "icon-pack";
   }
 
-  if (sourceUrl.includes("github.com/")) {
+  let parsedUrl;
+  try {
+    parsedUrl = new URL(sourceUrl);
+  } catch {
+    return "other";
+  }
+
+  const host = parsedUrl.hostname.toLowerCase();
+
+  if (host === "github.com" || host === "www.github.com") {
     return "repo";
   }
 
-  if (/https:\/\/docs\./.test(sourceUrl) || /\/docs\//.test(sourceUrl)) {
+  if (host.startsWith("docs.") || parsedUrl.pathname.includes("/docs/")) {
     return "docs-site";
   }
 
-  if (/^https:\/\/[^/]+\/?$/.test(sourceUrl) || /^https:\/\/[^/]+\/.+/.test(sourceUrl)) {
+  if (parsedUrl.protocol === "https:") {
     return "homepage";
   }
 

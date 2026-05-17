@@ -26,9 +26,9 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 | Source surface | Count | Share |
 | --- | ---: | ---: |
 | icon-pack | 12 | 26% |
-| repo | 8 | 17% |
+| repo | 7 | 15% |
 | docs-site | 4 | 9% |
-| homepage | 22 | 48% |
+| homepage | 23 | 50% |
 | other | 0 | 0% |
 
 ## Asset format mix
@@ -58,6 +58,6 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Highest-priority cleanup signal
 
-- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **22** homepage-sourced marks, **4** docs-site marks, and **5** shared-image reuse groups still need periodic review.
+- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **23** homepage-sourced marks, **4** docs-site marks, and **5** shared-image reuse groups still need periodic review.
 - Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix and shared-asset reuse are also acceptable.
 
