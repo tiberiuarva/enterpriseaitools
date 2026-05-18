@@ -127,6 +127,14 @@ for (const route of routeInventory) {
     failures.push(`${normalizedRoute} is missing ItemList JSON-LD`);
   }
 
+  if (route.path === "/" && !html.includes('"@type":"WebPage"')) {
+    failures.push('/ is missing WebPage JSON-LD');
+  }
+
+  if (route.path === "/" && !html.includes('"@type":"DataCatalog"')) {
+    failures.push('/ is missing DataCatalog JSON-LD');
+  }
+
   if (route.path === "/updates" && !html.includes(`${siteUrl}/updates.xml`)) {
     failures.push("/updates/ is missing a visible or metadata reference to the Atom feed");
   }

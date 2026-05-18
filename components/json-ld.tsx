@@ -94,6 +94,55 @@ export function buildWebSiteJsonLd({
     name,
     url,
     description,
+    inLanguage: "en-US",
+  };
+}
+
+export function buildWebPageJsonLd({
+  name,
+  url,
+  description,
+}: {
+  name: string;
+  url: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    url,
+    description,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "enterpriseai.tools",
+      url: "https://www.enterpriseai.tools",
+    },
+    inLanguage: "en-US",
+  };
+}
+
+export function buildDataCatalogJsonLd({
+  name,
+  url,
+  description,
+}: {
+  name: string;
+  url: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DataCatalog",
+    name,
+    url,
+    description,
+    inLanguage: "en-US",
+    provider: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: "https://www.enterpriseai.tools",
+    },
   };
 }
 

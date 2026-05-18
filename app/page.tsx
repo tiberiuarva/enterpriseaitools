@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
+import { JsonLd, buildDataCatalogJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
@@ -73,8 +74,24 @@ export default function Home() {
     };
   });
 
+  const description =
+    "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.";
+  const jsonLd = [
+    buildWebPageJsonLd({
+      name: "Enterprise AI tools landscape tracker",
+      url: "https://www.enterpriseai.tools/",
+      description,
+    }),
+    buildDataCatalogJsonLd({
+      name: "enterpriseai.tools enterprise AI tooling catalog",
+      url: "https://www.enterpriseai.tools/",
+      description,
+    }),
+  ];
+
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/">
+      <JsonLd data={jsonLd} />
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <div className="flex flex-col gap-4">
