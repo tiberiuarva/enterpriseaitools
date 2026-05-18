@@ -15,7 +15,6 @@ const ICON_PACK_RULES = [
 ];
 const DOCS_HOST_PREFIXES = ["docs.", "developer.", "developers."];
 const DOCS_HOSTS = new Set(["learn.microsoft.com"]);
-const DOCS_PATH_SEGMENTS = ["docs", "guides"];
 
 function readJson(relativePath) {
   return JSON.parse(fs.readFileSync(path.join(repoRoot, relativePath), "utf8"));
@@ -134,13 +133,6 @@ function isPathWithinSegment(pathname, segment) {
   return normalizedPath === normalizedSegment || normalizedPath.startsWith(`${normalizedSegment}/`);
 }
 
-function hasPathSegment(pathname, segment) {
-  return trimTrailingSlash(pathname)
-    .split("/")
-    .filter(Boolean)
-    .includes(segment);
-}
-
 function classifySourceSurface(sourceUrl) {
   if (!sourceUrl) return "other";
 
@@ -177,11 +169,8 @@ function classifySourceSurface(sourceUrl) {
     return "github-hosted";
   }
 
-  if (
-    DOCS_HOSTS.has(host) ||
-    DOCS_HOST_PREFIXES.some((prefix) => host.startsWith(prefix)) ||
-    DOCS_PATH_SEGMENTS.some((segment) => hasPathSegment(pathname, segment))
-  ) {
+  // Keep docs-site host-driven only; broad path heuristics (`/guides/...`, nested `/docs/...`) over-classify vendor marketing/product URLs.
+  if (DOCS_HOSTS.has(host) || DOCS_HOST_PREFIXES.some((prefix) => host.startsWith(prefix))) {
     return "docs-site";
   }
 
