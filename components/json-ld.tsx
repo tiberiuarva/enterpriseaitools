@@ -18,6 +18,15 @@ type DataCatalogDataset = {
   description: string;
 };
 
+type DataFeedItem = {
+  id: string;
+  url: string;
+  title: string;
+  summary: string;
+  datePublished: string;
+  dateModified?: string;
+};
+
 const defaultLanguage = "en-US";
 
 export function JsonLd({ data }: JsonLdProps) {
@@ -85,6 +94,43 @@ export function buildCollectionPageJsonLd({
     name,
     url,
     description,
+    inLanguage: defaultLanguage,
+  };
+}
+
+export function buildAboutPageJsonLd({
+  name,
+  url,
+  description,
+  siteUrl = defaultSiteUrl,
+  about,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  siteUrl?: string;
+  about?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name,
+    url,
+    description,
+    inLanguage: defaultLanguage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    ...(about && about.length > 0
+      ? {
+          about: about.map((topic) => ({
+            "@type": "Thing",
+            name: topic,
+          })),
+        }
+      : {}),
   };
 }
 
@@ -169,6 +215,54 @@ export function buildDataCatalogJsonLd({
           })),
         }
       : {}),
+  };
+}
+
+export function buildDataFeedJsonLd({
+  name,
+  url,
+  description,
+  items,
+  siteUrl = defaultSiteUrl,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  items: DataFeedItem[];
+  siteUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DataFeed",
+    name,
+    url,
+    description,
+    inLanguage: defaultLanguage,
+    provider: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    dataFeedElement: items.map((item) => ({
+      "@type": "DataFeedItem",
+      dateCreated: item.datePublished,
+      dateModified: item.dateModified ?? item.datePublished,
+      item: {
+        "@type": "Article",
+        "@id": item.id,
+        headline: item.title,
+        url: item.url,
+        description: item.summary,
+        datePublished: item.datePublished,
+        dateModified: item.dateModified ?? item.datePublished,
+        inLanguage: defaultLanguage,
+        author: {
+          "@type": "Organization",
+          name: "enterpriseai.tools",
+          url: siteUrl,
+        },
+      },
+    })),
   };
 }
 

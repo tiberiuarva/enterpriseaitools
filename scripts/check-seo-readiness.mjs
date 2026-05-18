@@ -173,6 +173,14 @@ for (const route of routeInventory) {
   if (route.path === "/updates" && !html.includes(`${siteUrl}/updates.xml`)) {
     failures.push("/updates/ is missing a visible or metadata reference to the Atom feed");
   }
+
+  if (route.path === "/updates" && !jsonLdTypes.has("DataFeed")) {
+    failures.push("/updates/ is missing DataFeed JSON-LD");
+  }
+
+  if (route.path === "/about" && !jsonLdTypes.has("AboutPage")) {
+    failures.push("/about/ is missing AboutPage JSON-LD");
+  }
 }
 
 if (!failures.length) {

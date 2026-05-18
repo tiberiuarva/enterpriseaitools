@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeedJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
 import { UpdatesFeed } from "@/components/updates-feed";
@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
   const pageUrl = `${siteUrl}/updates/`;
+  const description =
+    "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -33,8 +35,20 @@ export default function UpdatesPage() {
     buildCollectionPageJsonLd({
       name: "Weekly updates",
       url: pageUrl,
-      description:
-        "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
+      description,
+    }),
+    buildDataFeedJsonLd({
+      name: "enterpriseai.tools weekly updates feed",
+      url: `${siteUrl}/updates.xml`,
+      description,
+      siteUrl,
+      items: updates.map((update) => ({
+        id: `${siteUrl}/updates/#${update.id}`,
+        url: `${siteUrl}/updates/#${update.id}`,
+        title: update.title ?? update.toolName,
+        summary: update.summary,
+        datePublished: `${update.date}T00:00:00Z`,
+      })),
     }),
   ];
 
