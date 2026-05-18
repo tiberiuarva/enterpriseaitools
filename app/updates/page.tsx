@@ -22,9 +22,24 @@ export const metadata: Metadata = {
   },
 };
 
+function normalizeJsonLdDate(value: string) {
+  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return `${value}T00:00:00Z`;
+  }
+
+  const parsed = new Date(value);
+
+  if (!Number.isNaN(parsed.getTime())) {
+    return parsed.toISOString();
+  }
+
+  throw new Error(`Invalid update date for JSON-LD: ${value}`);
+}
+
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
   const pageUrl = `${siteUrl}/updates/`;
+  const feedUrl = `${siteUrl}/updates.xml`;
   const description =
     "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
   const jsonLd = [
@@ -39,15 +54,17 @@ export default function UpdatesPage() {
     }),
     buildDataFeedJsonLd({
       name: "enterpriseai.tools weekly updates feed",
-      url: `${siteUrl}/updates.xml`,
+      url: feedUrl,
       description,
       siteUrl,
+      dateModified: normalizeJsonLdDate(lastUpdated),
       items: updates.map((update) => ({
-        id: `${siteUrl}/updates/#${update.id}`,
-        url: `${siteUrl}/updates/#${update.id}`,
+        id: `${pageUrl}#${update.id}`,
+        url: `${pageUrl}#${update.id}`,
         title: update.title ?? update.toolName,
         summary: update.summary,
-        datePublished: `${update.date}T00:00:00Z`,
+        datePublished: normalizeJsonLdDate(update.date),
+        mainEntityOfPage: pageUrl,
       })),
     }),
   ];

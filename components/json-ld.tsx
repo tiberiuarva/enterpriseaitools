@@ -25,6 +25,7 @@ type DataFeedItem = {
   summary: string;
   datePublished: string;
   dateModified?: string;
+  mainEntityOfPage?: string;
 };
 
 const defaultLanguage = "en-US";
@@ -224,12 +225,14 @@ export function buildDataFeedJsonLd({
   description,
   items,
   siteUrl = defaultSiteUrl,
+  dateModified,
 }: {
   name: string;
   url: string;
   description: string;
   items: DataFeedItem[];
   siteUrl?: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -238,6 +241,7 @@ export function buildDataFeedJsonLd({
     url,
     description,
     inLanguage: defaultLanguage,
+    ...(dateModified ? { dateModified } : {}),
     provider: {
       "@type": "Organization",
       name: "enterpriseai.tools",
@@ -255,6 +259,14 @@ export function buildDataFeedJsonLd({
         description: item.summary,
         datePublished: item.datePublished,
         dateModified: item.dateModified ?? item.datePublished,
+        ...(item.mainEntityOfPage
+          ? {
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": item.mainEntityOfPage,
+              },
+            }
+          : {}),
         inLanguage: defaultLanguage,
         author: {
           "@type": "Organization",
