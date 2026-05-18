@@ -39,6 +39,40 @@ function readMetaDescription(html) {
   return decodeHtmlEntities(html.match(/<meta[^>]+name="description"[^>]+content="([^"]+)"/i)?.[1]?.trim() || "");
 }
 
+function collectJsonLdTypes(html) {
+  const matches = [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>(.*?)<\/script>/gsi)];
+  const types = new Set();
+
+  for (const match of matches) {
+    const raw = match[1]?.trim();
+    if (!raw) {
+      continue;
+    }
+
+    try {
+      const parsed = JSON.parse(raw);
+      const nodes = Array.isArray(parsed) ? parsed : [parsed];
+
+      for (const node of nodes) {
+        const nodeType = node?.["@type"];
+        if (typeof nodeType === "string") {
+          types.add(nodeType);
+        } else if (Array.isArray(nodeType)) {
+          for (const value of nodeType) {
+            if (typeof value === "string") {
+              types.add(value);
+            }
+          }
+        }
+      }
+    } catch {
+      failures.push("Encountered invalid JSON-LD while checking rendered HTML");
+    }
+  }
+
+  return types;
+}
+
 const robotsTxt = await readFile(path.join(publicDir, "robots.txt"), "utf8");
 const sitemapXml = await readFile(path.join(publicDir, "sitemap.xml"), "utf8");
 const updatesAtomXml = await readFile(path.join(publicDir, "updates.xml"), "utf8");
@@ -70,6 +104,7 @@ for (const route of routeInventory) {
   const html = await readFile(htmlPath, "utf8");
   const title = readTitle(html);
   const description = readMetaDescription(html);
+  const jsonLdTypes = collectJsonLdTypes(html);
 
   if (!sitemapXml.includes(`<loc>${expectedUrl}</loc>`)) {
     failures.push(`sitemap.xml is missing ${expectedUrl}`);
@@ -115,23 +150,23 @@ for (const route of routeInventory) {
     seenDescriptions.set(description, normalizedRoute);
   }
 
-  if (route.requiresBreadcrumbs && !html.includes('"@type":"BreadcrumbList"')) {
+  if (route.requiresBreadcrumbs && !jsonLdTypes.has("BreadcrumbList")) {
     failures.push(`${normalizedRoute} is missing BreadcrumbList JSON-LD`);
   }
 
-  if (route.requiresCollectionPage && !html.includes('"@type":"CollectionPage"')) {
+  if (route.requiresCollectionPage && !jsonLdTypes.has("CollectionPage")) {
     failures.push(`${normalizedRoute} is missing CollectionPage JSON-LD`);
   }
 
-  if (route.requiresItemList && !html.includes('"@type":"ItemList"')) {
+  if (route.requiresItemList && !jsonLdTypes.has("ItemList")) {
     failures.push(`${normalizedRoute} is missing ItemList JSON-LD`);
   }
 
-  if (route.path === "/" && !html.includes('"@type":"WebPage"')) {
+  if (route.path === "/" && !jsonLdTypes.has("WebPage")) {
     failures.push('/ is missing WebPage JSON-LD');
   }
 
-  if (route.path === "/" && !html.includes('"@type":"DataCatalog"')) {
+  if (route.path === "/" && !jsonLdTypes.has("DataCatalog")) {
     failures.push('/ is missing DataCatalog JSON-LD');
   }
 
