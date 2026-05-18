@@ -19,8 +19,46 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 - Classified: **46**
 - Unclassified: **0**
 
+## Source-surface mix
+
+This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages.
+
+| Source surface | Count | Share |
+| --- | ---: | ---: |
+| icon-pack | 12 | 26% |
+| repo | 7 | 15% |
+| github-hosted | 2 | 4% |
+| docs-site | 4 | 9% |
+| vendor-site | 21 | 46% |
+| other | 0 | 0% |
+
+## Asset format mix
+
+| Format | Count | Share |
+| --- | ---: | ---: |
+| SVG | 31 | 67% |
+| PNG | 10 | 22% |
+| JPG | 4 | 9% |
+| AVIF | 1 | 2% |
+
+## Shared-asset reuse
+
+These rows are not automatically wrong, but they are where the system is still relying on family-brand or shared-platform reuse instead of distinct product marks.
+
+- `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
+- `/logos/aws-bedrock.svg` → AWS Bedrock Agents (agents), AWS Bedrock Guardrails (governance)
+- `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)
+- `/logos/google-vertex-ai.svg` → Google Agent Builder + ADK (agents), Google Vertex AI (platforms)
+- `/logos/microsoft-foundry.jpg` → Microsoft Foundry Agent Service (agents), Microsoft Foundry (platforms)
+
+## Review freshness
+
+- Reviewed within the last 14 days of the inventory snapshot (2026-05-15): **39**
+- Reviewed 15-30 days before the snapshot: **7**
+- Reviewed more than 30 days before the snapshot: **0**
+
 ## Highest-priority cleanup signal
 
-- Current worst category by fallback ratio: **agents** with **0/13** fallback entries (0%).
-- Treat this report as an audit gate: do not claim the logo system is cleaned up while fallback share remains high.
+- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **21 vendor-site marks**, **2 GitHub-hosted marks**, **4 docs-site marks**, and **5 shared-image reuse groups** still need periodic review.
+- Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix, shared-asset reuse, and review freshness are also acceptable.
 
