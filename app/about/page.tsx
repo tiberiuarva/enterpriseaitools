@@ -9,14 +9,14 @@ import { buildMetadata, siteUrl } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "About enterpriseai.tools",
   description:
-    "Practitioner-focused background, methodology, and sourcing standards for the enterpriseai.tools enterprise AI tracker.",
+    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI tracker.",
   path: "/about",
 });
 
 export default function AboutPage() {
   const pageUrl = `${siteUrl}/about/`;
   const description =
-    "Practitioner-focused background, methodology, and sourcing standards for the enterpriseai.tools enterprise AI tracker.";
+    "Project background, contribution rules, and sourcing standards for the enterpriseai.tools enterprise AI tracker.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },

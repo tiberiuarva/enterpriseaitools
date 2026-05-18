@@ -1,3 +1,4 @@
+import { siteUrl as defaultSiteUrl } from "@/lib/metadata";
 import type { Tool } from "@/lib/types";
 
 type JsonLdValue = Record<string, unknown> | Array<Record<string, unknown>>;
@@ -10,6 +11,14 @@ type BreadcrumbItem = {
   name: string;
   url: string;
 };
+
+type DataCatalogDataset = {
+  name: string;
+  url: string;
+  description: string;
+};
+
+const defaultLanguage = "en-US";
 
 export function JsonLd({ data }: JsonLdProps) {
   return (
@@ -94,6 +103,72 @@ export function buildWebSiteJsonLd({
     name,
     url,
     description,
+    inLanguage: defaultLanguage,
+  };
+}
+
+export function buildWebPageJsonLd({
+  name,
+  url,
+  description,
+  siteUrl = defaultSiteUrl,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  siteUrl?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    url,
+    description,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    inLanguage: defaultLanguage,
+  };
+}
+
+export function buildDataCatalogJsonLd({
+  name,
+  url,
+  description,
+  siteUrl = defaultSiteUrl,
+  datasets = [],
+}: {
+  name: string;
+  url: string;
+  description: string;
+  siteUrl?: string;
+  datasets?: DataCatalogDataset[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DataCatalog",
+    name,
+    url,
+    description,
+    inLanguage: defaultLanguage,
+    provider: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    ...(datasets.length
+      ? {
+          dataset: datasets.map((dataset) => ({
+            "@type": "Dataset",
+            name: dataset.name,
+            url: dataset.url,
+            description: dataset.description,
+            inLanguage: defaultLanguage,
+          })),
+        }
+      : {}),
   };
 }
 

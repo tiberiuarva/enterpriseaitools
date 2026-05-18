@@ -12,17 +12,21 @@ import {
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
+import { JsonLd, buildDataCatalogJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 
+const homepageTitle = "Enterprise AI tools landscape tracker";
+const homepageDescription =
+  "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Enterprise AI tools landscape tracker",
-  description:
-    "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.",
+  title: homepageTitle,
+  description: homepageDescription,
 });
 
 const categoryMeta = {
@@ -73,8 +77,56 @@ export default function Home() {
     };
   });
 
+  const jsonLd = [
+    buildWebPageJsonLd({
+      name: homepageTitle,
+      url: `${siteUrl}/`,
+      description: homepageDescription,
+      siteUrl,
+    }),
+    buildDataCatalogJsonLd({
+      name: "enterpriseai.tools enterprise AI tooling catalog",
+      url: `${siteUrl}/`,
+      description: homepageDescription,
+      siteUrl,
+      datasets: [
+        {
+          name: "AI platforms comparison",
+          url: `${siteUrl}/platforms/`,
+          description: "Structured comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI platform foundations.",
+        },
+        {
+          name: "AI agent tools catalog",
+          url: `${siteUrl}/agents/`,
+          description: "Tracked agent platforms and open source frameworks for enterprise AI delivery.",
+        },
+        {
+          name: "AI orchestration tools catalog",
+          url: `${siteUrl}/orchestration/`,
+          description: "Tracked workflow engines, automation layers, and orchestration tooling for enterprise AI systems.",
+        },
+        {
+          name: "AI governance tools catalog",
+          url: `${siteUrl}/governance/`,
+          description: "Tracked guardrails, safety controls, and governance tooling for enterprise AI systems.",
+        },
+        {
+          name: "AI assistants catalog",
+          url: `${siteUrl}/assistants/`,
+          description: "Tracked coding assistants, productivity copilots, and assistant platforms for enterprise use.",
+        },
+        {
+          name: "Enterprise AI tooling updates feed",
+          url: `${siteUrl}/updates.xml`,
+          description: "Atom feed of high-impact enterprise AI tooling updates and market intelligence.",
+        },
+      ],
+    }),
+  ];
+
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/">
+      <JsonLd data={jsonLd} />
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <div className="flex flex-col gap-4">
