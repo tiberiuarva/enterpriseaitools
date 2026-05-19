@@ -131,7 +131,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
         {visibleUpdates.length > 0 ? (
           <div className="space-y-6">
             {visibleUpdates.map((update) => (
-              <article key={update.id} className="flex gap-4 border-l-2 border-[var(--color-border)] pl-4">
+              <article id={update.id} key={update.id} className="flex gap-4 scroll-mt-24 border-l-2 border-[var(--color-border)] pl-4">
                 <div className="w-28 shrink-0 text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
                   {update.date}
                 </div>
