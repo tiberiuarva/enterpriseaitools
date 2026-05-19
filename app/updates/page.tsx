@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeed
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
 import { UpdatesFeed } from "@/components/updates-feed";
-import { lastUpdated, latestUpdate, updates } from "@/lib/data";
+import { lastUpdated, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { navItems, withBasePath } from "@/lib/site";
 
@@ -28,6 +28,9 @@ export default function UpdatesPage() {
   const atomFeedUrl = `${siteUrl}/updates.xml`;
   const description =
     "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
+  const highImpactUpdates = updates.filter((update) => update.impact === "high");
+  const schemaUpdates = highImpactUpdates.length > 0 ? highImpactUpdates : updates;
+  const schemaLatestUpdate = schemaUpdates[0] ?? null;
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -43,9 +46,9 @@ export default function UpdatesPage() {
       url: pageUrl,
       description,
       siteUrl,
-      dateModified: latestUpdate ? normalizeJsonLdDate(latestUpdate.date) : undefined,
+      dateModified: schemaLatestUpdate ? normalizeJsonLdDate(schemaLatestUpdate.date) : undefined,
       sameAs: [atomFeedUrl],
-      items: updates.filter((update) => update.impact === "high").map((update) => ({
+      items: schemaUpdates.map((update) => ({
         id: `${pageUrl}#${update.id}`,
         url: `${pageUrl}#${update.id}`,
         title: update.title ?? update.toolName,

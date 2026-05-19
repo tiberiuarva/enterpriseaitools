@@ -33,13 +33,17 @@ const isoCalendarDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 
 export function normalizeJsonLdDate(value: string) {
   if (isoCalendarDatePattern.test(value)) {
-    return `${value}T00:00:00Z`;
-  }
+    const parsed = new Date(`${value}T00:00:00Z`);
 
-  const parsed = new Date(value);
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toISOString();
+    }
+  } else {
+    const parsed = new Date(value);
 
-  if (!Number.isNaN(parsed.getTime())) {
-    return parsed.toISOString();
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toISOString();
+    }
   }
 
   throw new Error(`Invalid JSON-LD date: ${value}`);
