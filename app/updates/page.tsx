@@ -29,8 +29,8 @@ export default function UpdatesPage() {
   const description =
     "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
   const highImpactUpdates = updates.filter((update) => update.impact === "high");
-  const schemaUpdates = highImpactUpdates.length > 0 ? highImpactUpdates : updates;
-  const schemaLatestUpdate = schemaUpdates[0] ?? null;
+  const schemaUpdates = highImpactUpdates;
+  const latestRenderedUpdate = updates[0] ?? null;
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -46,12 +46,12 @@ export default function UpdatesPage() {
       url: pageUrl,
       description,
       siteUrl,
-      dateModified: schemaLatestUpdate ? normalizeJsonLdDate(schemaLatestUpdate.date) : undefined,
+      dateModified: latestRenderedUpdate ? normalizeJsonLdDate(latestRenderedUpdate.date) : undefined,
       sameAs: [atomFeedUrl],
       items: schemaUpdates.map((update) => ({
         id: `${pageUrl}#${update.id}`,
         url: `${pageUrl}#${update.id}`,
-        title: update.title ?? update.toolName,
+        title: update.title?.trim() ? update.title : update.toolName,
         summary: update.summary,
         datePublished: normalizeJsonLdDate(update.date),
         mainEntityOfPage: pageUrl,

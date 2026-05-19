@@ -47,16 +47,23 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
     [updates, categoryFilter],
   );
 
+  const hasHighImpactUpdates = useMemo(
+    () => filtered.some((update) => update.impact === "high"),
+    [filtered],
+  );
+
+  const effectiveView: FeedView = view === "high-impact" && hasHighImpactUpdates ? "high-impact" : "all-updates";
+
   const visibleUpdates = useMemo(() => {
-    if (view === "all-updates") {
+    if (effectiveView === "all-updates") {
       return filtered;
     }
 
     return filtered.filter((update) => update.impact === "high");
-  }, [filtered, view]);
+  }, [effectiveView, filtered]);
 
   const hiddenCount = filtered.length - visibleUpdates.length;
-  const showingHighImpact = view === "high-impact";
+  const showingHighImpact = effectiveView === "high-impact";
 
   return (
     <>
@@ -75,10 +82,10 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
                 <button
                   key={option.value}
                   type="button"
-                  aria-pressed={view === option.value}
+                  aria-pressed={effectiveView === option.value}
                   onClick={() => setView(option.value)}
                   className={`rounded-md px-3 py-1.5 text-sm font-medium transition ${
-                    view === option.value
+                    effectiveView === option.value
                       ? "bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
                       : "text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
                   }`}
@@ -115,7 +122,9 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
           <p className="text-sm text-[var(--color-text-secondary)]">
             {showingHighImpact
               ? `${visibleUpdates.length} high-impact updates shown${hiddenCount > 0 ? `, ${hiddenCount} lower-signal updates hidden` : ""}.`
-              : `${visibleUpdates.length} updates shown.`}
+              : view === "high-impact" && !hasHighImpactUpdates
+                ? `${visibleUpdates.length} updates shown. No high-impact updates are currently available, so the full log is shown by default.`
+                : `${visibleUpdates.length} updates shown.`}
           </p>
           {showingHighImpact && hiddenCount > 0 ? (
             <button
