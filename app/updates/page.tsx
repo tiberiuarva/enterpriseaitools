@@ -45,7 +45,7 @@ export default function UpdatesPage() {
       siteUrl,
       dateModified: latestUpdate ? normalizeJsonLdDate(latestUpdate.date) : undefined,
       sameAs: [atomFeedUrl],
-      items: updates.map((update) => ({
+      items: updates.filter((update) => update.impact === "high").map((update) => ({
         id: `${pageUrl}#${update.id}`,
         url: `${pageUrl}#${update.id}`,
         title: update.title ?? update.toolName,
