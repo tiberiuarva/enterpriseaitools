@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildAboutPageJsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
 import { githubRepoUrl } from "@/lib/site";
@@ -22,10 +22,17 @@ export default function AboutPage() {
       { name: "Home", url: `${siteUrl}/` },
       { name: "About enterpriseai.tools", url: pageUrl },
     ]),
-    buildCollectionPageJsonLd({
+    buildAboutPageJsonLd({
       name: "About enterpriseai.tools",
       url: pageUrl,
       description,
+      siteUrl,
+      about: [
+        "enterprise AI tooling market",
+        "project sourcing standards",
+        "contribution rules",
+        "enterprise AI methodology",
+      ],
     }),
   ];
 

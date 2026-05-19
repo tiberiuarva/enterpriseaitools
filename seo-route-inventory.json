@@ -115,7 +115,7 @@
     "maxTitleLength": 65,
     "minDescriptionLength": 90,
     "maxDescriptionLength": 170,
-    "requiresCollectionPage": true,
+    "requiresCollectionPage": false,
     "requiresItemList": false,
     "requiresBreadcrumbs": true
   }

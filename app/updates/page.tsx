@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeedJsonLd, normalizeJsonLdDate } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
 import { UpdatesFeed } from "@/components/updates-feed";
@@ -25,6 +25,12 @@ export const metadata: Metadata = {
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
   const pageUrl = `${siteUrl}/updates/`;
+  const atomFeedUrl = `${siteUrl}/updates.xml`;
+  const description =
+    "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
+  const highImpactUpdates = updates.filter((update) => update.impact === "high");
+  const schemaUpdates = highImpactUpdates;
+  const latestRenderedUpdate = updates[0] ?? null;
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -33,8 +39,23 @@ export default function UpdatesPage() {
     buildCollectionPageJsonLd({
       name: "Weekly updates",
       url: pageUrl,
-      description:
-        "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
+      description,
+    }),
+    buildDataFeedJsonLd({
+      name: "enterpriseai.tools weekly updates feed",
+      url: pageUrl,
+      description,
+      siteUrl,
+      dateModified: latestRenderedUpdate ? normalizeJsonLdDate(latestRenderedUpdate.date) : undefined,
+      sameAs: [atomFeedUrl],
+      items: schemaUpdates.map((update) => ({
+        id: `${pageUrl}#${update.id}`,
+        url: `${pageUrl}#${update.id}`,
+        title: update.title?.trim() ? update.title : update.toolName,
+        summary: update.summary,
+        datePublished: normalizeJsonLdDate(update.date),
+        mainEntityOfPage: pageUrl,
+      })),
     }),
   ];
 

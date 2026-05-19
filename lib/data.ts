@@ -5,9 +5,17 @@ import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 export const tools = toolsData.tools as Tool[];
 export const platforms = platformsData.platforms as Platform[];
+const updateIdPattern = /^[A-Za-z0-9._~-]+$/;
+
 export const updates = [...(updatesData.updates as UpdateEntry[])].sort((a, b) =>
   b.date.localeCompare(a.date) || a.toolName.localeCompare(b.toolName),
 );
+
+for (const update of updates) {
+  if (!updateIdPattern.test(update.id)) {
+    throw new Error(`Invalid updates.json id for URL fragment usage: ${update.id}`);
+  }
+}
 
 function getLatestPlatformReviewedDate() {
   const reviewedDates = platforms

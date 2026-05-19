@@ -18,7 +18,36 @@ type DataCatalogDataset = {
   description: string;
 };
 
+type DataFeedItem = {
+  id: string;
+  url: string;
+  title: string;
+  summary: string;
+  datePublished: string;
+  dateModified?: string;
+  mainEntityOfPage?: string;
+};
+
 const defaultLanguage = "en-US";
+const isoCalendarDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+
+export function normalizeJsonLdDate(value: string) {
+  if (isoCalendarDatePattern.test(value)) {
+    const parsed = new Date(`${value}T00:00:00Z`);
+
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toISOString();
+    }
+  } else {
+    const parsed = new Date(value);
+
+    if (!Number.isNaN(parsed.getTime())) {
+      return parsed.toISOString();
+    }
+  }
+
+  throw new Error(`Invalid JSON-LD date: ${value}`);
+}
 
 export function JsonLd({ data }: JsonLdProps) {
   return (
@@ -85,6 +114,43 @@ export function buildCollectionPageJsonLd({
     name,
     url,
     description,
+    inLanguage: defaultLanguage,
+  };
+}
+
+export function buildAboutPageJsonLd({
+  name,
+  url,
+  description,
+  siteUrl = defaultSiteUrl,
+  about,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  siteUrl?: string;
+  about?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name,
+    url,
+    description,
+    inLanguage: defaultLanguage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    ...(about && about.length > 0
+      ? {
+          about: about.map((topic) => ({
+            "@type": "Thing",
+            name: topic,
+          })),
+        }
+      : {}),
   };
 }
 
@@ -169,6 +235,63 @@ export function buildDataCatalogJsonLd({
           })),
         }
       : {}),
+  };
+}
+
+export function buildDataFeedJsonLd({
+  name,
+  url,
+  description,
+  items,
+  siteUrl = defaultSiteUrl,
+  dateModified,
+  sameAs,
+}: {
+  name: string;
+  url: string;
+  description: string;
+  items: DataFeedItem[];
+  siteUrl?: string;
+  dateModified?: string;
+  sameAs?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DataFeed",
+    name,
+    url,
+    description,
+    inLanguage: defaultLanguage,
+    ...(dateModified ? { dateModified } : {}),
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
+    provider: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: siteUrl,
+    },
+    dataFeedElement: items.map((item) => ({
+      "@type": "DataFeedItem",
+      dateCreated: item.datePublished,
+      ...(item.dateModified ? { dateModified: item.dateModified } : {}),
+      item: {
+        "@type": "Article",
+        "@id": item.id,
+        headline: item.title,
+        url: item.url,
+        description: item.summary,
+        datePublished: item.datePublished,
+        ...(item.dateModified ? { dateModified: item.dateModified } : {}),
+        ...(item.mainEntityOfPage
+          ? {
+              mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": item.mainEntityOfPage,
+              },
+            }
+          : {}),
+        inLanguage: defaultLanguage,
+      },
+    })),
   };
 }
 

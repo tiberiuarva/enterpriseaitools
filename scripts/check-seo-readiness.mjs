@@ -39,9 +39,9 @@ function readMetaDescription(html) {
   return decodeHtmlEntities(html.match(/<meta[^>]+name="description"[^>]+content="([^"]+)"/i)?.[1]?.trim() || "");
 }
 
-function collectJsonLdTypes(html) {
+function collectJsonLdNodes(html) {
   const matches = [...html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>(.*?)<\/script>/gsi)];
-  const types = new Set();
+  const nodes = [];
 
   for (const match of matches) {
     const raw = match[1]?.trim();
@@ -51,26 +51,38 @@ function collectJsonLdTypes(html) {
 
     try {
       const parsed = JSON.parse(raw);
-      const nodes = Array.isArray(parsed) ? parsed : [parsed];
-
-      for (const node of nodes) {
-        const nodeType = node?.["@type"];
-        if (typeof nodeType === "string") {
-          types.add(nodeType);
-        } else if (Array.isArray(nodeType)) {
-          for (const value of nodeType) {
-            if (typeof value === "string") {
-              types.add(value);
-            }
-          }
-        }
-      }
+      nodes.push(...(Array.isArray(parsed) ? parsed : [parsed]));
     } catch {
       failures.push("Encountered invalid JSON-LD while checking rendered HTML");
     }
   }
 
+  return nodes;
+}
+
+function collectJsonLdTypes(nodes) {
+  const types = new Set();
+
+  for (const node of nodes) {
+    const nodeType = node?.["@type"];
+    if (typeof nodeType === "string") {
+      types.add(nodeType);
+    } else if (Array.isArray(nodeType)) {
+      for (const value of nodeType) {
+        if (typeof value === "string") {
+          types.add(value);
+        }
+      }
+    }
+  }
+
   return types;
+}
+
+const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+
+function isIsoDateTime(value) {
+  return typeof value === "string" && isoDateTimePattern.test(value) && !Number.isNaN(Date.parse(value));
 }
 
 const robotsTxt = await readFile(path.join(publicDir, "robots.txt"), "utf8");
@@ -104,7 +116,8 @@ for (const route of routeInventory) {
   const html = await readFile(htmlPath, "utf8");
   const title = readTitle(html);
   const description = readMetaDescription(html);
-  const jsonLdTypes = collectJsonLdTypes(html);
+  const jsonLdNodes = collectJsonLdNodes(html);
+  const jsonLdTypes = collectJsonLdTypes(jsonLdNodes);
 
   if (!sitemapXml.includes(`<loc>${expectedUrl}</loc>`)) {
     failures.push(`sitemap.xml is missing ${expectedUrl}`);
@@ -172,6 +185,42 @@ for (const route of routeInventory) {
 
   if (route.path === "/updates" && !html.includes(`${siteUrl}/updates.xml`)) {
     failures.push("/updates/ is missing a visible or metadata reference to the Atom feed");
+  }
+
+  if (route.path === "/updates" && !jsonLdTypes.has("DataFeed")) {
+    failures.push("/updates/ is missing DataFeed JSON-LD");
+  }
+
+  if (route.path === "/updates") {
+    const dataFeedNode = jsonLdNodes.find((node) => node?.["@type"] === "DataFeed");
+
+    if (!dataFeedNode) {
+      failures.push("/updates/ rendered HTML is missing a parseable DataFeed node");
+    } else {
+      const elements = Array.isArray(dataFeedNode.dataFeedElement) ? dataFeedNode.dataFeedElement : [];
+
+      if (elements.length === 0) {
+        failures.push("/updates/ DataFeed JSON-LD does not include any feed items");
+      }
+
+      if (dataFeedNode.dateModified && !isIsoDateTime(dataFeedNode.dateModified)) {
+        failures.push(`/updates/ DataFeed dateModified is not ISO 8601: ${dataFeedNode.dateModified}`);
+      }
+
+      for (const [index, element] of elements.entries()) {
+        if (element?.dateCreated && !isIsoDateTime(element.dateCreated)) {
+          failures.push(`/updates/ DataFeed item ${index + 1} dateCreated is not ISO 8601: ${element.dateCreated}`);
+        }
+
+        if (element?.dateModified && !isIsoDateTime(element.dateModified)) {
+          failures.push(`/updates/ DataFeed item ${index + 1} dateModified is not ISO 8601: ${element.dateModified}`);
+        }
+      }
+    }
+  }
+
+  if (route.path === "/about" && !jsonLdTypes.has("AboutPage")) {
+    failures.push("/about/ is missing AboutPage JSON-LD");
   }
 }
 
