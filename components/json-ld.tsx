@@ -268,11 +268,6 @@ export function buildDataFeedJsonLd({
             }
           : {}),
         inLanguage: defaultLanguage,
-        author: {
-          "@type": "Organization",
-          name: "enterpriseai.tools",
-          url: siteUrl,
-        },
       },
     })),
   };
