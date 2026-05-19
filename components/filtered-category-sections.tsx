@@ -3,17 +3,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
+import { PlatformCategoryBar } from "@/components/platform-category-bar";
+import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
 import type { CategoryComparison } from "@/lib/category-comparisons";
-import type { Tool, ToolCategory, UpdateEntry } from "@/lib/types";
+import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 type FilteredCategorySectionsProps = {
   category: ToolCategory;
   tools: Tool[];
   updates: UpdateEntry[];
+  platforms: Platform[];
   comparison?: CategoryComparison;
 };
 
@@ -96,7 +99,7 @@ function buildFilterQuery({
   return next.toString();
 }
 
-export function FilteredCategorySections({ category, tools, updates, comparison }: FilteredCategorySectionsProps) {
+export function FilteredCategorySections({ category, tools, updates, platforms, comparison }: FilteredCategorySectionsProps) {
   const router = useRouter();
   const pathname = usePathname();
   const didMountRef = useRef(false);
@@ -197,9 +200,10 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
 
   return (
     <>
+      <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
+
       <section
-        className="sticky z-20 -mx-2 px-2 pb-2 pt-1 sm:mx-0 sm:px-0 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))]"
-        style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
+        className="sticky top-[calc(var(--site-header-height,4rem)+0.25rem)] z-20 -mx-2 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))] px-2 pb-2 pt-1 sm:mx-0 sm:px-0"
       >
         <FilterBar
           typeFilter={typeFilter}
@@ -285,6 +289,29 @@ export function FilteredCategorySections({ category, tools, updates, comparison 
           </div>
         </section>
       ) : null}
+
+      <RelatedHubs
+        currentPath={`/${category}`}
+        title="Explore adjacent hubs"
+        intro="Compare the active category against the platform foundation layer, the cross-category updates feed, and the sourcing/contribution guide."
+        hubs={[
+          {
+            href: "/platforms",
+            title: "Platforms",
+            description: "Review Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer behind this category.",
+          },
+          {
+            href: "/updates",
+            title: "Weekly updates",
+            description: "Check the market-intelligence feed for high-impact moves, plus the expandable full log for releases, deprecations, acquisitions, and other notable changes.",
+          },
+          {
+            href: "/about",
+            title: "About and contribution rules",
+            description: "See sourcing standards, contribution rules, and project scope before adding or updating tracked tools.",
+          },
+        ]}
+      />
     </>
   );
 }
