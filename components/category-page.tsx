@@ -80,7 +80,7 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
       </section>
 
       {enableFiltering ? (
-        <FilteredCategorySections category={category} tools={tools} updates={updates} comparison={comparison} />
+        <FilteredCategorySections category={category} tools={tools} updates={updates} platforms={platforms} comparison={comparison} />
       ) : (
         <>
           <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
