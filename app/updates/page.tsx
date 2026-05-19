@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeedJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeedJsonLd, normalizeJsonLdDate } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
 import { UpdatesFeed } from "@/components/updates-feed";
-import { lastUpdated, updates } from "@/lib/data";
+import { lastUpdated, latestUpdate, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { navItems, withBasePath } from "@/lib/site";
 
@@ -21,20 +21,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
-function normalizeJsonLdDate(value: string) {
-  if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
-    return `${value}T00:00:00Z`;
-  }
-
-  const parsed = new Date(value);
-
-  if (!Number.isNaN(parsed.getTime())) {
-    return parsed.toISOString();
-  }
-
-  throw new Error(`Invalid update date for JSON-LD: ${value}`);
-}
 
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
@@ -57,7 +43,7 @@ export default function UpdatesPage() {
       url: feedUrl,
       description,
       siteUrl,
-      dateModified: normalizeJsonLdDate(lastUpdated),
+      dateModified: latestUpdate ? normalizeJsonLdDate(latestUpdate.date) : undefined,
       items: updates.map((update) => ({
         id: `${pageUrl}#${update.id}`,
         url: `${pageUrl}#${update.id}`,
