@@ -79,8 +79,10 @@ function collectJsonLdTypes(nodes) {
   return types;
 }
 
+const isoDateTimePattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+
 function isIsoDateTime(value) {
-  return typeof value === "string" && !Number.isNaN(Date.parse(value)) && /T/.test(value);
+  return typeof value === "string" && isoDateTimePattern.test(value) && !Number.isNaN(Date.parse(value));
 }
 
 const robotsTxt = await readFile(path.join(publicDir, "robots.txt"), "utf8");

@@ -241,6 +241,7 @@ export function buildDataFeedJsonLd({
   items,
   siteUrl = defaultSiteUrl,
   dateModified,
+  sameAs,
 }: {
   name: string;
   url: string;
@@ -248,6 +249,7 @@ export function buildDataFeedJsonLd({
   items: DataFeedItem[];
   siteUrl?: string;
   dateModified?: string;
+  sameAs?: string[];
 }) {
   return {
     "@context": "https://schema.org",
@@ -257,6 +259,7 @@ export function buildDataFeedJsonLd({
     description,
     inLanguage: defaultLanguage,
     ...(dateModified ? { dateModified } : {}),
+    ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
     provider: {
       "@type": "Organization",
       name: "enterpriseai.tools",
@@ -265,7 +268,7 @@ export function buildDataFeedJsonLd({
     dataFeedElement: items.map((item) => ({
       "@type": "DataFeedItem",
       dateCreated: item.datePublished,
-      dateModified: item.dateModified ?? item.datePublished,
+      ...(item.dateModified ? { dateModified: item.dateModified } : {}),
       item: {
         "@type": "Article",
         "@id": item.id,
@@ -273,7 +276,7 @@ export function buildDataFeedJsonLd({
         url: item.url,
         description: item.summary,
         datePublished: item.datePublished,
-        dateModified: item.dateModified ?? item.datePublished,
+        ...(item.dateModified ? { dateModified: item.dateModified } : {}),
         ...(item.mainEntityOfPage
           ? {
               mainEntityOfPage: {

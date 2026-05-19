@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
   const pageUrl = `${siteUrl}/updates/`;
-  const feedUrl = `${siteUrl}/updates.xml`;
+  const atomFeedUrl = `${siteUrl}/updates.xml`;
   const description =
     "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.";
   const jsonLd = [
@@ -40,10 +40,11 @@ export default function UpdatesPage() {
     }),
     buildDataFeedJsonLd({
       name: "enterpriseai.tools weekly updates feed",
-      url: feedUrl,
+      url: pageUrl,
       description,
       siteUrl,
       dateModified: latestUpdate ? normalizeJsonLdDate(latestUpdate.date) : undefined,
+      sameAs: [atomFeedUrl],
       items: updates.map((update) => ({
         id: `${pageUrl}#${update.id}`,
         url: `${pageUrl}#${update.id}`,
