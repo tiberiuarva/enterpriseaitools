@@ -10,18 +10,13 @@
     "summary": "Already applicable."
   },
   {
-    "label": "Transparency rules and remaining baseline AI Act obligations",
+    "label": "Most AI Act obligations, including Annex III high-risk systems",
     "appliesOn": "2026-08-02",
-    "summary": "Transparency obligations and the main non-high-risk remainder still apply from 2 August 2026."
-  },
-  {
-    "label": "Certain high-risk AI systems in Annex III areas",
-    "appliesOn": "2027-12-02",
-    "summary": "Following the Commission's AI Omnibus political agreement, certain high-risk areas now shift to 2 December 2027."
+    "summary": "Broad applicability date under the adopted AI Act timeline."
   },
   {
     "label": "High-risk AI systems embedded in regulated products",
-    "appliesOn": "2028-08-02",
-    "summary": "Product-embedded high-risk systems keep the later 2 August 2028 application date."
+    "appliesOn": "2027-08-02",
+    "summary": "Later application date under the adopted AI Act timeline."
   }
 ]

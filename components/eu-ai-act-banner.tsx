@@ -56,6 +56,8 @@ function useNow() {
 export function EuAiActBanner() {
   const bannerLabelId = useId();
   const now = useNow();
+  // Keep SSR and the first client render byte-stable on this static site.
+  // The live UTC-sensitive milestone state only appears after hydration.
   const milestoneState = now ? getCurrentAndNextMilestones(now) : null;
   const daysLeft = milestoneState?.nextMilestone.daysUntil ?? null;
   const isActiveToday = daysLeft === 0;
@@ -71,22 +73,18 @@ export function EuAiActBanner() {
     ? milestoneState.currentMilestones.at(-1)
     : null;
 
-  const milestoneSummary = milestoneState
-    ? `${milestoneState.nextMilestone.label} — ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}.`
-    : null;
-
   return (
     <aside
       aria-labelledby={bannerLabelId}
-      className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/72"
+      className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/75"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-1.5 px-4 py-2 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="mx-auto flex min-h-[92px] max-w-7xl flex-col gap-1.5 px-4 py-2 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--color-text-secondary)]">
             <span id={bannerLabelId} className="font-medium text-[var(--color-text-primary)]">
               EU AI Act timeline
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-bg-card)] px-2 py-0.5 text-[11px] font-medium text-[var(--color-text-secondary)]">
+            <span className="inline-flex min-w-[14ch] items-center gap-1 rounded-full bg-[var(--color-bg-card)] px-2 py-0.5 text-[11px] font-medium tabular-nums text-[var(--color-text-secondary)]">
               <CalendarClock size={12} aria-hidden="true" />
               {statusLabel}
             </span>
@@ -94,7 +92,9 @@ export function EuAiActBanner() {
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
             {milestoneState ? (
               <>
-                <span className="text-[var(--color-text-primary)]">Next:</span> {milestoneSummary} {milestoneState.nextMilestone.summary}
+                <span className="text-[var(--color-text-primary)]">Next:</span>{" "}
+                {milestoneState.nextMilestone.label} on {formatUtcDate(milestoneState.nextMilestone.appliesOn)}.
+                {milestoneState.nextMilestone.summary ? ` ${milestoneState.nextMilestone.summary}` : ""}
                 {latestCurrentMilestone
                   ? ` Latest tranche already in force: ${latestCurrentMilestone.label}.`
                   : ""}
@@ -102,6 +102,9 @@ export function EuAiActBanner() {
             ) : (
               "Official milestone copy loads after hydration."
             )}
+          </p>
+          <p className="mt-1 text-xs text-[var(--color-text-secondary)]">
+            Proposed Omnibus delay dates are being tracked separately and are not shown here as adopted milestones.
           </p>
         </div>
 

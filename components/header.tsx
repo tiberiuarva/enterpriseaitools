@@ -41,8 +41,26 @@ const themeScript = `(() => {
   });
 })();`;
 
+const homeLink = navItems.find((item) => item.href === "/")!;
 const utilityLinks = navItems.filter((item) => ["/updates", "/about"].includes(item.href));
-const categoryLinks = navItems.filter((item) => !["/", "/updates", "/about"].includes(item.href));
+const categoryNavHrefs = new Set(["/platforms", "/agents", "/orchestration", "/governance", "/assistants"]);
+const categoryLinks = navItems.filter((item) => categoryNavHrefs.has(item.href));
+
+function navLinkClass(isCurrent: boolean) {
+  return `rounded-full px-3 py-2 text-sm font-medium transition ${
+    isCurrent
+      ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
+      : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
+  }`;
+}
+
+function mobileNavLinkClass(isCurrent: boolean) {
+  return `rounded-xl px-3 py-2 text-sm font-medium transition ${
+    isCurrent
+      ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
+      : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
+  }`;
+}
 
 export function Header({ currentPath = "/" }: HeaderProps) {
   const isCategoryPath = categoryLinks.some((item) => item.href === currentPath);
@@ -53,23 +71,31 @@ export function Header({ currentPath = "/" }: HeaderProps) {
       <header className="sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/90 backdrop-blur-md">
         <div className="mx-auto flex h-[var(--site-header-height)] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3 md:gap-4">
-            <a href={withBasePath("/")} className="shrink-0 text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
+            <a href={withBasePath(homeLink.href)} className="shrink-0 text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
               enterpriseai.tools
             </a>
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <HeaderSearch entries={headerSearchEntries} collapsed />
 
             <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
               <details className="group relative">
                 <summary
+                  aria-label="Browse category pages"
+                  aria-current={isCategoryPath ? "page" : undefined}
+                  aria-haspopup="true"
+                  title="Browse category pages"
                   className={`flex h-9 cursor-pointer list-none items-center gap-1 rounded-full px-3 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
                     isCategoryPath
                       ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
                       : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
                   }`}
                 >
-                  Browse
+                  Categories
                   <ChevronDown size={14} className="transition group-open:rotate-180" />
                 </summary>
-                <div className="absolute left-0 top-[calc(100%+0.5rem)] z-50 min-w-64 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] p-2 shadow-xl">
+                <div className="absolute right-0 top-[calc(100%+0.5rem)] z-50 min-w-64 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] p-2 shadow-xl">
                   <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
                     Categories
                   </div>
@@ -82,11 +108,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                           key={item.href}
                           href={withBasePath(item.href)}
                           aria-current={isCurrent ? "page" : undefined}
-                          className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
-                            isCurrent
-                              ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
-                              : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
-                          }`}
+                          className={mobileNavLinkClass(isCurrent)}
                         >
                           {item.label}
                         </a>
@@ -104,28 +126,20 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     key={item.href}
                     href={withBasePath(item.href)}
                     aria-current={isCurrent ? "page" : undefined}
-                    className={`rounded-full px-3 py-2 text-sm font-medium transition ${
-                      isCurrent
-                        ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
-                        : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
-                    }`}
+                    className={navLinkClass(isCurrent)}
                   >
                     {item.label}
                   </a>
                 );
               })}
             </nav>
-          </div>
-
-          <div className="flex items-center gap-1.5">
-            <HeaderSearch entries={headerSearchEntries} collapsed />
 
             <a
               href={githubStargazersUrl}
               target="_blank"
               rel="noreferrer"
               aria-label="Star the GitHub repository in a new tab"
-              className="hidden h-10 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)] lg:inline-flex"
+              className="hidden h-10 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)] md:inline-flex"
             >
               <Star size={15} />
               <span>Star</span>
@@ -158,15 +172,11 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                 </div>
                 <div className="flex flex-col gap-1">
                   <a
-                    href={withBasePath("/")}
-                    aria-current={currentPath === "/" ? "page" : undefined}
-                    className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
-                      currentPath === "/"
-                        ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
-                        : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
-                    }`}
+                    href={withBasePath(homeLink.href)}
+                    aria-current={currentPath === homeLink.href ? "page" : undefined}
+                    className={mobileNavLinkClass(currentPath === homeLink.href)}
                   >
-                    Home
+                    {homeLink.label}
                   </a>
                   <div className="px-3 pt-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
                     Categories
@@ -179,11 +189,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                         key={item.href}
                         href={withBasePath(item.href)}
                         aria-current={isCurrent ? "page" : undefined}
-                        className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
-                          isCurrent
-                            ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
-                            : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
-                        }`}
+                        className={mobileNavLinkClass(isCurrent)}
                       >
                         {item.label}
                       </a>
@@ -197,11 +203,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                         key={item.href}
                         href={withBasePath(item.href)}
                         aria-current={isCurrent ? "page" : undefined}
-                        className={`rounded-xl px-3 py-2 text-sm font-medium transition ${
-                          isCurrent
-                            ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
-                            : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
-                        }`}
+                        className={mobileNavLinkClass(isCurrent)}
                       >
                         {item.label}
                       </a>

@@ -63,11 +63,13 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
   const router = useRouter();
   const pathname = usePathname();
   const listboxId = useId();
+  const popoverId = useId();
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const triggerRef = useRef<HTMLButtonElement | null>(null);
   const hasQuery = query.trim().length > 0;
 
   const results = useMemo(() => {
@@ -90,15 +92,18 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
   }, []);
 
   useEffect(() => {
-    if (isOpen && collapsed) {
+    if (collapsed && isOpen) {
       window.setTimeout(() => inputRef.current?.focus(), 0);
     }
   }, [collapsed, isOpen]);
 
   const highlightedIndex = results.length > 0 ? Math.min(activeIndex, results.length - 1) : 0;
 
-  function closeSearch() {
+  function closeSearch({ restoreTriggerFocus = false }: { restoreTriggerFocus?: boolean } = {}) {
     setIsOpen(false);
+    if (restoreTriggerFocus && collapsed) {
+      window.setTimeout(() => triggerRef.current?.focus(), 0);
+    }
   }
 
   function closeDetailsMenu() {
@@ -125,7 +130,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
 
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
     if (event.key === "Escape") {
-      closeSearch();
+      closeSearch({ restoreTriggerFocus: true });
       event.currentTarget.blur();
       return;
     }
@@ -163,17 +168,15 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
 
   return (
     <div ref={containerRef} className={containerClassName}>
-      <label className="sr-only" htmlFor={compact ? "site-search-mobile" : collapsed ? "site-search-popover" : "site-search-desktop"}>
-        Search tools and platforms
-      </label>
-
       {collapsed ? (
         <>
           <button
+            ref={triggerRef}
             type="button"
             aria-label="Search tools and platforms"
             title="Search tools and platforms"
             aria-expanded={isOpen}
+            aria-controls={popoverId}
             onClick={() => setIsOpen((current) => !current)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
           >
@@ -181,7 +184,10 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
           </button>
 
           {isOpen ? (
-            <div className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(24rem,calc(100vw-2rem))] overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] shadow-xl">
+            <div id={popoverId} className="absolute right-0 top-[calc(100%+0.5rem)] z-50 w-[min(24rem,calc(100vw-2rem))] rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] shadow-xl">
+              <label className="sr-only" htmlFor="site-search-popover">
+                Search tools and platforms
+              </label>
               <div className="relative border-b border-[var(--color-border)] px-3 py-3">
                 <Search className="pointer-events-none absolute left-6 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)]" size={16} />
                 <input
@@ -213,12 +219,16 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
                 highlightedIndex={highlightedIndex}
                 navigateTo={navigateTo}
                 setActiveIndex={setActiveIndex}
+                inline
               />
             </div>
           ) : null}
         </>
       ) : (
         <>
+          <label className="sr-only" htmlFor={compact ? "site-search-mobile" : "site-search-desktop"}>
+            Search tools and platforms
+          </label>
           <div className="relative">
             <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[var(--color-text-secondary)]" size={16} />
             <input
@@ -270,6 +280,7 @@ type SearchResultsProps = {
   highlightedIndex: number;
   navigateTo: (href: string) => void;
   setActiveIndex: (index: number) => void;
+  inline?: boolean;
 };
 
 function SearchResults({
@@ -280,13 +291,14 @@ function SearchResults({
   highlightedIndex,
   navigateTo,
   setActiveIndex,
+  inline = false,
 }: SearchResultsProps) {
   if (!(isOpen && hasQuery)) {
     return null;
   }
 
   return (
-    <div className="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] shadow-xl">
+    <div className={`${inline ? "border-t border-[var(--color-border)]" : "absolute left-0 right-0 top-[calc(100%+0.5rem)] z-50 overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] shadow-xl"}`}>
       <div className="border-b border-[var(--color-border)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
         {results.length} matches
       </div>
