@@ -1,4 +1,4 @@
-import { Menu, Moon, Star, Sun } from "lucide-react";
+import { ChevronDown, Menu, Moon, Star, Sun } from "lucide-react";
 import { HeaderSearch } from "@/components/header-search";
 import { headerSearchEntries } from "@/lib/search";
 import { githubStargazersUrl, navItems, withBasePath } from "@/lib/site";
@@ -41,7 +41,12 @@ const themeScript = `(() => {
   });
 })();`;
 
+const categoryNavItems = navItems.filter((item) => ["/agents", "/orchestration", "/governance"].includes(item.href));
+const primaryNavItems = navItems.filter((item) => ["/platforms", "/assistants", "/updates", "/about"].includes(item.href));
+
 export function Header({ currentPath = "/" }: HeaderProps) {
+  const isCategorySection = categoryNavItems.some((item) => item.href === currentPath);
+
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: themeScript }} />
@@ -53,8 +58,8 @@ export function Header({ currentPath = "/" }: HeaderProps) {
 
           <HeaderSearch entries={headerSearchEntries} />
 
-          <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
-            {navItems.map((item) => {
+          <nav aria-label="Primary" className="hidden items-center gap-3 md:flex">
+            {primaryNavItems.map((item) => {
               const isCurrent = item.href === currentPath;
 
               return (
@@ -62,16 +67,56 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                   key={item.href}
                   href={withBasePath(item.href)}
                   aria-current={isCurrent ? "page" : undefined}
-                  className={`border-b-2 pb-1 text-sm font-medium transition ${
+                  className={`rounded-full px-2 py-1 text-sm font-medium transition ${
                     isCurrent
-                      ? "border-[var(--color-primary)] text-[var(--color-text-primary)]"
-                      : "border-transparent text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-text-primary)]"
+                      ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
+                      : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
                   }`}
                 >
                   {item.label}
                 </a>
               );
             })}
+
+            <details className="group relative">
+              <summary
+                aria-label="Browse category pages"
+                title="Browse category pages"
+                className={`flex list-none items-center gap-1 rounded-full px-2 py-1 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
+                  isCategorySection
+                    ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
+                    : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
+                }`}
+              >
+                <span>Categories</span>
+                <ChevronDown size={14} className="transition group-open:rotate-180" />
+              </summary>
+              <div className="absolute right-0 top-[calc(100%+0.75rem)] z-50 min-w-56 overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] shadow-xl">
+                <div className="border-b border-[var(--color-border)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
+                  Category hubs
+                </div>
+                <div className="p-2">
+                  {categoryNavItems.map((item) => {
+                    const isCurrent = item.href === currentPath;
+
+                    return (
+                      <a
+                        key={item.href}
+                        href={withBasePath(item.href)}
+                        aria-current={isCurrent ? "page" : undefined}
+                        className={`block rounded-xl px-3 py-2 text-sm font-medium transition ${
+                          isCurrent
+                            ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
+                            : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
+                        }`}
+                      >
+                        {item.label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </details>
           </nav>
 
           <div className="flex items-center gap-2">
