@@ -41,8 +41,9 @@ const themeScript = `(() => {
   });
 })();`;
 
-const categoryNavItems = navItems.filter((item) => ["/agents", "/orchestration", "/governance"].includes(item.href));
-const primaryNavItems = navItems.filter((item) => ["/platforms", "/assistants", "/updates", "/about"].includes(item.href));
+const categoryNavHrefs = new Set(["/agents", "/orchestration", "/governance"]);
+const categoryNavItems = navItems.filter((item) => categoryNavHrefs.has(item.href));
+const primaryNavItems = navItems.filter((item) => !categoryNavHrefs.has(item.href));
 
 export function Header({ currentPath = "/" }: HeaderProps) {
   const isCategorySection = categoryNavItems.some((item) => item.href === currentPath);
@@ -81,6 +82,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
             <details className="group relative">
               <summary
                 aria-label="Browse category pages"
+                aria-current={isCategorySection ? "page" : undefined}
                 title="Browse category pages"
                 className={`flex list-none items-center gap-1 rounded-full px-2 py-1 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
                   isCategorySection
