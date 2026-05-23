@@ -175,7 +175,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
             title="Search tools and platforms"
             aria-expanded={isOpen}
             onClick={() => setIsOpen((current) => !current)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-border)] bg-transparent text-[var(--color-text-secondary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-text-primary)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
           >
             <Search size={16} />
           </button>

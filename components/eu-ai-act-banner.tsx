@@ -78,15 +78,15 @@ export function EuAiActBanner() {
   return (
     <aside
       aria-labelledby={bannerLabelId}
-      className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/88"
+      className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/72"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2.5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-1.5 px-4 py-2 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--color-text-secondary)]">
             <span id={bannerLabelId} className="font-medium text-[var(--color-text-primary)]">
               EU AI Act timeline
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-0.5 text-[11px] font-medium text-[var(--color-text-secondary)]">
+            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-bg-card)] px-2 py-0.5 text-[11px] font-medium text-[var(--color-text-secondary)]">
               <CalendarClock size={12} aria-hidden="true" />
               {statusLabel}
             </span>
@@ -109,7 +109,7 @@ export function EuAiActBanner() {
           href={EU_AI_ACT_OFFICIAL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-1 text-sm font-medium text-[var(--color-text-secondary)] transition hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+          className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-1 text-sm font-medium text-[var(--color-text-secondary)] underline-offset-4 transition hover:text-[var(--color-text-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
         >
           Official timeline
           <span className="sr-only"> (opens in a new tab)</span>

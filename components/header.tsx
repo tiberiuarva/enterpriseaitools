@@ -41,8 +41,8 @@ const themeScript = `(() => {
   });
 })();`;
 
-const primaryLinks = navItems.filter((item) => ["/updates", "/about"].includes(item.href));
-const categoryLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
+const utilityLinks = navItems.filter((item) => ["/updates", "/about"].includes(item.href));
+const categoryLinks = navItems.filter((item) => !["/", "/updates", "/about"].includes(item.href));
 
 export function Header({ currentPath = "/" }: HeaderProps) {
   const isCategoryPath = categoryLinks.some((item) => item.href === currentPath);
@@ -50,14 +50,14 @@ export function Header({ currentPath = "/" }: HeaderProps) {
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      <header className="sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/92 backdrop-blur">
+      <header className="sticky top-0 z-50 h-[var(--site-header-height)] border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/90 backdrop-blur-md">
         <div className="mx-auto flex h-[var(--site-header-height)] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex min-w-0 items-center gap-3 md:gap-5">
+          <div className="flex min-w-0 items-center gap-3 md:gap-4">
             <a href={withBasePath("/")} className="shrink-0 text-lg font-extrabold tracking-tight text-[var(--color-text-primary)]">
               enterpriseai.tools
             </a>
 
-            <nav aria-label="Primary" className="hidden items-center gap-2 md:flex">
+            <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
               <details className="group relative">
                 <summary
                   className={`flex h-9 cursor-pointer list-none items-center gap-1 rounded-full px-3 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
@@ -66,11 +66,14 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                       : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
                   }`}
                 >
-                  Categories
+                  Browse
                   <ChevronDown size={14} className="transition group-open:rotate-180" />
                 </summary>
-                <div className="absolute left-0 top-[calc(100%+0.5rem)] min-w-56 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] p-2 shadow-xl">
-                  <div className="flex flex-col gap-1">
+                <div className="absolute left-0 top-[calc(100%+0.5rem)] z-50 min-w-64 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] p-2 shadow-xl">
+                  <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
+                    Categories
+                  </div>
+                  <div className="grid gap-1">
                     {categoryLinks.map((item) => {
                       const isCurrent = item.href === currentPath;
 
@@ -93,7 +96,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                 </div>
               </details>
 
-              {primaryLinks.map((item) => {
+              {utilityLinks.map((item) => {
                 const isCurrent = item.href === currentPath;
 
                 return (
@@ -114,7 +117,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
             </nav>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <HeaderSearch entries={headerSearchEntries} collapsed />
 
             <a
@@ -122,9 +125,9 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Star the GitHub repository in a new tab"
-              className="hidden h-10 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-transparent px-3 text-sm font-medium text-[var(--color-text-secondary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-text-primary)] lg:inline-flex"
+              className="hidden h-10 items-center gap-1.5 rounded-full px-2.5 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)] lg:inline-flex"
             >
-              <Star size={16} />
+              <Star size={15} />
               <span>Star</span>
             </a>
 
@@ -134,7 +137,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               data-theme="dark"
               aria-label="Switch to light mode"
               title="Switch to light mode"
-              className="group inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-border)] bg-transparent text-[var(--color-text-secondary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-text-primary)]"
+              className="group inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
             >
               <Sun size={18} className="block group-data-[theme=light]:hidden" />
               <Moon size={18} className="hidden group-data-[theme=light]:block" />
@@ -144,7 +147,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               <summary
                 aria-label="Open navigation menu"
                 title="Open navigation menu"
-                className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-[var(--color-border)] bg-transparent text-[var(--color-text-secondary)] [&::-webkit-details-marker]:hidden"
+                className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full text-[var(--color-text-secondary)] [&::-webkit-details-marker]:hidden"
               >
                 <span className="sr-only">Open navigation menu</span>
                 <Menu size={18} />
@@ -186,7 +189,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                       </a>
                     );
                   })}
-                  {primaryLinks.map((item) => {
+                  {utilityLinks.map((item) => {
                     const isCurrent = item.href === currentPath;
 
                     return (
