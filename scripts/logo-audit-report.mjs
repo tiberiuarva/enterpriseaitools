@@ -76,7 +76,7 @@ for (const row of siteRows) {
     throw new Error(`Unknown logoKind in site data for ${row.category}: ${row.logoKind}`);
   }
 
-  if (!row.logoUrl) {
+  if (row.logoKind !== "fallback" && !row.logoUrl) {
     throw new Error(`Missing logoUrl in site data for ${row.category}:${row.name}`);
   }
 

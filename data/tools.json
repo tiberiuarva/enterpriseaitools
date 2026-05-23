@@ -1048,7 +1048,7 @@
       "logoSourceUrl": "https://cloud.google.com/security/products/model-armor"
     },
     {
-      "id": "unity-ai-gateway",
+      "id": "databricks-unity-ai-gateway",
       "name": "Databricks Unity AI Gateway",
       "category": "governance",
       "type": "vendor",
@@ -1067,7 +1067,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
       "websiteUrl": "https://www.databricks.com/product/ai",
-      "pricing": "Beta governance features currently documented as no-charge; broader Databricks platform consumption still applies.",
+      "pricing": "Underlying Databricks platform consumption still applies; current AI Gateway beta governance features are documented as no-charge.",
       "pricingModel": "paid",
       "languages": [
         "Python",
@@ -1398,7 +1398,7 @@
       "logoSourceUrl": "https://codeassist.google/products/business"
     },
     {
-      "id": "genie-code",
+      "id": "databricks-genie-code",
       "name": "Genie Code",
       "category": "assistants",
       "subcategory": "coding",
@@ -1573,10 +1573,9 @@
       "logoSourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png"
     },
     {
-      "id": "genie-spaces",
+      "id": "databricks-genie-spaces",
       "name": "Genie Spaces",
       "category": "assistants",
-      "subcategory": "productivity",
       "type": "vendor",
       "vendor": "Databricks",
       "description": "Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.",
