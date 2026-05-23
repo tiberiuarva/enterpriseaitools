@@ -42,9 +42,12 @@ const themeScript = `(() => {
 })();`;
 
 const homeLink = navItems.find((item) => item.href === "/") ?? { href: "/", label: "Home" };
-const utilityLinks = navItems.filter((item) => ["/updates", "/about"].includes(item.href));
-const categoryNavHrefs = new Set(["/platforms", "/agents", "/orchestration", "/governance", "/assistants"]);
-const categoryLinks = navItems.filter((item) => categoryNavHrefs.has(item.href));
+const utilityHrefs = ["/updates", "/about"] as const;
+const categoryNavHrefs = ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"] as const;
+const utilityLinks = navItems.filter((item) => utilityHrefs.includes(item.href as (typeof utilityHrefs)[number]));
+const categoryLinks = navItems.filter((item) => categoryNavHrefs.includes(item.href as (typeof categoryNavHrefs)[number]));
+const primaryNavHrefs = new Set([homeLink.href, ...categoryNavHrefs, ...utilityHrefs]);
+const uncategorizedLinks = navItems.filter((item) => !primaryNavHrefs.has(item.href));
 
 function navLinkClass(isCurrent: boolean) {
   return `rounded-full px-3 py-2 text-sm font-medium transition ${
@@ -209,6 +212,27 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                       </a>
                     );
                   })}
+                  {uncategorizedLinks.length > 0 ? (
+                    <>
+                      <div className="px-3 pt-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
+                        More
+                      </div>
+                      {uncategorizedLinks.map((item) => {
+                        const isCurrent = item.href === currentPath;
+
+                        return (
+                          <a
+                            key={item.href}
+                            href={withBasePath(item.href)}
+                            aria-current={isCurrent ? "page" : undefined}
+                            className={dropdownNavLinkClass(isCurrent)}
+                          >
+                            {item.label}
+                          </a>
+                        );
+                      })}
+                    </>
+                  ) : null}
                   <a
                     href={githubStargazersUrl}
                     target="_blank"
