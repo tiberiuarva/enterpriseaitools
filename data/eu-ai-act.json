@@ -10,13 +10,13 @@
     "summary": "Already applicable."
   },
   {
-    "label": "Most AI Act obligations",
+    "label": "Most AI Act obligations, including Annex III high-risk systems",
     "appliesOn": "2026-08-02",
-    "summary": "Broad applicability date for most remaining AI Act obligations."
+    "summary": "Broad applicability date under the adopted AI Act timeline."
   },
   {
-    "label": "Certain remaining high-risk AI obligations",
+    "label": "High-risk AI systems embedded in regulated products",
     "appliesOn": "2027-08-02",
-    "summary": "Final high-risk obligations apply."
+    "summary": "Later application date under the adopted AI Act timeline."
   }
 ]

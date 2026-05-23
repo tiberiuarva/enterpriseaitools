@@ -1,7 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
+import milestoneData from "../data/eu-ai-act.json" with { type: "json" };
 import { getCurrentAndNextMilestones, getDaysUntil } from "./eu-ai-act.ts";
+
+test("milestone dataset stays structurally explicit", () => {
+  assert.equal(milestoneData.length, 4);
+  assert.deepEqual(
+    milestoneData.map((milestone) => milestone.appliesOn),
+    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-08-02"],
+  );
+  for (const milestone of milestoneData) {
+    assert.match(milestone.appliesOn, /^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(milestone.label.length > 0);
+    assert.ok(milestone.summary.length > 0);
+  }
+});
 
 test("getDaysUntil normalizes to UTC midnight", () => {
   assert.equal(getDaysUntil("2026-08-02", new Date("2026-08-01T23:59:59-07:00")), 0);
