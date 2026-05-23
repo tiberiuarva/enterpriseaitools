@@ -38,7 +38,6 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 | --- | ---: | ---: |
 | SVG | 31 | 61% |
 | PNG | 10 | 20% |
-| NONE | 5 | 10% |
 | JPG | 4 | 8% |
 | AVIF | 1 | 2% |
 
@@ -46,7 +45,6 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 
 These rows are not automatically wrong, but they are where the system is still relying on family-brand or shared-platform reuse instead of distinct product marks.
 
-- `undefined` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity AI Gateway (governance), Genie Code (assistants), Genie Spaces (assistants)
 - `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
 - `/logos/aws-bedrock.svg` → AWS Bedrock Agents (agents), AWS Bedrock Guardrails (governance)
 - `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)

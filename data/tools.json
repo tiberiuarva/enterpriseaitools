@@ -1399,7 +1399,7 @@
     },
     {
       "id": "databricks-genie-code",
-      "name": "Genie Code",
+      "name": "Databricks Genie Code",
       "category": "assistants",
       "subcategory": "coding",
       "type": "vendor",
@@ -1418,7 +1418,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
       "websiteUrl": "https://www.databricks.com/product/ai",
-      "pricing": "No additional listed charge for current capabilities; users still pay for the underlying compute they run.",
+      "pricing": "Current Genie Code capabilities are documented without a separate add-on fee, but Databricks workspace and compute consumption still apply.",
       "pricingModel": "paid",
       "languages": [
         "Python",
@@ -1574,7 +1574,7 @@
     },
     {
       "id": "databricks-genie-spaces",
-      "name": "Genie Spaces",
+      "name": "Databricks Genie Spaces",
       "category": "assistants",
       "type": "vendor",
       "vendor": "Databricks",

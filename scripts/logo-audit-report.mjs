@@ -217,12 +217,14 @@ for (const row of siteRows) {
   const sourceSurface = classifySourceSurface(row.logoSourceUrl);
   sourceSurfaceCounts.set(sourceSurface, (sourceSurfaceCounts.get(sourceSurface) ?? 0) + 1);
 
-  const assetExtension = getAssetExtension(row.logoUrl);
-  assetExtensionCounts.set(assetExtension, (assetExtensionCounts.get(assetExtension) ?? 0) + 1);
+  if (row.logoUrl) {
+    const assetExtension = getAssetExtension(row.logoUrl);
+    assetExtensionCounts.set(assetExtension, (assetExtensionCounts.get(assetExtension) ?? 0) + 1);
 
-  const bucket = sharedAssetMap.get(row.logoUrl) ?? [];
-  bucket.push(`${row.name} (${row.category})`);
-  sharedAssetMap.set(row.logoUrl, bucket);
+    const bucket = sharedAssetMap.get(row.logoUrl) ?? [];
+    bucket.push(`${row.name} (${row.category})`);
+    sharedAssetMap.set(row.logoUrl, bucket);
+  }
 }
 
 for (const item of inventory) {

@@ -538,7 +538,7 @@
       "reviewedAt": "2026-05-23"
     },
     {
-      "name": "Genie Code",
+      "name": "Databricks Genie Code",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
@@ -548,7 +548,7 @@
       "reviewedAt": "2026-05-23"
     },
     {
-      "name": "Genie Spaces",
+      "name": "Databricks Genie Spaces",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
