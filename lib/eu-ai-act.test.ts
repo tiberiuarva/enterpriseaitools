@@ -24,7 +24,7 @@ test("getCurrentAndNextMilestones rolls a passed tranche into current milestones
   const result = getCurrentAndNextMilestones(new Date("2026-08-03T00:00:00Z"));
 
   assert.equal(result.hasUpcomingMilestone, true);
-  assert.equal(result.nextMilestone.appliesOn, "2027-08-02");
+  assert.equal(result.nextMilestone.appliesOn, "2027-12-02");
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
     ["2025-02-02", "2025-08-02", "2026-08-02"],
@@ -32,24 +32,24 @@ test("getCurrentAndNextMilestones rolls a passed tranche into current milestones
 });
 
 test("getCurrentAndNextMilestones falls back to the final tranche after all milestones pass", () => {
-  const result = getCurrentAndNextMilestones(new Date("2027-08-03T00:00:00Z"));
+  const result = getCurrentAndNextMilestones(new Date("2028-08-03T00:00:00Z"));
 
   assert.equal(result.hasUpcomingMilestone, false);
-  assert.equal(result.nextMilestone.appliesOn, "2027-08-02");
+  assert.equal(result.nextMilestone.appliesOn, "2028-08-02");
   assert.equal(result.nextMilestone.daysUntil, -1);
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
-    ["2025-02-02", "2025-08-02", "2026-08-02"],
+    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-12-02"],
   );
 });
 
 test("getCurrentAndNextMilestones sorts out-of-order milestone data before picking the next tranche", () => {
   const result = getCurrentAndNextMilestones(
-    new Date("2026-08-01T00:00:00Z"),
+    new Date("2027-12-01T00:00:00Z"),
     [
       {
-        label: "2027 tranche",
-        appliesOn: "2027-08-02",
+        label: "2028 tranche",
+        appliesOn: "2028-08-02",
         summary: "Final tranche.",
       },
       {
@@ -58,14 +58,14 @@ test("getCurrentAndNextMilestones sorts out-of-order milestone data before picki
         summary: "Earlier tranche.",
       },
       {
-        label: "2026 tranche",
-        appliesOn: "2026-08-02",
+        label: "2027 tranche",
+        appliesOn: "2027-12-02",
         summary: "Next tranche.",
       },
     ],
   );
 
-  assert.equal(result.nextMilestone.appliesOn, "2026-08-02");
+  assert.equal(result.nextMilestone.appliesOn, "2027-12-02");
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
     ["2025-08-02"],
@@ -75,16 +75,16 @@ test("getCurrentAndNextMilestones sorts out-of-order milestone data before picki
 test("getCurrentAndNextMilestones keeps single-milestone fallback semantics stable", () => {
   const milestone = {
     label: "Only tranche",
-    appliesOn: "2027-08-02",
+    appliesOn: "2027-12-02",
     summary: "Single tranche.",
   };
 
-  const upcomingResult = getCurrentAndNextMilestones(new Date("2027-08-01T00:00:00Z"), [milestone]);
-  assert.equal(upcomingResult.nextMilestone.appliesOn, "2027-08-02");
+  const upcomingResult = getCurrentAndNextMilestones(new Date("2027-12-01T00:00:00Z"), [milestone]);
+  assert.equal(upcomingResult.nextMilestone.appliesOn, "2027-12-02");
   assert.deepEqual(upcomingResult.currentMilestones, []);
 
-  const pastResult = getCurrentAndNextMilestones(new Date("2027-08-03T00:00:00Z"), [milestone]);
+  const pastResult = getCurrentAndNextMilestones(new Date("2027-12-03T00:00:00Z"), [milestone]);
   assert.equal(pastResult.hasUpcomingMilestone, false);
-  assert.equal(pastResult.nextMilestone.appliesOn, "2027-08-02");
+  assert.equal(pastResult.nextMilestone.appliesOn, "2027-12-02");
   assert.deepEqual(pastResult.currentMilestones, []);
 });

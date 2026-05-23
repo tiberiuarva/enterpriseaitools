@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import { ArrowRight, CalendarClock, Info } from "lucide-react";
+import { ArrowRight, CalendarClock } from "lucide-react";
 import {
   EU_AI_ACT_OFFICIAL_URL,
   formatUtcDate,
@@ -56,73 +56,60 @@ function useNow() {
 export function EuAiActBanner() {
   const bannerLabelId = useId();
   const now = useNow();
-  // Keep SSR and the first client render byte-stable on this static site.
-  // The live UTC-sensitive milestone state only appears after hydration.
   const milestoneState = now ? getCurrentAndNextMilestones(now) : null;
   const daysLeft = milestoneState?.nextMilestone.daysUntil ?? null;
   const isActiveToday = daysLeft === 0;
-  const milestonePrefix = milestoneState
-    ? milestoneState.hasUpcomingMilestone
-      ? isActiveToday
-        ? "Today's milestone:"
-        : "Next milestone:"
-      : "Latest published milestone:"
-    : null;
   const statusLabel = milestoneState
     ? milestoneState.hasUpcomingMilestone
       ? isActiveToday
-        ? "Applies today (UTC)."
-        : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left.`
-      : "Latest published milestone already applies."
-    : "Countdown loads after hydration.";
+        ? "Applies today"
+        : `${daysLeft} day${daysLeft === 1 ? "" : "s"} left`
+      : "Latest tranche already applies"
+    : "Countdown loads after hydration";
 
   const latestCurrentMilestone = milestoneState?.hasUpcomingMilestone
     ? milestoneState.currentMilestones.at(-1)
     : null;
-  const currentSummary = latestCurrentMilestone
-    ? `Already in force: ${latestCurrentMilestone.label}.`
-    : null;
-  const milestoneLabel = milestoneState
-    ? `${milestoneState.nextMilestone.label} on ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}.`
+
+  const milestoneSummary = milestoneState
+    ? `${milestoneState.nextMilestone.label} — ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}.`
     : null;
 
   return (
     <aside
       aria-labelledby={bannerLabelId}
-      className="min-h-[92px] border-b border-[var(--color-border)] bg-[var(--color-primary-soft)]"
+      className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]/88"
     >
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-3 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div className="flex min-w-0 flex-1 gap-3">
-          <div className="mt-0.5 shrink-0 text-[var(--color-primary)]">
-            <Info size={18} aria-hidden="true" />
+      <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-2.5 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2 text-sm text-[var(--color-text-secondary)]">
+            <span id={bannerLabelId} className="font-medium text-[var(--color-text-primary)]">
+              EU AI Act timeline
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] px-2 py-0.5 text-[11px] font-medium text-[var(--color-text-secondary)]">
+              <CalendarClock size={12} aria-hidden="true" />
+              {statusLabel}
+            </span>
           </div>
-          <div className="min-w-0">
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-semibold text-[var(--color-text-primary)]">
-              <span id={bannerLabelId}>EU AI Act countdown</span>
-              <span className="inline-flex min-w-[18ch] items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-2 py-0.5 text-xs font-semibold uppercase tracking-wide text-[var(--color-text-primary)]">
-                <CalendarClock size={12} className="mr-1" aria-hidden="true" />
-                {statusLabel}
-              </span>
-            </div>
-            <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-              {milestoneState ? (
-                <>
-                  <span className="font-medium text-[var(--color-text-primary)]">{milestonePrefix}</span>{" "}
-                  {milestoneLabel} {milestoneState.nextMilestone.summary}
-                  {currentSummary ? ` ${currentSummary}` : ""}
-                </>
-              ) : (
-                "Official milestone copy loads after hydration."
-              )}
-            </p>
-          </div>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            {milestoneState ? (
+              <>
+                <span className="text-[var(--color-text-primary)]">Next:</span> {milestoneSummary} {milestoneState.nextMilestone.summary}
+                {latestCurrentMilestone
+                  ? ` Latest tranche already in force: ${latestCurrentMilestone.label}.`
+                  : ""}
+              </>
+            ) : (
+              "Official milestone copy loads after hydration."
+            )}
+          </p>
         </div>
 
         <a
           href={EU_AI_ACT_OFFICIAL_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit shrink-0 items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] focus-visible:border-[var(--color-primary)] focus-visible:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+          className="inline-flex w-fit shrink-0 items-center gap-1.5 rounded-full px-1 text-sm font-medium text-[var(--color-text-secondary)] transition hover:text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
         >
           Official timeline
           <span className="sr-only"> (opens in a new tab)</span>
