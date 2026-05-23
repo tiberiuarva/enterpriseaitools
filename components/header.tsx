@@ -41,7 +41,7 @@ const themeScript = `(() => {
   });
 })();`;
 
-const homeLink = navItems.find((item) => item.href === "/")!;
+const homeLink = navItems.find((item) => item.href === "/") ?? { href: "/", label: "Home" };
 const utilityLinks = navItems.filter((item) => ["/updates", "/about"].includes(item.href));
 const categoryNavHrefs = new Set(["/platforms", "/agents", "/orchestration", "/governance", "/assistants"]);
 const categoryLinks = navItems.filter((item) => categoryNavHrefs.has(item.href));
@@ -54,7 +54,7 @@ function navLinkClass(isCurrent: boolean) {
   }`;
 }
 
-function mobileNavLinkClass(isCurrent: boolean) {
+function dropdownNavLinkClass(isCurrent: boolean) {
   return `rounded-xl px-3 py-2 text-sm font-medium transition ${
     isCurrent
       ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
@@ -108,7 +108,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                           key={item.href}
                           href={withBasePath(item.href)}
                           aria-current={isCurrent ? "page" : undefined}
-                          className={mobileNavLinkClass(isCurrent)}
+                          className={dropdownNavLinkClass(isCurrent)}
                         >
                           {item.label}
                         </a>
@@ -174,7 +174,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                   <a
                     href={withBasePath(homeLink.href)}
                     aria-current={currentPath === homeLink.href ? "page" : undefined}
-                    className={mobileNavLinkClass(currentPath === homeLink.href)}
+                    className={dropdownNavLinkClass(currentPath === homeLink.href)}
                   >
                     {homeLink.label}
                   </a>
@@ -189,7 +189,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                         key={item.href}
                         href={withBasePath(item.href)}
                         aria-current={isCurrent ? "page" : undefined}
-                        className={mobileNavLinkClass(isCurrent)}
+                        className={dropdownNavLinkClass(isCurrent)}
                       >
                         {item.label}
                       </a>
@@ -203,7 +203,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                         key={item.href}
                         href={withBasePath(item.href)}
                         aria-current={isCurrent ? "page" : undefined}
-                        className={mobileNavLinkClass(isCurrent)}
+                        className={dropdownNavLinkClass(isCurrent)}
                       >
                         {item.label}
                       </a>

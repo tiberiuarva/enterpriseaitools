@@ -176,7 +176,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
             aria-label="Search tools and platforms"
             title="Search tools and platforms"
             aria-expanded={isOpen}
-            aria-controls={popoverId}
+            aria-controls={isOpen ? popoverId : undefined}
             onClick={() => setIsOpen((current) => !current)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
           >

@@ -71,7 +71,7 @@ export function EuAiActBanner() {
 
   const latestCurrentMilestone = milestoneState?.hasUpcomingMilestone
     ? milestoneState.currentMilestones.at(-1)
-    : null;
+    : milestoneState?.nextMilestone ?? null;
 
   return (
     <aside
@@ -91,14 +91,25 @@ export function EuAiActBanner() {
           </div>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
             {milestoneState ? (
-              <>
-                <span className="text-[var(--color-text-primary)]">Next:</span>{" "}
-                {milestoneState.nextMilestone.label} on {formatUtcDate(milestoneState.nextMilestone.appliesOn)}.
-                {milestoneState.nextMilestone.summary ? ` ${milestoneState.nextMilestone.summary}` : ""}
-                {latestCurrentMilestone
-                  ? ` Latest tranche already in force: ${latestCurrentMilestone.label}.`
-                  : ""}
-              </>
+              milestoneState.hasUpcomingMilestone ? (
+                <>
+                  <span className="text-[var(--color-text-primary)]">Next:</span>{" "}
+                  {milestoneState.nextMilestone.label} on {formatUtcDate(milestoneState.nextMilestone.appliesOn)}.
+                  {milestoneState.nextMilestone.summary ? ` ${milestoneState.nextMilestone.summary}` : ""}
+                  {latestCurrentMilestone
+                    ? ` Latest tranche already in force: ${latestCurrentMilestone.label}.`
+                    : ""}
+                </>
+              ) : (
+                <>
+                  <span className="text-[var(--color-text-primary)]">Latest published milestone:</span>{" "}
+                  {milestoneState.nextMilestone.label} on {formatUtcDate(milestoneState.nextMilestone.appliesOn)}.
+                  {milestoneState.nextMilestone.summary ? ` ${milestoneState.nextMilestone.summary}` : ""}
+                  {latestCurrentMilestone
+                    ? ` Latest tranche already in force: ${latestCurrentMilestone.label}.`
+                    : ""}
+                </>
+              )
             ) : (
               "Official milestone copy loads after hydration."
             )}
