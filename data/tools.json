@@ -125,6 +125,45 @@
       "logoSourceUrl": "https://cloud.google.com/icons"
     },
     {
+      "id": "databricks-mosaic-ai-agent-framework",
+      "name": "Databricks Mosaic AI Agent Framework",
+      "category": "agents",
+      "type": "vendor",
+      "vendor": "Databricks",
+      "description": "Databricks-native agent stack combining managed tools, MCP connectivity, retrieval, and MLflow-backed evaluation.",
+      "strengths": [
+        "Managed MCP servers for Databricks data",
+        "Vector Search and Unity Catalog integration",
+        "MLflow tracing, evaluation, and monitoring"
+      ],
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.databricks.com/aws/en/agents/gen-ai-capabilities",
+      "websiteUrl": "https://www.databricks.com/product/ai",
+      "pricing": "Databricks platform consumption; feature-specific pricing depends on serving, storage, and compute.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "databricks",
+        "mcp",
+        "mlflow",
+        "managed"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Temporary reviewed fallback. This slice adds source-backed product coverage first; a separately sourced Databricks product or vendor mark should replace the fallback in a later logo pass.",
+      "logoReviewedAt": "2026-05-23",
+      "practitionerNote": "Best fit when agent delivery needs to stay close to Databricks-native data, governed tools, and evaluation workflows rather than a general-purpose app stack."
+    },
+    {
       "id": "crewai",
       "name": "CrewAI",
       "category": "agents",
@@ -603,6 +642,44 @@
       "practitionerNote": "Pragmatic choice for GCP-centric teams orchestrating APIs and services, but usually not the first pick for richer agent-builder experiences."
     },
     {
+      "id": "databricks-lakeflow-jobs",
+      "name": "Databricks Lakeflow Jobs",
+      "category": "orchestration",
+      "type": "vendor",
+      "vendor": "Databricks",
+      "description": "Workflow automation for Databricks tasks, pipelines, and ML workloads with DAG, trigger, and observability support.",
+      "strengths": [
+        "Visual DAG orchestration",
+        "Task branching, loops, and triggers",
+        "Native notebook, pipeline, and ML workflow support"
+      ],
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.databricks.com/aws/en/jobs",
+      "websiteUrl": "https://www.databricks.com/product/data-engineering",
+      "pricing": "Databricks workload and job execution costs depend on the underlying compute and services used.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "databricks",
+        "jobs",
+        "workflows"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Temporary reviewed fallback pending a separately sourced Databricks/Lakeflow visual asset in the logo-provenance backlog.",
+      "logoReviewedAt": "2026-05-23",
+      "practitionerNote": "Strong when orchestration mostly coordinates Databricks notebooks, pipelines, and ML runs, but it is not the same thing as a broad cross-SaaS automation layer."
+    },
+    {
       "id": "n8n",
       "name": "n8n",
       "category": "orchestration",
@@ -971,6 +1048,45 @@
       "logoSourceUrl": "https://cloud.google.com/security/products/model-armor"
     },
     {
+      "id": "unity-ai-gateway",
+      "name": "Databricks Unity AI Gateway",
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "Databricks",
+      "description": "Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.",
+      "strengths": [
+        "Usage tracking and audit logging",
+        "Permissions, rate limits, and traffic controls",
+        "Governance for endpoints and MCP interactions"
+      ],
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
+      "websiteUrl": "https://www.databricks.com/product/ai",
+      "pricing": "Beta governance features currently documented as no-charge; broader Databricks platform consumption still applies.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "status": "active",
+      "tags": [
+        "governance",
+        "databricks",
+        "mcp",
+        "guardrails",
+        "observability"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Temporary reviewed fallback pending a sourced Databricks/Unity AI Gateway mark in a later logo-specific slice.",
+      "logoReviewedAt": "2026-05-23",
+      "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer."
+    },
+    {
       "id": "nemo-guardrails",
       "name": "NeMo Guardrails",
       "category": "governance",
@@ -1282,6 +1398,46 @@
       "logoSourceUrl": "https://codeassist.google/products/business"
     },
     {
+      "id": "genie-code",
+      "name": "Genie Code",
+      "category": "assistants",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "Databricks",
+      "description": "Context-aware Databricks coding assistant for SQL, Python, debugging, and agentic data-work flows.",
+      "strengths": [
+        "Understands Unity Catalog metadata",
+        "Helps generate, explain, and fix SQL/Python",
+        "Agent mode across notebooks, Lakeflow, dashboards, and MLflow"
+      ],
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
+      "websiteUrl": "https://www.databricks.com/product/ai",
+      "pricing": "No additional listed charge for current capabilities; users still pay for the underlying compute they run.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "SQL"
+      ],
+      "status": "active",
+      "tags": [
+        "assistants",
+        "coding",
+        "databricks",
+        "sql",
+        "python"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Temporary reviewed fallback pending a separately sourced Genie Code visual asset in the logo backlog.",
+      "logoReviewedAt": "2026-05-23",
+      "practitionerNote": "Useful for data teams already living in Databricks, especially where table metadata and notebook context matter more than general-purpose IDE breadth."
+    },
+    {
       "id": "cursor",
       "name": "Cursor",
       "category": "assistants",
@@ -1415,6 +1571,44 @@
       "practitionerNote": "Pragmatic for Google Workspace estates that want AI features embedded in existing docs, mail, and meetings without a separate assistant rollout.",
       "logoUrl": "/logos/gemini-shared.png",
       "logoSourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png"
+    },
+    {
+      "id": "genie-spaces",
+      "name": "Genie Spaces",
+      "category": "assistants",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "Databricks",
+      "description": "Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.",
+      "strengths": [
+        "Natural-language access to curated datasets",
+        "Built on Unity Catalog governance",
+        "Business-insight workflow inside the Databricks workspace"
+      ],
+      "clouds": [
+        "aws",
+        "azure",
+        "gcp"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.databricks.com/aws/en/databricks-ai/",
+      "websiteUrl": "https://www.databricks.com/product/ai",
+      "pricing": "Packaged as part of Databricks AI assistive features; Databricks workspace and compute usage still apply.",
+      "pricingModel": "paid",
+      "languages": [
+        "SQL"
+      ],
+      "status": "active",
+      "tags": [
+        "assistants",
+        "productivity",
+        "databricks",
+        "analytics"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Temporary reviewed fallback pending a separately sourced Genie Spaces asset in the logo backlog.",
+      "logoReviewedAt": "2026-05-23",
+      "practitionerNote": "Better treated as a governed internal data-assistant surface than a broad office-suite copilot replacement."
     },
     {
       "id": "amazon-q-business",
