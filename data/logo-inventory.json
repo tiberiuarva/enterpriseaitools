@@ -506,6 +506,56 @@
       "logoKind": "service-icon",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/paperclip.svg"
+    },
+    {
+      "name": "Databricks Mosaic AI Agent Framework",
+      "category": "agents",
+      "vendor": "Databricks",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Temporary reviewed fallback. This slice adds source-backed product coverage first; a separately sourced Databricks product or vendor mark should replace the fallback in a later logo pass.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-05-23"
+    },
+    {
+      "name": "Databricks Lakeflow Jobs",
+      "category": "orchestration",
+      "vendor": "Databricks",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Temporary reviewed fallback pending a separately sourced Databricks/Lakeflow visual asset in the logo-provenance backlog.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-05-23"
+    },
+    {
+      "name": "Databricks Unity AI Gateway",
+      "category": "governance",
+      "vendor": "Databricks",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Temporary reviewed fallback pending a sourced Databricks/Unity AI Gateway mark in a later logo-specific slice.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-05-23"
+    },
+    {
+      "name": "Databricks Genie Code",
+      "category": "assistants",
+      "vendor": "Databricks",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Temporary reviewed fallback pending a separately sourced Genie Code visual asset in the logo backlog.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-05-23"
+    },
+    {
+      "name": "Databricks Genie Spaces",
+      "category": "assistants",
+      "vendor": "Databricks",
+      "status": "classified",
+      "sourceUrl": null,
+      "notes": "Temporary reviewed fallback pending a separately sourced Genie Spaces asset in the logo backlog.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-05-23"
     }
   ]
 }
