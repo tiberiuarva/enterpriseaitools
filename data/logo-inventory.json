@@ -512,50 +512,55 @@
       "category": "agents",
       "vendor": "Databricks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Temporary reviewed fallback. This slice adds source-backed product coverage first; a separately sourced Databricks product or vendor mark should replace the fallback in a later logo pass.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-05-23"
+      "sourceUrl": "https://brand.databricks.com/databricks-logo",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while these specific product pages do not expose distinct standalone product marks.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png"
     },
     {
       "name": "Databricks Lakeflow Jobs",
       "category": "orchestration",
       "vendor": "Databricks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Temporary reviewed fallback pending a separately sourced Databricks/Lakeflow visual asset in the logo-provenance backlog.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-05-23"
+      "sourceUrl": "https://brand.databricks.com/databricks-logo",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Lakeflow Jobs does not expose a distinct standalone public mark.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png"
     },
     {
       "name": "Databricks Unity AI Gateway",
       "category": "governance",
       "vendor": "Databricks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Temporary reviewed fallback pending a sourced Databricks/Unity AI Gateway mark in a later logo-specific slice.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-05-23"
+      "sourceUrl": "https://brand.databricks.com/databricks-logo",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity AI Gateway does not expose a distinct standalone public mark.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png"
     },
     {
       "name": "Databricks Genie Code",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Temporary reviewed fallback pending a separately sourced Genie Code visual asset in the logo backlog.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-05-23"
+      "sourceUrl": "https://brand.databricks.com/databricks-logo",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Code does not expose a distinct standalone public mark.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png"
     },
     {
       "name": "Databricks Genie Spaces",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
-      "sourceUrl": null,
-      "notes": "Temporary reviewed fallback pending a separately sourced Genie Spaces asset in the logo backlog.",
-      "logoKind": "fallback",
-      "reviewedAt": "2026-05-23"
+      "sourceUrl": "https://brand.databricks.com/databricks-logo",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+      "logoKind": "official-vendor",
+      "reviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png"
     }
   ]
 }

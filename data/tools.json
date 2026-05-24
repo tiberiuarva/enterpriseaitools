@@ -158,9 +158,11 @@
         "mlflow",
         "managed"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Temporary reviewed fallback. This slice adds source-backed product coverage first; a separately sourced Databricks product or vendor mark should replace the fallback in a later logo pass.",
-      "logoReviewedAt": "2026-05-23",
+      "logoKind": "official-vendor",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while these specific product pages do not expose distinct standalone product marks.",
+      "logoReviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png",
+      "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
       "practitionerNote": "Best fit when agent delivery needs to stay close to Databricks-native data, governed tools, and evaluation workflows rather than a general-purpose app stack."
     },
     {
@@ -674,9 +676,11 @@
         "jobs",
         "workflows"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Temporary reviewed fallback pending a separately sourced Databricks/Lakeflow visual asset in the logo-provenance backlog.",
-      "logoReviewedAt": "2026-05-23",
+      "logoKind": "official-vendor",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Lakeflow Jobs does not expose a distinct standalone public mark.",
+      "logoReviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png",
+      "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
       "practitionerNote": "Strong when orchestration mostly coordinates Databricks notebooks, pipelines, and ML runs, but it is not the same thing as a broad cross-SaaS automation layer."
     },
     {
@@ -1081,9 +1085,11 @@
         "guardrails",
         "observability"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Temporary reviewed fallback pending a sourced Databricks/Unity AI Gateway mark in a later logo-specific slice.",
-      "logoReviewedAt": "2026-05-23",
+      "logoKind": "official-vendor",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity AI Gateway does not expose a distinct standalone public mark.",
+      "logoReviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png",
+      "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
       "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer."
     },
     {
@@ -1432,9 +1438,11 @@
         "sql",
         "python"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Temporary reviewed fallback pending a separately sourced Genie Code visual asset in the logo backlog.",
-      "logoReviewedAt": "2026-05-23",
+      "logoKind": "official-vendor",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Code does not expose a distinct standalone public mark.",
+      "logoReviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png",
+      "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
       "practitionerNote": "Useful for data teams already living in Databricks, especially where table metadata and notebook context matter more than general-purpose IDE breadth."
     },
     {
@@ -1604,9 +1612,11 @@
         "databricks",
         "analytics"
       ],
-      "logoKind": "fallback",
-      "logoNotes": "Temporary reviewed fallback pending a separately sourced Genie Spaces asset in the logo backlog.",
-      "logoReviewedAt": "2026-05-23",
+      "logoKind": "official-vendor",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+      "logoReviewedAt": "2026-05-24",
+      "logoUrl": "/logos/databricks.png",
+      "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
       "practitionerNote": "Better treated as a governed internal data-assistant surface than a broad office-suite copilot replacement."
     },
     {
