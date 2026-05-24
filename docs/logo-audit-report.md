@@ -21,7 +21,7 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 ## Source-surface mix
 
-This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages.
+This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages. Fallback rows with no rendered source asset are tracked separately as `fallback-no-source`.
 
 | Source surface | Count | Share |
 | --- | ---: | ---: |
@@ -30,14 +30,18 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 | github-hosted | 2 | 4% |
 | docs-site | 4 | 8% |
 | vendor-site | 21 | 41% |
-| other | 5 | 10% |
+| fallback-no-source | 5 | 10% |
+| other | 0 | 0% |
 
 ## Asset format mix
+
+This tracks the rendered asset format. Fallback rows with no rendered image asset appear as `NO-ASSET` so the shares still sum to the full site dataset.
 
 | Format | Count | Share |
 | --- | ---: | ---: |
 | SVG | 31 | 61% |
 | PNG | 10 | 20% |
+| NO-ASSET | 5 | 10% |
 | JPG | 4 | 8% |
 | AVIF | 1 | 2% |
 

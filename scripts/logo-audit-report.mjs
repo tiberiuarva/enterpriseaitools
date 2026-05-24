@@ -32,7 +32,7 @@ if (!generatedAt) {
 
 const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
 const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
-const sourceSurfaceOrder = ["icon-pack", "repo", "github-hosted", "docs-site", "vendor-site", "other"];
+const sourceSurfaceOrder = ["icon-pack", "repo", "github-hosted", "docs-site", "vendor-site", "fallback-no-source", "other"];
 const allowedStatuses = new Set(["classified", "unclassified"]);
 const allowedCategories = new Set(categoryOrder);
 const allowedLogoKinds = new Set(logoKindOrder);
@@ -133,8 +133,10 @@ function isPathWithinSegment(pathname, segment) {
   return normalizedPath === normalizedSegment || normalizedPath.startsWith(`${normalizedSegment}/`);
 }
 
-function classifySourceSurface(sourceUrl) {
-  if (!sourceUrl) return "other";
+function classifySourceSurface(sourceUrl, logoKind) {
+  if (!sourceUrl) {
+    return logoKind === "fallback" ? "fallback-no-source" : "other";
+  }
 
   let parsedUrl;
   try {
@@ -182,7 +184,7 @@ function classifySourceSurface(sourceUrl) {
 }
 
 function getAssetExtension(logoUrl) {
-  if (!logoUrl) return "none";
+  if (!logoUrl) return "no-asset";
 
   const normalizedPath = (() => {
     try {
@@ -214,13 +216,13 @@ const agedReviewBuckets = {
 };
 
 for (const row of siteRows) {
-  const sourceSurface = classifySourceSurface(row.logoSourceUrl);
+  const sourceSurface = classifySourceSurface(row.logoSourceUrl, row.logoKind);
   sourceSurfaceCounts.set(sourceSurface, (sourceSurfaceCounts.get(sourceSurface) ?? 0) + 1);
 
-  if (row.logoUrl) {
-    const assetExtension = getAssetExtension(row.logoUrl);
-    assetExtensionCounts.set(assetExtension, (assetExtensionCounts.get(assetExtension) ?? 0) + 1);
+  const assetExtension = getAssetExtension(row.logoUrl);
+  assetExtensionCounts.set(assetExtension, (assetExtensionCounts.get(assetExtension) ?? 0) + 1);
 
+  if (row.logoUrl) {
     const bucket = sharedAssetMap.get(row.logoUrl) ?? [];
     bucket.push(`${row.name} (${row.category})`);
     sharedAssetMap.set(row.logoUrl, bucket);
@@ -270,7 +272,7 @@ lines.push(`- Unclassified: **${inventorySummary.unclassified}**`);
 lines.push("");
 lines.push("## Source-surface mix");
 lines.push("");
-lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages.");
+lines.push("This shows where the currently rendered imagery comes from. Zero fallbacks does **not** mean the system is fully clean if many records still depend on shared vendor surfaces, GitHub-hosted docs/assets, docs-site assets, or vendor-site marks pulled from product/marketing pages. Fallback rows with no rendered source asset are tracked separately as `fallback-no-source`.");
 lines.push("");
 lines.push("| Source surface | Count | Share |");
 lines.push("| --- | ---: | ---: |");
@@ -280,6 +282,8 @@ for (const surface of sourceSurfaceOrder) {
 }
 lines.push("");
 lines.push("## Asset format mix");
+lines.push("");
+lines.push("This tracks the rendered asset format. Fallback rows with no rendered image asset appear as `NO-ASSET` so the shares still sum to the full site dataset.");
 lines.push("");
 lines.push("| Format | Count | Share |");
 lines.push("| --- | ---: | ---: |");
