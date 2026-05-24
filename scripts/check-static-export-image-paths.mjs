@@ -22,19 +22,24 @@ if (!fs.existsSync(outDir)) {
 }
 
 const htmlFiles = collectHtmlFiles(outDir);
+const nextImagePattern = /\/_next\/image\/?\?|%2F_next%2Fimage(%2F)?%3F/i;
 const nextImageReferences = [];
 
 for (const filePath of htmlFiles) {
   const html = fs.readFileSync(filePath, "utf8");
-  if (html.includes("/_next/image?") || html.includes("%2F_next%2Fimage%3F")) {
-    nextImageReferences.push(path.relative(repoRoot, filePath));
+  const match = html.match(nextImagePattern);
+  if (match) {
+    nextImageReferences.push({
+      filePath: path.relative(repoRoot, filePath),
+      sample: match[0],
+    });
   }
 }
 
 if (nextImageReferences.length > 0) {
   console.error("Static export image path check failed: exported HTML still references /_next/image, which breaks on static hosting.");
-  for (const filePath of nextImageReferences) {
-    console.error(`- ${filePath}`);
+  for (const { filePath, sample } of nextImageReferences) {
+    console.error(`- ${filePath}: ${sample}`);
   }
   process.exit(1);
 }
