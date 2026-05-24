@@ -220,7 +220,7 @@ export default function AboutPage() {
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
             {overviewCards.map((card) => (
               <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
-                <h2 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h2>
+                <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
               </div>
             ))}
@@ -229,10 +229,7 @@ export default function AboutPage() {
 
         <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[17rem_minmax(0,1fr)]">
           <aside className="xl:sticky xl:top-[calc(var(--site-header-height)+1.5rem)] xl:self-start">
-            <nav
-              aria-label="About page sections"
-              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4"
-            >
+            <nav aria-label="About page sections" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 On this page
               </p>
@@ -255,7 +252,11 @@ export default function AboutPage() {
           </aside>
 
           <div className="space-y-6">
-            <section id="overview" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <section
+              id="overview"
+              tabIndex={-1}
+              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+            >
               <SectionHeading
                 eyebrow="Overview"
                 title="Why this tracker exists"
@@ -294,25 +295,36 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section id="how-to-use" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <section
+              id="how-to-use"
+              tabIndex={-1}
+              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+            >
               <SectionHeading
                 eyebrow="How to use it"
                 title="Read the site in the same order enterprise teams make decisions"
                 intro="Start from the foundation layer, then move upward into category tools and current market movement."
               />
-              <div className="mt-5 grid gap-3">
+              <ol className="mt-5 grid gap-3 list-none pl-0">
                 {workflowSteps.map((step, index) => (
-                  <div key={step} className="flex gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-bg-card)] text-sm font-semibold text-[var(--color-text-primary)]">
+                  <li key={step} className="flex gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+                    <span
+                      aria-hidden="true"
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-bg-card)] text-sm font-semibold text-[var(--color-text-primary)]"
+                    >
                       {index + 1}
-                    </div>
+                    </span>
                     <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{step}</p>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ol>
             </section>
 
-            <section id="coverage" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <section
+              id="coverage"
+              tabIndex={-1}
+              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+            >
               <SectionHeading
                 eyebrow="Coverage"
                 title="What gets tracked and how the market is framed"
@@ -356,7 +368,11 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section id="standards" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <section
+              id="standards"
+              tabIndex={-1}
+              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+            >
               <SectionHeading
                 eyebrow="Standards"
                 title="The page is only useful if the dataset stays defensible"
@@ -382,7 +398,11 @@ export default function AboutPage() {
               </div>
             </section>
 
-            <section id="contribute" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <section
+              id="contribute"
+              tabIndex={-1}
+              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+            >
               <SectionHeading
                 eyebrow="Contribute"
                 title="Keep fixes small, source-backed, and easy to review"
