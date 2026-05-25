@@ -45,7 +45,7 @@
     },
     {
       "id": "aws-bedrock-agents",
-      "name": "AWS Bedrock Agents",
+      "name": "Amazon Bedrock Agents",
       "category": "agents",
       "type": "vendor",
       "vendor": "AWS",
@@ -987,7 +987,7 @@
     },
     {
       "id": "aws-bedrock-guardrails",
-      "name": "AWS Bedrock Guardrails",
+      "name": "Amazon Bedrock Guardrails",
       "category": "governance",
       "type": "vendor",
       "vendor": "AWS",

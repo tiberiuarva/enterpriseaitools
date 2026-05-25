@@ -50,7 +50,7 @@ These rows are not automatically wrong, but they are where the system is still r
 
 - `/logos/databricks.png` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity AI Gateway (governance), Databricks Genie Code (assistants), Databricks Genie Spaces (assistants)
 - `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
-- `/logos/aws-bedrock.svg` → AWS Bedrock Agents (agents), AWS Bedrock Guardrails (governance)
+- `/logos/aws-bedrock.svg` → Amazon Bedrock Agents (agents), Amazon Bedrock Guardrails (governance)
 - `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)
 - `/logos/google-vertex-ai.svg` → Google Agent Builder + ADK (agents), Gemini Enterprise Agent Platform (platforms)
 - `/logos/microsoft-foundry.jpg` → Microsoft Foundry Agent Service (agents), Microsoft Foundry (platforms)
