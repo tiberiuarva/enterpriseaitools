@@ -16,5 +16,6 @@ export function latestIsoDate(candidates: ReadonlyArray<string | null | undefine
     return null;
   }
 
+  // Lexicographic sort equals chronological order for ISO `YYYY-MM-DD` strings.
   return [...valid].sort().at(-1) ?? null;
 }
