@@ -239,16 +239,16 @@ export default function AboutPage() {
                 </p>
                 <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  AI architect working in enterprise financial services, with an editorial lens shaped by regulated-enterprise delivery, governance constraints, and source-backed decision support.
+                  Edited with a regulated-enterprise delivery lens shaped by enterprise financial-services constraints, governance expectations, and source-backed decision support.
                 </p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                <ul className="mt-4 grid gap-3 sm:grid-cols-3">
                   {editorCredibilityPoints.map((point) => (
-                    <div key={point.title} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+                    <li key={point.title} className="list-none rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
                       <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{point.title}</h3>
                       <p className="mt-2 text-xs leading-5 text-[var(--color-text-secondary)]">{point.body}</p>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
 
