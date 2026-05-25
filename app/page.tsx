@@ -17,8 +17,10 @@ import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
+import { filterToolsByCategory } from "@/lib/dataset-metrics";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
+import type { ToolCategory } from "@/lib/types";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
@@ -64,11 +66,12 @@ function formatUpdateLabel(value: string) {
 }
 
 export default function Home() {
-  const categoryCards = Object.entries(categoryMeta).map(([key, meta]) => {
-    const categoryTools = tools.filter((tool) => tool.category === key);
+  const categoryKeys = Object.keys(categoryMeta) as ToolCategory[];
+  const categoryCards = categoryKeys.map((key) => {
+    const categoryTools = filterToolsByCategory(tools, key);
 
     return {
-      ...meta,
+      ...categoryMeta[key],
       count: categoryTools.length,
       previewTools: categoryTools.slice(0, 3).map((tool) => ({
         id: tool.id,
