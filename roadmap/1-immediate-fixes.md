@@ -1,6 +1,6 @@
 # Milestone 1 — Site-consistency immediate fixes
 
-**Status:** open
+**Status:** in review (PR #109)
 **Severity:** mixed (1 Critical · 1 High · 1 Medium · 1 Verify)
 **Source:** Priority-fix review, conducted live against the homepage and Agents
 category page on 2026-05-23 (confidential working document, not committed to the
@@ -102,18 +102,44 @@ top of this and is explicitly out of scope here.
 
 ## Acceptance criteria
 
-- [ ] Every page (home and all four category pages) shows the same current
-      freshness date.
+- [x] Every page (home and all four category pages) shows the same current
+      freshness date — all render the shared `lastUpdated` via `Footer`.
 - [ ] The recent-updates block on each category page reflects entries from the
-      last 7 days, not April.
-- [ ] The agent-tool count is identical on the homepage card and the Agents
-      page, and matches `data/tools.json`.
-- [ ] All four category counts are consistent across surfaces.
-- [ ] No vendor card prints "No version listed"; the line is simply absent when
-      there is no version.
-- [ ] AutoGen and Guardrails AI licenses are either confirmed correct or have an
-      open data-correction issue.
-- [ ] All validation gates (`/ship-check`) pass on every PR.
+      last 7 days, not April — **partially met**: code already derives from
+      `data/updates.json` by category, but `governance` (latest 2026-03-12) and
+      `assistants` (latest 2026-03-25) have no recent entries. Closing this is a
+      source-backed `/radar` data task, not code (see Outcome).
+- [x] The agent-tool count is identical on the homepage card and the Agents
+      page, and matches `data/tools.json` — both now use `filterToolsByCategory`.
+- [x] All four category counts are consistent across surfaces.
+- [x] No vendor card prints "No version listed"; the line is simply absent when
+      there is no version — already true in `components/tool-card.tsx`.
+- [x] AutoGen and Guardrails AI licenses are either confirmed correct or have an
+      open data-correction issue — AutoGen verified correct; Guardrails AI
+      mismatch filed as issue #110.
+- [x] All validation gates (`/ship-check`) pass locally.
+
+## Outcome (2026-05-25)
+
+Verified against the current codebase before changing anything; most symptoms
+the review captured on 2026-05-23 were already resolved by intervening commits.
+
+- **Task 1 (freshness stamp):** Already unified — `Footer` renders one shared
+  `lastUpdated` on every page. Refactored the date computation into a tested
+  `latestIsoDate` helper to guard the invariant. The "recent updates" lists for
+  `governance`/`assistants` show old dates only because those categories have no
+  recent source-backed entries in `data/updates.json`; that is a data gap to
+  close via `/radar` with verifiable sources, not a code defect.
+- **Task 2 (counts):** Homepage and category pages already filtered identically;
+  the homepage now routes through the shared `filterToolsByCategory` helper so
+  the two surfaces cannot drift. Added `lib/dataset-metrics.test.ts`.
+- **Task 3 (version field):** Already correct — `tool-card.tsx` conditionally
+  renders the version and never prints "No version listed"; the validator does
+  not require a version. No change needed.
+- **Task 4 (licenses):** AutoGen tracked `MIT` is accurate (root `LICENSE` is
+  CC-BY-4.0 for docs, `LICENSE-CODE` is MIT). Guardrails AI tracked `MIT` is
+  wrong — upstream is Apache-2.0 — filed as data-correction issue #110 (no field
+  edit, per the rules).
 
 ## Execution notes
 

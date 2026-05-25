@@ -7,7 +7,7 @@ flips to done only when its PR merges.
 
 | Status | Milestone | File |
 |---|---|---|
-| [ ] | 1 — Site-consistency immediate fixes | [`1-immediate-fixes.md`](./1-immediate-fixes.md) |
+| [~] | 1 — Site-consistency immediate fixes | [`1-immediate-fixes.md`](./1-immediate-fixes.md) |
 
 ## Legend
 
