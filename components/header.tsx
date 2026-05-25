@@ -83,6 +83,14 @@ export function Header({ currentPath = "/" }: HeaderProps) {
             <HeaderSearch entries={headerSearchEntries} collapsed />
 
             <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+              <a
+                href={withBasePath(homeLink.href)}
+                aria-current={currentPath === homeLink.href ? "page" : undefined}
+                className={navLinkClass(currentPath === homeLink.href)}
+              >
+                {homeLink.label}
+              </a>
+
               <details className="group relative">
                 <summary
                   aria-label="Browse category pages"
