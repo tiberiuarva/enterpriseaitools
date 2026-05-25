@@ -73,8 +73,8 @@ function getFallbackMonogram(label: string) {
 }
 
 export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "", emphasize = true }: LogoBadgeProps) {
-  const isProjectLogo = logoKind === "project-logo";
-  const dimensionMap = isProjectLogo
+  const isWideWordmark = logoKind === "project-logo" || logoKind === "official-vendor";
+  const dimensionMap = isWideWordmark
     ? { emphasize: projectLogoSizeClasses, subtle: subtleProjectLogoSizeClasses }
     : { emphasize: sizeClasses, subtle: subtleSizeClasses };
   const dimensionClasses = dimensionMap[emphasize ? "emphasize" : "subtle"][size];
@@ -94,7 +94,7 @@ export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "
 
   const imageLogoUrl = logoUrl!;
   const containerClasses = `${baseContainerClasses} ${logoKind === "service-icon" ? containerClassesByKind["service-icon"] : containerClassesByKind.default} ${classes}`;
-  const imageDimensions = isProjectLogo
+  const imageDimensions = isWideWordmark
     ? projectLogoImageSizes[size]
     : { width: imageSizes[size], height: imageSizes[size] };
 
@@ -106,7 +106,7 @@ export function LogoBadge({ label, logoUrl, logoKind, size = "md", className = "
         width={imageDimensions.width}
         height={imageDimensions.height}
         loading="lazy"
-        className={`h-full w-full object-contain ${isProjectLogo ? "p-1" : "p-0.5"}`}
+        className={`h-full w-full object-contain ${isWideWordmark ? "p-1" : "p-0.5"}`}
       />
     </div>
   );
