@@ -24,6 +24,11 @@ type InfoCard = {
   body: string;
 };
 
+type CredibilityPoint = {
+  title: string;
+  body: string;
+};
+
 const sectionLinks: SectionLink[] = [
   {
     id: "overview",
@@ -79,6 +84,21 @@ const whyThisExists: InfoCard[] = [
   {
     title: "The goal is decision support",
     body: "The point is to help teams narrow serious options faster without flattening important differences in ownership, maturity, or reviewability.",
+  },
+];
+
+const editorCredibilityPoints: CredibilityPoint[] = [
+  {
+    title: "Enterprise delivery lens",
+    body: "The editorial framing is anchored in enterprise financial services, where governance, approval paths, and operating constraints shape what is actually deployable.",
+  },
+  {
+    title: "Architecture before marketing",
+    body: "Priority goes to control-plane boundaries, ownership, sourcing quality, and production fit rather than launch positioning or surface-level feature checklists.",
+  },
+  {
+    title: "Reviewable change discipline",
+    body: "Dataset and copy changes are meant to stay source-backed, versioned, and auditable through pull requests instead of silent opinion drift.",
   },
 ];
 
@@ -203,18 +223,45 @@ export default function AboutPage() {
         <JsonLd data={jsonLd} />
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
-              About the project
-            </p>
-            <h1 className="mt-2 text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
-            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-              An open source landscape tracker comparing enterprise AI tooling across cloud vendors,
-              enterprise platforms, and open source alternatives.
-            </p>
-            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-              Edited by Tiberiu Arva, an AI architect in enterprise financial services with a regulated-enterprise delivery lens.
-            </p>
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] lg:items-start">
+            <div className="max-w-4xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
+                About the project
+              </p>
+              <h1 className="mt-2 text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
+              <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+                An open source landscape tracker comparing enterprise AI tooling across cloud vendors,
+                enterprise platforms, and open source alternatives.
+              </p>
+              <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
+                  Editor
+                </p>
+                <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                  AI architect working in enterprise financial services, with an editorial lens shaped by regulated-enterprise delivery, governance constraints, and source-backed decision support.
+                </p>
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  {editorCredibilityPoints.map((point) => (
+                    <div key={point.title} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+                      <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{point.title}</h3>
+                      <p className="mt-2 text-xs leading-5 text-[var(--color-text-secondary)]">{point.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
+                Working stance
+              </p>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
+                <li>Prefer official docs, release notes, pricing pages, and canonical repositories.</li>
+                <li>Keep copy technical and reviewable rather than promotional.</li>
+                <li>Do not treat unresolved claims as facts just to make the grid look complete.</li>
+              </ul>
+            </div>
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
