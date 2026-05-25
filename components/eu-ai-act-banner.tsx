@@ -69,6 +69,12 @@ export function EuAiActBanner() {
       : "Latest tranche already applies"
     : "Countdown loads after hydration";
 
+  const milestoneLeadIn = milestoneState
+    ? milestoneState.hasUpcomingMilestone
+      ? "Next milestone:"
+      : "Latest milestone:"
+    : "Milestone date:";
+
   const nextMilestoneText = milestoneState
     ? `${milestoneState.nextMilestone.label} · ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}`
     : "Official milestone date loads after hydration";
@@ -88,7 +94,9 @@ export function EuAiActBanner() {
               <CalendarClock size={12} aria-hidden="true" />
               {statusLabel}
             </span>
-            <span className="truncate">Next milestone: {nextMilestoneText}</span>
+            <span className="truncate">
+              {milestoneLeadIn} {nextMilestoneText}
+            </span>
           </div>
         </div>
 
