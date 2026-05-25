@@ -52,7 +52,7 @@ These rows are not automatically wrong, but they are where the system is still r
 - `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
 - `/logos/aws-bedrock.svg` → AWS Bedrock Agents (agents), AWS Bedrock Guardrails (governance)
 - `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)
-- `/logos/google-vertex-ai.svg` → Google Agent Builder + ADK (agents), Google Vertex AI (platforms)
+- `/logos/google-vertex-ai.svg` → Google Agent Builder + ADK (agents), Gemini Enterprise Agent Platform (platforms)
 - `/logos/microsoft-foundry.jpg` → Microsoft Foundry Agent Service (agents), Microsoft Foundry (platforms)
 
 ## Review freshness

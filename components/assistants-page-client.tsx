@@ -328,7 +328,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
           {
             href: "/platforms",
             title: "Platforms",
-            description: "Compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer beneath assistant tooling.",
+            description: "Compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer beneath assistant tooling.",
           },
           {
             href: "/updates",

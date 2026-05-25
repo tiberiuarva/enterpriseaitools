@@ -464,7 +464,7 @@
       "reviewedAt": "2026-04-24"
     },
     {
-      "name": "AWS Bedrock",
+      "name": "Amazon Bedrock",
       "category": "platforms",
       "vendor": "AWS",
       "logoUrl": "/logos/aws-bedrock.svg",
@@ -475,7 +475,7 @@
       "reviewedAt": "2026-04-19"
     },
     {
-      "name": "Google Vertex AI",
+      "name": "Gemini Enterprise Agent Platform",
       "category": "platforms",
       "vendor": "Google",
       "logoUrl": "/logos/google-vertex-ai.svg",

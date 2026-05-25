@@ -70,8 +70,10 @@
     },
     {
       "id": "aws-bedrock",
-      "name": "AWS Bedrock",
-      "formerNames": [],
+      "name": "Amazon Bedrock",
+      "formerNames": [
+        "AWS Bedrock"
+      ],
       "vendor": "AWS",
       "description": "Managed foundation model platform with Bedrock Agents, AgentCore, and Bedrock Guardrails.",
       "modelCount": "100+",
@@ -97,7 +99,7 @@
       ],
       "docsUrl": "https://docs.aws.amazon.com/bedrock/",
       "websiteUrl": "https://aws.amazon.com/bedrock/",
-      "lastUpdated": "2026-05-01",
+      "lastUpdated": "2026-05-25",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
       "logoUrl": "/logos/aws-bedrock.jpg",
       "logoKind": "service-icon",
@@ -133,11 +135,11 @@
     },
     {
       "id": "google-vertex-ai",
-      "name": "Google Vertex AI",
+      "name": "Gemini Enterprise Agent Platform",
       "formerNames": [
-        "Vertex AI (enterprise)",
-        "Google AI Studio (free playground distinction)",
-        "Agentspace"
+        "Google Vertex AI",
+        "Vertex AI",
+        "Google AI Studio is a separate free playground, not this platform"
       ],
       "vendor": "Google",
       "description": "Enterprise GenAI platform combining Model Garden, agent tooling, MLOps, and safety controls.",
@@ -164,7 +166,7 @@
       ],
       "docsUrl": "https://cloud.google.com/vertex-ai/docs",
       "websiteUrl": "https://cloud.google.com/vertex-ai",
-      "lastUpdated": "2026-05-15",
+      "lastUpdated": "2026-05-25",
       "tagline": "Model Garden plus Gemini, Agent Development Kit, and enterprise MLOps in one stack.",
       "logoUrl": "/logos/google-vertex-ai.svg",
       "categoryMapping": {

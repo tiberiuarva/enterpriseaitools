@@ -15,12 +15,12 @@ import type { PlatformMapping } from "@/lib/types";
 export const metadata: Metadata = buildMetadata({
   title: "AI Platforms & Model Hubs",
   description:
-    "Side-by-side comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer for enterprise AI tools.",
+    "Side-by-side comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer for enterprise AI tools.",
   path: "/platforms",
 });
 
 const comparisonRows = [
-  { attribute: "Formerly known as", values: ["Azure AI Foundry / Azure AI Studio / Azure OpenAI Service", "Amazon Bedrock (unchanged)", "Vertex AI (unchanged); AI Studio is the free playground"] as [string, string, string] },
+  { attribute: "Formerly known as", values: ["Azure AI Foundry / Azure AI Studio / Azure OpenAI Service", "AWS Bedrock (common informal name)", "Vertex AI; AI Studio is a separate free playground"] as [string, string, string] },
   { attribute: "What it is", values: ["Unified PaaS for enterprise AI: models, agents, tools, evaluations, governance", "Managed service for foundation models with agent building and guardrails", "Full ML + GenAI platform: model garden, agent engine, MLOps, evaluation"] as [string, string, string] },
   { attribute: "Model catalog", values: ["11,000+ models", "100+ foundation models", "200+ via Model Garden"] as [string, string, string] },
   { attribute: "Unique models", values: ["GPT-5.4, GPT-5.4 Pro, Phi-4, MAI-Image-2, Sora 2", "Amazon Nova, Amazon Titan", "Gemini 3.1 Pro, Nano Banana Pro, Veo 3.1, Imagen 4"] as [string, string, string] },
@@ -77,7 +77,7 @@ export default function PlatformsPage() {
   assertUniquePlatformFragmentIds(platforms.map((platform) => platform.id));
 
   const pageUrl = `${siteUrl}/platforms/`;
-  const description = "Side-by-side comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer for enterprise AI tools.";
+  const description = "Side-by-side comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer for enterprise AI tools.";
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -98,7 +98,7 @@ export default function PlatformsPage() {
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
           <div className="mt-3 max-w-4xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
             <p>
-              Microsoft Foundry, AWS Bedrock, and Google Vertex AI are the foundation layer beneath the rest of the landscape.
+              Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform (formerly Google Vertex AI) are the foundation layer beneath the rest of the landscape.
               They package model access, agent services, safety controls, SDKs, and deployment infrastructure differently.
             </p>
             <p>
@@ -173,8 +173,8 @@ export default function PlatformsPage() {
                 <tr className="border-b border-[var(--color-border)] text-left text-[var(--color-text-primary)]">
                   <th className="px-4 py-3">Category</th>
                   <th className="px-4 py-3">Microsoft Foundry</th>
-                  <th className="px-4 py-3">AWS Bedrock</th>
-                  <th className="px-4 py-3">Google Vertex AI</th>
+                  <th className="px-4 py-3">Amazon Bedrock</th>
+                  <th className="px-4 py-3">Gemini Enterprise Agent Platform</th>
                 </tr>
               </thead>
               <tbody>
@@ -204,7 +204,7 @@ export default function PlatformsPage() {
           </div>
           <div className="mt-5">
             <VendorComparisonTable
-              vendors={["Microsoft Foundry", "AWS Bedrock", "Google Vertex AI"]}
+              vendors={["Microsoft Foundry", "Amazon Bedrock", "Gemini Enterprise Agent Platform"]}
               rows={comparisonRows}
             />
           </div>
@@ -215,7 +215,7 @@ export default function PlatformsPage() {
             Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
           </WarningBox>
           <WarningBox variant="warning" title="Google naming caution">
-            Do not confuse Google AI Studio (free playground) with Vertex AI Studio (enterprise). Agentspace is now <strong>Gemini Enterprise</strong>.
+            The platform formerly called Vertex AI is now the <strong>Gemini Enterprise Agent Platform</strong>. Do not confuse Google AI Studio (free playground) with the enterprise platform, nor the platform with the separate <strong>Gemini Enterprise</strong> assistant product (the former Agentspace).
           </WarningBox>
         </section>
 

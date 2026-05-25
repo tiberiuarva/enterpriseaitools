@@ -24,7 +24,7 @@ import type { ToolCategory } from "@/lib/types";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
-  "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.";
+  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, plus leading open source AI tools across agents, orchestration, governance, and assistants.";
 
 export const metadata: Metadata = buildMetadata({
   title: homepageTitle,
@@ -96,7 +96,7 @@ export default function Home() {
         {
           name: "AI platforms comparison",
           url: `${siteUrl}/platforms/`,
-          description: "Structured comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI platform foundations.",
+          description: "Structured comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform foundations.",
         },
         {
           name: "AI agent tools catalog",
