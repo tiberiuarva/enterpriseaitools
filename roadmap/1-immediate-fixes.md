@@ -2,7 +2,10 @@
 
 **Status:** open
 **Severity:** mixed (1 Critical · 1 High · 1 Medium · 1 Verify)
-**Source:** `enterpriseai_immediate_fixes.pdf` (Artix Cloud review, reviewed live 2026-05-23)
+**Source:** Artix Cloud priority-fix review, reviewed live against the homepage
+and Agents category page on 2026-05-23 (confidential working document, not
+committed to the repo). The findings are reproduced in full below so this
+milestone stays self-contained.
 **Branch when built:** `milestone/1-immediate-fixes`
 
 ## Why this comes first

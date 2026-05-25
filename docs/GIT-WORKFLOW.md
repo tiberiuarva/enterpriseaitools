@@ -57,7 +57,10 @@ If a branch with the target name already exists, stop and ask before reusing it.
    merge a PR whose CI is red.
 9. **Update the roadmap.** Once the PR is open, mark the milestone in-review in
    `roadmap/README.md` (separate commit, same branch). It flips to done only
-   when the PR merges.
+   when the PR merges. Note: under squash-merge the intermediate "in-review"
+   commit is collapsed away — the milestone's *done* state is established by the
+   merge itself, so flip `roadmap/README.md` to done in a follow-up on `main`'s
+   next branch rather than relying on the squashed commit.
 
 ## The local gate — `/ship-check`
 
