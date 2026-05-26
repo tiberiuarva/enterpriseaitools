@@ -35,6 +35,8 @@ type AssistantFilterState = {
   typeFilter: CategoryFilterState["type"];
   cloudFilters: string[];
   licenseFilter: string;
+  deploymentFilter: CategoryFilterState["deployment"];
+  licenseRiskFilter: CategoryFilterState["licenseRisk"];
   sortBy: CategoryFilterState["sort"];
 };
 
@@ -42,6 +44,8 @@ const defaultFilterState: AssistantFilterState = {
   typeFilter: "all",
   cloudFilters: [],
   licenseFilter: "all",
+  deploymentFilter: "all",
+  licenseRiskFilter: "all",
   sortBy: "name",
 };
 
@@ -66,14 +70,16 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   const activeTools = toolsBySubcategory[activeTab];
   const comparison = assistantsComparisons[activeTab];
   const availableLicenses = useMemo(() => getAvailableLicenses(activeTools), [activeTools]);
-  const { typeFilter, cloudFilters, licenseFilter, sortBy } = filterState;
-  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+  const { typeFilter, cloudFilters, licenseFilter, deploymentFilter, licenseRiskFilter, sortBy } = filterState;
+  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all" || deploymentFilter !== "all" || licenseRiskFilter !== "all";
 
   const effectiveTools = useMemo(() => {
     let next = filterTools(activeTools, {
       type: typeFilter,
       cloud: "all",
       license: licenseFilter,
+      deployment: deploymentFilter,
+      licenseRisk: licenseRiskFilter,
       sort: sortBy,
     });
 
@@ -82,7 +88,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
     }
 
     return next;
-  }, [activeTools, typeFilter, licenseFilter, sortBy, cloudFilters]);
+  }, [activeTools, typeFilter, licenseFilter, deploymentFilter, licenseRiskFilter, sortBy, cloudFilters]);
 
   const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
   const nonVendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type !== "vendor"), [effectiveTools]);
@@ -101,7 +107,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   }
 
   function resetNarrowingFilters() {
-    updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+    updateFilterState({ cloudFilters: [], licenseFilter: "all", deploymentFilter: "all", licenseRiskFilter: "all" });
   }
 
   function handleTabKeyDown(event: KeyboardEvent<HTMLButtonElement>, subcategory: AssistantsSubcategory) {
@@ -236,6 +242,10 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
             licenseFilter={licenseFilter}
             onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
+            deploymentFilter={deploymentFilter}
+            onDeploymentFilterChange={(value) => updateFilterState({ deploymentFilter: value as CategoryFilterState["deployment"] })}
+            licenseRiskFilter={licenseRiskFilter}
+            onLicenseRiskFilterChange={(value) => updateFilterState({ licenseRiskFilter: value as CategoryFilterState["licenseRisk"] })}
             sortBy={sortBy}
             onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
             availableLicenses={availableLicenses}

@@ -34,6 +34,8 @@ jobs:
         run: npm run check-logo-audit-report
       - name: Lint
         run: npm run lint
+      - name: Check governance data
+        run: npm run check-governance-data
       - name: Test EU AI Act timeline logic
         run: npm run test:eu-ai-act
       - name: Build static site

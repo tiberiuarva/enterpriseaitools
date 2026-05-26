@@ -86,6 +86,27 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
   };
 }
 
+export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: tool.name,
+    description: tool.description,
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Any",
+    url,
+    ...(tool.vendor ? { publisher: { "@type": "Organization", name: tool.vendor } } : {}),
+    ...(tool.version ? { softwareVersion: tool.version } : {}),
+    ...(tool.license ? { license: tool.license } : {}),
+    ...(tool.docsUrl || tool.githubUrl
+      ? { sameAs: [tool.docsUrl, tool.githubUrl].filter((value): value is string => typeof value === "string") }
+      : {}),
+    ...(tool.pricingModel === "free"
+      ? { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }
+      : {}),
+  };
+}
+
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",

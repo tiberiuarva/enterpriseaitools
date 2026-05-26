@@ -9,6 +9,32 @@ export type UpdateCategory = ToolCategory | "platforms";
 export type ISODateString = string; // Calendar ISO date only: YYYY-MM-DD.
 export type LogoKind = "official-product" | "official-vendor" | "service-icon" | "project-logo" | "fallback";
 
+export type GovernanceStatus = "yes" | "partial" | "no" | "not-applicable" | "unknown";
+export type DeploymentModel = "saas" | "self-hosted" | "on-prem" | "sovereign" | "hybrid";
+export type EuAiActRole = "prohibited" | "high-risk" | "limited-risk" | "minimal-risk" | "not-applicable" | "unknown";
+export type LicenseRiskLevel = "low" | "medium" | "high" | "unknown";
+
+// One governance dimension. `sourceUrl` is required when `status` asserts a fact
+// (yes/partial/no); for `not-applicable`/`unknown`, `detail` must carry the reason.
+export type GovernanceClaim = {
+  status: GovernanceStatus;
+  detail: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
+};
+
+export type ToolGovernance = {
+  dataResidency: GovernanceClaim;
+  deployment: GovernanceClaim & { models: DeploymentModel[] };
+  auditLogging: GovernanceClaim;
+  soc2: GovernanceClaim;
+  iso27001: GovernanceClaim;
+  iso42001: GovernanceClaim;
+  euAiAct: GovernanceClaim & { role: EuAiActRole };
+  licenseRisk: GovernanceClaim & { level: LicenseRiskLevel };
+  reviewedAt: ISODateString;
+};
+
 export type LogoAuditMetadata =
   | {
       logoKind: "fallback";
@@ -50,6 +76,7 @@ export type Tool = {
   statusNote?: string;
   logoUrl?: string;
   tags?: string[];
+  governance: ToolGovernance;
 } & LogoAuditMetadata;
 
 export type PlatformMapping = {

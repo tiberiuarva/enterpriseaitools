@@ -8,7 +8,7 @@ import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
-import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
+import { filterTools, getAvailableLicenses, isDeploymentModel, isLicenseRiskLevel, type CategoryFilterState } from "@/lib/category-filters";
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
@@ -24,6 +24,8 @@ type FilterStateSnapshot = {
   typeFilter: CategoryFilterState["type"];
   cloudFilters: string[];
   licenseFilter: string;
+  deploymentFilter: CategoryFilterState["deployment"];
+  licenseRiskFilter: CategoryFilterState["licenseRisk"];
   sortBy: CategoryFilterState["sort"];
 };
 
@@ -31,6 +33,8 @@ const defaultFilterState: FilterStateSnapshot = {
   typeFilter: "all",
   cloudFilters: [],
   licenseFilter: "all",
+  deploymentFilter: "all",
+  licenseRiskFilter: "all",
   sortBy: "name",
 };
 
@@ -54,12 +58,16 @@ function parseCloudFilters(searchParams: URLSearchParams) {
 function readFilterState(searchParams: URLSearchParams): FilterStateSnapshot {
   const type = searchParams.get("type");
   const license = searchParams.get("license");
+  const deployment = searchParams.get("deployment");
+  const licenseRisk = searchParams.get("licenseRisk");
   const sort = searchParams.get("sort");
 
   return {
     typeFilter: type === "vendor" || type === "opensource" || type === "commercial" ? type : "all",
     cloudFilters: parseCloudFilters(searchParams),
     licenseFilter: license && license.length > 0 ? license : "all",
+    deploymentFilter: deployment && isDeploymentModel(deployment) ? deployment : "all",
+    licenseRiskFilter: licenseRisk && isLicenseRiskLevel(licenseRisk) ? licenseRisk : "all",
     sortBy: sort === "stars" || sort === "updated" ? sort : "name",
   };
 }
@@ -76,6 +84,8 @@ function buildFilterQuery({
   typeFilter,
   cloudFilters,
   licenseFilter,
+  deploymentFilter,
+  licenseRiskFilter,
   sortBy,
 }: FilterStateSnapshot) {
   const next = new URLSearchParams();
@@ -90,6 +100,14 @@ function buildFilterQuery({
 
   if (licenseFilter !== "all") {
     next.set("license", licenseFilter);
+  }
+
+  if (deploymentFilter !== "all") {
+    next.set("deployment", deploymentFilter);
+  }
+
+  if (licenseRiskFilter !== "all") {
+    next.set("licenseRisk", licenseRiskFilter);
   }
 
   if (sortBy !== "name") {
@@ -147,16 +165,18 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
   }
 
   function resetNarrowingFilters() {
-    updateFilterState({ cloudFilters: [], licenseFilter: "all" });
+    updateFilterState({ cloudFilters: [], licenseFilter: "all", deploymentFilter: "all", licenseRiskFilter: "all" });
   }
 
-  const { typeFilter, cloudFilters, licenseFilter, sortBy } = filterState;
+  const { typeFilter, cloudFilters, licenseFilter, deploymentFilter, licenseRiskFilter, sortBy } = filterState;
   const availableLicenses = useMemo(() => getAvailableLicenses(tools), [tools]);
   const effectiveTools = useMemo(() => {
     let next = filterTools(tools, {
       type: typeFilter,
       cloud: "all",
       license: licenseFilter,
+      deployment: deploymentFilter,
+      licenseRisk: licenseRiskFilter,
       sort: sortBy,
     });
 
@@ -165,13 +185,13 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
     }
 
     return next;
-  }, [tools, typeFilter, licenseFilter, sortBy, cloudFilters]);
+  }, [tools, typeFilter, licenseFilter, deploymentFilter, licenseRiskFilter, sortBy, cloudFilters]);
 
   const vendorTools = useMemo(() => effectiveTools.filter((tool) => tool.type === "vendor"), [effectiveTools]);
   const nonVendorTools = effectiveTools.filter((tool) => tool.type !== "vendor");
   const warningTools = effectiveTools.filter((tool) => tool.licenseWarning || tool.statusNote);
   const visibleUpdates = useMemo(() => updates.slice(0, 5), [updates]);
-  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all";
+  const hasActiveNarrowingFilter = cloudFilters.length > 0 || licenseFilter !== "all" || deploymentFilter !== "all" || licenseRiskFilter !== "all";
   const showVendorCards = (typeFilter === "all" || typeFilter === "vendor") && vendorTools.length > 0;
   const showVendorComparison = Boolean(comparison) && !hasActiveNarrowingFilter && typeFilter !== "opensource" && typeFilter !== "commercial";
   const showVendorSection = showVendorCards || showVendorComparison;
@@ -212,6 +232,10 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
           onCloudFiltersChange={(value) => updateFilterState({ cloudFilters: value })}
           licenseFilter={licenseFilter}
           onLicenseFilterChange={(value) => updateFilterState({ licenseFilter: value })}
+          deploymentFilter={deploymentFilter}
+          onDeploymentFilterChange={(value) => updateFilterState({ deploymentFilter: value as CategoryFilterState["deployment"] })}
+          licenseRiskFilter={licenseRiskFilter}
+          onLicenseRiskFilterChange={(value) => updateFilterState({ licenseRiskFilter: value as CategoryFilterState["licenseRisk"] })}
           sortBy={sortBy}
           onSortByChange={(value) => updateFilterState({ sortBy: value as CategoryFilterState["sort"] })}
           availableLicenses={availableLicenses}
