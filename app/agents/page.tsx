@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "AI Agent Frameworks",
   description:
-    "Compare Microsoft Foundry Agent Service, AWS Bedrock Agents, Google Agent Builder, and open source agent frameworks used in enterprise AI stacks.",
+    "Compare Microsoft Foundry Agent Service, Amazon Bedrock Agents, Google Agent Builder, and open source agent frameworks used in enterprise AI stacks.",
   path: "/agents",
 });
 

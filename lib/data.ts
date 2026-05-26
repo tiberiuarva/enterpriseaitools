@@ -1,6 +1,7 @@
 import platformsData from "@/data/platforms.json";
 import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
+import { filterToolsByCategory, latestIsoDate } from "@/lib/dataset-metrics";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 export const tools = toolsData.tools as Tool[];
@@ -18,17 +19,14 @@ for (const update of updates) {
 }
 
 function getLatestPlatformReviewedDate() {
-  const reviewedDates = platforms
-    .map((platform) => platform.logoReviewedAt)
-    .filter((value): value is string => typeof value === "string" && value.length > 0);
-
-  return reviewedDates.length > 0 ? reviewedDates.sort().at(-1) ?? null : null;
+  return latestIsoDate(platforms.map((platform) => platform.logoReviewedAt));
 }
 
-const latestDataDate = [toolsData.lastUpdated, updates[0]?.date, getLatestPlatformReviewedDate()]
-  .filter((value): value is string => typeof value === "string" && value.length > 0)
-  .sort()
-  .at(-1);
+const latestDataDate = latestIsoDate([
+  toolsData.lastUpdated,
+  updates[0]?.date,
+  getLatestPlatformReviewedDate(),
+]);
 
 export const lastUpdated = latestDataDate ?? toolsData.lastUpdated;
 
@@ -42,7 +40,7 @@ export const categoryDescriptions: Record<ToolCategory, string> = {
 };
 
 export function getToolsByCategory(category: ToolCategory) {
-  return tools.filter((tool) => tool.category === category);
+  return filterToolsByCategory(tools, category);
 }
 
 export function getUpdatesByCategory(category: ToolCategory | "platforms") {

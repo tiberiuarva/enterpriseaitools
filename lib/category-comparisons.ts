@@ -12,7 +12,7 @@ export type CategoryComparison = {
 
 export const categoryComparisons: Partial<Record<ToolCategory, CategoryComparison>> = {
   agents: {
-    vendors: ["Microsoft Foundry Agent Service", "AWS Bedrock Agents + AgentCore", "Google Agent Builder + ADK"],
+    vendors: ["Microsoft Foundry Agent Service", "Amazon Bedrock Agents + AgentCore", "Google Agent Builder + ADK"],
     rows: [
       {
         attribute: "Description",
@@ -130,7 +130,7 @@ export const categoryComparisons: Partial<Record<ToolCategory, CategoryCompariso
     ],
   },
   governance: {
-    vendors: ["Azure AI Content Safety", "AWS Bedrock Guardrails", "Google Model Armor"],
+    vendors: ["Azure AI Content Safety", "Amazon Bedrock Guardrails", "Google Model Armor"],
     rows: [
       {
         attribute: "Description",

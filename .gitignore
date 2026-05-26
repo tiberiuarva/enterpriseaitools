@@ -25,7 +25,18 @@
 *.pem
 .tmp/
 .preview/
-.claude/
+
+# Claude Code — commit shared project config, ignore local/per-session state
+.claude/*
+!.claude/settings.json
+!.claude/commands/
+!.claude/agents/
+!.claude/skills/
+!.claude/rules/
+.claude/settings.local.json
+.claude/projects/
+.claude/state/
+.claude/cache/
 
 # debug
 npm-debug.log*
