@@ -10,7 +10,7 @@ Unified freshness dates across pages, consistent tool counts, hidden empty versi
 ## M1 — Information architecture  [x] done
 Per-tool detail pages as the home for depth; category and landscape pages slimmed to a short intro plus a scannable, filterable comparison grid that links into the per-tool pages.
 
-## M2 — Governance-posture comparison  [ ]
+## M2 — Governance-posture comparison  [x] done
 Goal: complete the vendor comparison on the dimensions a regulated buyer actually filters on.
 Dimensions: data residency, deployment model (SaaS / on-prem / sovereign), audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act risk-tier fit, license type and risk.
 In scope:
