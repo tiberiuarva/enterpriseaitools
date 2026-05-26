@@ -11,6 +11,10 @@ type FilterBarProps = {
   onCloudFiltersChange: (value: string[]) => void;
   licenseFilter: string;
   onLicenseFilterChange: (value: string) => void;
+  deploymentFilter: string;
+  onDeploymentFilterChange: (value: string) => void;
+  licenseRiskFilter: string;
+  onLicenseRiskFilterChange: (value: string) => void;
   sortBy: string;
   onSortByChange: (value: string) => void;
   availableLicenses: string[];
@@ -19,6 +23,19 @@ type FilterBarProps = {
 };
 
 const cloudOptions = ["azure", "aws", "gcp"] as const;
+const deploymentOptions = [
+  { value: "saas", label: "SaaS" },
+  { value: "self-hosted", label: "Self-hosted" },
+  { value: "on-prem", label: "On-prem" },
+  { value: "sovereign", label: "Sovereign" },
+  { value: "hybrid", label: "Hybrid" },
+] as const;
+const licenseRiskOptions = [
+  { value: "low", label: "Low" },
+  { value: "medium", label: "Medium" },
+  { value: "high", label: "High" },
+  { value: "unknown", label: "Unknown" },
+] as const;
 
 export function FilterBar({
   typeFilter,
@@ -27,6 +44,10 @@ export function FilterBar({
   onCloudFiltersChange,
   licenseFilter,
   onLicenseFilterChange,
+  deploymentFilter,
+  onDeploymentFilterChange,
+  licenseRiskFilter,
+  onLicenseRiskFilterChange,
   sortBy,
   onSortByChange,
   availableLicenses,
@@ -113,6 +134,42 @@ export function FilterBar({
             {availableLicenses.map((license) => (
               <option key={license} value={license}>
                 {license}
+              </option>
+            ))}
+          </select>
+
+          <label className="sr-only" htmlFor="deployment-filter">
+            Filter tools by deployment model
+          </label>
+          <select
+            id="deployment-filter"
+            aria-label="Filter tools by deployment model"
+            value={deploymentFilter}
+            onChange={(event) => onDeploymentFilterChange(event.target.value)}
+            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+          >
+            <option value="all">All deployment models</option>
+            {deploymentOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+
+          <label className="sr-only" htmlFor="license-risk-filter">
+            Filter tools by license risk
+          </label>
+          <select
+            id="license-risk-filter"
+            aria-label="Filter tools by license risk"
+            value={licenseRiskFilter}
+            onChange={(event) => onLicenseRiskFilterChange(event.target.value)}
+            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+          >
+            <option value="all">All license risk</option>
+            {licenseRiskOptions.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
               </option>
             ))}
           </select>

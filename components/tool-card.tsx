@@ -2,7 +2,7 @@ import { Check, ExternalLink, Globe, Star } from "lucide-react";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
-import type { PricingModel, Tool } from "@/lib/types";
+import type { DeploymentModel, LicenseRiskLevel, PricingModel, Tool } from "@/lib/types";
 import { cloudBadgeStyles, getCloudVendorColorKey } from "@/lib/vendor-colors";
 
 const CHIP_CLASS = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
@@ -11,6 +11,21 @@ const PRICING_MODEL_LABELS: Record<PricingModel, string> = {
   freemium: "Freemium",
   paid: "Paid",
   contact: "Contact sales",
+};
+
+const DEPLOYMENT_LABELS: Record<DeploymentModel, string> = {
+  saas: "SaaS",
+  "self-hosted": "Self-hosted",
+  "on-prem": "On-prem",
+  sovereign: "Sovereign",
+  hybrid: "Hybrid",
+};
+
+const LICENSE_RISK_BADGE: Record<LicenseRiskLevel, string> = {
+  low: "bg-[color:rgba(34,197,94,0.15)] text-[var(--color-success)]",
+  medium: "bg-[color:rgba(234,179,8,0.15)] text-[var(--color-warning)]",
+  high: "bg-[color:rgba(239,68,68,0.15)] text-[var(--color-danger)]",
+  unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
 };
 
 function formatCloudName(cloud: string) {
@@ -116,6 +131,20 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         {tool.pricingModel ? <span className={CHIP_CLASS}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
         {tool.version ? <span className={CHIP_CLASS}>Version {tool.version}</span> : null}
         {tool.lastRelease ? <span className={CHIP_CLASS}>Released {tool.lastRelease}</span> : null}
+      </div>
+
+      <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px]">
+        {tool.governance.deployment.models.map((model) => (
+          <span key={model} className="rounded-full bg-[var(--color-bg-surface)] px-2 py-0.5 text-[var(--color-text-secondary)]">
+            {DEPLOYMENT_LABELS[model]}
+          </span>
+        ))}
+        {tool.governance.soc2.status === "yes" ? (
+          <span className="rounded-full bg-[color:rgba(34,197,94,0.15)] px-2 py-0.5 font-semibold text-[var(--color-success)]">SOC 2</span>
+        ) : null}
+        <span className={`rounded-full px-2 py-0.5 font-semibold ${LICENSE_RISK_BADGE[tool.governance.licenseRisk.level]}`}>
+          License {tool.governance.licenseRisk.level}
+        </span>
       </div>
 
       {tool.status !== "active" ? (
