@@ -55,7 +55,11 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
             className="shrink-0"
           />
           <div className="min-w-0">
-            <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>{tool.name}</h3>
+            <h3 className={`${compact ? "text-base" : "text-lg"} truncate font-semibold text-[var(--color-text-primary)]`}>
+              <a href={withBasePath(`/tools/${tool.id}`)} className="hover:text-[var(--color-primary)] hover:underline">
+                {tool.name}
+              </a>
+            </h3>
             {tool.vendor ? <p className="text-xs text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
           </div>
         </div>
@@ -122,6 +126,12 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
       ) : null}
 
       <div className="mt-4 flex flex-wrap items-center justify-end gap-3">
+        <a
+          href={withBasePath(`/tools/${tool.id}`)}
+          className="mr-auto inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:underline"
+        >
+          Governance &amp; details
+        </a>
         {hasSeparateWebsite ? (
           <a
             href={websiteHref}

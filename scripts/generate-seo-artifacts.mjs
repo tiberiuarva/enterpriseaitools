@@ -14,7 +14,10 @@ function toAbsoluteUrl(routePath) {
 }
 
 function generateSitemapXml() {
-  const urls = siteRoutes
+  const toolRoutes = toolsData.tools
+    .map((tool) => ({ path: `/tools/${tool.id}`, changeFrequency: "monthly", priority: 0.6 }))
+    .sort((a, b) => a.path.localeCompare(b.path));
+  const urls = [...siteRoutes, ...toolRoutes]
     .map(
       ({ path: routePath, changeFrequency, priority }) => `  <url>\n    <loc>${toAbsoluteUrl(routePath)}</loc>\n    <lastmod>${lastModified}</lastmod>\n    <changefreq>${changeFrequency}</changefreq>\n    <priority>${priority.toFixed(1)}</priority>\n  </url>`,
     )

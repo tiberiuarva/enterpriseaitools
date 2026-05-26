@@ -48,7 +48,7 @@ export const headerSearchEntries: SearchEntry[] = [
   ...tools.map((tool) => ({
     id: `tool:${tool.id}`,
     label: tool.name,
-    href: withBasePath(`/${tool.category}#tool-${tool.id}`),
+    href: withBasePath(`/tools/${tool.id}`),
     kind: "tool" as const,
     section: categoryLabels[tool.category],
     keywords: uniqueKeywords([
