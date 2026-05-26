@@ -47,6 +47,40 @@ Top-level shape:
 | `logoNotes` | string | no | Audit note for ambiguity or fallback rationale |
 | `logoReviewedAt` | string | yes | Calendar ISO date (`YYYY-MM-DD`) when logo provenance was last checked. Required for every site record. |
 | `tags` | string[] | no | Search/filter helpers |
+| `governance` | object | yes | Governance posture — see "Tool governance object" below. Required on every tool. |
+
+### Tool governance object (`tool.governance`)
+
+Drives the governance-posture comparison (grid filters/columns + per-tool page). Every
+tool carries all dimensions; a value is either **source-backed** or explicitly
+**`not-applicable` / `unknown` with a reason** — never guessed.
+
+Each dimension is a `GovernanceClaim`: `{ status, detail, sourceUrl?, sourceTitle? }`.
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `dataResidency` | GovernanceClaim | yes | Can the customer control where data is stored/processed? |
+| `deployment` | GovernanceClaim + `models` | yes | `models`: array of `saas \| self-hosted \| on-prem \| sovereign \| hybrid` |
+| `auditLogging` | GovernanceClaim | yes | Native audit/access logs available? |
+| `soc2` | GovernanceClaim | yes | SOC 2 Type II attestation |
+| `iso27001` | GovernanceClaim | yes | ISO/IEC 27001 certification |
+| `iso42001` | GovernanceClaim | yes | ISO/IEC 42001 (AI management system) certification |
+| `euAiAct` | GovernanceClaim + `role` | yes | `role`: `prohibited \| high-risk \| limited-risk \| minimal-risk \| not-applicable \| unknown` |
+| `licenseRisk` | GovernanceClaim + `level` | yes | `level`: `low \| medium \| high \| unknown` |
+| `reviewedAt` | string | yes | Calendar ISO date (`YYYY-MM-DD`) of the governance review |
+
+`GovernanceClaim.status` is one of `yes \| partial \| no \| not-applicable \| unknown`.
+
+**Rules (enforced by `scripts/check-governance-data.mjs`):**
+- Every dimension present on every tool; `detail` non-empty.
+- When `status` is `yes`, `partial`, or `no` (an asserted fact), `sourceUrl` is **required**
+  and must be an absolute URL.
+- When `status` is `not-applicable` or `unknown`, `detail` must state the reason; `sourceUrl`
+  is optional.
+- Self-hosted open-source libraries are `not-applicable` for `soc2`/`iso27001`/`iso42001`
+  (certification applies to the operator, not the package) with that reason in `detail`.
+- `licenseRisk.level` reflects license type, not the `license` label itself; never edit the
+  `license` field here — license corrections go through a dedicated data-correction issue.
 
 ## `platforms.json`
 
