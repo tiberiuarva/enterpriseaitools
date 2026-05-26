@@ -147,7 +147,7 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
               {
                 href: "/platforms",
                 title: "Platforms",
-                description: "Review Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer behind this category.",
+                description: "Review Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer behind this category.",
               },
               {
                 href: "/updates",

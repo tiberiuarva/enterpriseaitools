@@ -17,12 +17,14 @@ import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
 import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
+import { filterToolsByCategory } from "@/lib/dataset-metrics";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
+import type { ToolCategory } from "@/lib/types";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
-  "Track Microsoft Foundry, AWS Bedrock, Google Vertex AI, and the leading open source enterprise AI tools across agents, orchestration, governance, and assistants.";
+  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, plus leading open source AI tools across agents, orchestration, governance, and assistants.";
 
 export const metadata: Metadata = buildMetadata({
   title: homepageTitle,
@@ -64,11 +66,12 @@ function formatUpdateLabel(value: string) {
 }
 
 export default function Home() {
-  const categoryCards = Object.entries(categoryMeta).map(([key, meta]) => {
-    const categoryTools = tools.filter((tool) => tool.category === key);
+  const categoryKeys = Object.keys(categoryMeta) as ToolCategory[];
+  const categoryCards = categoryKeys.map((key) => {
+    const categoryTools = filterToolsByCategory(tools, key);
 
     return {
-      ...meta,
+      ...categoryMeta[key],
       count: categoryTools.length,
       previewTools: categoryTools.slice(0, 3).map((tool) => ({
         id: tool.id,
@@ -93,7 +96,7 @@ export default function Home() {
         {
           name: "AI platforms comparison",
           url: `${siteUrl}/platforms/`,
-          description: "Structured comparison of Microsoft Foundry, AWS Bedrock, and Google Vertex AI platform foundations.",
+          description: "Structured comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform foundations.",
         },
         {
           name: "AI agent tools catalog",

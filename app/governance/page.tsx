@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "AI Governance",
   description:
-    "Compare Azure AI Content Safety, AWS Bedrock Guardrails, Google Model Armor, and third-party guardrails tooling for enterprise AI governance.",
+    "Compare Azure AI Content Safety, Amazon Bedrock Guardrails, Google Model Armor, and third-party guardrails tooling for enterprise AI governance.",
   path: "/governance",
 });
 

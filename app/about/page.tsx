@@ -445,7 +445,7 @@ export default function AboutPage() {
               {
                 href: "/platforms",
                 title: "Platforms",
-                description: "Compare Microsoft Foundry, AWS Bedrock, and Google Vertex AI as the foundation layer.",
+                description: "Compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer.",
               },
               {
                 href: "/agents",
