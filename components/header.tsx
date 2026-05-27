@@ -42,7 +42,7 @@ const themeScript = `(() => {
 })();`;
 
 const homeLink = navItems.find((item) => item.href === "/") ?? { href: "/", label: "Home" };
-const utilityHrefs = ["/updates", "/about"] as const;
+const utilityHrefs = ["/evaluate", "/updates", "/about"] as const;
 const categoryNavHrefs = ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"] as const;
 const utilityLinks = navItems.filter((item) => utilityHrefs.includes(item.href as (typeof utilityHrefs)[number]));
 const categoryLinks = navItems.filter((item) => categoryNavHrefs.includes(item.href as (typeof categoryNavHrefs)[number]));
