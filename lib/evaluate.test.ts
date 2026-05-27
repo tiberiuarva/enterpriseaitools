@@ -73,10 +73,24 @@ test("self-hosted-required removes managed-only tools", () => {
   assert.deepEqual(results.map((r) => r.tool.id), ["selfhost"]);
 });
 
-test("permissive-required filters out vendor/proprietary tools", () => {
-  const tools = [makeTool({ id: "vendorish", type: "vendor", models: ["saas"] }), makeTool({ id: "oss", type: "opensource" })];
+test("permissive-required filters out vendor and high-license-risk tools", () => {
+  const tools = [
+    makeTool({ id: "vendorish", type: "vendor", models: ["saas"] }),
+    makeTool({ id: "high-risk-oss", type: "opensource", licenseLevel: "high" }),
+    makeTool({ id: "oss", type: "opensource", licenseLevel: "low" }),
+  ];
   const results = evaluateTools(tools, { ...baseAnswers, ossTolerance: "permissive-required" });
   assert.deepEqual(results.map((r) => r.tool.id), ["oss"]);
+});
+
+test("on-prem-required removes tools without on-prem or sovereign", () => {
+  const tools = [
+    makeTool({ id: "saas", models: ["saas"] }),
+    makeTool({ id: "onprem", models: ["saas", "on-prem"] }),
+    makeTool({ id: "sovereign", models: ["sovereign"] }),
+  ];
+  const results = evaluateTools(tools, { ...baseAnswers, deployment: "on-prem-required" });
+  assert.deepEqual(results.map((r) => r.tool.id).sort(), ["onprem", "sovereign"]);
 });
 
 test("SOC 2 requirement ranks certified tools above non-certified and records a caution", () => {

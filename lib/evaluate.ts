@@ -133,7 +133,9 @@ function passesHardFilters(tool: Tool, answers: IntakeAnswers): boolean {
   if (answers.deployment === "on-prem-required" && !models.includes("on-prem") && !models.includes("sovereign")) {
     return false;
   }
-  if (answers.ossTolerance === "permissive-required" && tool.type === "vendor") return false;
+  if (answers.ossTolerance === "permissive-required" && (tool.type === "vendor" || tool.governance.licenseRisk.level === "high")) {
+    return false;
+  }
 
   return true;
 }
