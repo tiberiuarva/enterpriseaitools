@@ -85,7 +85,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
 
       <p className="mt-3 line-clamp-2 text-sm text-[var(--color-text-secondary)]">{tool.description}</p>
 
-      {visibleStrengths.length > 0 ? (
+      {!compact && visibleStrengths.length > 0 ? (
         <ul className="mt-4 space-y-2">
           {visibleStrengths.map((strength) => (
             <li key={strength} className="flex items-start gap-2 text-sm text-[var(--color-text-primary)]">
@@ -96,7 +96,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         </ul>
       ) : null}
 
-      {tool.practitionerNote ? (
+      {!compact && tool.practitionerNote ? (
         <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2">
           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">Practitioner note</p>
           <p className="mt-1 text-sm text-[var(--color-text-primary)]">{tool.practitionerNote}</p>
@@ -128,9 +128,9 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
           </span>
         ) : null}
         <span className={CHIP_CLASS}>{tool.license}</span>
-        {tool.pricingModel ? <span className={CHIP_CLASS}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
-        {tool.version ? <span className={CHIP_CLASS}>Version {tool.version}</span> : null}
-        {tool.lastRelease ? <span className={CHIP_CLASS}>Released {tool.lastRelease}</span> : null}
+        {!compact && tool.pricingModel ? <span className={CHIP_CLASS}>{formatPricingModelLabel(tool.pricingModel)}</span> : null}
+        {!compact && tool.version ? <span className={CHIP_CLASS}>Version {tool.version}</span> : null}
+        {!compact && tool.lastRelease ? <span className={CHIP_CLASS}>Released {tool.lastRelease}</span> : null}
       </div>
 
       <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px]">
@@ -161,7 +161,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
         >
           Governance &amp; details
         </a>
-        {hasSeparateWebsite ? (
+        {!compact && hasSeparateWebsite ? (
           <a
             href={websiteHref}
             target="_blank"
@@ -173,15 +173,17 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
           </a>
         ) : null}
 
-        <a
-          href={docsHref}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:underline"
-        >
-          <ExternalLink size={14} />
-          Docs
-        </a>
+        {!compact ? (
+          <a
+            href={docsHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--color-primary)] hover:underline"
+          >
+            <ExternalLink size={14} />
+            Docs
+          </a>
+        ) : null}
       </div>
     </article>
   );
