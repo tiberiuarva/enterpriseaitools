@@ -90,6 +90,21 @@
     "requiresBreadcrumbs": true
   },
   {
+    "path": "/evaluate",
+    "changeFrequency": "monthly",
+    "priority": 0.7,
+    "titleContains": "Help me evaluate",
+    "descriptionContains": "ranked, source-backed shortlist",
+    "searchIntent": "guided shortlist of enterprise ai tools by governance fit",
+    "minTitleLength": 20,
+    "maxTitleLength": 65,
+    "minDescriptionLength": 90,
+    "maxDescriptionLength": 170,
+    "requiresCollectionPage": false,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
     "path": "/updates",
     "changeFrequency": "weekly",
     "priority": 0.7,

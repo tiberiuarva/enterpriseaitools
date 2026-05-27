@@ -8,6 +8,7 @@ export const navItems = [
   { href: '/orchestration', label: 'Orchestration' },
   { href: '/governance', label: 'Governance' },
   { href: '/assistants', label: 'Assistants' },
+  { href: '/evaluate', label: 'Evaluate' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ] as const;
