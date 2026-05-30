@@ -34,7 +34,7 @@
       ],
       "docsUrl": "https://learn.microsoft.com/azure/ai-foundry/",
       "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
-      "lastUpdated": "2026-05-12",
+      "lastUpdated": "2026-05-30",
       "tagline": "Broadest model catalog plus agents, governance, and sovereign deployment options.",
       "categoryMapping": {
         "agents": {
@@ -99,7 +99,7 @@
       ],
       "docsUrl": "https://docs.aws.amazon.com/bedrock/",
       "websiteUrl": "https://aws.amazon.com/bedrock/",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-30",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
       "logoUrl": "/logos/aws-bedrock.jpg",
       "logoKind": "service-icon",
@@ -165,7 +165,7 @@
       ],
       "docsUrl": "https://cloud.google.com/vertex-ai/docs",
       "websiteUrl": "https://cloud.google.com/vertex-ai",
-      "lastUpdated": "2026-05-25",
+      "lastUpdated": "2026-05-30",
       "tagline": "Model Garden plus Gemini, Agent Development Kit, and enterprise MLOps in one stack.",
       "logoUrl": "/logos/google-vertex-ai.svg",
       "categoryMapping": {
