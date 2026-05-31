@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-05-23T00:00:00.000Z</updated>
+  <updated>2026-05-30T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-03</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-03" />
+    <summary>Microsoft Agent Framework 1.7.0 added harness agents, A2A session support, and new Foundry integration hooks, extending the framework&apos;s orchestration and inter-agent workflow surface.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.7.0</id>
+      <title>python-1.7.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.7.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-27-01</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-05-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-27-01" />
+    <summary>AWS introduced AgentCore payments in preview, adding managed agent micropayments for APIs, web content, MCP servers, and other agents via x402-backed transaction flows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/</id>
+      <title>Agents that transact: Introducing Amazon Bedrock AgentCore payments, built with Coinbase and Stripe</title>
+      <link href="https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-02</id>
+    <title>Amazon Bedrock — model-addition</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-02" />
+    <summary>AWS added Anthropic Claude Opus 4.8 to Amazon Bedrock, giving Bedrock customers access to Anthropic&apos;s latest high-end model inside AWS-managed security and regional controls.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://aws.amazon.com/blogs/machine-learning/claude-opus-4-8-is-now-available-on-aws/</id>
+      <title>Claude Opus 4.8 is now available on AWS</title>
+      <link href="https://aws.amazon.com/blogs/machine-learning/claude-opus-4-8-is-now-available-on-aws/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-01</id>
+    <title>Gemini Enterprise Agent Platform — deprecation</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-01" />
+    <summary>Google deprecated Vertex AI Extensions and said the service will shut down after 2026-11-26, directing teams to migrate agent integrations to Agent Platform to avoid disruption.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, deprecation, high" />
+    <source>
+      <id>https://cloud.google.com/vertex-ai/docs/release-notes</id>
+      <title>Vertex AI release notes</title>
+      <link href="https://cloud.google.com/vertex-ai/docs/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-01</id>
     <title>Google Vertex AI — model-addition</title>
