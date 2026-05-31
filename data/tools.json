@@ -613,7 +613,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/semantic-kernel",
       "githubStars": 28010,
-      "version": "1.77.0",
+      "version": "1.42.0",
       "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
       "pricingModel": "free",
       "status": "active",
@@ -634,7 +634,7 @@
         "gcp"
       ],
       "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths.",
-      "lastRelease": "2026-05-28",
+      "lastRelease": "2026-05-14",
       "governance": {
         "dataResidency": {
           "status": "yes",
