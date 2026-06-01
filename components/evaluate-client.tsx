@@ -40,15 +40,19 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
         className="flex flex-col gap-4"
       >
         {EVALUATE_QUESTIONS.map((question, index) => (
-          <fieldset
+          <section
             key={question.id}
+            aria-labelledby={`evaluate-question-${question.id}`}
             className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5"
           >
-            <legend className="px-1 text-sm font-semibold text-[var(--color-text-primary)]">
+            <h2
+              id={`evaluate-question-${question.id}`}
+              className="text-sm font-semibold text-[var(--color-text-primary)]"
+            >
               {index + 1}. {question.label}
-            </legend>
+            </h2>
             <p className="mt-1 text-xs text-[var(--color-text-secondary)]">{question.help}</p>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-2" role="radiogroup" aria-labelledby={`evaluate-question-${question.id}`}>
               {question.options.map((option) => {
                 const checked = answers[question.id] === option.value;
                 return (
@@ -73,7 +77,7 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                 );
               })}
             </div>
-          </fieldset>
+          </section>
         ))}
 
         <div className="flex flex-wrap items-center gap-3">
