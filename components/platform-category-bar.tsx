@@ -2,19 +2,16 @@ import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
 import type { Platform, ToolCategory } from "@/lib/types";
 
-type HeadingLevel = 2 | 3;
-
 type PlatformCategoryBarProps = {
   category: ToolCategory;
   platforms: Platform[];
-  headingLevel: HeadingLevel;
 };
 
 function getPlatformHref(platform: Platform) {
   return withBasePath(`/platforms#${getPlatformFragmentId(platform.id)}`);
 }
 
-function getHeadingText(category: ToolCategory) {
+function getBarLabel(category: ToolCategory) {
   if (category === "assistants") {
     return "Cloud platforms";
   }
@@ -22,18 +19,7 @@ function getHeadingText(category: ToolCategory) {
   return "Cloud platforms in this category";
 }
 
-function getCategorySummary(category: ToolCategory) {
-  if (category === "assistants") {
-    return "Compare the underlying vendor stack on the platforms page; assistant-specific details stay in the comparison sections below.";
-  }
-
-  return "Compare the native cloud services behind this category on the platforms page.";
-}
-
-export function PlatformCategoryBar({
-  category,
-  platforms,
-}: PlatformCategoryBarProps) {
+export function PlatformCategoryBar({ category, platforms }: PlatformCategoryBarProps) {
   if (platforms.length === 0) {
     return null;
   }
@@ -43,11 +29,8 @@ export function PlatformCategoryBar({
       aria-label={`Platform coverage for ${category}`}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
     >
-      <div className="flex flex-col gap-3">
-        <div>
-          <div className="text-sm font-semibold text-[var(--color-text-primary)]">{getHeadingText(category)}</div>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{getCategorySummary(category)}</p>
-        </div>
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="mr-1 text-sm font-semibold text-[var(--color-text-primary)]">{getBarLabel(category)}:</div>
         <ul className="flex flex-wrap gap-2">
           {platforms.map((platform) => (
             <li key={platform.id}>
