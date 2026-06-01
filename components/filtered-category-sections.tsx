@@ -220,7 +220,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
 
   return (
     <>
-      <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
+      <PlatformCategoryBar category={category} platforms={platforms} />
 
       <section
         className="sticky top-[calc(var(--site-header-height,4rem)+0.25rem)] z-20 -mx-2 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))] px-2 pb-2 pt-1 sm:mx-0 sm:px-0"

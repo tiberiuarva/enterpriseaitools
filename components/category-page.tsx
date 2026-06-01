@@ -83,7 +83,7 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
         <FilteredCategorySections category={category} tools={tools} updates={updates} platforms={platforms} comparison={comparison} />
       ) : (
         <>
-          <PlatformCategoryBar category={category} platforms={platforms} headingLevel={3} />
+          <PlatformCategoryBar category={category} platforms={platforms} />
           {vendorTools.length > 0 ? (
             <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:640px]">
               <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
