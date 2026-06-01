@@ -25,7 +25,7 @@ export function VendorToolsSection({
   if (!showComparison && (!showToolCards || vendorTools.length === 0)) return null;
 
   return (
-    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:960px]">
+    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
       <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
       <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-[var(--color-text-secondary)]">{description}</p>

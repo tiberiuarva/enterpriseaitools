@@ -256,7 +256,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
         />
       ) : null}
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
+      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
         <h2 className="text-lg font-semibold">Filtered open source and third-party tools</h2>
         <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{nonVendorTools.length} matching non-vendor tools in this filtered view.</p>
 
@@ -285,7 +285,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
       </section>
 
       {warningTools.length > 0 ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:320px]">
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Important notes</h2>
           <div className="mt-4 space-y-3">
             {warningTools.map((tool) => (
@@ -298,7 +298,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
       ) : null}
 
       {visibleUpdates.length > 0 ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:360px]">
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">Recent updates</h2>
           <div className="mt-4 space-y-4">
             {visibleUpdates.map((update) => (
