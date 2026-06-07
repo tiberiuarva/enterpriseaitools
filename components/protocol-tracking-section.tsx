@@ -81,7 +81,7 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
       <div className="mt-5 flex flex-wrap gap-3">
         <a
           href={withBasePath(isPlatformsPage ? "/updates" : "/platforms")}
-          className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90"
+          className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-white transition hover:text-white hover:opacity-90 focus-visible:text-white"
         >
           {isPlatformsPage ? "Browse weekly updates" : "Compare platform support"}
         </a>
