@@ -107,6 +107,37 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
   };
 }
 
+export function buildToolArticleJsonLd({
+  tool,
+  url,
+  authorName,
+  reviewedAt,
+}: {
+  tool: Tool;
+  url: string;
+  authorName: string;
+  reviewedAt: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${tool.name} — governance posture & overview`,
+    description: tool.description,
+    url,
+    inLanguage: defaultLanguage,
+    datePublished: normalizeJsonLdDate(reviewedAt),
+    dateModified: normalizeJsonLdDate(reviewedAt),
+    author: { "@type": "Person", name: authorName },
+    publisher: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: defaultSiteUrl,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    about: tool.name,
+  };
+}
+
 export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]) {
   return {
     "@context": "https://schema.org",

@@ -64,6 +64,18 @@ Acceptance:
 - A spot-check of claims each traces to a verifiable source.
 Depends on: M1 (done). Partly parallelizable.
 
+## M6 — Page text-density pass and layout polish  [ ]
+Goal: now that per-tool pages hold the depth, cut everything from the hub pages that duplicates them and fix layout regressions noticed in review.
+In scope:
+- Trim verbose intro prose on every hub (platforms, agents, orchestration, governance, assistants) to a one-line direct answer.
+- Audit every other page (home, about, updates, evaluate) and remove text that is not strictly necessary now that per-tool pages exist.
+- Fix the about-page top section where one of the boxes was not aligned with the others.
+Acceptance:
+- Category and platforms pages render a short, scannable header (one focused sentence) plus the comparison surface — no multi-paragraph editorial intros.
+- About page top-row panels sit on a shared baseline.
+- No regressions to existing gates.
+Depends on: M2 (per-tool pages must exist so depth is not lost).
+
 ## Dependencies at a glance
 - M1 is done, so M2 can start now.
 - M2 feeds M3.
