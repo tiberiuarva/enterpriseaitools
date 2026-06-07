@@ -192,9 +192,7 @@ export default function Home() {
           <div className="max-w-4xl">
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">What is changing in the enterprise AI market</h2>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-              Enterprise teams now evaluate a control plane, a delivery layer, a governance boundary, and an emerging
-              standards layer separately. This tracker is structured around those real buying and architecture seams
-              instead of flattening managed platforms, open source frameworks, and point products into one catalog.
+              Enterprise teams now evaluate the control plane, delivery layer, governance boundary, and standards layer separately. This tracker is structured around those seams rather than one flat catalog.
             </p>
           </div>
 
@@ -232,7 +230,7 @@ export default function Home() {
               <Link href="/platforms" className="font-semibold text-[var(--color-primary)] underline-offset-2 hover:underline">
                 Platforms
               </Link>{" "}
-              if you need to understand the cloud control plane. Then use the category hubs to compare what each vendor offers directly versus the open source and commercial tools teams pair with those foundations in practice.
+              for the cloud control plane, then use the category hubs to compare vendor offerings against open-source and commercial alternatives.
             </p>
           </div>
         </section>

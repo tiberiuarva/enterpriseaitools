@@ -34,6 +34,7 @@ Top-level shape:
 | `githubStars` | number | no | Open source star count only when verified |
 | `version` | string | no | Current stable version |
 | `lastRelease` | string | no | ISO date |
+| `publishedAt` | string | no | ISO date the per-tool page was first published. Drives the Article JSON-LD `datePublished` for tools added after the initial site launch; pages omit it for tools present at launch and the per-tool page falls back to the site launch date. |
 | `docsUrl` | string | yes | Official docs URL |
 | `websiteUrl` | string | no | Marketing/product URL if distinct |
 | `pricing` | string | no | Human-readable pricing summary |
@@ -179,6 +180,66 @@ Entries must be ordered newest first.
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |
 | `sourceTitle` | string | no | Human-readable source title |
 | `impact` | `high \| medium \| low` | no | Optional impact flag |
+
+## `data/snapshots/<YYYY-MM-DD>.json`
+
+Derived/computed artifact, not primary data. Written by
+`scripts/snapshot-current.mjs` (`npm run snapshot-weekly`) on each `/radar`
+weekly run — additive across dates in normal operation; passing an explicit
+date argument to the script overwrites that date's file. Powers the M4
+"what changed" view as the persistent record of how the dataset moves week to
+week.
+
+Top-level shape:
+
+```json
+{
+  "snapshotDate": "YYYY-MM-DD",
+  "toolsLastUpdated": "YYYY-MM-DD | null",
+  "tools": [],
+  "platforms": []
+}
+```
+
+### Snapshot envelope fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `snapshotDate` | string | yes | ISO date (`YYYY-MM-DD`) the snapshot represents — the file name matches. |
+| `toolsLastUpdated` | string \| null | yes | Mirror of `data/tools.json.lastUpdated` at snapshot time. |
+| `tools` | object[] | yes | One digest per tool, sorted by `id`. See "Snapshot tool digest" below. |
+| `platforms` | object[] | yes | One digest per platform, sorted by `id`. See "Snapshot platform digest" below. |
+
+`platforms.json` does not currently carry a top-level `lastUpdated` field, so
+the envelope intentionally has no `platformsLastUpdated`. Each platform digest
+captures its own per-record `lastUpdated`.
+
+### Snapshot tool digest fields (`snapshot.tools[]`)
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `id` | string | yes | Mirror of `tool.id`. |
+| `name` | string | yes | Mirror of `tool.name`. |
+| `category` | string | yes | Mirror of `tool.category`. |
+| `license` | string \| null | yes | Mirror of `tool.license`. |
+| `version` | string \| null | yes | Mirror of `tool.version`. |
+| `lastRelease` | string \| null | yes | Mirror of `tool.lastRelease`. |
+| `status` | string \| null | yes | Mirror of `tool.status`. |
+| `githubStars` | number \| null | yes | Mirror of `tool.githubStars`. |
+| `governance` | object | yes | Per-dimension digest (status only, plus `models`, `role`, `level`, `reviewedAt`). `deployment.models` array is sorted. |
+
+### Snapshot platform digest fields (`snapshot.platforms[]`)
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `id` | string | yes | Mirror of `platform.id`. |
+| `name` | string | yes | Mirror of `platform.name`. |
+| `formerNames` | string[] | yes | Mirror of `platform.formerNames`. |
+| `modelCount` | string \| null | yes | Mirror of `platform.modelCount`. |
+| `onPremises` | string \| null | yes | Mirror of `platform.onPremises`. |
+| `regions` | string \| null | yes | Mirror of `platform.regions`. |
+| `compliance` | string[] | yes | Mirror of `platform.compliance`, sorted. |
+| `lastUpdated` | string \| null | yes | Mirror of `platform.lastUpdated`. |
 
 ## Rules
 

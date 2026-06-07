@@ -20,8 +20,7 @@ export default function AgentsPage() {
         title="AI Agent Frameworks"
         description={categoryDescriptions.agents}
         introParagraphs={[
-          "For regulated enterprises, the main question is not whether an agent framework can call tools. It is whether the stack gives enough control around identity, approvals, observability, evaluation, and deployment boundaries before agents touch real systems.",
-          "Use this page to separate cloud-native control-plane options from open source frameworks that may need more platform work around security, governance, and runtime operations before they fit production programmes in finance, healthcare, or the public sector.",
+          "Compare cloud-native agent platforms with open-source frameworks on governance posture, deployment surface, and license risk — full details on each tool's page.",
         ]}
         iconName="bot"
         tools={getToolsByCategory("agents")}

@@ -96,20 +96,9 @@ export default function PlatformsPage() {
         <JsonLd data={jsonLd} />
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
           <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
-          <div className="mt-3 max-w-4xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            <p>
-              Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform (formerly Google Vertex AI) are the foundation layer beneath the rest of the landscape.
-              They package model access, agent services, safety controls, SDKs, and deployment infrastructure differently.
-            </p>
-            <p>
-              For regulated enterprises, this is the control-plane decision before any individual tool choice. The platform sets the baseline for identity,
-              network boundaries, model access patterns, logging, regional deployment options, and how much governance is available natively versus assembled later.
-            </p>
-            <p>
-              Read this page top-down: compare the platforms first, use the category mapping section to see where each cloud lands in agents,
-              orchestration, governance, and assistants, then use the detailed comparison table for deeper vendor-to-vendor evaluation.
-            </p>
-          </div>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
+            Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform (formerly Vertex AI) are the foundation layer. The control-plane choice shapes identity, model access, governance defaults, and deployment options for everything you build on top.
+          </p>
         </section>
 
         <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">

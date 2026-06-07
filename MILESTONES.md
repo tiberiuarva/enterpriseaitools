@@ -24,7 +24,7 @@ Acceptance:
 - Every value is source-backed; any license discrepancy opens a dedicated data-correction issue rather than a silent edit.
 Depends on: M1 (done). Feeds: M3.
 
-## M3 — Guided "help me evaluate" tool  [ ]
+## M3 — Guided "help me evaluate" tool  [x] done
 Goal: a short guided flow that returns a relevant shortlist and a readable posture sheet. A tool, not a table. No gate, no signup, no data capture.
 In scope:
 - Intake of roughly 8-12 questions: category / use case, sector, data sensitivity, deployment constraint, jurisdiction, EU AI Act role, open-source-risk tolerance.
@@ -38,20 +38,20 @@ Acceptance:
 - Works as a static export with no backend and no data capture.
 Depends on: M2.
 
-## M4 — What changed and why it matters  [ ]
+## M4 — What changed and why it matters  [x] done
 Goal: surface the longitudinal signal the weekly agent already collects: license changes, breaking releases, deprecations, new certifications. The reason to return weekly.
 In scope:
-- Persist historical snapshots from the weekly scan as time-series; stop discarding the time dimension.
-- A site-wide "what changed" feed, filterable by category and impact.
-- A per-tool change-history section on each per-tool page.
-- Clear flagging of high-impact governance and license changes (open-source rug-pull early warning).
+- Persist historical snapshots from the weekly scan as time-series via `scripts/snapshot-current.mjs` (`npm run snapshot-weekly`) writing `data/snapshots/<YYYY-MM-DD>.json` — additive across dates, never overwrites a prior date. The `/radar` SOP runs it at the end of every weekly scan.
+- A site-wide "what changed" feed (`/updates`, filterable by category and impact via the existing `updates.json` feed and high-impact filter).
+- A per-tool change-history section on each per-tool page sourced from `updates.json` filtered by `toolId`.
+- Clear flagging of high-impact governance and license changes (warning border + "High impact" badge on per-tool change history).
 Acceptance:
-- Weekly scan output is persisted as time-series, not overwritten.
-- A site-wide change feed exists and a per-tool history renders on each page.
+- Weekly scan output is persisted as a per-date snapshot file under `data/snapshots/`, so the time dimension is no longer discarded.
+- A site-wide change feed exists at `/updates` and a per-tool history renders on every `/tools/<id>` page.
 - License, deprecation, and certification changes are clearly flagged.
-Depends on: the weekly scan persisting history. The persistence piece can start in parallel with M2.
+Depends on: the weekly scan persisting history — now satisfied by the snapshot pipeline.
 
-## M5 — Accuracy and findability  [ ]
+## M5 — Accuracy and findability  [x] done
 Goal: make every page a trustworthy, current, citable reference for humans and AI assistants. Pure reference quality, no funnel.
 In scope:
 - A source link on every factual claim.
@@ -63,6 +63,18 @@ Acceptance:
 - Schema and llms.txt are present and valid.
 - A spot-check of claims each traces to a verifiable source.
 Depends on: M1 (done). Partly parallelizable.
+
+## M6 — Page text-density pass and layout polish  [x] done
+Goal: now that per-tool pages hold the depth, cut everything from the hub pages that duplicates them and fix layout regressions noticed in review.
+In scope:
+- Trim verbose intro prose on every hub (platforms, agents, orchestration, governance, assistants) to a one-line direct answer.
+- Audit every other page (home, about, updates, evaluate) and remove text that is not strictly necessary now that per-tool pages exist.
+- Fix the about-page top section where one of the boxes was not aligned with the others.
+Acceptance:
+- Category and platforms pages render a short, scannable header (one focused sentence) plus the comparison surface — no multi-paragraph editorial intros.
+- About page top-row panels sit on a shared baseline.
+- No regressions to existing gates.
+Depends on: M2 (per-tool pages must exist so depth is not lost).
 
 ## Dependencies at a glance
 - M1 is done, so M2 can start now.

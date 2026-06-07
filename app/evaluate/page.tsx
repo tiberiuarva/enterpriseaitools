@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EvaluateClient } from "@/components/evaluate-client";
 import { HomeShell } from "@/components/home-shell";
-import { JsonLd, buildBreadcrumbJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
 import { lastUpdated, tools } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 
@@ -23,6 +23,20 @@ export default function EvaluatePage() {
       { name: "Help me evaluate", url: pageUrl },
     ]),
     buildWebPageJsonLd({ name: title, url: pageUrl, description, siteUrl }),
+    buildFaqPageJsonLd([
+      {
+        question: "Does this flow capture any data?",
+        answer: "No. The guided flow runs entirely in your browser; no answers, results, or analytics are sent anywhere. There is no signup, no email capture, and no backend.",
+      },
+      {
+        question: "How are results ranked?",
+        answer: "Hard filters first (category, deployment requirement, permissive-license requirement), then transparent additive scoring over the M2 governance fields (data residency, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk, audit logging). Every result lists its match reasons and any cautions.",
+      },
+      {
+        question: "Where do the underlying facts come from?",
+        answer: "Every governance value is backed by a primary-source URL (vendor trust centers, compliance docs, repository LICENSE files). Click into any result's per-tool page to see the source URL on every asserted claim.",
+      },
+    ]),
   ];
 
   return (

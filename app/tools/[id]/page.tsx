@@ -3,17 +3,29 @@ import { notFound } from "next/navigation";
 import { ExternalLink, Globe, Star } from "lucide-react";
 import { GovernancePosture } from "@/components/governance-posture";
 import { HomeShell } from "@/components/home-shell";
-import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToolArticleJsonLd } from "@/components/json-ld";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { WarningBox } from "@/components/warning-box";
-import { lastUpdated, tools } from "@/lib/data";
+import { lastUpdated, tools, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
 import type { ToolCategory } from "@/lib/types";
 
 const CHIP_CLASS = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
+const CURATOR_NAME = "Tiberiu Arva";
+const SITE_LAUNCH_DATE = "2026-04-11";
+
+const UPDATE_TYPE_LABELS: Record<string, string> = {
+  release: "Release",
+  acquisition: "Acquisition",
+  deprecation: "Deprecation",
+  rename: "Rename",
+  funding: "Funding",
+  feature: "Feature",
+  "model-addition": "Model addition",
+};
 
 const CATEGORY_LABELS: Record<ToolCategory, string> = {
   agents: "AI Agent Frameworks",
@@ -56,6 +68,8 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   }
 
   const pageUrl = `${siteUrl}/tools/${tool.id}/`;
+  // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
+  const toolHistory = updates.filter((update) => update.toolId === tool.id);
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -63,6 +77,13 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
       { name: tool.name, url: pageUrl },
     ]),
     buildSoftwareApplicationJsonLd(tool, pageUrl),
+    buildToolArticleJsonLd({
+      tool,
+      url: pageUrl,
+      authorName: CURATOR_NAME,
+      datePublished: tool.publishedAt ?? SITE_LAUNCH_DATE,
+      dateModified: tool.governance.reviewedAt,
+    }),
   ];
 
   return (
@@ -93,6 +114,10 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
           </div>
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{tool.description}</p>
+
+          <p className="mt-3 text-xs text-[var(--color-text-secondary)]">
+            Curated by {CURATOR_NAME} · Last reviewed {tool.governance.reviewedAt}
+          </p>
 
           <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
             <span className={CHIP_CLASS}>{tool.license}</span>
@@ -167,6 +192,36 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
         ) : null}
 
         <GovernancePosture governance={tool.governance} />
+
+        {toolHistory.length > 0 ? (
+          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Change history</h2>
+            <p className="mt-1 text-xs text-[var(--color-text-secondary)]">Source-backed events for this tool, newest first.</p>
+            <ol className="mt-4 flex flex-col gap-3">
+              {toolHistory.map((update) => {
+                const highImpact = update.impact === "high";
+                const flagged = highImpact || update.type === "deprecation" || update.type === "acquisition" || update.type === "rename";
+                return (
+                  <li key={update.id} className={`border-l-2 pl-4 ${flagged ? "border-[var(--color-warning)]" : "border-[var(--color-primary)]"}`}>
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                      <span>{update.date}</span>
+                      <span aria-hidden="true">·</span>
+                      <span className="font-semibold uppercase tracking-wide">{UPDATE_TYPE_LABELS[update.type] ?? update.type}</span>
+                      {highImpact ? (
+                        <span className="rounded-full bg-[color:rgba(234,179,8,0.15)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-warning)]">High impact</span>
+                      ) : null}
+                    </div>
+                    {update.title ? <div className="mt-1 font-semibold text-[var(--color-text-primary)]">{update.title}</div> : null}
+                    <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>
+                    <a href={update.sourceUrl} target="_blank" rel="noreferrer" className="mt-1 inline-flex text-xs font-medium text-[var(--color-primary)] hover:underline">
+                      {update.sourceTitle ?? "Source"}
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ) : null}
 
         <RelatedHubs
           currentPath={`/tools/${tool.id}`}

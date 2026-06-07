@@ -90,6 +90,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${url}#software`,
     name: tool.name,
     description: tool.description,
     applicationCategory: "DeveloperApplication",
@@ -104,6 +105,52 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
     ...(tool.pricingModel === "free"
       ? { offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }
       : {}),
+  };
+}
+
+export function buildToolArticleJsonLd({
+  tool,
+  url,
+  authorName,
+  datePublished,
+  dateModified,
+}: {
+  tool: Tool;
+  url: string;
+  authorName: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}#article`,
+    headline: `${tool.name} — governance posture & overview`,
+    description: tool.description,
+    url,
+    inLanguage: defaultLanguage,
+    datePublished: normalizeJsonLdDate(datePublished),
+    dateModified: normalizeJsonLdDate(dateModified),
+    author: { "@type": "Person", name: authorName },
+    publisher: {
+      "@type": "Organization",
+      name: "enterpriseai.tools",
+      url: defaultSiteUrl,
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    about: { "@type": "SoftwareApplication", "@id": `${url}#software` },
+  };
+}
+
+export function buildFaqPageJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
   };
 }
 

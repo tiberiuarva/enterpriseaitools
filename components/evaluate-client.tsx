@@ -52,7 +52,11 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
               {index + 1}. {question.label}
             </h3>
             <p className="mt-1 text-xs text-[var(--color-text-secondary)]">{question.help}</p>
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div
+              role="radiogroup"
+              aria-labelledby={`evaluate-question-${question.id}`}
+              className="mt-3 flex flex-wrap gap-2"
+            >
               {question.options.map((option) => {
                 const checked = answers[question.id] === option.value;
                 return (

@@ -20,8 +20,7 @@ export default function OrchestrationPage() {
         title="AI Orchestration"
         description={categoryDescriptions.orchestration}
         introParagraphs={[
-          "In regulated environments, orchestration becomes the execution boundary for AI systems: where approvals, audit trails, retries, secrets handling, and human checkpoints have to be explicit rather than implied.",
-          "Read this page with that lens. Some tools are strong for fast internal automation, while others are better suited to controlled enterprise workflows where reliability, segregation of duties, and integration with existing cloud operations matter more than pure builder speed.",
+          "Compare cloud workflow services with open-source orchestration platforms on deployment options, audit trails, and governance fit — full details on each tool's page.",
         ]}
         iconName="git-branch"
         tools={getToolsByCategory("orchestration")}

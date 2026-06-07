@@ -48,6 +48,21 @@ npm run check-generated-artifacts
 If `check-generated-artifacts` is dirty, commit the regenerated files in a
 separate commit titled `chore(ci): sync generated SEO artifacts for weekly scan`.
 
+## 4b. Persist the weekly snapshot (M4 time-series)
+
+```
+npm run snapshot-weekly
+```
+
+This writes `data/snapshots/<YYYY-MM-DD>.json` — a compact drift fingerprint of
+every tool and platform (license, version, status, governance dimensions).
+Idempotent within a date (re-running today rewrites today's file byte-for-byte).
+Additive across dates in normal SOP operation — no date argument means today's
+date and one file per date. Passing an explicit date argument
+(`node scripts/snapshot-current.mjs 2026-01-01`) overwrites that date's file,
+so use the explicit form only when correcting a snapshot. Commit the new
+snapshot alongside the data changes.
+
 ## 5. Local gate
 
 Run `/ship-check`. Push only if green.
