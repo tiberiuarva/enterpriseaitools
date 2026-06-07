@@ -9,7 +9,7 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 
 ## Hub pages
 - [Home](https://www.enterpriseai.tools/): overview of the four tracked categories and the foundation platforms.
-- [AI Platforms & Model Hubs](https://www.enterpriseai.tools/platforms/): Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform (formerly Vertex AI).
+- [AI Platforms & Model Hubs](https://www.enterpriseai.tools/platforms/): Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform (formerly Google Vertex AI).
 - [AI Agent Frameworks](https://www.enterpriseai.tools/agents/): cloud agent platforms + open-source frameworks.
 - [AI Orchestration](https://www.enterpriseai.tools/orchestration/): workflow engines and automation.
 - [AI Governance](https://www.enterpriseai.tools/governance/): guardrails, content safety, policy.

@@ -15,6 +15,7 @@ import type { ToolCategory } from "@/lib/types";
 
 const CHIP_CLASS = "rounded-full border border-[var(--color-border)] px-2.5 py-1";
 const CURATOR_NAME = "Tiberiu Arva";
+const SITE_LAUNCH_DATE = "2026-04-11";
 
 const UPDATE_TYPE_LABELS: Record<string, string> = {
   release: "Release",
@@ -67,6 +68,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   }
 
   const pageUrl = `${siteUrl}/tools/${tool.id}/`;
+  // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
   const toolHistory = updates.filter((update) => update.toolId === tool.id);
   const jsonLd = [
     buildBreadcrumbJsonLd([
@@ -75,7 +77,13 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
       { name: tool.name, url: pageUrl },
     ]),
     buildSoftwareApplicationJsonLd(tool, pageUrl),
-    buildToolArticleJsonLd({ tool, url: pageUrl, authorName: CURATOR_NAME, reviewedAt: tool.governance.reviewedAt }),
+    buildToolArticleJsonLd({
+      tool,
+      url: pageUrl,
+      authorName: CURATOR_NAME,
+      datePublished: SITE_LAUNCH_DATE,
+      dateModified: tool.governance.reviewedAt,
+    }),
   ];
 
   return (

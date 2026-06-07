@@ -90,6 +90,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${url}#software`,
     name: tool.name,
     description: tool.description,
     applicationCategory: "DeveloperApplication",
@@ -111,22 +112,25 @@ export function buildToolArticleJsonLd({
   tool,
   url,
   authorName,
-  reviewedAt,
+  datePublished,
+  dateModified,
 }: {
   tool: Tool;
   url: string;
   authorName: string;
-  reviewedAt: string;
+  datePublished: string;
+  dateModified: string;
 }) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${url}#article`,
     headline: `${tool.name} — governance posture & overview`,
     description: tool.description,
     url,
     inLanguage: defaultLanguage,
-    datePublished: normalizeJsonLdDate(reviewedAt),
-    dateModified: normalizeJsonLdDate(reviewedAt),
+    datePublished: normalizeJsonLdDate(datePublished),
+    dateModified: normalizeJsonLdDate(dateModified),
     author: { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",

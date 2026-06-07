@@ -252,7 +252,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+            <div className="flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 Working stance
               </p>
