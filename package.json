@@ -16,6 +16,7 @@
     "check-logo-audit-report": "node scripts/check-logo-audit-report.mjs",
     "check-tool-card-data": "node scripts/check-tool-card-data.mjs",
     "check-governance-data": "node scripts/check-governance-data.mjs",
+    "snapshot-weekly": "node scripts/snapshot-current.mjs",
     "check-generated-artifacts": "bash scripts/check-generated-artifacts.sh",
     "report-logo-audit": "node scripts/logo-audit-report.mjs",
     "open-pr": "bash scripts/open-pr.sh",
