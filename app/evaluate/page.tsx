@@ -34,7 +34,7 @@ export default function EvaluatePage() {
       },
       {
         question: "Where do the underlying facts come from?",
-        answer: "Every governance value is source-backed in data/tools.json with a primary-source URL (vendor trust centers, compliance docs, repository LICENSE files). Click into any result's per-tool page to see the source URL on every asserted claim.",
+        answer: "Every governance value is backed by a primary-source URL (vendor trust centers, compliance docs, repository LICENSE files). Click into any result's per-tool page to see the source URL on every asserted claim.",
       },
     ]),
   ];

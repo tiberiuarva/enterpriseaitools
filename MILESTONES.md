@@ -64,7 +64,7 @@ Acceptance:
 - A spot-check of claims each traces to a verifiable source.
 Depends on: M1 (done). Partly parallelizable.
 
-## M6 — Page text-density pass and layout polish  [ ]
+## M6 — Page text-density pass and layout polish  [x] done
 Goal: now that per-tool pages hold the depth, cut everything from the hub pages that duplicates them and fix layout regressions noticed in review.
 In scope:
 - Trim verbose intro prose on every hub (platforms, agents, orchestration, governance, assistants) to a one-line direct answer.

@@ -55,10 +55,13 @@ npm run snapshot-weekly
 ```
 
 This writes `data/snapshots/<YYYY-MM-DD>.json` — a compact drift fingerprint of
-every tool and platform (license, version, status, governance dimensions). The
-file is additive across dates and never overwrites a prior date, so the
-`data/snapshots/` directory is the persistent record of how the dataset moves
-week to week. Commit the new snapshot alongside the data changes.
+every tool and platform (license, version, status, governance dimensions).
+Idempotent within a date (re-running today rewrites today's file byte-for-byte).
+Additive across dates in normal SOP operation — no date argument means today's
+date and one file per date. Passing an explicit date argument
+(`node scripts/snapshot-current.mjs 2026-01-01`) overwrites that date's file,
+so use the explicit form only when correcting a snapshot. Commit the new
+snapshot alongside the data changes.
 
 ## 5. Local gate
 

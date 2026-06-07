@@ -5,9 +5,11 @@ import { fileURLToPath } from "node:url";
 
 // Weekly time-series snapshot: writes data/snapshots/<YYYY-MM-DD>.json with a
 // compact drift fingerprint of every tool and platform. Idempotent within a date
-// (overwrites the same-day file) and additive across dates (never overwrites a
-// prior date), so the snapshot directory is the persistent record of how the
-// dataset moves week to week. Drives the "what changed" view in M4.
+// (overwrites the same-day file). Additive across dates in normal operation —
+// no date argument means today's date and one file per date; passing an
+// explicit date argument overwrites that date's file. The snapshot directory is
+// the persistent record of how the dataset moves week to week and drives the
+// M4 "what changed" view.
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "..");
@@ -67,8 +69,29 @@ function digestPlatform(platform) {
   };
 }
 
-const toolsJson = JSON.parse(await fs.readFile(toolsPath, "utf8"));
-const platformsJson = JSON.parse(await fs.readFile(platformsPath, "utf8"));
+let toolsJson;
+let platformsJson;
+try {
+  toolsJson = JSON.parse(await fs.readFile(toolsPath, "utf8"));
+} catch (err) {
+  console.error(`FAIL: could not read data/tools.json: ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
+try {
+  platformsJson = JSON.parse(await fs.readFile(platformsPath, "utf8"));
+} catch (err) {
+  console.error(`FAIL: could not read data/platforms.json: ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
+
+if (!Array.isArray(toolsJson.tools)) {
+  console.error("FAIL: data/tools.json does not contain a tools array.");
+  process.exit(1);
+}
+if (!Array.isArray(platformsJson.platforms)) {
+  console.error("FAIL: data/platforms.json does not contain a platforms array.");
+  process.exit(1);
+}
 
 const snapshot = {
   snapshotDate,
