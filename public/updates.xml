@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-05-30T00:00:00.000Z</updated>
+  <updated>2026-06-07T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-07-02</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-06-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-07-02" />
+    <summary>AWS added interactive PTY-backed shells to Bedrock AgentCore Runtime, letting teams reconnect into live agent sessions for debugging, file inspection, and terminal-native coding-agent workflows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/</id>
+      <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-07-01</id>
+    <title>Microsoft Foundry — feature</title>
+    <updated>2026-06-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-07-01" />
+    <summary>Microsoft announced Foundry Managed Compute, adding a managed GPU platform for hosting open-source and custom models through the same Foundry endpoint, SDKs, and billing surface used for frontier-model deployments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, high" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/</id>
+      <title>Announcing Foundry Managed Compute: Run open models in Microsoft Foundry</title>
+      <link href="https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-03</id>
     <title>Microsoft Agent Framework — release</title>
