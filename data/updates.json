@@ -1,6 +1,30 @@
 {
   "updates": [
     {
+      "id": "update-2026-06-07-02",
+      "date": "2026-06-07",
+      "toolId": "aws-bedrock-agents",
+      "toolName": "Amazon Bedrock Agents",
+      "category": "agents",
+      "type": "feature",
+      "summary": "AWS added interactive PTY-backed shells to Bedrock AgentCore Runtime, letting teams reconnect into live agent sessions for debugging, file inspection, and terminal-native coding-agent workflows.",
+      "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/",
+      "sourceTitle": "Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-06-07-01",
+      "date": "2026-06-07",
+      "toolId": "microsoft-foundry",
+      "toolName": "Microsoft Foundry",
+      "category": "platforms",
+      "type": "feature",
+      "summary": "Microsoft announced Foundry Managed Compute, adding a managed GPU platform for hosting open-source and custom models through the same Foundry endpoint, SDKs, and billing surface used for frontier-model deployments.",
+      "sourceUrl": "https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/",
+      "sourceTitle": "Announcing Foundry Managed Compute: Run open models in Microsoft Foundry",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-05-28-03",
       "date": "2026-05-28",
       "toolId": "microsoft-agent-framework",
