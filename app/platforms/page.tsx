@@ -162,7 +162,7 @@ export default function PlatformsPage() {
 
         <ProtocolTrackingSection currentPath="/platforms" />
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:720px]">
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>
           <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
             This bridges the platform layer with the category hubs, so visitors can quickly see the native cloud product most relevant to each tracked category.
@@ -195,7 +195,7 @@ export default function PlatformsPage() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 [content-visibility:auto] [contain-intrinsic-size:1200px]">
+        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
           <div className="max-w-4xl">
             <h2 className="text-lg font-semibold">Detailed vendor comparison</h2>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -210,7 +210,7 @@ export default function PlatformsPage() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2 [content-visibility:auto] [contain-intrinsic-size:240px]">
+        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2">
           <WarningBox>
             Always use <strong>Microsoft Foundry</strong> as the current name. PromptFlow is being deprecated and Azure ML SDK v1 support ends June 30, 2026.
           </WarningBox>
