@@ -60,9 +60,11 @@ body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
