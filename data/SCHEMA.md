@@ -34,6 +34,7 @@ Top-level shape:
 | `githubStars` | number | no | Open source star count only when verified |
 | `version` | string | no | Current stable version |
 | `lastRelease` | string | no | ISO date |
+| `publishedAt` | string | no | ISO date the per-tool page was first published. Drives the Article JSON-LD `datePublished` for tools added after the initial site launch; pages omit it for tools present at launch and the per-tool page falls back to the site launch date. |
 | `docsUrl` | string | yes | Official docs URL |
 | `websiteUrl` | string | no | Marketing/product URL if distinct |
 | `pricing` | string | no | Human-readable pricing summary |

@@ -104,8 +104,18 @@ const snapshot = {
     .sort((a, b) => a.id.localeCompare(b.id)),
 };
 
-await fs.mkdir(snapshotsDir, { recursive: true });
+try {
+  await fs.mkdir(snapshotsDir, { recursive: true });
+} catch (err) {
+  console.error(`FAIL: could not create snapshots directory: ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
 const outputPath = path.join(snapshotsDir, `${snapshotDate}.json`);
-await fs.writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`);
+try {
+  await fs.writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`);
+} catch (err) {
+  console.error(`FAIL: could not write ${outputPath}: ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
 
 console.log(`Wrote snapshot ${snapshotDate}: ${snapshot.tools.length} tools, ${snapshot.platforms.length} platforms.`);

@@ -67,6 +67,7 @@ export type Tool = {
   githubStars?: number;
   version?: string;
   lastRelease?: string;
+  publishedAt?: ISODateString;
   docsUrl: string;
   websiteUrl?: string;
   pricing?: string;

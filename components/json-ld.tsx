@@ -138,7 +138,7 @@ export function buildToolArticleJsonLd({
       url: defaultSiteUrl,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    about: tool.name,
+    about: { "@type": "SoftwareApplication", "@id": `${url}#software` },
   };
 }
 

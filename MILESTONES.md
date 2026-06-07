@@ -51,7 +51,7 @@ Acceptance:
 - License, deprecation, and certification changes are clearly flagged.
 Depends on: the weekly scan persisting history — now satisfied by the snapshot pipeline.
 
-## M5 — Accuracy and findability  [ ]
+## M5 — Accuracy and findability  [x] done
 Goal: make every page a trustworthy, current, citable reference for humans and AI assistants. Pure reference quality, no funnel.
 In scope:
 - A source link on every factual claim.
