@@ -24,11 +24,6 @@ type InfoCard = {
   body: string;
 };
 
-type CredibilityPoint = {
-  title: string;
-  body: string;
-};
-
 const sectionLinks: SectionLink[] = [
   {
     id: "overview",
@@ -87,21 +82,6 @@ const whyThisExists: InfoCard[] = [
   },
 ];
 
-const editorCredibilityPoints: CredibilityPoint[] = [
-  {
-    title: "Enterprise delivery lens",
-    body: "The editorial framing is anchored in enterprise financial services, where governance, approval paths, and operating constraints shape what is actually deployable.",
-  },
-  {
-    title: "Architecture before marketing",
-    body: "Priority goes to control-plane boundaries, ownership, sourcing quality, and production fit rather than launch positioning or surface-level feature checklists.",
-  },
-  {
-    title: "Reviewable change discipline",
-    body: "Dataset and copy changes are meant to stay source-backed, versioned, and auditable through pull requests instead of silent opinion drift.",
-  },
-];
-
 const workflowSteps = [
   "Start with Platforms to understand the cloud control plane and default production path.",
   "Move into the category hubs to compare managed vendor options against open source and commercial alternatives.",
@@ -129,21 +109,6 @@ const trackedAreas: InfoCard[] = [
   {
     title: "Assistants",
     body: "Coding copilots, productivity assistants, and build-your-own surfaces used by internal teams and end users.",
-  },
-];
-
-const marketFrame: InfoCard[] = [
-  {
-    title: "Foundation first",
-    body: "The cloud platform is not just hosting. It often sets identity, model routing, policy surface, procurement path, and the default route into production.",
-  },
-  {
-    title: "Layers above the cloud",
-    body: "Agent frameworks, orchestration tools, and assistant products are evaluated as delivery layers that either reinforce or challenge the base platform’s control.",
-  },
-  {
-    title: "Governance boundary",
-    body: "Priority goes to signals that matter in real adoption: governance depth, operational ownership, release quality, standards support, and whether the product can survive enterprise scrutiny.",
   },
 ];
 
@@ -223,43 +188,41 @@ export default function AboutPage() {
         <JsonLd data={jsonLd} />
 
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)]">
-            <div className="max-w-4xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
-                About the project
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
+              About the project
+            </p>
+            <h1 className="mt-2 text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
+            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              An open-source landscape tracker for enterprise AI tooling — cloud vendors, enterprise platforms, and open-source alternatives.
+            </p>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">Editor</p>
+              <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
+              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                Edited with a regulated-enterprise delivery lens — governance, identity, sourcing quality, and operational fit weighted above launch marketing.
               </p>
-              <h1 className="mt-2 text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
-              <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-                An open source landscape tracker comparing enterprise AI tooling across cloud vendors,
-                enterprise platforms, and open source alternatives.
-              </p>
-              <div className="mt-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
-                  Editor
-                </p>
-                <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  Edited with a regulated-enterprise delivery lens shaped by enterprise financial-services constraints, governance expectations, and source-backed decision support.
-                </p>
-                <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-                  {editorCredibilityPoints.map((point) => (
-                    <li key={point.title} className="list-none rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
-                      <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{point.title}</h3>
-                      <p className="mt-2 text-xs leading-5 text-[var(--color-text-secondary)]">{point.body}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <a
+                href="https://www.linkedin.com/in/tiberiuarva/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
+              >
+                LinkedIn
+              </a>
             </div>
 
-            <div className="flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 Working stance
               </p>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                 <li>Prefer official docs, release notes, pricing pages, and canonical repositories.</li>
                 <li>Keep copy technical and reviewable rather than promotional.</li>
-                <li>Do not treat unresolved claims as facts just to make the grid look complete.</li>
+                <li>Do not treat unresolved claims as facts to make the grid look complete.</li>
               </ul>
             </div>
           </div>
@@ -317,29 +280,6 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
-                <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Editor</h3>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  The editorial lens prioritizes deployment reality over vendor positioning: governance, identity, sourcing quality, platform trade-offs, and operational fit in regulated environments.
-                </p>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  <li>Grounded in enterprise financial services and regulated delivery constraints.</li>
-                  <li>Biased toward architecture, ownership, and control-plane trade-offs over launch marketing.</li>
-                  <li>Claims are held to evidence standards before they make it into the dataset.</li>
-                </ul>
-                <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-                  Connect on{" "}
-                  <a
-                    href="https://www.linkedin.com/in/tiberiuarva/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-[var(--color-primary)] hover:underline"
-                  >
-                    LinkedIn
-                  </a>
-                  .
-                </p>
-              </div>
             </section>
 
             <section
@@ -379,15 +319,6 @@ export default function AboutPage() {
               />
               <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {trackedAreas.map((card) => (
-                  <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
-                    <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
-                {marketFrame.map((card) => (
                   <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
                     <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>

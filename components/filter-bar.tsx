@@ -37,6 +37,11 @@ const licenseRiskOptions = [
   { value: "unknown", label: "Unknown" },
 ] as const;
 
+const SEGMENT_BASE = "rounded-full border px-2.5 py-1 text-xs transition";
+const SEGMENT_ON = "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]";
+const SEGMENT_OFF = "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]";
+const SELECT_CLASS = "rounded-md border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2 py-1 text-xs text-[var(--color-text-primary)]";
+
 export function FilterBar({
   typeFilter,
   onTypeFilterChange,
@@ -58,12 +63,16 @@ export function FilterBar({
     () => [
       { label: "All", value: "all" },
       { label: "Vendor", value: "vendor" },
-      { label: "Open Source", value: "opensource" },
+      { label: "OSS", value: "opensource" },
       { label: "Commercial", value: "commercial" },
     ] as const,
     [],
   );
   const summaryId = useId();
+  const advancedActive =
+    (licenseFilter !== "all" ? 1 : 0) +
+    (deploymentFilter !== "all" ? 1 : 0) +
+    (licenseRiskFilter !== "all" ? 1 : 0);
 
   function toggleCloud(cloud: string) {
     if (cloudFilters.includes(cloud)) {
@@ -77,49 +86,76 @@ export function FilterBar({
   return (
     <section
       aria-label="Filter and sort tools"
-      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm"
+      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-3 shadow-sm"
     >
-      <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
-        <div className="flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:items-center">
-          <fieldset className="flex flex-wrap gap-2">
-            <legend className="sr-only">Filter tools by type</legend>
-            {segmentedOptions.map((option) => (
-              <button
-                key={option.value}
-                type="button"
-                aria-pressed={typeFilter === option.value}
-                onClick={() => onTypeFilterChange(option.value)}
-                className={`rounded-full border px-3 py-1.5 text-sm transition ${
-                  typeFilter === option.value
-                    ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <fieldset className="flex flex-wrap gap-1.5">
+          <legend className="sr-only">Filter tools by type</legend>
+          {segmentedOptions.map((option) => (
+            <button
+              key={option.value}
+              type="button"
+              aria-pressed={typeFilter === option.value}
+              onClick={() => onTypeFilterChange(option.value)}
+              className={`${SEGMENT_BASE} ${typeFilter === option.value ? SEGMENT_ON : SEGMENT_OFF}`}
+            >
+              {option.label}
+            </button>
+          ))}
+        </fieldset>
+
+        <fieldset className="flex flex-wrap gap-1">
+          <legend className="sr-only">Filter tools by cloud support</legend>
+          {cloudOptions.map((cloud) => {
+            const checked = cloudFilters.includes(cloud);
+            return (
+              <label
+                key={cloud}
+                className={`inline-flex cursor-pointer items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] uppercase transition ${
+                  checked
+                    ? "border-[var(--color-primary)] bg-[color:rgba(59,130,246,0.12)] text-[var(--color-primary)]"
                     : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                 }`}
               >
-                {option.label}
-              </button>
-            ))}
-          </fieldset>
-
-          <fieldset className="flex flex-wrap gap-2">
-            <legend className="sr-only">Filter tools by cloud support</legend>
-            {cloudOptions.map((cloud) => (
-              <label
-                key={cloud}
-                className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm text-[var(--color-text-secondary)]"
-              >
                 <input
                   type="checkbox"
-                  checked={cloudFilters.includes(cloud)}
+                  checked={checked}
                   onChange={() => toggleCloud(cloud)}
-                  className="accent-[var(--color-primary)]"
+                  className="sr-only"
                 />
-                <span className="uppercase">{cloud}</span>
+                {cloud}
               </label>
-            ))}
-          </fieldset>
-        </div>
+            );
+          })}
+        </fieldset>
 
-        <div className="flex flex-col gap-3 sm:flex-row">
+        <label className="sr-only" htmlFor="sort-tools">
+          Sort tools
+        </label>
+        <select
+          id="sort-tools"
+          aria-label="Sort tools"
+          value={sortBy}
+          onChange={(event) => onSortByChange(event.target.value)}
+          className={SELECT_CLASS}
+        >
+          <option value="name">A–Z</option>
+          <option value="stars">Stars</option>
+          <option value="updated">Updated</option>
+        </select>
+
+        {resultCount !== undefined ? (
+          <span id={summaryId} className="ml-auto text-xs text-[var(--color-text-secondary)]" aria-live="polite">
+            {resultCount} {resultLabel}
+          </span>
+        ) : null}
+      </div>
+
+      <details className="mt-2" open={advancedActive > 0}>
+        <summary className="cursor-pointer select-none text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]">
+          More filters{advancedActive > 0 ? ` (${advancedActive})` : ""}
+        </summary>
+        <div className="mt-2 flex flex-wrap gap-2">
           <label className="sr-only" htmlFor="license-filter">
             Filter tools by license
           </label>
@@ -128,7 +164,7 @@ export function FilterBar({
             aria-label="Filter tools by license"
             value={licenseFilter}
             onChange={(event) => onLicenseFilterChange(event.target.value)}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+            className={SELECT_CLASS}
           >
             <option value="all">All licenses</option>
             {availableLicenses.map((license) => (
@@ -146,7 +182,7 @@ export function FilterBar({
             aria-label="Filter tools by deployment model"
             value={deploymentFilter}
             onChange={(event) => onDeploymentFilterChange(event.target.value)}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+            className={SELECT_CLASS}
           >
             <option value="all">All deployment models</option>
             {deploymentOptions.map((option) => (
@@ -164,7 +200,7 @@ export function FilterBar({
             aria-label="Filter tools by license risk"
             value={licenseRiskFilter}
             onChange={(event) => onLicenseRiskFilterChange(event.target.value)}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
+            className={SELECT_CLASS}
           >
             <option value="all">All license risk</option>
             {licenseRiskOptions.map((option) => (
@@ -173,29 +209,8 @@ export function FilterBar({
               </option>
             ))}
           </select>
-
-          <label className="sr-only" htmlFor="sort-tools">
-            Sort tools
-          </label>
-          <select
-            id="sort-tools"
-            aria-label="Sort tools"
-            value={sortBy}
-            onChange={(event) => onSortByChange(event.target.value)}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2 text-sm text-[var(--color-text-primary)]"
-          >
-            <option value="name">Name (A-Z)</option>
-            <option value="stars">Stars (high-low)</option>
-            <option value="updated">Last updated (recent first)</option>
-          </select>
         </div>
-      </div>
-
-      {resultCount !== undefined ? (
-        <p id={summaryId} className="mt-3 text-sm text-[var(--color-text-secondary)]" aria-live="polite">
-          Showing {resultCount} {resultLabel}.
-        </p>
-      ) : null}
+      </details>
     </section>
   );
 }

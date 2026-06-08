@@ -76,6 +76,77 @@ Acceptance:
 - No regressions to existing gates.
 Depends on: M2 (per-tool pages must exist so depth is not lost).
 
+## M7 — Snapshot-derived change events  [ ]
+Goal: derive change events automatically by diffing successive snapshots so routine drift (license, deployment model, cert added/removed, status transitions) surfaces without a manual `updates.json` entry.
+In scope:
+- `scripts/diff-snapshots.mjs` reads the two most recent `data/snapshots/*.json` files and emits a per-tool change list with before/after.
+- A site-wide auto-detected events feed on `/updates`, distinguishable from manually-curated entries.
+- Per-tool change history section also renders the auto-detected entries with explicit before/after.
+- Flag high-severity diffs (license-risk increase, cert removal, status → deprecated/archived).
+Acceptance:
+- After a `/radar` run that adds a new snapshot, the change feed shows the derived events without any manual editing.
+- Diffs render with a clear "Auto-detected from snapshot diff" label and a link to the two snapshot files.
+Depends on: M4 (snapshot pipeline — done).
+
+## M8 — FAQ structured data on hub pages  [ ]
+Goal: extend `FAQPage` JSON-LD beyond `/evaluate` to the homepage and each category hub so AI assistants and search engines can pick up the direct-answer pairs.
+In scope:
+- Add 3–5 question/answer pairs per hub (home, platforms, agents, orchestration, governance, assistants).
+- Use the existing `buildFaqPageJsonLd` helper; emit alongside CollectionPage + BreadcrumbList where present.
+- Keep answer text consistent with the trimmed hub intros (no marketing copy creep).
+Acceptance:
+- Each hub page emits valid FAQPage structured data, validated by `check-seo-readiness`.
+- Adding a hub FAQ does not duplicate the visible page text.
+Depends on: M5 (FAQ JSON-LD shape — done).
+
+## M9 — Tool comparison page  [ ]
+Goal: a static side-by-side comparison surface so a reader can pick 2–3 tools and read them column-by-column on every governance dimension.
+In scope:
+- Static route under `/tools/compare/<a>-vs-<b>/` (or similar) with `generateStaticParams` enumerating curated pairings, OR a client-rendered chooser inside an existing route that emits a static page per high-value combination.
+- Columns: identity, license, version, status, governance posture (per-dimension), change history, links to each tool's full page.
+- No backend; no per-query SSR.
+Acceptance:
+- A user can land on a comparison URL and see two or three tracked tools side-by-side without bouncing between pages.
+- The route is fully statically exported and listed in the sitemap.
+Depends on: M2 (governance posture — done).
+
+## M10 — Mobile polish and accessibility audit  [ ]
+Goal: complete a full pass for mobile-specific layout regressions and keyboard / screen-reader accessibility on every page.
+In scope:
+- Audit each route in mobile widths (≤ 480px) and tablet widths; fix wrapping, overflow, and tap-target issues.
+- Verify keyboard navigation across the filter bar, evaluate flow, per-tool change history, and search.
+- Add or correct ARIA labelling where implicit semantics are insufficient.
+- Verify WCAG AA color contrast on light and dark themes.
+- Optional: add a `check-accessibility` script in CI that runs `axe-core` against the static export.
+Acceptance:
+- No horizontal scroll on any tracked route at 360px width.
+- Every interactive control is keyboard-operable with visible focus.
+- Representative pages score ≥ 95 on Lighthouse accessibility.
+Depends on: M3 (evaluate flow — done) and M6 (page slimming — done).
+
+## M11 — Data freshness rotation  [ ]
+Goal: surface per-tool data freshness prominently and feed stale records into the next `/radar` run.
+In scope:
+- Visible "verified `<date>`" chip on per-tool pages; stale-flag styling when `governance.reviewedAt` is older than a configurable threshold.
+- `scripts/check-data-freshness.mjs` lists tools whose verification is overdue, wired into the `/radar` prep step.
+- Optional: per-field staleness (license, version, stars verified separately).
+Acceptance:
+- Stale tools are visible on the page AND surface in `/radar` preparation output.
+- Freshness threshold is documented in `data/SCHEMA.md`.
+Depends on: M2 (governance review dates — done), M4 (snapshot pipeline — done).
+
+## M12 — Performance and build polish  [ ]
+Goal: tighten bundle size, image handling, and font loading for the static export.
+In scope:
+- Audit `next build` output for per-route JS size and identify trim opportunities.
+- Optimize logo and platform-mark image delivery for the static-export setup (`images.unoptimized: true` is already set; ensure proper width/height and `loading` hints are present at the markup level).
+- Verify no third-party runtime fonts are pulled at page load.
+- Document baseline numbers in `docs/`.
+Acceptance:
+- Per-route JS does not grow vs. the documented baseline without a recorded reason.
+- LCP and CLS targets met on a representative page test (homepage + a per-tool page).
+Depends on: none.
+
 ## Dependencies at a glance
 - M1 is done, so M2 can start now.
 - M2 feeds M3.
