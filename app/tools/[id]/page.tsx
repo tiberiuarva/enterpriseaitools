@@ -4,9 +4,11 @@ import { ExternalLink, Globe, Star } from "lucide-react";
 import { GovernancePosture } from "@/components/governance-posture";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToolArticleJsonLd } from "@/components/json-ld";
+import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { WarningBox } from "@/components/warning-box";
+import { comparisonPairs } from "@/lib/comparisons";
 import { lastUpdated, snapshotDiffEvents, tools, updates } from "@/lib/data";
 import { FRESHNESS_THRESHOLD_DAYS, getFreshnessStatus } from "@/lib/freshness";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
@@ -72,6 +74,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
   const toolHistory = updates.filter((update) => update.toolId === tool.id);
   const toolSnapshotDiffs = snapshotDiffEvents.filter((event) => event.toolId === tool.id);
+  const toolComparisons = comparisonPairs.filter((pair) => pair.toolIds.includes(tool.id));
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -264,6 +267,11 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
             </ol>
           </section>
         ) : null}
+
+        <RelatedComparisons
+          pairs={toolComparisons}
+          intro={`See ${tool.name} read column-by-column against the tools enterprise teams most often evaluate it against.`}
+        />
 
         <RelatedHubs
           currentPath={`/tools/${tool.id}`}

@@ -46,7 +46,7 @@ const utilityHrefs = ["/evaluate", "/updates", "/about"] as const;
 const categoryNavHrefs = ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"] as const;
 const utilityLinks = navItems.filter((item) => utilityHrefs.includes(item.href as (typeof utilityHrefs)[number]));
 const categoryLinks = navItems.filter((item) => categoryNavHrefs.includes(item.href as (typeof categoryNavHrefs)[number]));
-const primaryNavHrefs = new Set([homeLink.href, ...categoryNavHrefs, ...utilityHrefs]);
+const primaryNavHrefs = new Set<string>([homeLink.href, ...categoryNavHrefs, ...utilityHrefs]);
 const uncategorizedLinks = navItems.filter((item) => !primaryNavHrefs.has(item.href));
 
 function navLinkClass(isCurrent: boolean) {

@@ -3,13 +3,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { FilterBar } from "@/components/filter-bar";
+import { HubFaqs } from "@/components/hub-faqs";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
+import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { filterTools, getAvailableLicenses, isDeploymentModel, isLicenseRiskLevel, type CategoryFilterState } from "@/lib/category-filters";
 import type { CategoryComparison } from "@/lib/category-comparisons";
+import type { ComparisonPair } from "@/lib/comparisons";
+import type { HubFaq } from "@/lib/hub-faqs";
+import { withBasePath } from "@/lib/site";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 type FilteredCategorySectionsProps = {
@@ -18,6 +23,8 @@ type FilteredCategorySectionsProps = {
   updates: UpdateEntry[];
   platforms: Platform[];
   comparison?: CategoryComparison;
+  faqs?: HubFaq[];
+  relatedPairs?: ComparisonPair[];
 };
 
 type FilterStateSnapshot = {
@@ -117,7 +124,7 @@ function buildFilterQuery({
   return next.toString();
 }
 
-export function FilteredCategorySections({ category, tools, updates, platforms, comparison }: FilteredCategorySectionsProps) {
+export function FilteredCategorySections({ category, tools, updates, platforms, comparison, faqs = [], relatedPairs = [] }: FilteredCategorySectionsProps) {
   const router = useRouter();
   const pathname = usePathname();
   const didMountRef = useRef(false);
@@ -299,7 +306,15 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
 
       {visibleUpdates.length > 0 ? (
         <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <h2 className="text-lg font-semibold">Recent updates</h2>
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-lg font-semibold">Recent updates</h2>
+            <a
+              href={`${withBasePath("/updates")}#auto-detected`}
+              className="text-xs font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+            >
+              See auto-detected changes →
+            </a>
+          </div>
           <div className="mt-4 space-y-4">
             {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
@@ -313,6 +328,10 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
           </div>
         </section>
       ) : null}
+
+      <RelatedComparisons pairs={relatedPairs} title="Popular comparisons in this category" />
+
+      <HubFaqs faqs={faqs} />
 
       <RelatedHubs
         currentPath={`/${category}`}

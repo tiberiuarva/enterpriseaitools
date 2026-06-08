@@ -9,6 +9,7 @@ export const navItems = [
   { href: '/governance', label: 'Governance' },
   { href: '/assistants', label: 'Assistants' },
   { href: '/evaluate', label: 'Evaluate' },
+  { href: '/tools/compare', label: 'Compare tools' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ] as const;

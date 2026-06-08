@@ -17,3 +17,13 @@ export const comparisonPairs: ComparisonPair[] = comparisonsData as ComparisonPa
 export function getComparisonPair(slug: string): ComparisonPair | undefined {
   return comparisonPairs.find((pair) => pair.slug === slug);
 }
+
+/**
+ * Curated pairings whose tools all live in the given set of `toolIds`.
+ * Used by category hubs to surface only the pairings entirely contained
+ * within that category. Caps at `limit` to avoid drowning the page.
+ */
+export function getComparisonsForToolIds(toolIds: string[], limit = 6): ComparisonPair[] {
+  const allowed = new Set(toolIds);
+  return comparisonPairs.filter((pair) => pair.toolIds.every((id) => allowed.has(id))).slice(0, limit);
+}

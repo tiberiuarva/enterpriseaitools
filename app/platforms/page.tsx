@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd } from "@/components/json-ld";
 import { platformsFaqs } from "@/lib/hub-faqs";
 import { HomeShell } from "@/components/home-shell";
@@ -209,6 +210,8 @@ export default function PlatformsPage() {
             The platform formerly called Vertex AI is now the <strong>Gemini Enterprise Agent Platform</strong>. Do not confuse Google AI Studio (free playground) with the enterprise platform, nor the platform with the separate <strong>Gemini Enterprise</strong> assistant product (the former Agentspace).
           </WarningBox>
         </section>
+
+        <HubFaqs faqs={platformsFaqs} />
 
         <RelatedHubs
           currentPath="/platforms"

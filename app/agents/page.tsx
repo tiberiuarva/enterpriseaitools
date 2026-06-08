@@ -3,6 +3,7 @@ import { CategoryPage } from "@/components/category-page";
 import { HomeShell } from "@/components/home-shell";
 import { categoryComparisons } from "@/lib/category-comparisons";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { getComparisonsForToolIds } from "@/lib/comparisons";
 import { agentsFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function AgentsPage() {
+  const tools = getToolsByCategory("agents");
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/agents">
       <CategoryPage
@@ -24,12 +26,13 @@ export default function AgentsPage() {
           "Compare cloud-native agent platforms with open-source frameworks on governance posture, deployment surface, and license risk — full details on each tool's page.",
         ]}
         iconName="bot"
-        tools={getToolsByCategory("agents")}
+        tools={tools}
         updates={getUpdatesByCategory("agents")}
         platforms={getPlatformsForCategory("agents")}
         comparison={categoryComparisons.agents}
         enableFiltering
         faqs={agentsFaqs}
+        relatedPairs={getComparisonsForToolIds(tools.map((tool) => tool.id))}
       />
     </HomeShell>
   );

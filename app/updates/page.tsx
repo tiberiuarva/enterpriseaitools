@@ -104,7 +104,10 @@ export default function UpdatesPage() {
           <UpdatesFeed updates={updates} />
         </div>
 
-        <div className="mt-6">
+        <div
+          id="auto-detected"
+          className="mt-6 scroll-mt-[calc(var(--site-header-height)_+_1rem)]"
+        >
           <SnapshotDiffFeed events={snapshotDiffEvents} snapshotCount={snapshotCount} />
         </div>
 

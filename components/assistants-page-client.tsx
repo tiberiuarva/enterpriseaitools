@@ -3,15 +3,19 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { FilterBar } from "@/components/filter-bar";
+import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
+import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { assistantsComparisons, type AssistantsSubcategory } from "@/lib/assistants-comparisons";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
+import type { ComparisonPair } from "@/lib/comparisons";
 import { siteUrl } from "@/lib/metadata";
+import { withBasePath } from "@/lib/site";
 import type { Platform, Tool, UpdateEntry } from "@/lib/types";
 
 const subcategoryOrder: AssistantsSubcategory[] = ["coding", "productivity", "build-your-own"];
@@ -30,6 +34,7 @@ type AssistantsPageClientProps = {
   updates: UpdateEntry[];
   platforms: Platform[];
   faqs?: { question: string; answer: string }[];
+  relatedPairs?: ComparisonPair[];
 };
 
 type AssistantFilterState = {
@@ -50,7 +55,7 @@ const defaultFilterState: AssistantFilterState = {
   sortBy: "name",
 };
 
-export function AssistantsPageClient({ title, description, introParagraphs, tools, updates, platforms, faqs }: AssistantsPageClientProps) {
+export function AssistantsPageClient({ title, description, introParagraphs, tools, updates, platforms, faqs, relatedPairs = [] }: AssistantsPageClientProps) {
   const [activeTab, setActiveTab] = useState<AssistantsSubcategory>("coding");
   const [filterState, setFilterState] = useState<AssistantFilterState>(defaultFilterState);
   const tabRefs = useRef<Record<AssistantsSubcategory, HTMLButtonElement | null>>({
@@ -316,7 +321,15 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
 
         {visibleUpdates.length > 0 ? (
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-            <h2 className="text-lg font-semibold">Recent updates</h2>
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 className="text-lg font-semibold">Recent updates</h2>
+              <a
+                href={`${withBasePath("/updates")}#auto-detected`}
+                className="text-xs font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+              >
+                See auto-detected changes →
+              </a>
+            </div>
             <div className="mt-4 space-y-4">
               {visibleUpdates.map((update) => (
                 <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
@@ -331,6 +344,10 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
           </section>
         ) : null}
       </div>
+
+      <RelatedComparisons pairs={relatedPairs} title="Popular comparisons for assistants" />
+
+      {faqs && faqs.length > 0 ? <HubFaqs faqs={faqs} /> : null}
 
       <RelatedHubs
         currentPath="/assistants"
