@@ -209,6 +209,7 @@ export default function AboutPage() {
                 href="https://www.linkedin.com/in/tiberiuarva/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Tiberiu Arva on LinkedIn"
                 className="mt-3 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
               >
                 LinkedIn

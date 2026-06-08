@@ -148,8 +148,12 @@ Acceptance:
 Depends on: none.
 
 ## Dependencies at a glance
-- M1 is done, so M2 can start now.
-- M2 feeds M3.
-- M4's persistence step and parts of M5 can run alongside M2.
+- M0–M6 are done. The active plan is M7–M12.
+- M7 depends on M4 (snapshot pipeline).
+- M8 depends on M5 (FAQ JSON-LD helper).
+- M9 depends on M2 (governance posture).
+- M10 builds on M3 (evaluate flow) and M6 (page slimming).
+- M11 builds on M2 (review dates) and M4 (snapshot pipeline).
+- M12 is independent and parallelizable.
 
 Each milestone's tasks are worked as individual findings / PRs (one PR per task), tracked under the matching GitHub Milestone.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo } from "react";
+import { useMemo } from "react";
 
 type FilterValue = "all" | "vendor" | "opensource" | "commercial";
 
@@ -63,12 +63,11 @@ export function FilterBar({
     () => [
       { label: "All", value: "all" },
       { label: "Vendor", value: "vendor" },
-      { label: "OSS", value: "opensource" },
+      { label: "Open Source", value: "opensource" },
       { label: "Commercial", value: "commercial" },
     ] as const,
     [],
   );
-  const summaryId = useId();
   const advancedActive =
     (licenseFilter !== "all" ? 1 : 0) +
     (deploymentFilter !== "all" ? 1 : 0) +
@@ -113,7 +112,7 @@ export function FilterBar({
                 key={cloud}
                 className={`inline-flex cursor-pointer items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] uppercase transition ${
                   checked
-                    ? "border-[var(--color-primary)] bg-[color:rgba(59,130,246,0.12)] text-[var(--color-primary)]"
+                    ? "border-[var(--color-primary)] bg-[var(--color-primary-soft)] text-[var(--color-primary)]"
                     : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                 }`}
               >
@@ -145,13 +144,13 @@ export function FilterBar({
         </select>
 
         {resultCount !== undefined ? (
-          <span id={summaryId} className="ml-auto text-xs text-[var(--color-text-secondary)]" aria-live="polite">
+          <span className="ml-auto text-xs text-[var(--color-text-secondary)]" aria-live="polite">
             {resultCount} {resultLabel}
           </span>
         ) : null}
       </div>
 
-      <details className="mt-2" open={advancedActive > 0}>
+      <details key={advancedActive > 0 ? "open" : "closed"} className="mt-2" open={advancedActive > 0}>
         <summary className="cursor-pointer select-none text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]">
           More filters{advancedActive > 0 ? ` (${advancedActive})` : ""}
         </summary>
