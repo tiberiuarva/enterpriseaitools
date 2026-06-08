@@ -280,6 +280,22 @@ Top-level shape:
 | `current` | unknown | yes | Field value in the newer snapshot (or `null`). |
 | `highImpact` | boolean | yes | `true` for license, status, certifications (SOC 2 / ISO 27001 / ISO 42001), license-risk level, and tool removals — surfaces a warning badge in the UI. |
 
+## `data/comparison-slugs.json`
+
+Curated list of tool-vs-tool pairings rendered as static `/tools/compare/<slug>/`
+routes. Maintained by hand; each entry produces one SSG page and one sitemap URL.
+Consumed by `lib/comparisons.ts` (page rendering) and
+`scripts/generate-seo-artifacts.mjs` (sitemap).
+
+Top-level shape: a JSON array of `ComparisonPair` objects (no envelope).
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `slug` | string | yes | URL-safe kebab-case slug, unique across all entries. Drives `/tools/compare/<slug>/`. |
+| `toolIds` | string[] | yes | 2–3 `id` values from `tools.json`. All must resolve at build time or the route renders `notFound()`. |
+| `title` | string | yes | Page `<h1>` and SEO title. |
+| `description` | string | yes | Page meta description and JSON-LD `description`. |
+
 ## Data freshness
 
 `tool.governance.reviewedAt` records when each per-tool governance posture was

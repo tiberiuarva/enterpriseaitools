@@ -1,4 +1,4 @@
-import comparisonsData from "@/data/comparison-slugs.json";
+import comparisonsData from "../data/comparison-slugs.json" with { type: "json" };
 
 // Curated tool-vs-tool comparison pairings. Sourced from
 // data/comparison-slugs.json so the SEO sitemap generator and the per-page

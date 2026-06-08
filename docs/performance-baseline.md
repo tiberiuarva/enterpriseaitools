@@ -16,10 +16,10 @@ materially changes the bundle or page count.
 
 | Metric | Value | Notes |
 |---|---:|---|
-| Static routes generated | 61 | `/`, 8 hub routes (`/platforms`, `/agents`, `/orchestration`, `/governance`, `/assistants`, `/updates`, `/evaluate`, `/about`), 48 `/tools/<id>` pages, `_not-found`, `icon.svg`. |
+| Static routes generated | 70 | `/`, 8 hub routes (`/platforms`, `/agents`, `/orchestration`, `/governance`, `/assistants`, `/updates`, `/evaluate`, `/about`), 48 `/tools/<id>` pages, the `/tools/compare` index + 8 `/tools/compare/<slug>` comparison pages, `_not-found`, `icon.svg`. |
 | Total `out/` size | 24 MB | Includes HTML, JS chunks, logos, generated SEO artifacts. |
 | `out/_next/static/` size | 1.2 MB | All shared and per-route JS, CSS, fonts assets. |
-| Total HTML bytes | ~7.4 MB | Across all 60 HTML files. |
+| Total HTML bytes | ~7.4 MB | Across all 69 HTML files. |
 | Largest single JS chunk | 222 KB (uncompressed) | One vendor chunk; the next two sit at 133 KB and 110 KB. Remaining chunks are under 60 KB each. |
 | Largest HTML route | `/evaluate/` at 228 KB | Carries the full guided-flow client component inlined. |
 | Mid-tier HTML routes | `/agents/`, `/orchestration/`, `/updates/` at 180–220 KB | Filter bar + tool grid + JSON-LD. |
