@@ -7,6 +7,7 @@ type RelatedComparisonsProps = {
   title?: string;
   intro?: string;
   currentSlug?: string;
+  headingId?: string;
 };
 
 export function RelatedComparisons({
@@ -14,6 +15,7 @@ export function RelatedComparisons({
   title = "Side-by-side comparisons",
   intro = "Read these tools next to one another across every tracked governance dimension.",
   currentSlug,
+  headingId = "related-comparisons-heading",
 }: RelatedComparisonsProps) {
   const visiblePairs = currentSlug ? pairs.filter((pair) => pair.slug !== currentSlug) : pairs;
 
@@ -23,7 +25,7 @@ export function RelatedComparisons({
 
   return (
     <section
-      aria-labelledby="related-comparisons-heading"
+      aria-labelledby={headingId}
       className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
     >
       <div className="flex items-start gap-3">
@@ -31,7 +33,7 @@ export function RelatedComparisons({
           <GitCompare size={18} aria-hidden="true" />
         </div>
         <div>
-          <h2 id="related-comparisons-heading" className="text-lg font-semibold text-[var(--color-text-primary)]">
+          <h2 id={headingId} className="text-lg font-semibold text-[var(--color-text-primary)]">
             {title}
           </h2>
           <p className="mt-1 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{intro}</p>

@@ -14,6 +14,7 @@ import { WarningBox } from "@/components/warning-box";
 import { assistantsComparisons, type AssistantsSubcategory } from "@/lib/assistants-comparisons";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
 import type { ComparisonPair } from "@/lib/comparisons";
+import type { HubFaq } from "@/lib/hub-faqs";
 import { siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import type { Platform, Tool, UpdateEntry } from "@/lib/types";
@@ -33,7 +34,7 @@ type AssistantsPageClientProps = {
   tools: Tool[];
   updates: UpdateEntry[];
   platforms: Platform[];
-  faqs?: { question: string; answer: string }[];
+  faqs?: HubFaq[];
   relatedPairs?: ComparisonPair[];
 };
 

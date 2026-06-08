@@ -332,7 +332,7 @@ export default function Home() {
                   <ArrowUpRight size={16} />
                 </a>
                 <a
-                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                   href={`${withBasePath("/updates")}#auto-detected`}
                 >
                   See auto-detected changes

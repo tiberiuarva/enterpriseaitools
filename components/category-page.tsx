@@ -8,6 +8,7 @@ import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
 import { WarningBox } from "@/components/warning-box";
 import type { ComparisonPair } from "@/lib/comparisons";
+import type { HubFaq } from "@/lib/hub-faqs";
 import { siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import type { CategoryComparison } from "@/lib/category-comparisons";
@@ -26,7 +27,7 @@ type CategoryPageProps = {
   platforms: Platform[];
   comparison?: CategoryComparison;
   enableFiltering?: boolean;
-  faqs?: { question: string; answer: string }[];
+  faqs?: HubFaq[];
   relatedPairs?: ComparisonPair[];
 };
 
