@@ -9,6 +9,11 @@ export const navItems = [
   { href: '/governance', label: 'Governance' },
   { href: '/assistants', label: 'Assistants' },
   { href: '/evaluate', label: 'Evaluate' },
+  // Intentionally not in the desktop categoryNav/utility groups (header.tsx):
+  // comparison intent is contextual, not navigational, so this stays out of the
+  // desktop bar (Hick's law) and surfaces only under the mobile "More" group via
+  // the uncategorizedLinks filter. Contextual cross-links carry desktop discovery.
+  { href: '/tools/compare', label: 'Compare tools' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
 ] as const;

@@ -6,13 +6,16 @@ import {
   BriefcaseBusiness,
   CalendarClock,
   GitBranch,
+  GitCompare,
   Landmark,
   Layers3,
   ShieldCheck,
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
+import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildDataCatalogJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
+import { comparisonPairs } from "@/lib/comparisons";
 import { homeFaqs } from "@/lib/hub-faqs";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
@@ -245,6 +248,45 @@ export default function Home() {
           ))}
         </section>
 
+        <section
+          aria-labelledby="compare-tile-heading"
+          className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+        >
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+            <div className="flex items-start gap-3">
+              <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
+                <GitCompare size={24} aria-hidden="true" />
+              </div>
+              <div className="max-w-2xl">
+                <h2 id="compare-tile-heading" className="text-lg font-semibold text-[var(--color-text-primary)]">
+                  Compare tools side-by-side
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                  {comparisonPairs.length} curated head-to-head comparisons across agent platforms, guardrails,
+                  and assistants — every governance dimension laid out column-by-column.
+                </p>
+                <ul className="mt-3 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
+                  {comparisonPairs.slice(0, 3).map((pair) => (
+                    <li
+                      key={pair.slug}
+                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2.5 py-1"
+                    >
+                      {pair.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <a
+              href={withBasePath("/tools/compare")}
+              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+            >
+              Open comparisons
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </div>
+        </section>
+
         {latestUpdate ? (
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
             <div className="border-l-4 border-[var(--color-primary)] pl-4">
@@ -289,10 +331,19 @@ export default function Home() {
                   Read source
                   <ArrowUpRight size={16} />
                 </a>
+                <a
+                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                  href={`${withBasePath("/updates")}#auto-detected`}
+                >
+                  See auto-detected changes
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
               </div>
             </div>
           </section>
         ) : null}
+
+        <HubFaqs faqs={homeFaqs} />
       </main>
     </HomeShell>
   );

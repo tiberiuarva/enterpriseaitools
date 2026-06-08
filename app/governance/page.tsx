@@ -3,6 +3,7 @@ import { CategoryPage } from "@/components/category-page";
 import { HomeShell } from "@/components/home-shell";
 import { categoryComparisons } from "@/lib/category-comparisons";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { getComparisonsForToolIds } from "@/lib/comparisons";
 import { governanceFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function GovernancePage() {
+  const tools = getToolsByCategory("governance");
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/governance">
       <CategoryPage
@@ -24,12 +26,13 @@ export default function GovernancePage() {
           "Compare cloud guardrails with independent safety vendors on certifications, data residency, and deployment ownership — full details on each tool's page.",
         ]}
         iconName="shield-check"
-        tools={getToolsByCategory("governance")}
+        tools={tools}
         updates={getUpdatesByCategory("governance")}
         platforms={getPlatformsForCategory("governance")}
         comparison={categoryComparisons.governance}
         enableFiltering
         faqs={governanceFaqs}
+        relatedPairs={getComparisonsForToolIds(tools.map((tool) => tool.id))}
       />
     </HomeShell>
   );

@@ -1,6 +1,6 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
-import { comparisonPairs, getComparisonPair } from "./comparisons.ts";
+import { comparisonPairs, getComparisonPair, getComparisonsForToolIds } from "./comparisons.ts";
 
 describe("comparisons", () => {
   it("exposes a non-empty list of comparison pairs", () => {
@@ -36,5 +36,26 @@ describe("comparisons", () => {
 
   it("getComparisonPair returns undefined for an unknown slug", () => {
     assert.equal(getComparisonPair("not-a-real-comparison-slug"), undefined);
+  });
+
+  it("getComparisonsForToolIds returns only pairings fully contained in the input set", () => {
+    const known = comparisonPairs[0];
+    const matches = getComparisonsForToolIds(known.toolIds);
+    assert.ok(matches.some((pair) => pair.slug === known.slug));
+    for (const pair of matches) {
+      for (const id of pair.toolIds) {
+        assert.ok(known.toolIds.includes(id));
+      }
+    }
+  });
+
+  it("getComparisonsForToolIds returns an empty array when no pairing is fully contained", () => {
+    assert.deepEqual(getComparisonsForToolIds(["nonexistent-tool"]), []);
+  });
+
+  it("getComparisonsForToolIds respects the limit", () => {
+    const allIds = Array.from(new Set(comparisonPairs.flatMap((pair) => pair.toolIds)));
+    const matches = getComparisonsForToolIds(allIds, 2);
+    assert.ok(matches.length <= 2);
   });
 });
