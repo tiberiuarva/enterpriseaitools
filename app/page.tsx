@@ -12,7 +12,8 @@ import {
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
 import { HomeShell } from "@/components/home-shell";
-import { JsonLd, buildDataCatalogJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildDataCatalogJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
+import { homeFaqs } from "@/lib/hub-faqs";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
@@ -125,6 +126,7 @@ export default function Home() {
         },
       ],
     }),
+    buildFaqPageJsonLd(homeFaqs),
   ];
 
   return (

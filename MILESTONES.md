@@ -76,7 +76,7 @@ Acceptance:
 - No regressions to existing gates.
 Depends on: M2 (per-tool pages must exist so depth is not lost).
 
-## M7 — Snapshot-derived change events  [ ]
+## M7 — Snapshot-derived change events  [x] done
 Goal: derive change events automatically by diffing successive snapshots so routine drift (license, deployment model, cert added/removed, status transitions) surfaces without a manual `updates.json` entry.
 In scope:
 - `scripts/diff-snapshots.mjs` reads the two most recent `data/snapshots/*.json` files and emits a per-tool change list with before/after.
@@ -88,7 +88,7 @@ Acceptance:
 - Diffs render with a clear "Auto-detected from snapshot diff" label and a link to the two snapshot files.
 Depends on: M4 (snapshot pipeline — done).
 
-## M8 — FAQ structured data on hub pages  [ ]
+## M8 — FAQ structured data on hub pages  [x] done
 Goal: extend `FAQPage` JSON-LD beyond `/evaluate` to the homepage and each category hub so AI assistants and search engines can pick up the direct-answer pairs.
 In scope:
 - Add 3–5 question/answer pairs per hub (home, platforms, agents, orchestration, governance, assistants).
@@ -99,7 +99,7 @@ Acceptance:
 - Adding a hub FAQ does not duplicate the visible page text.
 Depends on: M5 (FAQ JSON-LD shape — done).
 
-## M9 — Tool comparison page  [ ]
+## M9 — Tool comparison page  [x] done
 Goal: a static side-by-side comparison surface so a reader can pick 2–3 tools and read them column-by-column on every governance dimension.
 In scope:
 - Static route under `/tools/compare/<a>-vs-<b>/` (or similar) with `generateStaticParams` enumerating curated pairings, OR a client-rendered chooser inside an existing route that emits a static page per high-value combination.
@@ -110,7 +110,7 @@ Acceptance:
 - The route is fully statically exported and listed in the sitemap.
 Depends on: M2 (governance posture — done).
 
-## M10 — Mobile polish and accessibility audit  [ ]
+## M10 — Mobile polish and accessibility audit  [x] done
 Goal: complete a full pass for mobile-specific layout regressions and keyboard / screen-reader accessibility on every page.
 In scope:
 - Audit each route in mobile widths (≤ 480px) and tablet widths; fix wrapping, overflow, and tap-target issues.
@@ -124,7 +124,7 @@ Acceptance:
 - Representative pages score ≥ 95 on Lighthouse accessibility.
 Depends on: M3 (evaluate flow — done) and M6 (page slimming — done).
 
-## M11 — Data freshness rotation  [ ]
+## M11 — Data freshness rotation  [x] done
 Goal: surface per-tool data freshness prominently and feed stale records into the next `/radar` run.
 In scope:
 - Visible "verified `<date>`" chip on per-tool pages; stale-flag styling when `governance.reviewedAt` is older than a configurable threshold.
@@ -135,7 +135,7 @@ Acceptance:
 - Freshness threshold is documented in `data/SCHEMA.md`.
 Depends on: M2 (governance review dates — done), M4 (snapshot pipeline — done).
 
-## M12 — Performance and build polish  [ ]
+## M12 — Performance and build polish  [x] done
 Goal: tighten bundle size, image handling, and font loading for the static export.
 In scope:
 - Audit `next build` output for per-route JS size and identify trim opportunities.
@@ -148,7 +148,7 @@ Acceptance:
 Depends on: none.
 
 ## Dependencies at a glance
-- M0–M6 are done. The active plan is M7–M12.
+- M0–M12 are done.
 - M7 depends on M4 (snapshot pipeline).
 - M8 depends on M5 (FAQ JSON-LD helper).
 - M9 depends on M2 (governance posture).

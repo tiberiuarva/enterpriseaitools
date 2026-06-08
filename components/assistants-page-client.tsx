@@ -3,7 +3,7 @@
 import { BriefcaseBusiness } from "lucide-react";
 import { useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { FilterBar } from "@/components/filter-bar";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
@@ -29,6 +29,7 @@ type AssistantsPageClientProps = {
   tools: Tool[];
   updates: UpdateEntry[];
   platforms: Platform[];
+  faqs?: { question: string; answer: string }[];
 };
 
 type AssistantFilterState = {
@@ -49,7 +50,7 @@ const defaultFilterState: AssistantFilterState = {
   sortBy: "name",
 };
 
-export function AssistantsPageClient({ title, description, introParagraphs, tools, updates, platforms }: AssistantsPageClientProps) {
+export function AssistantsPageClient({ title, description, introParagraphs, tools, updates, platforms, faqs }: AssistantsPageClientProps) {
   const [activeTab, setActiveTab] = useState<AssistantsSubcategory>("coding");
   const [filterState, setFilterState] = useState<AssistantFilterState>(defaultFilterState);
   const tabRefs = useRef<Record<AssistantsSubcategory, HTMLButtonElement | null>>({
@@ -176,6 +177,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
       description,
     }),
     buildToolListJsonLd(tools, title, description, pageUrl),
+    ...(faqs && faqs.length > 0 ? [buildFaqPageJsonLd(faqs)] : []),
   ];
 
   return (
@@ -204,7 +206,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
       <PlatformCategoryBar category="assistants" platforms={platforms} />
 
       <section
-        className="sticky z-20 -mx-2 px-2 pb-2 pt-1 sm:mx-0 sm:px-0 bg-[linear-gradient(to_bottom,var(--color-bg-surface),color-mix(in_srgb,var(--color-bg-surface)_82%,transparent))]"
+        className="sticky z-20 pb-2 pt-1"
         style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
         <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">

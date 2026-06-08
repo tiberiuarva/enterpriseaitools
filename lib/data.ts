@@ -1,8 +1,9 @@
 import platformsData from "@/data/platforms.json";
+import snapshotDiffsData from "@/data/snapshot-diffs.json";
 import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
 import { filterToolsByCategory, latestIsoDate } from "@/lib/dataset-metrics";
-import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
+import type { Platform, SnapshotDiffEvent, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 export const tools = toolsData.tools as Tool[];
 export const platforms = platformsData.platforms as Platform[];
@@ -31,6 +32,13 @@ const latestDataDate = latestIsoDate([
 export const lastUpdated = latestDataDate ?? toolsData.lastUpdated;
 
 export const latestUpdate = updates[0] ?? null;
+
+export const snapshotDiffEvents = (snapshotDiffsData.events as SnapshotDiffEvent[])
+  .slice()
+  .sort((a, b) => b.to.localeCompare(a.to) || a.toolName.localeCompare(b.toolName) || a.field.localeCompare(b.field));
+
+export const snapshotDiffsGeneratedAt = snapshotDiffsData.generatedAt ?? null;
+export const snapshotCount = snapshotDiffsData.snapshotCount ?? 0;
 
 export const categoryDescriptions: Record<ToolCategory, string> = {
   agents: "Managed cloud agent platforms and open source agent frameworks.",

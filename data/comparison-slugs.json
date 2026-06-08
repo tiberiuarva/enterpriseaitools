@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "microsoft-foundry-agent-service-vs-aws-bedrock-agents",
+    "toolIds": ["microsoft-foundry-agent-service", "aws-bedrock-agents"],
+    "title": "Microsoft Foundry Agent Service vs Amazon Bedrock Agents",
+    "description": "Side-by-side comparison of the Microsoft and AWS managed agent platforms — governance posture, deployment surface, certifications, and license risk."
+  },
+  {
+    "slug": "microsoft-foundry-agent-service-vs-google-agent-builder-adk",
+    "toolIds": ["microsoft-foundry-agent-service", "google-agent-builder-adk"],
+    "title": "Microsoft Foundry Agent Service vs Google Agent Builder & ADK",
+    "description": "Side-by-side comparison of the Microsoft Foundry agent stack and the Gemini Enterprise Agent Builder / ADK pairing across governance dimensions."
+  },
+  {
+    "slug": "aws-bedrock-agents-vs-google-agent-builder-adk",
+    "toolIds": ["aws-bedrock-agents", "google-agent-builder-adk"],
+    "title": "Amazon Bedrock Agents vs Google Agent Builder & ADK",
+    "description": "Side-by-side comparison of the AWS Bedrock Agents stack and the Gemini Enterprise Agent Builder / ADK pairing."
+  },
+  {
+    "slug": "langgraph-vs-semantic-kernel",
+    "toolIds": ["langgraph", "semantic-kernel"],
+    "title": "LangGraph vs Semantic Kernel",
+    "description": "Open-source agent frameworks side-by-side — deployment model, license risk, governance posture, and certifications."
+  },
+  {
+    "slug": "langgraph-vs-autogen-vs-crewai",
+    "toolIds": ["langgraph", "autogen", "crewai"],
+    "title": "LangGraph vs AutoGen vs CrewAI",
+    "description": "Three of the most-evaluated open-source agent orchestration frameworks compared on governance dimensions and license posture."
+  },
+  {
+    "slug": "azure-ai-content-safety-vs-aws-bedrock-guardrails-vs-google-model-armor",
+    "toolIds": ["azure-ai-content-safety", "aws-bedrock-guardrails", "google-model-armor"],
+    "title": "Azure AI Content Safety vs Bedrock Guardrails vs Model Armor",
+    "description": "Cloud-native guardrail services from Microsoft, AWS, and Google compared on residency, audit, certifications, and EU AI Act fit."
+  },
+  {
+    "slug": "github-copilot-vs-amazon-q-developer-vs-gemini-code-assist",
+    "toolIds": ["github-copilot", "amazon-q-developer", "gemini-code-assist"],
+    "title": "GitHub Copilot vs Amazon Q Developer vs Gemini Code Assist",
+    "description": "Cloud-vendor coding assistants compared on governance posture, enterprise admin controls, and certification coverage."
+  },
+  {
+    "slug": "microsoft-365-copilot-vs-gemini-enterprise",
+    "toolIds": ["microsoft-365-copilot", "gemini-enterprise"],
+    "title": "Microsoft 365 Copilot vs Gemini Enterprise",
+    "description": "Productivity-suite assistants compared on tenant isolation, residency, certifications, and EU AI Act positioning."
+  }
+]

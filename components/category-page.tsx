@@ -1,6 +1,6 @@
 import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
 import { FilteredCategorySections } from "@/components/filtered-category-sections";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { PlatformCategoryBar } from "@/components/platform-category-bar";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolCard } from "@/components/tool-card";
@@ -22,6 +22,7 @@ type CategoryPageProps = {
   platforms: Platform[];
   comparison?: CategoryComparison;
   enableFiltering?: boolean;
+  faqs?: { question: string; answer: string }[];
 };
 
 const iconMap = {
@@ -35,7 +36,7 @@ function sortByName(tools: Tool[]) {
   return [...tools].sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export function CategoryPage({ category, title, description, introParagraphs, iconName, tools, updates, platforms, comparison, enableFiltering = false }: CategoryPageProps) {
+export function CategoryPage({ category, title, description, introParagraphs, iconName, tools, updates, platforms, comparison, enableFiltering = false, faqs }: CategoryPageProps) {
   const Icon = iconMap[iconName];
   const vendorTools = sortByName(tools.filter((tool) => tool.type === "vendor"));
   const nonVendorTools = sortByName(tools.filter((tool) => tool.type !== "vendor"));
@@ -54,6 +55,7 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
       description,
     }),
     buildToolListJsonLd(tools, title, description, pageUrl),
+    ...(faqs && faqs.length > 0 ? [buildFaqPageJsonLd(faqs)] : []),
   ];
 
   return (

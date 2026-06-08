@@ -133,5 +133,20 @@
     "requiresCollectionPage": false,
     "requiresItemList": false,
     "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/tools/compare",
+    "changeFrequency": "monthly",
+    "priority": 0.6,
+    "titleContains": "Tool comparisons",
+    "descriptionContains": "Curated side-by-side comparisons of tracked enterprise AI tools",
+    "searchIntent": "curated side-by-side enterprise ai tool comparisons",
+    "minTitleLength": 15,
+    "maxTitleLength": 65,
+    "minDescriptionLength": 90,
+    "maxDescriptionLength": 200,
+    "requiresCollectionPage": true,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
   }
 ]

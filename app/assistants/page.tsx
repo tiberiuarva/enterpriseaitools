@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AssistantsPageClient } from "@/components/assistants-page-client";
 import { HomeShell } from "@/components/home-shell";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { assistantsFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -23,6 +24,7 @@ export default function AssistantsPage() {
         tools={getToolsByCategory("assistants")}
         updates={getUpdatesByCategory("assistants")}
         platforms={getPlatformsForCategory("assistants")}
+        faqs={assistantsFaqs}
       />
     </HomeShell>
   );

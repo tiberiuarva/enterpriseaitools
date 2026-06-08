@@ -3,6 +3,7 @@ import { CategoryPage } from "@/components/category-page";
 import { HomeShell } from "@/components/home-shell";
 import { categoryComparisons } from "@/lib/category-comparisons";
 import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { orchestrationFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
@@ -28,6 +29,7 @@ export default function OrchestrationPage() {
         platforms={getPlatformsForCategory("orchestration")}
         comparison={categoryComparisons.orchestration}
         enableFiltering
+        faqs={orchestrationFaqs}
       />
     </HomeShell>
   );

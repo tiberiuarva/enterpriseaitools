@@ -241,6 +241,62 @@ captures its own per-record `lastUpdated`.
 | `compliance` | string[] | yes | Mirror of `platform.compliance`, sorted. |
 | `lastUpdated` | string \| null | yes | Mirror of `platform.lastUpdated`. |
 
+## `data/snapshot-diffs.json`
+
+Derived artifact. Written by `scripts/diff-snapshots.mjs` (`npm run diff-snapshots`)
+during each `/radar` weekly run. Reads every `data/snapshots/*.json` file in
+chronological order and emits one event per changed field per adjacent
+snapshot pair. Powers the M7 "auto-detected changes" view on `/updates` and the
+per-tool change history.
+
+Top-level shape:
+
+```json
+{
+  "generatedAt": "YYYY-MM-DD",
+  "snapshotCount": 1,
+  "events": []
+}
+```
+
+### Snapshot diff envelope fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `generatedAt` | string | yes | ISO date (`YYYY-MM-DD`) the diff artifact was generated. |
+| `snapshotCount` | number | yes | Number of snapshot files considered. Events render only when `snapshotCount >= 2`. |
+| `events` | object[] | yes | All diff events across every adjacent snapshot pair, newest first. |
+
+### Snapshot diff event fields (`events[]`)
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `toolId` | string | yes | Tracked tool `id`. |
+| `toolName` | string | yes | Tracked tool `name` at the time of the newer snapshot. |
+| `from` | string | yes | ISO date of the older snapshot in the pair. |
+| `to` | string | yes | ISO date of the newer snapshot in the pair. |
+| `field` | string | yes | Field path, e.g. `license`, `governance.soc2`, `governance.licenseRisk.level`, or `tracked` for add/remove. |
+| `previous` | unknown | yes | Field value in the older snapshot (or `null`). |
+| `current` | unknown | yes | Field value in the newer snapshot (or `null`). |
+| `highImpact` | boolean | yes | `true` for license, status, certifications (SOC 2 / ISO 27001 / ISO 42001), license-risk level, and tool removals — surfaces a warning badge in the UI. |
+
+## Data freshness
+
+`tool.governance.reviewedAt` records when each per-tool governance posture was
+last verified end-to-end. Two consumers depend on it:
+
+- The per-tool page renders a **Verified `<date>`** chip when the reviewed date
+  is within the threshold and switches the chip to **Stale `<date>`** styling
+  when it is older. Logic lives in `lib/freshness.ts`.
+- `scripts/check-data-freshness.mjs` (`npm run check-data-freshness`) prints
+  every tool past the threshold so the next `/radar` run can re-verify them
+  first. It runs as an informational gate during `/radar` prep — it does not
+  block the build.
+
+The current threshold is **60 days**. Update it in one place
+(`FRESHNESS_THRESHOLD_DAYS` in `lib/freshness.ts` and the mirrored constant in
+`scripts/check-data-freshness.mjs`) and reflect the change here in the same PR.
+
 ## Rules
 
 - Do not add undeclared fields without updating this schema document and the build guide decision.

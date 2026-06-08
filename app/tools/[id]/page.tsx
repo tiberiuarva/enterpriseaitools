@@ -7,7 +7,8 @@ import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToo
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { WarningBox } from "@/components/warning-box";
-import { lastUpdated, tools, updates } from "@/lib/data";
+import { lastUpdated, snapshotDiffEvents, tools, updates } from "@/lib/data";
+import { FRESHNESS_THRESHOLD_DAYS, getFreshnessStatus } from "@/lib/freshness";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import { formatToolTypeLabel, toolTypeTintStyles } from "@/lib/tool-type";
@@ -70,6 +71,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   const pageUrl = `${siteUrl}/tools/${tool.id}/`;
   // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
   const toolHistory = updates.filter((update) => update.toolId === tool.id);
+  const toolSnapshotDiffs = snapshotDiffEvents.filter((event) => event.toolId === tool.id);
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
@@ -115,9 +117,30 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{tool.description}</p>
 
-          <p className="mt-3 text-xs text-[var(--color-text-secondary)]">
-            Curated by {CURATOR_NAME} · Last reviewed {tool.governance.reviewedAt}
-          </p>
+          {(() => {
+            const freshness = getFreshnessStatus(tool.governance.reviewedAt, lastUpdated);
+            const isStale = freshness === "stale";
+            return (
+              <p className="mt-3 flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                <span>Curated by {CURATOR_NAME}</span>
+                <span aria-hidden="true">·</span>
+                <span
+                  className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
+                    isStale
+                      ? "border-[var(--color-warning)] bg-[color:rgba(234,179,8,0.12)] text-[var(--color-warning)]"
+                      : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-primary)]"
+                  }`}
+                  title={
+                    isStale
+                      ? `Verification is older than the ${FRESHNESS_THRESHOLD_DAYS}-day freshness threshold.`
+                      : `Verified within the ${FRESHNESS_THRESHOLD_DAYS}-day freshness threshold.`
+                  }
+                >
+                  {isStale ? "Stale" : "Verified"} {tool.governance.reviewedAt}
+                </span>
+              </p>
+            );
+          })()}
 
           <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
             <span className={CHIP_CLASS}>{tool.license}</span>
@@ -193,10 +216,10 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
 
         <GovernancePosture governance={tool.governance} />
 
-        {toolHistory.length > 0 ? (
+        {toolHistory.length > 0 || toolSnapshotDiffs.length > 0 ? (
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Change history</h2>
-            <p className="mt-1 text-xs text-[var(--color-text-secondary)]">Source-backed events for this tool, newest first.</p>
+            <p className="mt-1 text-xs text-[var(--color-text-secondary)]">Source-backed and auto-detected events for this tool, newest first.</p>
             <ol className="mt-4 flex flex-col gap-3">
               {toolHistory.map((update) => {
                 const highImpact = update.impact === "high";
@@ -219,6 +242,25 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                   </li>
                 );
               })}
+              {toolSnapshotDiffs.map((event, index) => (
+                <li
+                  key={`diff-${event.from}-${event.to}-${event.field}-${index}`}
+                  className={`border-l-2 pl-4 ${event.highImpact ? "border-[var(--color-warning)]" : "border-[var(--color-border)]"}`}
+                >
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
+                    <span>{event.to}</span>
+                    <span aria-hidden="true">·</span>
+                    <span className="font-semibold uppercase tracking-wide">Auto-detected</span>
+                    {event.highImpact ? (
+                      <span className="rounded-full bg-[color:rgba(234,179,8,0.15)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-warning)]">High impact</span>
+                    ) : null}
+                  </div>
+                  <div className="mt-1 text-sm text-[var(--color-text-primary)]">
+                    <span className="font-medium">{event.field}</span>: {String(event.previous ?? "—")} → {String(event.current ?? "—")}
+                  </div>
+                  <p className="mt-1 text-xs text-[var(--color-text-secondary)]">From snapshot diff {event.from} → {event.to}.</p>
+                </li>
+              ))}
             </ol>
           </section>
         ) : null}
