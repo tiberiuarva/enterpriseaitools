@@ -1,4 +1,4 @@
-import { Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
 import { FilteredCategorySections } from "@/components/filtered-category-sections";
 import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
@@ -144,9 +144,10 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
                 <h2 className="text-lg font-semibold">Recent updates</h2>
                 <a
                   href={`${withBasePath("/updates")}#auto-detected`}
-                  className="text-xs font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                  className="inline-flex items-center gap-1 text-xs font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                 >
-                  See auto-detected changes →
+                  See auto-detected changes
+                  <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               </div>
               <div className="mt-4 space-y-4">
