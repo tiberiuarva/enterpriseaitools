@@ -13,6 +13,17 @@ This is the data-only flow. Use `/build` for code changes.
 - If `$ARGUMENTS` is given, use that ISO week.
 - Branch off main: `git checkout -B content/YYYY-WW-radar origin/main`.
 
+## 1b. Identify stale records first (M11)
+
+```
+npm run check-data-freshness
+```
+
+Tools whose `governance.reviewedAt` is older than the documented freshness
+threshold are listed in age order. Re-verify those first during research so the
+weekly scan stays on top of records that have not been spot-checked recently.
+Informational gate — does not block the run.
+
 ## 2. Research
 
 Spawn the `data-researcher` subagent with the explicit scope:
@@ -62,6 +73,16 @@ date and one file per date. Passing an explicit date argument
 (`node scripts/snapshot-current.mjs 2026-01-01`) overwrites that date's file,
 so use the explicit form only when correcting a snapshot. Commit the new
 snapshot alongside the data changes.
+
+Then derive auto-detected change events (M7):
+
+```
+npm run diff-snapshots
+```
+
+This reads every `data/snapshots/*.json` file in order and writes
+`data/snapshot-diffs.json` with one event per changed field per adjacent pair.
+Commit the regenerated `data/snapshot-diffs.json` alongside the new snapshot.
 
 ## 5. Local gate
 

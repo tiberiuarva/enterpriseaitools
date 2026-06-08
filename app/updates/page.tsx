@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildDataFeedJsonLd, normalizeJsonLdDate } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
+import { SnapshotDiffFeed } from "@/components/snapshot-diff-feed";
 import { UpdatesFeed } from "@/components/updates-feed";
-import { lastUpdated, updates } from "@/lib/data";
+import { lastUpdated, snapshotCount, snapshotDiffEvents, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { navItems, withBasePath } from "@/lib/site";
 
@@ -101,6 +102,10 @@ export default function UpdatesPage() {
 
         <div className="mt-6">
           <UpdatesFeed updates={updates} />
+        </div>
+
+        <div className="mt-6">
+          <SnapshotDiffFeed events={snapshotDiffEvents} snapshotCount={snapshotCount} />
         </div>
 
         <div className="mt-6">

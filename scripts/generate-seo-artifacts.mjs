@@ -3,6 +3,7 @@ import path from "node:path";
 import toolsData from "../data/tools.json" with { type: "json" };
 import updatesData from "../data/updates.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
+import comparisonSlugs from "../data/comparison-slugs.json" with { type: "json" };
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 const lastModified = toolsData.lastUpdated;
@@ -17,7 +18,10 @@ function generateSitemapXml() {
   const toolRoutes = toolsData.tools
     .map((tool) => ({ path: `/tools/${tool.id}`, changeFrequency: "monthly", priority: 0.6 }))
     .sort((a, b) => a.path.localeCompare(b.path));
-  const urls = [...siteRoutes, ...toolRoutes]
+  const compareRoutes = comparisonSlugs
+    .map((entry) => ({ path: `/tools/compare/${entry.slug}`, changeFrequency: "monthly", priority: 0.5 }))
+    .sort((a, b) => a.path.localeCompare(b.path));
+  const urls = [...siteRoutes, ...toolRoutes, ...compareRoutes]
     .map(
       ({ path: routePath, changeFrequency, priority }) => `  <url>\n    <loc>${toAbsoluteUrl(routePath)}</loc>\n    <lastmod>${lastModified}</lastmod>\n    <changefreq>${changeFrequency}</changefreq>\n    <priority>${priority.toFixed(1)}</priority>\n  </url>`,
     )

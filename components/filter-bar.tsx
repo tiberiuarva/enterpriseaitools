@@ -37,10 +37,10 @@ const licenseRiskOptions = [
   { value: "unknown", label: "Unknown" },
 ] as const;
 
-const SEGMENT_BASE = "rounded-full border px-2.5 py-1 text-xs transition";
+const SEGMENT_BASE = "rounded-full border px-2.5 py-1 text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]";
 const SEGMENT_ON = "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]";
 const SEGMENT_OFF = "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]";
-const SELECT_CLASS = "rounded-md border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2 py-1 text-xs text-[var(--color-text-primary)]";
+const SELECT_CLASS = "rounded-md border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2 py-1 text-xs text-[var(--color-text-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]";
 
 export function FilterBar({
   typeFilter,
@@ -85,7 +85,7 @@ export function FilterBar({
   return (
     <section
       aria-label="Filter and sort tools"
-      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-3 shadow-sm"
+      className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-3"
     >
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <fieldset className="flex flex-wrap gap-1.5">
@@ -110,7 +110,7 @@ export function FilterBar({
             return (
               <label
                 key={cloud}
-                className={`inline-flex cursor-pointer items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] uppercase transition ${
+                className={`inline-flex cursor-pointer items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] uppercase transition focus-within:ring-2 focus-within:ring-[var(--color-primary)] focus-within:ring-offset-2 focus-within:ring-offset-[var(--color-bg-card)] ${
                   checked
                     ? "border-[var(--color-primary)] bg-[var(--color-primary-soft)] text-[var(--color-primary)]"
                     : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
@@ -151,7 +151,7 @@ export function FilterBar({
       </div>
 
       <details key={advancedActive > 0 ? "open" : "closed"} className="mt-2" open={advancedActive > 0}>
-        <summary className="cursor-pointer select-none text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]">
+        <summary className="cursor-pointer select-none rounded text-xs font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]">
           More filters{advancedActive > 0 ? ` (${advancedActive})` : ""}
         </summary>
         <div className="mt-2 flex flex-wrap gap-2">

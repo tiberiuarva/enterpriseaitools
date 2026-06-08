@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd } from "@/components/json-ld";
+import { platformsFaqs } from "@/lib/hub-faqs";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformMark } from "@/components/platform-mark";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
@@ -88,6 +89,7 @@ export default function PlatformsPage() {
       url: pageUrl,
       description,
     }),
+    buildFaqPageJsonLd(platformsFaqs),
   ];
 
   return (

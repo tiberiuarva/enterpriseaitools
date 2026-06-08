@@ -114,6 +114,17 @@ export type Platform = {
   };
 } & LogoAuditMetadata;
 
+export type SnapshotDiffEvent = {
+  toolId: string;
+  toolName: string;
+  from: string;
+  to: string;
+  field: string;
+  previous: unknown;
+  current: unknown;
+  highImpact: boolean;
+};
+
 export type UpdateEntry = {
   id: string;
   date: string;
