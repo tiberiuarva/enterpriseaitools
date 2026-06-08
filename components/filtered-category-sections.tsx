@@ -223,7 +223,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
       <PlatformCategoryBar category={category} platforms={platforms} />
 
       <section
-        className="sticky top-[calc(var(--site-header-height,4rem)+0.25rem)] z-20 pb-2 pt-1"
+        className="sticky top-[calc(var(--site-header-height,4rem)+0.25rem)] z-20 bg-[var(--color-bg-primary)] pb-2 pt-1"
       >
         <FilterBar
           typeFilter={typeFilter}

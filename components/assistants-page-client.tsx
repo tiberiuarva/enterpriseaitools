@@ -206,7 +206,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
       <PlatformCategoryBar category="assistants" platforms={platforms} />
 
       <section
-        className="sticky z-20 pb-2 pt-1"
+        className="sticky z-20 bg-[var(--color-bg-primary)] pb-2 pt-1"
         style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
         <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">
