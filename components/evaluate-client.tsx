@@ -88,7 +88,7 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
           <button
             type="submit"
             disabled={!allAnswered}
-            className="inline-flex items-center rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-[var(--color-text-inverse)] transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex items-center rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-sm font-semibold text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)] disabled:cursor-not-allowed disabled:opacity-50"
           >
             Show my shortlist
           </button>
@@ -141,7 +141,16 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                       </div>
                       <p className="mt-1 line-clamp-2 text-sm text-[var(--color-text-secondary)]">{result.tool.description}</p>
                     </div>
-                    <span className="shrink-0 rounded-full bg-[var(--color-bg-surface)] px-2.5 py-1 text-xs font-semibold text-[var(--color-text-secondary)]">
+                    <span
+                      className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                        result.score >= 80
+                          ? "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]"
+                          : result.score >= 50
+                          ? "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]"
+                          : "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]"
+                      }`}
+                      aria-label={`Fit score ${result.score} out of 100`}
+                    >
                       Fit {result.score}
                     </span>
                   </div>
