@@ -20,7 +20,7 @@ import { homeFaqs } from "@/lib/hub-faqs";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
-import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
+import { categoryDescriptions, lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { filterToolsByCategory } from "@/lib/dataset-metrics";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -137,7 +137,7 @@ export default function Home() {
       <JsonLd data={jsonLd} />
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <section className="card-flat p-6 md:p-10">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
             <div className="max-w-2xl">
               <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">
                 Enterprise AI tooling landscape
@@ -156,9 +156,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <StatPill icon={Landmark} label="Categories" value={4} />
-              <StatPill icon={Bot} label="Tools loaded" value={`${tools.length}+`} highlighted />
+            <div className="flex flex-wrap gap-3 md:shrink-0 md:flex-col md:items-stretch md:gap-2">
+              <StatPill icon={Landmark} label="Categories" value={Object.keys(categoryDescriptions).length} />
+              <StatPill icon={Bot} label="Tools tracked" value={tools.length} highlighted />
               <StatPill icon={CalendarClock} label="Updated" value={lastUpdated} />
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="card-flat p-6">
           <div className="max-w-4xl">
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">What is changing in the enterprise AI market</h2>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -201,25 +201,25 @@ export default function Home() {
           </div>
 
           <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+            <div className="card-flat p-4">
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">1. Foundation clouds are setting the defaults</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Microsoft, AWS, and Google increasingly define identity, model access, security controls, procurement path, and the first route into production.
               </p>
             </div>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+            <div className="card-flat p-4">
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">2. Delivery layers are competing above the cloud</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Agent frameworks, orchestration stacks, and assistant surfaces now compete on speed, openness, integration depth, and operational fit.
               </p>
             </div>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+            <div className="card-flat p-4">
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">3. Governance is becoming a hard adoption gate</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Guardrails matter where they touch approvals, auditability, data handling, model policy, and regulated-enterprise controls rather than demo-only safety claims.
               </p>
             </div>
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+            <div className="card-flat p-4">
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">4. Standards support is starting to matter</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Protocols like MCP, A2A, and OpenAPI are becoming practical signals for ecosystem fit, tool portability, and how easily platforms connect to external agents and services.
@@ -249,7 +249,7 @@ export default function Home() {
 
         <section
           aria-labelledby="compare-tile-heading"
-          className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+          className="card-flat p-6"
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="flex items-start gap-3">
@@ -285,7 +285,7 @@ export default function Home() {
         </section>
 
         {latestUpdate ? (
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+          <section className="card-flat p-5">
             <div className="border-l-4 border-[var(--color-primary)] pl-4">
               <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
                 Latest update · {latestUpdate.date}

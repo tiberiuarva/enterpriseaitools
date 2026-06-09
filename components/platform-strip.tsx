@@ -13,7 +13,7 @@ export function PlatformStrip({ platforms }: { platforms: Platform[] }) {
           <a
             key={platform.id}
             href={withBasePath(platformHref)}
-            className="group flex h-full flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
+            className="group flex h-full flex-col card card-hover p-5"
           >
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-start gap-3">

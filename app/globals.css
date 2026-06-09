@@ -20,9 +20,11 @@
   --color-bg-card-hover: #202024;
   --color-bg-hover: rgba(255, 255, 255, 0.04);
 
-  /* Accent — one, used sparingly */
-  --color-accent: #0a84ff;
-  --color-accent-strong: #0071e3;
+  /* Accent — one, used sparingly. Teal differentiates from the Azure /
+     AWS / GCP / OpenAI / Apple blues used everywhere else in AI tooling
+     and reads as institutional / governance-grade. */
+  --color-accent: #0c9a8e;
+  --color-accent-strong: #0f766e;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
 
   /* Status (semantic) */
@@ -88,8 +90,8 @@ html.light {
   --color-bg-card-hover: #f5f5f7;
   --color-bg-hover: #f5f5f7;
 
-  --color-accent: #0071e3;
-  --color-accent-strong: #0066cc;
+  --color-accent: #0f766e;
+  --color-accent-strong: #115e59;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
 
   --color-success: #248a3d;
@@ -196,27 +198,27 @@ body {
 /* ── Type scale utilities ────────────────────────────────────────────────── */
 @layer components {
   .text-display {
-    font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+    font-size: clamp(2rem, 3.2vw + 0.875rem, 3rem);
     line-height: 1.05;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.022em;
     font-weight: 600;
   }
   .text-h1 {
-    font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
+    font-size: clamp(1.5rem, 1.6vw + 0.875rem, 2rem);
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.018em;
     font-weight: 600;
   }
   .text-h2 {
-    font-size: clamp(1.25rem, 1vw + 0.875rem, 1.5rem);
+    font-size: clamp(1.125rem, 0.6vw + 0.875rem, 1.25rem);
     line-height: 1.25;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
     font-weight: 600;
   }
   .text-h3 {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.4;
-    letter-spacing: -0.005em;
+    letter-spacing: 0;
     font-weight: 600;
   }
   .text-body {
@@ -253,6 +255,11 @@ body {
   .card-flat {
     background: var(--color-bg-surface);
     border-radius: 14px;
+    /* transparent baseline border so `hover:border-[var(--color-accent)]`
+       utilities on clickable card-flat elements (e.g. RelatedHubs,
+       RelatedComparisons items) take effect — border-color alone needs
+       a width + style declared somewhere. */
+    border: 1px solid transparent;
   }
 
   /* ── Status badge — dot + label ────────────────────────────────────────── */

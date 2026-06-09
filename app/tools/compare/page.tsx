@@ -49,7 +49,7 @@ export default function CompareIndexPage() {
             <a
               key={pair.slug}
               href={withBasePath(`/tools/compare/${pair.slug}`)}
-              className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition hover:border-[var(--color-primary)]"
+              className="card-flat p-5 transition hover:border-[var(--color-primary)]"
             >
               <h2 className="text-base font-semibold text-[var(--color-text-primary)]">{pair.title}</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{pair.description}</p>

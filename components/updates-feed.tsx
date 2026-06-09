@@ -67,7 +67,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
 
   return (
     <>
-      <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+      <div className="card-flat p-4">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Market intelligence feed</h2>
@@ -117,7 +117,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
         </fieldset>
       </div>
 
-      <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+      <section className="mt-6 card-flat p-6">
         <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
           <p className="text-sm text-[var(--color-text-secondary)]">
             {showingHighImpact

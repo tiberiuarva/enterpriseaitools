@@ -187,7 +187,7 @@ export default function AboutPage() {
       <main id="main-content" tabIndex={-1} className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <JsonLd data={jsonLd} />
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
+        <section className="card-flat p-6 md:p-8">
           <div className="max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
               About the project
@@ -199,7 +199,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+            <div className="card p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">Editor</p>
               <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -216,7 +216,7 @@ export default function AboutPage() {
               </a>
             </div>
 
-            <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+            <div className="card p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 Working stance
               </p>
@@ -230,7 +230,7 @@ export default function AboutPage() {
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
             {overviewCards.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+              <div key={card.title} className="card p-5">
                 <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
               </div>
@@ -240,7 +240,7 @@ export default function AboutPage() {
 
         <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-[17rem_minmax(0,1fr)]">
           <aside className="xl:sticky xl:top-[calc(var(--site-header-height)+1.5rem)] xl:self-start">
-            <nav aria-label="About page sections" className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4">
+            <nav aria-label="About page sections" className="card-flat p-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 On this page
               </p>
@@ -266,7 +266,7 @@ export default function AboutPage() {
             <section
               id="overview"
               tabIndex={-1}
-              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              className="scroll-mt-24 card-flat p-6"
             >
               <SectionHeading
                 eyebrow="Overview"
@@ -275,7 +275,7 @@ export default function AboutPage() {
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
                 {whyThisExists.map((card) => (
-                  <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                  <div key={card.title} className="card p-5">
                     <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
                   </div>
@@ -286,7 +286,7 @@ export default function AboutPage() {
             <section
               id="how-to-use"
               tabIndex={-1}
-              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              className="scroll-mt-24 card-flat p-6"
             >
               <SectionHeading
                 eyebrow="How to use it"
@@ -295,7 +295,7 @@ export default function AboutPage() {
               />
               <ol className="mt-5 grid gap-3 list-none pl-0">
                 {workflowSteps.map((step, index) => (
-                  <li key={step} className="flex gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4">
+                  <li key={step} className="flex gap-4 card p-4">
                     <span
                       aria-hidden="true"
                       className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-bg-card)] text-sm font-semibold text-[var(--color-text-primary)]"
@@ -311,7 +311,7 @@ export default function AboutPage() {
             <section
               id="coverage"
               tabIndex={-1}
-              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              className="scroll-mt-24 card-flat p-6"
             >
               <SectionHeading
                 eyebrow="Coverage"
@@ -320,7 +320,7 @@ export default function AboutPage() {
               />
               <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {trackedAreas.map((card) => (
-                  <div key={card.title} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                  <div key={card.title} className="card p-5">
                     <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
                   </div>
@@ -328,7 +328,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">What qualifies for inclusion</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {qualificationRules.map((rule) => (
@@ -336,7 +336,7 @@ export default function AboutPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">What this site is not</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {outOfScope.map((item) => (
@@ -350,7 +350,7 @@ export default function AboutPage() {
             <section
               id="standards"
               tabIndex={-1}
-              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              className="scroll-mt-24 card-flat p-6"
             >
               <SectionHeading
                 eyebrow="Standards"
@@ -358,7 +358,7 @@ export default function AboutPage() {
                 intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Data sourcing standards</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {sourcingStandards.map((rule) => (
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Methodology</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {methodology.map((rule) => (
@@ -380,7 +380,7 @@ export default function AboutPage() {
             <section
               id="contribute"
               tabIndex={-1}
-              className="scroll-mt-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+              className="scroll-mt-24 card-flat p-6"
             >
               <SectionHeading
                 eyebrow="Contribute"
@@ -388,14 +388,14 @@ export default function AboutPage() {
                 intro="Contributions are welcome, but the bar is evidence and auditability rather than broad unsupported edits."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)]">
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {contributionSteps.map((step) => (
                       <li key={step}>{step}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Project entry points</h3>
                   <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                     The repo, schema files, and source-linked issues are the right place to propose changes.

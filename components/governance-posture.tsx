@@ -53,7 +53,7 @@ function ClaimRow({ label, claim, suffix }: { label: string; claim: GovernanceCl
 
 export function GovernancePosture({ governance }: { governance: ToolGovernance }) {
   return (
-    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+    <section className="card-flat p-6">
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Governance posture</h2>
         <span className="text-xs text-[var(--color-text-secondary)]">Reviewed {governance.reviewedAt}</span>

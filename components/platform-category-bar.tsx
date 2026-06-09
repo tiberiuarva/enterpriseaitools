@@ -27,7 +27,7 @@ export function PlatformCategoryBar({ category, platforms }: PlatformCategoryBar
   return (
     <nav
       aria-label={`Platform coverage for ${category}`}
-      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3"
+      className="card-flat px-4 py-3"
     >
       <div className="flex flex-wrap items-center gap-2">
         <div className="mr-1 text-sm font-semibold text-[var(--color-text-primary)]">{getBarLabel(category)}:</div>

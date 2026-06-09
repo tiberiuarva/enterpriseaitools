@@ -246,7 +246,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     target="_blank"
                     rel="noreferrer"
                     aria-label="Star the GitHub repository in a new tab"
-                    className="mt-2 inline-flex items-center gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                    className="mt-2 inline-flex items-center gap-2 card-flat px-3 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                   >
                     <Star size={16} />
                     <span>Star on GitHub</span>

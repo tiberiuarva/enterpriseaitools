@@ -104,7 +104,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
           <span>{tool.name}</span>
         </nav>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
+        <section className="card-flat p-6 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div className="flex min-w-0 items-start gap-3">
               <ToolIdentityBadge label={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="md" className="shrink-0" />
@@ -193,7 +193,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
         </section>
 
         {tool.strengths.length > 0 ? (
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <section className="card-flat p-6">
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Strengths</h2>
             <ul className="mt-3 space-y-2">
               {tool.strengths.map((strength) => (
@@ -220,7 +220,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
         <GovernancePosture governance={tool.governance} />
 
         {toolHistory.length > 0 || toolSnapshotDiffs.length > 0 ? (
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <section className="card-flat p-6">
             <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Change history</h2>
             <p className="mt-1 text-xs text-[var(--color-text-secondary)]">Source-backed and auto-detected events for this tool, newest first.</p>
             <ol className="mt-4 flex flex-col gap-3">

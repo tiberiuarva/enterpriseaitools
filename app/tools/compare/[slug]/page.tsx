@@ -170,7 +170,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
           <p className="mt-3 max-w-2xl text-body text-[var(--color-text-secondary)]">{pair.description}</p>
         </section>
 
-        <section className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-2">
+        <section className="overflow-x-auto card-flat p-2">
           <table className="min-w-full border-separate border-spacing-0 text-sm">
             <thead>
               <tr>

@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <HomeShell lastUpdated={lastUpdated}>
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-16 text-center sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-8 md:p-12">
+        <div className="card-flat p-8 md:p-12">
           <p className="text-6xl font-extrabold text-[var(--color-primary)]">404</p>
           <h1 className="mt-4 text-2xl font-extrabold text-[var(--color-text-primary)]">Page not found</h1>
           <p className="mt-3 max-w-md text-sm leading-6 text-[var(--color-text-secondary)]">
