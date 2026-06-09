@@ -75,8 +75,6 @@
      old token names keep working until each is migrated. */
   --color-primary: var(--color-accent);
   --color-primary-soft: var(--color-accent-soft);
-  --color-secondary: var(--color-accent);
-  --color-bg-light: #fbfbfd;
 }
 
 /* ── Light mode ──────────────────────────────────────────────────────────── */
@@ -128,8 +126,6 @@ html.light {
 
   --color-primary: var(--color-accent);
   --color-primary-soft: var(--color-accent-soft);
-  --color-secondary: var(--color-accent);
-  --color-bg-light: #fbfbfd;
 }
 
 @theme inline {

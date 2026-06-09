@@ -320,7 +320,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
           <div className="mt-4 space-y-4">
             {visibleUpdates.map((update) => (
               <div key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
-                <div className="text-xs uppercase tracking-wide text-[var(--color-secondary)]">{update.date}</div>
+                <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">{update.date}</div>
                 <div className="mt-1 font-semibold">{update.title ?? update.toolName}</div>
                 <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{update.toolName}</div>
                 <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{update.summary}</p>

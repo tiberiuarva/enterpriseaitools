@@ -15,13 +15,11 @@ const config: Config = {
           card: "var(--color-bg-card)",
           "card-hover": "var(--color-bg-card-hover)",
           hover: "var(--color-bg-hover)",
-          light: "var(--color-bg-light)",
         },
         accent: "var(--color-accent)",
         "accent-strong": "var(--color-accent-strong)",
         "accent-soft": "var(--color-accent-soft)",
         primary: "var(--color-accent)",
-        secondary: "var(--color-accent)",
         success: "var(--color-success)",
         "success-soft": "var(--color-success-soft)",
         warning: "var(--color-warning)",
@@ -54,9 +52,12 @@ const config: Config = {
         "7xl": "1280px",
       },
       borderRadius: {
+        // xs/sm for chips and buttons; xl is intentionally overridden from
+        // Tailwind's 12px default to 14px so every existing `rounded-xl`
+        // card callsite picks up the new Apple-minimal card radius without
+        // a sweep. `lg` overrides Tailwind's 8px default for hero panels.
         xs: "6px",
         sm: "10px",
-        md: "14px",
         lg: "20px",
         xl: "14px",
       },

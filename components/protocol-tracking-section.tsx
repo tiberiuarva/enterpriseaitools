@@ -59,7 +59,7 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
 
               {!compact && snapshot.recentUpdates.length > 0 ? (
                 <div className="mt-4 border-t border-[var(--color-border)] pt-4">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">Recent dataset mentions</div>
+                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">Recent dataset mentions</div>
                   <div className="mt-3 space-y-3">
                     {snapshot.recentUpdates.map((update) => (
                       <div key={update.id}>

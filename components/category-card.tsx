@@ -44,7 +44,7 @@ export function CategoryCard({ href, icon: Icon, name, description, count, previ
         {visible.map((tool) => (
           <span
             key={tool.id}
-            className="inline-flex items-center rounded-[var(--radius-xs,6px)] bg-[var(--color-bg-surface)] px-2.5 py-1 text-caption text-[var(--color-text-secondary)]"
+            className="inline-flex items-center rounded-xs bg-[var(--color-bg-surface)] px-2.5 py-1 text-caption text-[var(--color-text-secondary)]"
           >
             {tool.name}
           </span>
