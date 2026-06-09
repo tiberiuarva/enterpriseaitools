@@ -18,7 +18,7 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
   const isPlatformsPage = currentPath === "/platforms";
 
   return (
-    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+    <section className="card-flat p-6">
       <div className="max-w-4xl">
         <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Protocol tracking: MCP, A2A, and OpenAPI</h2>
         <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">

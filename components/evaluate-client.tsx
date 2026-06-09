@@ -43,7 +43,7 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
           <section
             key={question.id}
             aria-labelledby={`evaluate-question-${question.id}`}
-            className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5"
+            className="card-flat p-5"
           >
             <h3
               id={`evaluate-question-${question.id}`}
@@ -123,7 +123,7 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
               {results.map((result, index) => (
                 <li
                   key={result.tool.id}
-                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5"
+                  className="card-flat p-5"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="min-w-0">

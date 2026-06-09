@@ -115,7 +115,7 @@ export default function PlatformsPage() {
                 id={platformFragmentId}
                 key={platform.id}
                 aria-labelledby={platformHeadingId}
-                className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+                className="scroll-mt-[calc(var(--site-header-height)_+_1rem)] card-flat p-6"
               >
                 <div className="flex min-w-0 items-center gap-3">
                   <PlatformMark vendor={platform.vendor} logoUrl={platform.logoUrl} logoKind={platform.logoKind} />
@@ -154,7 +154,7 @@ export default function PlatformsPage() {
 
         <ProtocolTrackingSection currentPath="/platforms" />
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="card-flat p-6">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>
           <p className="mt-2 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
             This bridges the platform layer with the category hubs, so visitors can quickly see the native cloud product most relevant to each tracked category.
@@ -187,7 +187,7 @@ export default function PlatformsPage() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="card-flat p-6">
           <div className="max-w-4xl">
             <h2 className="text-lg font-semibold">Detailed vendor comparison</h2>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">

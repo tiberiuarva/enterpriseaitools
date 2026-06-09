@@ -71,7 +71,7 @@ export default function UpdatesPage() {
           </p>
         </section>
 
-        <section className="mt-6 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="mt-6 card-flat p-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Browse the core hubs</h2>

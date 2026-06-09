@@ -213,7 +213,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
         className="sticky z-20 bg-[var(--color-bg-primary)] pb-2 pt-1"
         style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-4 shadow-sm">
+        <div className="card-flat p-4 shadow-sm">
           <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
             {subcategoryOrder.map((subcategory) => (
               <button
@@ -274,7 +274,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
           />
         ) : null}
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+        <section className="card-flat p-6">
           <h2 className="text-lg font-semibold">{getAdditionalToolsHeading()}</h2>
           <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
             {nonVendorTools.length > 0
@@ -306,7 +306,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
         </section>
 
         {warnings.length > 0 ? (
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <section className="card-flat p-6">
             <h2 className="text-lg font-semibold">Important notes</h2>
             <div className="mt-4 space-y-3">
               {warnings.map((tool) => (
@@ -319,7 +319,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
         ) : null}
 
         {visibleUpdates.length > 0 ? (
-          <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+          <section className="card-flat p-6">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="text-lg font-semibold">Recent updates</h2>
               <a

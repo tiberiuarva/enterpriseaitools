@@ -40,7 +40,7 @@ export function SnapshotDiffFeed({
 }) {
   if (snapshotCount < 2) {
     return (
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+      <section className="card-flat p-6">
         <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Auto-detected changes</h2>
         <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
           Snapshot-derived change events appear here once two or more weekly snapshots exist.
@@ -52,7 +52,7 @@ export function SnapshotDiffFeed({
 
   if (events.length === 0) {
     return (
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+      <section className="card-flat p-6">
         <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Auto-detected changes</h2>
         <p className="mt-2 text-sm text-[var(--color-text-secondary)]">
           No drift detected across the {snapshotCount} tracked weekly snapshots — every tool kept the same license,
@@ -63,7 +63,7 @@ export function SnapshotDiffFeed({
   }
 
   return (
-    <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
+    <section className="card-flat p-6">
       <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Auto-detected changes</h2>
       <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
         Derived automatically by diffing successive weekly snapshots ({snapshotCount} tracked).

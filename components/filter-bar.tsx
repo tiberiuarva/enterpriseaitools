@@ -85,7 +85,7 @@ export function FilterBar({
   return (
     <section
       aria-label="Filter and sort tools"
-      className="w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-3"
+      className="w-full card-flat p-3"
     >
       <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
         <fieldset className="flex flex-wrap gap-1.5">
