@@ -14,41 +14,49 @@ type CategoryCardProps = {
   previewTools: CategoryPreviewTool[];
 };
 
+const PREVIEW_LIMIT = 4;
+
 export function CategoryCard({ href, icon: Icon, name, description, count, previewTools }: CategoryCardProps) {
+  const visible = previewTools.slice(0, PREVIEW_LIMIT);
+  const overflow = previewTools.length - visible.length;
+
   return (
     <a
       href={withBasePath(href)}
-      className="group block rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 transition hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-surface)]"
+      className="card card-hover group block p-6"
     >
       <div className="flex items-start justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
-            <Icon size={24} />
-          </div>
+        <div className="flex items-start gap-3">
+          <Icon
+            size={20}
+            aria-hidden="true"
+            className="mt-1 shrink-0 text-[var(--color-text-secondary)] transition group-hover:text-[var(--color-text-primary)]"
+          />
           <div>
-            <h3 className="text-base font-semibold text-[var(--color-text-primary)]">{name}</h3>
-            <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{description}</p>
+            <h3 className="text-h3 text-[var(--color-text-primary)]">{name}</h3>
+            <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">{description}</p>
           </div>
         </div>
-        <div className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs font-semibold text-[var(--color-text-primary)]">
-          {count}
-        </div>
+        <span className="shrink-0 text-caption text-[var(--color-text-tertiary)]">{count}</span>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2" aria-hidden="true">
-        {previewTools.map((tool) => {
-          return (
-            <span
-              key={tool.id}
-              className="inline-flex items-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 py-1 text-xs text-[var(--color-text-secondary)]"
-            >
-              <span>{tool.name}</span>
-            </span>
-          );
-        })}
+      <div className="mt-5 flex flex-wrap gap-2" aria-hidden="true">
+        {visible.map((tool) => (
+          <span
+            key={tool.id}
+            className="inline-flex items-center rounded-xs bg-[var(--color-bg-surface)] px-2.5 py-1 text-caption text-[var(--color-text-secondary)]"
+          >
+            {tool.name}
+          </span>
+        ))}
+        {overflow > 0 ? (
+          <span className="inline-flex items-center px-1 py-1 text-caption text-[var(--color-text-tertiary)]">
+            +{overflow} more
+          </span>
+        ) : null}
       </div>
 
-      <div className="mt-5 text-sm font-medium text-[var(--color-primary)]">View all →</div>
+      <div className="mt-5 text-body-sm font-medium text-[var(--color-accent)]">View all →</div>
     </a>
   );
 }

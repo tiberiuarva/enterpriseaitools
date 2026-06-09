@@ -39,9 +39,9 @@ export default function CompareIndexPage() {
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <JsonLd data={jsonLd} />
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <h1 className="text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">{title}</h1>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{description}</p>
+        <section className="card-flat p-6 md:p-10">
+          <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
+          <p className="mt-3 max-w-2xl text-body text-[var(--color-text-secondary)]">{description}</p>
         </section>
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">

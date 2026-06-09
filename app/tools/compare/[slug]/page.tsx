@@ -21,9 +21,9 @@ const STATUS_LABELS: Record<GovernanceStatus, string> = {
 };
 
 const STATUS_STYLES: Record<GovernanceStatus, string> = {
-  yes: "bg-[color:rgba(34,197,94,0.15)] text-[var(--color-success)]",
-  partial: "bg-[color:rgba(234,179,8,0.15)] text-[var(--color-warning)]",
-  no: "bg-[color:rgba(239,68,68,0.15)] text-[var(--color-danger)]",
+  yes: "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]",
+  partial: "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]",
+  no: "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]",
   "not-applicable": "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
   unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
 };
@@ -163,11 +163,11 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
           <span>{pair.title}</span>
         </nav>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <h1 className="text-[1.75rem] font-extrabold leading-tight text-[var(--color-text-primary)]">
+        <section className="card-flat p-6 md:p-10">
+          <h1 className="text-h1 text-[var(--color-text-primary)]">
             {pair.title}
           </h1>
-          <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{pair.description}</p>
+          <p className="mt-3 max-w-2xl text-body text-[var(--color-text-secondary)]">{pair.description}</p>
         </section>
 
         <section className="overflow-x-auto rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-2">

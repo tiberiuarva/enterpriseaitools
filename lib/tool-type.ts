@@ -4,16 +4,16 @@ import type { ToolType } from "@/lib/types";
 
 const toolTypeTokens: Record<ToolType, { textClass: string; tintClass: string }> = {
   vendor: {
-    textClass: "text-[var(--color-primary)]",
-    tintClass: "bg-[color:rgba(59,130,246,0.14)]",
+    textClass: "text-[var(--color-accent)]",
+    tintClass: "bg-[color:var(--color-accent-soft)]",
   },
   opensource: {
     textClass: "text-[var(--color-success)]",
-    tintClass: "bg-[color:rgba(16,185,129,0.14)]",
+    tintClass: "bg-[color:var(--color-success-soft)]",
   },
   commercial: {
-    textClass: "text-[var(--color-secondary)]",
-    tintClass: "bg-[color:rgba(6,182,212,0.14)]",
+    textClass: "text-[var(--color-text-secondary)]",
+    tintClass: "bg-[var(--color-bg-surface)]",
   },
 };
 

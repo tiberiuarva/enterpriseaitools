@@ -21,14 +21,12 @@ export function HubFaqs({
   return (
     <section
       aria-labelledby={headingId}
-      className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6"
+      className="card p-6"
     >
       <div className="flex items-start gap-3">
-        <div className="rounded-lg bg-[color:rgba(59,130,246,0.12)] p-2 text-[var(--color-primary)]">
-          <HelpCircle size={18} aria-hidden="true" />
-        </div>
+        <HelpCircle size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
         <div>
-          <h2 id={headingId} className="text-lg font-semibold text-[var(--color-text-primary)]">
+          <h2 id={headingId} className="text-h2 text-[var(--color-text-primary)]">
             {title}
           </h2>
           {intro ? (

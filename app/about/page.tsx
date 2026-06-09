@@ -192,8 +192,8 @@ export default function AboutPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
               About the project
             </p>
-            <h1 className="mt-2 text-[2rem] font-extrabold text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
-            <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+            <h1 className="mt-2 text-h1 text-[var(--color-text-primary)]">About enterpriseai.tools</h1>
+            <p className="mt-3 text-body text-[var(--color-text-secondary)]">
               An open-source landscape tracker for enterprise AI tooling — cloud vendors, enterprise platforms, and open-source alternatives.
             </p>
           </div>

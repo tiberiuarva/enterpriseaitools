@@ -9,9 +9,9 @@ const STATUS_LABELS: Record<GovernanceStatus, string> = {
 };
 
 const STATUS_STYLES: Record<GovernanceStatus, string> = {
-  yes: "bg-[color:rgba(34,197,94,0.15)] text-[var(--color-success)]",
-  partial: "bg-[color:rgba(234,179,8,0.15)] text-[var(--color-warning)]",
-  no: "bg-[color:rgba(239,68,68,0.15)] text-[var(--color-danger)]",
+  yes: "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]",
+  partial: "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]",
+  no: "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]",
   "not-applicable": "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
   unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
 };

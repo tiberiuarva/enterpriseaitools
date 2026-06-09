@@ -43,9 +43,9 @@ export default function EvaluatePage() {
     <HomeShell lastUpdated={lastUpdated} currentPath="/evaluate">
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-3xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <JsonLd data={jsonLd} />
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <h1 className="text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">Help me evaluate</h1>
-          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+        <section className="card-flat p-6 md:p-10">
+          <h1 className="text-h1 text-[var(--color-text-primary)]">Help me evaluate</h1>
+          <p className="mt-3 text-body text-[var(--color-text-secondary)]">
             A short guided flow that returns a ranked shortlist with a readable governance posture for each result. It
             runs entirely in your browser — no sign-up, no data leaves the page. Every result links to the tool&apos;s
             full source-backed posture.

@@ -135,23 +135,24 @@ export default function Home() {
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/">
       <JsonLd data={jsonLd} />
-      <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
+      <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+        <section className="card-flat p-6 md:p-10">
           <div className="flex flex-col gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-secondary)]">
+            <div className="max-w-2xl">
+              <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">
                 Enterprise AI tooling landscape
               </p>
-              <h1 className="mt-3 text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">
+              <h1 className="mt-3 text-display text-[var(--color-text-primary)]">
                 Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
               </h1>
-              <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
+              <p className="mt-4 text-body text-[var(--color-text-secondary)]">
                 Updated weekly. Data-dense. No fluff. Compare the foundation platforms first, then move into agent,
                 orchestration, governance, and assistant layers.
               </p>
-              <p className="mt-3 max-w-3xl text-xs leading-5 text-[var(--color-text-secondary)]">
-                Naming moves fast here: use <strong>Microsoft Foundry</strong>, <strong>Amazon Q Developer</strong>, and
-                <strong> Gemini Enterprise</strong> as the current product names.
+              <p className="mt-3 text-caption text-[var(--color-text-tertiary)]">
+                Naming moves fast here: use <strong className="text-[var(--color-text-secondary)]">Microsoft Foundry</strong>,
+                <strong className="text-[var(--color-text-secondary)]"> Amazon Q Developer</strong>, and
+                <strong className="text-[var(--color-text-secondary)]"> Gemini Enterprise</strong> as the current product names.
               </p>
             </div>
 
@@ -163,14 +164,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6">
-          <div className="flex items-start gap-4">
-            <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
-              <Layers3 size={28} />
-            </div>
-            <div className="max-w-4xl">
-              <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Foundation AI platforms</h2>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+        <section className="card p-6">
+          <div className="flex items-start gap-3">
+            <Layers3 size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
+            <div className="max-w-2xl">
+              <h2 className="text-h2 text-[var(--color-text-primary)]">Foundation AI platforms</h2>
+              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
                 These three platforms are the base stack behind much of the rest of the market. Each card below shows the
                 cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
                 often pair with it from open source or commercial tools.
@@ -254,14 +253,12 @@ export default function Home() {
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="flex items-start gap-3">
-              <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
-                <GitCompare size={24} aria-hidden="true" />
-              </div>
+              <GitCompare size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
               <div className="max-w-2xl">
-                <h2 id="compare-tile-heading" className="text-lg font-semibold text-[var(--color-text-primary)]">
+                <h2 id="compare-tile-heading" className="text-h2 text-[var(--color-text-primary)]">
                   Compare tools side-by-side
                 </h2>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+                <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
                   {comparisonPairs.length} curated head-to-head comparisons across agent platforms, guardrails,
                   and assistants — every governance dimension laid out column-by-column.
                 </p>
@@ -290,7 +287,7 @@ export default function Home() {
         {latestUpdate ? (
           <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
             <div className="border-l-4 border-[var(--color-primary)] pl-4">
-              <div className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
+              <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
                 Latest update · {latestUpdate.date}
               </div>
               <div className="mt-2 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">

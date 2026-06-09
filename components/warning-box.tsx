@@ -13,22 +13,22 @@ const styles: Record<WarningVariant, { icon: typeof AlertTriangle; border: strin
   warning: {
     icon: AlertTriangle,
     border: "border-[var(--color-warning)]",
-    bg: "bg-[color:rgba(245,158,11,0.08)]",
+    bg: "bg-[color:var(--color-warning-soft)]",
     text: "text-[var(--color-warning)]",
     defaultTitle: "Warning",
   },
   deprecated: {
     icon: OctagonAlert,
     border: "border-[var(--color-danger)]",
-    bg: "bg-[color:rgba(239,68,68,0.08)]",
+    bg: "bg-[color:var(--color-danger-soft)]",
     text: "text-[var(--color-danger)]",
     defaultTitle: "Deprecated",
   },
   info: {
     icon: Info,
-    border: "border-[var(--color-primary)]",
-    bg: "bg-[color:rgba(59,130,246,0.08)]",
-    text: "text-[var(--color-primary)]",
+    border: "border-[var(--color-accent)]",
+    bg: "bg-[color:var(--color-accent-soft)]",
+    text: "text-[var(--color-accent)]",
     defaultTitle: "Info",
   },
 };
