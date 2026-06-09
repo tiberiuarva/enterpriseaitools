@@ -25,6 +25,12 @@ The site is well-structured for a v1. The data model is sound, comparison tables
 **File:** not present  
 **Effort:** Small (< 1 hour)
 
+> **Status:** Superseded. `staticwebapp.config.json` now ships with a
+> `responseOverrides.404 → /404.html` rule instead of the SPA-style
+> `navigationFallback` originally suggested below. The exported Next.js
+> route files resolve directly; unknown routes serve the branded `404.html`
+> with HTTP 404 (not the homepage with HTTP 200). See `fix/swa-custom-404-routing`.
+
 Azure Static Web Apps serving a Next.js `output: "export"` does not automatically handle client-side routing fallbacks. Without a `staticwebapp.config.json`, any URL that is not `/index.html` will return a 404 if a user navigates directly (e.g. bookmarks `/agents/`, pastes a URL, or refreshes). Azure Static Web Apps requires explicit navigation fallback rules.
 
 **Impact when fixed:** All pages become directly accessible via URL; deep links, bookmarks, and refreshes work correctly.
