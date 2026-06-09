@@ -208,7 +208,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
                   }}
                   onKeyDown={handleKeyDown}
                   placeholder="Search tools and platforms"
-                  className="h-10 w-full card-flat pl-10 pr-3 text-sm text-[var(--color-text-primary)] outline-none transition placeholder:text-[var(--color-text-secondary)] focus:border-[var(--color-primary)]"
+                  className="h-10 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] pl-10 pr-3 text-sm text-[var(--color-text-primary)] outline-none transition placeholder:text-[var(--color-text-secondary)] focus:border-[var(--color-primary)]"
                 />
               </div>
               <SearchResults
@@ -249,7 +249,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
               }}
               onKeyDown={handleKeyDown}
               placeholder="Search tools and platforms"
-              className="h-10 w-full card-flat pl-9 pr-3 text-sm text-[var(--color-text-primary)] outline-none transition placeholder:text-[var(--color-text-secondary)] focus:border-[var(--color-primary)]"
+              className="h-10 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] pl-9 pr-3 text-sm text-[var(--color-text-primary)] outline-none transition placeholder:text-[var(--color-text-secondary)] focus:border-[var(--color-primary)]"
             />
           </div>
 

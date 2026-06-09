@@ -206,7 +206,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             </div>
           </div>
 
-          <dl className="grid shrink-0 grid-cols-1 gap-2 text-right md:text-left">
+          <dl className="grid shrink-0 grid-cols-1 gap-2 md:text-right">
             <div>
               <dt className="text-caption uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">In dataset</dt>
               <dd className="text-h2 text-[var(--color-text-primary)]">{tools.length}</dd>

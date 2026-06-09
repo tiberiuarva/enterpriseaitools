@@ -23,7 +23,7 @@
   /* Accent — one, used sparingly. Teal differentiates from the Azure /
      AWS / GCP / OpenAI / Apple blues used everywhere else in AI tooling
      and reads as institutional / governance-grade. */
-  --color-accent: #0d9488;
+  --color-accent: #0c9a8e;
   --color-accent-strong: #0f766e;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
 
@@ -255,6 +255,11 @@ body {
   .card-flat {
     background: var(--color-bg-surface);
     border-radius: 14px;
+    /* transparent baseline border so `hover:border-[var(--color-accent)]`
+       utilities on clickable card-flat elements (e.g. RelatedHubs,
+       RelatedComparisons items) take effect — border-color alone needs
+       a width + style declared somewhere. */
+    border: 1px solid transparent;
   }
 
   /* ── Status badge — dot + label ────────────────────────────────────────── */
