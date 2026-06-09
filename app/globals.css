@@ -21,13 +21,13 @@
   --color-bg-card-hover: #202024;
   --color-bg-hover: rgba(255, 255, 255, 0.04);
 
-  /* Accent — one, used sparingly. Slate-graphite for a near-monochrome,
-     Stripe-Press / Apple-Newsroom feel that reads serious-publication
-     rather than SaaS. In dark mode the accent is a light slate so it
-     stays high-contrast against the dark surface; --color-text-inverse
-     flips correspondingly so filled-button text always clears AAA. */
-  --color-accent: #cbd5e1;
-  --color-accent-strong: #e2e8f0;
+  /* Accent — one, used sparingly. Deep indigo (Stripe / Linear / Apple
+     system-indigo territory) for a modern-institutional B2B feel that
+     differentiates from cobalt and the cloud-vendor blues by leaning
+     violet. In dark mode the accent lightens to indigo-400 so it stays
+     high-contrast against the warm-near-black surfaces. */
+  --color-accent: #818cf8;
+  --color-accent-strong: #a5b4fc;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
 
   /* Status (semantic) */
@@ -95,8 +95,8 @@ html.light {
   --color-bg-card-hover: #ebebed;
   --color-bg-hover: #ebebed;
 
-  --color-accent: #334155;
-  --color-accent-strong: #1e293b;
+  --color-accent: #4338ca;
+  --color-accent-strong: #3730a3;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
 
   --color-success: #1a7a32;
