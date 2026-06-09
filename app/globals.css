@@ -21,11 +21,13 @@
   --color-bg-card-hover: #202024;
   --color-bg-hover: rgba(255, 255, 255, 0.04);
 
-  /* Accent — one, used sparingly. Teal differentiates from the Azure /
-     AWS / GCP / OpenAI / Apple blues used everywhere else in AI tooling
-     and reads as institutional / governance-grade. */
-  --color-accent: #0c9a8e;
-  --color-accent-strong: #0f766e;
+  /* Accent — one, used sparingly. Slate-graphite for a near-monochrome,
+     Stripe-Press / Apple-Newsroom feel that reads serious-publication
+     rather than SaaS. In dark mode the accent is a light slate so it
+     stays high-contrast against the dark surface; --color-text-inverse
+     flips correspondingly so filled-button text always clears AAA. */
+  --color-accent: #cbd5e1;
+  --color-accent-strong: #e2e8f0;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
 
   /* Status (semantic) */
@@ -93,8 +95,8 @@ html.light {
   --color-bg-card-hover: #ebebed;
   --color-bg-hover: #ebebed;
 
-  --color-accent: #0f766e;
-  --color-accent-strong: #115e59;
+  --color-accent: #334155;
+  --color-accent-strong: #1e293b;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
 
   --color-success: #1a7a32;
