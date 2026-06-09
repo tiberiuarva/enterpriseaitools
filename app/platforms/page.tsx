@@ -133,7 +133,7 @@ export default function PlatformsPage() {
                 </p>
 
                 {bestFit ? (
-                  <div className="mt-4 inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
+                  <div className="mt-4 inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 text-xs font-medium text-[var(--color-text-secondary)]">
                     <span className="text-[var(--color-text-primary)]">Best fit:</span>
                     <span className="ml-1">{bestFit}</span>
                   </div>

@@ -32,7 +32,7 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
           const Icon = iconMap[snapshot.key];
 
           return (
-            <article key={snapshot.key} className="card-flat p-5">
+            <article key={snapshot.key} className="card p-5">
               <div className="flex items-start gap-3">
                 <Icon size={18} aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--color-text-secondary)]" />
                 <div>

@@ -12,8 +12,8 @@ const STATUS_STYLES: Record<GovernanceStatus, string> = {
   yes: "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]",
   partial: "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]",
   no: "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]",
-  "not-applicable": "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
-  unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
+  "not-applicable": "bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)]",
+  unknown: "bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)]",
 };
 
 function StatusBadge({ status }: { status: GovernanceStatus }) {

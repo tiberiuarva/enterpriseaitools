@@ -79,7 +79,7 @@ export default function UpdatesPage() {
                 Start with the high-impact market view, then jump into the relevant hub pages for side-by-side comparisons and the current tracked dataset.
               </p>
             </div>
-            <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-3 text-sm text-[var(--color-text-secondary)] lg:max-w-sm">
+            <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-4 py-3 text-sm text-[var(--color-text-secondary)] lg:max-w-sm">
               Prefer a machine-readable change feed?{" "}
               <a href={`${siteUrl}/updates.xml`} className="font-medium text-[var(--color-primary)] hover:underline">
                 Subscribe to the Atom feed
@@ -92,7 +92,7 @@ export default function UpdatesPage() {
               <a
                 key={item.href}
                 href={withBasePath(item.href)}
-                className="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                className="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-4 py-2 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
                 {item.label}
               </a>

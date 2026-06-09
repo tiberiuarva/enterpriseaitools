@@ -25,7 +25,7 @@ const LICENSE_RISK_BADGE: Record<LicenseRiskLevel, string> = {
   low: "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]",
   medium: "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]",
   high: "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]",
-  unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
+  unknown: "bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)]",
 };
 
 function formatCloudName(cloud: string) {
@@ -97,7 +97,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
       ) : null}
 
       {!compact && tool.practitionerNote ? (
-        <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2">
+        <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-2">
           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">Practitioner note</p>
           <p className="mt-1 text-sm text-[var(--color-text-primary)]">{tool.practitionerNote}</p>
         </div>
@@ -135,7 +135,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
 
       <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[11px]">
         {tool.governance.deployment.models.map((model) => (
-          <span key={model} className="rounded-full bg-[var(--color-bg-surface)] px-2 py-0.5 text-[var(--color-text-secondary)]">
+          <span key={model} className="rounded-full bg-[var(--color-bg-hover)] px-2 py-0.5 text-[var(--color-text-secondary)]">
             {DEPLOYMENT_LABELS[model]}
           </span>
         ))}

@@ -249,7 +249,7 @@ export default function AboutPage() {
                   <a
                     key={section.id}
                     href={`#${section.id}`}
-                    className="block rounded-xl border border-transparent px-3 py-2 transition hover:border-[var(--color-border)] hover:bg-[var(--color-bg-surface)]"
+                    className="block rounded-xl border border-transparent px-3 py-2 transition hover:border-[var(--color-border)] hover:bg-[var(--color-bg-hover)]"
                   >
                     <span className="block text-sm font-medium text-[var(--color-text-primary)]">{section.label}</span>
                     <span className="mt-1 block text-xs leading-5 text-[var(--color-text-secondary)]">{section.summary}</span>

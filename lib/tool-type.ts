@@ -13,7 +13,7 @@ const toolTypeTokens: Record<ToolType, { textClass: string; tintClass: string }>
   },
   commercial: {
     textClass: "text-[var(--color-text-secondary)]",
-    tintClass: "bg-[var(--color-bg-surface)]",
+    tintClass: "bg-[var(--color-bg-hover)]",
   },
 };
 

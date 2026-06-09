@@ -33,7 +33,7 @@ export function VendorToolsSection({
           <button
             type="button"
             onClick={onClearFilters}
-            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+            className="inline-flex shrink-0 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
           >
             {clearFiltersLabel}
           </button>

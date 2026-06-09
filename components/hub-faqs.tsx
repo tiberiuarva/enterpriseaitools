@@ -21,7 +21,7 @@ export function HubFaqs({
   return (
     <section
       aria-labelledby={headingId}
-      className="card p-6"
+      className="card-flat p-6"
     >
       <div className="flex items-start gap-3">
         <HelpCircle size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
