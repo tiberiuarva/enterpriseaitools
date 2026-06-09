@@ -34,7 +34,7 @@ function getImpactTone(impact?: UpdateImpact) {
     case "medium":
       return "border-[color:var(--color-warning)] bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]";
     default:
-      return "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]";
+      return "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)]";
   }
 }
 
@@ -75,7 +75,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
               Default view shows only the highest-impact market moves. Expand to the full log when you need lower-signal releases and routine product churn.
             </p>
           </div>
-          <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-1">
+          <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-hover)] p-1">
             <fieldset className="flex flex-wrap gap-1">
               <legend className="sr-only">Choose updates feed view</legend>
               {viewOptions.map((option) => (
@@ -108,7 +108,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
               className={`rounded-full border px-3 py-1.5 text-sm transition ${
                 categoryFilter === option.value
                   ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
-                  : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                  : "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               }`}
             >
               {option.label}
@@ -130,7 +130,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
             <button
               type="button"
               onClick={() => setView("all-updates")}
-              className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
             >
               Show full log
             </button>
@@ -187,7 +187,7 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
             ))}
           </div>
         ) : (
-          <div className="rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-bg-surface)] p-4 text-sm text-[var(--color-text-secondary)]">
+          <div className="rounded-lg border border-dashed border-[var(--color-border)] bg-[var(--color-bg-hover)] p-4 text-sm text-[var(--color-text-secondary)]">
             No updates match this filter in the current view. Try another category or switch to the full log.
           </div>
         )}

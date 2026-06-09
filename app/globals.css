@@ -13,9 +13,10 @@
 :root {
   --site-header-height: 4rem;
 
-  /* Surfaces — warm near-black, three stops */
+  /* Surfaces — one box tone, the page is darker. Elevation comes from
+     shadow on .card, not from stacking shades of the box color. */
   --color-bg-primary: #0b0b0d;
-  --color-bg-surface: #141417;
+  --color-bg-surface: #1c1c1f;
   --color-bg-card: #1c1c1f;
   --color-bg-card-hover: #202024;
   --color-bg-hover: rgba(255, 255, 255, 0.04);
@@ -84,11 +85,13 @@
 
 /* ── Light mode ──────────────────────────────────────────────────────────── */
 html.light {
-  --color-bg-primary: #f2f2f5;
-  --color-bg-surface: #fafafb;
+  /* Page gray (Apple's standard #f5f5f7) + uniform white box tone.
+     Elevation comes from shadow, not from stacking shades of off-white. */
+  --color-bg-primary: #f5f5f7;
+  --color-bg-surface: #ffffff;
   --color-bg-card: #ffffff;
-  --color-bg-card-hover: #f5f5f7;
-  --color-bg-hover: #f5f5f7;
+  --color-bg-card-hover: #ebebed;
+  --color-bg-hover: #ebebed;
 
   --color-accent: #0f766e;
   --color-accent-strong: #115e59;

@@ -30,7 +30,7 @@ export function ToolIdentityBadge({ label, logoUrl, logoKind, size = "md", class
   return (
     <div
       aria-hidden="true"
-      className={`${sizeClasses[size]} inline-flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] ${className}`.trim()}
+      className={`${sizeClasses[size]} inline-flex items-center justify-center border border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)] ${className}`.trim()}
     >
       <Boxes size={iconSize[size]} strokeWidth={2} />
     </div>

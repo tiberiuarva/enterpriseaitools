@@ -283,7 +283,7 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
               <button
                 type="button"
                 onClick={resetNarrowingFilters}
-                className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
                 Clear cloud/license filters
               </button>

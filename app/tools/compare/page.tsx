@@ -57,7 +57,7 @@ export default function CompareIndexPage() {
                 {resolvedTools.map((tool) => (
                   <li
                     key={tool.id}
-                    className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2.5 py-1"
+                    className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-2.5 py-1"
                   >
                     {tool.name}
                   </li>

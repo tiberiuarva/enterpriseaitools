@@ -8,12 +8,12 @@ export function VendorComparisonTable({
   rows: ComparisonRow[];
 }) {
   return (
-    <div className="overflow-x-auto card">
+    <div className="overflow-x-auto card-flat">
       <table className="min-w-full border-collapse text-sm">
         <caption className="sr-only">Comparison table for {vendors.join(", ")}</caption>
         <thead>
-          <tr className="bg-[var(--color-bg-surface)] text-left">
-            <th scope="col" className="sticky left-0 z-10 border-b border-[var(--color-border)] bg-[var(--color-bg-surface)] px-4 py-3 font-semibold text-[var(--color-text-primary)]">
+          <tr className="bg-[var(--color-bg-hover)] text-left">
+            <th scope="col" className="sticky left-0 z-10 border-b border-[var(--color-border)] bg-[var(--color-bg-hover)] px-4 py-3 font-semibold text-[var(--color-text-primary)]">
               Attribute
             </th>
             {vendors.map((vendor) => (
@@ -25,7 +25,7 @@ export function VendorComparisonTable({
         </thead>
         <tbody>
           {rows.map((row, index) => (
-            <tr key={row.attribute} className={index % 2 === 0 ? "bg-[var(--color-bg-card)]" : "bg-[var(--color-bg-surface)]/40"}>
+            <tr key={row.attribute} className={index % 2 === 0 ? "bg-[var(--color-bg-card)]" : "bg-[var(--color-bg-hover)]/40"}>
               <th scope="row" className="sticky left-0 border-b border-[var(--color-border)] bg-inherit px-4 py-3 text-left font-medium text-[var(--color-text-primary)]">
                 {row.attribute}
               </th>

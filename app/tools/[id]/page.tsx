@@ -131,7 +131,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                   className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
                     isStale
                       ? "border-[var(--color-warning)] bg-[color:var(--color-warning-soft)] text-[var(--color-warning)]"
-                      : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-primary)]"
+                      : "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-primary)]"
                   }`}
                   title={
                     isStale
@@ -203,7 +203,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
               ))}
             </ul>
             {tool.practitionerNote ? (
-              <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-2">
+              <div className="mt-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">Practitioner note</p>
                 <p className="mt-1 text-sm text-[var(--color-text-primary)]">{tool.practitionerNote}</p>
               </div>

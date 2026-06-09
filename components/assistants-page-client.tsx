@@ -221,7 +221,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
         className="sticky z-20 bg-[var(--color-bg-primary)] pb-2 pt-1"
         style={{ top: "calc(var(--site-header-height, 4rem) + 0.25rem)" }}
       >
-        <div className="card-flat p-4 shadow-sm">
+        <div className="card p-4">
           <div role="tablist" aria-label="Assistant subcategories" className="flex flex-wrap gap-2">
             {subcategoryOrder.map((subcategory) => (
               <button
@@ -240,7 +240,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                   activeTab === subcategory
                     ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
-                    : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                    : "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                 }`}
               >
                 {subcategoryLabels[subcategory]}
@@ -304,7 +304,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
                 <button
                   type="button"
                   onClick={resetNarrowingFilters}
-                  className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                 >
                   Clear cloud/license filters
                 </button>

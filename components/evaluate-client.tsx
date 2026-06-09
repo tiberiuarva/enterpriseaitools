@@ -65,7 +65,7 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                     className={`cursor-pointer rounded-full border px-3 py-1.5 text-sm transition ${
                       checked
                         ? "border-[var(--color-primary)] bg-[var(--color-primary)] text-[var(--color-text-inverse)]"
-                        : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                        : "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)] hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                     }`}
                   >
                     <input

@@ -26,7 +26,7 @@ export function RelatedComparisons({
   return (
     <section
       aria-labelledby={headingId}
-      className="card p-6"
+      className="card-flat p-6"
     >
       <div className="flex items-start gap-3">
         <GitCompare size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
@@ -42,7 +42,7 @@ export function RelatedComparisons({
           <a
             key={pair.slug}
             href={withBasePath(`/tools/compare/${pair.slug}`)}
-            className="group flex items-start justify-between gap-3 card-flat p-4 transition-colors hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+            className="group flex items-start justify-between gap-3 card card-hover p-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
           >
             <div className="min-w-0">
               <div className="text-sm font-semibold text-[var(--color-text-primary)]">{pair.title}</div>

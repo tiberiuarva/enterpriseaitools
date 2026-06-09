@@ -36,7 +36,7 @@ export function RelatedHubs({
           <a
             key={hub.href}
             href={withBasePath(hub.href)}
-            className="card-flat p-4 transition-colors hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-hover)]"
+            className="card card-hover p-4"
           >
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">
               {hub.title}

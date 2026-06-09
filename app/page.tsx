@@ -164,7 +164,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="card p-6">
+        <section className="card-flat p-6">
           <div className="flex items-start gap-3">
             <Layers3 size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
             <div className="max-w-2xl">
@@ -200,26 +200,26 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
-            <div className="card-flat p-4">
+          <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 xl:grid-cols-4">
+            <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">1. Foundation clouds are setting the defaults</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Microsoft, AWS, and Google increasingly define identity, model access, security controls, procurement path, and the first route into production.
               </p>
             </div>
-            <div className="card-flat p-4">
+            <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">2. Delivery layers are competing above the cloud</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Agent frameworks, orchestration stacks, and assistant surfaces now compete on speed, openness, integration depth, and operational fit.
               </p>
             </div>
-            <div className="card-flat p-4">
+            <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">3. Governance is becoming a hard adoption gate</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Guardrails matter where they touch approvals, auditability, data handling, model policy, and regulated-enterprise controls rather than demo-only safety claims.
               </p>
             </div>
-            <div className="card-flat p-4">
+            <div>
               <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">4. Standards support is starting to matter</h3>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                 Protocols like MCP, A2A, and OpenAPI are becoming practical signals for ecosystem fit, tool portability, and how easily platforms connect to external agents and services.
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-5 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-bg-primary)] p-4">
+          <div className="mt-5 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-bg-hover)] p-4">
             <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">How to read this tracker</h3>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
               Start with{" "}
@@ -266,7 +266,7 @@ export default function Home() {
                   {comparisonPairs.slice(0, 3).map((pair) => (
                     <li
                       key={pair.slug}
-                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-surface)] px-2.5 py-1"
+                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-2.5 py-1"
                     >
                       {pair.title}
                     </li>
