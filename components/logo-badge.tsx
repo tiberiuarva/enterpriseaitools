@@ -52,8 +52,9 @@ const projectLogoImageSizes = {
 const baseContainerClasses = "overflow-hidden border";
 
 const containerClassesByKind = {
-  "service-icon": "border-[color:rgba(59,130,246,0.28)] bg-[linear-gradient(180deg,rgba(239,246,255,0.95),rgba(219,234,254,0.7))]",
-  default: "border-[var(--color-border)] bg-white",
+  "service-icon":
+    "border-[color:var(--color-logo-badge-border)] bg-[linear-gradient(180deg,var(--color-logo-badge-from),var(--color-logo-badge-to))]",
+  default: "border-[var(--color-border)] bg-[var(--color-bg-card)]",
   fallback:
     "border-[var(--color-border)] bg-[linear-gradient(180deg,var(--color-bg-surface),var(--color-bg-card))] text-[var(--color-text-primary)]",
 } as const;

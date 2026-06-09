@@ -1,40 +1,135 @@
 @import "tailwindcss";
 
+/*
+ * SINGLE SOURCE OF TRUTH for every color literal in the codebase.
+ * Component code consumes colors only via `var(--*)` tokens or their Tailwind
+ * aliases (configured in `tailwind.config.ts`). Hardcoded hex / rgb / rgba /
+ * hsl values or raw Tailwind palette classes (e.g. `bg-rose-50`, `text-amber-700`)
+ * outside this file are rejected by `scripts/check-color-literals.mjs` at
+ * build time. Add new colors here, not in components.
+ */
+
+/* ── Dark mode (default) ─────────────────────────────────────────────────── */
 :root {
   --site-header-height: 4rem;
-  --color-bg-primary: #0a1628;
-  --color-bg-surface: #111827;
-  --color-bg-card: #1e293b;
-  --color-primary: #3b82f6;
-  --color-primary-soft: rgba(59, 130, 246, 0.14);
-  --color-secondary: #06b6d4;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #cbd5e1;
-  --color-border: #334155;
+
+  /* Surfaces — warm near-black, three stops */
+  --color-bg-primary: #0b0b0d;
+  --color-bg-surface: #141417;
+  --color-bg-card: #1c1c1f;
+  --color-bg-card-hover: #202024;
   --color-bg-hover: rgba(255, 255, 255, 0.04);
-  --color-text-inverse: #ffffff;
-  --color-bg-light: #f8fafc;
+
+  /* Accent — one, used sparingly */
+  --color-accent: #0a84ff;
+  --color-accent-strong: #0071e3;
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 18%, transparent);
+
+  /* Status (semantic) */
+  --color-success: #30d158;
+  --color-warning: #ff9f0a;
+  --color-danger: #ff453a;
+  --color-info: var(--color-accent);
+  --color-success-soft: color-mix(in srgb, var(--color-success) 14%, transparent);
+  --color-warning-soft: color-mix(in srgb, var(--color-warning) 14%, transparent);
+  --color-danger-soft: color-mix(in srgb, var(--color-danger) 14%, transparent);
+  --color-info-soft: var(--color-accent-soft);
+
+  /* Text */
+  --color-text-primary: #f5f5f7;
+  --color-text-secondary: #a1a1a6;
+  --color-text-tertiary: #6e6e73;
+  --color-text-inverse: #1d1d1f;
+
+  /* Borders (hairlines) */
+  --color-border: #2a2a2d;
+  --color-border-strong: #3a3a3d;
+
+  /* Vendor brand colors (only consumed via lib/vendor-colors.ts) */
+  --vendor-azure: #2196f3;
+  --vendor-aws: #ff9900;
+  --vendor-gcp: #5f9efc;
+  --vendor-azure-soft: color-mix(in srgb, var(--vendor-azure) 18%, transparent);
+  --vendor-aws-soft: color-mix(in srgb, var(--vendor-aws) 18%, transparent);
+  --vendor-gcp-soft: color-mix(in srgb, var(--vendor-gcp) 18%, transparent);
+  --vendor-azure-border: color-mix(in srgb, var(--vendor-azure) 28%, transparent);
+  --vendor-aws-border: color-mix(in srgb, var(--vendor-aws) 28%, transparent);
+  --vendor-gcp-border: color-mix(in srgb, var(--vendor-gcp) 28%, transparent);
+
+  /* Logo badge gradient stops (service-icon variant) */
+  --color-logo-badge-from: rgba(255, 255, 255, 0.08);
+  --color-logo-badge-to: rgba(255, 255, 255, 0.02);
+  --color-logo-badge-border: rgba(255, 255, 255, 0.12);
+
+  /* Elevation — dark mode shadows nearly imperceptible; depth from bg lift */
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.5), 0 1px 1px rgb(0 0 0 / 0.35);
+  --shadow-2: 0 6px 16px rgb(0 0 0 / 0.55), 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-3: 0 16px 40px rgb(0 0 0 / 0.6);
+
+  /* Motion */
+  --motion-fast: 150ms;
+  --motion-base: 220ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Backward-compat aliases retained so callsites that still reference the
+     old token names keep working until each is migrated. */
+  --color-primary: var(--color-accent);
+  --color-primary-soft: var(--color-accent-soft);
+  --color-secondary: var(--color-accent);
+  --color-bg-light: #fbfbfd;
 }
 
+/* ── Light mode ──────────────────────────────────────────────────────────── */
 html.light {
-  --color-bg-primary: #f8fafc;
+  --color-bg-primary: #fbfbfd;
   --color-bg-surface: #ffffff;
   --color-bg-card: #ffffff;
-  --color-primary: #3b82f6;
-  --color-primary-soft: rgba(59, 130, 246, 0.12);
-  --color-secondary: #06b6d4;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-text-primary: #334155;
-  --color-text-secondary: #64748b;
-  --color-border: #cbd5e1;
-  --color-bg-hover: #f1f5f9;
+  --color-bg-card-hover: #f5f5f7;
+  --color-bg-hover: #f5f5f7;
+
+  --color-accent: #0071e3;
+  --color-accent-strong: #0066cc;
+  --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
+
+  --color-success: #248a3d;
+  --color-warning: #b25000;
+  --color-danger: #d70015;
+  --color-info: var(--color-accent);
+  --color-success-soft: color-mix(in srgb, var(--color-success) 10%, transparent);
+  --color-warning-soft: color-mix(in srgb, var(--color-warning) 10%, transparent);
+  --color-danger-soft: color-mix(in srgb, var(--color-danger) 10%, transparent);
+  --color-info-soft: var(--color-accent-soft);
+
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #515154;
+  --color-text-tertiary: #86868b;
   --color-text-inverse: #ffffff;
-  --color-bg-light: #f8fafc;
+
+  --color-border: #e5e5e7;
+  --color-border-strong: #d2d2d7;
+
+  --vendor-azure: #0078d4;
+  --vendor-aws: #ff9900;
+  --vendor-gcp: #4285f4;
+  --vendor-azure-soft: color-mix(in srgb, var(--vendor-azure) 12%, transparent);
+  --vendor-aws-soft: color-mix(in srgb, var(--vendor-aws) 12%, transparent);
+  --vendor-gcp-soft: color-mix(in srgb, var(--vendor-gcp) 12%, transparent);
+  --vendor-azure-border: color-mix(in srgb, var(--vendor-azure) 22%, transparent);
+  --vendor-aws-border: color-mix(in srgb, var(--vendor-aws) 22%, transparent);
+  --vendor-gcp-border: color-mix(in srgb, var(--vendor-gcp) 22%, transparent);
+
+  --color-logo-badge-from: rgba(0, 0, 0, 0.04);
+  --color-logo-badge-to: rgba(0, 0, 0, 0.01);
+  --color-logo-badge-border: rgba(0, 0, 0, 0.08);
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.04), 0 1px 1px rgb(0 0 0 / 0.03);
+  --shadow-2: 0 4px 12px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-3: 0 12px 32px rgb(0 0 0 / 0.08);
+
+  --color-primary: var(--color-accent);
+  --color-primary-soft: var(--color-accent-soft);
+  --color-secondary: var(--color-accent);
+  --color-bg-light: #fbfbfd;
 }
 
 @theme inline {
@@ -58,6 +153,10 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @layer base {
@@ -67,9 +166,120 @@ body {
   }
 }
 
+/* ── Focus ring — soft accent halo ───────────────────────────────────────── */
 :where(a, button, summary, input, select, textarea):focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  border-radius: inherit;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Type scale utilities ────────────────────────────────────────────────── */
+@layer components {
+  .text-display {
+    font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    font-weight: 600;
+  }
+  .text-h1 {
+    font-size: clamp(1.75rem, 2vw + 1rem, 2.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  .text-h2 {
+    font-size: clamp(1.25rem, 1vw + 0.875rem, 1.5rem);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+  }
+  .text-h3 {
+    font-size: 1.125rem;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+  }
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.55;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .text-body-sm {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .text-caption {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+  }
+
+  /* ── Card grammar ──────────────────────────────────────────────────────── */
+  .card {
+    background: var(--color-bg-card);
+    border-radius: 14px;
+    box-shadow: var(--shadow-1);
+    transition: box-shadow var(--motion-fast) var(--ease-out),
+      background-color var(--motion-fast) var(--ease-out);
+  }
+  .card-hover:hover {
+    box-shadow: var(--shadow-2);
+    background: var(--color-bg-card-hover);
+  }
+  .card-flat {
+    background: var(--color-bg-surface);
+    border-radius: 14px;
+  }
+
+  /* ── Status badge — dot + label ────────────────────────────────────────── */
+  .badge-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+  .badge-dot::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--badge-dot-color, var(--color-text-tertiary));
+    flex-shrink: 0;
+  }
+  .badge-dot-success {
+    --badge-dot-color: var(--color-success);
+  }
+  .badge-dot-warning {
+    --badge-dot-color: var(--color-warning);
+  }
+  .badge-dot-danger {
+    --badge-dot-color: var(--color-danger);
+  }
+  .badge-dot-info {
+    --badge-dot-color: var(--color-info);
+  }
+  .badge-dot-muted {
+    --badge-dot-color: var(--color-text-tertiary);
+  }
 }
 
 .skip-link {
@@ -78,13 +288,13 @@ body {
   top: 1rem;
   z-index: 100;
   transform: translateY(-200%);
-  border-radius: 0.75rem;
-  border: 1px solid var(--color-primary);
+  border-radius: 10px;
   background: var(--color-bg-surface);
   color: var(--color-text-primary);
   padding: 0.75rem 1rem;
   font-weight: 600;
-  transition: transform 0.15s ease;
+  box-shadow: var(--shadow-2);
+  transition: transform var(--motion-fast) var(--ease-out);
 }
 
 .skip-link:focus {

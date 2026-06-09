@@ -32,6 +32,8 @@ jobs:
         run: npm run check-logo-provenance
       - name: Check logo audit report sync
         run: npm run check-logo-audit-report
+      - name: Check color literals (palette is single-sourced)
+        run: npm run check-color-literals
       - name: Lint
         run: npm run lint
       - name: Check governance data

@@ -109,8 +109,8 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
             <div className="flex min-w-0 items-start gap-3">
               <ToolIdentityBadge label={tool.name} logoUrl={tool.logoUrl} logoKind={tool.logoKind} size="md" className="shrink-0" />
               <div className="min-w-0">
-                <h1 className="text-[1.75rem] font-extrabold leading-tight text-[var(--color-text-primary)]">{tool.name}</h1>
-                {tool.vendor ? <p className="text-sm text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
+                <h1 className="text-h1 text-[var(--color-text-primary)]">{tool.name}</h1>
+                {tool.vendor ? <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
               </div>
             </div>
             <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${toolTypeTintStyles[tool.type]}`}>
@@ -130,7 +130,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                 <span
                   className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${
                     isStale
-                      ? "border-[var(--color-warning)] bg-[color:rgba(234,179,8,0.12)] text-[var(--color-warning)]"
+                      ? "border-[var(--color-warning)] bg-[color:var(--color-warning-soft)] text-[var(--color-warning)]"
                       : "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-primary)]"
                   }`}
                   title={
@@ -234,7 +234,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                       <span aria-hidden="true">·</span>
                       <span className="font-semibold uppercase tracking-wide">{UPDATE_TYPE_LABELS[update.type] ?? update.type}</span>
                       {highImpact ? (
-                        <span className="rounded-full bg-[color:rgba(234,179,8,0.15)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-warning)]">High impact</span>
+                        <span className="rounded-full bg-[color:var(--color-warning-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[color:var(--color-warning)]">High impact</span>
                       ) : null}
                     </div>
                     {update.title ? <div className="mt-1 font-semibold text-[var(--color-text-primary)]">{update.title}</div> : null}
@@ -255,7 +255,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                     <span aria-hidden="true">·</span>
                     <span className="font-semibold uppercase tracking-wide">Auto-detected</span>
                     {event.highImpact ? (
-                      <span className="rounded-full bg-[color:rgba(234,179,8,0.15)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-warning)]">High impact</span>
+                      <span className="rounded-full bg-[color:var(--color-warning-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[color:var(--color-warning)]">High impact</span>
                     ) : null}
                   </div>
                   <div className="mt-1 text-sm text-[var(--color-text-primary)]">

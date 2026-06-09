@@ -22,9 +22,9 @@ const DEPLOYMENT_LABELS: Record<DeploymentModel, string> = {
 };
 
 const LICENSE_RISK_BADGE: Record<LicenseRiskLevel, string> = {
-  low: "bg-[color:rgba(34,197,94,0.15)] text-[var(--color-success)]",
-  medium: "bg-[color:rgba(234,179,8,0.15)] text-[var(--color-warning)]",
-  high: "bg-[color:rgba(239,68,68,0.15)] text-[var(--color-danger)]",
+  low: "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]",
+  medium: "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]",
+  high: "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]",
   unknown: "bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]",
 };
 
@@ -140,7 +140,7 @@ export function ToolCard({ tool, compact = false }: { tool: Tool; compact?: bool
           </span>
         ))}
         {tool.governance.soc2.status === "yes" ? (
-          <span className="rounded-full bg-[color:rgba(34,197,94,0.15)] px-2 py-0.5 font-semibold text-[var(--color-success)]">SOC 2</span>
+          <span className="rounded-full bg-[color:var(--color-success-soft)] px-2 py-0.5 font-semibold text-[color:var(--color-success)]">SOC 2</span>
         ) : null}
         <span className={`rounded-full px-2 py-0.5 font-semibold ${LICENSE_RISK_BADGE[tool.governance.licenseRisk.level]}`}>
           License {tool.governance.licenseRisk.level}

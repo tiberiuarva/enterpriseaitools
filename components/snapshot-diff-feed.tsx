@@ -80,7 +80,7 @@ export function SnapshotDiffFeed({
               <span aria-hidden="true">·</span>
               <span className="font-semibold uppercase tracking-wide">Auto-detected</span>
               {event.highImpact ? (
-                <span className="rounded-full bg-[color:rgba(234,179,8,0.15)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[var(--color-warning)]">
+                <span className="rounded-full bg-[color:var(--color-warning-soft)] px-2 py-0.5 text-[10px] font-semibold uppercase text-[color:var(--color-warning)]">
                   High impact
                 </span>
               ) : null}

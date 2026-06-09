@@ -95,11 +95,11 @@ export default function PlatformsPage() {
 
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/platforms">
-      <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+      <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <JsonLd data={jsonLd} />
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-          <h1 className="text-[2rem] font-extrabold text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
-          <p className="mt-3 max-w-4xl text-sm leading-6 text-[var(--color-text-secondary)]">
+        <section className="card-flat p-6 md:p-10">
+          <h1 className="text-h1 text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
+          <p className="mt-3 max-w-2xl text-body text-[var(--color-text-secondary)]">
             Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform (formerly Vertex AI) are the foundation layer. The control-plane choice shapes identity, model access, governance defaults, and deployment options for everything you build on top.
           </p>
         </section>

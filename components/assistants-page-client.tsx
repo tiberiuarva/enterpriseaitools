@@ -187,18 +187,16 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   ];
 
   return (
-    <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
+    <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
       <JsonLd data={jsonLd} />
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 md:p-8">
-        <div className="flex items-start gap-4">
-          <div className="rounded-xl bg-[color:rgba(59,130,246,0.12)] p-3 text-[var(--color-primary)]">
-            <BriefcaseBusiness size={28} />
-          </div>
-          <div>
-            <h1 className="text-[2rem] font-extrabold leading-tight text-[var(--color-text-primary)]">{title}</h1>
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">{description}</p>
+      <section className="card-flat p-6 md:p-10">
+        <div className="flex items-start gap-3">
+          <BriefcaseBusiness size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
+          <div className="max-w-2xl">
+            <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
+            <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
             {introParagraphs && introParagraphs.length > 0 ? (
-              <div className="mt-3 max-w-3xl space-y-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+              <div className="mt-3 space-y-3 text-body-sm text-[var(--color-text-secondary)]">
                 {introParagraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

@@ -31,6 +31,9 @@ npm run check-logo-provenance >/dev/null
 npm run check-logo-audit-report >/dev/null
 pass "logo provenance and audit-report sync checks pass"
 
+npm run check-color-literals >/dev/null
+pass "color-literal check passes (palette is single-sourced in app/globals.css)"
+
 npm run build >/dev/null
 [[ -f out/index.html ]] || fail "missing export output after build"
 npm run check-generated-artifacts >/dev/null

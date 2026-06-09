@@ -1,17 +1,24 @@
+/*
+ * Vendor brand colors are CSS variables defined in `app/globals.css`
+ * (`--vendor-azure / --vendor-aws / --vendor-gcp` plus `-soft` and `-border`
+ * variants). This module never declares color literals — it returns the
+ * matching token name for consumers.
+ */
+
 export type VendorColorKey = "azure" | "aws" | "gcp";
 
 const vendorColorKeys = new Set<VendorColorKey>(["azure", "aws", "gcp"]);
 
 export const cloudBadgeStyles: Record<VendorColorKey, string> = {
-  azure: "border-[color:#0078D4] text-[color:#0078D4]",
-  aws: "border-[color:#FF9900] text-[color:#FF9900]",
-  gcp: "border-[color:#4285F4] text-[color:#4285F4]",
+  azure: "border-[color:var(--vendor-azure)] text-[color:var(--vendor-azure)]",
+  aws: "border-[color:var(--vendor-aws)] text-[color:var(--vendor-aws)]",
+  gcp: "border-[color:var(--vendor-gcp)] text-[color:var(--vendor-gcp)]",
 };
 
 export const platformFallbackStyles: Record<VendorColorKey, string> = {
-  azure: "border-[color:rgba(0,120,212,0.22)] bg-[linear-gradient(180deg,rgba(0,120,212,0.10),rgba(0,120,212,0.18))] text-[color:#0078D4]",
-  aws: "border-[color:rgba(255,153,0,0.22)] bg-[linear-gradient(180deg,rgba(255,153,0,0.10),rgba(255,153,0,0.18))] text-[color:#FF9900]",
-  gcp: "border-[color:rgba(66,133,244,0.22)] bg-[linear-gradient(180deg,rgba(66,133,244,0.10),rgba(66,133,244,0.18))] text-[color:#4285F4]",
+  azure: "border-[color:var(--vendor-azure-border)] bg-[color:var(--vendor-azure-soft)] text-[color:var(--vendor-azure)]",
+  aws: "border-[color:var(--vendor-aws-border)] bg-[color:var(--vendor-aws-soft)] text-[color:var(--vendor-aws)]",
+  gcp: "border-[color:var(--vendor-gcp-border)] bg-[color:var(--vendor-gcp-soft)] text-[color:var(--vendor-gcp)]",
 };
 
 export function getCloudVendorColorKey(value: string): VendorColorKey | null {
