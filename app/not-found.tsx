@@ -14,7 +14,7 @@ export default function NotFound() {
           </p>
           <a
             href={withBasePath("/")}
-            className="mt-6 inline-flex rounded-xl border border-[var(--color-primary)] bg-[var(--color-primary)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90"
+            className="mt-6 inline-flex rounded-xl border border-[var(--color-primary)] bg-[var(--color-primary)] px-5 py-2.5 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)]"
           >
             Back to home
           </a>

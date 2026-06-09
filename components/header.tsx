@@ -17,24 +17,32 @@ const themeScript = `(() => {
     } catch {}
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   };
+  const syncButton = (theme) => {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+    const next = theme === 'dark' ? 'light' : 'dark';
+    button.setAttribute('aria-label', 'Switch to ' + next + ' mode');
+    button.setAttribute('title', 'Switch to ' + next + ' mode');
+  };
   const applyTheme = (theme) => {
     html.classList.remove('dark', 'light');
     html.classList.add(theme);
-    const button = document.getElementById('theme-toggle');
-    if (button) {
-      const next = theme === 'dark' ? 'light' : 'dark';
-      button.setAttribute('aria-label', 'Switch to ' + next + ' mode');
-      button.setAttribute('title', 'Switch to ' + next + ' mode');
-      button.dataset.theme = theme;
-    }
+    syncButton(theme);
   };
-  applyTheme(getTheme());
+  const initial = getTheme();
+  applyTheme(initial);
+  // The button doesn't exist yet on first synchronous run because this
+  // script renders before the button JSX. Queue a microtask so the
+  // aria-label / title are correct on first paint.
+  queueMicrotask(() => syncButton(html.classList.contains('light') ? 'light' : 'dark'));
   document.addEventListener('click', (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
     const button = target.closest('#theme-toggle');
     if (!button) return;
-    const current = button.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    // Read the actual html class — the source of truth — instead of the
+    // button's data-theme attribute which can race on first paint.
+    const current = html.classList.contains('light') ? 'light' : 'dark';
     const next = current === 'dark' ? 'light' : 'dark';
     applyTheme(next);
     try { window.localStorage.setItem(storageKey, next); } catch {}
@@ -159,13 +167,12 @@ export function Header({ currentPath = "/" }: HeaderProps) {
             <button
               id="theme-toggle"
               type="button"
-              data-theme="dark"
               aria-label="Switch to light mode"
               title="Switch to light mode"
-              className="group inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
             >
-              <Sun size={18} className="block group-data-[theme=light]:hidden" />
-              <Moon size={18} className="hidden group-data-[theme=light]:block" />
+              <Sun size={18} aria-hidden="true" className="theme-icon-when-dark" />
+              <Moon size={18} aria-hidden="true" className="theme-icon-when-light" />
             </button>
 
             <details className="relative md:hidden">

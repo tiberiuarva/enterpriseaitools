@@ -42,7 +42,7 @@ export function RelatedComparisons({
           <a
             key={pair.slug}
             href={withBasePath(`/tools/compare/${pair.slug}`)}
-            className="group flex items-start justify-between gap-3 card-flat p-4 transition hover:border-[var(--color-primary)] hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+            className="group flex items-start justify-between gap-3 card-flat p-4 transition-colors hover:border-[var(--color-primary)] hover:bg-[var(--color-bg-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
           >
             <div className="min-w-0">
               <div className="text-sm font-semibold text-[var(--color-text-primary)]">{pair.title}</div>

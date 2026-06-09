@@ -84,8 +84,8 @@
 
 /* ── Light mode ──────────────────────────────────────────────────────────── */
 html.light {
-  --color-bg-primary: #fbfbfd;
-  --color-bg-surface: #ffffff;
+  --color-bg-primary: #f2f2f5;
+  --color-bg-surface: #fafafb;
   --color-bg-card: #ffffff;
   --color-bg-card-hover: #f5f5f7;
   --color-bg-hover: #f5f5f7;
@@ -94,9 +94,9 @@ html.light {
   --color-accent-strong: #115e59;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
 
-  --color-success: #248a3d;
-  --color-warning: #b25000;
-  --color-danger: #d70015;
+  --color-success: #1a7a32;
+  --color-warning: #964400;
+  --color-danger: #b80012;
   --color-info: var(--color-accent);
   --color-success-soft: color-mix(in srgb, var(--color-success) 10%, transparent);
   --color-warning-soft: color-mix(in srgb, var(--color-warning) 10%, transparent);
@@ -125,9 +125,9 @@ html.light {
   --color-logo-badge-to: rgba(0, 0, 0, 0.01);
   --color-logo-badge-border: rgba(0, 0, 0, 0.08);
 
-  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.04), 0 1px 1px rgb(0 0 0 / 0.03);
-  --shadow-2: 0 4px 12px rgb(0 0 0 / 0.06), 0 1px 2px rgb(0 0 0 / 0.04);
-  --shadow-3: 0 12px 32px rgb(0 0 0 / 0.08);
+  --shadow-1: 0 1px 3px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-2: 0 8px 24px rgb(0 0 0 / 0.10), 0 2px 6px rgb(0 0 0 / 0.06);
+  --shadow-3: 0 16px 40px rgb(0 0 0 / 0.12);
 
   --color-primary: var(--color-accent);
   --color-primary-soft: var(--color-accent-soft);
@@ -260,6 +260,34 @@ body {
        RelatedComparisons items) take effect — border-color alone needs
        a width + style declared somewhere. */
     border: 1px solid transparent;
+  }
+
+  /* ── Chip — small inline meta affordance (license, version, dataset count, etc.) ─ */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    color: var(--color-text-secondary);
+  }
+
+  /* ── Theme toggle icons — flip on html.light without depending on a runtime
+        attribute the inline script can't set before the button renders ─────── */
+  .theme-icon-when-dark {
+    display: block;
+  }
+  .theme-icon-when-light {
+    display: none;
+  }
+  html.light .theme-icon-when-dark {
+    display: none;
+  }
+  html.light .theme-icon-when-light {
+    display: block;
   }
 
   /* ── Status badge — dot + label ────────────────────────────────────────── */

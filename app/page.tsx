@@ -276,7 +276,7 @@ export default function Home() {
             </div>
             <a
               href={withBasePath("/tools/compare")}
-              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
+              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
             >
               Open comparisons
               <ArrowUpRight size={16} aria-hidden="true" />
@@ -313,7 +313,7 @@ export default function Home() {
               ) : null}
               <div className="mt-4 flex flex-wrap gap-3">
                 <a
-                  className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:opacity-90"
+                  className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)]"
                   href={withBasePath("/updates")}
                 >
                   Open updates feed
