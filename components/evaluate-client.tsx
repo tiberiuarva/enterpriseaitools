@@ -142,14 +142,15 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                       <p className="mt-1 line-clamp-2 text-sm text-[var(--color-text-secondary)]">{result.tool.description}</p>
                     </div>
                     <span
-                      className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                      role="img"
+                      aria-label={`Fit score ${result.score} out of 100`}
+                      className={`shrink-0 rounded-full px-2.5 py-1 text-sm font-semibold ${
                         result.score >= 80
                           ? "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]"
                           : result.score >= 50
                           ? "bg-[color:var(--color-warning-soft)] text-[color:var(--color-warning)]"
                           : "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]"
                       }`}
-                      aria-label={`Fit score ${result.score} out of 100`}
                     >
                       Fit {result.score}
                     </span>

@@ -167,8 +167,8 @@ export function Header({ currentPath = "/" }: HeaderProps) {
             <button
               id="theme-toggle"
               type="button"
-              aria-label="Toggle theme"
-              title="Toggle theme"
+              aria-label="Switch to light mode"
+              title="Switch to light mode"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
             >
               <Sun size={18} aria-hidden="true" className="theme-icon-when-dark" />
