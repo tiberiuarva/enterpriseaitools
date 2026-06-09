@@ -20,7 +20,7 @@ import { homeFaqs } from "@/lib/hub-faqs";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
-import { lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
+import { categoryDescriptions, lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { filterToolsByCategory } from "@/lib/dataset-metrics";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -137,7 +137,7 @@ export default function Home() {
       <JsonLd data={jsonLd} />
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <section className="card-flat p-6 md:p-10">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
             <div className="max-w-2xl">
               <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">
                 Enterprise AI tooling landscape
@@ -156,9 +156,9 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <StatPill icon={Landmark} label="Categories" value={4} />
-              <StatPill icon={Bot} label="Tools loaded" value={`${tools.length}+`} highlighted />
+            <div className="flex flex-wrap gap-3 md:shrink-0 md:flex-col md:items-stretch md:gap-2">
+              <StatPill icon={Landmark} label="Categories" value={Object.keys(categoryDescriptions).length} />
+              <StatPill icon={Bot} label="Tools tracked" value={tools.length} highlighted />
               <StatPill icon={CalendarClock} label="Updated" value={lastUpdated} />
             </div>
           </div>

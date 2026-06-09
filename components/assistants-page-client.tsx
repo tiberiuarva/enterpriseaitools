@@ -190,20 +190,28 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
     <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
       <JsonLd data={jsonLd} />
       <section className="card-flat p-6 md:p-10">
-        <div className="flex items-start gap-3">
-          <BriefcaseBusiness size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
-          <div className="max-w-2xl">
-            <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
-            <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
-            {introParagraphs && introParagraphs.length > 0 ? (
-              <div className="mt-3 space-y-3 text-body-sm text-[var(--color-text-secondary)]">
-                {introParagraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-              </div>
-            ) : null}
-            <div className="mt-3 text-sm text-[var(--color-text-secondary)]">{tools.length} tools in current dataset</div>
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
+          <div className="flex items-start gap-3">
+            <BriefcaseBusiness size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
+            <div className="max-w-2xl">
+              <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
+              <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
+              {introParagraphs && introParagraphs.length > 0 ? (
+                <div className="mt-3 space-y-3 text-body-sm text-[var(--color-text-secondary)]">
+                  {introParagraphs.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : null}
+            </div>
           </div>
+
+          <dl className="grid shrink-0 grid-cols-1 gap-2 text-right md:text-left">
+            <div>
+              <dt className="text-caption uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]">In dataset</dt>
+              <dd className="text-h2 text-[var(--color-text-primary)]">{tools.length}</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
