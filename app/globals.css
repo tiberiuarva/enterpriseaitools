@@ -256,12 +256,14 @@ body {
     background: var(--color-bg-card-hover);
   }
   .card-flat {
-    background: var(--color-bg-surface);
+    /* Reads bg-card (not bg-surface) so the single-tone guarantee is
+       explicit: .card and .card-flat always paint the same color, only
+       shadow differs. */
+    background: var(--color-bg-card);
     border-radius: 14px;
     /* transparent baseline border so `hover:border-[var(--color-accent)]`
-       utilities on clickable card-flat elements (e.g. RelatedHubs,
-       RelatedComparisons items) take effect — border-color alone needs
-       a width + style declared somewhere. */
+       utilities on clickable card-flat elements take effect — border-color
+       alone needs a width + style declared somewhere. */
     border: 1px solid transparent;
   }
 

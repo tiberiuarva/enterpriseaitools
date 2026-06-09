@@ -44,7 +44,7 @@ export function getVendorColorKey(value: string): VendorColorKey | null {
 export function getPlatformFallbackStyles(vendor: string) {
   const key = getVendorColorKey(vendor);
 
-  if (!key) return "border-[var(--color-border)] bg-[var(--color-bg-surface)] text-[var(--color-text-secondary)]";
+  if (!key) return "border-[var(--color-border)] bg-[var(--color-bg-hover)] text-[var(--color-text-secondary)]";
 
   return platformFallbackStyles[key];
 }
