@@ -35,7 +35,10 @@
   --color-danger-soft: color-mix(in srgb, var(--color-danger) 14%, transparent);
   --color-info-soft: var(--color-accent-soft);
 
-  /* Text */
+  /* Text — `tertiary` is intentionally below WCAG AA for normal-sized text;
+     use only for `.text-caption` (≤13px) decorative/supplementary metadata
+     such as dates and eyebrow labels. Use `--color-text-secondary` for any
+     informational text. */
   --color-text-primary: #f5f5f7;
   --color-text-secondary: #a1a1a6;
   --color-text-tertiary: #6e6e73;
@@ -167,6 +170,16 @@ body {
   outline: none;
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
   border-radius: inherit;
+}
+
+/* Windows High Contrast / forced-colors strips box-shadow, so restore a real
+   outline using a system color (WCAG 2.4.11). */
+@media (forced-colors: active) {
+  :where(a, button, summary, input, select, textarea):focus-visible {
+    outline: 2px solid ButtonText;
+    outline-offset: 3px;
+    box-shadow: none;
+  }
 }
 
 /* ── Reduced motion ──────────────────────────────────────────────────────── */

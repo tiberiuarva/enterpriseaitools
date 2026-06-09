@@ -24,10 +24,10 @@ const argv = process.argv.slice(2);
 const reportOnly = argv.includes("--report");
 
 const scanRoots = ["app", "components", "lib"];
+// Only TS/JS source files are scanned. `app/globals.css` is the single source
+// of truth for color literals and is never visited because the file-extension
+// filter below excludes `.css`.
 const fileExtensions = new Set([".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"]);
-const skipRelativePaths = new Set([
-  "app/globals.css",
-]);
 const skipDirs = new Set(["node_modules", ".next", "out"]);
 
 const tailwindPalette = [
@@ -89,7 +89,6 @@ for (const root of scanRoots) {
   const absRoot = path.join(repoRoot, root);
   for await (const filePath of walk(absRoot)) {
     const relative = path.relative(repoRoot, filePath);
-    if (skipRelativePaths.has(relative)) continue;
 
     const content = await fs.readFile(filePath, "utf8");
     const lines = content.split("\n");
