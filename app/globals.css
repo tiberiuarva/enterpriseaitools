@@ -94,9 +94,9 @@ html.light {
   --color-accent-strong: #115e59;
   --color-accent-soft: color-mix(in srgb, var(--color-accent) 10%, transparent);
 
-  --color-success: #248a3d;
-  --color-warning: #b25000;
-  --color-danger: #d70015;
+  --color-success: #1a7a32;
+  --color-warning: #964400;
+  --color-danger: #b80012;
   --color-info: var(--color-accent);
   --color-success-soft: color-mix(in srgb, var(--color-success) 10%, transparent);
   --color-warning-soft: color-mix(in srgb, var(--color-warning) 10%, transparent);

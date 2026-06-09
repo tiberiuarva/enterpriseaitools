@@ -142,8 +142,6 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                       <p className="mt-1 line-clamp-2 text-sm text-[var(--color-text-secondary)]">{result.tool.description}</p>
                     </div>
                     <span
-                      role="img"
-                      aria-label={`Fit score ${result.score} out of 100`}
                       className={`shrink-0 rounded-full px-2.5 py-1 text-sm font-semibold ${
                         result.score >= 80
                           ? "bg-[color:var(--color-success-soft)] text-[color:var(--color-success)]"
@@ -152,7 +150,8 @@ export function EvaluateClient({ tools }: { tools: Tool[] }) {
                           : "bg-[color:var(--color-danger-soft)] text-[color:var(--color-danger)]"
                       }`}
                     >
-                      Fit {result.score}
+                      <span aria-hidden="true">Fit {result.score}</span>
+                      <span className="sr-only">Fit score {result.score} out of 100</span>
                     </span>
                   </div>
 
