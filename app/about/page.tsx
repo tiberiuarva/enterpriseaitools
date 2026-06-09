@@ -199,7 +199,7 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <div className="card-flat p-5">
+            <div className="card p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">Editor</p>
               <h2 className="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Tiberiu Arva</h2>
               <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
@@ -216,7 +216,7 @@ export default function AboutPage() {
               </a>
             </div>
 
-            <div className="card-flat p-5">
+            <div className="card p-5">
               <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-text-secondary)]">
                 Working stance
               </p>
@@ -230,7 +230,7 @@ export default function AboutPage() {
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
             {overviewCards.map((card) => (
-              <div key={card.title} className="card-flat p-5">
+              <div key={card.title} className="card p-5">
                 <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
               </div>
@@ -275,7 +275,7 @@ export default function AboutPage() {
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
                 {whyThisExists.map((card) => (
-                  <div key={card.title} className="card-flat p-5">
+                  <div key={card.title} className="card p-5">
                     <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
                   </div>
@@ -295,7 +295,7 @@ export default function AboutPage() {
               />
               <ol className="mt-5 grid gap-3 list-none pl-0">
                 {workflowSteps.map((step, index) => (
-                  <li key={step} className="flex gap-4 card-flat p-4">
+                  <li key={step} className="flex gap-4 card p-4">
                     <span
                       aria-hidden="true"
                       className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--color-bg-card)] text-sm font-semibold text-[var(--color-text-primary)]"
@@ -320,7 +320,7 @@ export default function AboutPage() {
               />
               <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                 {trackedAreas.map((card) => (
-                  <div key={card.title} className="card-flat p-5">
+                  <div key={card.title} className="card p-5">
                     <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
                   </div>
@@ -328,7 +328,7 @@ export default function AboutPage() {
               </div>
 
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">What qualifies for inclusion</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {qualificationRules.map((rule) => (
@@ -336,7 +336,7 @@ export default function AboutPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">What this site is not</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {outOfScope.map((item) => (
@@ -358,7 +358,7 @@ export default function AboutPage() {
                 intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Data sourcing standards</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {sourcingStandards.map((rule) => (
@@ -366,7 +366,7 @@ export default function AboutPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Methodology</h3>
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {methodology.map((rule) => (
@@ -388,14 +388,14 @@ export default function AboutPage() {
                 intro="Contributions are welcome, but the bar is evidence and auditability rather than broad unsupported edits."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)]">
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
                     {contributionSteps.map((step) => (
                       <li key={step}>{step}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="card-flat p-5">
+                <div className="card p-5">
                   <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Project entry points</h3>
                   <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
                     The repo, schema files, and source-linked issues are the right place to propose changes.
