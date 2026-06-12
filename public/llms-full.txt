@@ -928,4 +928,4 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Source repository: https://github.com/tiberiuarva/enterpriseaitools
 
 ## License & curator
-MIT licensed dataset. Curated by Tiberiu Arva through an enterprise financial-services delivery lens. Canonical site: https://www.enterpriseai.tools/
+This dataset file is MIT licensed — each tool's own software/product license is noted in its block above. Curated by Tiberiu Arva through an enterprise financial-services delivery lens. Canonical site: https://www.enterpriseai.tools/

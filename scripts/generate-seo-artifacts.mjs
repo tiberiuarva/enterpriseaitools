@@ -7,6 +7,9 @@ import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 import comparisonSlugs from "../data/comparison-slugs.json" with { type: "json" };
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
+// `data/tools.json` carries a top-level `lastUpdated` calendar date (see
+// data/SCHEMA.md). Used as the build-stable timestamp for every generated
+// artifact so output is deterministic (never Date.now()).
 const lastModified = toolsData.lastUpdated;
 const publicDir = path.resolve("public");
 
@@ -282,7 +285,7 @@ ${recentUpdates}
 - Source repository: https://github.com/tiberiuarva/enterpriseaitools
 
 ## License & curator
-MIT licensed dataset. Curated by Tiberiu Arva through an enterprise financial-services delivery lens. Canonical site: ${siteUrl}/
+This dataset file is MIT licensed — each tool's own software/product license is noted in its block above. Curated by Tiberiu Arva through an enterprise financial-services delivery lens. Canonical site: ${siteUrl}/
 `;
 }
 
