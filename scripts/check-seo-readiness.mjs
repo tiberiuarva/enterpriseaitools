@@ -264,8 +264,8 @@ for (const [name, key] of [["tools", "tools"], ["platforms", "platforms"], ["upd
     } else if (parsed.count !== parsed[key].length) {
       failures.push(`public/data/${name}.json count (${parsed.count}) does not match ${key} length (${parsed[key].length})`);
     }
-    if (parsed.license !== "MIT" || !parsed.source) {
-      failures.push(`public/data/${name}.json is missing license/source attribution`);
+    if (parsed.datasetLicense !== "MIT" || !parsed.source) {
+      failures.push(`public/data/${name}.json is missing datasetLicense/source attribution`);
     }
   } catch {
     failures.push(`public/data/${name}.json is not valid JSON`);
@@ -280,8 +280,10 @@ for (const agent of ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"])
 }
 
 // Spot-check a representative tool page for SoftwareApplication dateModified
-// and the article modified-time meta tag.
-const sampleTool = toolsData.tools[0];
+// and the article modified-time meta tag. Pinned to a stable id so the check
+// is order-independent.
+const sampleTool =
+  toolsData.tools.find((tool) => tool.id === "microsoft-foundry-agent-service") ?? toolsData.tools[0];
 if (sampleTool) {
   const toolHtmlPath = path.join(outDir, "tools", sampleTool.id, "index.html");
   const toolHtml = await readOptional(toolHtmlPath);

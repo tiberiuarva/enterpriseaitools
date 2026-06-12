@@ -1,7 +1,8 @@
 {
   "name": "enterpriseai.tools platforms dataset",
   "description": "The cloud foundation platforms (Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform) tracked as the base stack for enterprise AI tooling.",
-  "license": "MIT",
+  "datasetLicense": "MIT",
+  "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
   "generatedAt": "2026-06-07",
   "count": 3,

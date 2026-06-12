@@ -1,7 +1,8 @@
 {
   "name": "enterpriseai.tools updates dataset",
   "description": "High-impact market intelligence for enterprise AI tooling — releases, deprecations, acquisitions, license and certification changes — each with a primary source URL.",
-  "license": "MIT",
+  "datasetLicense": "MIT",
+  "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
   "generatedAt": "2026-06-07",
   "count": 43,

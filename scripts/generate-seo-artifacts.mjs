@@ -90,7 +90,11 @@ function datasetEnvelope(name, description, records, key) {
     {
       name,
       description,
-      license: "MIT",
+      // Licence under which THIS dataset JSON is published. Each record's own
+      // software/product licence lives in its `license` field — do not confuse
+      // the two (license accuracy is a P0 invariant).
+      datasetLicense: "MIT",
+      datasetLicenseNote: "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
       source: siteUrl,
       generatedAt: lastModified,
       count: records.length,
@@ -248,9 +252,9 @@ function generateLlmsFullTxt() {
     .join("\n\n");
 
   const recentUpdates = [...updatesData.updates]
-    .sort((a, b) => b.date.localeCompare(a.date) || a.toolName.localeCompare(b.toolName))
+    .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
     .slice(0, 20)
-    .map((u) => `- ${u.date} — ${u.toolName} (${u.type}${u.impact ? `, ${u.impact} impact`: ""}): ${u.summary} [source: ${u.sourceUrl}]`)
+    .map((u) => `- ${u.date} — ${u.toolName} (${u.type}${u.impact ? `, ${u.impact} impact` : ""}): ${u.summary} [source: ${u.sourceUrl}]`)
     .join("\n");
 
   return `# enterpriseai.tools — full content

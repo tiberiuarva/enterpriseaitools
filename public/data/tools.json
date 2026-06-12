@@ -1,7 +1,8 @@
 {
   "name": "enterpriseai.tools tools dataset",
   "description": "Source-backed governance posture for every tracked enterprise AI tool. Each record carries data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, and license risk with a primary source URL on every asserted claim.",
-  "license": "MIT",
+  "datasetLicense": "MIT",
+  "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
   "generatedAt": "2026-06-07",
   "count": 48,
