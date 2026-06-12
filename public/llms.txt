@@ -1,6 +1,6 @@
 # enterpriseai.tools
 
-> An open-source landscape tracker for enterprise AI tooling. Each record links to an official source; the dataset is governed by `data/SCHEMA.md` and updated weekly.
+> An open-source landscape tracker for enterprise AI tooling (48 tools across 4 categories). Each record links to an official source; the dataset is governed by `data/SCHEMA.md` and updated weekly.
 
 Edited through a regulated-enterprise delivery lens: governance posture, deployment surface, ownership, sourcing quality, and operational fit are weighted above launch marketing. No analytics, no sign-up, no data capture.
 
@@ -19,7 +19,11 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - [About](https://www.enterpriseai.tools/about/): project scope, sourcing standards, and contribution rules.
 
 ## Data
-- Tools dataset: https://www.enterpriseai.tools/sitemap.xml lists every per-tool page.
+- Full content for LLMs (single fetch): [llms-full.txt](https://www.enterpriseai.tools/llms-full.txt)
+- Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json
+- Platforms dataset (JSON): https://www.enterpriseai.tools/data/platforms.json
+- Updates dataset (JSON): https://www.enterpriseai.tools/data/updates.json
+- Every per-tool page: https://www.enterpriseai.tools/sitemap.xml
 - Updates feed (Atom): https://www.enterpriseai.tools/updates.xml
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 

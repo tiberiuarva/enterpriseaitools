@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description:
       "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
     path: "/updates",
+    modifiedTime: lastUpdated,
   }),
   alternates: {
     ...buildMetadata({ path: "/updates" }).alternates,

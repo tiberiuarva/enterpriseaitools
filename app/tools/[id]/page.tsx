@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${tool.name} — governance posture & overview`,
     description: tool.description,
     path: `/tools/${tool.id}`,
+    modifiedTime: tool.governance.reviewedAt,
   });
 }
 
@@ -139,7 +140,8 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                       : `Verified within the ${FRESHNESS_THRESHOLD_DAYS}-day freshness threshold.`
                   }
                 >
-                  {isStale ? "Stale" : "Verified"} {tool.governance.reviewedAt}
+                  {isStale ? "Stale" : "Verified"}{" "}
+                  <time dateTime={tool.governance.reviewedAt}>{tool.governance.reviewedAt}</time>
                 </span>
               </p>
             );
@@ -230,7 +232,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                 return (
                   <li key={update.id} className={`border-l-2 pl-4 ${flagged ? "border-[var(--color-warning)]" : "border-[var(--color-primary)]"}`}>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                      <span>{update.date}</span>
+                      <time dateTime={update.date}>{update.date}</time>
                       <span aria-hidden="true">·</span>
                       <span className="font-semibold uppercase tracking-wide">{UPDATE_TYPE_LABELS[update.type] ?? update.type}</span>
                       {highImpact ? (
@@ -251,7 +253,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
                   className={`border-l-2 pl-4 ${event.highImpact ? "border-[var(--color-warning)]" : "border-[var(--color-border)]"}`}
                 >
                   <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-                    <span>{event.to}</span>
+                    <time dateTime={event.to}>{event.to}</time>
                     <span aria-hidden="true">·</span>
                     <span className="font-semibold uppercase tracking-wide">Auto-detected</span>
                     {event.highImpact ? (

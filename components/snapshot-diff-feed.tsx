@@ -76,7 +76,7 @@ export function SnapshotDiffFeed({
             className={`border-l-2 pl-4 ${event.highImpact ? "border-[var(--color-warning)]" : "border-[var(--color-border)]"}`}
           >
             <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-              <span>{event.to}</span>
+              <time dateTime={event.to}>{event.to}</time>
               <span aria-hidden="true">·</span>
               <span className="font-semibold uppercase tracking-wide">Auto-detected</span>
               {event.highImpact ? (

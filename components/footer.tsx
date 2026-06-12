@@ -85,7 +85,7 @@ export function Footer({ lastUpdated }: FooterProps) {
             <span className="inline-flex items-center rounded-full border border-[var(--color-border)] px-2.5 py-0.5 font-semibold uppercase tracking-wide text-[var(--color-text-secondary)]">
               MIT License
             </span>
-            <span>Data accurate as of {lastUpdated}</span>
+            <span>Data accurate as of <time dateTime={lastUpdated}>{lastUpdated}</time></span>
           </div>
         </div>
       </div>

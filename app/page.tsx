@@ -98,6 +98,18 @@ export default function Home() {
       siteUrl,
       datasets: [
         {
+          name: "Enterprise AI tools governance dataset (JSON)",
+          url: `${siteUrl}/data/tools.json`,
+          downloadUrl: `${siteUrl}/data/tools.json`,
+          description: "Machine-readable source-backed governance posture for every tracked tool — data residency, deployment, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk.",
+        },
+        {
+          name: "AI platforms dataset (JSON)",
+          url: `${siteUrl}/data/platforms.json`,
+          downloadUrl: `${siteUrl}/data/platforms.json`,
+          description: "Machine-readable dataset of the cloud foundation platforms: Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform.",
+        },
+        {
           name: "AI platforms comparison",
           url: `${siteUrl}/platforms/`,
           description: "Structured comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform foundations.",

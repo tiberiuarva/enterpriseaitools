@@ -1,0 +1,931 @@
+# enterpriseai.tools — full content
+
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-06-07.
+
+Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. No analytics, no sign-up, no data capture.
+
+## Foundation platforms
+
+### Amazon Bedrock (formerly AWS Bedrock)
+- Vendor: AWS | Models: 100+ | On-prem: No (Outposts for infrastructure only)
+- Managed foundation model platform with Bedrock Agents, AgentCore, and Bedrock Guardrails.
+- Protocols: MCP, A2A | Compliance: SOC 2, ISO 27001, HIPAA
+- Docs: https://docs.aws.amazon.com/bedrock/ | Site: https://aws.amazon.com/bedrock/
+
+### Gemini Enterprise Agent Platform (formerly Google Vertex AI, Vertex AI)
+- Vendor: Google | Models: 200+ | On-prem: No (Distributed Cloud for sovereign use cases)
+- Enterprise GenAI platform combining Model Garden, agent tooling, MLOps, and safety controls.
+- Protocols: MCP, A2A, OpenAPI | Compliance: SOC 2, ISO 27001, HIPAA
+- Docs: https://cloud.google.com/vertex-ai/docs | Site: https://cloud.google.com/vertex-ai
+
+### Microsoft Foundry (formerly Azure AI Foundry, Azure AI Studio, Azure OpenAI Service)
+- Vendor: Microsoft | Models: 11,000+ | On-prem: Yes (Foundry Local on NVIDIA hardware)
+- Unified enterprise AI platform spanning models, agents, tools, evaluations, and governance.
+- Protocols: MCP, A2A, OpenAPI | Compliance: SOC 2, ISO 27001, HIPAA
+- Docs: https://learn.microsoft.com/azure/ai-foundry/ | Site: https://azure.microsoft.com/en-us/products/ai-foundry/
+
+## AI Agent Frameworks
+
+### Atomic Agents
+- Page: https://www.enterpriseai.tools/tools/atomic-agents/
+- Vendor: BrainBlend AI | Type: opensource | License: MIT
+- Status: active | Version: 2.8.0 | Last release: 2026-05-29
+- Minimalist agent framework emphasizing composability and predictable building blocks.
+- Strengths: Schema-first building blocks; Composable design; Focused API surface
+- Governance posture:
+  - Data residency: yes — Self-hosted library; operator controls placement. [source: https://github.com/BrainBlend-AI/atomic-agents]
+  - Deployment: yes (self-hosted) — pip-installed OSS framework; no managed hosting. [source: https://github.com/BrainBlend-AI/atomic-agents]
+  - Audit logging: partial — Minimalist design; observability is intentionally operator-configured. [source: https://brainblend-ai.github.io/atomic-agents/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/BrainBlend-AI/atomic-agents/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://brainblend-ai.github.io/atomic-agents/ | repo: https://github.com/BrainBlend-AI/atomic-agents
+
+### AutoGen
+- Page: https://www.enterpriseai.tools/tools/autogen/
+- Vendor: Microsoft | Type: opensource | License: MIT
+- Status: maintenance | Version: 0.7.5
+- Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.
+- Strengths: Conversable agent patterns; Microsoft research lineage; Well-known multi-agent patterns
+- Governance posture:
+  - Data residency: yes — Self-hosted library; data residency is operator-controlled. [source: https://github.com/microsoft/autogen]
+  - Deployment: yes (self-hosted) — pip-installed OSS framework; no Microsoft-managed hosting (maintenance mode). [source: https://github.com/microsoft/autogen]
+  - Audit logging: partial — No built-in audit subsystem; operator implements logging. [source: https://microsoft.github.io/autogen/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — Code MIT (docs CC BY 4.0) — permissive, OSI-approved. [source: https://github.com/microsoft/autogen/blob/main/LICENSE-CODE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://microsoft.github.io/autogen/ | repo: https://github.com/microsoft/autogen
+
+### Amazon Bedrock Agents
+- Page: https://www.enterpriseai.tools/tools/aws-bedrock-agents/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- Modular AWS agent platform combining guided Bedrock Agents with framework-agnostic AgentCore deployment.
+- Strengths: Framework-agnostic deployment via AgentCore; MicroVM isolation model; Deep AWS integration
+- Governance posture:
+  - Data residency: yes — Region-selected; cross-region inference stays within the chosen geography (US/EU/JP/AU). [source: https://docs.aws.amazon.com/bedrock/latest/userguide/geographic-cross-region-inference.html]
+  - Deployment: yes (saas) — Fully managed AWS SaaS; AgentCore runtime is AWS-operated. [source: https://aws.amazon.com/bedrock/agents/]
+  - Audit logging: yes — CloudTrail logs all API activity; CloudWatch metrics; optional S3/CloudWatch storage. [source: https://aws.amazon.com/bedrock/security-compliance/]
+  - SOC 2: yes — Amazon Bedrock is in scope for AWS SOC 1/2/3 (Type II via AWS Artifact). [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html]
+  - ISO 27001: yes — Amazon Bedrock is ISO/IEC 27001 certified. [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: yes — Amazon Bedrock is one of four AWS services in accredited ISO/IEC 42001:2023 scope. [source: https://aws.amazon.com/blogs/machine-learning/aws-achieves-iso-iec-420012023-artificial-intelligence-management-system-accredited-certification/]
+  - EU AI Act: not-applicable (role: not-applicable) — Agent orchestration platform; GPAI obligations attach to model providers and the deployer.
+  - License risk: yes (risk: medium) — Proprietary AWS SaaS; lock-in to AWS model catalog and AgentCore runtime. [source: https://aws.amazon.com/bedrock/agents/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/bedrock/ | site: https://aws.amazon.com/bedrock/agents/
+
+### BeeAI Framework
+- Page: https://www.enterpriseai.tools/tools/beeai-framework/
+- Vendor: Linux Foundation | Type: opensource | License: Apache 2.0
+- Status: active | Version: 0.1.81 | Last release: 2026-05-28
+- Open agent framework formerly known as Bee Agent Framework, now under Linux Foundation governance.
+- Strengths: Linux Foundation governance; Agent-oriented framework primitives; IBM/BeeAI lineage
+- Governance posture:
+  - Data residency: yes — Self-hosted library; operator controls placement. [source: https://github.com/i-am-bee/beeai-framework]
+  - Deployment: yes (self-hosted) — npm/pip-installed framework under Linux Foundation governance; no managed hosting. [source: https://github.com/i-am-bee/beeai-framework]
+  - Audit logging: partial — No built-in audit log; operator-configured logging. [source: https://framework.beeai.dev/introduction/welcome]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache-2.0 — permissive, OSI-approved. [source: https://github.com/i-am-bee/beeai-framework/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://framework.beeai.dev/introduction/welcome | repo: https://github.com/i-am-bee/beeai-framework
+
+### CrewAI
+- Page: https://www.enterpriseai.tools/tools/crewai/
+- Vendor: crewAI Inc. | Type: opensource | License: MIT
+- Status: active | Version: 1.14.6 | Last release: 2026-05-28
+- Open source multi-agent framework focused on autonomous teams and task coordination.
+- Strengths: Large community ecosystem; Crew-based task coordination; Built for multi-agent coordination
+- Governance posture:
+  - Data residency: yes — Self-hosted library; data residency is fully operator-controlled. [source: https://github.com/crewAIInc/crewAI]
+  - Deployment: yes (self-hosted) — pip-installed OSS framework; runs on operator infrastructure (managed cloud sold separately). [source: https://github.com/crewAIInc/crewAI]
+  - Audit logging: partial — No built-in audit subsystem; operators add logging via standard tooling/integrations. [source: https://docs.crewai.com/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/crewAIInc/crewAI/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.crewai.com/ | repo: https://github.com/crewAIInc/crewAI
+
+### Databricks Mosaic AI Agent Framework
+- Page: https://www.enterpriseai.tools/tools/databricks-mosaic-ai-agent-framework/
+- Vendor: Databricks | Type: vendor | License: Proprietary
+- Status: active
+- Databricks-native agent stack combining managed tools, MCP connectivity, retrieval, and MLflow-backed evaluation.
+- Strengths: Managed MCP servers for Databricks data; Vector Search and Unity Catalog integration; MLflow tracing, evaluation, and monitoring
+- Governance posture:
+  - Data residency: yes — Databricks Geos enforce per-region residency; data not stored outside the workspace Geo. [source: https://docs.databricks.com/aws/en/resources/databricks-geos]
+  - Deployment: yes (saas) — Managed Databricks platform on AWS/Azure/GCP; no standalone self-hosted offering. [source: https://docs.databricks.com/aws/en/resources/supported-regions]
+  - Audit logging: yes — Audit log system tables capture hundreds of workspace/account action types. [source: https://docs.databricks.com/aws/en/admin/account-settings/audit-logs.html]
+  - SOC 2: yes — Databricks SOC 2 Type II across AWS/Azure/GCP, refreshed three times yearly. [source: https://www.databricks.com/trust/compliance/soc]
+  - ISO 27001: yes — ISO/IEC 27001:2022 certified across all three clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
+  - ISO 42001: unknown — No public ISO 42001 certification listed on the Databricks trust pages as of 2026-05.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer toolset on a data platform; deployer carries obligations for systems built with it.
+  - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack. [source: https://www.databricks.com/product/ai]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.databricks.com/aws/en/agents/gen-ai-capabilities | site: https://www.databricks.com/product/ai
+
+### Google Agent Builder + ADK
+- Page: https://www.enterpriseai.tools/tools/google-agent-builder-adk/
+- Vendor: Google | Type: vendor | License: Proprietary service + open source SDK
+- Status: active
+- Open platform pairing the Agent Development Kit with managed agent services on Vertex AI.
+- Strengths: Open-source ADK; Google Search grounding; MCP, A2A, and OpenAPI support
+- Governance posture:
+  - Data residency: partial — US/EU multi-region controls (CMEK, VPC-SC); not all features single-region. ADK self-hosted is customer-controlled. [source: https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls]
+  - Deployment: yes (saas, self-hosted) — Managed Agent Builder on Vertex AI (SaaS); ADK is an Apache-2.0 SDK deployable anywhere. [source: https://cloud.google.com/products/agent-builder]
+  - Audit logging: yes — Cloud Audit Logs record admin/data operations; Agent Engine supports Cloud Logging/Trace. [source: https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging]
+  - SOC 2: yes — Google Cloud / Vertex AI holds SOC 1/2/3. [source: https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls]
+  - ISO 27001: yes — Holds ISO 27001/27017/27018/27701. [source: https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls]
+  - ISO 42001: partial — Google Cloud holds ISO/IEC 42001 broadly; Agent Builder not individually enumerated in the public scope. [source: https://cloud.google.com/blog/products/identity-security/google-clouds-commitment-to-responsible-ai-is-now-iso-iec-certified]
+  - EU AI Act: not-applicable (role: not-applicable) — Agent orchestration platform/SDK; GPAI obligations attach to Google as model provider and to deployers.
+  - License risk: yes (risk: medium) — Managed layer proprietary (Vertex AI); ADK is Apache-2.0. Blended medium. [source: https://github.com/google/adk-python/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.cloud.google.com/agent-builder/overview | site: https://cloud.google.com/vertex-ai
+
+### LangGraph
+- Page: https://www.enterpriseai.tools/tools/langgraph/
+- Vendor: LangChain | Type: opensource | License: MIT
+- Status: active | Version: 1.2.2 | Last release: 2026-05-26
+- Stateful agent orchestration framework with graph-based execution and durable workflows.
+- Strengths: Popular graph abstraction; Strong agent workflow patterns; LangChain ecosystem fit
+- Governance posture:
+  - Data residency: yes — Self-hosted library; operator controls placement (LangSmith cloud has separate terms). [source: https://github.com/langchain-ai/langgraph]
+  - Deployment: yes (self-hosted, saas) — OSS library (self-hosted); LangGraph Cloud via LangSmith is an optional SaaS. [source: https://github.com/langchain-ai/langgraph]
+  - Audit logging: partial — No built-in audit log; tracing via LangSmith (separate service); operator implements logging. [source: https://langchain-ai.github.io/langgraph/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/langchain-ai/langgraph/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://langchain-ai.github.io/langgraph/ | repo: https://github.com/langchain-ai/langgraph
+
+### LlamaIndex
+- Page: https://www.enterpriseai.tools/tools/llamaindex/
+- Vendor: LlamaIndex Inc. | Type: opensource | License: MIT
+- Status: active | Version: 0.14.22 | Last release: 2026-05-14
+- Agent and retrieval framework with strong indexing, data connectors, and orchestration support.
+- Strengths: Strong retrieval tooling; Rich data connectors; Large ecosystem
+- Governance posture:
+  - Data residency: yes — Self-hosted library; operator controls data placement. [source: https://github.com/run-llama/llama_index]
+  - Deployment: yes (self-hosted) — pip-installed OSS framework; no managed hosting for the library. [source: https://github.com/run-llama/llama_index]
+  - Audit logging: partial — No native audit log; tracing/callback integrations available, operator-configured. [source: https://docs.llamaindex.ai/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/run-llama/llama_index/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.llamaindex.ai/ | repo: https://github.com/run-llama/llama_index
+
+### Mastra
+- Page: https://www.enterpriseai.tools/tools/mastra/
+- Vendor: Mastra AI | Type: opensource | License: Apache 2.0 core + EE paths (caution: Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.)
+- Status: active | Version: 1.37.0 | Last release: 2026-05-27
+- Agent framework focused on composable workflows, tooling, and modern developer ergonomics.
+- Strengths: Apache 2.0 plus enterprise path; Fast growth; Modern DX
+- Governance posture:
+  - Data residency: yes — Self-hosted framework; operator controls placement. [source: https://github.com/mastra-ai/mastra]
+  - Deployment: yes (self-hosted) — npm-installed framework; no managed hosting for the OSS core. [source: https://github.com/mastra-ai/mastra]
+  - Audit logging: partial — No built-in enterprise audit log; observability integrations, operator-configured. [source: https://mastra.ai/docs]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: medium) — Apache-2.0 core; ee/ paths under a proprietary Mastra Enterprise License (source-available). [source: https://github.com/mastra-ai/mastra/blob/main/ee/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://mastra.ai/docs | repo: https://github.com/mastra-ai/mastra
+
+### Microsoft Agent Framework
+- Page: https://www.enterpriseai.tools/tools/microsoft-agent-framework/
+- Vendor: Microsoft | Type: opensource | License: MIT
+- Status: active | Version: 1.7.0 | Last release: 2026-05-28
+- Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.
+- Strengths: Multi-language SDKs; Python and .NET support; Graph-based workflows and DevUI
+- Governance posture:
+  - Data residency: yes — Self-hosted framework; data residency is operator-determined. [source: https://github.com/microsoft/agent-framework]
+  - Deployment: yes (self-hosted) — Library via package manager (Python/NuGet); no managed hosting. [source: https://github.com/microsoft/agent-framework]
+  - Audit logging: partial — DevUI tracing for local dev; production logging operator-configured. [source: https://learn.microsoft.com/en-us/agent-framework/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/microsoft/agent-framework/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/en-us/agent-framework/ | repo: https://github.com/microsoft/agent-framework
+
+### Microsoft Foundry Agent Service
+- Page: https://www.enterpriseai.tools/tools/microsoft-foundry-agent-service/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Fully managed agent platform with deep Microsoft 365 integration and broad model access.
+- Strengths: One-click Teams and M365 deployment; Supports MCP, A2A, and OpenAPI; Access to 11,000+ models
+- Governance posture:
+  - Data residency: yes — EU Data Zone pins prompts/responses to EU; Global Standard may cross region. [source: https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types]
+  - Deployment: yes (saas, on-prem) — Managed SaaS on Azure; Foundry Local enables on-device/on-prem. [source: https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview]
+  - Audit logging: yes — Audit/RequestResponse/Trace diagnostic logs to Azure Monitor / Log Analytics. [source: https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/metrics]
+  - SOC 2: yes — Azure SOC 2 Type II (semi-annual) covers AI Foundry. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2]
+  - ISO 27001: yes — Covered by Microsoft Azure ISO/IEC 27001 certification. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001]
+  - ISO 42001: yes — Microsoft Foundry is listed in scope for ISO/IEC 42001:2023. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: not-applicable (role: not-applicable) — Agent hosting surface; GPAI obligations attach to the underlying model providers and the deployer.
+  - License risk: yes (risk: medium) — Proprietary Azure SaaS; moderate ecosystem lock-in. [source: https://azure.microsoft.com/en-us/products/ai-agent-service/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/azure/ai-foundry/ | site: https://azure.microsoft.com/en-us/products/ai-foundry/
+
+### OpenAI Agents SDK
+- Page: https://www.enterpriseai.tools/tools/openai-agents-sdk/
+- Vendor: OpenAI | Type: opensource | License: MIT
+- Status: active | Version: 0.17.4 | Last release: 2026-05-26
+- Production successor to Swarm for agentic OpenAI workflows with broader model support.
+- Strengths: Hosted tracing support; Production successor to Swarm; Handoffs and tool orchestration
+- Governance posture:
+  - Data residency: partial — Library is self-hosted, but built-in tracing sends run data to OpenAI's platform unless disabled. [source: https://openai.github.io/openai-agents-python/]
+  - Deployment: yes (self-hosted) — pip-installed SDK (self-hosted); API calls go to OpenAI's hosted endpoints. [source: https://github.com/openai/openai-agents-python]
+  - Audit logging: partial — Hosted tracing logs runs to OpenAI's platform; self-hosted logging is operator-implemented. [source: https://openai.github.io/openai-agents-python/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/openai/openai-agents-python/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://openai.github.io/openai-agents-python/ | repo: https://github.com/openai/openai-agents-python
+
+### Semantic Kernel
+- Page: https://www.enterpriseai.tools/tools/semantic-kernel/
+- Vendor: Microsoft | Type: opensource | License: MIT
+- Status: active | Version: 1.42.0 | Last release: 2026-05-14
+- Microsoft orchestration SDK evolving into the unified Microsoft Agent Framework direction.
+- Strengths: Broad language support; Plugin and memory abstractions; Strong Microsoft ecosystem fit
+- Governance posture:
+  - Data residency: yes — Self-hosted SDK; data residency is operator-determined. [source: https://github.com/microsoft/semantic-kernel]
+  - Deployment: yes (self-hosted) — Library/SDK via package manager; no managed hosting. [source: https://github.com/microsoft/semantic-kernel]
+  - Audit logging: partial — OpenTelemetry integration documented but operator-configured; no built-in audit log. [source: https://learn.microsoft.com/semantic-kernel/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/microsoft/semantic-kernel/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/semantic-kernel/ | repo: https://github.com/microsoft/semantic-kernel
+
+## AI Orchestration
+
+### AWS Step Functions
+- Page: https://www.enterpriseai.tools/tools/aws-step-functions/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- Serverless state machine orchestration service for AWS-native workflows and automation.
+- Strengths: AWS service integration; Serverless execution; Strong automation fit
+- Governance posture:
+  - Data residency: yes — Regional service; executions and state remain in the selected AWS region. [source: https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html]
+  - Deployment: yes (saas) — Fully managed serverless SaaS on AWS; no self-hosted option. [source: https://aws.amazon.com/step-functions/]
+  - Audit logging: yes — Native execution history; Express history to CloudWatch; CloudTrail captures API calls. [source: https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html]
+  - SOC 2: yes — Explicitly in scope for AWS SOC 1/2/3. [source: https://aws.amazon.com/compliance/services-in-scope/SOC/]
+  - ISO 27001: yes — Named in the AWS ISO/IEC 27001:2022 certificate. [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: no — AWS ISO 42001 scope covers Bedrock/Q Business/Textract/Transcribe only; Step Functions is not AI and not in scope. [source: https://aws.amazon.com/blogs/machine-learning/aws-achieves-iso-iec-420012023-artificial-intelligence-management-system-accredited-certification/]
+  - EU AI Act: not-applicable (role: not-applicable) — Serverless state-machine orchestration, not an AI system.
+  - License risk: yes (risk: high) — Proprietary AWS service; no source access. [source: https://aws.amazon.com/step-functions/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/step-functions/ | site: https://aws.amazon.com/step-functions/
+
+### Azure Logic Apps
+- Page: https://www.enterpriseai.tools/tools/azure-logic-apps/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- iPaaS workflow automation service with AI-enhanced orchestration and broad connector coverage.
+- Strengths: 1,400+ connectors; Strong Azure integration; Flexible hosting modes
+- Governance posture:
+  - Data residency: yes — Standard/ASE v3 keep data in-region; Consumption uses paired-region replication. [source: https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview]
+  - Deployment: yes (saas, on-prem, hybrid) — Consumption (multi-tenant), Standard single-tenant, ASE v3, and Hybrid (on-prem via Container Apps). [source: https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview]
+  - Audit logging: yes — Run/trigger history and diagnostics to Azure Monitor / Log Analytics. [source: https://learn.microsoft.com/en-us/azure/logic-apps/monitor-logic-apps]
+  - SOC 2: yes — In-scope Azure service under SOC 2 Type 2. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2]
+  - ISO 27001: yes — In-scope Azure service under ISO/IEC 27001:2022. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001]
+  - ISO 42001: partial — Microsoft's ISO 42001 scope names Copilot products and Foundry; Logic Apps is not individually listed. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: not-applicable (role: not-applicable) — General-purpose workflow automation, not an AI system; obligations depend on integrated components.
+  - License risk: yes (risk: high) — Proprietary Microsoft service; no source access. [source: https://azure.microsoft.com/en-us/products/logic-apps/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/azure/logic-apps/ | site: https://azure.microsoft.com/en-us/products/logic-apps/
+
+### Databricks Lakeflow Jobs
+- Page: https://www.enterpriseai.tools/tools/databricks-lakeflow-jobs/
+- Vendor: Databricks | Type: vendor | License: Proprietary
+- Status: active
+- Workflow automation for Databricks tasks, pipelines, and ML workloads with DAG, trigger, and observability support.
+- Strengths: Visual DAG orchestration; Task branching, loops, and triggers; Native notebook, pipeline, and ML workflow support
+- Governance posture:
+  - Data residency: yes — Workspace data stays in the workspace region; audit logs are region-local. [source: https://docs.databricks.com/aws/en/admin/account-settings/audit-logs]
+  - Deployment: yes (saas) — Managed SaaS on AWS/Azure/GCP; dedicated single-tenant available; no OSS self-hosted edition. [source: https://www.databricks.com/trust/compliance/soc]
+  - Audit logging: yes — Audit log system tables capture workspace/account events across the platform. [source: https://docs.databricks.com/aws/en/admin/account-settings/audit-logs]
+  - SOC 2: yes — Databricks SOC 2 Type II across all clouds/regions. [source: https://www.databricks.com/trust/compliance/soc]
+  - ISO 27001: yes — ISO/IEC 27001:2022 certified across all three clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
+  - ISO 42001: unknown — No public ISO 42001 certification listed for Databricks as of 2026-05.
+  - EU AI Act: not-applicable (role: not-applicable) — Data pipeline / ML workflow orchestrator, not an AI model provider.
+  - License risk: yes (risk: high) — Proprietary Databricks service. [source: https://www.databricks.com/product/ai]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.databricks.com/aws/en/jobs | site: https://www.databricks.com/product/data-engineering
+
+### Dify
+- Page: https://www.enterpriseai.tools/tools/dify/
+- Vendor: Dify | Type: opensource | License: Modified Apache 2.0 (caution: Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.)
+- Status: active | Version: 1.14.2 | Last release: 2026-05-19
+- Application development and workflow platform for LLM apps with plugin and enterprise features.
+- Strengths: App + workflow surface in one stack; Built-in BaaS-style app publishing; Plugin architecture
+- Governance posture:
+  - Data residency: partial — Self-hosted is customer-controlled; Dify Cloud region not publicly documented. [source: https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running]
+  - Deployment: yes (self-hosted, saas, on-prem) — Docker/Kubernetes self-hosted, Dify Cloud SaaS, or enterprise on-prem. [source: https://docs.dify.ai/en/getting-started/introduction]
+  - Audit logging: unknown — No dedicated audit-log documentation confirmed on public Dify docs.
+  - SOC 2: yes — SOC 2 Type II (Sensiba), second consecutive year. [source: https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running]
+  - ISO 27001: yes — ISO 27001:2022 (Johanson), second consecutive year. [source: https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running]
+  - ISO 42001: unknown — Not mentioned in Dify's public compliance documentation.
+  - EU AI Act: not-applicable (role: not-applicable) — Application/workflow platform tooling; deployer carries obligations for systems built with it.
+  - License risk: yes (risk: medium) — Modified Apache-2.0 — adds multi-tenant and branding restrictions, outside OSI Apache-2.0. [source: https://github.com/langgenius/dify/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.dify.ai/en/use-dify/getting-started/introduction | repo: https://github.com/langgenius/dify
+
+### Flowise
+- Page: https://www.enterpriseai.tools/tools/flowise/
+- Vendor: Flowise | Type: opensource | License: Apache 2.0
+- Status: active | Version: 3.1.2
+- Low-code orchestration and agent workflow builder now under Workday ownership.
+- Strengths: Low-code orchestration builder; Chatflow + agent workflow support; Wide model/provider connectivity
+- Governance posture:
+  - Data residency: partial — Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only. [source: https://docs.flowiseai.com/configuration/deployment.md]
+  - Deployment: yes (self-hosted, saas) — Self-hosted (Apache-2.0 core) or Flowise Cloud SaaS. [source: https://docs.flowiseai.com/configuration/deployment.md]
+  - Audit logging: unknown — No dedicated audit-log documentation; enterprise tier may add capabilities.
+  - SOC 2: unknown — No SOC 2 certification announced by Flowise directly.
+  - ISO 27001: unknown — No ISO 27001 certification found in Flowise documentation.
+  - ISO 42001: unknown — Not mentioned in Flowise documentation.
+  - EU AI Act: not-applicable (role: not-applicable) — Low-code agent/workflow builder tooling, not an AI model/provider.
+  - License risk: yes (risk: medium) — Apache-2.0 core + proprietary Commercial License for packages/server/src/enterprise (SSO/RBAC/audit). [source: https://github.com/FlowiseAI/Flowise/blob/main/LICENSE.md]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.flowiseai.com/ | repo: https://github.com/FlowiseAI/Flowise
+
+### Google Cloud Workflows
+- Page: https://www.enterpriseai.tools/tools/google-cloud-workflows/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Serverless workflow orchestration for Google Cloud services and HTTP APIs.
+- Strengths: Simple serverless orchestration; GCP-native fit; HTTP API support
+- Governance posture:
+  - Data residency: yes — Regional resource; resource-location policies enforce residency (outbound calls may differ). [source: https://docs.cloud.google.com/workflows/docs/locations]
+  - Deployment: yes (saas) — Fully managed serverless SaaS on Google Cloud; no self-hosted option. [source: https://cloud.google.com/workflows]
+  - Audit logging: yes — Cloud Audit Logs capture admin-activity and data-access events via workflows.googleapis.com. [source: https://docs.cloud.google.com/workflows/docs/audit-logging]
+  - SOC 2: yes — Runs on Google Cloud, which holds SOC 2 Type II. [source: https://cloud.google.com/security/compliance/soc-2]
+  - ISO 27001: yes — Runs on ISO/IEC 27001-certified Google Cloud infrastructure. [source: https://cloud.google.com/security/compliance/iso-27001]
+  - ISO 42001: unknown — Google Cloud holds ISO 42001 for AI services; Workflows (non-AI) per-service scope is not publicly confirmed.
+  - EU AI Act: not-applicable (role: not-applicable) — Serverless workflow orchestration, not an AI system.
+  - License risk: yes (risk: high) — Proprietary Google Cloud service; no source access. [source: https://cloud.google.com/workflows]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://cloud.google.com/workflows/docs | site: https://cloud.google.com/workflows
+
+### Haystack
+- Page: https://www.enterpriseai.tools/tools/haystack/
+- Vendor: deepset | Type: opensource | License: Apache 2.0
+- Status: active | Version: 2.29.0 | Last release: 2026-05-12
+- LLM pipeline and retrieval orchestration framework rebranded toward the Haystack Enterprise Platform story.
+- Strengths: Mature pipeline patterns; Strong retrieval orientation; Production-oriented evaluation tooling
+- Governance posture:
+  - Data residency: yes — Python library runs in-process on customer infrastructure; no vendor data handling. [source: https://docs.haystack.deepset.ai/docs/deployment]
+  - Deployment: yes (self-hosted, on-prem) — OSS library self-hosted (Docker/K8s/VMs); deepset offers a managed Enterprise Platform. [source: https://docs.haystack.deepset.ai/docs/deployment]
+  - Audit logging: not-applicable — OSS library has no built-in audit log; operators integrate their own.
+  - SOC 2: partial — OSS library N/A; the deepset-managed Haystack Enterprise Platform holds SOC 2. [source: https://www.deepset.ai/products-and-services/haystack-enterprise-platform]
+  - ISO 27001: partial — OSS library N/A; the deepset Enterprise Platform holds ISO 27001. [source: https://www.deepset.ai/products-and-services/haystack-enterprise-platform]
+  - ISO 42001: unknown — Not mentioned in Haystack/deepset public compliance documentation.
+  - EU AI Act: not-applicable (role: not-applicable) — OSS pipeline framework, not an AI model/provider.
+  - License risk: yes (risk: low) — Apache-2.0 — permissive, OSI-approved. [source: https://github.com/deepset-ai/haystack/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.haystack.deepset.ai/ | repo: https://github.com/deepset-ai/haystack
+
+### LangFlow
+- Page: https://www.enterpriseai.tools/tools/langflow/
+- Vendor: LangFlow / DataStax | Type: opensource | License: MIT
+- Status: active | Version: 1.9.5 | Last release: 2026-05-29
+- Visual flow builder for LLM pipelines and agent workflows with self-hosting support.
+- Strengths: Visual workflow canvas; LangChain ecosystem fit; API and playground handoff
+- Governance posture:
+  - Data residency: yes — Self-hosted gives customer-controlled residency (DataStax cloud shut down 2026-04). [source: https://docs.datastax.com/en/langflow/faqs.html]
+  - Deployment: yes (self-hosted) — Self-hosted (Docker/Kubernetes/local); IBM/DataStax managed cloud deprecated. [source: https://www.langflow.org/blog/big-news-for-langflow]
+  - Audit logging: unknown — No dedicated audit-logging documentation for the self-hosted OSS edition.
+  - SOC 2: not-applicable — No active managed cloud; self-hosted operators carry their own posture.
+  - ISO 27001: not-applicable — No active managed cloud to certify.
+  - ISO 42001: not-applicable — Tooling component; customer-operated.
+  - EU AI Act: not-applicable (role: not-applicable) — Visual workflow-builder framework, not an AI model/provider.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://github.com/langflow-ai/langflow/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.langflow.org/ | repo: https://github.com/langflow-ai/langflow
+
+### n8n
+- Page: https://www.enterpriseai.tools/tools/n8n/
+- Vendor: n8n | Type: opensource | License: Sustainable Use License (caution: n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.)
+- Status: active | Version: 2.23.4 | Last release: 2026-06-05
+- Workflow automation platform with strong self-hosting support and broad integration coverage.
+- Strengths: Large integration catalog; Strong workflow automation ecosystem; Low-code orchestration builder
+- Governance posture:
+  - Data residency: partial — n8n Cloud currently EU-only; self-hosted gives customer-controlled residency. [source: https://n8n.io/security/]
+  - Deployment: yes (self-hosted, saas, hybrid) — Self-hosted (primary OSS mode), n8n Cloud (EU SaaS), or hybrid. [source: https://n8n.io/enterprise/]
+  - Audit logging: partial — Execution insights and log streaming; enterprise Cloud adds access logs; no immutable audit log for self-hosted OSS. [source: https://n8n.io/enterprise/]
+  - SOC 2: yes — Annual independent SOC 2 audit; SOC 3 public report; SOC 2 Type II to enterprise customers. [source: https://n8n.io/security/]
+  - ISO 27001: no — ISO 27001 not held; absent from the n8n security page / Trust Center. [source: https://n8n.io/security/]
+  - ISO 42001: unknown — Not mentioned in n8n public compliance documentation.
+  - EU AI Act: not-applicable (role: not-applicable) — Workflow automation tooling, not itself an AI system.
+  - License risk: yes (risk: medium) — Sustainable Use License (source-available, fair-code, not OSI); EE features under a separate license. [source: https://github.com/n8n-io/n8n/blob/master/LICENSE.md]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.n8n.io/ | site: https://n8n.io/ | repo: https://github.com/n8n-io/n8n
+
+### Paperclip
+- Page: https://www.enterpriseai.tools/tools/paperclip/
+- Vendor: Paperclip | Type: opensource | License: MIT
+- Status: active | Version: v2026.525.0 | Last release: 2026-05-25
+- Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.
+- Strengths: Persistent multi-agent control plane; Built-in budgets and governance; Human approval gates
+- Governance posture:
+  - Data residency: yes — Fully self-hosted; data stays on customer infrastructure (embedded/external Postgres). [source: https://github.com/paperclipai/paperclip]
+  - Deployment: yes (self-hosted) — Self-hosted only (Node.js + Postgres); no vendor-managed cloud. [source: https://github.com/paperclipai/paperclip]
+  - Audit logging: unknown — No dedicated audit-log subsystem documented; OSS codebase is auditable.
+  - SOC 2: not-applicable — No vendor-managed cloud; SOC 2 falls on the customer's hosting environment.
+  - ISO 27001: not-applicable — Customer-operated; no managed service to certify.
+  - ISO 42001: not-applicable — Tooling component; customer-operated.
+  - EU AI Act: not-applicable (role: not-applicable) — Open-source agent control-plane component, not an AI model/provider.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://github.com/paperclipai/paperclip?tab=MIT-1-ov-file]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://paperclip.ing/docs | site: https://paperclip.ing/ | repo: https://github.com/paperclipai/paperclip
+
+### Rivet
+- Page: https://www.enterpriseai.tools/tools/rivet/
+- Vendor: Rivet | Type: opensource | License: MIT
+- Status: maintenance | Version: 1.11.3
+- Workflow builder for AI pipelines with desktop-first self-hosting support.
+- Strengths: Visual pipeline builder; Desktop-friendly; Prompt graph debugging
+- Governance posture:
+  - Data residency: yes — Desktop application; data stays on the local machine; no vendor cloud. [source: https://rivet.ironcladapp.com/docs/getting-started/installation]
+  - Deployment: yes (self-hosted) — Desktop app (macOS/Windows/Linux) and embeddable Node/TS library; no vendor cloud. [source: https://rivet.ironcladapp.com/docs/getting-started/installation]
+  - Audit logging: not-applicable — Desktop-only; no server-side audit infrastructure.
+  - SOC 2: not-applicable — No managed cloud service; user-operated desktop app.
+  - ISO 27001: not-applicable — No managed cloud service to certify.
+  - ISO 42001: not-applicable — Not a cloud AI system provider.
+  - EU AI Act: not-applicable (role: not-applicable) — Desktop visual pipeline builder, not an AI model/provider.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://github.com/Ironclad/rivet/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://rivet.ironcladapp.com/ | repo: https://github.com/Ironclad/rivet
+
+## AI Governance
+
+### Arthur GenAI Engine
+- Page: https://www.enterpriseai.tools/tools/arthur-genai-engine/
+- Vendor: Arthur | Type: commercial | License: Proprietary
+- Status: active
+- Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.
+- Strengths: Enterprise governance focus; Observability and evaluation fit; Agent governance positioning
+- Governance posture:
+  - Data residency: partial — SaaS, on-prem, and direct-GCP/AWS deploy options; SaaS residency regions not documented. [source: https://www.arthur.ai/]
+  - Deployment: yes (saas, self-hosted, on-prem) — Deploy via SaaS, on-prem, or directly on GCP/AWS. [source: https://www.arthur.ai/]
+  - Audit logging: unknown — No specific audit-logging documentation surfaced; observability-oriented platform.
+  - SOC 2: unknown — No SOC 2 claim found on public Arthur pages.
+  - ISO 27001: unknown — No ISO 27001 claim found on public Arthur pages.
+  - ISO 42001: unknown — No ISO 42001 claim found.
+  - EU AI Act: not-applicable (role: not-applicable) — Agent governance/observability component; helps operators manage their own AI compliance.
+  - License risk: yes (risk: medium) — Proprietary product (contact pricing); venture-backed startup risk. [source: https://www.arthur.ai/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.arthur.ai/ | site: https://www.arthur.ai/
+
+### Amazon Bedrock Guardrails
+- Page: https://www.enterpriseai.tools/tools/aws-bedrock-guardrails/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- Configurable safety layer for filtering, PII handling, hallucination reduction, and policy controls.
+- Strengths: Automated Reasoning; 85% price cut noted in guide; Strong Bedrock integration
+- Governance posture:
+  - Data residency: partial — Processed in the resource region; FedRAMP High in GovCloud; no sovereign/multi-cloud option. [source: https://aws.amazon.com/bedrock/security-compliance/]
+  - Deployment: yes (saas) — Fully managed AWS SaaS; no self-hosted/on-prem option. [source: https://aws.amazon.com/bedrock/guardrails/]
+  - Audit logging: yes — Violations to CloudWatch / optional S3; CloudTrail captures API calls. [source: https://aws.amazon.com/bedrock/security-compliance/]
+  - SOC 2: yes — Amazon Bedrock in scope for AWS SOC 1/2/3 (Type II). [source: https://docs.aws.amazon.com/bedrock/latest/userguide/compliance-validation.html]
+  - ISO 27001: yes — Amazon Bedrock in scope for ISO 27001 (and 27017/27018/27701). [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: unknown — Bedrock holds ISO 42001 at the service level; Guardrails sub-feature scope not separately confirmed.
+  - EU AI Act: not-applicable (role: not-applicable) — Safety/filtering component; not itself a high-risk AI system.
+  - License risk: yes (risk: medium) — Proprietary AWS SaaS; no OSS path. [source: https://aws.amazon.com/bedrock/guardrails/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html | site: https://aws.amazon.com/bedrock/guardrails/
+
+### Azure AI Content Safety
+- Page: https://www.enterpriseai.tools/tools/azure-ai-content-safety/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Content moderation and safety service with configurable severity scoring and on-prem options.
+- Strengths: On-premises containers; Configurable severity scoring; Azure SDK integration
+- Governance posture:
+  - Data residency: partial — Data processed/stored in the selected Azure region (22+ regions); on-prem container option. [source: https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/content-safety/data-privacy]
+  - Deployment: yes (saas, on-prem) — Primary SaaS via Azure API; Docker container for on-prem/disconnected. [source: https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview]
+  - Audit logging: partial — Azure Monitor / Activity Log cover API calls; no native per-decision content audit log documented. [source: https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview]
+  - SOC 2: yes — In-scope Azure AI service under SOC 2 Type 2. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2]
+  - ISO 27001: yes — In-scope under Azure ISO/IEC 27001:2022. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001]
+  - ISO 42001: unknown — Not confirmed in Microsoft ISO 42001 scope for Content Safety as of 2026-05.
+  - EU AI Act: not-applicable (role: not-applicable) — Safety component that helps operators comply; not itself a high-risk AI system.
+  - License risk: yes (risk: medium) — Proprietary Azure SaaS; vendor lock-in to Azure safety APIs. [source: https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/azure/ai-services/content-safety/overview | site: https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/
+
+### Databricks Unity AI Gateway
+- Page: https://www.enterpriseai.tools/tools/databricks-unity-ai-gateway/
+- Vendor: Databricks | Type: vendor | License: Proprietary
+- Status: active
+- Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.
+- Strengths: Usage tracking and audit logging; Permissions, rate limits, and traffic controls; Governance for endpoints and MCP interactions
+- Governance posture:
+  - Data residency: partial — Customer-selected cloud region (AWS/Azure/GCP); AI Guardrails limited to pay-per-token regions; no GovCloud. [source: https://docs.databricks.com/aws/en/ai-gateway/]
+  - Deployment: yes (saas) — SaaS layer within Databricks on AWS/Azure/GCP; no standalone self-hosted (Beta). [source: https://www.databricks.com/product/artificial-intelligence/ai-gateway]
+  - Audit logging: yes — Audit logging for MCP/AI endpoint requests; inference tables store request/response as Delta. [source: https://docs.databricks.com/aws/en/ai-gateway/]
+  - SOC 2: yes — Databricks SOC 2 Type II across AWS/Azure/GCP. [source: https://www.databricks.com/trust/compliance/soc]
+  - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
+  - ISO 42001: unknown — Databricks references ISO 42001 as a customer framework (DASF 2.0) but has not published its own certification. [source: https://www.databricks.com/blog/announcing-databricks-ai-security-framework-20]
+  - EU AI Act: not-applicable (role: not-applicable) — Governance control-plane component; helps customers govern their own AI.
+  - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Databricks-centric stacks. [source: https://docs.databricks.com/aws/en/ai-gateway/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.databricks.com/aws/en/ai-gateway/ | site: https://www.databricks.com/product/ai
+
+### Google Model Armor
+- Page: https://www.enterpriseai.tools/tools/google-model-armor/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Model-agnostic prompt and response safety screening layer across Google enterprise infrastructure.
+- Strengths: Model-agnostic screening; Google security integration; Enterprise API fit
+- Governance posture:
+  - Data residency: partial — US/EU regional endpoints; in-memory processing without durable retention unless logging enabled. [source: https://docs.cloud.google.com/model-armor/overview]
+  - Deployment: yes (saas) — Stateless cloud-native SaaS via regional API; standalone or with Security Command Center. [source: https://cloud.google.com/security/products/model-armor]
+  - Audit logging: yes — Audit logs via Cloud Logging filtering on modelarmor.googleapis.com. [source: https://docs.cloud.google.com/model-armor/overview]
+  - SOC 2: yes — Runs on SOC 2 Type II Google Cloud infrastructure. [source: https://cloud.google.com/security/compliance/soc-2]
+  - ISO 27001: yes — Runs on ISO/IEC 27001-certified Google Cloud infrastructure. [source: https://cloud.google.com/security/compliance/iso-27001]
+  - ISO 42001: unknown — Model Armor not confirmed in Google Cloud ISO 42001 scope as of 2026-05.
+  - EU AI Act: not-applicable (role: not-applicable) — Prompt/response screening component; supports operators' compliance, not itself high-risk.
+  - License risk: yes (risk: medium) — Proprietary GCP SaaS; full dependency on GCP. [source: https://cloud.google.com/security/products/model-armor]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://cloud.google.com/security-command-center/docs/model-armor-overview | site: https://cloud.google.com/
+
+### Guardrails AI
+- Page: https://www.enterpriseai.tools/tools/guardrails-ai/
+- Vendor: Guardrails AI | Type: opensource | License: MIT
+- Status: active | Version: 0.10.0
+- Validation-focused guardrails framework with a large validator ecosystem and freemium model.
+- Strengths: 50+ validators; Structured output guardrails; Python-first integration
+- Governance posture:
+  - Data residency: yes — Self-hosted library; residency operator-controlled. [source: https://github.com/guardrails-ai/guardrails]
+  - Deployment: yes (self-hosted) — Open-source Python library; paid managed Guardrails Hub/server also offered. [source: https://guardrailsai.com/docs]
+  - Audit logging: not-applicable — No built-in audit log for the OSS library; managed tier unverified.
+  - SOC 2: not-applicable — Self-hosted library; certification applies to the operator.
+  - ISO 27001: not-applicable — Self-hosted library; applies to the operator's ISMS.
+  - ISO 42001: not-applicable — Self-hosted library; applies to the operator.
+  - EU AI Act: not-applicable (role: not-applicable) — Validation library component; deployers carry obligations.
+  - License risk: yes (risk: low) — Apache-2.0 upstream (tracked license under data-correction review). [source: https://github.com/guardrails-ai/guardrails/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://guardrailsai.com/docs | repo: https://github.com/guardrails-ai/guardrails
+
+### Lakera Guard
+- Page: https://www.enterpriseai.tools/tools/lakera-guard/
+- Vendor: Check Point | Type: commercial | License: Proprietary
+- Status: active
+- Commercial LLM security layer integrating into broader cloud security offerings after acquisition.
+- Strengths: Managed prompt-injection defense; Security platform alignment; Freemium entry path
+- Governance posture:
+  - Data residency: partial — SaaS plus self-hosted container option; residency regions not publicly listed (Check Point acquisition). [source: https://www.lakera.ai/security]
+  - Deployment: yes (saas, self-hosted) — Primary SaaS API; self-hosted container for enhanced control. [source: https://www.lakera.ai/security]
+  - Audit logging: unknown — No specific audit-logging documentation on public pages.
+  - SOC 2: yes — Independent SOC 2 audits per the Lakera security page. [source: https://www.lakera.ai/security]
+  - ISO 27001: unknown — Not stated on the public security page / Trust Center.
+  - ISO 42001: unknown — No documentation found.
+  - EU AI Act: not-applicable (role: not-applicable) — Runtime AI security enforcement component; supports operator compliance.
+  - License risk: yes (risk: high) — Proprietary SaaS; Check Point acquisition adds vendor-change and lock-in risk. [source: https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://platform.lakera.ai/docs/api | site: https://lakera.ai/
+
+### LLM Guard
+- Page: https://www.enterpriseai.tools/tools/llm-guard/
+- Vendor: Palo Alto Networks (Protect AI) | Type: opensource | License: MIT
+- Status: maintenance | Version: 0.3.16
+- Open source safety filtering toolkit whose development has slowed following acquisition activity.
+- Strengths: Prompt/output scanning; PII and toxicity detectors; Useful safety primitives
+- Governance posture:
+  - Data residency: yes — Self-hosted library; data stays on operator infrastructure. [source: https://github.com/protectai/llm-guard]
+  - Deployment: yes (self-hosted) — Open-source Python library; maintenance mode, no managed service. [source: https://protectai.github.io/llm-guard/]
+  - Audit logging: not-applicable — No built-in audit log in the OSS library.
+  - SOC 2: not-applicable — Self-hosted library; certification applies to the operator.
+  - ISO 27001: not-applicable — Self-hosted library; applies to the operator's ISMS.
+  - ISO 42001: not-applicable — Self-hosted library; applies to the operator.
+  - EU AI Act: not-applicable (role: not-applicable) — OSS safety-filtering library; not itself an AI system.
+  - License risk: yes (risk: low) — MIT — permissive; note maintenance-mode operational risk. [source: https://github.com/protectai/llm-guard/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://protectai.github.io/llm-guard/ | repo: https://github.com/protectai/llm-guard
+
+### NeMo Guardrails
+- Page: https://www.enterpriseai.tools/tools/nemo-guardrails/
+- Vendor: NVIDIA | Type: opensource | License: Apache 2.0
+- Status: active | Version: 0.22.0 | Last release: 2026-05-22
+- Open source guardrails framework for LLM and agent safety with a dedicated Colang DSL.
+- Strengths: Purpose-built guardrails DSL; Conversation flow controls; NVIDIA ecosystem alignment
+- Governance posture:
+  - Data residency: yes — Self-hosted library; residency fully operator-controlled. [source: https://github.com/NVIDIA-NeMo/Guardrails]
+  - Deployment: yes (self-hosted) — Open-source Python library deployed by the operator; NVIDIA NIM cloud separate. [source: https://docs.nvidia.com/nemo/guardrails/]
+  - Audit logging: not-applicable — No built-in audit logging; operators add their own.
+  - SOC 2: not-applicable — Self-hosted library; certification applies to the operator.
+  - ISO 27001: not-applicable — Self-hosted library; certification applies to the operator's ISMS.
+  - ISO 42001: not-applicable — Self-hosted library; applies to the operator.
+  - EU AI Act: not-applicable (role: not-applicable) — OSS library component; deployers carry obligations for systems they build.
+  - License risk: yes (risk: low) — Apache-2.0 — permissive, OSI-approved. [source: https://github.com/NVIDIA-NeMo/Guardrails/blob/main/LICENSE.md]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.nvidia.com/nemo/guardrails/ | repo: https://github.com/NVIDIA-NeMo/Guardrails
+
+### Rebuff
+- Page: https://www.enterpriseai.tools/tools/rebuff/
+- Vendor: Palo Alto Networks | Type: opensource | License: Apache 2.0
+- Status: archived | Version: 0.1.1
+- Prompt injection defense project archived in May 2025 and not recommended for new projects.
+- Strengths: Prompt-injection focus; Archived OSS reference point; Historically notable
+- Governance posture:
+  - Data residency: not-applicable — Archived OSS library; operator-controlled if used.
+  - Deployment: yes (self-hosted) — Archived (2025-05-16); self-hosted if used; not recommended for new deployments. [source: https://github.com/protectai/rebuff]
+  - Audit logging: not-applicable — Archived library; no infrastructure.
+  - SOC 2: not-applicable — Archived OSS library.
+  - ISO 27001: not-applicable — Archived OSS library.
+  - ISO 42001: not-applicable — Archived OSS library.
+  - EU AI Act: not-applicable (role: not-applicable) — Archived prompt-injection defense library; not an active AI system.
+  - License risk: yes (risk: low) — Apache-2.0 — permissive; archived (abandonment risk). [source: https://github.com/protectai/rebuff/blob/main/LICENSE]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://github.com/protectai/rebuff | repo: https://github.com/protectai/rebuff
+
+## AI Assistants
+
+### Amazon Q Apps
+- Page: https://www.enterpriseai.tools/tools/amazon-q-apps/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- No-code AI app builder delivered as a feature within Amazon Q Business Pro.
+- Strengths: No-code creation; Natural-language app building; Connected to Q Business
+- Governance posture:
+  - Data residency: partial — Inherits Q Business residency; cross-region inference within geography; in-country needs AWS Support. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html]
+  - Deployment: yes (saas) — Feature within Amazon Q Business Pro; SaaS only; no standalone deployment. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html]
+  - Audit logging: yes — Q Apps API calls logged via CloudTrail. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/logging-qapps-using-cloudtrail.html]
+  - SOC 2: yes — Inherits Amazon Q Business SOC 1/2/3 scope. [source: https://aws.amazon.com/compliance/services-in-scope/SOC/]
+  - ISO 27001: yes — Inherits Amazon Q Business ISO 27001:2022. [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: yes — Inherits Amazon Q Business ISO 42001 scope. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/compliance-validation.html]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary feature of Q Business Pro; cannot be used outside Q Business. [source: https://aws.amazon.com/q/business/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html | site: https://aws.amazon.com/q/business/
+
+### Amazon Q Business
+- Page: https://www.enterpriseai.tools/tools/amazon-q-business/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- Enterprise business assistant with many data connectors and the lowest entry pricing in this segment.
+- Strengths: 40+ data connectors; Low entry price; Standalone business assistant
+- Governance posture:
+  - Data residency: partial — Primary-region storage; cross-region inference stays within geography; in-country needs AWS Support. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html]
+  - Deployment: yes (saas) — SaaS on AWS with 40+ connectors; no self-hosted option. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html]
+  - Audit logging: yes — CloudTrail integration for all Q Business (and Q Apps) API calls. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/logging-qapps-using-cloudtrail.html]
+  - SOC 2: yes — Amazon Q Business in scope for AWS SOC 1/2/3. [source: https://aws.amazon.com/compliance/services-in-scope/SOC/]
+  - ISO 27001: yes — Amazon Q Business ISO/IEC 27001:2022 certified. [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: yes — Amazon Q Business listed in AWS ISO 42001 scope. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/compliance-validation.html]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; AWS ecosystem lock-in. [source: https://aws.amazon.com/q/business/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html | site: https://aws.amazon.com/q/business/
+
+### Amazon Q Developer
+- Page: https://www.enterpriseai.tools/tools/amazon-q-developer/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.
+- Strengths: AWS-native development fit; Free tier; Enterprise plans available
+- Governance posture:
+  - Data residency: partial — Pro tier stores in the profile region; free tier defaults US East; EU inference kept in EU. [source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/data-storage.html]
+  - Deployment: yes (saas) — SaaS via IDE plugin / AWS console; no self-hosted option. [source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html]
+  - Audit logging: yes — All Pro API calls logged via CloudTrail; configurable S3 delivery. [source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/logging-using-cloudtrail.html]
+  - SOC 2: yes — Amazon Q Developer in scope for AWS SOC 1/2/3. [source: https://aws.amazon.com/compliance/services-in-scope/SOC/]
+  - ISO 27001: yes — Amazon Q Developer ISO/IEC 27001:2022 certified. [source: https://aws.amazon.com/compliance/iso-certified/]
+  - ISO 42001: unknown — AWS ISO 42001 scope names Q Business/Bedrock/Textract/Transcribe; Q Developer not explicitly listed.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; AWS toolchain lock-in. [source: https://aws.amazon.com/q/developer/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html | site: https://aws.amazon.com/q/developer/
+
+### Copilot Studio
+- Page: https://www.enterpriseai.tools/tools/copilot-studio/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Low-code platform for building and publishing copilots and agents across Microsoft channels.
+- Strengths: Low-code builder; Teams and Power Platform integration; Multiple publishing channels
+- Governance posture:
+  - Data residency: yes — Geographic data residency configurable via Power Platform admin center; DLP controls. [source: https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance]
+  - Deployment: yes (saas) — SaaS via Microsoft Power Platform; CMK available; no self-hosted option. [source: https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance]
+  - Audit logging: yes — Maker audit logs in Microsoft Purview; agent activity streamable to Sentinel; Customer Lockbox. [source: https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance]
+  - SOC 2: yes — Audited as SOC compliant (Service Trust Portal). [source: https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-certification]
+  - ISO 27001: yes — In Microsoft ISO 27001 scope (Azure / Other Online Services). [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001]
+  - ISO 42001: yes — Microsoft Copilot Studio listed in ISO 42001:2023 scope. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; Power Platform / Azure lock-in. [source: https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/microsoft-copilot-studio/ | site: https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/
+
+### Cursor
+- Page: https://www.enterpriseai.tools/tools/cursor/
+- Vendor: Anysphere | Type: commercial | License: Proprietary
+- Status: active
+- Standalone AI coding IDE with rapid enterprise growth and credit-based pricing controversy.
+- Strengths: Strong adoption; Standalone IDE UX; High-end coding focus
+- Governance posture:
+  - Data residency: no — No data-residency options documented; no EU residency option found. [source: https://cursor.com/security]
+  - Deployment: yes (saas) — Standalone SaaS IDE; Privacy Mode (zero retention); MDM supported; no self-hosted LLM in standard tiers. [source: https://cursor.com/security]
+  - Audit logging: yes — Enterprise audit logs (admin/security/auth) with SIEM streaming (Splunk/Datadog/S3). [source: https://cursor.com/docs/enterprise/compliance-and-monitoring]
+  - SOC 2: yes — SOC 2 Type II available on request via trust.cursor.com. [source: https://cursor.com/security]
+  - ISO 27001: unknown — Listed by some secondary sources; no primary Anysphere certificate confirmed.
+  - ISO 42001: unknown — No ISO 42001 certification found for Cursor/Anysphere.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: high) — Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape. [source: https://cursor.com/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://cursor.com/ | site: https://cursor.com/
+
+### Databricks Genie Code
+- Page: https://www.enterpriseai.tools/tools/databricks-genie-code/
+- Vendor: Databricks | Type: vendor | License: Proprietary
+- Status: active
+- Context-aware Databricks coding assistant for SQL, Python, debugging, and agentic data-work flows.
+- Strengths: Understands Unity Catalog metadata; Helps generate, explain, and fix SQL/Python; Agent mode across notebooks, Lakeflow, dashboards, and MLflow
+- Governance posture:
+  - Data residency: yes — AI assistive feature using Databricks Geos; residency per workspace region across clouds. [source: https://docs.databricks.com/aws/en/databricks-ai/databricks-ai-trust]
+  - Deployment: yes (saas) — SaaS within the customer's Databricks workspace (AWS/Azure/GCP). [source: https://docs.databricks.com/aws/en/genie-code/]
+  - Audit logging: yes — Interactions logged to the system.access.audit system table. [source: https://www.databricks.com/blog/introducing-genie-code]
+  - SOC 2: yes — Databricks SOC 2 Type II across clouds/regions. [source: https://www.databricks.com/trust/compliance/soc]
+  - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
+  - ISO 42001: unknown — No Databricks ISO 42001 certification found as of 2026-05.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/ai]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.databricks.com/aws/en/genie-code/ | site: https://www.databricks.com/product/ai
+
+### Databricks Genie Spaces
+- Page: https://www.enterpriseai.tools/tools/databricks-genie-spaces/
+- Vendor: Databricks | Type: vendor | License: Proprietary
+- Status: active
+- Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.
+- Strengths: Natural-language access to curated datasets; Built on Unity Catalog governance; Business-insight workflow inside the Databricks workspace
+- Governance posture:
+  - Data residency: yes — AI assistive feature using Databricks Geos; residency per workspace region. [source: https://docs.databricks.com/aws/en/databricks-ai/databricks-ai-trust]
+  - Deployment: yes (saas) — SaaS within the Databricks workspace (multi-cloud); no standalone option. [source: https://docs.databricks.com/aws/en/databricks-ai/]
+  - Audit logging: yes — Audit events to the system.access.audit system table; SQL-queryable. [source: https://docs.databricks.com/gcp/en/ai-bi/admin/audit]
+  - SOC 2: yes — Databricks SOC 2 Type II across clouds. [source: https://www.databricks.com/trust/compliance/soc]
+  - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
+  - ISO 42001: unknown — No Databricks ISO 42001 certification found as of 2026-05.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/ai]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.databricks.com/aws/en/databricks-ai/ | site: https://www.databricks.com/product/ai
+
+### Gemini Code Assist
+- Page: https://www.enterpriseai.tools/tools/gemini-code-assist/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Google coding assistant for IDE workflows with a generous free completion tier.
+- Strengths: VPC-SC + IP indemnification; Google ecosystem fit; Private codebase customization
+- Governance posture:
+  - Data residency: partial — Stateless by default; Enterprise data-at-rest residency in US/EU; GitHub variant excluded from scope. [source: https://docs.cloud.google.com/gemini/docs/discover/certifications]
+  - Deployment: yes (saas) — SaaS via IDE extensions and GCP; CMEK/VPC-SC for Enterprise; no self-hosted. [source: https://cloud.google.com/products/gemini/code-assist]
+  - Audit logging: yes — Cloud Audit Logs cover admin activity and data access. [source: https://docs.cloud.google.com/logging/docs/audit/understanding-audit-logs]
+  - SOC 2: yes — Holds SOC 1/2/3 (Q2 2025 reassessment). [source: https://docs.cloud.google.com/gemini/docs/discover/certifications]
+  - ISO 27001: yes — Holds ISO 27001/27017/27018/27701. [source: https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance]
+  - ISO 42001: yes — Gemini for Google Cloud (incl. Code Assist) holds ISO 42001:2023. [source: https://docs.cloud.google.com/gemini/docs/discover/certifications]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; GCP lock-in (offsetting IP indemnification offered). [source: https://cloud.google.com/products/gemini/code-assist]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://cloud.google.com/gemini/docs/codeassist/overview | site: https://cloud.google.com/products/gemini/code-assist
+
+### Gemini Enterprise
+- Page: https://www.enterpriseai.tools/tools/gemini-enterprise/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Enterprise agentic AI platform and successor packaging for the former Agentspace product line.
+- Strengths: No-code enterprise agent path; Broad enterprise integrations; Google assistant consolidation
+- Governance posture:
+  - Data residency: partial — US/EU multi-region; residency per Workspace settings; relaxed when Search grounding is enabled. [source: https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls]
+  - Deployment: yes (saas) — SaaS via Google Workspace / GCP; CMEK/VPC-SC in US/EU; no self-hosted option. [source: https://workspace.google.com/solutions/ai/]
+  - Audit logging: yes — Access Transparency and Cloud Audit Logs cover Gemini Enterprise. [source: https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls]
+  - SOC 2: yes — Gemini Enterprise (Standard/Plus) holds SOC 1/2/3. [source: https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls]
+  - ISO 27001: yes — Holds ISO 27001/27017/27018/27701. [source: https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls]
+  - ISO 42001: unknown — ISO 42001 not listed on the Gemini Enterprise compliance page (the Workspace app SKU holds it).
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; GCP/Workspace lock-in. [source: https://workspace.google.com/solutions/ai/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini | site: https://workspace.google.com/solutions/ai/
+
+### Gemini for Workspace
+- Page: https://www.enterpriseai.tools/tools/gemini-for-workspace/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Workspace assistant now bundled across plans with Google productivity and collaboration integration.
+- Strengths: Workspace-native fit; Bundled packaging; Clear productivity focus
+- Governance posture:
+  - Data residency: partial — Workspace data-residency settings and EU data-boundary protections; LLM processing can cross regions for capacity. [source: https://workspaceupdates.googleblog.com/2024/12/hippa-and-more-iso-certifications-for-the-gemini-app-on-web-and-mobile.html]
+  - Deployment: yes (saas) — SaaS bundled into Google Workspace; no self-hosted option. [source: https://workspace.google.com/solutions/ai/]
+  - Audit logging: yes — Workspace Admin Activity audit logs cover Gemini-in-Workspace actions. [source: https://workspaceupdates.googleblog.com/2024/08/gemini-soc-compliance.html]
+  - SOC 2: yes — SOC 1/2/3 for Gemini across Workspace apps (Aug 2024). [source: https://workspaceupdates.googleblog.com/2024/08/gemini-soc-compliance.html]
+  - ISO 27001: yes — ISO 27001/27017/27018/27701 (Dec 2024). [source: https://workspaceupdates.googleblog.com/2024/12/hippa-and-more-iso-certifications-for-the-gemini-app-on-web-and-mobile.html]
+  - ISO 42001: yes — ISO 42001:2023 certified (Dec 2024). [source: https://workspaceupdates.googleblog.com/2024/12/hippa-and-more-iso-certifications-for-the-gemini-app-on-web-and-mobile.html]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; Google ecosystem lock-in. [source: https://workspace.google.com/solutions/ai/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini | site: https://workspace.google.com/solutions/ai/
+
+### GitHub Copilot
+- Page: https://www.enterpriseai.tools/tools/github-copilot/
+- Vendor: GitHub/Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Coding assistant platform delivered through IDE plugins with individual, business, and enterprise tiers.
+- Strengths: Broad IDE adoption; Free tier for light usage; Enterprise controls available
+- Governance posture:
+  - Data residency: partial — EU data residency on GitHub Enterprise Cloud (US/EU only, surcharge); Business/Individual default US. [source: https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency]
+  - Deployment: yes (saas) — SaaS via IDE plugins; no self-hosted/on-prem option. [source: https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency]
+  - Audit logging: yes — Enterprise audit logs cover seat/access/policy and Copilot interactions; audit-log API. [source: https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise]
+  - SOC 2: yes — GitHub SOC 2 Type II; Copilot in scope. [source: https://copilot.github.trust.page/faq]
+  - ISO 27001: yes — GitHub ISO/IEC 27001:2022; Copilot in scope. [source: https://copilot.github.trust.page/faq]
+  - ISO 42001: yes — GitHub Copilot listed in Microsoft ISO/IEC 42001:2023 scope. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; GitHub/Microsoft ecosystem lock-in. [source: https://github.com/features/copilot]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://docs.github.com/copilot | site: https://github.com/features/copilot
+
+### Microsoft 365 Copilot
+- Page: https://www.enterpriseai.tools/tools/microsoft-365-copilot/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Productivity assistant tightly integrated with Microsoft 365, Graph, and enterprise workflow data.
+- Strengths: Deepest M365 integration; Graph data access; Enterprise assistant packaging
+- Governance posture:
+  - Data residency: yes — EU Data Boundary compliant; Advanced Data Residency and Multi-Geo offerings. [source: https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy]
+  - Deployment: yes (saas) — SaaS within the Microsoft 365 tenant on Azure OpenAI; no self-hosted option. [source: https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy]
+  - Audit logging: yes — Microsoft Purview audit logging of Copilot prompts/responses/citations; retention/eDiscovery. [source: https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy]
+  - SOC 2: yes — Covered by Microsoft 365 SOC scope (Service Trust Portal). [source: https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-certification]
+  - ISO 27001: yes — Microsoft 365 (incl. Copilot) ISO 27001:2022 certified. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001]
+  - ISO 42001: yes — Microsoft 365 Copilot achieved ISO 42001:2023 (March 2025). [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: medium) — Proprietary SaaS; deep M365 Graph / Azure lock-in. [source: https://adoption.microsoft.com/en-us/microsoft-365-copilot/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://learn.microsoft.com/microsoft-365-copilot/ | site: https://adoption.microsoft.com/en-us/microsoft-365-copilot/
+
+### Windsurf
+- Page: https://www.enterpriseai.tools/tools/windsurf/
+- Vendor: Cognition AI | Type: commercial | License: Proprietary
+- Status: active
+- Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.
+- Strengths: Standalone IDE; Agentic coding workflows; Enterprise path available
+- Governance posture:
+  - Data residency: partial — EU residency via Frankfurt (Enterprise); US default; FedRAMP High via AWS GovCloud. [source: https://windsurf.com/security]
+  - Deployment: yes (saas, hybrid, self-hosted) — Cloud, Hybrid (customer data + Windsurf compute), and fully self-hosted (Docker/K8s, private LLM). [source: https://windsurf.com/security]
+  - Audit logging: partial — Audit logging on Enterprise Hybrid and Self-hosted only; not in the cloud SaaS tier. [source: https://windsurf.com/security]
+  - SOC 2: yes — SOC 2 Type II; annual pen testing. [source: https://windsurf.com/security]
+  - ISO 27001: unknown — Not stated on the Windsurf security page; post-Cognition-acquisition status unverified.
+  - ISO 42001: unknown — No ISO 42001 certification found for Windsurf/Cognition.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
+  - License risk: yes (risk: high) — Proprietary SaaS; 2025 ownership turbulence (Cognition acquisition) adds roadmap risk. [source: https://windsurf.com/]
+- Governance reviewed: 2026-05-26
+- Links: docs: https://windsurf.com/ | site: https://windsurf.com/
+
+## Recent updates
+
+- 2026-06-07 — Amazon Bedrock Agents (feature, medium impact): AWS added interactive PTY-backed shells to Bedrock AgentCore Runtime, letting teams reconnect into live agent sessions for debugging, file inspection, and terminal-native coding-agent workflows. [source: https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/]
+- 2026-06-07 — Microsoft Foundry (feature, high impact): Microsoft announced Foundry Managed Compute, adding a managed GPU platform for hosting open-source and custom models through the same Foundry endpoint, SDKs, and billing surface used for frontier-model deployments. [source: https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/]
+- 2026-05-28 — Amazon Bedrock (model-addition, medium impact): AWS added Anthropic Claude Opus 4.8 to Amazon Bedrock, giving Bedrock customers access to Anthropic's latest high-end model inside AWS-managed security and regional controls. [source: https://aws.amazon.com/blogs/machine-learning/claude-opus-4-8-is-now-available-on-aws/]
+- 2026-05-28 — Gemini Enterprise Agent Platform (deprecation, high impact): Google deprecated Vertex AI Extensions and said the service will shut down after 2026-11-26, directing teams to migrate agent integrations to Agent Platform to avoid disruption. [source: https://cloud.google.com/vertex-ai/docs/release-notes]
+- 2026-05-28 — Microsoft Agent Framework (release, medium impact): Microsoft Agent Framework 1.7.0 added harness agents, A2A session support, and new Foundry integration hooks, extending the framework's orchestration and inter-agent workflow surface. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.7.0]
+- 2026-05-27 — Amazon Bedrock Agents (feature, medium impact): AWS introduced AgentCore payments in preview, adding managed agent micropayments for APIs, web content, MCP servers, and other agents via x402-backed transaction flows. [source: https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/]
+- 2026-05-15 — Google Vertex AI (model-addition, medium impact): Google announced Gemini 3.1 Flash-Lite general availability on Gemini Enterprise Agent Platform, adding a lower-latency, lower-cost production model option for agent and orchestration workloads. [source: https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available]
+- 2026-05-15 — LangFlow (release, high impact): LangFlow 1.9.3 shipped as a critical security release with SSRF protection, DNS rebinding prevention, dependency CVE fixes, and an explicit immediate-upgrade recommendation. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.9.3]
+- 2026-05-15 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework 1.4.0 introduced experimental skills API breaking changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0]
+- 2026-05-12 — Dify (release, high impact): Dify 1.14.1 hardened self-hosted SECRET_KEY handling, protected internal metrics endpoints, fixed tenant-isolation issues, and refreshed dependencies for CVE-2026-42208 and related risks. [source: https://github.com/langgenius/dify/releases/tag/1.14.1]
+- 2026-05-12 — LangGraph (release, medium impact): LangGraph 1.2.0 promoted its alpha packages to official releases and added durable error-handler resume across host crashes, improving reliability for stateful production agent workflows. [source: https://github.com/langchain-ai/langgraph/releases/tag/1.2.0]
+- 2026-05-12 — Microsoft Foundry (feature, medium impact): Foundry Local 1.1 added live transcription, embeddings, and Responses API support, expanding Microsoft’s local/no-cloud deployment path for speech, RAG, and tool-calling workloads. [source: https://devblogs.microsoft.com/foundry/foundry-local-v1-1/]
+- 2026-05-08 — Microsoft Agent Framework (release, medium impact): Microsoft Agent Framework Python 1.3.0 added class-based skill definitions plus experimental session-mode and todo-list harness context providers, expanding structured agent composition patterns. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.3.0]
+- 2026-05-08 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.16.0 changed the default model to gpt-5.4-mini for runs without an explicit model, altering baseline behavior, reasoning defaults, and potential cost/perf expectations. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.16.0]
+- 2026-05-06 — Mastra (release, high impact): Mastra 1.32.0 introduced fine-grained authorization checks across agent runs, tool and workflow execution, memory thread access, server adapters, and MCP paths. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.32.0]
+- 2026-05-02 — Google Agent Builder + ADK (feature, high impact): Google made 50+ fully managed MCP servers available for Google Cloud services, expanding protocol-aligned tool integration options for Vertex AI and Gemini Enterprise agent builds. [source: https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone]
+- 2026-05-01 — AWS Bedrock Agents (feature, medium impact): AWS announced Amazon Bedrock AgentCore availability in the South America (São Paulo) Region, extending managed agent runtime coverage into an additional geography. [source: https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/]
+- 2026-05-01 — LangFlow (release, medium impact): LangFlow 1.9.2 added telemetry to deployment APIs and shipped fixes across env var resolution, Google embeddings dimensions, and related deployment/runtime paths. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.9.2]
+- 2026-05-01 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.15.0 changed refusal handling to raise ModelRefusalError explicitly instead of surfacing empty outputs, a behavior change that can affect run-loop integrations. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.15.0]
+- 2026-04-30 — CrewAI (release, medium impact): CrewAI 1.14.4 added Azure OpenAI Responses API support, Azure AI Inference credential-scope forwarding, Vertex AI workload identity guidance, and new research/search tools integrations. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.14.4]
+
+## Data access
+- Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json
+- Platforms dataset (JSON): https://www.enterpriseai.tools/data/platforms.json
+- Updates dataset (JSON): https://www.enterpriseai.tools/data/updates.json
+- Updates feed (Atom): https://www.enterpriseai.tools/updates.xml
+- Sitemap: https://www.enterpriseai.tools/sitemap.xml
+- Source repository: https://github.com/tiberiuarva/enterpriseaitools
+
+## License & curator
+MIT licensed dataset. Curated by Tiberiu Arva through an enterprise financial-services delivery lens. Canonical site: https://www.enterpriseai.tools/

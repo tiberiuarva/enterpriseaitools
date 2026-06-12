@@ -141,9 +141,9 @@ export function UpdatesFeed({ updates }: { updates: UpdateEntry[] }) {
           <div className="space-y-6">
             {visibleUpdates.map((update) => (
               <article id={update.id} key={update.id} className="flex gap-4 scroll-mt-24 border-l-2 border-[var(--color-border)] pl-4">
-                <div className="w-28 shrink-0 text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
+                <time dateTime={update.date} className="w-28 shrink-0 text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
                   {update.date}
-                </div>
+                </time>
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
                     <div className="text-base font-semibold text-[var(--color-text-primary)]">

@@ -16,6 +16,7 @@ type DataCatalogDataset = {
   name: string;
   url: string;
   description: string;
+  downloadUrl?: string;
 };
 
 type DataFeedItem = {
@@ -96,6 +97,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Any",
     url,
+    ...(tool.governance?.reviewedAt ? { dateModified: normalizeJsonLdDate(tool.governance.reviewedAt) } : {}),
     ...(tool.vendor ? { publisher: { "@type": "Organization", name: tool.vendor } } : {}),
     ...(tool.version ? { softwareVersion: tool.version } : {}),
     ...(tool.license ? { license: tool.license } : {}),
@@ -300,6 +302,15 @@ export function buildDataCatalogJsonLd({
             url: dataset.url,
             description: dataset.description,
             inLanguage: defaultLanguage,
+            ...(dataset.downloadUrl
+              ? {
+                  distribution: {
+                    "@type": "DataDownload",
+                    encodingFormat: "application/json",
+                    contentUrl: dataset.downloadUrl,
+                  },
+                }
+              : {}),
           })),
         }
       : {}),
