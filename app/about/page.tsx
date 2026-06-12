@@ -412,6 +412,43 @@ export default function AboutPage() {
                 </div>
               </div>
             </section>
+
+            <section id="data-access" tabIndex={-1} className="scroll-mt-24 card-flat p-6">
+              <SectionHeading
+                eyebrow="Data access"
+                title="Machine-readable data for tools, agents, and LLMs"
+                intro="The full dataset is available as first-party JSON plus plain-text summaries built for LLM ingestion. Everything is MIT-licensed and source-backed."
+              />
+              <ul className="mt-5 grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
+                {[
+                  { href: `${siteUrl}/data/tools.json`, label: "Tools dataset (JSON)", note: "Full governance posture for every tracked tool" },
+                  { href: `${siteUrl}/data/platforms.json`, label: "Platforms dataset (JSON)", note: "The three cloud foundation platforms" },
+                  { href: `${siteUrl}/data/updates.json`, label: "Updates dataset (JSON)", note: "Source-backed market intelligence log" },
+                  { href: `${siteUrl}/llms.txt`, label: "llms.txt", note: "Site index for LLM crawlers" },
+                  { href: `${siteUrl}/llms-full.txt`, label: "llms-full.txt", note: "Complete content in one fetch" },
+                  { href: `${siteUrl}/updates.xml`, label: "Updates feed (Atom)", note: "Subscribe to weekly changes" },
+                ].map((item) => (
+                  <li key={item.href} className="card p-4">
+                    <a
+                      href={item.href}
+                      className="text-sm font-medium text-[var(--color-primary)] hover:underline"
+                    >
+                      {item.label}
+                    </a>
+                    <p className="mt-1 text-xs leading-5 text-[var(--color-text-secondary)]">{item.note}</p>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={githubRepoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View GitHub repository in a new tab"
+                className="mt-4 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
+              >
+                Or browse the source dataset on GitHub
+              </a>
+            </section>
           </div>
         </div>
 

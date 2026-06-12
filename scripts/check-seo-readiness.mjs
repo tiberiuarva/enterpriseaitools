@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import routeInventory from "../seo-route-inventory.json" with { type: "json" };
+import toolsData from "../data/tools.json" with { type: "json" };
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 const outDir = path.resolve("out");
@@ -221,6 +222,84 @@ for (const route of routeInventory) {
 
   if (route.path === "/about" && !jsonLdTypes.has("AboutPage")) {
     failures.push("/about/ is missing AboutPage JSON-LD");
+  }
+}
+
+// ── AEO / LLM-readability artifacts ───────────────────────────────────────────
+async function readOptional(filePath) {
+  try {
+    return await readFile(filePath, "utf8");
+  } catch {
+    return null;
+  }
+}
+
+const llmsTxt = await readOptional(path.join(publicDir, "llms.txt"));
+if (!llmsTxt) {
+  failures.push("public/llms.txt is missing");
+} else if (!llmsTxt.startsWith("# enterpriseai.tools")) {
+  failures.push("public/llms.txt does not start with the expected H1 title");
+}
+
+const llmsFull = await readOptional(path.join(publicDir, "llms-full.txt"));
+if (!llmsFull) {
+  failures.push("public/llms-full.txt is missing");
+} else {
+  const missingTools = toolsData.tools.filter((tool) => !llmsFull.includes(`### ${tool.name}`));
+  if (missingTools.length > 0) {
+    failures.push(`public/llms-full.txt is missing ${missingTools.length} tool block(s): ${missingTools.slice(0, 5).map((t) => t.name).join(", ")}${missingTools.length > 5 ? "…" : ""}`);
+  }
+}
+
+for (const [name, key] of [["tools", "tools"], ["platforms", "platforms"], ["updates", "updates"]]) {
+  const raw = await readOptional(path.join(publicDir, "data", `${name}.json`));
+  if (!raw) {
+    failures.push(`public/data/${name}.json is missing`);
+    continue;
+  }
+  try {
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed[key])) {
+      failures.push(`public/data/${name}.json has no ${key} array`);
+    } else if (parsed.count !== parsed[key].length) {
+      failures.push(`public/data/${name}.json count (${parsed.count}) does not match ${key} length (${parsed[key].length})`);
+    }
+    if (parsed.datasetLicense !== "MIT" || !parsed.source) {
+      failures.push(`public/data/${name}.json is missing datasetLicense/source attribution`);
+    }
+  } catch {
+    failures.push(`public/data/${name}.json is not valid JSON`);
+  }
+}
+
+const robotsTxtAi = await readOptional(path.join(publicDir, "robots.txt"));
+for (const agent of ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended"]) {
+  if (robotsTxtAi && !robotsTxtAi.includes(`User-agent: ${agent}`)) {
+    failures.push(`robots.txt is missing an explicit stanza for ${agent}`);
+  }
+}
+
+// Spot-check a representative tool page for SoftwareApplication dateModified
+// and the article modified-time meta tag. Pinned to a stable id so the check
+// is order-independent.
+const sampleTool =
+  toolsData.tools.find((tool) => tool.id === "microsoft-foundry-agent-service") ?? toolsData.tools[0];
+if (sampleTool) {
+  const toolHtmlPath = path.join(outDir, "tools", sampleTool.id, "index.html");
+  const toolHtml = await readOptional(toolHtmlPath);
+  if (!toolHtml) {
+    failures.push(`out/tools/${sampleTool.id}/index.html is missing (build first)`);
+  } else {
+    const toolNodes = collectJsonLdNodes(toolHtml);
+    const softwareNode = toolNodes.find((node) => node?.["@type"] === "SoftwareApplication");
+    if (!softwareNode) {
+      failures.push(`/tools/${sampleTool.id}/ is missing SoftwareApplication JSON-LD`);
+    } else if (!isIsoDateTime(softwareNode.dateModified)) {
+      failures.push(`/tools/${sampleTool.id}/ SoftwareApplication dateModified is missing or not ISO 8601`);
+    }
+    if (!/property="article:modified_time"/.test(toolHtml) && !/property="og:updated_time"/.test(toolHtml)) {
+      failures.push(`/tools/${sampleTool.id}/ is missing an article modified-time meta tag`);
+    }
   }
 }
 

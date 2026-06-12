@@ -14,10 +14,16 @@ export function buildMetadata({
   title,
   description = defaultDescription,
   path = "/",
+  modifiedTime,
 }: {
   title?: string;
   description?: string;
   path?: string;
+  /** ISO calendar date (YYYY-MM-DD). When set, emits an article OpenGraph
+   *  type with modifiedTime so crawlers and answer engines pick up recency.
+   *  The dataset tracks calendar dates only, so the time component is
+   *  intentionally zeroed to midnight UTC. */
+  modifiedTime?: string;
 } = {}): Metadata {
   const normalizedPath = path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}/`;
   const canonicalUrl = new URL(normalizedPath, `${siteUrl}/`).toString();
@@ -30,7 +36,9 @@ export function buildMetadata({
       canonical: canonicalUrl,
     },
     openGraph: {
-      type: "website",
+      ...(modifiedTime
+        ? { type: "article", modifiedTime: `${modifiedTime}T00:00:00.000Z` }
+        : { type: "website" }),
       url: canonicalUrl,
       title: pageTitle,
       description,
