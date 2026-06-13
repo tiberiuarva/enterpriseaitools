@@ -4,7 +4,7 @@
   "datasetLicense": "MIT",
   "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-06-07",
+  "generatedAt": "2026-06-13",
   "count": 3,
   "platforms": [
     {
@@ -106,7 +106,7 @@
       ],
       "docsUrl": "https://docs.aws.amazon.com/bedrock/",
       "websiteUrl": "https://aws.amazon.com/bedrock/",
-      "lastUpdated": "2026-05-30",
+      "lastUpdated": "2026-06-13",
       "tagline": "Framework-agnostic model access with strong AWS-native agent and safety integration.",
       "logoUrl": "/logos/aws-bedrock.jpg",
       "logoKind": "service-icon",
