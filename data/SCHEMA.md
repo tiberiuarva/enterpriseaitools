@@ -296,6 +296,25 @@ Top-level shape: a JSON array of `ComparisonPair` objects (no envelope).
 | `title` | string | yes | Page `<h1>` and SEO title. |
 | `description` | string | yes | Page meta description and JSON-LD `description`. |
 
+## `eu-ai-act.json`
+
+EU AI Act application-date timeline rendered in the site-wide `EuAiActBanner`
+(next-milestone countdown). Consumed and typed by `lib/eu-ai-act.ts`
+(`EuAiActMilestone`) and covered by `lib/eu-ai-act.test.ts`.
+
+Top-level shape: a JSON array of milestone objects (no envelope). `appliesOn`
+values are the dates **legally in force under the adopted AI Act**; a tranche
+whose application is the subject of a proposed-but-not-yet-published amendment
+(e.g. the Digital Omnibus on AI) keeps its in-force date and notes the proposed
+deferral in `summary` until the amendment is published in the Official Journal.
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `label` | string | yes | Short milestone name shown in the banner. |
+| `appliesOn` | string | yes | ISO `YYYY-MM-DD` legally-in-force application date. |
+| `summary` | string | yes | One- to two-sentence status, including any provisional deferral and its proposed new date. |
+| `sourceUrl` | string | yes | `https://` primary source backing the entry's claim (official Commission timeline for in-force dates; the relevant legislative-status page for a proposed deferral). |
+
 ## Data freshness
 
 `tool.governance.reviewedAt` records when each per-tool governance posture was

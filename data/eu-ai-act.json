@@ -2,21 +2,25 @@
   {
     "label": "Prohibited AI practices and AI literacy",
     "appliesOn": "2025-02-02",
-    "summary": "Already applicable."
+    "summary": "In force. Bans on unacceptable-risk practices (Article 5) and deployer AI-literacy duties (Article 4) apply.",
+    "sourceUrl": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
   },
   {
     "label": "Governance rules and general-purpose AI model obligations",
     "appliesOn": "2025-08-02",
-    "summary": "Already applicable."
+    "summary": "In force. GPAI model transparency obligations and the AI Act governance bodies apply; Commission enforcement powers over GPAI providers begin 2 August 2026.",
+    "sourceUrl": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
   },
   {
     "label": "Most AI Act obligations, including Annex III high-risk systems",
     "appliesOn": "2026-08-02",
-    "summary": "Broad applicability date under the adopted AI Act timeline."
+    "summary": "Legally in force on this date under the adopted AI Act. The Digital Omnibus on AI (provisional agreement May 2026, close to adoption — not yet published in the Official Journal) would defer stand-alone Annex III high-risk obligations to 2 December 2027.",
+    "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
   },
   {
     "label": "High-risk AI systems embedded in regulated products",
     "appliesOn": "2027-08-02",
-    "summary": "Later application date under the adopted AI Act timeline."
+    "summary": "Application date for Annex I product-embedded high-risk systems under the adopted AI Act. The Digital Omnibus on AI would defer this to 2 August 2028 (provisional, pending formal adoption).",
+    "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
   }
 ]

@@ -14,6 +14,7 @@ test("milestone dataset stays structurally explicit", () => {
     assert.match(milestone.appliesOn, /^\d{4}-\d{2}-\d{2}$/);
     assert.ok(milestone.label.length > 0);
     assert.ok(milestone.summary.length > 0);
+    assert.match(milestone.sourceUrl, /^https:\/\//);
   }
 });
 
@@ -65,16 +66,19 @@ test("getCurrentAndNextMilestones sorts out-of-order milestone data before picki
         label: "2027 tranche",
         appliesOn: "2027-08-02",
         summary: "Final tranche.",
+        sourceUrl: "https://example.com/2027",
       },
       {
         label: "2025 tranche",
         appliesOn: "2025-08-02",
         summary: "Earlier tranche.",
+        sourceUrl: "https://example.com/2025",
       },
       {
         label: "2026 tranche",
         appliesOn: "2026-08-02",
         summary: "Next tranche.",
+        sourceUrl: "https://example.com/2026",
       },
     ],
   );
@@ -91,6 +95,7 @@ test("getCurrentAndNextMilestones keeps single-milestone fallback semantics stab
     label: "Only tranche",
     appliesOn: "2027-08-02",
     summary: "Single tranche.",
+    sourceUrl: "https://example.com/only",
   };
 
   const upcomingResult = getCurrentAndNextMilestones(new Date("2027-08-01T00:00:00Z"), [milestone]);
