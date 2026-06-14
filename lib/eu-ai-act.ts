@@ -6,6 +6,7 @@ export type EuAiActMilestone = {
   label: string;
   appliesOn: string;
   summary: string;
+  sourceUrl: string;
 };
 
 type DatedEuAiActMilestone = EuAiActMilestone & {
