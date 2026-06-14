@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-06-07T00:00:00.000Z</updated>
+  <updated>2026-06-13T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-05</id>
+    <title>Amazon Bedrock — market-event</title>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-05" />
+    <summary>AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, market-event, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</id>
+      <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-04</id>
+    <title>Mastra — release</title>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-04" />
+    <summary>Mastra 1.42.0 added trusted system-actor execution for background workflows, tool suspension primitives across agents, thread-state durability, and new observability/storage options for production agent operations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.42.0</id>
+      <title>June 12, 2026 · @mastra/core@1.42.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.42.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-03</id>
+    <title>CrewAI — release</title>
+    <updated>2026-06-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-03" />
+    <summary>CrewAI 1.14.7 added pluggable backends for memory, knowledge, RAG, and flow, plus a chat API, Snowflake Cortex provider support, and dependency CVE fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.7</id>
+      <title>Release 1.14.7 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-02</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-06-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-02" />
+    <summary>Microsoft Agent Framework Python 1.8.1 added MCP long-running task support and OpenTelemetry spans aligned to GenAI semantic conventions, while tightening MCP tool-argument filtering.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.8.1</id>
+      <title>Release python-1.8.1 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.8.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-01</id>
+    <title>LangFlow — release</title>
+    <updated>2026-06-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-01" />
+    <summary>LangFlow 1.10.0 added memory base APIs and UI components, sandboxed file-system support for agents, and native structured output on its Agent component.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.10.0</id>
+      <title>Release 1.10.0 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.10.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-06-07-02</id>
     <title>Amazon Bedrock Agents — feature</title>

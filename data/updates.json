@@ -1,6 +1,66 @@
 {
   "updates": [
     {
+      "id": "update-2026-06-13-05",
+      "date": "2026-06-12",
+      "toolId": "aws-bedrock",
+      "toolName": "Amazon Bedrock",
+      "category": "platforms",
+      "type": "market-event",
+      "summary": "AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive.",
+      "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/",
+      "sourceTitle": "AWS announces Claude Fable 5, the first generally available Mythos-class model",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-13-04",
+      "date": "2026-06-12",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "release",
+      "summary": "Mastra 1.42.0 added trusted system-actor execution for background workflows, tool suspension primitives across agents, thread-state durability, and new observability/storage options for production agent operations.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.42.0",
+      "sourceTitle": "June 12, 2026 · @mastra/core@1.42.0 · mastra-ai/mastra",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-06-13-03",
+      "date": "2026-06-11",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.14.7 added pluggable backends for memory, knowledge, RAG, and flow, plus a chat API, Snowflake Cortex provider support, and dependency CVE fixes.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.14.7",
+      "sourceTitle": "Release 1.14.7 · crewAIInc/crewAI",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-06-13-02",
+      "date": "2026-06-09",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework Python 1.8.1 added MCP long-running task support and OpenTelemetry spans aligned to GenAI semantic conventions, while tightening MCP tool-argument filtering.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.8.1",
+      "sourceTitle": "Release python-1.8.1 · microsoft/agent-framework",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-06-13-01",
+      "date": "2026-06-09",
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "LangFlow 1.10.0 added memory base APIs and UI components, sandboxed file-system support for agents, and native structured output on its Agent component.",
+      "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.10.0",
+      "sourceTitle": "Release 1.10.0 · langflow-ai/langflow",
+      "impact": "medium"
+    },
+    {
       "id": "update-2026-06-07-02",
       "date": "2026-06-07",
       "toolId": "aws-bedrock-agents",
