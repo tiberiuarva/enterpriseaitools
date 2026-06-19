@@ -20,10 +20,9 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
   return (
     <section className="card-flat p-6">
       <div className="max-w-4xl">
-        <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Protocol tracking: MCP, A2A, and OpenAPI</h2>
-        <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-          Protocol support is starting to shape enterprise platform choices. This snapshot tracks where the major cloud
-          foundations already expose protocol alignment and surfaces recent dataset mentions for MCP, A2A, and OpenAPI.
+        <h2 className="text-h2 text-[var(--color-text-primary)]">Protocol tracking: MCP, A2A, and OpenAPI</h2>
+        <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+          Where the major cloud foundations expose protocol alignment for MCP, A2A, and OpenAPI.
         </p>
       </div>
 
