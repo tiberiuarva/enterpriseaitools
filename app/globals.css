@@ -139,7 +139,7 @@ html.light {
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --color-background: var(--color-bg-primary);
   --color-foreground: var(--color-text-primary);
@@ -158,7 +158,7 @@ body {
   margin: 0;
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
-  font-family: var(--font-inter), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
