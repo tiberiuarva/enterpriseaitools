@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   ArrowUpRight,
   Bot,
@@ -158,13 +157,7 @@ export default function Home() {
                 Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
               </h1>
               <p className="mt-4 text-body text-[var(--color-text-secondary)]">
-                Updated weekly. Data-dense. No fluff. Compare the foundation platforms first, then move into agent,
-                orchestration, governance, and assistant layers.
-              </p>
-              <p className="mt-3 text-caption text-[var(--color-text-tertiary)]">
-                Naming moves fast here: use <strong className="text-[var(--color-text-secondary)]">Microsoft Foundry</strong>,
-                <strong className="text-[var(--color-text-secondary)]"> Amazon Q Developer</strong>, and
-                <strong className="text-[var(--color-text-secondary)]"> Gemini Enterprise</strong> as the current product names.
+                Updated weekly. Compare the cloud foundations, then the agent, orchestration, governance, and assistant layers.
               </p>
             </div>
 
@@ -182,9 +175,7 @@ export default function Home() {
             <div className="max-w-2xl">
               <h2 className="text-h2 text-[var(--color-text-primary)]">Foundation AI platforms</h2>
               <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                These three platforms are the base stack behind much of the rest of the market. Each card below shows the
-                cloud foundation, and the category pages then break out what that vendor offers directly versus what teams
-                often pair with it from open source or commercial tools.
+                The base stack behind much of the market. Category pages then break out each vendor&apos;s own services versus the open-source and commercial tools teams pair with them.
               </p>
             </div>
           </div>
@@ -204,60 +195,49 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="card-flat p-6">
-          <div className="max-w-4xl">
-            <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">What is changing in the enterprise AI market</h2>
-            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-              Enterprise teams now evaluate the control plane, delivery layer, governance boundary, and standards layer separately. This tracker is structured around those seams rather than one flat catalog.
-            </p>
-          </div>
-
-          <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 xl:grid-cols-4">
-            <div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">1. Foundation clouds are setting the defaults</h3>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Microsoft, AWS, and Google increasingly define identity, model access, security controls, procurement path, and the first route into production.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">2. Delivery layers are competing above the cloud</h3>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Agent frameworks, orchestration stacks, and assistant surfaces now compete on speed, openness, integration depth, and operational fit.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">3. Governance is becoming a hard adoption gate</h3>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Guardrails matter where they touch approvals, auditability, data handling, model policy, and regulated-enterprise controls rather than demo-only safety claims.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">4. Standards support is starting to matter</h3>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                Protocols like MCP, A2A, and OpenAPI are becoming practical signals for ecosystem fit, tool portability, and how easily platforms connect to external agents and services.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-bg-hover)] p-4">
-            <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">How to read this tracker</h3>
-            <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-              Start with{" "}
-              <Link href="/platforms" className="font-semibold text-[var(--color-primary)] underline-offset-2 hover:underline">
-                Platforms
-              </Link>{" "}
-              for the cloud control plane, then use the category hubs to compare vendor offerings against open-source and commercial alternatives.
-            </p>
-          </div>
-        </section>
-
-        <ProtocolTrackingSection compact currentPath="/" />
-
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {categoryCards.map((category) => (
             <CategoryCard key={category.href} {...category} />
           ))}
         </section>
+
+        <section className="card-flat p-6">
+          <div className="max-w-4xl">
+            <h2 className="text-h2 text-[var(--color-text-primary)]">What is changing in the enterprise AI market</h2>
+            <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+              Teams now evaluate the control plane, delivery layer, governance boundary, and standards layer separately. This tracker follows those seams.
+            </p>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 xl:grid-cols-4">
+            <div>
+              <h3 className="text-h3 text-[var(--color-text-primary)]">Foundation clouds set the defaults</h3>
+              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+                Microsoft, AWS, and Google define identity, model access, and the first route to production.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-h3 text-[var(--color-text-primary)]">Delivery layers compete above the cloud</h3>
+              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+                Agent, orchestration, and assistant layers compete on openness and integration depth.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-h3 text-[var(--color-text-primary)]">Governance is a hard adoption gate</h3>
+              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+                Guardrails matter where they touch approvals, auditability, and data handling.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-h3 text-[var(--color-text-primary)]">Standards support starts to matter</h3>
+              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
+                MCP, A2A, and OpenAPI signal ecosystem fit and tool portability.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <ProtocolTrackingSection compact currentPath="/" />
 
         <section
           aria-labelledby="compare-tile-heading"

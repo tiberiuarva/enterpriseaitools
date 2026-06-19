@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import { JsonLd, buildOrganizationJsonLd, buildWebSiteJsonLd } from "@/components/json-ld";
 import { SkipLinkFocus } from "@/components/skip-link-focus";
 import { siteUrl } from "@/lib/metadata";
 import { githubRepoUrl } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+const sans = IBM_Plex_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   variable: "--font-inter",
 });
@@ -92,7 +93,7 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en" className={`dark h-full antialiased ${inter.variable}`}>
+    <html lang="en" className={`dark h-full antialiased ${sans.variable}`}>
       <body className="min-h-full">
         <JsonLd data={jsonLd} />
         <SkipLinkFocus />
