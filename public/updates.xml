@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-06-13T00:00:00.000Z</updated>
+  <updated>2026-07-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-01-02</id>
+    <title>NeMo Guardrails — release</title>
+    <updated>2026-07-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-01-02" />
+    <summary>NeMo Guardrails 0.23.0 expanded IORails with streaming and non-streaming tool-call validation, added a standalone /v1/checks validation endpoint, and improved OpenTelemetry observability for production guardrail pipelines.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, high" />
+    <source>
+      <id>https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0</id>
+      <title>Release v0.23.0 · NVIDIA-NeMo/Guardrails</title>
+      <link href="https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-01-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-01-01" />
+    <summary>Mastra 1.48.0 added cron-scheduled agent heartbeats, file-based agent and subagent auto-registration, durable suspended-run recovery, and stronger auth-context propagation across durable and Inngest execution paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.48.0</id>
+      <title>Release @mastra/core@1.48.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.48.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-30-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-06-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-30-01" />
+    <summary>Microsoft Agent Framework Python 1.10.0 added Foundry conversation-session helpers and adaptive eval support, standalone Durable Task worker hosting, and stricter approval defaults for experimental file-access tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0</id>
+      <title>Release python-1.10.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-27-01</id>
+    <title>Paperclip — release</title>
+    <updated>2026-06-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-27-01" />
+    <summary>Paperclip v2026.626.0 made Hermes a built-in local and remote gateway adapter, added task watchdogs for long-running agent work, and surfaced sandbox runtime status directly in issue threads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0</id>
+      <title>Release v2026.626.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-05</id>
     <title>Amazon Bedrock — market-event</title>
