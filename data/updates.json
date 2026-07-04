@@ -1,6 +1,54 @@
 {
   "updates": [
     {
+      "id": "update-2026-07-01-02",
+      "date": "2026-07-01",
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "category": "governance",
+      "type": "release",
+      "summary": "NeMo Guardrails 0.23.0 expanded IORails with streaming and non-streaming tool-call validation, added a standalone /v1/checks validation endpoint, and improved OpenTelemetry observability for production guardrail pipelines.",
+      "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0",
+      "sourceTitle": "Release v0.23.0 · NVIDIA-NeMo/Guardrails",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-07-01-01",
+      "date": "2026-07-01",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "release",
+      "summary": "Mastra 1.48.0 added cron-scheduled agent heartbeats, file-based agent and subagent auto-registration, durable suspended-run recovery, and stronger auth-context propagation across durable and Inngest execution paths.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.48.0",
+      "sourceTitle": "Release @mastra/core@1.48.0 · mastra-ai/mastra",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-30-01",
+      "date": "2026-06-30",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework Python 1.10.0 added Foundry conversation-session helpers and adaptive eval support, standalone Durable Task worker hosting, and stricter approval defaults for experimental file-access tools.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0",
+      "sourceTitle": "Release python-1.10.0 · microsoft/agent-framework",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-27-01",
+      "date": "2026-06-27",
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "category": "agents",
+      "type": "release",
+      "summary": "Paperclip v2026.626.0 made Hermes a built-in local and remote gateway adapter, added task watchdogs for long-running agent work, and surfaced sandbox runtime status directly in issue threads.",
+      "sourceUrl": "https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0",
+      "sourceTitle": "Release v2026.626.0 · paperclipai/paperclip",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-06-13-05",
       "date": "2026-06-12",
       "toolId": "aws-bedrock",
