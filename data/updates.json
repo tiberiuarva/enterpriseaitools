@@ -49,6 +49,78 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-06-25-02",
+      "date": "2026-06-25",
+      "toolId": "dify",
+      "toolName": "Dify",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Dify 1.15.0 introduced difyctl for terminal, script, and CI workflow runs, added richer human-in-the-loop workflow forms, and fixed CVE-2026-41948 in plugin-daemon forwarding.",
+      "sourceUrl": "https://github.com/langgenius/dify/releases/tag/1.15.0",
+      "sourceTitle": "Release 1.15.0 · langgenius/dify",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-25-01",
+      "date": "2026-06-25",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.15.0 added declarative flow loading and CLI support for conversational flows, while also fixing credential-file permission enforcement and a skill-archive path-traversal issue.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.0",
+      "sourceTitle": "Release 1.15.0 · crewAIInc/crewAI",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-24-01",
+      "date": "2026-06-24",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "release",
+      "summary": "Mastra 1.46.0 reworked Harness around isolated sessions with remote HTTP and JS-client control, enabling safer concurrent multi-user agent hosting and deterministic tool-mocked experiments.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.46.0",
+      "sourceTitle": "Release @mastra/core@1.46.0 · mastra-ai/mastra",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-19-01",
+      "date": "2026-06-19",
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "category": "agents",
+      "type": "release",
+      "summary": "OpenAI Agents SDK 0.17.6 added pre-approval tool-input guardrails and SDK-only custom tool-output metadata, tightening human approval control points around agent tool execution.",
+      "sourceUrl": "https://github.com/openai/openai-agents-python/releases/tag/v0.17.6",
+      "sourceTitle": "Release v0.17.6 · openai/openai-agents-python",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-18-02",
+      "date": "2026-06-18",
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "category": "agents",
+      "type": "release",
+      "summary": "Paperclip v2026.618.0 added a Skills Store, self-hostable Kubernetes sandbox execution, per-company tenant isolation, workspace artifact viewing, and opt-in OpenTelemetry instrumentation.",
+      "sourceUrl": "https://github.com/paperclipai/paperclip/releases/tag/v2026.618.0",
+      "sourceTitle": "Release v2026.618.0 · paperclipai/paperclip",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-18-01",
+      "date": "2026-06-18",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework Python 1.9.0 added tool-approval middleware, integrated approvals into Harness agents, denied MCP server-initiated sampling by default, and promoted orchestrations to stable.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.9.0",
+      "sourceTitle": "Release python-1.9.0 · microsoft/agent-framework",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-06-13-05",
       "date": "2026-06-12",
       "toolId": "aws-bedrock",
