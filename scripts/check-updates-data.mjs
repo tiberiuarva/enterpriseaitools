@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(scriptDir, "..");
 const updatesPath = path.join(repoRoot, "data", "updates.json");
+const toolsPath = path.join(repoRoot, "data", "tools.json");
 const isoCalendarDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 
 let updatesData;
@@ -13,6 +14,14 @@ try {
   updatesData = JSON.parse(await fs.readFile(updatesPath, "utf8"));
 } catch (err) {
   console.error(`FAIL: could not read ${updatesPath}: ${err instanceof Error ? err.message : String(err)}`);
+  process.exit(1);
+}
+
+let toolsData;
+try {
+  toolsData = JSON.parse(await fs.readFile(toolsPath, "utf8"));
+} catch (err) {
+  console.error(`FAIL: could not read ${toolsPath}: ${err instanceof Error ? err.message : String(err)}`);
   process.exit(1);
 }
 
@@ -40,6 +49,34 @@ if (!Array.isArray(updatesData.updates)) {
 
   if (newestUpdateDate && lastUpdated < newestUpdateDate) {
     findings.push(`data/updates.json lastUpdated (${lastUpdated}) must be on or after newest update date (${newestUpdateDate}).`);
+  }
+}
+
+if (Array.isArray(updatesData.updates) && Array.isArray(toolsData.tools)) {
+  const newestReleaseUpdateByToolId = new Map();
+
+  for (const update of updatesData.updates) {
+    if (update?.type !== "release" || typeof update?.toolId !== "string" || typeof update?.date !== "string") {
+      continue;
+    }
+
+    const previous = newestReleaseUpdateByToolId.get(update.toolId);
+    if (!previous || update.date > previous.date) {
+      newestReleaseUpdateByToolId.set(update.toolId, update);
+    }
+  }
+
+  for (const tool of toolsData.tools) {
+    if (!tool?.id || !tool?.version || !tool?.lastRelease) {
+      continue;
+    }
+
+    const newestReleaseUpdate = newestReleaseUpdateByToolId.get(tool.id);
+    if (newestReleaseUpdate && tool.lastRelease < newestReleaseUpdate.date) {
+      findings.push(
+        `Tool ${tool.id} lastRelease (${tool.lastRelease}) is older than its newest release update (${newestReleaseUpdate.date}; ${newestReleaseUpdate.id}).`,
+      );
+    }
   }
 }
 
