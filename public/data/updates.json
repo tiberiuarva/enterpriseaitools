@@ -5,8 +5,20 @@
   "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
   "generatedAt": "2026-07-04",
-  "count": 58,
+  "count": 68,
   "updates": [
+    {
+      "id": "update-2026-07-03-01",
+      "date": "2026-07-03",
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "category": "agents",
+      "type": "release",
+      "summary": "Microsoft Agent Framework .NET 1.13.0 added Foundry Hosting per-user session isolation, skill approval options, public skill-source APIs, configurable default-approval harness behavior, and new file-editing tools.",
+      "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0",
+      "sourceTitle": "Release dotnet-1.13.0 · microsoft/agent-framework",
+      "impact": "high"
+    },
     {
       "id": "update-2026-07-01-02",
       "date": "2026-07-01",
@@ -32,6 +44,18 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-07-01-03",
+      "date": "2026-07-01",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "release",
+      "summary": "Mastra 1.47.0 added AI SDK v7 model support, DurableAgent API parity for stream/resume/generate, gateway-first model discovery, AgentController routing, and eval quality gates.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.47.0",
+      "sourceTitle": "Release @mastra/core@1.47.0 · mastra-ai/mastra",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-06-30-01",
       "date": "2026-06-30",
       "toolId": "microsoft-agent-framework",
@@ -41,6 +65,30 @@
       "summary": "Microsoft Agent Framework Python 1.10.0 added Foundry conversation-session helpers and adaptive eval support, standalone Durable Task worker hosting, and stricter approval defaults for experimental file-access tools.",
       "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0",
       "sourceTitle": "Release python-1.10.0 · microsoft/agent-framework",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-30-02",
+      "date": "2026-06-30",
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "category": "agents",
+      "type": "release",
+      "summary": "LangGraph 1.2.7 fixed DeltaChannel overwrite snapshotting, preserved Overwrite values through JSON round trips, emitted valid exit-mode delta task IDs, and refreshed Redis, LangSmith, cryptography, Tornado, and PyJWT dependencies.",
+      "sourceUrl": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.7",
+      "sourceTitle": "Release langgraph==1.2.7 · langchain-ai/langgraph",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-06-27-02",
+      "date": "2026-06-27",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.15.1 required explicit CrewAI project definitions, initialized Git repositories for generated projects, improved CLI deploy handoff, and fixed an SSRF redirect bypass in scraping fetches.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.1",
+      "sourceTitle": "Release 1.15.1 · crewAIInc/crewAI",
       "impact": "high"
     },
     {
@@ -80,6 +128,42 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-06-25-03",
+      "date": "2026-06-25",
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Flowise 3.1.3 added chatflow-as-MCP-server and custom MCP server support, expanded Agentflow client filtering and knowledge fields, added initial observe package scaffolding, and fixed clickjacking plus frame-header handling.",
+      "sourceUrl": "https://github.com/FlowiseAI/Flowise/releases/tag/flowise%403.1.3",
+      "sourceTitle": "Release flowise@3.1.3 · FlowiseAI/Flowise",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-24-03",
+      "date": "2026-06-24",
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "category": "agents",
+      "type": "release",
+      "summary": "OpenAI Agents SDK 0.17.7 exposed configurable WebSocket size limits, added buffered Chat Completions tool-call streaming, made AdvancedSQLiteSession add_items atomic, and tightened sandbox, guardrail, and Realtime multi-agent edge cases.",
+      "sourceUrl": "https://github.com/openai/openai-agents-python/releases/tag/v0.17.7",
+      "sourceTitle": "Release v0.17.7 · openai/openai-agents-python",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-24-02",
+      "date": "2026-06-24",
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "category": "agents",
+      "type": "release",
+      "summary": "LlamaIndex 0.14.23 advanced multimodal synthesis, preserved URL-backed video and document memory blocks, added document/video block parsing for FunctionTool output, and fixed workflow state mutation leaks.",
+      "sourceUrl": "https://github.com/run-llama/llama_index/releases/tag/v0.14.23",
+      "sourceTitle": "Release v0.14.23 · run-llama/llama_index",
+      "impact": "medium"
+    },
+    {
       "id": "update-2026-06-24-01",
       "date": "2026-06-24",
       "toolId": "mastra",
@@ -89,6 +173,18 @@
       "summary": "Mastra 1.46.0 reworked Harness around isolated sessions with remote HTTP and JS-client control, enabling safer concurrent multi-user agent hosting and deterministic tool-mocked experiments.",
       "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.46.0",
       "sourceTitle": "Release @mastra/core@1.46.0 · mastra-ai/mastra",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-23-01",
+      "date": "2026-06-23",
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "LangFlow 1.10.1 added first-class local-model support for the assistant, created stable bundle release plumbing, fixed agent tool-calling model handling, revalidated redirects in the URL component to reduce SSRF risk, and limited private flow stream exposure.",
+      "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.10.1",
+      "sourceTitle": "Release 1.10.1 · langflow-ai/langflow",
       "impact": "high"
     },
     {
@@ -102,6 +198,18 @@
       "sourceUrl": "https://github.com/openai/openai-agents-python/releases/tag/v0.17.6",
       "sourceTitle": "Release v0.17.6 · openai/openai-agents-python",
       "impact": "high"
+    },
+    {
+      "id": "update-2026-06-18-03",
+      "date": "2026-06-18",
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Haystack 2.30.2 fixed Agent exit behavior so invalid or discarded tool calls no longer cause premature termination under the default text exit condition, allowing the agent loop to recover on the next iteration.",
+      "sourceUrl": "https://github.com/deepset-ai/haystack/releases/tag/v2.30.2",
+      "sourceTitle": "Release v2.30.2 · deepset-ai/haystack",
+      "impact": "medium"
     },
     {
       "id": "update-2026-06-18-02",
@@ -125,6 +233,18 @@
       "summary": "Microsoft Agent Framework Python 1.9.0 added tool-approval middleware, integrated approvals into Harness agents, denied MCP server-initiated sampling by default, and promoted orchestrations to stable.",
       "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.9.0",
       "sourceTitle": "Release python-1.9.0 · microsoft/agent-framework",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-06-17-01",
+      "date": "2026-06-17",
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "category": "agents",
+      "type": "release",
+      "summary": "Semantic Kernel Python 1.43.1 added function_choice_behavior support to Azure AI and OpenAI Assistant agents, fixed MessagePack handling, and rejected encoded dot-segment paths in OpenAPI plugins.",
+      "sourceUrl": "https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1",
+      "sourceTitle": "Release python-1.43.1 · microsoft/semantic-kernel",
       "impact": "high"
     },
     {
