@@ -95,11 +95,13 @@ find a lint error is wasteful.
 
 | Gate | Command |
 |---|---|
+| Color literals | `npm run check-color-literals` |
 | Lint | `npm run lint` |
 | Typecheck | `npx tsc --noEmit` |
 | Unit tests | `npm run test:eu-ai-act` (plus any new `node --test` suites under `lib/`) |
 | Build | `npm run build` (runs `generate-seo-artifacts`, `next build`, `check-static-export-image-paths`) |
 | SEO readiness | `npm run check-seo-readiness` |
+| Updates data | `npm run check-updates-data` |
 | Tool card data | `npm run check-tool-card-data` |
 | Logo provenance | `npm run check-logo-provenance` && `npm run check-logo-audit-report` |
 | Generated artifacts | `npm run check-generated-artifacts` |
@@ -135,6 +137,7 @@ a successful Azure SWA upload.
 | Typecheck | `npx tsc --noEmit` |
 | Unit tests | `npm run test:eu-ai-act` |
 | Validate tool cards | `npm run check-tool-card-data` |
+| Validate updates data | `npm run check-updates-data` |
 | Validate logos | `npm run check-logo-provenance` |
 | Sync logo audit | `npm run check-logo-audit-report` |
 | Audit logo report | `npm run report-logo-audit` |

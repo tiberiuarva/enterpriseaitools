@@ -14,8 +14,11 @@ restart from step 1.
 ```bash
 npm run check-logo-provenance
 npm run check-logo-audit-report
+npm run check-color-literals
 npm run lint
 npx tsc --noEmit
+npm run check-governance-data
+npm run check-updates-data
 npm run test:eu-ai-act
 npm run build
 npm run check-generated-artifacts

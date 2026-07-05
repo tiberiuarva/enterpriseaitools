@@ -37,6 +37,11 @@ Spawn the `data-researcher` subagent with the explicit scope:
 Do **not** edit data based on memory or general knowledge. Every change needs
 a fresh, verifiable source URL captured in the PR.
 
+Record the exact source-audit cutoff timestamp in UTC before editing data.
+Use the PR-body line `Audit cutoff: YYYY-MM-DDTHH:MMZ` (matching
+`\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z`) so future catch-up scans can resume from a
+deterministic, machine-readable boundary.
+
 ## 3. Apply the changes
 
 - For each change, edit the relevant JSON file following `data/SCHEMA.md`.
@@ -92,7 +97,8 @@ Run `/ship-check`. Push only if green.
 
 - Commit prefix: `content:` for data, `chore(updates):` for the week marker.
 - PR title: `chore(updates): weekly scan YYYY-WW`.
-- PR body must list every change with its `sourceUrl`.
+- PR body must list every change with its `sourceUrl` and the exact UTC
+  source-audit cutoff timestamp as `Audit cutoff: YYYY-MM-DDTHH:MMZ`.
 
 ## 7. Review loop
 
