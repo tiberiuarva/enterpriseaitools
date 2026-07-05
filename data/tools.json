@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-13",
+  "lastUpdated": "2026-07-04",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -368,8 +368,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
-      "githubStars": 53427,
-      "version": "1.14.7",
+      "githubStars": 54887,
+      "version": "1.15.1",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -389,7 +389,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-06-11",
+      "lastRelease": "2026-06-27",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -449,7 +449,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/autogen",
-      "githubStars": 58919,
+      "githubStars": 59485,
       "version": "0.7.5",
       "docsUrl": "https://microsoft.github.io/autogen/",
       "pricingModel": "free",
@@ -531,8 +531,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/run-llama/llama_index",
-      "githubStars": 50105,
-      "version": "0.14.22",
+      "githubStars": 50639,
+      "version": "0.14.23",
       "docsUrl": "https://docs.llamaindex.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -552,7 +552,7 @@
       "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows.",
       "logoSourceUrl": "https://www.llamaindex.ai/brand",
       "logoUrl": "/logos/llamaindex.svg",
-      "lastRelease": "2026-05-14",
+      "lastRelease": "2026-06-24",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -612,8 +612,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/semantic-kernel",
-      "githubStars": 28110,
-      "version": "1.42.0",
+      "githubStars": 28257,
+      "version": "1.43.1",
       "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
       "pricingModel": "free",
       "status": "active",
@@ -634,7 +634,7 @@
         "gcp"
       ],
       "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths.",
-      "lastRelease": "2026-05-14",
+      "lastRelease": "2026-06-17",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -694,9 +694,9 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
-      "githubStars": 11306,
-      "version": "1.8.1",
-      "lastRelease": "2026-06-09",
+      "githubStars": 11863,
+      "version": "1.10.0",
+      "lastRelease": "2026-06-30",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -782,8 +782,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
-      "githubStars": 34609,
-      "version": "1.2.5",
+      "githubStars": 36468,
+      "version": "1.2.7",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
       "status": "active",
@@ -802,7 +802,7 @@
       "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
       "logoUrl": "/logos/langgraph.svg",
       "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-      "lastRelease": "2026-06-12",
+      "lastRelease": "2026-06-30",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -863,8 +863,8 @@
       ],
       "license": "Apache 2.0 core + EE paths",
       "githubUrl": "https://github.com/mastra-ai/mastra",
-      "githubStars": 25011,
-      "version": "1.42.0",
+      "githubStars": 25806,
+      "version": "1.48.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
       "status": "active",
@@ -885,7 +885,7 @@
       "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
       "logoSourceUrl": "https://mastra.ai/",
       "logoUrl": "/logos/mastra.png",
-      "lastRelease": "2026-06-12",
+      "lastRelease": "2026-07-01",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -945,8 +945,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
-      "githubStars": 27125,
-      "version": "0.17.5",
+      "githubStars": 27642,
+      "version": "0.17.7",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -965,7 +965,7 @@
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-06-11",
+      "lastRelease": "2026-06-24",
       "logoUrl": "/logos/openai.svg",
       "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
       "governance": {
@@ -1027,7 +1027,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/BrainBlend-AI/atomic-agents",
-      "githubStars": 5979,
+      "githubStars": 6024,
       "version": "2.8.1",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
       "pricingModel": "free",
@@ -1107,7 +1107,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/i-am-bee/beeai-framework",
-      "githubStars": 3291,
+      "githubStars": 3310,
       "version": "0.1.81",
       "docsUrl": "https://framework.beeai.dev/introduction/welcome",
       "pricingModel": "free",
@@ -1517,8 +1517,8 @@
       "license": "Sustainable Use License",
       "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
       "githubUrl": "https://github.com/n8n-io/n8n",
-      "githubStars": 192315,
-      "version": "2.25.7",
+      "githubStars": 195128,
+      "version": "2.28.6",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
       "pricingModel": "freemium",
@@ -1540,7 +1540,7 @@
         "gcp"
       ],
       "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-      "lastRelease": "2026-06-10",
+      "lastRelease": "2026-07-03",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1604,9 +1604,9 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/paperclipai/paperclip",
-      "githubStars": 70268,
-      "version": "v2026.609.0",
-      "lastRelease": "2026-06-09",
+      "githubStars": 72699,
+      "version": "v2026.626.0",
+      "lastRelease": "2026-06-27",
       "docsUrl": "https://paperclip.ing/docs",
       "websiteUrl": "https://paperclip.ing/",
       "pricingModel": "free",
@@ -1690,8 +1690,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
-      "githubStars": 149612,
-      "version": "1.10.0",
+      "githubStars": 151100,
+      "version": "1.10.1",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -1712,7 +1712,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-06-09",
+      "lastRelease": "2026-06-23",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -1772,8 +1772,8 @@
       "license": "Modified Apache 2.0",
       "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
       "githubUrl": "https://github.com/langgenius/dify",
-      "githubStars": 145055,
-      "version": "1.14.2",
+      "githubStars": 147621,
+      "version": "1.15.0",
       "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
       "pricingModel": "freemium",
       "status": "active",
@@ -1793,7 +1793,7 @@
         "gcp"
       ],
       "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely.",
-      "lastRelease": "2026-05-19",
+      "lastRelease": "2026-06-25",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1856,8 +1856,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
-      "githubStars": 53538,
-      "version": "3.1.2",
+      "githubStars": 54264,
+      "version": "3.1.3",
       "docsUrl": "https://docs.flowiseai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -1920,7 +1920,8 @@
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
-      }
+      },
+      "lastRelease": "2026-06-25"
     },
     {
       "id": "haystack",
@@ -1936,8 +1937,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
-      "githubStars": 25560,
-      "version": "2.30.1",
+      "githubStars": 25824,
+      "version": "2.30.2",
       "docsUrl": "https://docs.haystack.deepset.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -1957,7 +1958,7 @@
         "gcp"
       ],
       "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
-      "lastRelease": "2026-06-09",
+      "lastRelease": "2026-06-18",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -2019,7 +2020,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/Ironclad/rivet",
-      "githubStars": 4603,
+      "githubStars": 4628,
       "version": "1.11.3",
       "docsUrl": "https://rivet.ironcladapp.com/",
       "pricingModel": "free",
@@ -2425,7 +2426,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
-      "githubStars": 6419,
+      "githubStars": 6604,
       "docsUrl": "https://docs.nvidia.com/nemo/guardrails/",
       "pricing": "Free OSS plus NVIDIA NIM options.",
       "pricingModel": "free",
@@ -2437,7 +2438,7 @@
         "opensource",
         "nvidia"
       ],
-      "version": "0.22.0",
+      "version": "0.23.0",
       "logoKind": "official-vendor",
       "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
       "logoReviewedAt": "2026-05-15",
@@ -2449,7 +2450,7 @@
       "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
       "logoUrl": "/logos/nvidia.svg",
       "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
-      "lastRelease": "2026-05-22",
+      "lastRelease": "2026-07-01",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -2508,7 +2509,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/guardrails-ai/guardrails",
-      "githubStars": 7000,
+      "githubStars": 7090,
       "docsUrl": "https://guardrailsai.com/docs",
       "pricingModel": "freemium",
       "status": "active",
@@ -2587,7 +2588,7 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/protectai/llm-guard",
-      "githubStars": 3068,
+      "githubStars": 3145,
       "docsUrl": "https://protectai.github.io/llm-guard/",
       "pricingModel": "free",
       "status": "maintenance",
@@ -2667,7 +2668,7 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/protectai/rebuff",
-      "githubStars": 1499,
+      "githubStars": 1509,
       "docsUrl": "https://github.com/protectai/rebuff",
       "pricingModel": "free",
       "status": "archived",
