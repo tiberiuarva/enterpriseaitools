@@ -155,13 +155,21 @@ Rules:
 
 ## `updates.json`
 
-Top-level shape:
+Top-level shape, with illustrative dates:
 
 ```json
 {
+  "lastUpdated": "2026-04-11",
   "updates": []
 }
 ```
+
+### Updates envelope fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `lastUpdated` | string | yes | ISO date (`YYYY-MM-DD`) when the updates feed was last regenerated or source-audited |
+| `updates` | object[] | yes | Curated update entries, ordered newest first |
 
 Entries must be ordered newest first.
 

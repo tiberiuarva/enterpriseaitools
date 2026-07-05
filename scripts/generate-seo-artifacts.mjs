@@ -11,6 +11,11 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterp
 // data/SCHEMA.md). Used as the build-stable timestamp for every generated
 // artifact so output is deterministic (never Date.now()).
 const lastModified = toolsData.lastUpdated;
+const updatesLastModified = updatesData.lastUpdated;
+// 30 entries covers roughly four weeks at the current weekly/catch-up cadence.
+// Revisit if the curated release cadence grows enough to evict high-impact
+// market events before the next weekly scan.
+const recentUpdatesLimit = 30;
 const publicDir = path.resolve("public");
 
 const CATEGORY_LABELS = {
@@ -88,7 +93,7 @@ function generateRobotsTxt() {
 }
 
 // ── Machine-readable dataset endpoints (first-party, attributed) ──────────────
-function datasetEnvelope(name, description, records, key) {
+function datasetEnvelope(name, description, records, key, generatedAt = lastModified) {
   return `${JSON.stringify(
     {
       name,
@@ -99,7 +104,7 @@ function datasetEnvelope(name, description, records, key) {
       datasetLicense: "MIT",
       datasetLicenseNote: "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
       source: siteUrl,
-      generatedAt: lastModified,
+      generatedAt,
       count: records.length,
       [key]: records,
     },
@@ -132,6 +137,7 @@ function generateUpdatesDataset() {
     "High-impact market intelligence for enterprise AI tooling — releases, deprecations, acquisitions, license and certification changes — each with a primary source URL.",
     updatesData.updates,
     "updates",
+    updatesLastModified,
   );
 }
 
@@ -256,7 +262,7 @@ function generateLlmsFullTxt() {
 
   const recentUpdates = [...updatesData.updates]
     .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
-    .slice(0, 20)
+    .slice(0, recentUpdatesLimit)
     .map((u) => `- ${u.date} — ${u.toolName} (${u.type}${u.impact ? `, ${u.impact} impact` : ""}): ${u.summary} [source: ${u.sourceUrl}]`)
     .join("\n");
 

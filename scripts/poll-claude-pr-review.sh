@@ -15,8 +15,11 @@ ARG2="${2:-}"
 ARG3="${3:-}"
 ARG4="${4:-}"
 REPO="tiberiuarva/enterpriseaitools"
-DEFAULT_TOKEN_FILE="/home/n8nadmin/.openclaw/credentials/github-radar"
-TOKEN_FILE="${POLL_CLAUDE_TOKEN_FILE:-$DEFAULT_TOKEN_FILE}"
+DEFAULT_TOKEN_FILES=(
+  "/home/node/.openclaw/credentials/github-radar"
+  "/home/n8nadmin/.openclaw/credentials/github-radar"
+)
+TOKEN_FILE="${POLL_CLAUDE_TOKEN_FILE:-}"
 
 if [[ ! "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
   echo "pr-number must be numeric: $PR_NUMBER" >&2
@@ -48,13 +51,22 @@ if [[ ! "$INTERVAL_SECONDS" =~ ^[0-9]+$ ]]; then
   exit 2
 fi
 
+if [[ -z "$TOKEN_FILE" ]]; then
+  for candidate in "${DEFAULT_TOKEN_FILES[@]}"; do
+    if [[ -f "$candidate" ]]; then
+      TOKEN_FILE="$candidate"
+      break
+    fi
+  done
+fi
+
 if [[ -n "${GH_TOKEN:-}" ]]; then
   export GH_TOKEN
 elif [[ -f "$TOKEN_FILE" ]]; then
   GH_TOKEN="$(cat "$TOKEN_FILE")"
   export GH_TOKEN
 else
-  echo "missing GitHub token: set GH_TOKEN or provide $TOKEN_FILE" >&2
+  echo "missing GitHub token: set GH_TOKEN or POLL_CLAUDE_TOKEN_FILE, or create one of: ${DEFAULT_TOKEN_FILES[*]}" >&2
   exit 1
 fi
 
