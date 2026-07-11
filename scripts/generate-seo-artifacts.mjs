@@ -12,10 +12,8 @@ const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterp
 // artifact so output is deterministic (never Date.now()).
 const lastModified = toolsData.lastUpdated;
 const updatesLastModified = updatesData.lastUpdated;
-// 30 entries covers roughly four weeks at the current weekly/catch-up cadence.
-// Revisit if the curated release cadence grows enough to evict high-impact
-// market events before the next weekly scan.
 const recentUpdatesLimit = 30;
+const highImpactRetentionDays = 45;
 const publicDir = path.resolve("public");
 
 const CATEGORY_LABELS = {
@@ -57,6 +55,11 @@ function escapeXml(value) {
 
 function isoDate(value) {
   return new Date(`${value}T00:00:00Z`).toISOString();
+}
+
+function daysBetween(startDate, endDate) {
+  const msPerDay = 24 * 60 * 60 * 1000;
+  return Math.floor((new Date(`${endDate}T00:00:00Z`) - new Date(`${startDate}T00:00:00Z`)) / msPerDay);
 }
 
 function generateUpdatesAtomFeed() {
@@ -260,9 +263,9 @@ function generateLlmsFullTxt() {
     .filter(Boolean)
     .join("\n\n");
 
-  const recentUpdates = [...updatesData.updates]
-    .sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id))
-    .slice(0, recentUpdatesLimit)
+  const sortedUpdates = [...updatesData.updates].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
+  const recentUpdates = sortedUpdates
+    .filter((update, index) => index < recentUpdatesLimit || (update.impact === "high" && daysBetween(update.date, updatesLastModified) <= highImpactRetentionDays))
     .map((u) => `- ${u.date} — ${u.toolName} (${u.type}${u.impact ? `, ${u.impact} impact` : ""}): ${u.summary} [source: ${u.sourceUrl}]`)
     .join("\n");
 

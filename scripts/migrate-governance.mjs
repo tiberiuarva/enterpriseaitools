@@ -119,11 +119,11 @@ const GOVERNANCE = {
     licenseRisk: { ...c("yes", "MIT — permissive, OSI-approved.", "https://raw.githubusercontent.com/openai/openai-agents-python/main/LICENSE"), level: "low" },
   },
   "atomic-agents": {
-    dataResidency: c("yes", "Self-hosted library; operator controls placement.", "https://github.com/BrainBlend-AI/atomic-agents"),
-    deployment: { ...c("yes", "pip-installed OSS framework; no managed hosting.", "https://github.com/BrainBlend-AI/atomic-agents"), models: ["self-hosted"] },
+    dataResidency: c("yes", "Self-hosted library; operator controls placement.", "https://github.com/Eigenwise/atomic-agents"),
+    deployment: { ...c("yes", "pip-installed OSS framework; no managed hosting.", "https://github.com/Eigenwise/atomic-agents"), models: ["self-hosted"] },
     auditLogging: c("partial", "Minimalist design; observability is intentionally operator-configured.", "https://brainblend-ai.github.io/atomic-agents/"),
     ...ossCerts,
-    licenseRisk: { ...c("yes", "MIT — permissive, OSI-approved.", "https://raw.githubusercontent.com/BrainBlend-AI/atomic-agents/main/LICENSE"), level: "low" },
+    licenseRisk: { ...c("yes", "MIT — permissive, OSI-approved.", "https://raw.githubusercontent.com/Eigenwise/atomic-agents/main/LICENSE"), level: "low" },
   },
   "beeai-framework": {
     dataResidency: c("yes", "Self-hosted library; operator controls placement.", "https://github.com/i-am-bee/beeai-framework"),

@@ -26,7 +26,7 @@ These files were replaced from owner-controlled official asset pages or download
 | `mastra.png` | Mastra official homepage/brand asset: https://mastra.ai/ (`/brand/mastra-logo-wordmark.png`); the public rebrand post confirms this is the current logo system. |
 | `beeai-framework.svg` | BeeAI Framework official docs-site logo: https://framework.beeai.dev/ (`beeai-framework-light.svg` served from the owner-controlled Mintlify CDN). |
 | `langgraph.svg` | LangGraph official logo asset from the owner-controlled GitHub repo: https://github.com/langchain-ai/langgraph (`.github/images/logo-light.svg`). |
-| `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/BrainBlend-AI/atomic-agents (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use. |
+| `atomic-agents.png` | Atomic Agents official logo asset from the owner-controlled GitHub repo: https://github.com/Eigenwise/atomic-agents (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use. |
 | `autogen.svg` | AutoGen official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/autogen (`python/docs/src/_static/images/logo/logo.svg`), committed byte-for-byte. |
 | `semantic-kernel.png` | Semantic Kernel official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/semantic-kernel (`docs/images/sk_logo.png`), committed byte-for-byte. |
 | `microsoft-agent-framework.svg` | Microsoft Agent Framework official logo asset from the owner-controlled GitHub repo: https://github.com/microsoft/agent-framework (`python/packages/devui/frontend/public/agentframework.svg`), committed byte-for-byte. |

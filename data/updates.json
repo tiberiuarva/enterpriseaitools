@@ -82,7 +82,7 @@
       "type": "release",
       "summary": "Atomic Agents 2.9.0 added pluggable chat history via BaseChatHistory for custom or persistent memory backends.",
       "sourceUrl": "https://github.com/Eigenwise/atomic-agents/releases/tag/v2.9.0",
-      "sourceTitle": "Release v2.9.0 · BrainBlend-AI/atomic-agents",
+      "sourceTitle": "Release v2.9.0 · Eigenwise/atomic-agents",
       "impact": "low"
     },
     {

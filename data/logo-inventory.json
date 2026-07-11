@@ -116,8 +116,8 @@
       "category": "agents",
       "vendor": "BrainBlend AI",
       "status": "classified",
-      "sourceUrl": "https://github.com/BrainBlend-AI/atomic-agents",
-      "notes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
+      "sourceUrl": "https://github.com/Eigenwise/atomic-agents",
+      "notes": "Official Atomic Agents logo asset from the owner-controlled Eigenwise/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
       "logoKind": "project-logo",
       "reviewedAt": "2026-05-13",
       "logoUrl": "/logos/atomic-agents.png"

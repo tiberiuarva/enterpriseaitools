@@ -1032,7 +1032,7 @@
         "Focused API surface"
       ],
       "license": "MIT",
-      "githubUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+      "githubUrl": "https://github.com/Eigenwise/atomic-agents",
       "githubStars": 6033,
       "version": "2.9.0",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
@@ -1043,7 +1043,7 @@
         "opensource"
       ],
       "logoKind": "project-logo",
-      "logoNotes": "Official Atomic Agents logo asset from the owner-controlled BrainBlend-AI/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
+      "logoNotes": "Official Atomic Agents logo asset from the owner-controlled Eigenwise/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
       "logoReviewedAt": "2026-05-13",
       "clouds": [
         "aws",
@@ -1052,17 +1052,17 @@
       ],
       "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling.",
       "logoUrl": "/logos/atomic-agents.png",
-      "logoSourceUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+      "logoSourceUrl": "https://github.com/Eigenwise/atomic-agents",
       "governance": {
         "dataResidency": {
           "status": "yes",
           "detail": "Self-hosted library; operator controls placement.",
-          "sourceUrl": "https://github.com/BrainBlend-AI/atomic-agents"
+          "sourceUrl": "https://github.com/Eigenwise/atomic-agents"
         },
         "deployment": {
           "status": "yes",
           "detail": "pip-installed OSS framework; no managed hosting.",
-          "sourceUrl": "https://github.com/BrainBlend-AI/atomic-agents",
+          "sourceUrl": "https://github.com/Eigenwise/atomic-agents",
           "models": [
             "self-hosted"
           ]
@@ -1092,7 +1092,7 @@
         "licenseRisk": {
           "status": "yes",
           "detail": "MIT — permissive, OSI-approved.",
-          "sourceUrl": "https://raw.githubusercontent.com/BrainBlend-AI/atomic-agents/main/LICENSE",
+          "sourceUrl": "https://raw.githubusercontent.com/Eigenwise/atomic-agents/main/LICENSE",
           "level": "low"
         },
         "reviewedAt": "2026-05-26"
