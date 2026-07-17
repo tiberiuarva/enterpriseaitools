@@ -1,0 +1,92 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "databricks-lakeflow-jobs",
+    "name": "Databricks Lakeflow Jobs",
+    "category": "orchestration",
+    "type": "vendor",
+    "vendor": "Databricks",
+    "description": "Workflow automation for Databricks tasks, pipelines, and ML workloads with DAG, trigger, and observability support.",
+    "strengths": [
+      "Visual DAG orchestration",
+      "Task branching, loops, and triggers",
+      "Native notebook, pipeline, and ML workflow support"
+    ],
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.databricks.com/aws/en/jobs",
+    "websiteUrl": "https://www.databricks.com/product/data-engineering",
+    "pricing": "Databricks workload and job execution costs depend on the underlying compute and services used.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "databricks",
+      "jobs",
+      "workflows"
+    ],
+    "logoKind": "official-vendor",
+    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Lakeflow Jobs does not expose a distinct standalone public mark.",
+    "logoReviewedAt": "2026-05-24",
+    "logoUrl": "/logos/databricks.png",
+    "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
+    "practitionerNote": "Strong when orchestration mostly coordinates Databricks notebooks, pipelines, and ML runs, but it is not the same thing as a broad cross-SaaS automation layer.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Workspace data stays in the workspace region; audit logs are region-local.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/admin/account-settings/audit-logs"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed SaaS on AWS/Azure/GCP; dedicated single-tenant available; no OSS self-hosted edition.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/soc",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit log system tables capture workspace/account events across the platform.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/admin/account-settings/audit-logs"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Databricks SOC 2 Type II across all clouds/regions.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/soc"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO/IEC 27001:2022 certified across all three clouds.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No public ISO 42001 certification listed for Databricks as of 2026-05."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Data pipeline / ML workflow orchestrator, not an AI model provider."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Databricks service.",
+        "sourceUrl": "https://www.databricks.com/product/ai",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

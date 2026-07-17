@@ -12,6 +12,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Compare Azure AI Content Safety, Amazon Bedrock Guardrails, Google Model Armor, and third-party guardrails tooling for enterprise AI governance.",
   path: "/governance",
+  atomFeedPath: "/updates-governance.xml",
 });
 
 export default function GovernancePage() {

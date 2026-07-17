@@ -1,0 +1,81 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "lakera-guard",
+    "name": "Lakera Guard",
+    "category": "governance",
+    "type": "commercial",
+    "vendor": "Check Point",
+    "description": "Commercial LLM security layer integrating into broader cloud security offerings after acquisition.",
+    "strengths": [
+      "Managed prompt-injection defense",
+      "Security platform alignment",
+      "Freemium entry path"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://platform.lakera.ai/docs/api",
+    "websiteUrl": "https://lakera.ai/",
+    "pricingModel": "freemium",
+    "status": "active",
+    "tags": [
+      "governance",
+      "commercial",
+      "security"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Lakera Guard icon asset from the owner-controlled Lakera Guard product page (`677da5b755934cb6289a0bb3_guard corner logo.svg` on the Lakera Webflow CDN), committed byte-for-byte as a square service icon.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Strong option when security and abuse prevention need a managed specialist layer that can sit in front of multiple model/application surfaces.",
+    "cloudBadgeReviewedAt": "2026-05-08",
+    "logoUrl": "/logos/lakera-guard.svg",
+    "logoSourceUrl": "https://www.lakera.ai/lakera-guard",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "SaaS plus self-hosted container option; residency regions not publicly listed (Check Point acquisition).",
+        "sourceUrl": "https://www.lakera.ai/security"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Primary SaaS API; self-hosted container for enhanced control.",
+        "sourceUrl": "https://www.lakera.ai/security",
+        "models": [
+          "saas",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No specific audit-logging documentation on public pages."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Independent SOC 2 audits per the Lakera security page.",
+        "sourceUrl": "https://www.lakera.ai/security"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Not stated on the public security page / Trust Center."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No documentation found."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Runtime AI security enforcement component; supports operator compliance."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; Check Point acquisition adds vendor-change and lock-in risk.",
+        "sourceUrl": "https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

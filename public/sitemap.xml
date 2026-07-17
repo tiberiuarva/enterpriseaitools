@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.enterpriseai.tools/data/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.enterpriseai.tools/methodology/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>

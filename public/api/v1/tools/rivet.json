@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "rivet",
+    "name": "Rivet",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "Rivet",
+    "description": "Workflow builder for AI pipelines with desktop-first self-hosting support.",
+    "strengths": [
+      "Visual pipeline builder",
+      "Desktop-friendly",
+      "Prompt graph debugging"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/Ironclad/rivet",
+    "githubStars": 4631,
+    "version": "1.11.3",
+    "docsUrl": "https://rivet.ironcladapp.com/",
+    "pricingModel": "free",
+    "status": "maintenance",
+    "statusNote": "No releases in 8+ months. Appears to be in maintenance or slow development.",
+    "tags": [
+      "orchestration",
+      "visual",
+      "maintenance"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Rivet app logo from the owner-controlled Rivet homepage nav asset (`img/logo.svg`). Kept as a square service icon because the published asset is a square mark rather than a wide wordmark.",
+    "logoReviewedAt": "2026-05-13",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Can still work for narrow visual pipeline use cases, but the maintenance signal makes it a cautious choice for new enterprise standardisation.",
+    "logoUrl": "/logos/rivet.svg",
+    "logoSourceUrl": "https://rivet.ironcladapp.com/",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Desktop application; data stays on the local machine; no vendor cloud.",
+        "sourceUrl": "https://rivet.ironcladapp.com/docs/getting-started/installation"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Desktop app (macOS/Windows/Linux) and embeddable Node/TS library; no vendor cloud.",
+        "sourceUrl": "https://rivet.ironcladapp.com/docs/getting-started/installation",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "not-applicable",
+        "detail": "Desktop-only; no server-side audit infrastructure."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "No managed cloud service; user-operated desktop app."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "No managed cloud service to certify."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Not a cloud AI system provider."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Desktop visual pipeline builder, not an AI model/provider."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/Ironclad/rivet/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

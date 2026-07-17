@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "microsoft-365-copilot",
+    "name": "Microsoft 365 Copilot",
+    "category": "assistants",
+    "subcategory": "productivity",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Productivity assistant tightly integrated with Microsoft 365, Graph, and enterprise workflow data.",
+    "strengths": [
+      "Deepest M365 integration",
+      "Graph data access",
+      "Enterprise assistant packaging"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/microsoft-365-copilot/",
+    "websiteUrl": "https://adoption.microsoft.com/en-us/microsoft-365-copilot/",
+    "pricing": "$30/user/mo full AI tier.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "assistants",
+      "productivity",
+      "microsoft"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Microsoft Copilot icon asset from the owner-controlled Microsoft 365 adoption site (`icon-copilot.svg`), reused for Microsoft 365 Copilot branding. Checked-in SVG adds title/accessibility metadata, so it is source-verified on 2026-05-14 but not byte-identical.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Natural fit when the real value is inside Microsoft 365 workflows and Graph-connected knowledge, not just generic chat over documents. Uses the shared Microsoft Copilot visual identity rather than a separate M365-specific product mark.",
+    "logoUrl": "/logos/microsoft-365-copilot.svg",
+    "logoSourceUrl": "https://adoption.microsoft.com/wp-content/uploads/2023/09/icon-copilot.svg",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "EU Data Boundary compliant; Advanced Data Residency and Multi-Geo offerings.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS within the Microsoft 365 tenant on Azure OpenAI; no self-hosted option.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Microsoft Purview audit logging of Copilot prompts/responses/citations; retention/eDiscovery.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-365-copilot/microsoft-365-copilot-privacy"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Covered by Microsoft 365 SOC scope (Service Trust Portal).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-certification"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Microsoft 365 (incl. Copilot) ISO 27001:2022 certified.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Microsoft 365 Copilot achieved ISO 42001:2023 (March 2025).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; deep M365 Graph / Azure lock-in.",
+        "sourceUrl": "https://adoption.microsoft.com/en-us/microsoft-365-copilot/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

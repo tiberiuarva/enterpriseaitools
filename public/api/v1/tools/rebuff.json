@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "rebuff",
+    "name": "Rebuff",
+    "category": "governance",
+    "type": "opensource",
+    "vendor": "Palo Alto Networks",
+    "description": "Prompt injection defense project archived in May 2025 and not recommended for new projects.",
+    "strengths": [
+      "Prompt-injection focus",
+      "Archived OSS reference point",
+      "Historically notable"
+    ],
+    "license": "Apache 2.0",
+    "githubUrl": "https://github.com/protectai/rebuff",
+    "githubStars": 1510,
+    "docsUrl": "https://github.com/protectai/rebuff",
+    "pricingModel": "free",
+    "status": "archived",
+    "statusNote": "Archived May 16, 2025. Do not recommend for new projects.",
+    "tags": [
+      "governance",
+      "archived",
+      "opensource"
+    ],
+    "version": "0.1.1",
+    "logoKind": "project-logo",
+    "logoNotes": "Official Rebuff logo asset from the owner-controlled protectai/rebuff repo (`server/public/logo.png`), committed here as an optimized downscaled copy for badge use.",
+    "logoReviewedAt": "2026-05-15",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Most relevant as a lightweight prompt-injection defense layer in custom stacks, not as a broad end-to-end AI governance product.",
+    "logoUrl": "/logos/rebuff.png",
+    "logoSourceUrl": "https://github.com/protectai/rebuff",
+    "governance": {
+      "dataResidency": {
+        "status": "not-applicable",
+        "detail": "Archived OSS library; operator-controlled if used."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Archived (2025-05-16); self-hosted if used; not recommended for new deployments.",
+        "sourceUrl": "https://github.com/protectai/rebuff",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "not-applicable",
+        "detail": "Archived library; no infrastructure."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Archived OSS library."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Archived OSS library."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Archived OSS library."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Archived prompt-injection defense library; not an active AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Apache-2.0 — permissive; archived (abandonment risk).",
+        "sourceUrl": "https://github.com/protectai/rebuff/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

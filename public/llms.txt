@@ -24,11 +24,14 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](https://www.enterpriseai.tools/llms-full.txt)
-- Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json
-- Platforms dataset (JSON): https://www.enterpriseai.tools/data/platforms.json
-- Updates dataset (JSON): https://www.enterpriseai.tools/data/updates.json
+- Open data API index (versioned JSON): https://www.enterpriseai.tools/api/v1/index.json
+- Tools dataset (JSON): https://www.enterpriseai.tools/api/v1/tools.json (per record: https://www.enterpriseai.tools/api/v1/tools/<id>.json)
+- Platforms dataset (JSON): https://www.enterpriseai.tools/api/v1/platforms.json
+- Updates dataset (JSON): https://www.enterpriseai.tools/api/v1/updates.json
+- Consumption guide: https://www.enterpriseai.tools/data/
 - Every per-tool page: https://www.enterpriseai.tools/sitemap.xml
-- Updates feed (Atom): https://www.enterpriseai.tools/updates.xml
+- Updates feed (Atom): https://www.enterpriseai.tools/updates.xml (per category: https://www.enterpriseai.tools/updates-<category>.xml)
+- EU AI Act deadline calendar (ICS): https://www.enterpriseai.tools/eu-ai-act-deadlines.ics
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 
 ## Editorial standards

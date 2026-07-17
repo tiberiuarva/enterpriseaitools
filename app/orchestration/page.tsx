@@ -12,6 +12,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Compare Azure Logic Apps, AWS Step Functions, Google Cloud Workflows, and open source orchestration platforms for enterprise AI automation.",
   path: "/orchestration",
+  atomFeedPath: "/updates-orchestration.xml",
 });
 
 export default function OrchestrationPage() {

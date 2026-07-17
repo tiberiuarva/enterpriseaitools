@@ -22,6 +22,7 @@ npm run check-updates-data
 npm run test:eu-ai-act
 npm run build
 npm run check-generated-artifacts
+npm run check-open-data
 npm run check-seo-readiness
 npm run check-tool-card-data
 npm run check-deploy-readiness

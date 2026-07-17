@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "google-agent-builder-adk",
+    "name": "Google Agent Builder + ADK",
+    "category": "agents",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Open platform pairing the Agent Development Kit with managed agent services on Vertex AI.",
+    "strengths": [
+      "Open-source ADK",
+      "Google Search grounding",
+      "MCP, A2A, and OpenAPI support"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "license": "Proprietary service + open source SDK",
+    "docsUrl": "https://docs.cloud.google.com/agent-builder/overview",
+    "websiteUrl": "https://cloud.google.com/vertex-ai",
+    "pricing": "Pay-per-use on Vertex AI.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "Java",
+      "Go",
+      "TypeScript"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "gcp",
+      "vertex-ai",
+      "adk"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Google Cloud Vertex AI icon from the Google Cloud icon library, intentionally reused for Agent Builder + ADK because Google positions the managed agent surface inside Vertex AI / Gemini Enterprise Agent Platform rather than with a separate public icon entry.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Useful when Vertex AI, search, and Google-first app surfaces matter, but maturity and enterprise standardisation still need close validation.",
+    "logoUrl": "/logos/google-vertex-ai.svg",
+    "logoSourceUrl": "https://cloud.google.com/icons",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "US/EU multi-region controls (CMEK, VPC-SC); not all features single-region. ADK self-hosted is customer-controlled.",
+        "sourceUrl": "https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed Agent Builder on Vertex AI (SaaS); ADK is an Apache-2.0 SDK deployable anywhere.",
+        "sourceUrl": "https://cloud.google.com/products/agent-builder",
+        "models": [
+          "saas",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Cloud Audit Logs record admin/data operations; Agent Engine supports Cloud Logging/Trace.",
+        "sourceUrl": "https://docs.cloud.google.com/generative-ai-app-builder/docs/audit-logging"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Google Cloud / Vertex AI holds SOC 1/2/3.",
+        "sourceUrl": "https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Holds ISO 27001/27017/27018/27701.",
+        "sourceUrl": "https://docs.cloud.google.com/generative-ai-app-builder/docs/compliance-security-controls"
+      },
+      "iso42001": {
+        "status": "partial",
+        "detail": "Google Cloud holds ISO/IEC 42001 broadly; Agent Builder not individually enumerated in the public scope.",
+        "sourceUrl": "https://cloud.google.com/blog/products/identity-security/google-clouds-commitment-to-responsible-ai-is-now-iso-iec-certified"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent orchestration platform/SDK; GPAI obligations attach to Google as model provider and to deployers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Managed layer proprietary (Vertex AI); ADK is Apache-2.0. Blended medium.",
+        "sourceUrl": "https://github.com/google/adk-python/blob/main/LICENSE",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

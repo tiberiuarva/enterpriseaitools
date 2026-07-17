@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-platforms.xml</id>
+  <title>enterpriseai.tools weekly updates — platforms</title>
+  <updated>2026-07-11T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-platforms.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-05</id>
+    <title>Amazon Bedrock — market-event</title>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-05" />
+    <summary>AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, market-event, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</id>
+      <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-07-01</id>
+    <title>Microsoft Foundry — feature</title>
+    <updated>2026-06-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-07-01" />
+    <summary>Microsoft announced Foundry Managed Compute, adding a managed GPU platform for hosting open-source and custom models through the same Foundry endpoint, SDKs, and billing surface used for frontier-model deployments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, high" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/</id>
+      <title>Announcing Foundry Managed Compute: Run open models in Microsoft Foundry</title>
+      <link href="https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-02</id>
+    <title>Amazon Bedrock — model-addition</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-02" />
+    <summary>AWS added Anthropic Claude Opus 4.8 to Amazon Bedrock, giving Bedrock customers access to Anthropic&apos;s latest high-end model inside AWS-managed security and regional controls.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://aws.amazon.com/blogs/machine-learning/claude-opus-4-8-is-now-available-on-aws/</id>
+      <title>Claude Opus 4.8 is now available on AWS</title>
+      <link href="https://aws.amazon.com/blogs/machine-learning/claude-opus-4-8-is-now-available-on-aws/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-01</id>
+    <title>Gemini Enterprise Agent Platform — deprecation</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-01" />
+    <summary>Google deprecated Vertex AI Extensions and said the service will shut down after 2026-11-26, directing teams to migrate agent integrations to Agent Platform to avoid disruption.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, deprecation, high" />
+    <source>
+      <id>https://cloud.google.com/vertex-ai/docs/release-notes</id>
+      <title>Vertex AI release notes</title>
+      <link href="https://cloud.google.com/vertex-ai/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-01</id>
+    <title>Google Vertex AI — model-addition</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-01" />
+    <summary>Google announced Gemini 3.1 Flash-Lite general availability on Gemini Enterprise Agent Platform, adding a lower-latency, lower-cost production model option for agent and orchestration workloads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available</id>
+      <title>Gemini 3.1 Flash-Lite is now generally available</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-12-01</id>
+    <title>Microsoft Foundry — feature</title>
+    <updated>2026-05-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-12-01" />
+    <summary>Foundry Local 1.1 added live transcription, embeddings, and Responses API support, expanding Microsoft’s local/no-cloud deployment path for speech, RAG, and tool-calling workloads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, medium" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/foundry-local-v1-1/</id>
+      <title>Foundry Local 1.1: Live Transcription, Embeddings, and Responses API</title>
+      <link href="https://devblogs.microsoft.com/foundry/foundry-local-v1-1/" />
+    </source>
+  </entry>
+</feed>

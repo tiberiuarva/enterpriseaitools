@@ -135,6 +135,21 @@
     "requiresBreadcrumbs": true
   },
   {
+    "path": "/data",
+    "changeFrequency": "weekly",
+    "priority": 0.7,
+    "titleContains": "Open data",
+    "descriptionContains": "versioned static JSON API",
+    "searchIntent": "enterprise ai tools dataset json api download",
+    "minTitleLength": 20,
+    "maxTitleLength": 70,
+    "minDescriptionLength": 100,
+    "maxDescriptionLength": 200,
+    "requiresCollectionPage": false,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
     "path": "/methodology",
     "changeFrequency": "monthly",
     "priority": 0.6,

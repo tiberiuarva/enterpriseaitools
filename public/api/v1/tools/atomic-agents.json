@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "atomic-agents",
+    "name": "Atomic Agents",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "BrainBlend AI",
+    "description": "Minimalist agent framework emphasizing composability and predictable building blocks.",
+    "strengths": [
+      "Schema-first building blocks",
+      "Composable design",
+      "Focused API surface"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/Eigenwise/atomic-agents",
+    "githubStars": 6033,
+    "version": "2.9.0",
+    "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
+    "pricingModel": "free",
+    "status": "active",
+    "tags": [
+      "agents",
+      "opensource"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official Atomic Agents logo asset from the owner-controlled Eigenwise/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",
+    "logoReviewedAt": "2026-05-13",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Best suited to teams that want minimal abstractions and tight control, not large batteries-included enterprise workflow tooling.",
+    "logoUrl": "/logos/atomic-agents.png",
+    "logoSourceUrl": "https://github.com/Eigenwise/atomic-agents",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; operator controls placement.",
+        "sourceUrl": "https://github.com/Eigenwise/atomic-agents"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "pip-installed OSS framework; no managed hosting.",
+        "sourceUrl": "https://github.com/Eigenwise/atomic-agents",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Minimalist design; observability is intentionally operator-configured.",
+        "sourceUrl": "https://brainblend-ai.github.io/atomic-agents/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://raw.githubusercontent.com/Eigenwise/atomic-agents/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    },
+    "lastRelease": "2026-07-09"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "copilot-studio",
+    "name": "Copilot Studio",
+    "category": "assistants",
+    "subcategory": "build-your-own",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Low-code platform for building and publishing copilots and agents across Microsoft channels.",
+    "strengths": [
+      "Low-code builder",
+      "Teams and Power Platform integration",
+      "Multiple publishing channels"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/microsoft-copilot-studio/",
+    "websiteUrl": "https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/",
+    "pricing": "Free with M365 Copilot; $200/mo standalone.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Formerly Power Virtual Agents (renamed Nov 2023).",
+    "tags": [
+      "assistants",
+      "build-your-own",
+      "low-code"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Copilot Studio icon from the Microsoft Power Platform icons pack (`Power-Platform-icons-scalable.zip` -> `CopilotStudio_scalable.svg`). Checked-in SVG adds title/accessibility metadata for inline use, so it is source-verified on 2026-05-14 but not byte-identical.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Best when business teams need to assemble Microsoft-native copilots quickly, provided architecture and environment sprawl are still governed centrally.",
+    "logoUrl": "/logos/copilot-studio.svg",
+    "logoSourceUrl": "https://learn.microsoft.com/en-us/power-platform/guidance/icons",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Geographic data residency configurable via Power Platform admin center; DLP controls.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS via Microsoft Power Platform; CMK available; no self-hosted option.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Maker audit logs in Microsoft Purview; agent activity streamable to Sentinel; Customer Lockbox.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Audited as SOC compliant (Service Trust Portal).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-certification"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "In Microsoft ISO 27001 scope (Azure / Other Online Services).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Microsoft Copilot Studio listed in ISO 42001:2023 scope.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; Power Platform / Azure lock-in.",
+        "sourceUrl": "https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

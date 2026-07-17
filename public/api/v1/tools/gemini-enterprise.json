@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "gemini-enterprise",
+    "name": "Gemini Enterprise",
+    "category": "assistants",
+    "subcategory": "build-your-own",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Enterprise agentic AI platform and successor packaging for the former Agentspace product line.",
+    "strengths": [
+      "No-code enterprise agent path",
+      "Broad enterprise integrations",
+      "Google assistant consolidation"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://knowledge.workspace.google.com/admin/gemini/google-workspace-with-gemini",
+    "websiteUrl": "https://workspace.google.com/solutions/ai/",
+    "pricing": "$21/user/mo Business; contact for higher tiers.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Agentspace has been absorbed into Gemini Enterprise.",
+    "tags": [
+      "assistants",
+      "build-your-own",
+      "google"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Gemini product logo asset from the owner-controlled Google Workspace Gemini page (`logo_gemini_2025_color_2x_web_96dp.png`), verified byte-for-byte against the live source on 2026-05-14; Gemini Enterprise currently uses the same shared Gemini visual identity.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Worth evaluating for Google-first organizations that want assistant and agent capabilities under one commercial umbrella, but packaging maturity should still be checked closely.",
+    "logoUrl": "/logos/gemini-shared.png",
+    "logoSourceUrl": "https://www.gstatic.com/images/branding/productlogos/gemini_2025/v1/web-96dp/logo_gemini_2025_color_2x_web_96dp.png",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "US/EU multi-region; residency per Workspace settings; relaxed when Search grounding is enabled.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS via Google Workspace / GCP; CMEK/VPC-SC in US/EU; no self-hosted option.",
+        "sourceUrl": "https://workspace.google.com/solutions/ai/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Access Transparency and Cloud Audit Logs cover Gemini Enterprise.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Gemini Enterprise (Standard/Plus) holds SOC 1/2/3.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Holds ISO 27001/27017/27018/27701.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/compliance-security-controls"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO 42001 not listed on the Gemini Enterprise compliance page (the Workspace app SKU holds it)."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; GCP/Workspace lock-in.",
+        "sourceUrl": "https://workspace.google.com/solutions/ai/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

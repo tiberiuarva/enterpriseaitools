@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "google-cloud-workflows",
+    "name": "Google Cloud Workflows",
+    "category": "orchestration",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Serverless workflow orchestration for Google Cloud services and HTTP APIs.",
+    "strengths": [
+      "Simple serverless orchestration",
+      "GCP-native fit",
+      "HTTP API support"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://cloud.google.com/workflows/docs",
+    "websiteUrl": "https://cloud.google.com/workflows",
+    "pricing": "$0.01 per 1K internal steps; $0.025 per 1K external steps.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "gcp",
+      "workflow"
+    ],
+    "logoUrl": "/logos/google-cloud-workflows.svg",
+    "logoKind": "service-icon",
+    "logoSourceUrl": "https://cloud.google.com/icons",
+    "logoNotes": "Official Google Cloud workflow icon from the Google Cloud icon library.",
+    "logoReviewedAt": "2026-04-19",
+    "practitionerNote": "Pragmatic choice for GCP-centric teams orchestrating APIs and services, but usually not the first pick for richer agent-builder experiences.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Regional resource; resource-location policies enforce residency (outbound calls may differ).",
+        "sourceUrl": "https://docs.cloud.google.com/workflows/docs/locations"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Fully managed serverless SaaS on Google Cloud; no self-hosted option.",
+        "sourceUrl": "https://cloud.google.com/workflows",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Cloud Audit Logs capture admin-activity and data-access events via workflows.googleapis.com.",
+        "sourceUrl": "https://docs.cloud.google.com/workflows/docs/audit-logging"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Runs on Google Cloud, which holds SOC 2 Type II.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Runs on ISO/IEC 27001-certified Google Cloud infrastructure.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Google Cloud holds ISO 42001 for AI services; Workflows (non-AI) per-service scope is not publicly confirmed."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Serverless workflow orchestration, not an AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Google Cloud service; no source access.",
+        "sourceUrl": "https://cloud.google.com/workflows",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

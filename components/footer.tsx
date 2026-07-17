@@ -29,6 +29,7 @@ const columns: FooterColumn[] = [
       { href: "/updates", label: "Weekly updates" },
       { href: "/updates#auto-detected", label: "Auto-detected changes" },
       { href: "/updates.xml", label: "Atom feed" },
+      { href: "/data", label: "Open data & API" },
       { href: "/eu-ai-act", label: "EU AI Act tracker" },
       { href: "/eu-ai-act-deadlines.ics", label: "EU AI Act deadline calendar" },
     ],

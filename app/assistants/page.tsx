@@ -11,6 +11,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Compare coding assistants, productivity copilots, and build-your-own assistant platforms across Microsoft, AWS, Google, and independent vendors.",
   path: "/assistants",
+  atomFeedPath: "/updates-assistants.xml",
 });
 
 export default function AssistantsPage() {

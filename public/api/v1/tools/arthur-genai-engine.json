@@ -1,0 +1,82 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "arthur-genai-engine",
+    "name": "Arthur GenAI Engine",
+    "category": "governance",
+    "type": "commercial",
+    "vendor": "Arthur",
+    "description": "Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.",
+    "strengths": [
+      "Enterprise governance focus",
+      "Observability and evaluation fit",
+      "Agent governance positioning"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.arthur.ai/",
+    "websiteUrl": "https://www.arthur.ai/",
+    "pricingModel": "contact",
+    "status": "active",
+    "statusNote": "Rebranded from Arthur AI to Arthur GenAI Engine and pivoted toward agent discovery and governance.",
+    "tags": [
+      "governance",
+      "commercial",
+      "arthur"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official Arthur homepage logo asset captured from the owner-controlled site after the January 2026 GenAI Engine rebrand (`arthur-logo-dark.avif` via the Arthur Webflow CDN).",
+    "logoReviewedAt": "2026-05-13",
+    "practitionerNote": "Better suited to enterprises that want governance tied to observability, evaluation, and runtime risk monitoring rather than isolated content filters alone.",
+    "cloudBadgeReviewedAt": "2026-05-08",
+    "logoUrl": "/logos/arthur-genai-engine.avif",
+    "logoSourceUrl": "https://www.arthur.ai/",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "SaaS, on-prem, and direct-GCP/AWS deploy options; SaaS residency regions not documented.",
+        "sourceUrl": "https://www.arthur.ai/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Deploy via SaaS, on-prem, or directly on GCP/AWS.",
+        "sourceUrl": "https://www.arthur.ai/",
+        "models": [
+          "saas",
+          "self-hosted",
+          "on-prem"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No specific audit-logging documentation surfaced; observability-oriented platform."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "No SOC 2 claim found on public Arthur pages."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "No ISO 27001 claim found on public Arthur pages."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 claim found."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent governance/observability component; helps operators manage their own AI compliance."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary product (contact pricing); venture-backed startup risk.",
+        "sourceUrl": "https://www.arthur.ai/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

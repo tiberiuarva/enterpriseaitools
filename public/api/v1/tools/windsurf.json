@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "windsurf",
+    "name": "Windsurf",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "commercial",
+    "vendor": "Cognition AI",
+    "description": "Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.",
+    "strengths": [
+      "Standalone IDE",
+      "Agentic coding workflows",
+      "Enterprise path available"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://windsurf.com/",
+    "websiteUrl": "https://windsurf.com/",
+    "pricing": "$20 Pro; $200 Max.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "OpenAI acquisition deal collapsed; Google hired key staff; Cognition acquired remaining product and brand.",
+    "tags": [
+      "assistants",
+      "coding",
+      "windsurf"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Windsurf favicon/icon asset from the owner-controlled site (`/favicon.svg`). Checked-in copy preserves the vendor-provided cream background tile and adds a title for accessibility, so it is source-verified but not byte-identical.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
+    "cloudBadgeReviewedAt": "2026-05-08",
+    "logoUrl": "/logos/windsurf.svg",
+    "logoSourceUrl": "https://windsurf.com/",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "EU residency via Frankfurt (Enterprise); US default; FedRAMP High via AWS GovCloud.",
+        "sourceUrl": "https://windsurf.com/security"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Cloud, Hybrid (customer data + Windsurf compute), and fully self-hosted (Docker/K8s, private LLM).",
+        "sourceUrl": "https://windsurf.com/security",
+        "models": [
+          "saas",
+          "hybrid",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Audit logging on Enterprise Hybrid and Self-hosted only; not in the cloud SaaS tier.",
+        "sourceUrl": "https://windsurf.com/security"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "SOC 2 Type II; annual pen testing.",
+        "sourceUrl": "https://windsurf.com/security"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Not stated on the Windsurf security page; post-Cognition-acquisition status unverified."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 certification found for Windsurf/Cognition."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; 2025 ownership turbulence (Cognition acquisition) adds roadmap risk.",
+        "sourceUrl": "https://windsurf.com/",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

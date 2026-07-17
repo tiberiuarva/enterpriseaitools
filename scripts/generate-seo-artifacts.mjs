@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import toolsData from "../data/tools.json" with { type: "json" };
 import platformsData from "../data/platforms.json" with { type: "json" };
@@ -63,9 +63,9 @@ function daysBetween(startDate, endDate) {
   return Math.floor((new Date(`${endDate}T00:00:00Z`) - new Date(`${startDate}T00:00:00Z`)) / msPerDay);
 }
 
-function generateUpdatesAtomFeed() {
-  const feedUpdated = updatesData.updates.reduce((latest, update) => (update.date > latest ? update.date : latest), lastModified);
-  const entries = updatesData.updates
+function generateUpdatesAtomFeed(feedUpdates = updatesData.updates, { fileName = "updates.xml", titleSuffix = "" } = {}) {
+  const feedUpdated = feedUpdates.reduce((latest, update) => (update.date > latest ? update.date : latest), lastModified);
+  const entries = feedUpdates
     .map((update) => {
       const entryUrl = `${toAbsoluteUrl("/updates")}#${update.id}`;
       const categories = [update.category, update.type, update.impact].filter(Boolean).join(", ");
@@ -74,7 +74,20 @@ function generateUpdatesAtomFeed() {
     })
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/updates.xml</id>\n  <title>enterpriseai.tools weekly updates</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/updates.xml" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>\n${entries}\n</feed>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/${fileName}</id>\n  <title>enterpriseai.tools weekly updates${escapeXml(titleSuffix)}</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/${fileName}" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>\n${entries}\n</feed>\n`;
+}
+
+const FEED_CATEGORIES = ["agents", "orchestration", "governance", "assistants", "platforms"];
+
+function generateCategoryFeeds() {
+  return FEED_CATEGORIES.map((category) => {
+    const fileName = `updates-${category}.xml`;
+    const feedUpdates = updatesData.updates.filter((update) => update.category === category);
+    return {
+      fileName,
+      content: generateUpdatesAtomFeed(feedUpdates, { fileName, titleSuffix: ` — ${category}` }),
+    };
+  });
 }
 
 // ── EU AI Act deadline calendar (iCalendar, RFC 5545) ─────────────────────────
@@ -197,6 +210,92 @@ function generateUpdatesDataset() {
   );
 }
 
+// ── Versioned static JSON API (out/api/v1/, milestone 2) ──────────────────────
+const API_SCHEMA_VERSION = "1.0.0";
+
+function stableJson(value) {
+  return `${JSON.stringify(value, null, 2)}\n`;
+}
+
+const STATUS_BADGE_COLORS = {
+  active: "brightgreen",
+  maintenance: "yellow",
+  deprecated: "orange",
+  archived: "red",
+};
+
+const LICENSE_RISK_BADGE_COLORS = {
+  low: "brightgreen",
+  medium: "yellow",
+  high: "orange",
+  unknown: "lightgrey",
+};
+
+function shieldsBadge(label, message, color) {
+  // shields.io endpoint schema: https://shields.io/badges/endpoint-badge
+  return stableJson({
+    schemaVersion: 1,
+    label,
+    message,
+    color,
+    cacheSeconds: 86400,
+  });
+}
+
+function buildApiV1Files() {
+  const sortedTools = [...toolsData.tools].sort((a, b) => a.id.localeCompare(b.id));
+  const files = new Map();
+
+  files.set(
+    "index.json",
+    stableJson({
+      name: "enterpriseai.tools open data API",
+      schemaVersion: API_SCHEMA_VERSION,
+      generatedAt: lastModified,
+      source: siteUrl,
+      documentation: `${toAbsoluteUrl("/data")}`,
+      schema: "https://github.com/tiberiuarva/enterpriseaitools/blob/main/data/SCHEMA.md",
+      datasetLicense: "MIT",
+      policy: "No paid placement, ever. Every record is source-backed; see /impartiality and /methodology.",
+      endpoints: {
+        tools: `${siteUrl}/api/v1/tools.json`,
+        platforms: `${siteUrl}/api/v1/platforms.json`,
+        updates: `${siteUrl}/api/v1/updates.json`,
+        toolById: `${siteUrl}/api/v1/tools/<id>.json`,
+        badges: `${siteUrl}/api/v1/badge/<id>/{license|status|verified}.json`,
+      },
+      counts: {
+        tools: sortedTools.length,
+        platforms: platformsData.platforms.length,
+        updates: updatesData.updates.length,
+      },
+      toolIds: sortedTools.map((tool) => tool.id),
+    }),
+  );
+
+  files.set("tools.json", generateToolsDataset());
+  files.set("platforms.json", generatePlatformsDataset());
+  files.set("updates.json", generateUpdatesDataset());
+
+  for (const tool of sortedTools) {
+    files.set(
+      `tools/${tool.id}.json`,
+      stableJson({
+        source: siteUrl,
+        generatedAt: lastModified,
+        schemaVersion: API_SCHEMA_VERSION,
+        datasetLicense: "MIT",
+        tool,
+      }),
+    );
+    files.set(`badge/${tool.id}/license.json`, shieldsBadge("license", tool.license, LICENSE_RISK_BADGE_COLORS[tool.governance.licenseRisk.level] ?? "lightgrey"));
+    files.set(`badge/${tool.id}/status.json`, shieldsBadge("status", tool.status, STATUS_BADGE_COLORS[tool.status] ?? "lightgrey"));
+    files.set(`badge/${tool.id}/verified.json`, shieldsBadge("verified", tool.governance.reviewedAt, "blue"));
+  }
+
+  return files;
+}
+
 // ── llms.txt (index) ──────────────────────────────────────────────────────────
 function generateLlmsTxt() {
   const toolCount = toolsData.tools.length;
@@ -226,11 +325,14 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](${siteUrl}/llms-full.txt)
-- Tools dataset (JSON): ${siteUrl}/data/tools.json
-- Platforms dataset (JSON): ${siteUrl}/data/platforms.json
-- Updates dataset (JSON): ${siteUrl}/data/updates.json
+- Open data API index (versioned JSON): ${siteUrl}/api/v1/index.json
+- Tools dataset (JSON): ${siteUrl}/api/v1/tools.json (per record: ${siteUrl}/api/v1/tools/<id>.json)
+- Platforms dataset (JSON): ${siteUrl}/api/v1/platforms.json
+- Updates dataset (JSON): ${siteUrl}/api/v1/updates.json
+- Consumption guide: ${siteUrl}/data/
 - Every per-tool page: ${siteUrl}/sitemap.xml
-- Updates feed (Atom): ${siteUrl}/updates.xml
+- Updates feed (Atom): ${siteUrl}/updates.xml (per category: ${siteUrl}/updates-<category>.xml)
+- EU AI Act deadline calendar (ICS): ${siteUrl}/eu-ai-act-deadlines.ics
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 
 ## Editorial standards
@@ -360,11 +462,24 @@ await mkdir(path.join(publicDir, "data"), { recursive: true });
 await writeFile(path.join(publicDir, "sitemap.xml"), generateSitemapXml());
 await writeFile(path.join(publicDir, "robots.txt"), generateRobotsTxt());
 await writeFile(path.join(publicDir, "updates.xml"), generateUpdatesAtomFeed());
+for (const feed of generateCategoryFeeds()) {
+  await writeFile(path.join(publicDir, feed.fileName), feed.content);
+}
 await writeFile(path.join(publicDir, "eu-ai-act-deadlines.ics"), generateEuAiActIcs());
 await writeFile(path.join(publicDir, "llms.txt"), generateLlmsTxt());
 await writeFile(path.join(publicDir, "llms-full.txt"), generateLlmsFullTxt());
 await writeFile(path.join(publicDir, "data", "tools.json"), generateToolsDataset());
 await writeFile(path.join(publicDir, "data", "platforms.json"), generatePlatformsDataset());
 await writeFile(path.join(publicDir, "data", "updates.json"), generateUpdatesDataset());
+
+// Rebuild the API tree from scratch so records removed from the dataset never
+// leave stale endpoint files behind.
+const apiV1Dir = path.join(publicDir, "api", "v1");
+await rm(apiV1Dir, { recursive: true, force: true });
+for (const [relativePath, content] of buildApiV1Files()) {
+  const filePath = path.join(apiV1Dir, relativePath);
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(filePath, content);
+}
 
 console.log(`Generated SEO + AEO artifacts for ${siteUrl}`);

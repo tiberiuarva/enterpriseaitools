@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "semantic-kernel",
+    "name": "Semantic Kernel",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "Microsoft",
+    "description": "Microsoft orchestration SDK evolving into the unified Microsoft Agent Framework direction.",
+    "strengths": [
+      "Broad language support",
+      "Plugin and memory abstractions",
+      "Strong Microsoft ecosystem fit"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/microsoft/semantic-kernel",
+    "githubStars": 28293,
+    "version": "1.44.0",
+    "docsUrl": "https://learn.microsoft.com/semantic-kernel/",
+    "pricingModel": "free",
+    "status": "active",
+    "statusNote": "Evolving into the Microsoft Agent Framework.",
+    "tags": [
+      "agents",
+      "microsoft",
+      "opensource"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official Semantic Kernel logo asset from the owner-controlled microsoft/semantic-kernel repo (`docs/images/sk_logo.png`).",
+    "logoReviewedAt": "2026-05-14",
+    "logoSourceUrl": "https://github.com/microsoft/semantic-kernel",
+    "logoUrl": "/logos/semantic-kernel.png",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Natural fit for Microsoft-leaning engineering teams that want code-first orchestration with .NET and enterprise integration paths.",
+    "lastRelease": "2026-07-07",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted SDK; data residency is operator-determined.",
+        "sourceUrl": "https://github.com/microsoft/semantic-kernel"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Library/SDK via package manager; no managed hosting.",
+        "sourceUrl": "https://github.com/microsoft/semantic-kernel",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "OpenTelemetry integration documented but operator-configured; no built-in audit log.",
+        "sourceUrl": "https://learn.microsoft.com/semantic-kernel/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://raw.githubusercontent.com/microsoft/semantic-kernel/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

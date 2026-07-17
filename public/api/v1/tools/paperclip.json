@@ -1,0 +1,92 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "paperclip",
+    "name": "Paperclip",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "Paperclip",
+    "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
+    "strengths": [
+      "Persistent multi-agent control plane",
+      "Built-in budgets and governance",
+      "Human approval gates"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/paperclipai/paperclip",
+    "githubStars": 73345,
+    "version": "v2026.707.0",
+    "lastRelease": "2026-07-07",
+    "docsUrl": "https://paperclip.ing/docs",
+    "websiteUrl": "https://paperclip.ing/",
+    "pricingModel": "free",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "opensource",
+      "multi-agent",
+      "governance"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Paperclip favicon/icon asset from the owner-controlled homepage (`/favicon.svg`), verified byte-for-byte against the live source on 2026-05-13 and rendered as a square service icon.",
+    "logoReviewedAt": "2026-05-13",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "languages": [
+      "TypeScript",
+      "JavaScript"
+    ],
+    "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
+    "logoUrl": "/logos/paperclip.svg",
+    "logoSourceUrl": "https://paperclip.ing/favicon.svg",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Fully self-hosted; data stays on customer infrastructure (embedded/external Postgres).",
+        "sourceUrl": "https://github.com/paperclipai/paperclip"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted only (Node.js + Postgres); no vendor-managed cloud.",
+        "sourceUrl": "https://github.com/paperclipai/paperclip",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No dedicated audit-log subsystem documented; OSS codebase is auditable."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "No vendor-managed cloud; SOC 2 falls on the customer's hosting environment."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Customer-operated; no managed service to certify."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Tooling component; customer-operated."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Open-source agent control-plane component, not an AI model/provider."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/paperclipai/paperclip?tab=MIT-1-ov-file",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

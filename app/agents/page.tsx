@@ -12,6 +12,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Compare Microsoft Foundry Agent Service, Amazon Bedrock Agents, Google Agent Builder, and open source agent frameworks used in enterprise AI stacks.",
   path: "/agents",
+  atomFeedPath: "/updates-agents.xml",
 });
 
 export default function AgentsPage() {

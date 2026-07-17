@@ -46,6 +46,8 @@ jobs:
         run: npm run build
       - name: Check generated SEO artifacts
         run: npm run check-generated-artifacts
+      - name: Check open-data artifacts
+        run: npm run check-open-data
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         if: github.event_name != 'pull_request'

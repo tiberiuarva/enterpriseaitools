@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "mastra",
+    "name": "Mastra",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "Mastra AI",
+    "description": "Agent framework focused on composable workflows, tooling, and modern developer ergonomics.",
+    "strengths": [
+      "Apache 2.0 plus enterprise path",
+      "Fast growth",
+      "Modern DX"
+    ],
+    "license": "Apache 2.0 core + EE paths",
+    "githubUrl": "https://github.com/mastra-ai/mastra",
+    "githubStars": 26033,
+    "version": "1.50.0",
+    "docsUrl": "https://mastra.ai/docs",
+    "pricingModel": "free",
+    "status": "active",
+    "tags": [
+      "agents",
+      "opensource",
+      "framework"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official Mastra homepage/brand asset (`/brand/mastra-logo-wordmark.png`) from the owner-controlled site; the public rebrand post confirms this is the current logo system.",
+    "logoReviewedAt": "2026-05-12",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "licenseWarning": "Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.",
+    "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
+    "logoSourceUrl": "https://mastra.ai/",
+    "logoUrl": "/logos/mastra.png",
+    "lastRelease": "2026-07-08",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted framework; operator controls placement.",
+        "sourceUrl": "https://github.com/mastra-ai/mastra"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "npm-installed framework; no managed hosting for the OSS core.",
+        "sourceUrl": "https://github.com/mastra-ai/mastra",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "No built-in enterprise audit log; observability integrations, operator-configured.",
+        "sourceUrl": "https://mastra.ai/docs"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Apache-2.0 core; ee/ paths under a proprietary Mastra Enterprise License (source-available).",
+        "sourceUrl": "https://github.com/mastra-ai/mastra/blob/main/ee/LICENSE",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

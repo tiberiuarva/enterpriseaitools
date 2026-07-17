@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "gemini-code-assist",
+    "name": "Gemini Code Assist",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
+    "strengths": [
+      "VPC-SC + IP indemnification",
+      "Google ecosystem fit",
+      "Private codebase customization"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://cloud.google.com/gemini/docs/codeassist/overview",
+    "websiteUrl": "https://cloud.google.com/products/gemini/code-assist",
+    "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "assistants",
+      "coding",
+      "gcp"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official Gemini Code Assist wordmark asset from the owner-controlled Code Assist for Business site, verified byte-for-byte against `https://www.gstatic.com/cgc/codeassist/logo-gemini-code-assist-2025.png` on 2026-05-14.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Worth considering for Google Cloud-centric teams, but enterprise rollout quality still depends heavily on how much of the stack already lives in Google tooling.",
+    "logoUrl": "/logos/gemini-code-assist.png",
+    "logoSourceUrl": "https://codeassist.google/products/business",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Stateless by default; Enterprise data-at-rest residency in US/EU; GitHub variant excluded from scope.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/docs/discover/certifications"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS via IDE extensions and GCP; CMEK/VPC-SC for Enterprise; no self-hosted.",
+        "sourceUrl": "https://cloud.google.com/products/gemini/code-assist",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Cloud Audit Logs cover admin activity and data access.",
+        "sourceUrl": "https://docs.cloud.google.com/logging/docs/audit/understanding-audit-logs"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Holds SOC 1/2/3 (Q2 2025 reassessment).",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/docs/discover/certifications"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Holds ISO 27001/27017/27018/27701.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Gemini for Google Cloud (incl. Code Assist) holds ISO 42001:2023.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini/docs/discover/certifications"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; GCP lock-in (offsetting IP indemnification offered).",
+        "sourceUrl": "https://cloud.google.com/products/gemini/code-assist",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}
