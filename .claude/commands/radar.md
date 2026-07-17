@@ -24,6 +24,18 @@ threshold are listed in age order. Re-verify those first during research so the
 weekly scan stays on top of records that have not been spot-checked recently.
 Informational gate — does not block the run.
 
+## 1c. EU AI Act freshness check (M7)
+
+Check the legislative status of the Digital Omnibus on AI (and any other
+pending AI Act amendment) against `data/eu-ai-act-obligations.json`:
+
+- If the status moved (Official Journal publication, new dates, adoption),
+  update `statusSummary`, the affected `deferral` blocks, and the timeline in
+  `data/eu-ai-act.json` — every change source-backed per `data/SCHEMA.md`.
+- Refresh `asOf` whenever the file is verified, moved or not. An `asOf` older
+  than ~30 days means the "where the law stands" page is silently stale —
+  treat that as a required task for this run.
+
 ## 2. Research
 
 Spawn the `data-researcher` subagent with the explicit scope:

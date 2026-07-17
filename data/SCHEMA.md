@@ -323,6 +323,40 @@ deferral in `summary` until the amendment is published in the Official Journal.
 | `summary` | string | yes | One- to two-sentence status, including any provisional deferral and its proposed new date. |
 | `sourceUrl` | string | yes | `https://` primary source backing the entry's claim (official Commission timeline for in-force dates; the relevant legislative-status page for a proposed deferral). |
 
+## `eu-ai-act-obligations.json`
+
+EU AI Act obligation knowledge layer rendered on `/eu-ai-act` and, per risk
+tier, on each per-tool page. Consumed, validated, and typed by
+`lib/eu-ai-act-obligations.ts` (`parseObligationsDataset` throws on any shape
+violation at module load, so a malformed dataset fails the build) and covered
+by `lib/eu-ai-act-obligations.test.ts`. Source of truth for feed artifacts:
+`public/eu-ai-act-deadlines.ics` is generated from the timeline in
+`eu-ai-act.json`; the obligations file feeds page content only.
+
+Top-level shape:
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `asOf` | string | yes | ISO `YYYY-MM-DD` date the legal-status summary was last verified. The weekly Radar refreshes this whenever the omnibus/legislative status moves — and reviews it at minimum monthly. |
+| `statusSummary` | string | yes | Plain-language "where the law stands" paragraph. States adopted-law dates as law and any pending amendment as provisional. |
+| `statusSourceUrl` | string | yes | `https://` legislative-status source for the summary. |
+| `obligations` | array | yes | Obligation objects, unique `id` each. |
+
+### Obligation object fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `id` | string | yes | Stable lowercase-kebab id. |
+| `articles` | string | yes | Human-readable article reference, e.g. `Articles 8–17`. |
+| `title` | string | yes | Short obligation name. |
+| `actors` | string[] | yes | Any of `provider \| deployer \| gpai-provider`. |
+| `riskTiers` | string[] | yes | Any of `prohibited \| high-risk \| limited-risk \| minimal-risk \| all`. `all` = every concrete tier. Tool pages map `governance.euAiAct.role` onto this; `gpai-provider`-only obligations never map from a tool risk tier. |
+| `kind` | string | yes | `mandatory \| voluntary`. |
+| `appliesFrom` | string | yes | ISO `YYYY-MM-DD` legally-in-force application date under the adopted Act. |
+| `deferral` | object | no | Pending amendment only: `proposedDate` (ISO date, must be later than `appliesFrom`), `status` (plain language, names the instrument and that it is not yet in the Official Journal), `sourceUrl` (`https://` legislative-status page). Remove the field once the amendment is published and fold the new date into `appliesFrom`. |
+| `summary` | string | yes | One- to two-sentence plain-language description of the duty. |
+| `sourceUrl` | string | yes | `https://` official text (EUR-Lex for article-mapped duties; Commission policy page acceptable for GPAI context). |
+
 ## Data freshness
 
 `tool.governance.reviewedAt` records when each per-tool governance posture was

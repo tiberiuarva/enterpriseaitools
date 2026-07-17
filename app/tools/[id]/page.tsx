@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ExternalLink, Globe, Star } from "lucide-react";
+import { EuAiActObligations } from "@/components/eu-ai-act-obligations";
 import { GovernancePosture } from "@/components/governance-posture";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToolArticleJsonLd } from "@/components/json-ld";
@@ -220,6 +221,8 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
         ) : null}
 
         <GovernancePosture governance={tool.governance} />
+
+        <EuAiActObligations role={tool.governance.euAiAct.role} toolName={tool.name} />
 
         {toolHistory.length > 0 || toolSnapshotDiffs.length > 0 ? (
           <section className="card-flat p-6">

@@ -3,6 +3,7 @@ import path from "node:path";
 import toolsData from "../data/tools.json" with { type: "json" };
 import platformsData from "../data/platforms.json" with { type: "json" };
 import updatesData from "../data/updates.json" with { type: "json" };
+import euAiActTimeline from "../data/eu-ai-act.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 import comparisonSlugs from "../data/comparison-slugs.json" with { type: "json" };
 
@@ -74,6 +75,58 @@ function generateUpdatesAtomFeed() {
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/updates.xml</id>\n  <title>enterpriseai.tools weekly updates</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/updates.xml" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>\n${entries}\n</feed>\n`;
+}
+
+// ── EU AI Act deadline calendar (iCalendar, RFC 5545) ─────────────────────────
+function escapeIcsText(value) {
+  return value.replaceAll("\\", "\\\\").replaceAll(";", "\\;").replaceAll(",", "\\,").replaceAll("\n", "\\n");
+}
+
+// RFC 5545 §3.1: content lines fold at 75 octets with CRLF + single space.
+function foldIcsLine(line) {
+  const chunks = [];
+  let rest = line;
+  while (rest.length > 73) {
+    chunks.push(rest.slice(0, 73));
+    rest = ` ${rest.slice(73)}`;
+  }
+  chunks.push(rest);
+  return chunks.join("\r\n");
+}
+
+function generateEuAiActIcs() {
+  // DTSTAMP derives from the dataset's build-stable date, never Date.now(),
+  // so `check-generated-artifacts` stays deterministic.
+  const stamp = `${lastModified.replaceAll("-", "")}T000000Z`;
+  const events = [...euAiActTimeline]
+    .sort((a, b) => a.appliesOn.localeCompare(b.appliesOn))
+    .flatMap((milestone) => {
+      const date = milestone.appliesOn.replaceAll("-", "");
+      return [
+        "BEGIN:VEVENT",
+        foldIcsLine(`UID:eu-ai-act-${milestone.appliesOn}@enterpriseai.tools`),
+        `DTSTAMP:${stamp}`,
+        `DTSTART;VALUE=DATE:${date}`,
+        foldIcsLine(`SUMMARY:${escapeIcsText(`EU AI Act: ${milestone.label}`)}`),
+        foldIcsLine(`DESCRIPTION:${escapeIcsText(`${milestone.summary} Source: ${milestone.sourceUrl}`)}`),
+        foldIcsLine(`URL:${escapeIcsText(`${toAbsoluteUrl("/eu-ai-act")}`)}`),
+        "TRANSP:TRANSPARENT",
+        "END:VEVENT",
+      ];
+    });
+
+  return [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//enterpriseai.tools//EU AI Act deadlines//EN",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    foldIcsLine("X-WR-CALNAME:EU AI Act deadlines — enterpriseai.tools"),
+    foldIcsLine("X-WR-CALDESC:Application dates of Regulation (EU) 2024/1689, source-backed. Not legal advice."),
+    ...events,
+    "END:VCALENDAR",
+    "",
+  ].join("\r\n");
 }
 
 // AI/LLM crawlers explicitly welcomed — the site exists to be cited.
@@ -164,6 +217,7 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 - [AI Governance](${siteUrl}/governance/): guardrails, content safety, policy.
 - [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
 - [Weekly updates](${siteUrl}/updates/): high-impact market intelligence + release log.
+- [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.
 - [About](${siteUrl}/about/): project scope, sourcing standards, and contribution rules.
 
@@ -303,6 +357,7 @@ await mkdir(path.join(publicDir, "data"), { recursive: true });
 await writeFile(path.join(publicDir, "sitemap.xml"), generateSitemapXml());
 await writeFile(path.join(publicDir, "robots.txt"), generateRobotsTxt());
 await writeFile(path.join(publicDir, "updates.xml"), generateUpdatesAtomFeed());
+await writeFile(path.join(publicDir, "eu-ai-act-deadlines.ics"), generateEuAiActIcs());
 await writeFile(path.join(publicDir, "llms.txt"), generateLlmsTxt());
 await writeFile(path.join(publicDir, "llms-full.txt"), generateLlmsFullTxt());
 await writeFile(path.join(publicDir, "data", "tools.json"), generateToolsDataset());

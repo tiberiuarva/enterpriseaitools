@@ -15,6 +15,7 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - [AI Governance](https://www.enterpriseai.tools/governance/): guardrails, content safety, policy.
 - [AI Assistants](https://www.enterpriseai.tools/assistants/): coding, productivity, build-your-own.
 - [Weekly updates](https://www.enterpriseai.tools/updates/): high-impact market intelligence + release log.
+- [EU AI Act tracker](https://www.enterpriseai.tools/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (https://www.enterpriseai.tools/eu-ai-act-deadlines.ics).
 - [Help me evaluate](https://www.enterpriseai.tools/evaluate/): guided client-side flow that ranks tools by governance fit.
 - [About](https://www.enterpriseai.tools/about/): project scope, sourcing standards, and contribution rules.
 

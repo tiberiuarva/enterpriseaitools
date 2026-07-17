@@ -1,0 +1,61 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enterpriseai.tools//EU AI Act deadlines//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:EU AI Act deadlines — enterpriseai.tools
+X-WR-CALDESC:Application dates of Regulation (EU) 2024/1689, source-backe
+ d. Not legal advice.
+BEGIN:VEVENT
+UID:eu-ai-act-2025-02-02@enterpriseai.tools
+DTSTAMP:20260711T000000Z
+DTSTART;VALUE=DATE:20250202
+SUMMARY:EU AI Act: Prohibited AI practices and AI literacy
+DESCRIPTION:In force. Bans on unacceptable-risk practices (Article 5) and
+  deployer AI-literacy duties (Article 4) apply. Source: https://digital-
+ strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+URL:https://www.enterpriseai.tools/eu-ai-act/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-ai-act-2025-08-02@enterpriseai.tools
+DTSTAMP:20260711T000000Z
+DTSTART;VALUE=DATE:20250802
+SUMMARY:EU AI Act: Governance rules and general-purpose AI model obligati
+ ons
+DESCRIPTION:In force. GPAI model transparency obligations and the AI Act 
+ governance bodies apply\; Commission enforcement powers over GPAI provid
+ ers begin 2 August 2026. Source: https://digital-strategy.ec.europa.eu/e
+ n/policies/regulatory-framework-ai
+URL:https://www.enterpriseai.tools/eu-ai-act/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-ai-act-2026-08-02@enterpriseai.tools
+DTSTAMP:20260711T000000Z
+DTSTART;VALUE=DATE:20260802
+SUMMARY:EU AI Act: Most AI Act obligations\, including Annex III high-ris
+ k systems
+DESCRIPTION:Legally in force on this date under the adopted AI Act. The D
+ igital Omnibus on AI (provisional agreement May 2026\, close to adoption
+  — not yet published in the Official Journal) would defer stand-alone An
+ nex III high-risk obligations to 2 December 2027. Source: https://www.eu
+ roparl.europa.eu/legislative-train/package-digital-package/file-digital-
+ omnibus-on-ai
+URL:https://www.enterpriseai.tools/eu-ai-act/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:eu-ai-act-2027-08-02@enterpriseai.tools
+DTSTAMP:20260711T000000Z
+DTSTART;VALUE=DATE:20270802
+SUMMARY:EU AI Act: High-risk AI systems embedded in regulated products
+DESCRIPTION:Application date for Annex I product-embedded high-risk syste
+ ms under the adopted AI Act. The Digital Omnibus on AI would defer this 
+ to 2 August 2028 (provisional\, pending formal adoption). Source: https:
+ //www.europarl.europa.eu/legislative-train/package-digital-package/file-
+ digital-omnibus-on-ai
+URL:https://www.enterpriseai.tools/eu-ai-act/
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
