@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd, buildAboutPageJsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
-import { githubRepoUrl } from "@/lib/site";
+import { githubRepoUrl, withBasePath } from "@/lib/site";
 import { lastUpdated } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 
@@ -229,6 +229,35 @@ export default function AboutPage() {
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {[
+              {
+                href: "/impartiality",
+                title: "Nothing here can be bought",
+                body: "No listing fees, no sponsored placement, no paid badges, no vendor influence — the permanent policy, in writing.",
+              },
+              {
+                href: "/methodology",
+                title: "Methodology",
+                body: "How every claim is sourced, how licenses are verified against upstream LICENSE files, and how freshness is enforced.",
+              },
+              {
+                href: "/inclusion-criteria",
+                title: "Inclusion criteria",
+                body: "The objective rules for what gets listed, how status is labelled, and when a record is removed.",
+              },
+            ].map((card) => (
+              <a
+                key={card.href}
+                href={withBasePath(card.href)}
+                className="card block p-5 transition hover:border-[var(--color-primary)]"
+              >
+                <h3 className="text-sm font-semibold text-[var(--color-primary)]">{card.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
             {overviewCards.map((card) => (
               <div key={card.title} className="card p-5">
                 <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">{card.title}</h3>
@@ -355,7 +384,7 @@ export default function AboutPage() {
               <SectionHeading
                 eyebrow="Standards"
                 title="The page is only useful if the dataset stays defensible"
-                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed."
+                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed. The full, dated versions live on the methodology, inclusion-criteria, and impartiality pages."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div className="card p-5">

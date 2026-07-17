@@ -37,6 +37,9 @@ const columns: FooterColumn[] = [
     title: "About",
     links: [
       { href: "/about", label: "About the project" },
+      { href: "/methodology", label: "Methodology" },
+      { href: "/inclusion-criteria", label: "Inclusion criteria" },
+      { href: "/impartiality", label: "Impartiality — no paid placement" },
       { href: githubRepoUrl, label: "GitHub repository", external: true },
       { href: githubStargazersUrl, label: "Star on GitHub", external: true },
     ],

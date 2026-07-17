@@ -220,6 +220,9 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 - [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.
 - [About](${siteUrl}/about/): project scope, sourcing standards, and contribution rules.
+- [Methodology](${siteUrl}/methodology/): how every claim is sourced and verified.
+- [Inclusion criteria](${siteUrl}/inclusion-criteria/): the written rules for what gets listed.
+- [Impartiality](${siteUrl}/impartiality/): the permanent no-paid-placement policy.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](${siteUrl}/llms-full.txt)
