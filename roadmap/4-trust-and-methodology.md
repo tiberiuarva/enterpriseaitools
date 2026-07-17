@@ -1,6 +1,7 @@
 # Milestone 4 — Published methodology, inclusion criteria, and impartiality
 
-**Status:** [ ] planned
+**Status:** [~] in progress (2026-07-17 audit: zero dependencies, cheapest milestone,
+everything later links back to it — run alongside milestone 7)
 **Horizon:** 1 — Trust surface & infrastructure
 **Pillars:** Trust through provenance (1)
 **Branch when built:** `milestone/4-trust-and-methodology`

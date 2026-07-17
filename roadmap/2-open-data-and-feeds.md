@@ -1,6 +1,7 @@
 # Milestone 2 — Open data, feeds, and embeddable badges
 
-**Status:** [ ] planned
+**Status:** [~] in progress (third in the revised execution order; partially de-risked —
+the dataset mirror under `public/data/`, the Atom feed, and `llms.txt` already exist)
 **Horizon:** 1 — Trust surface & infrastructure
 **Pillars:** Become infrastructure (3); Freshness as a feature (2)
 **Branch when built:** `milestone/2-open-data-and-feeds`

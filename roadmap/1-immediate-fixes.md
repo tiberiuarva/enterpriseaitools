@@ -1,6 +1,6 @@
 # Milestone 1 — Site-consistency immediate fixes
 
-**Status:** in review (PR #109)
+**Status:** done (PR #109 merged)
 **Severity:** mixed (1 Critical · 1 High · 1 Medium · 1 Verify)
 **Source:** Priority-fix review, conducted live against the homepage and Agents
 category page on 2026-05-23 (confidential working document, not committed to the

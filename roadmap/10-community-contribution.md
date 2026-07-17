@@ -1,6 +1,7 @@
 # Milestone 10 — Provenance-preserving contribution pipeline
 
-**Status:** [ ] planned
+**Status:** [ ] planned (moved ahead of milestone 9 by the 2026-07-17 audit —
+contribution capacity precedes coverage expansion)
 **Horizon:** 3 — Coverage & reach
 **Pillars:** Trust through provenance (1); Freshness as a feature (2)
 **Branch when built:** `milestone/10-community-contribution`

@@ -1,6 +1,7 @@
 # Milestone 7 — EU AI Act and compliance obligation mapping
 
-**Status:** [ ] planned
+**Status:** [~] in progress (pulled forward by the 2026-07-17 audit — GPAI enforcement
+begins 2026-08-02; ship the obligation map, status summary, and ICS feed before that date)
 **Horizon:** 2 — Decision-grade depth
 **Pillars:** Own the unowned gaps (5); Decision-grade UX (4)
 **Branch when built:** `milestone/7-eu-ai-act-mapping`
