@@ -1,0 +1,39 @@
+name: License correction
+description: Dispute a license label. License accuracy is a release-blocking invariant — labels change only through this flow.
+title: "License correction: <tool>"
+labels: ["data-correction", "license", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        License fields are never edited directly in a PR. A maintainer re-reads the upstream LICENSE file; a confirmed change updates `license`/`licenseWarning`, appends a `licenseHistory` event, and adds a `license-change` entry to the public feed — all source-backed.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool id
+    validations:
+      required: true
+  - type: input
+    id: tracked-label
+    attributes:
+      label: License label currently shown on the site
+    validations:
+      required: true
+  - type: input
+    id: actual-license
+    attributes:
+      label: What the upstream LICENSE file actually says
+      description: SPDX expression where possible (e.g. Apache-2.0, BUSL-1.1, SSPL-1.0, Elastic-2.0).
+    validations:
+      required: true
+  - type: input
+    id: license-url
+    attributes:
+      label: URL of the upstream LICENSE file
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context (optional)
+      description: Was this a recent relicense? Link the announcement if so — it becomes the `licenseHistory` source.

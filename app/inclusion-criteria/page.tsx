@@ -116,12 +116,13 @@ export default function InclusionCriteriaPage() {
         <section className="card-flat p-6">
           <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Where to propose</h2>
           <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            Open an issue or pull request in{" "}
+            Use the structured issue templates in{" "}
             <a href={githubRepoUrl} target="_blank" rel="noreferrer" className="text-[var(--color-primary)] hover:underline">
               the repository
             </a>{" "}
-            with the primary sources that back each required field. Proposals that pass the schema, provenance, and
-            license gates get reviewed; proposals that do not are declined with the failing rule named.
+            (Propose a tool, Data correction, License correction) or open a PR per the CONTRIBUTING guide — each
+            requires the primary sources that back every field. CI validates schema, provenance, and license gates
+            automatically before human review; proposals that fail are declined with the failing rule named.
           </p>
         </section>
       </main>

@@ -40,6 +40,8 @@ jobs:
         run: npm run check-governance-data
       - name: Check updates data
         run: npm run check-updates-data
+      - name: Check tool-card data
+        run: npm run check-tool-card-data
       - name: Test EU AI Act timeline logic
         run: npm run test:eu-ai-act
       - name: Build static site

@@ -143,10 +143,10 @@ const outOfScope = [
 ];
 
 const contributionSteps = [
-  "To add or edit a tool: update data/tools.json using the schema in data/SCHEMA.md.",
-  "To add a market update: edit data/updates.json and include the source URL plus a factual summary.",
-  "To report an error or request a tool: open an issue with the source links that support the correction.",
-  "Keep claims precise. If a pricing tier, compliance statement, or support matrix item is ambiguous, call it out explicitly instead of guessing.",
+  "To propose a tool: use the 'Propose a tool' issue template (or a PR against data/tools.json per data/SCHEMA.md) — every field needs a primary source.",
+  "To report an error: use the 'Data correction' issue template with the source that supports the correction.",
+  "To dispute a license label: use the 'License correction' template — license fields are never edited directly.",
+  "CI validates schema, provenance, and license gates on every PR before human review; see CONTRIBUTING.md in the repo for the full rules.",
 ];
 
 function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) {
