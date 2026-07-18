@@ -23,11 +23,11 @@ execution sequence, revised by the 2026-07-17 roadmap audit (rationale below).
 | Order | Status | Milestone | Horizon | File |
 |---|---|---|---|---|
 | 1 | [x] | 1 — Site-consistency immediate fixes | 0 — Foundation | [`1-immediate-fixes.md`](./1-immediate-fixes.md) |
-| 2 | [~] | 7 — EU AI Act and compliance obligation mapping | 2 — Decision-grade depth | [`7-eu-ai-act-mapping.md`](./7-eu-ai-act-mapping.md) |
-| 3 | [~] | 4 — Published methodology, inclusion criteria, impartiality | 1 — Trust surface & infrastructure | [`4-trust-and-methodology.md`](./4-trust-and-methodology.md) |
-| 4 | [~] | 2 — Open data, feeds, and embeddable badges | 1 — Trust surface & infrastructure | [`2-open-data-and-feeds.md`](./2-open-data-and-feeds.md) |
-| 5 | [~] | 5 — License lifecycle tracking and change alerts | 2 — Decision-grade depth | [`5-license-lifecycle-tracking.md`](./5-license-lifecycle-tracking.md) |
-| 6 | [~] | 10 — Provenance-preserving contribution pipeline | 3 — Coverage & reach | [`10-community-contribution.md`](./10-community-contribution.md) |
+| 2 | [x] | 7 — EU AI Act and compliance obligation mapping | 2 — Decision-grade depth | [`7-eu-ai-act-mapping.md`](./7-eu-ai-act-mapping.md) |
+| 3 | [x] | 4 — Published methodology, inclusion criteria, impartiality | 1 — Trust surface & infrastructure | [`4-trust-and-methodology.md`](./4-trust-and-methodology.md) |
+| 4 | [x] | 2 — Open data, feeds, and embeddable badges | 1 — Trust surface & infrastructure | [`2-open-data-and-feeds.md`](./2-open-data-and-feeds.md) |
+| 5 | [x] | 5 — License lifecycle tracking and change alerts | 2 — Decision-grade depth | [`5-license-lifecycle-tracking.md`](./5-license-lifecycle-tracking.md) |
+| 6 | [x] | 10 — Provenance-preserving contribution pipeline | 3 — Coverage & reach | [`10-community-contribution.md`](./10-community-contribution.md) |
 | 7 | [ ] | 6 — The Enterprise AI Radar (maturity verdicts) | 2 — Decision-grade depth | [`6-enterprise-ai-radar.md`](./6-enterprise-ai-radar.md) |
 | 8 | [ ] | 8 — An objective, reproducible readiness score | 2 — Decision-grade depth | [`8-objective-scoring.md`](./8-objective-scoring.md) |
 | 9 | [ ] | 3 — Shareable discovery and a comparison builder | 1 — Trust surface & infrastructure | [`3-discovery-and-comparison.md`](./3-discovery-and-comparison.md) |

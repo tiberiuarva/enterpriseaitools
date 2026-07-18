@@ -1,6 +1,6 @@
 # Milestone 5 — License lifecycle tracking and change alerts
 
-**Status:** [~] in progress
+**Status:** [x] done (shipped 2026-07-17 on `claude/project-milestones-kgn3pf`)
 **Horizon:** 2 — Decision-grade depth
 **Pillars:** Own the unowned gaps (5); Freshness as a feature (2)
 **Branch when built:** `milestone/5-license-lifecycle-tracking`
@@ -65,3 +65,25 @@ return.
 Depends on milestone 2 (feed infrastructure) and the existing snapshot/diff pipeline.
 Feeds the objective score (8), where license risk is a weighted signal, and distribution
 (11), where "license changes this week" is a flagship feed.
+
+## Outcome (shipped 2026-07-17)
+
+- **Schema:** `licenseHistory` events (date, from/to, open/restrictive direction,
+  `sourceUrl`, BUSL-style `convertsOn`/`convertsTo`) defined in `data/SCHEMA.md` and
+  enforced by `check-tool-card-data` — including the invariant that the newest event's
+  `toLicense` matches the record's `license` label.
+- **Backfill (source-verified, conservative):** three transitions met the primary-source
+  bar — n8n 2022 (Commons Clause → Sustainable Use License), Flowise 2023
+  (MIT → Apache 2.0), Mastra 2026 (Apache 2.0 → Apache 2.0 core + EE paths). The full
+  sweep, including tools checked with no change and events omitted as unverifiable, is
+  recorded in `docs/research/license-history-backfill-2026-07-17.md`. Guardrails AI's
+  label discrepancy stayed in data-correction issue #110 (no direct edit, per the rules).
+- **Per-tool timeline** on `/tools/<id>` with direction badges and the license warning
+  surfaced; `license-change` update type added and flagged high-visibility in change
+  history.
+- **Alert feed:** `updates-licenses.xml` (license transitions only), validated by
+  `check-open-data`, linked from the footer and `/data`.
+- **Detection:** the snapshot diff already flags license drift high-impact; the `/radar`
+  SOP now specifies the verified-change flow (upstream LICENSE verification →
+  `license`/`licenseWarning` + `licenseHistory` + `license-change` update entry in one
+  PR).

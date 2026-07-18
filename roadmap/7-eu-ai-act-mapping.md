@@ -1,7 +1,7 @@
 # Milestone 7 — EU AI Act and compliance obligation mapping
 
-**Status:** [~] in progress (pulled forward by the 2026-07-17 audit — GPAI enforcement
-begins 2026-08-02; ship the obligation map, status summary, and ICS feed before that date)
+**Status:** [x] done (shipped 2026-07-17 on `claude/project-milestones-kgn3pf` — pulled
+forward by the 2026-07-17 audit to land before GPAI enforcement begins 2026-08-02)
 **Horizon:** 2 — Decision-grade depth
 **Pillars:** Own the unowned gaps (5); Decision-grade UX (4)
 **Branch when built:** `milestone/7-eu-ai-act-mapping`
@@ -65,3 +65,20 @@ regulatory-deadline calendar feed. Make the site the place a compliance officer 
 Depends on the existing `eu-ai-act.json` and milestone 2 (feed infrastructure for ICS).
 Feeds the guided evaluation flow (an EU AI Act role is already an intake question) and the
 distribution milestone (deadline movements are newsworthy feed items).
+
+## Outcome (shipped 2026-07-17)
+
+- **Knowledge layer:** `data/eu-ai-act-obligations.json` — 11 article-mapped obligations
+  by actor (provider / deployer / GPAI provider) and risk tier, each with an official
+  `sourceUrl` (EUR-Lex / Commission / Parliament, all verified resolving), omnibus
+  deferrals tracked as provisional `deferral` blocks. Documented in `data/SCHEMA.md`;
+  parse-validated at module load by `lib/eu-ai-act-obligations.ts` (+ 7-test suite).
+- **Tracker page:** `/eu-ai-act` with the dated "where the law stands" summary, the
+  application timeline, per-actor obligation reference, FAQ JSON-LD, and a prominent
+  not-legal-advice disclaimer.
+- **Per-tool view:** every `/tools/<id>` page maps its `governance.euAiAct.role` to the
+  implicated obligations with official-text links.
+- **ICS feed:** `public/eu-ai-act-deadlines.ics` generated at build (deterministic,
+  RFC 5545 folded, validated by `check-open-data`), linked from the page and footer.
+- **Radar SOP:** step 1c added — omnibus/legislative status checked weekly; `asOf` older
+  than ~30 days is treated as a required task.

@@ -1,7 +1,6 @@
 # Milestone 2 — Open data, feeds, and embeddable badges
 
-**Status:** [~] in progress (third in the revised execution order; partially de-risked —
-the dataset mirror under `public/data/`, the Atom feed, and `llms.txt` already exist)
+**Status:** [x] done (shipped 2026-07-17 on `claude/project-milestones-kgn3pf`)
 **Horizon:** 1 — Trust surface & infrastructure
 **Pillars:** Become infrastructure (3); Freshness as a feature (2)
 **Branch when built:** `milestone/2-open-data-and-feeds`
@@ -70,3 +69,23 @@ and needs no backend.
 Depends on the existing dataset and SEO-artifact pipeline. Feeds every later milestone
 (the API is how the radar, license history, and scores get consumed externally) and the
 distribution milestone (11).
+
+## Outcome (shipped 2026-07-17)
+
+- **Versioned static JSON API** emitted at build under `public/api/v1/` → `out/api/v1/`:
+  `index.json` manifest (schema version, counts, endpoints, all tool ids), full
+  collections, and a per-record endpoint for each of the 48 tools. Deterministic and
+  rebuilt from scratch each run so removed records never leave stale files.
+- **shields.io endpoint badges** — `api/v1/badge/<id>/{license|status|verified}.json`
+  (144 badges), colors mapped from license-risk level and lifecycle status; embed
+  snippet documented on `/data`.
+- **Feeds:** per-category Atom feeds (`updates-<category>.xml`) with
+  `rel=alternate` discovery on the category hubs via the new `atomFeedPath` metadata
+  support (verified against the Next 16 docs), alongside the existing site feed.
+- **Dataset docs page** `/data`: endpoints, feeds, badge embeds, dataset licence (MIT),
+  v1 additive-stability policy, no-paid-placement note; DataCatalog JSON-LD.
+- **Validation:** new `scripts/check-open-data.mjs` (manifest/counts/badge-schema/feed/
+  ICS checks) wired into `package.json`, `/ship-check`, and the CI workflow;
+  `check-generated-artifacts` extended to catch untracked generated files.
+- Deferred per out-of-scope: no server routes, no tracked newsletter, no formal v1
+  deprecation policy (noted for when external consumers exist).
