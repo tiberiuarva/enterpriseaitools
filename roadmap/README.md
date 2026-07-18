@@ -26,8 +26,8 @@ execution sequence, revised by the 2026-07-17 roadmap audit (rationale below).
 | 2 | [~] | 7 — EU AI Act and compliance obligation mapping | 2 — Decision-grade depth | [`7-eu-ai-act-mapping.md`](./7-eu-ai-act-mapping.md) |
 | 3 | [~] | 4 — Published methodology, inclusion criteria, impartiality | 1 — Trust surface & infrastructure | [`4-trust-and-methodology.md`](./4-trust-and-methodology.md) |
 | 4 | [~] | 2 — Open data, feeds, and embeddable badges | 1 — Trust surface & infrastructure | [`2-open-data-and-feeds.md`](./2-open-data-and-feeds.md) |
-| 5 | [ ] | 5 — License lifecycle tracking and change alerts | 2 — Decision-grade depth | [`5-license-lifecycle-tracking.md`](./5-license-lifecycle-tracking.md) |
-| 6 | [ ] | 10 — Provenance-preserving contribution pipeline | 3 — Coverage & reach | [`10-community-contribution.md`](./10-community-contribution.md) |
+| 5 | [~] | 5 — License lifecycle tracking and change alerts | 2 — Decision-grade depth | [`5-license-lifecycle-tracking.md`](./5-license-lifecycle-tracking.md) |
+| 6 | [~] | 10 — Provenance-preserving contribution pipeline | 3 — Coverage & reach | [`10-community-contribution.md`](./10-community-contribution.md) |
 | 7 | [ ] | 6 — The Enterprise AI Radar (maturity verdicts) | 2 — Decision-grade depth | [`6-enterprise-ai-radar.md`](./6-enterprise-ai-radar.md) |
 | 8 | [ ] | 8 — An objective, reproducible readiness score | 2 — Decision-grade depth | [`8-objective-scoring.md`](./8-objective-scoring.md) |
 | 9 | [ ] | 3 — Shareable discovery and a comparison builder | 1 — Trust surface & infrastructure | [`3-discovery-and-comparison.md`](./3-discovery-and-comparison.md) |
@@ -57,11 +57,13 @@ execution sequence, revised by the 2026-07-17 roadmap audit (rationale below).
 **Automate the weekly Radar cadence.** The 2026-07-17 audit found one snapshot ever taken
 (`data/snapshots/2026-06-07.json`), zero derived diff events, and all 48 governance
 `reviewedAt` stamps batch-dated 2026-05-26 (~7 weeks stale). "Freshness as a feature" is
-the pillar most at risk, and it is failing operationally, not in code. The fix is a
-scheduled GitHub Actions workflow that runs `snapshot-weekly`, `diff-snapshots`, and
-`check-data-freshness` weekly and opens the `/radar` PR automatically — removing the
-human from the mechanical half of the loop. Until this exists, every "updated weekly"
-claim on the site is one missed manual run away from being false.
+the pillar most at risk, and it is failing operationally, not in code.
+
+*Status: shipped (in review with this branch).* `.github/workflows/weekly-radar.yml` runs
+`snapshot-weekly` + `diff-snapshots` + `check-data-freshness` every Monday and opens the
+content PR automatically; the 2026-07-17 snapshot restarted the time series. Remaining
+manual half: the editorial `/radar` review inside that PR, and rotating the stale
+governance `reviewedAt` stamps — still a required weekly task.
 
 ## Daily value = daily presence, not daily visits
 

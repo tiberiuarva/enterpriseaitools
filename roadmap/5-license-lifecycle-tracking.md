@@ -1,6 +1,6 @@
 # Milestone 5 — License lifecycle tracking and change alerts
 
-**Status:** [ ] planned
+**Status:** [~] in progress
 **Horizon:** 2 — Decision-grade depth
 **Pillars:** Own the unowned gaps (5); Freshness as a feature (2)
 **Branch when built:** `milestone/5-license-lifecycle-tracking`
