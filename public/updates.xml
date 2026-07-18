@@ -1197,6 +1197,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-03-01</id>
+    <title>Mastra adds source-available Enterprise License paths beside its Apache 2.0 core</title>
+    <updated>2026-03-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-03-01" />
+    <summary>Mastra introduced ee/ directories under the source-available Mastra Enterprise License alongside the Apache 2.0 core, moving the repo from a single permissive license to a dual-license model.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, license-change, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/pull/13163</id>
+      <title>mastra PR #13163: auth core, server RBAC, and adapter permission enforcement</title>
+      <link href="https://github.com/mastra-ai/mastra/pull/13163" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2025-09-16-01</id>
     <title>Check Point moves to acquire Lakera</title>
     <updated>2025-09-16T00:00:00.000Z</updated>

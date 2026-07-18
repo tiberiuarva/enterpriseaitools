@@ -5,7 +5,7 @@
   "datasetLicenseNote": "Publication licence for this dataset file. Each record's own licence is in its `license` field.",
   "source": "https://www.enterpriseai.tools",
   "generatedAt": "2026-07-11",
-  "count": 87,
+  "count": 88,
   "updates": [
     {
       "id": "update-2026-07-11-01",
@@ -1037,6 +1037,19 @@
       "sourceTitle": "Releases · NVIDIA-NeMo/Guardrails",
       "impact": "medium",
       "title": "NeMo Guardrails adds parallel IORails safety execution"
+    },
+    {
+      "id": "update-2026-03-03-01",
+      "date": "2026-03-03",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "license-change",
+      "summary": "Mastra introduced ee/ directories under the source-available Mastra Enterprise License alongside the Apache 2.0 core, moving the repo from a single permissive license to a dual-license model.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/pull/13163",
+      "sourceTitle": "mastra PR #13163: auth core, server RBAC, and adapter permission enforcement",
+      "impact": "high",
+      "title": "Mastra adds source-available Enterprise License paths beside its Apache 2.0 core"
     },
     {
       "id": "update-2025-09-16-01",

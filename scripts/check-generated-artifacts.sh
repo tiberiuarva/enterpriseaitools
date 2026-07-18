@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-tracked=(public/sitemap.xml public/robots.txt public/updates.xml public/updates-agents.xml public/updates-orchestration.xml public/updates-governance.xml public/updates-assistants.xml public/updates-platforms.xml public/eu-ai-act-deadlines.ics public/llms.txt public/llms-full.txt public/data/tools.json public/data/platforms.json public/data/updates.json public/api)
+tracked=(public/sitemap.xml public/robots.txt public/updates.xml public/updates-agents.xml public/updates-orchestration.xml public/updates-governance.xml public/updates-assistants.xml public/updates-platforms.xml public/updates-licenses.xml public/eu-ai-act-deadlines.ics public/llms.txt public/llms-full.txt public/data/tools.json public/data/platforms.json public/data/updates.json public/api)
 
 git diff --quiet -- "${tracked[@]}" || {
   echo "FAIL generated SEO artifacts are out of sync with source data/scripts" >&2

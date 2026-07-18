@@ -13,6 +13,13 @@ the sweep is auditable and repeatable.
 | flowise | 2023-09-08 | MIT → Apache 2.0 | restrictive (minor, both permissive) | LICENSE.md commit history |
 | mastra | 2026-03-03 | Apache 2.0 → Apache 2.0 core + EE paths | restrictive | mastra PR #13163 + changelog |
 
+Feed policy for backfilled events: `updates.json` (and therefore
+`updates-licenses.xml`) covers the tracker's operational window, whose earliest
+entry is 2025-02-25. The Mastra event (2026-03-03) falls inside that window and
+got a high-impact `license-change` entry; the n8n (2022) and Flowise (2023)
+events predate the tracker and are recorded in `licenseHistory` only — the
+per-tool timeline is the complete record, the feed is the alert channel.
+
 ## Checked, no change found
 
 crewai, autogen, llamaindex, semantic-kernel, microsoft-agent-framework,
