@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-licenses.xml</id>
+  <title>enterpriseai.tools weekly updates — license changes</title>
+  <updated>2026-07-11T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-licenses.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+
+</feed>

@@ -2,7 +2,7 @@ export type ToolCategory = "agents" | "orchestration" | "governance" | "assistan
 export type ToolType = "vendor" | "opensource" | "commercial";
 export type PricingModel = "free" | "freemium" | "paid" | "contact";
 export type ToolStatus = "active" | "maintenance" | "deprecated" | "archived";
-export type UpdateType = "release" | "acquisition" | "deprecation" | "rename" | "funding" | "feature" | "model-addition";
+export type UpdateType = "release" | "acquisition" | "deprecation" | "rename" | "funding" | "feature" | "model-addition" | "license-change";
 export type UpdateImpact = "high" | "medium" | "low";
 export type UpdateCategory = ToolCategory | "platforms";
 
@@ -35,6 +35,24 @@ export type ToolGovernance = {
   reviewedAt: ISODateString;
 };
 
+export type LicenseChangeDirection = "open" | "restrictive";
+
+// One license transition in a tool's history. `direction` is from the
+// adopter's perspective: "restrictive" = more restrictions than before,
+// "open" = fewer. `convertsOn`/`convertsTo` capture delayed-conversion
+// licenses (BUSL-style) where the license changes again on a fixed date.
+export type LicenseHistoryEvent = {
+  date: ISODateString;
+  fromLicense: string;
+  toLicense: string;
+  direction: LicenseChangeDirection;
+  sourceUrl: string;
+  sourceTitle?: string;
+  notes?: string;
+  convertsOn?: ISODateString;
+  convertsTo?: string;
+};
+
 export type LogoAuditMetadata =
   | {
       logoKind: "fallback";
@@ -63,6 +81,7 @@ export type Tool = {
   cloudBadgeReviewedAt?: ISODateString;
   license: string;
   licenseWarning?: string;
+  licenseHistory?: LicenseHistoryEvent[];
   githubUrl?: string;
   githubStars?: number;
   version?: string;

@@ -97,6 +97,16 @@ if (countOccurrences(siteFeed, "<entry>") !== updatesData.updates.length) {
   fail(`updates.xml: entry count does not match dataset (${updatesData.updates.length})`);
 }
 
+const licenseFeedPath = path.join(publicDir, "updates-licenses.xml");
+if (!existsSync(licenseFeedPath)) {
+  fail("missing license-change feed: updates-licenses.xml");
+} else {
+  const xml = await readFile(licenseFeedPath, "utf8");
+  const expected = updatesData.updates.filter((update) => update.type === "license-change").length;
+  const actual = countOccurrences(xml, "<entry>");
+  if (actual !== expected) fail(`updates-licenses.xml: ${actual} entries, dataset has ${expected} license-change updates`);
+}
+
 // ── ICS calendar ──────────────────────────────────────────────────────────────
 const icsPath = path.join(publicDir, "eu-ai-act-deadlines.ics");
 if (!existsSync(icsPath)) {

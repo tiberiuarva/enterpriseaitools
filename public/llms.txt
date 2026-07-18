@@ -31,6 +31,7 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - Consumption guide: https://www.enterpriseai.tools/data/
 - Every per-tool page: https://www.enterpriseai.tools/sitemap.xml
 - Updates feed (Atom): https://www.enterpriseai.tools/updates.xml (per category: https://www.enterpriseai.tools/updates-<category>.xml)
+- License-change feed (Atom): https://www.enterpriseai.tools/updates-licenses.xml — relicensing events only
 - EU AI Act deadline calendar (ICS): https://www.enterpriseai.tools/eu-ai-act-deadlines.ics
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 

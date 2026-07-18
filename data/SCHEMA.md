@@ -30,6 +30,7 @@ Top-level shape:
 | `cloudBadgeReviewedAt` | string | no | Calendar ISO date (`YYYY-MM-DD`) for an explicit cloud-badge review when the tool is intentionally left cloud-neutral |
 | `license` | string | yes | Exact license label |
 | `licenseWarning` | string | no | Caveat for source-available, proprietary core, branding, etc. |
+| `licenseHistory` | LicenseHistoryEvent[] | no | Source-backed license transitions, ascending by `date` (see the LicenseHistoryEvent table below). Present only when at least one verified transition exists — an absent field means "no license change on record", never "unknown". |
 | `githubUrl` | string | no | Official repository URL |
 | `githubStars` | number | no | Open source star count only when verified |
 | `version` | string | no | Current stable version |
@@ -49,6 +50,30 @@ Top-level shape:
 | `logoReviewedAt` | string | yes | Calendar ISO date (`YYYY-MM-DD`) when logo provenance was last checked. Required for every site record. |
 | `tags` | string[] | no | Search/filter helpers |
 | `governance` | object | yes | Governance posture — see "Tool governance object" below. Required on every tool. |
+
+### LicenseHistoryEvent (`tool.licenseHistory[]`)
+
+Source-backed license lifecycle tracking (milestone 5). Events are ascending by
+`date`; the newest event's `toLicense` must match the tool's current `license`
+label. Never append an event without a verified primary source — and never edit
+the `license` field itself outside the data-correction flow.
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `date` | string | yes | ISO `YYYY-MM-DD` the new license took effect (announcement date if the effective date is not stated). |
+| `fromLicense` | string | yes | Prior license, SPDX expression where possible. |
+| `toLicense` | string | yes | New license, SPDX expression where possible. |
+| `direction` | `open \| restrictive` | yes | From the adopter's perspective: `restrictive` = more restrictions than before (relicense/rug-pull direction), `open` = fewer (reversal/opening). |
+| `sourceUrl` | string | yes | `https://` primary source (vendor announcement, repo commit/release) backing the transition. |
+| `sourceTitle` | string | no | Human label for the source link. |
+| `notes` | string | no | Plain-language context (e.g. which components are affected). |
+| `convertsOn` | string | no | For delayed-conversion licenses (BUSL-style): ISO date the license automatically changes again. |
+| `convertsTo` | string | no | License the `convertsOn` date converts to. Required when `convertsOn` is set. |
+
+Workflow: a newly detected license change (snapshot diff or research) gets, in
+one PR — the verified `license`/`licenseWarning` correction via the
+data-correction flow, a `licenseHistory` event, and a `license-change` entry in
+`updates.json` (which feeds `updates-licenses.xml`).
 
 ### Tool governance object (`tool.governance`)
 
@@ -182,7 +207,7 @@ Entries must be ordered newest first.
 | `toolId` | string | yes | Foreign key to `tools.json` or a stable platform id |
 | `toolName` | string | yes | Denormalized display name |
 | `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
-| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition` | yes | Update type |
+| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
 | `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |

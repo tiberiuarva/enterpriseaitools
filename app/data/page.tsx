@@ -23,6 +23,7 @@ const ENDPOINTS: { path: string; note: string }[] = [
 const FEEDS: { path: string; note: string }[] = [
   { path: "/updates.xml", note: "Site-wide updates feed (Atom)" },
   { path: "/updates-agents.xml", note: "Agents only — also orchestration, governance, assistants, platforms" },
+  { path: "/updates-licenses.xml", note: "License changes only — the relicensing alert channel" },
   { path: "/eu-ai-act-deadlines.ics", note: "EU AI Act deadline calendar (iCalendar)" },
   { path: "/llms.txt", note: "Index for LLM agents; llms-full.txt is the whole site in one fetch" },
 ];

@@ -59,7 +59,12 @@ deterministic, machine-readable boundary.
 - For each change, edit the relevant JSON file following `data/SCHEMA.md`.
 - For tool/platform renames, update the canonical name and append the old name
   to `formerNames` (platforms) / `aliases` (tools).
-- License changes: update both `license` and (if applicable) `licenseWarning`.
+- License changes (M5): after verifying against the upstream LICENSE, update
+  `license` and (if applicable) `licenseWarning`, append a `licenseHistory`
+  event (date, fromLicense, toLicense, direction, sourceUrl), and add a
+  `license-change` entry to `data/updates.json` — all in the same PR. The
+  snapshot diff flags license drift as high-impact; never publish the change
+  without the upstream verification.
 - Append a new entry to `data/updates.json` for every newsworthy change with
   a valid `sourceUrl`.
 - If `githubStars` or `version` was refreshed, update `lastRelease` too.

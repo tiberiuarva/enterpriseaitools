@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ExternalLink, Globe, Star } from "lucide-react";
 import { EuAiActObligations } from "@/components/eu-ai-act-obligations";
+import { LicenseTimeline } from "@/components/license-timeline";
 import { GovernancePosture } from "@/components/governance-posture";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToolArticleJsonLd } from "@/components/json-ld";
@@ -29,6 +30,7 @@ const UPDATE_TYPE_LABELS: Record<string, string> = {
   funding: "Funding",
   feature: "Feature",
   "model-addition": "Model addition",
+  "license-change": "License change",
 };
 
 const CATEGORY_LABELS: Record<ToolCategory, string> = {
@@ -222,6 +224,10 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
 
         <GovernancePosture governance={tool.governance} />
 
+        {tool.licenseHistory?.length ? (
+          <LicenseTimeline history={tool.licenseHistory} toolName={tool.name} licenseWarning={tool.licenseWarning} />
+        ) : null}
+
         <EuAiActObligations role={tool.governance.euAiAct.role} toolName={tool.name} />
 
         {toolHistory.length > 0 || toolSnapshotDiffs.length > 0 ? (
@@ -231,7 +237,12 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
             <ol className="mt-4 flex flex-col gap-3">
               {toolHistory.map((update) => {
                 const highImpact = update.impact === "high";
-                const flagged = highImpact || update.type === "deprecation" || update.type === "acquisition" || update.type === "rename";
+                const flagged =
+                  highImpact ||
+                  update.type === "deprecation" ||
+                  update.type === "acquisition" ||
+                  update.type === "rename" ||
+                  update.type === "license-change";
                 return (
                   <li key={update.id} className={`border-l-2 pl-4 ${flagged ? "border-[var(--color-warning)]" : "border-[var(--color-primary)]"}`}>
                     <div className="flex flex-wrap items-center gap-2 text-xs text-[var(--color-text-secondary)]">

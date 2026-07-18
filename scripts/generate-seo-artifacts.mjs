@@ -80,7 +80,7 @@ function generateUpdatesAtomFeed(feedUpdates = updatesData.updates, { fileName =
 const FEED_CATEGORIES = ["agents", "orchestration", "governance", "assistants", "platforms"];
 
 function generateCategoryFeeds() {
-  return FEED_CATEGORIES.map((category) => {
+  const categoryFeeds = FEED_CATEGORIES.map((category) => {
     const fileName = `updates-${category}.xml`;
     const feedUpdates = updatesData.updates.filter((update) => update.category === category);
     return {
@@ -88,6 +88,18 @@ function generateCategoryFeeds() {
       content: generateUpdatesAtomFeed(feedUpdates, { fileName, titleSuffix: ` — ${category}` }),
     };
   });
+
+  // Dedicated license-transition feed (milestone 5): the alert channel for the
+  // relicensing/rug-pull events a procurement team most needs to hear about.
+  const licenseFeed = {
+    fileName: "updates-licenses.xml",
+    content: generateUpdatesAtomFeed(
+      updatesData.updates.filter((update) => update.type === "license-change"),
+      { fileName: "updates-licenses.xml", titleSuffix: " — license changes" },
+    ),
+  };
+
+  return [...categoryFeeds, licenseFeed];
 }
 
 // ── EU AI Act deadline calendar (iCalendar, RFC 5545) ─────────────────────────
@@ -332,6 +344,7 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 - Consumption guide: ${siteUrl}/data/
 - Every per-tool page: ${siteUrl}/sitemap.xml
 - Updates feed (Atom): ${siteUrl}/updates.xml (per category: ${siteUrl}/updates-<category>.xml)
+- License-change feed (Atom): ${siteUrl}/updates-licenses.xml — relicensing events only
 - EU AI Act deadline calendar (ICS): ${siteUrl}/eu-ai-act-deadlines.ics
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 
