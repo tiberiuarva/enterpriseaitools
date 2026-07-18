@@ -4,10 +4,12 @@ import {
   Bot,
   BriefcaseBusiness,
   CalendarClock,
+  Database,
   GitBranch,
   GitCompare,
   Landmark,
   Layers3,
+  Scale,
   ShieldCheck,
 } from "lucide-react";
 import { CategoryCard } from "@/components/category-card";
@@ -273,6 +275,51 @@ export default function Home() {
               Open comparisons
               <ArrowUpRight size={16} aria-hidden="true" />
             </a>
+          </div>
+        </section>
+
+        <section aria-labelledby="trust-tiles-heading" className="card-flat p-6">
+          <h2 id="trust-tiles-heading" className="text-h2 text-[var(--color-text-primary)]">
+            Built to be relied on
+          </h2>
+          <p className="mt-2 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">
+            Every claim links to a primary source, nothing here can be bought, and the whole dataset is yours to take.
+          </p>
+          <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {[
+              {
+                href: "/eu-ai-act",
+                icon: Scale,
+                title: "EU AI Act tracker",
+                body: "Which obligations apply to your role and risk tier, from when — with a deadline calendar you can subscribe to.",
+              },
+              {
+                href: "/data",
+                icon: Database,
+                title: "Open data & API",
+                body: "The full dataset as versioned JSON, Atom feeds, and live README badges. No key, no tracking.",
+              },
+              {
+                href: "/impartiality",
+                icon: ShieldCheck,
+                title: "Nothing here can be bought",
+                body: "No listing fees, no sponsored placement, no paid badges. Corrections are settled by sources, not spend.",
+              },
+            ].map(({ href, icon: Icon, title, body }) => (
+              <a
+                key={href}
+                href={withBasePath(href)}
+                className="card group block p-5 transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+              >
+                <div className="flex items-center gap-2">
+                  <Icon size={18} aria-hidden="true" className="shrink-0 text-[var(--color-text-secondary)]" />
+                  <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)]">
+                    {title}
+                  </h3>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{body}</p>
+              </a>
+            ))}
           </div>
         </section>
 

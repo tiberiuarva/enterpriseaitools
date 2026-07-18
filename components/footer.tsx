@@ -17,10 +17,12 @@ const columns: FooterColumn[] = [
     ],
   },
   {
-    title: "Compare",
+    title: "Decide",
     links: [
       { href: "/tools/compare", label: "Compare tools" },
       { href: "/evaluate", label: "Help me evaluate" },
+      { href: "/eu-ai-act", label: "EU AI Act tracker" },
+      { href: "/eu-ai-act-deadlines.ics", label: "Deadline calendar (.ics)" },
     ],
   },
   {
@@ -30,18 +32,21 @@ const columns: FooterColumn[] = [
       { href: "/updates#auto-detected", label: "Auto-detected changes" },
       { href: "/updates.xml", label: "Atom feed" },
       { href: "/updates-licenses.xml", label: "License-change feed" },
-      { href: "/data", label: "Open data & API" },
-      { href: "/eu-ai-act", label: "EU AI Act tracker" },
-      { href: "/eu-ai-act-deadlines.ics", label: "EU AI Act deadline calendar" },
     ],
   },
   {
-    title: "About",
+    title: "Data",
     links: [
-      { href: "/about", label: "About the project" },
+      { href: "/data", label: "Open data & API" },
       { href: "/methodology", label: "Methodology" },
       { href: "/inclusion-criteria", label: "Inclusion criteria" },
       { href: "/impartiality", label: "Impartiality — no paid placement" },
+    ],
+  },
+  {
+    title: "Project",
+    links: [
+      { href: "/about", label: "About the project" },
       { href: githubRepoUrl, label: "GitHub repository", external: true },
       { href: githubStargazersUrl, label: "Star on GitHub", external: true },
     ],
@@ -56,7 +61,7 @@ export function Footer({ lastUpdated }: FooterProps) {
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {columns.map((column) => (
             <nav key={column.title} aria-labelledby={`footer-${column.title.toLowerCase()}`}>
               <h2
