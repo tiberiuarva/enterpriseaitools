@@ -3,7 +3,7 @@ import { CalendarClock, ExternalLink } from "lucide-react";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
 import { lastUpdated } from "@/lib/data";
-import { formatUtcDate, type EuAiActMilestone } from "@/lib/eu-ai-act";
+import { EU_AI_ACT_OFFICIAL_URL, formatUtcDate, type EuAiActMilestone } from "@/lib/eu-ai-act";
 import milestoneData from "@/data/eu-ai-act.json";
 import {
   euAiActObligations,
@@ -133,6 +133,19 @@ export default function EuAiActPage() {
             <strong className="text-[var(--color-text-primary)]">Not legal advice.</strong> This page is source-backed
             information to orient a compliance review. Obligations depend on how your organisation develops or deploys a
             system; confirm against the official text and your counsel.
+          </p>
+          <p className="mt-3 text-xs text-[var(--color-text-secondary)]">
+            Canonical starting point at the source:{" "}
+            <a
+              href={EU_AI_ACT_OFFICIAL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-[var(--color-primary)] hover:underline"
+            >
+              the European Commission&apos;s AI regulatory framework overview
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+            .
           </p>
         </section>
 
