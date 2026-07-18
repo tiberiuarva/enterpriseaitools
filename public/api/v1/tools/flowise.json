@@ -16,6 +16,17 @@
       "Wide model/provider connectivity"
     ],
     "license": "Apache 2.0",
+    "licenseHistory": [
+      {
+        "date": "2023-09-08",
+        "fromLicense": "MIT",
+        "toLicense": "Apache 2.0",
+        "direction": "restrictive",
+        "sourceUrl": "https://github.com/FlowiseAI/Flowise/commits/main/LICENSE.md",
+        "sourceTitle": "FlowiseAI/Flowise LICENSE.md commit history",
+        "notes": "Both licenses are permissive and OSI-approved — a minor technical tightening (NOTICE preservation, explicit patent grant), not a source-available shift."
+      }
+    ],
     "githubUrl": "https://github.com/FlowiseAI/Flowise",
     "githubStars": 54516,
     "version": "3.1.3",

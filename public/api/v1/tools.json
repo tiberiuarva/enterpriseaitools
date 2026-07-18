@@ -868,6 +868,17 @@
         "Modern DX"
       ],
       "license": "Apache 2.0 core + EE paths",
+      "licenseHistory": [
+        {
+          "date": "2026-03-03",
+          "fromLicense": "Apache 2.0",
+          "toLicense": "Apache 2.0 core + EE paths",
+          "direction": "restrictive",
+          "sourceUrl": "https://github.com/mastra-ai/mastra/pull/13163",
+          "sourceTitle": "mastra PR #13163: auth core, server RBAC, and adapter permission enforcement",
+          "notes": "Introduced ee/ directories under the source-available Mastra Enterprise License; the core remains Apache 2.0. Origin of the current dual-license state."
+        }
+      ],
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 26033,
       "version": "1.50.0",
@@ -1522,6 +1533,17 @@
       ],
       "license": "Sustainable Use License",
       "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
+      "licenseHistory": [
+        {
+          "date": "2022-03-17",
+          "fromLicense": "Apache 2.0 with Commons Clause",
+          "toLicense": "Sustainable Use License",
+          "direction": "open",
+          "sourceUrl": "https://blog.n8n.io/announcing-new-sustainable-use-license/",
+          "sourceTitle": "n8n: Announcing the new Sustainable Use License",
+          "notes": "Replaced the Commons Clause restriction with n8n's fair-code Sustainable Use License, explicitly permitting paid consulting/support. Both states are source-available, not OSI-approved."
+        }
+      ],
       "githubUrl": "https://github.com/n8n-io/n8n",
       "githubStars": 196010,
       "version": "2.29.10",
@@ -1861,6 +1883,17 @@
         "Wide model/provider connectivity"
       ],
       "license": "Apache 2.0",
+      "licenseHistory": [
+        {
+          "date": "2023-09-08",
+          "fromLicense": "MIT",
+          "toLicense": "Apache 2.0",
+          "direction": "restrictive",
+          "sourceUrl": "https://github.com/FlowiseAI/Flowise/commits/main/LICENSE.md",
+          "sourceTitle": "FlowiseAI/Flowise LICENSE.md commit history",
+          "notes": "Both licenses are permissive and OSI-approved — a minor technical tightening (NOTICE preservation, explicit patent grant), not a source-available shift."
+        }
+      ],
       "githubUrl": "https://github.com/FlowiseAI/Flowise",
       "githubStars": 54516,
       "version": "3.1.3",

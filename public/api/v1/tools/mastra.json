@@ -16,6 +16,17 @@
       "Modern DX"
     ],
     "license": "Apache 2.0 core + EE paths",
+    "licenseHistory": [
+      {
+        "date": "2026-03-03",
+        "fromLicense": "Apache 2.0",
+        "toLicense": "Apache 2.0 core + EE paths",
+        "direction": "restrictive",
+        "sourceUrl": "https://github.com/mastra-ai/mastra/pull/13163",
+        "sourceTitle": "mastra PR #13163: auth core, server RBAC, and adapter permission enforcement",
+        "notes": "Introduced ee/ directories under the source-available Mastra Enterprise License; the core remains Apache 2.0. Origin of the current dual-license state."
+      }
+    ],
     "githubUrl": "https://github.com/mastra-ai/mastra",
     "githubStars": 26033,
     "version": "1.50.0",

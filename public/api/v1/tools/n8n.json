@@ -17,6 +17,17 @@
     ],
     "license": "Sustainable Use License",
     "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
+    "licenseHistory": [
+      {
+        "date": "2022-03-17",
+        "fromLicense": "Apache 2.0 with Commons Clause",
+        "toLicense": "Sustainable Use License",
+        "direction": "open",
+        "sourceUrl": "https://blog.n8n.io/announcing-new-sustainable-use-license/",
+        "sourceTitle": "n8n: Announcing the new Sustainable Use License",
+        "notes": "Replaced the Commons Clause restriction with n8n's fair-code Sustainable Use License, explicitly permitting paid consulting/support. Both states are source-available, not OSI-approved."
+      }
+    ],
     "githubUrl": "https://github.com/n8n-io/n8n",
     "githubStars": 196010,
     "version": "2.29.10",
