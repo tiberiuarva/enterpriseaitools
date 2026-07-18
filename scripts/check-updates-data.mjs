@@ -80,6 +80,51 @@ if (Array.isArray(updatesData.updates) && Array.isArray(toolsData.tools)) {
   }
 }
 
+// License-change pairing (M5): every `license-change` update must correspond
+// to a licenseHistory event on that tool (same date + sourceUrl), and every
+// licenseHistory event inside the feed's operational window (>= the oldest
+// update entry) must have a matching `license-change` update. Pre-window
+// backfill events are licenseHistory-only by policy (see
+// docs/research/license-history-backfill-2026-07-17.md).
+if (Array.isArray(updatesData.updates) && Array.isArray(toolsData.tools)) {
+  const oldestUpdateDate = updatesData.updates.reduce((oldest, update) => {
+    const updateDate = update?.date;
+    return typeof updateDate === "string" && (oldest === "" || updateDate < oldest) ? updateDate : oldest;
+  }, "");
+  const toolsById = new Map(toolsData.tools.map((tool) => [tool.id, tool]));
+
+  for (const update of updatesData.updates) {
+    if (update?.type !== "license-change") continue;
+    const tool = toolsById.get(update.toolId);
+    const match = tool?.licenseHistory?.find(
+      (event) => event.date === update.date && event.sourceUrl === update.sourceUrl,
+    );
+    if (!match) {
+      findings.push(
+        `license-change update ${update.id} has no matching licenseHistory event on tool ${update.toolId} (same date + sourceUrl required).`,
+      );
+    }
+  }
+
+  for (const tool of toolsData.tools) {
+    for (const event of tool.licenseHistory ?? []) {
+      if (oldestUpdateDate && event.date < oldestUpdateDate) continue;
+      const match = updatesData.updates.find(
+        (update) =>
+          update?.type === "license-change" &&
+          update.toolId === tool.id &&
+          update.date === event.date &&
+          update.sourceUrl === event.sourceUrl,
+      );
+      if (!match) {
+        findings.push(
+          `licenseHistory event ${tool.id}@${event.date} is inside the feed window (>= ${oldestUpdateDate}) but has no license-change update entry.`,
+        );
+      }
+    }
+  }
+}
+
 if (findings.length > 0) {
   console.error("Updates data check FAILED:");
   for (const finding of findings) {
