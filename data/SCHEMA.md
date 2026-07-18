@@ -73,7 +73,11 @@ the `license` field itself outside the data-correction flow.
 Workflow: a newly detected license change (snapshot diff or research) gets, in
 one PR — the verified `license`/`licenseWarning` correction via the
 data-correction flow, a `licenseHistory` event, and a `license-change` entry in
-`updates.json` (which feeds `updates-licenses.xml`).
+`updates.json` (which feeds `updates-licenses.xml`). The pairing is enforced by
+`scripts/check-updates-data.mjs`; events predating the update feed's
+operational window (the oldest `updates.json` entry) are exempt and stay
+`licenseHistory`-only — see
+`docs/research/license-history-backfill-2026-07-17.md` for that policy.
 
 ### Tool governance object (`tool.governance`)
 
