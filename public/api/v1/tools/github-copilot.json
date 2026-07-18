@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "GitHub/Microsoft",
+    "description": "Coding assistant platform delivered through IDE plugins with individual, business, and enterprise tiers.",
+    "strengths": [
+      "Broad IDE adoption",
+      "Free tier for light usage",
+      "Enterprise controls available"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.github.com/copilot",
+    "websiteUrl": "https://github.com/features/copilot",
+    "pricing": "Individual $10/mo; Business $39/user/mo; Enterprise custom.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "assistants",
+      "coding",
+      "copilot"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Copilot icon asset from the GitHub brand toolkit (`GitHub_Logos.zip` -> `Copilot_Icon_Black.svg`). GitHub changed standalone Copilot logo treatments in 2025, but this icon remains in the official pack and is used here as the compact service mark.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Safe default for enterprises standardising AI coding help broadly, especially when GitHub, VS Code, and policy controls already sit in the delivery path.",
+    "cloudBadgeReviewedAt": "2026-05-08",
+    "logoUrl": "/logos/github-copilot.svg",
+    "logoSourceUrl": "https://brand.github.com/brand-identity/copilot",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "EU data residency on GitHub Enterprise Cloud (US/EU only, surcharge); Business/Individual default US.",
+        "sourceUrl": "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS via IDE plugins; no self-hosted/on-prem option.",
+        "sourceUrl": "https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Enterprise audit logs cover seat/access/policy and Copilot interactions; audit-log API.",
+        "sourceUrl": "https://docs.github.com/en/enterprise-cloud@latest/admin/monitoring-activity-in-your-enterprise/reviewing-audit-logs-for-your-enterprise/audit-log-events-for-your-enterprise"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "GitHub SOC 2 Type II; Copilot in scope.",
+        "sourceUrl": "https://copilot.github.trust.page/faq"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "GitHub ISO/IEC 27001:2022; Copilot in scope.",
+        "sourceUrl": "https://copilot.github.trust.page/faq"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "GitHub Copilot listed in Microsoft ISO/IEC 42001:2023 scope.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; GitHub/Microsoft ecosystem lock-in.",
+        "sourceUrl": "https://github.com/features/copilot",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

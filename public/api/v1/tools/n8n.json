@@ -1,0 +1,105 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "n8n",
+    "name": "n8n",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "n8n",
+    "description": "Workflow automation platform with strong self-hosting support and broad integration coverage.",
+    "strengths": [
+      "Large integration catalog",
+      "Strong workflow automation ecosystem",
+      "Low-code orchestration builder"
+    ],
+    "license": "Sustainable Use License",
+    "licenseWarning": "n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.",
+    "licenseHistory": [
+      {
+        "date": "2022-03-17",
+        "fromLicense": "Apache 2.0 with Commons Clause",
+        "toLicense": "Sustainable Use License",
+        "direction": "open",
+        "sourceUrl": "https://blog.n8n.io/announcing-new-sustainable-use-license/",
+        "sourceTitle": "n8n: Announcing the new Sustainable Use License",
+        "notes": "Replaced the Commons Clause restriction with n8n's fair-code Sustainable Use License, explicitly permitting paid consulting/support. Both states are source-available, not OSI-approved."
+      }
+    ],
+    "githubUrl": "https://github.com/n8n-io/n8n",
+    "githubStars": 196010,
+    "version": "2.29.10",
+    "docsUrl": "https://docs.n8n.io/",
+    "websiteUrl": "https://n8n.io/",
+    "pricingModel": "freemium",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "automation",
+      "self-hosted",
+      "source-available"
+    ],
+    "logoUrl": "/logos/n8n.svg",
+    "logoKind": "project-logo",
+    "logoSourceUrl": "https://n8n.io/brandguidelines/",
+    "logoNotes": "Official n8n wordmark asset from the n8n brand guidelines download page (`logo-dark.svg`).",
+    "logoReviewedAt": "2026-05-11",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
+    "lastRelease": "2026-07-10",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "n8n Cloud currently EU-only; self-hosted gives customer-controlled residency.",
+        "sourceUrl": "https://n8n.io/security/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted (primary OSS mode), n8n Cloud (EU SaaS), or hybrid.",
+        "sourceUrl": "https://n8n.io/enterprise/",
+        "models": [
+          "self-hosted",
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Execution insights and log streaming; enterprise Cloud adds access logs; no immutable audit log for self-hosted OSS.",
+        "sourceUrl": "https://n8n.io/enterprise/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Annual independent SOC 2 audit; SOC 3 public report; SOC 2 Type II to enterprise customers.",
+        "sourceUrl": "https://n8n.io/security/"
+      },
+      "iso27001": {
+        "status": "no",
+        "detail": "ISO 27001 not held; absent from the n8n security page / Trust Center.",
+        "sourceUrl": "https://n8n.io/security/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Not mentioned in n8n public compliance documentation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Workflow automation tooling, not itself an AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Sustainable Use License (source-available, fair-code, not OSI); EE features under a separate license.",
+        "sourceUrl": "https://github.com/n8n-io/n8n/blob/master/LICENSE.md",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "openai-agents-sdk",
+    "name": "OpenAI Agents SDK",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "OpenAI",
+    "description": "Production successor to Swarm for agentic OpenAI workflows with broader model support.",
+    "strengths": [
+      "Hosted tracing support",
+      "Production successor to Swarm",
+      "Handoffs and tool orchestration"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/openai/openai-agents-python",
+    "githubStars": 27802,
+    "version": "0.18.2",
+    "docsUrl": "https://openai.github.io/openai-agents-python/",
+    "pricingModel": "free",
+    "status": "active",
+    "statusNote": "OpenAI Swarm was replaced by the Agents SDK.",
+    "tags": [
+      "agents",
+      "openai",
+      "sdk"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "OpenAI does not expose a standalone public Agents SDK logo on the official guide page; this uses the owner-controlled OpenAI developer favicon (`/favicon.svg`) as a compact service icon for the SDK surface rather than claiming a separate canonical vendor wordmark.",
+    "logoReviewedAt": "2026-05-15",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
+    "lastRelease": "2026-07-11",
+    "logoUrl": "/logos/openai.svg",
+    "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Library is self-hosted, but built-in tracing sends run data to OpenAI's platform unless disabled.",
+        "sourceUrl": "https://openai.github.io/openai-agents-python/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "pip-installed SDK (self-hosted); API calls go to OpenAI's hosted endpoints.",
+        "sourceUrl": "https://github.com/openai/openai-agents-python",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Hosted tracing logs runs to OpenAI's platform; self-hosted logging is operator-implemented.",
+        "sourceUrl": "https://openai.github.io/openai-agents-python/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://raw.githubusercontent.com/openai/openai-agents-python/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

@@ -15,16 +15,24 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - [AI Governance](https://www.enterpriseai.tools/governance/): guardrails, content safety, policy.
 - [AI Assistants](https://www.enterpriseai.tools/assistants/): coding, productivity, build-your-own.
 - [Weekly updates](https://www.enterpriseai.tools/updates/): high-impact market intelligence + release log.
+- [EU AI Act tracker](https://www.enterpriseai.tools/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (https://www.enterpriseai.tools/eu-ai-act-deadlines.ics).
 - [Help me evaluate](https://www.enterpriseai.tools/evaluate/): guided client-side flow that ranks tools by governance fit.
 - [About](https://www.enterpriseai.tools/about/): project scope, sourcing standards, and contribution rules.
+- [Methodology](https://www.enterpriseai.tools/methodology/): how every claim is sourced and verified.
+- [Inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/): the written rules for what gets listed.
+- [Impartiality](https://www.enterpriseai.tools/impartiality/): the permanent no-paid-placement policy.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](https://www.enterpriseai.tools/llms-full.txt)
-- Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json
-- Platforms dataset (JSON): https://www.enterpriseai.tools/data/platforms.json
-- Updates dataset (JSON): https://www.enterpriseai.tools/data/updates.json
+- Open data API index (versioned JSON): https://www.enterpriseai.tools/api/v1/index.json
+- Tools dataset (JSON): https://www.enterpriseai.tools/api/v1/tools.json (per record: https://www.enterpriseai.tools/api/v1/tools/<id>.json)
+- Platforms dataset (JSON): https://www.enterpriseai.tools/api/v1/platforms.json
+- Updates dataset (JSON): https://www.enterpriseai.tools/api/v1/updates.json
+- Consumption guide: https://www.enterpriseai.tools/data/
 - Every per-tool page: https://www.enterpriseai.tools/sitemap.xml
-- Updates feed (Atom): https://www.enterpriseai.tools/updates.xml
+- Updates feed (Atom): https://www.enterpriseai.tools/updates.xml (per category: https://www.enterpriseai.tools/updates-<category>.xml)
+- License-change feed (Atom): https://www.enterpriseai.tools/updates-licenses.xml — relicensing events only
+- EU AI Act deadline calendar (ICS): https://www.enterpriseai.tools/eu-ai-act-deadlines.ics
 - Source: https://github.com/tiberiuarva/enterpriseaitools
 
 ## Editorial standards

@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "langflow",
+    "name": "LangFlow",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "LangFlow / DataStax",
+    "description": "Visual flow builder for LLM pipelines and agent workflows with self-hosting support.",
+    "strengths": [
+      "Visual workflow canvas",
+      "LangChain ecosystem fit",
+      "API and playground handoff"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/langflow-ai/langflow",
+    "githubStars": 151616,
+    "version": "1.10.2",
+    "docsUrl": "https://docs.langflow.org/",
+    "pricingModel": "free",
+    "status": "active",
+    "statusNote": "DataStax Cloud is shutting down April 9, 2026. Self-hosting remains available.",
+    "tags": [
+      "orchestration",
+      "visual",
+      "self-hosted"
+    ],
+    "logoUrl": "/logos/langflow.png",
+    "logoKind": "project-logo",
+    "logoSourceUrl": "https://www.langflow.org/",
+    "logoNotes": "Official Langflow website logo asset (`/images/logo.png`). No separate brand-guidelines or media-kit page was found at review time, so this remains a homepage-sourced project logo pending a stronger primary source.",
+    "logoReviewedAt": "2026-05-11",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
+    "lastRelease": "2026-07-07",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted gives customer-controlled residency (DataStax cloud shut down 2026-04).",
+        "sourceUrl": "https://docs.datastax.com/en/langflow/faqs.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted (Docker/Kubernetes/local); IBM/DataStax managed cloud deprecated.",
+        "sourceUrl": "https://www.langflow.org/blog/big-news-for-langflow",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No dedicated audit-logging documentation for the self-hosted OSS edition."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "No active managed cloud; self-hosted operators carry their own posture."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "No active managed cloud to certify."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Tooling component; customer-operated."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Visual workflow-builder framework, not an AI model/provider."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/langflow-ai/langflow/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

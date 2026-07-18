@@ -1,0 +1,69 @@
+# Automates the mechanical half of the weekly Radar (the standing operational
+# priority in roadmap/README.md): snapshot the dataset, derive diff events, and
+# open a content PR every week without a human in the loop. The editorial half
+# (source-backed research, license verification, updates.json entries) still
+# happens in the PR via the /radar SOP before merge.
+#
+# Note: PRs opened with the default GITHUB_TOKEN do not trigger the
+# pull_request CI workflow (GitHub prevents recursive workflow runs). Close and
+# reopen the PR — or push any commit to its branch — to run CI, or configure a
+# fine-grained PAT in RADAR_PR_TOKEN to lift the limitation.
+name: Weekly Radar snapshot
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Take weekly snapshot
+        run: npm run snapshot-weekly
+      - name: Derive snapshot diff events
+        run: npm run diff-snapshots
+      - name: Data freshness report
+        id: freshness
+        run: |
+          {
+            echo "report<<EOF"
+            npm run --silent check-data-freshness || true
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Open content PR if anything changed
+        env:
+          GH_TOKEN: ${{ secrets.RADAR_PR_TOKEN || secrets.GITHUB_TOKEN }}
+          FRESHNESS: ${{ steps.freshness.outputs.report }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/; then
+            echo "No dataset drift since the last snapshot — nothing to open."
+            exit 0
+          fi
+          week="$(date -u +%G-%V)"
+          branch="content/${week}-radar-auto"
+          git config user.name "radar-automation"
+          git config user.email "noreply@enterpriseai.tools"
+          git checkout -B "$branch"
+          git add data/snapshots data/snapshot-diffs.json
+          git commit -m "content: weekly Radar snapshot ${week} (automated)"
+          git push -u origin "$branch" --force-with-lease
+          if gh pr view "$branch" >/dev/null 2>&1; then
+            echo "PR already open for $branch"
+            exit 0
+          fi
+          gh pr create \
+            --title "Weekly Radar snapshot ${week} (automated)" \
+            --body "$(printf 'Automated weekly snapshot + derived diff events (mechanical half of the /radar SOP).\n\nBefore merging, complete the editorial half per .claude/commands/radar.md: verify any flagged license/status diffs against upstream sources, add source-backed updates.json entries, refresh stale governance reviews, and run the EU AI Act freshness check.\n\n## Data freshness report\n\n```\n%s\n```\n' "$FRESHNESS")"

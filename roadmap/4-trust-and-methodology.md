@@ -1,6 +1,6 @@
 # Milestone 4 — Published methodology, inclusion criteria, and impartiality
 
-**Status:** [ ] planned
+**Status:** [x] done (shipped 2026-07-17 on `claude/project-milestones-kgn3pf`)
 **Horizon:** 1 — Trust surface & infrastructure
 **Pillars:** Trust through provenance (1)
 **Branch when built:** `milestone/4-trust-and-methodology`
@@ -67,3 +67,17 @@ policy, and the human accountability behind the data.
 Depends on nothing technical; can run in parallel with 2 and 3. Feeds 6 and 8 (their
 verdict/score pages link back to this methodology) and 10 (contribution pipeline relies on
 the published inclusion/correction rules).
+
+## Outcome (shipped 2026-07-17)
+
+- **Three dated, footer-linked pages:** `/methodology` (source-backed rules, license
+  verification against upstream LICENSE files, freshness cadence + 60-day stale
+  threshold, canonical naming, auditability, and a committed slot for future verdict/
+  score criteria), `/inclusion-criteria` (objective listing / status-labelling / removal
+  rules and the proposal path), `/impartiality` (permanent no-pay-to-play policy,
+  funding statement, zero-tracking stance, accountability byline, and the
+  sources-not-spend correction path).
+- **/about upgraded** with a prominent three-card trust block linking all three pages.
+- All pages carry canonical metadata via `lib/metadata.ts`, Breadcrumb + WebPage
+  JSON-LD, llms.txt entries, and SEO route-inventory contracts; `check-seo-readiness`
+  green.

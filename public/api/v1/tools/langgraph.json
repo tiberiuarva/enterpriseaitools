@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "langgraph",
+    "name": "LangGraph",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "LangChain",
+    "description": "Stateful agent orchestration framework with graph-based execution and durable workflows.",
+    "strengths": [
+      "Popular graph abstraction",
+      "Strong agent workflow patterns",
+      "LangChain ecosystem fit"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/langchain-ai/langgraph",
+    "githubStars": 37008,
+    "version": "1.2.9",
+    "docsUrl": "https://langchain-ai.github.io/langgraph/",
+    "pricingModel": "freemium",
+    "status": "active",
+    "tags": [
+      "agents",
+      "graph"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official LangGraph logo asset from the owner-controlled langchain-ai/langgraph repo (`.github/images/logo-light.svg`).",
+    "logoReviewedAt": "2026-05-13",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
+    "logoUrl": "/logos/langgraph.svg",
+    "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
+    "lastRelease": "2026-07-10",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; operator controls placement (LangSmith cloud has separate terms).",
+        "sourceUrl": "https://github.com/langchain-ai/langgraph"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "OSS library (self-hosted); LangGraph Cloud via LangSmith is an optional SaaS.",
+        "sourceUrl": "https://github.com/langchain-ai/langgraph",
+        "models": [
+          "self-hosted",
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "No built-in audit log; tracing via LangSmith (separate service); operator implements logging.",
+        "sourceUrl": "https://langchain-ai.github.io/langgraph/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://raw.githubusercontent.com/langchain-ai/langgraph/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

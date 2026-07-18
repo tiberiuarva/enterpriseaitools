@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd, buildAboutPageJsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
-import { githubRepoUrl } from "@/lib/site";
+import { githubRepoUrl, withBasePath } from "@/lib/site";
 import { lastUpdated } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 
@@ -143,10 +143,10 @@ const outOfScope = [
 ];
 
 const contributionSteps = [
-  "To add or edit a tool: update data/tools.json using the schema in data/SCHEMA.md.",
-  "To add a market update: edit data/updates.json and include the source URL plus a factual summary.",
-  "To report an error or request a tool: open an issue with the source links that support the correction.",
-  "Keep claims precise. If a pricing tier, compliance statement, or support matrix item is ambiguous, call it out explicitly instead of guessing.",
+  "To propose a tool: use the 'Propose a tool' issue template (or a PR against data/tools.json per data/SCHEMA.md) — every field needs a primary source.",
+  "To report an error: use the 'Data correction' issue template with the source that supports the correction.",
+  "To dispute a license label: use the 'License correction' template — license fields are never edited directly.",
+  "CI validates schema, provenance, and license gates on every PR before human review; see CONTRIBUTING.md in the repo for the full rules.",
 ];
 
 function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro: string }) {
@@ -226,6 +226,35 @@ export default function AboutPage() {
                 <li>Do not treat unresolved claims as facts to make the grid look complete.</li>
               </ul>
             </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {[
+              {
+                href: "/impartiality",
+                title: "Nothing here can be bought",
+                body: "No listing fees, no sponsored placement, no paid badges, no vendor influence — the permanent policy, in writing.",
+              },
+              {
+                href: "/methodology",
+                title: "Methodology",
+                body: "How every claim is sourced, how licenses are verified against upstream LICENSE files, and how freshness is enforced.",
+              },
+              {
+                href: "/inclusion-criteria",
+                title: "Inclusion criteria",
+                body: "The objective rules for what gets listed, how status is labelled, and when a record is removed.",
+              },
+            ].map((card) => (
+              <a
+                key={card.href}
+                href={withBasePath(card.href)}
+                className="card block p-5 transition hover:border-[var(--color-primary)]"
+              >
+                <h3 className="text-sm font-semibold text-[var(--color-primary)]">{card.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{card.body}</p>
+              </a>
+            ))}
           </div>
 
           <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -355,7 +384,7 @@ export default function AboutPage() {
               <SectionHeading
                 eyebrow="Standards"
                 title="The page is only useful if the dataset stays defensible"
-                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed."
+                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed. The full, dated versions live on the methodology, inclusion-criteria, and impartiality pages."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div className="card p-5">

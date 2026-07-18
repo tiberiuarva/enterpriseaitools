@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Inclusion criteria
+    url: https://www.enterpriseai.tools/inclusion-criteria/
+    about: The written rules for what gets listed — read before proposing a tool.
+  - name: Impartiality policy
+    url: https://www.enterpriseai.tools/impartiality/
+    about: No paid placement, ever. How corrections are resolved.

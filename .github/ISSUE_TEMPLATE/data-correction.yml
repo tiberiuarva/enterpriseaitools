@@ -1,0 +1,42 @@
+name: Data correction
+description: Report a factual error in a tracked record. Corrections are resolved by sources, not by who asks.
+title: "Data correction: <tool> — <field>"
+labels: ["data-correction", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections are resolved in public by comparing sources — see the [impartiality policy](https://www.enterpriseai.tools/impartiality/). For license labels use the **License correction** template instead.
+  - type: input
+    id: tool
+    attributes:
+      label: Tool or platform id
+      description: The `id` from the record (e.g. `crewai`), visible in the page URL.
+    validations:
+      required: true
+  - type: input
+    id: field
+    attributes:
+      label: Field that is wrong
+      description: e.g. `governance.soc2`, `version`, `status`, `docsUrl`
+    validations:
+      required: true
+  - type: textarea
+    id: current-vs-correct
+    attributes:
+      label: Current value vs. correct value
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source URL backing the correction
+      description: Official docs, repository, or vendor announcement. Must resolve.
+    validations:
+      required: true
+  - type: checkboxes
+    id: affiliation
+    attributes:
+      label: Affiliation disclosure
+      options:
+        - label: I represent this tool's vendor (verified-affiliation corrections are prioritised; the evidence bar is the same)

@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "amazon-q-developer",
+    "name": "Amazon Q Developer",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.",
+    "strengths": [
+      "AWS-native development fit",
+      "Free tier",
+      "Enterprise plans available"
+    ],
+    "clouds": [
+      "aws"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+    "websiteUrl": "https://aws.amazon.com/q/developer/",
+    "pricing": "$19/user/mo Pro; $39/user/mo Pro+.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "assistants",
+      "coding",
+      "aws"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows.",
+    "logoUrl": "/logos/amazon-q.svg",
+    "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Pro tier stores in the profile region; free tier defaults US East; EU inference kept in EU.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/data-storage.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS via IDE plugin / AWS console; no self-hosted option.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "All Pro API calls logged via CloudTrail; configurable S3 delivery.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/logging-using-cloudtrail.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Amazon Q Developer in scope for AWS SOC 1/2/3.",
+        "sourceUrl": "https://aws.amazon.com/compliance/services-in-scope/SOC/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Amazon Q Developer ISO/IEC 27001:2022 certified.",
+        "sourceUrl": "https://aws.amazon.com/compliance/iso-certified/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "AWS ISO 42001 scope names Q Business/Bedrock/Textract/Transcribe; Q Developer not explicitly listed."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; AWS toolchain lock-in.",
+        "sourceUrl": "https://aws.amazon.com/q/developer/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

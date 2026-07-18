@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
+  <title>enterpriseai.tools weekly updates — assistants</title>
+  <updated>2026-07-11T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-25-01</id>
+    <title>GitHub Copilot expands model-training use of interaction data</title>
+    <updated>2026-03-25T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-25-01" />
+    <summary>GitHub announced that, from April 24, interaction data from Copilot Free, Pro, and Pro+ users will be used for model improvement unless users opt out, making data-governance review more important for enterprises.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/</id>
+      <title>Updates to GitHub Copilot interaction data usage policy</title>
+      <link href="https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/" />
+    </source>
+  </entry>
+</feed>

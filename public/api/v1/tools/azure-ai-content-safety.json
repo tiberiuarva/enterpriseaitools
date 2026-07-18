@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "azure-ai-content-safety",
+    "name": "Azure AI Content Safety",
+    "category": "governance",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Content moderation and safety service with configurable severity scoring and on-prem options.",
+    "strengths": [
+      "On-premises containers",
+      "Configurable severity scoring",
+      "Azure SDK integration"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/azure/ai-services/content-safety/overview",
+    "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/",
+    "pricing": "Pay-per-text-unit with free tier.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "governance",
+      "azure",
+      "safety"
+    ],
+    "logoUrl": "/logos/azure-ai-content-safety.svg",
+    "logoKind": "service-icon",
+    "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+    "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+    "logoReviewedAt": "2026-04-19",
+    "practitionerNote": "Useful when teams already run on Azure and need turnkey moderation and safety classifiers, but it is narrower than a full policy/governance control plane.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Data processed/stored in the selected Azure region (22+ regions); on-prem container option.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/content-safety/data-privacy"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Primary SaaS via Azure API; Docker container for on-prem/disconnected.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+        "models": [
+          "saas",
+          "on-prem"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Azure Monitor / Activity Log cover API calls; no native per-decision content audit log documented.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "In-scope Azure AI service under SOC 2 Type 2.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "In-scope under Azure ISO/IEC 27001:2022.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Not confirmed in Microsoft ISO 42001 scope for Content Safety as of 2026-05."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Safety component that helps operators comply; not itself a high-risk AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Azure SaaS; vendor lock-in to Azure safety APIs.",
+        "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

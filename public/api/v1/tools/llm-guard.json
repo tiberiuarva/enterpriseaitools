@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "llm-guard",
+    "name": "LLM Guard",
+    "category": "governance",
+    "type": "opensource",
+    "vendor": "Palo Alto Networks (Protect AI)",
+    "description": "Open source safety filtering toolkit whose development has slowed following acquisition activity.",
+    "strengths": [
+      "Prompt/output scanning",
+      "PII and toxicity detectors",
+      "Useful safety primitives"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/protectai/llm-guard",
+    "githubStars": 3163,
+    "docsUrl": "https://protectai.github.io/llm-guard/",
+    "pricingModel": "free",
+    "status": "maintenance",
+    "statusNote": "Development slowed significantly post acquisition. Last meaningful commit noted as December 2025 in the guide.",
+    "tags": [
+      "governance",
+      "opensource",
+      "maintenance"
+    ],
+    "version": "0.3.16",
+    "logoKind": "project-logo",
+    "logoNotes": "Official LLM Guard docs-site logo asset from the owner-controlled Protect AI project docs (`assets/logo.png`), post-acquisition.",
+    "logoReviewedAt": "2026-05-13",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline.",
+    "logoUrl": "/logos/llm-guard.png",
+    "logoSourceUrl": "https://protectai.github.io/llm-guard/",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; data stays on operator infrastructure.",
+        "sourceUrl": "https://github.com/protectai/llm-guard"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Open-source Python library; maintenance mode, no managed service.",
+        "sourceUrl": "https://protectai.github.io/llm-guard/",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "not-applicable",
+        "detail": "No built-in audit log in the OSS library."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; certification applies to the operator."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; applies to the operator's ISMS."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; applies to the operator."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "OSS safety-filtering library; not itself an AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive; note maintenance-mode operational risk.",
+        "sourceUrl": "https://github.com/protectai/llm-guard/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

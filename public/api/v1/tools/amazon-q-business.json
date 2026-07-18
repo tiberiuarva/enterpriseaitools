@@ -1,0 +1,87 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "amazon-q-business",
+    "name": "Amazon Q Business",
+    "category": "assistants",
+    "subcategory": "productivity",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "Enterprise business assistant with many data connectors and the lowest entry pricing in this segment.",
+    "strengths": [
+      "40+ data connectors",
+      "Low entry price",
+      "Standalone business assistant"
+    ],
+    "clouds": [
+      "aws"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html",
+    "websiteUrl": "https://aws.amazon.com/q/business/",
+    "pricing": "$20/user/mo Pro, $3/user/mo Lite entry.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "assistants",
+      "productivity",
+      "aws"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout.",
+    "logoUrl": "/logos/amazon-q.svg",
+    "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Primary-region storage; cross-region inference stays within geography; in-country needs AWS Support.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS on AWS with 40+ connectors; no self-hosted option.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "CloudTrail integration for all Q Business (and Q Apps) API calls.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/logging-qapps-using-cloudtrail.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Amazon Q Business in scope for AWS SOC 1/2/3.",
+        "sourceUrl": "https://aws.amazon.com/compliance/services-in-scope/SOC/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Amazon Q Business ISO/IEC 27001:2022 certified.",
+        "sourceUrl": "https://aws.amazon.com/compliance/iso-certified/"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Amazon Q Business listed in AWS ISO 42001 scope.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/compliance-validation.html"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; AWS ecosystem lock-in.",
+        "sourceUrl": "https://aws.amazon.com/q/business/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

@@ -35,7 +35,11 @@ construction. This is the milestone that converts a strong dataset into market a
 - **The weekly Radar as a first-class subscribable feed** (RSS/Atom from milestone 2),
   archived on-site, generated from the weekly diff — the "reason to return" packaged for
   distribution. No email list required; if a newsletter ever exists it is RSS-mirrored and
-  untracked.
+  untracked. *2026-07-17 audit note:* once the snapshot cadence is automated (see the
+  standing operational priority in `README.md`), upgrade this to a **daily** mechanical
+  diff digest in the Changelog Nightly model — generated entirely from data at zero
+  editorial cost, it is the only honest daily-cadence artifact this platform can sustain
+  and the closest thing to a daily-habit product the guardrails allow.
 - **A periodic flagship "State of Enterprise AI (tooling)" report** — a twice-yearly,
   source-backed synthesis (the heavyweight complement to the always-on data, exactly the
   Tech Radar two-cadence model): notable license changes, deprecations, new entrants,

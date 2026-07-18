@@ -1,0 +1,84 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "cursor",
+    "name": "Cursor",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "commercial",
+    "vendor": "Anysphere",
+    "description": "Standalone AI coding IDE with rapid enterprise growth and credit-based pricing controversy.",
+    "strengths": [
+      "Strong adoption",
+      "Standalone IDE UX",
+      "High-end coding focus"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://cursor.com/",
+    "websiteUrl": "https://cursor.com/",
+    "pricing": "$20 Pro; $60 Pro+; $200 Ultra.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Switched to credit-based pricing in June 2025, causing backlash.",
+    "tags": [
+      "assistants",
+      "coding",
+      "cursor"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Cursor favicon/icon asset from the owner-controlled site (`/marketing-static/favicon.svg`). Checked-in copy is a normalized local SVG variant for site use (namespaced ids / title) rather than a byte-identical mirror.",
+    "logoReviewedAt": "2026-05-14",
+    "practitionerNote": "Strong for fast-moving product teams that optimize for developer speed, though central governance and cost predictability need more scrutiny than incumbent platform copilots.",
+    "cloudBadgeReviewedAt": "2026-05-08",
+    "logoUrl": "/logos/cursor.svg",
+    "logoSourceUrl": "https://cursor.com/",
+    "governance": {
+      "dataResidency": {
+        "status": "no",
+        "detail": "No data-residency options documented; no EU residency option found.",
+        "sourceUrl": "https://cursor.com/security"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Standalone SaaS IDE; Privacy Mode (zero retention); MDM supported; no self-hosted LLM in standard tiers.",
+        "sourceUrl": "https://cursor.com/security",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Enterprise audit logs (admin/security/auth) with SIEM streaming (Splunk/Datadog/S3).",
+        "sourceUrl": "https://cursor.com/docs/enterprise/compliance-and-monitoring"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "SOC 2 Type II available on request via trust.cursor.com.",
+        "sourceUrl": "https://cursor.com/security"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Listed by some secondary sources; no primary Anysphere certificate confirmed."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 certification found for Cursor/Anysphere."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape.",
+        "sourceUrl": "https://cursor.com/",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

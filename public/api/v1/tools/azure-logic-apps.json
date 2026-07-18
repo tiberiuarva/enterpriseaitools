@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "azure-logic-apps",
+    "name": "Azure Logic Apps",
+    "category": "orchestration",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "iPaaS workflow automation service with AI-enhanced orchestration and broad connector coverage.",
+    "strengths": [
+      "1,400+ connectors",
+      "Strong Azure integration",
+      "Flexible hosting modes"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/azure/logic-apps/",
+    "websiteUrl": "https://azure.microsoft.com/en-us/products/logic-apps/",
+    "pricing": "Pay-per-action or Standard hosting.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "azure",
+      "workflow"
+    ],
+    "logoUrl": "/logos/azure-logic-apps.svg",
+    "logoKind": "service-icon",
+    "logoSourceUrl": "https://learn.microsoft.com/en-us/azure/architecture/icons/",
+    "logoNotes": "Official Microsoft Azure architecture/service icon from Azure_Public_Service_Icons_V23.",
+    "logoReviewedAt": "2026-04-19",
+    "practitionerNote": "Best when the core problem is governed enterprise workflow automation with Azure connectors, not frontier agent behaviour or open-ended autonomy.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Standard/ASE v3 keep data in-region; Consumption uses paired-region replication.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Consumption (multi-tenant), Standard single-tenant, ASE v3, and Hybrid (on-prem via Container Apps).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/logic-apps/logic-apps-overview",
+        "models": [
+          "saas",
+          "on-prem",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Run/trigger history and diagnostics to Azure Monitor / Log Analytics.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/logic-apps/monitor-logic-apps"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "In-scope Azure service under SOC 2 Type 2.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "In-scope Azure service under ISO/IEC 27001:2022.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "partial",
+        "detail": "Microsoft's ISO 42001 scope names Copilot products and Foundry; Logic Apps is not individually listed.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "General-purpose workflow automation, not an AI system; obligations depend on integrated components."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Microsoft service; no source access.",
+        "sourceUrl": "https://azure.microsoft.com/en-us/products/logic-apps/",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

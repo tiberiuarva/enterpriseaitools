@@ -1,0 +1,91 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "dify",
+    "name": "Dify",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "Dify",
+    "description": "Application development and workflow platform for LLM apps with plugin and enterprise features.",
+    "strengths": [
+      "App + workflow surface in one stack",
+      "Built-in BaaS-style app publishing",
+      "Plugin architecture"
+    ],
+    "license": "Modified Apache 2.0",
+    "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
+    "githubUrl": "https://github.com/langgenius/dify",
+    "githubStars": 148466,
+    "version": "1.15.0",
+    "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
+    "pricingModel": "freemium",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "self-hosted",
+      "license-caution"
+    ],
+    "logoUrl": "/logos/dify.svg",
+    "logoKind": "project-logo",
+    "logoSourceUrl": "https://docs.dify.ai/en/resources/about-dify/dify-brand-guidelines",
+    "logoNotes": "Official Dify docs/brand-guidelines logo asset (`d05cfc6ebe48f725d171dc71c64a5d16.svg`) from the owner-controlled docs site.",
+    "logoReviewedAt": "2026-05-12",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely.",
+    "lastRelease": "2026-06-25",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Self-hosted is customer-controlled; Dify Cloud region not publicly documented.",
+        "sourceUrl": "https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Docker/Kubernetes self-hosted, Dify Cloud SaaS, or enterprise on-prem.",
+        "sourceUrl": "https://docs.dify.ai/en/getting-started/introduction",
+        "models": [
+          "self-hosted",
+          "saas",
+          "on-prem"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No dedicated audit-log documentation confirmed on public Dify docs."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "SOC 2 Type II (Sensiba), second consecutive year.",
+        "sourceUrl": "https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO 27001:2022 (Johanson), second consecutive year.",
+        "sourceUrl": "https://dify.ai/blog/dify-achieves-soc-2-iso-27001-gdpr-compliance-for-the-second-year-running"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Not mentioned in Dify's public compliance documentation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Application/workflow platform tooling; deployer carries obligations for systems built with it."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Modified Apache-2.0 — adds multi-tenant and branding restrictions, outside OSI Apache-2.0.",
+        "sourceUrl": "https://github.com/langgenius/dify/blob/main/LICENSE",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

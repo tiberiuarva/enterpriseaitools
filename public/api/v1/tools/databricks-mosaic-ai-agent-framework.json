@@ -1,0 +1,93 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "databricks-mosaic-ai-agent-framework",
+    "name": "Databricks Mosaic AI Agent Framework",
+    "category": "agents",
+    "type": "vendor",
+    "vendor": "Databricks",
+    "description": "Databricks-native agent stack combining managed tools, MCP connectivity, retrieval, and MLflow-backed evaluation.",
+    "strengths": [
+      "Managed MCP servers for Databricks data",
+      "Vector Search and Unity Catalog integration",
+      "MLflow tracing, evaluation, and monitoring"
+    ],
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.databricks.com/aws/en/agents/gen-ai-capabilities",
+    "websiteUrl": "https://www.databricks.com/product/ai",
+    "pricing": "Databricks platform consumption; feature-specific pricing depends on serving, storage, and compute.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "databricks",
+      "mcp",
+      "mlflow",
+      "managed"
+    ],
+    "logoKind": "official-vendor",
+    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while these specific product pages do not expose distinct standalone product marks.",
+    "logoReviewedAt": "2026-05-24",
+    "logoUrl": "/logos/databricks.png",
+    "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
+    "practitionerNote": "Best fit when agent delivery needs to stay close to Databricks-native data, governed tools, and evaluation workflows rather than a general-purpose app stack.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Databricks Geos enforce per-region residency; data not stored outside the workspace Geo.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/resources/databricks-geos"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed Databricks platform on AWS/Azure/GCP; no standalone self-hosted offering.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/resources/supported-regions",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit log system tables capture hundreds of workspace/account action types.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/admin/account-settings/audit-logs.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Databricks SOC 2 Type II across AWS/Azure/GCP, refreshed three times yearly.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/soc"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO/IEC 27001:2022 certified across all three clouds.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No public ISO 42001 certification listed on the Databricks trust pages as of 2026-05."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer toolset on a data platform; deployer carries obligations for systems built with it."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack.",
+        "sourceUrl": "https://www.databricks.com/product/ai",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

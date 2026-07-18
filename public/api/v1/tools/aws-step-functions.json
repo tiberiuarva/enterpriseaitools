@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "aws-step-functions",
+    "name": "AWS Step Functions",
+    "category": "orchestration",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "Serverless state machine orchestration service for AWS-native workflows and automation.",
+    "strengths": [
+      "AWS service integration",
+      "Serverless execution",
+      "Strong automation fit"
+    ],
+    "clouds": [
+      "aws"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/step-functions/",
+    "websiteUrl": "https://aws.amazon.com/step-functions/",
+    "pricing": "$0.025 per 1K transitions (Standard).",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "aws",
+      "workflow"
+    ],
+    "logoUrl": "/logos/aws-step-functions.svg",
+    "logoKind": "service-icon",
+    "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+    "logoNotes": "Official AWS architecture icon from Icon-package_01302026.",
+    "logoReviewedAt": "2026-04-19",
+    "practitionerNote": "Strong fit for AWS-native production workflows that need explicit state, retries, and operational control rather than a higher-level AI builder UX.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Regional service; executions and state remain in the selected AWS region.",
+        "sourceUrl": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Fully managed serverless SaaS on AWS; no self-hosted option.",
+        "sourceUrl": "https://aws.amazon.com/step-functions/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Native execution history; Express history to CloudWatch; CloudTrail captures API calls.",
+        "sourceUrl": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Explicitly in scope for AWS SOC 1/2/3.",
+        "sourceUrl": "https://aws.amazon.com/compliance/services-in-scope/SOC/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Named in the AWS ISO/IEC 27001:2022 certificate.",
+        "sourceUrl": "https://aws.amazon.com/compliance/iso-certified/"
+      },
+      "iso42001": {
+        "status": "no",
+        "detail": "AWS ISO 42001 scope covers Bedrock/Q Business/Textract/Transcribe only; Step Functions is not AI and not in scope.",
+        "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/aws-achieves-iso-iec-420012023-artificial-intelligence-management-system-accredited-certification/"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Serverless state-machine orchestration, not an AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary AWS service; no source access.",
+        "sourceUrl": "https://aws.amazon.com/step-functions/",
+        "level": "high"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

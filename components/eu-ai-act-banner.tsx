@@ -2,11 +2,8 @@
 
 import { useEffect, useId, useState } from "react";
 import { ArrowRight, CalendarClock } from "lucide-react";
-import {
-  EU_AI_ACT_OFFICIAL_URL,
-  formatUtcDate,
-  getCurrentAndNextMilestones,
-} from "@/lib/eu-ai-act";
+import { formatUtcDate, getCurrentAndNextMilestones } from "@/lib/eu-ai-act";
+import { withBasePath } from "@/lib/site";
 
 function getMsUntilNextUtcDay(now: Date) {
   const nextUtcMidnight = Date.UTC(
@@ -79,11 +76,6 @@ export function EuAiActBanner() {
     ? `${milestoneState.nextMilestone.label} · ${formatUtcDate(milestoneState.nextMilestone.appliesOn)}`
     : "Official milestone date loads after hydration";
 
-  // Link through to the source backing the displayed milestone (e.g. the Digital
-  // Omnibus status page for a tranche with a pending deferral); fall back to the
-  // Commission's framework overview before hydration.
-  const timelineHref = milestoneState?.nextMilestone.sourceUrl ?? EU_AI_ACT_OFFICIAL_URL;
-
   return (
     <aside
       aria-labelledby={bannerLabelId}
@@ -105,14 +97,13 @@ export function EuAiActBanner() {
           </div>
         </div>
 
+        {/* Internal tracker is the destination; official sources are linked
+            from every claim on that page. */}
         <a
-          href={timelineHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={withBasePath("/eu-ai-act")}
           className="inline-flex w-fit shrink-0 items-center gap-1 text-xs font-medium text-[var(--color-text-secondary)] underline-offset-4 transition hover:text-[var(--color-text-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] sm:text-sm"
         >
-          Official timeline
-          <span className="sr-only"> (opens in a new tab)</span>
+          Obligations &amp; deadlines
           <ArrowRight size={14} aria-hidden="true" />
         </a>
       </div>

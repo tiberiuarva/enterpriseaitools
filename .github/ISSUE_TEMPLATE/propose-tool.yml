@@ -1,0 +1,64 @@
+name: Propose a tool
+description: Propose a new tool for the tracker. Every field needs a primary source — see the inclusion criteria.
+title: "Tool proposal: <name>"
+labels: ["tool-proposal", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Listing is decided only by the [inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/) — no fee or relationship influences it. Proposals without primary sources are declined with the failing rule named.
+  - type: input
+    id: name
+    attributes:
+      label: Tool name (canonical, current)
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - agents
+        - orchestration
+        - governance
+        - assistants
+    validations:
+      required: true
+  - type: input
+    id: docs-url
+    attributes:
+      label: Official documentation URL
+      description: Primary source — must resolve.
+    validations:
+      required: true
+  - type: input
+    id: repo-url
+    attributes:
+      label: Canonical repository URL (if open source)
+  - type: input
+    id: license
+    attributes:
+      label: License, as stated in the upstream LICENSE file
+      description: Read the actual LICENSE file, not the README or website. Note any non-OSI clause (BUSL, SSPL, Commons Clause, "sustainable use"…).
+    validations:
+      required: true
+  - type: textarea
+    id: enterprise-relevance
+    attributes:
+      label: Why is this enterprise-relevant?
+      description: Production posture, governance surface, or a clear path to one — per the inclusion criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources for the governance posture
+      description: URLs backing what you know of data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001. "Unknown" is acceptable; unsourced "yes" is not.
+    validations:
+      required: true
+  - type: checkboxes
+    id: affiliation
+    attributes:
+      label: Affiliation disclosure
+      options:
+        - label: I am affiliated with this tool's vendor (disclosure — does not affect the decision either way)

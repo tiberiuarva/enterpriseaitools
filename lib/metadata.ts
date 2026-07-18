@@ -15,6 +15,7 @@ export function buildMetadata({
   description = defaultDescription,
   path = "/",
   modifiedTime,
+  atomFeedPath,
 }: {
   title?: string;
   description?: string;
@@ -24,6 +25,9 @@ export function buildMetadata({
    *  The dataset tracks calendar dates only, so the time component is
    *  intentionally zeroed to midnight UTC. */
   modifiedTime?: string;
+  /** Root-relative path of an Atom feed (e.g. "/updates-agents.xml"). Emits a
+   *  rel=alternate discovery link so feed readers find it from the page. */
+  atomFeedPath?: string;
 } = {}): Metadata {
   const normalizedPath = path === "/" ? "/" : `/${path.replace(/^\/+|\/+$/g, "")}/`;
   const canonicalUrl = new URL(normalizedPath, `${siteUrl}/`).toString();
@@ -34,6 +38,7 @@ export function buildMetadata({
     description,
     alternates: {
       canonical: canonicalUrl,
+      ...(atomFeedPath ? { types: { "application/atom+xml": `${siteUrl}${atomFeedPath}` } } : {}),
     },
     openGraph: {
       ...(modifiedTime

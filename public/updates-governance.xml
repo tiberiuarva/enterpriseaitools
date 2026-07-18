@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-governance.xml</id>
+  <title>enterpriseai.tools weekly updates — governance</title>
+  <updated>2026-07-11T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-governance.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-01-02</id>
+    <title>NeMo Guardrails — release</title>
+    <updated>2026-07-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-01-02" />
+    <summary>NeMo Guardrails 0.23.0 expanded IORails with streaming and non-streaming tool-call validation, added a standalone /v1/checks validation endpoint, and improved OpenTelemetry observability for production guardrail pipelines.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, high" />
+    <source>
+      <id>https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0</id>
+      <title>Release v0.23.0 · NVIDIA-NeMo/Guardrails</title>
+      <link href="https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-12-01</id>
+    <title>NeMo Guardrails adds parallel IORails safety execution</title>
+    <updated>2026-03-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-12-01" />
+    <summary>NeMo Guardrails&apos; March 12 release introduced IORails for parallel input/output safety execution, plus OpenAI-compatible server support and standalone async rail validation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, medium" />
+    <source>
+      <id>https://github.com/NVIDIA-NeMo/Guardrails/releases</id>
+      <title>Releases · NVIDIA-NeMo/Guardrails</title>
+      <link href="https://github.com/NVIDIA-NeMo/Guardrails/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2025-09-16-01</id>
+    <title>Check Point moves to acquire Lakera</title>
+    <updated>2025-09-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2025-09-16-01" />
+    <summary>Check Point announced an agreement to acquire Lakera, positioning the startup&apos;s AI-native protection stack inside a broader end-to-end enterprise AI security portfolio.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, acquisition, high" />
+    <source>
+      <id>https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/</id>
+      <title>Check Point Acquires Lakera to Deliver End-to-End AI Security for Enterprises</title>
+      <link href="https://www.checkpoint.com/press-releases/check-point-acquires-lakera-to-deliver-end-to-end-ai-security-for-enterprises/" />
+    </source>
+  </entry>
+</feed>

@@ -105,6 +105,7 @@ find a lint error is wasteful.
 | Tool card data | `npm run check-tool-card-data` |
 | Logo provenance | `npm run check-logo-provenance` && `npm run check-logo-audit-report` |
 | Generated artifacts | `npm run check-generated-artifacts` |
+| Open-data artifacts | `npm run check-open-data` |
 | Deploy readiness | `npm run check-deploy-readiness` |
 
 `/ship-check` runs them in order and stops on the first failure.

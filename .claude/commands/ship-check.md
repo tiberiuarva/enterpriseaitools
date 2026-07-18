@@ -22,10 +22,16 @@ npm run check-updates-data
 npm run test:eu-ai-act
 npm run build
 npm run check-generated-artifacts
+npm run check-open-data
 npm run check-seo-readiness
 npm run check-tool-card-data
 npm run check-deploy-readiness
 ```
+
+`check-deploy-readiness` is the one local-only step: it verifies live deploy
+plumbing (Azure SWA connection, secrets, a green deploy on main) that the CI
+job itself cannot meaningfully self-inspect. Every other step above runs in CI
+in the same order.
 
 If `npm run build` regenerated SEO artifacts under `app/` or `public/`, those
 diffs must be committed before pushing — otherwise `check-generated-artifacts`

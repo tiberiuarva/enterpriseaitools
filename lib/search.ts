@@ -7,10 +7,60 @@ export type SearchEntry = {
   id: string;
   label: string;
   href: string;
-  kind: "tool" | "platform";
+  kind: "tool" | "platform" | "page";
   section: string;
   keywords: string[];
 };
+
+// Site pages that answer a question a searcher might type directly (feature and
+// trust surfaces). Tool/platform records are generated; these are curated.
+const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: string }> = [
+  {
+    path: "/eu-ai-act",
+    label: "EU AI Act tracker",
+    keywords: ["eu ai act", "compliance", "obligations", "deadlines", "gpai", "high-risk", "regulation", "ics", "calendar"],
+  },
+  {
+    path: "/data",
+    label: "Open data & API",
+    keywords: ["api", "json", "dataset", "download", "badges", "shields", "atom", "rss", "feed", "llms.txt"],
+  },
+  {
+    path: "/updates",
+    label: "Weekly updates",
+    keywords: ["changelog", "news", "releases", "license changes", "deprecations", "feed"],
+  },
+  {
+    path: "/evaluate",
+    label: "Help me evaluate",
+    keywords: ["shortlist", "guided", "wizard", "recommendation", "governance fit"],
+  },
+  {
+    path: "/tools/compare",
+    label: "Compare tools",
+    keywords: ["comparison", "side-by-side", "versus", "vs"],
+  },
+  {
+    path: "/methodology",
+    label: "Methodology",
+    keywords: ["sources", "verification", "freshness", "license accuracy", "how data is verified"],
+  },
+  {
+    path: "/inclusion-criteria",
+    label: "Inclusion criteria",
+    keywords: ["listing rules", "what qualifies", "removal", "propose a tool"],
+  },
+  {
+    path: "/impartiality",
+    label: "Impartiality — no paid placement",
+    keywords: ["no pay to play", "sponsored", "corrections", "trust", "policy", "privacy", "no tracking"],
+  },
+  {
+    path: "/about",
+    label: "About the project",
+    keywords: ["contribute", "contact", "maintainer", "curator"],
+  },
+];
 
 const categoryLabels: Record<ToolCategory, string> = {
   agents: "Agents",
@@ -58,5 +108,13 @@ export const headerSearchEntries: SearchEntry[] = [
       ...(tool.languages ?? []),
       ...(tool.clouds ?? []),
     ]),
+  })),
+  ...pageEntries.map((page) => ({
+    id: `page:${page.path}`,
+    label: page.label,
+    href: withBasePath(page.path),
+    kind: "page" as const,
+    section: "Site",
+    keywords: page.keywords,
   })),
 ].sort((a, b) => a.label.localeCompare(b.label, undefined, { sensitivity: "base" }));

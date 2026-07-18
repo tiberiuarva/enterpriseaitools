@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "amazon-q-apps",
+    "name": "Amazon Q Apps",
+    "category": "assistants",
+    "subcategory": "build-your-own",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "No-code AI app builder delivered as a feature within Amazon Q Business Pro.",
+    "strengths": [
+      "No-code creation",
+      "Natural-language app building",
+      "Connected to Q Business"
+    ],
+    "clouds": [
+      "aws"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html",
+    "websiteUrl": "https://aws.amazon.com/q/business/",
+    "pricing": "Included in Amazon Q Business Pro.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Feature within Q Business Pro, not a standalone product.",
+    "tags": [
+      "assistants",
+      "build-your-own",
+      "no-code"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Most relevant for lightweight internal app generation inside an existing Amazon Q Business deployment, not as a standalone enterprise app platform.",
+    "logoUrl": "/logos/amazon-q.svg",
+    "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Inherits Q Business residency; cross-region inference within geography; in-country needs AWS Support.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Feature within Amazon Q Business Pro; SaaS only; no standalone deployment.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qapps.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Q Apps API calls logged via CloudTrail.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/logging-qapps-using-cloudtrail.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Inherits Amazon Q Business SOC 1/2/3 scope.",
+        "sourceUrl": "https://aws.amazon.com/compliance/services-in-scope/SOC/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Inherits Amazon Q Business ISO 27001:2022.",
+        "sourceUrl": "https://aws.amazon.com/compliance/iso-certified/"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Inherits Amazon Q Business ISO 42001 scope.",
+        "sourceUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/compliance-validation.html"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary feature of Q Business Pro; cannot be used outside Q Business.",
+        "sourceUrl": "https://aws.amazon.com/q/business/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

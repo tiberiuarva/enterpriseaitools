@@ -1,0 +1,88 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "autogen",
+    "name": "AutoGen",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "Microsoft",
+    "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
+    "strengths": [
+      "Conversable agent patterns",
+      "Microsoft research lineage",
+      "Well-known multi-agent patterns"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/microsoft/autogen",
+    "githubStars": 59647,
+    "version": "0.7.5",
+    "docsUrl": "https://microsoft.github.io/autogen/",
+    "pricingModel": "free",
+    "status": "maintenance",
+    "statusNote": "Maintenance mode. Microsoft merged AutoGen with Semantic Kernel into the Microsoft Agent Framework.",
+    "tags": [
+      "agents",
+      "opensource",
+      "microsoft",
+      "maintenance"
+    ],
+    "logoKind": "project-logo",
+    "logoNotes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
+    "logoReviewedAt": "2026-05-14",
+    "logoSourceUrl": "https://github.com/microsoft/autogen",
+    "logoUrl": "/logos/autogen.svg",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; data residency is operator-controlled.",
+        "sourceUrl": "https://github.com/microsoft/autogen"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "pip-installed OSS framework; no Microsoft-managed hosting (maintenance mode).",
+        "sourceUrl": "https://github.com/microsoft/autogen",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "No built-in audit subsystem; operator implements logging.",
+        "sourceUrl": "https://microsoft.github.io/autogen/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Code MIT (docs CC BY 4.0) — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/microsoft/autogen/blob/main/LICENSE-CODE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

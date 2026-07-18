@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "aws-bedrock-agents",
+    "name": "Amazon Bedrock Agents",
+    "category": "agents",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "Modular AWS agent platform combining guided Bedrock Agents with framework-agnostic AgentCore deployment.",
+    "strengths": [
+      "Framework-agnostic deployment via AgentCore",
+      "MicroVM isolation model",
+      "Deep AWS integration"
+    ],
+    "clouds": [
+      "aws"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/bedrock/",
+    "websiteUrl": "https://aws.amazon.com/bedrock/agents/",
+    "pricing": "Pay-per-use for Bedrock and AgentCore features.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "JavaScript",
+      "Java",
+      "Go",
+      ".NET"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "aws",
+      "managed",
+      "agentcore"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official AWS architecture icon for Amazon Bedrock (`Arch_Amazon-Bedrock_64.svg` from the AWS Architecture Icons pack), intentionally reused for Bedrock Agents because AWS currently presents Agents as a Bedrock capability rather than with a separate public icon.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Strong choice for AWS-centric teams that want managed agent primitives and infrastructure alignment without standardising on one open source framework.",
+    "logoUrl": "/logos/aws-bedrock.svg",
+    "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Region-selected; cross-region inference stays within the chosen geography (US/EU/JP/AU).",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/geographic-cross-region-inference.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Fully managed AWS SaaS; AgentCore runtime is AWS-operated.",
+        "sourceUrl": "https://aws.amazon.com/bedrock/agents/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "CloudTrail logs all API activity; CloudWatch metrics; optional S3/CloudWatch storage.",
+        "sourceUrl": "https://aws.amazon.com/bedrock/security-compliance/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Amazon Bedrock is in scope for AWS SOC 1/2/3 (Type II via AWS Artifact).",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Amazon Bedrock is ISO/IEC 27001 certified.",
+        "sourceUrl": "https://aws.amazon.com/compliance/iso-certified/"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Amazon Bedrock is one of four AWS services in accredited ISO/IEC 42001:2023 scope.",
+        "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/aws-achieves-iso-iec-420012023-artificial-intelligence-management-system-accredited-certification/"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent orchestration platform; GPAI obligations attach to model providers and the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary AWS SaaS; lock-in to AWS model catalog and AgentCore runtime.",
+        "sourceUrl": "https://aws.amazon.com/bedrock/agents/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

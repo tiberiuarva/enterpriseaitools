@@ -1,0 +1,89 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "nemo-guardrails",
+    "name": "NeMo Guardrails",
+    "category": "governance",
+    "type": "opensource",
+    "vendor": "NVIDIA",
+    "description": "Open source guardrails framework for LLM and agent safety with a dedicated Colang DSL.",
+    "strengths": [
+      "Purpose-built guardrails DSL",
+      "Conversation flow controls",
+      "NVIDIA ecosystem alignment"
+    ],
+    "license": "Apache 2.0",
+    "githubUrl": "https://github.com/NVIDIA-NeMo/Guardrails",
+    "githubStars": 6661,
+    "docsUrl": "https://docs.nvidia.com/nemo/guardrails/",
+    "pricing": "Free OSS plus NVIDIA NIM options.",
+    "pricingModel": "free",
+    "status": "active",
+    "statusNote": "Repository moved from NVIDIA/NeMo-Guardrails to NVIDIA-NeMo/Guardrails.",
+    "tags": [
+      "governance",
+      "guardrails",
+      "opensource",
+      "nvidia"
+    ],
+    "version": "0.23.0",
+    "logoKind": "official-vendor",
+    "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
+    "logoReviewedAt": "2026-05-15",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
+    "logoUrl": "/logos/nvidia.svg",
+    "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
+    "lastRelease": "2026-07-01",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; residency fully operator-controlled.",
+        "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Open-source Python library deployed by the operator; NVIDIA NIM cloud separate.",
+        "sourceUrl": "https://docs.nvidia.com/nemo/guardrails/",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "not-applicable",
+        "detail": "No built-in audit logging; operators add their own."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; certification applies to the operator."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; certification applies to the operator's ISMS."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; applies to the operator."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "OSS library component; deployers carry obligations for systems they build."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Apache-2.0 — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails/blob/main/LICENSE.md",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

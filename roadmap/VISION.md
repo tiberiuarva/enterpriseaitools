@@ -106,6 +106,11 @@ on-site metrics:
 
 ## Horizons (see the catalogue in `README.md` for the live status table)
 
+*Note (2026-07-17 audit): horizons group milestones by theme, not execution order. The
+revised execution sequence in `README.md` pulls milestone 7 (EU AI Act) and 4
+(methodology) ahead of the rest — see "Why this order" there — and names weekly-Radar
+automation as a standing operational priority above every unstarted milestone.*
+
 - **Horizon 1 — Trust surface & infrastructure** (Milestones 2-4): make the existing data
   embeddable, shareable, and demonstrably impartial. Highest leverage, lowest cost — these
   are mostly build-time artifacts and turn the site into infrastructure others cite.

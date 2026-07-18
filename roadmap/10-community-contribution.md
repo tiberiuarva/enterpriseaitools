@@ -1,6 +1,8 @@
 # Milestone 10 — Provenance-preserving contribution pipeline
 
-**Status:** [ ] planned
+**Status:** [x] done (shipped 2026-07-17 on `claude/project-milestones-kgn3pf`; moved
+ahead of milestone 9 by the 2026-07-17 audit — contribution capacity precedes coverage
+expansion)
 **Horizon:** 3 — Coverage & reach
 **Pillars:** Trust through provenance (1); Freshness as a feature (2)
 **Branch when built:** `milestone/10-community-contribution`
@@ -66,3 +68,20 @@ open self-listing.
 Depends on milestone 4 (inclusion criteria, correction path) and the existing validator
 suite. Accelerates milestone 9 (coverage) and keeps the whole dataset fresh for every other
 milestone.
+
+## Outcome (shipped 2026-07-17)
+
+- **Contributor guide:** `CONTRIBUTING.md` — evidence rules (a primary source per field),
+  the license-correction flow (labels never edited directly), slug permanence, the
+  no-paid-placement rule restated, and local gate instructions.
+- **Structured templates:** `.github/ISSUE_TEMPLATE/` propose-tool, data-correction, and
+  license-correction forms, each requiring source URLs; a config pointing at the
+  inclusion-criteria and impartiality pages; a PR template with a provenance checklist.
+- **CI as the contribution gate:** `check-tool-card-data` added to the CI workflow so
+  schema/provenance/license violations block PRs before human review (governance,
+  updates, logo, and open-data validators were already wired).
+- **Vendor self-correction:** disclosed-affiliation flow documented (verifiable org
+  account or domain trail); same evidence bar as everyone; editorial fields stay ours.
+- Deferred per scope: the ADOPTERS-style deployment signal (optional item), and the
+  "proven end-to-end on a real contribution" acceptance — that closes with the first
+  outside contribution processed through this pipeline.

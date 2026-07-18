@@ -1,0 +1,153 @@
+{
+  "asOf": "2026-07-17",
+  "statusSummary": "As of 17 July 2026: the prohibitions on unacceptable-risk AI practices and the deployer AI-literacy duty have applied since 2 February 2025, and the transparency obligations for general-purpose AI model providers since 2 August 2025. Commission enforcement powers over GPAI providers begin on 2 August 2026. Most remaining obligations — including those for Annex III high-risk systems — are legally due on 2 August 2026 under the adopted AI Act; the Digital Omnibus on AI (provisional agreement, May 2026, not yet published in the Official Journal) would defer stand-alone high-risk obligations to 2 December 2027 and product-embedded ones to 2 August 2028. Until the amendment is published, the adopted dates remain the law.",
+  "statusSourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai",
+  "obligations": [
+    {
+      "id": "ai-literacy",
+      "articles": "Article 4",
+      "title": "AI literacy",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["all"],
+      "kind": "mandatory",
+      "appliesFrom": "2025-02-02",
+      "summary": "Providers and deployers must take measures to ensure a sufficient level of AI literacy in staff and other persons operating AI systems on their behalf.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "prohibited-practices",
+      "articles": "Article 5",
+      "title": "Prohibited AI practices",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["prohibited"],
+      "kind": "mandatory",
+      "appliesFrom": "2025-02-02",
+      "summary": "Placing on the market, putting into service, or using AI systems for the unacceptable-risk practices listed in Article 5 (e.g. social scoring, exploitative manipulation, untargeted facial-image scraping) is banned outright.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "gpai-transparency",
+      "articles": "Articles 53–54",
+      "title": "GPAI model provider obligations",
+      "actors": ["gpai-provider"],
+      "riskTiers": ["all"],
+      "kind": "mandatory",
+      "appliesFrom": "2025-08-02",
+      "summary": "Providers of general-purpose AI models must maintain technical documentation, supply information to downstream providers, put in place a copyright-compliance policy, and publish a summary of training content. Commission enforcement powers begin 2 August 2026.",
+      "sourceUrl": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "id": "gpai-systemic-risk",
+      "articles": "Article 55",
+      "title": "GPAI models with systemic risk",
+      "actors": ["gpai-provider"],
+      "riskTiers": ["all"],
+      "kind": "mandatory",
+      "appliesFrom": "2025-08-02",
+      "summary": "Providers of general-purpose AI models classified as posing systemic risk must additionally perform model evaluations, assess and mitigate systemic risks, report serious incidents, and ensure adequate cybersecurity protection.",
+      "sourceUrl": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "id": "high-risk-provider-requirements",
+      "articles": "Articles 8–17",
+      "title": "High-risk system requirements (providers)",
+      "actors": ["provider"],
+      "riskTiers": ["high-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "deferral": {
+        "proposedDate": "2027-12-02",
+        "status": "Digital Omnibus on AI provisional agreement (May 2026) would defer stand-alone Annex III high-risk obligations; not yet published in the Official Journal.",
+        "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
+      },
+      "summary": "Providers of high-risk AI systems must implement a risk-management system, data governance, technical documentation, automatic event logging, transparency to deployers, human oversight, and appropriate accuracy, robustness, and cybersecurity.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "high-risk-conformity-registration",
+      "articles": "Articles 43, 48–49",
+      "title": "Conformity assessment, CE marking, and EU database registration",
+      "actors": ["provider"],
+      "riskTiers": ["high-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "deferral": {
+        "proposedDate": "2027-12-02",
+        "status": "Digital Omnibus on AI provisional agreement (May 2026) would defer stand-alone Annex III high-risk obligations; not yet published in the Official Journal.",
+        "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
+      },
+      "summary": "High-risk AI systems must pass the applicable conformity-assessment procedure, carry CE marking, and be registered in the EU database before being placed on the market or put into service.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "high-risk-deployer-duties",
+      "articles": "Article 26",
+      "title": "High-risk deployer duties",
+      "actors": ["deployer"],
+      "riskTiers": ["high-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "deferral": {
+        "proposedDate": "2027-12-02",
+        "status": "Digital Omnibus on AI provisional agreement (May 2026) would defer stand-alone Annex III high-risk obligations; not yet published in the Official Journal.",
+        "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
+      },
+      "summary": "Deployers of high-risk AI systems must use them per the provider's instructions, assign competent human oversight, ensure relevant and representative input data where they control it, monitor operation, retain automatically generated logs, and report serious incidents.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "fundamental-rights-impact-assessment",
+      "articles": "Article 27",
+      "title": "Fundamental-rights impact assessment",
+      "actors": ["deployer"],
+      "riskTiers": ["high-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "deferral": {
+        "proposedDate": "2027-12-02",
+        "status": "Digital Omnibus on AI provisional agreement (May 2026) would defer stand-alone Annex III high-risk obligations; not yet published in the Official Journal.",
+        "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
+      },
+      "summary": "Bodies governed by public law, private entities providing public services, and deployers of certain Annex III systems must assess the impact on fundamental rights before first use of a high-risk AI system.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "limited-risk-transparency",
+      "articles": "Article 50",
+      "title": "Transparency for certain AI systems",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["limited-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "summary": "People must be informed when they interact with an AI system; synthetic audio, image, video, and text content must be marked as artificially generated, and deepfakes disclosed.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "post-market-monitoring-incidents",
+      "articles": "Articles 72–73",
+      "title": "Post-market monitoring and serious-incident reporting",
+      "actors": ["provider"],
+      "riskTiers": ["high-risk"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-08-02",
+      "deferral": {
+        "proposedDate": "2027-12-02",
+        "status": "Digital Omnibus on AI provisional agreement (May 2026) would defer stand-alone Annex III high-risk obligations; not yet published in the Official Journal.",
+        "sourceUrl": "https://www.europarl.europa.eu/legislative-train/package-digital-package/file-digital-omnibus-on-ai"
+      },
+      "summary": "Providers of high-risk AI systems must operate a post-market monitoring system and report serious incidents to market-surveillance authorities within the deadlines set by Article 73.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "voluntary-codes-of-conduct",
+      "articles": "Article 95",
+      "title": "Voluntary codes of conduct",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["minimal-risk"],
+      "kind": "voluntary",
+      "appliesFrom": "2026-08-02",
+      "summary": "For AI systems outside the high-risk tier, the Act encourages voluntary codes of conduct that apply some high-risk requirements proportionately — no mandatory obligations attach to minimal-risk systems beyond AI literacy.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    }
+  ]
+}

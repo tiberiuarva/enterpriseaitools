@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "guardrails-ai",
+    "name": "Guardrails AI",
+    "category": "governance",
+    "type": "opensource",
+    "vendor": "Guardrails AI",
+    "description": "Validation-focused guardrails framework with a large validator ecosystem and freemium model.",
+    "strengths": [
+      "50+ validators",
+      "Structured output guardrails",
+      "Python-first integration"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/guardrails-ai/guardrails",
+    "githubStars": 7124,
+    "docsUrl": "https://guardrailsai.com/docs",
+    "pricingModel": "freemium",
+    "status": "active",
+    "tags": [
+      "governance",
+      "validators",
+      "opensource"
+    ],
+    "version": "0.10.0",
+    "logoKind": "project-logo",
+    "logoNotes": "Official Guardrails AI project logo from the owner-controlled GitHub repo (`docs/assets/Guardrails-ai-logo-for-white-bg.svg`), committed byte-for-byte.",
+    "logoReviewedAt": "2026-05-14",
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
+    "logoUrl": "/logos/guardrails-ai.svg",
+    "logoSourceUrl": "https://github.com/guardrails-ai/guardrails",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; residency operator-controlled.",
+        "sourceUrl": "https://github.com/guardrails-ai/guardrails"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Open-source Python library; paid managed Guardrails Hub/server also offered.",
+        "sourceUrl": "https://guardrailsai.com/docs",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "not-applicable",
+        "detail": "No built-in audit log for the OSS library; managed tier unverified."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; certification applies to the operator."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; applies to the operator's ISMS."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; applies to the operator."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Validation library component; deployers carry obligations."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Apache-2.0 upstream (tracked license under data-correction review).",
+        "sourceUrl": "https://github.com/guardrails-ai/guardrails/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

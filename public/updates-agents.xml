@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-agents.xml</id>
+  <title>enterpriseai.tools weekly updates — agents</title>
+  <updated>2026-07-11T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-agents.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-11-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-07-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-11-01" />
+    <summary>OpenAI Agents SDK 0.18.2 added GPT-5.6 request controls and hosted multi-agent beta support, plus sandbox and usage fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.18.2</id>
+      <title>Release v0.18.2 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.18.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-10-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-10-01" />
+    <summary>Microsoft Agent Framework Python 1.11.0 added message injection middleware for enqueuing messages into active runs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.11.0</id>
+      <title>Release python-1.11.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.11.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-10-02</id>
+    <title>LangGraph — release</title>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-10-02" />
+    <summary>LangGraph 1.2.9 fixed updateState metadata and counters for delta channels.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.9</id>
+      <title>Release 1.2.9 · langchain-ai/langgraph</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.9" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-10-03</id>
+    <title>LangGraph — release</title>
+    <updated>2026-07-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-10-03" />
+    <summary>LangGraph CLI 0.4.31 allowed langgraph-api versions up to 1.0.0 and updated CLI dependencies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.31</id>
+      <title>Release cli==0.4.31 · langchain-ai/langgraph</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.31" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-09-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-07-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-09-01" />
+    <summary>OpenAI Agents SDK 0.18.1 added GPT-5.6 model defaults and migrated examples, with cache-write usage fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.18.1</id>
+      <title>Release v0.18.1 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.18.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-09-02</id>
+    <title>Atomic Agents — release</title>
+    <updated>2026-07-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-09-02" />
+    <summary>Atomic Agents 2.9.0 added pluggable chat history via BaseChatHistory for custom or persistent memory backends.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/Eigenwise/atomic-agents/releases/tag/v2.9.0</id>
+      <title>Release v2.9.0 · Eigenwise/atomic-agents</title>
+      <link href="https://github.com/Eigenwise/atomic-agents/releases/tag/v2.9.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-08-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-08-01" />
+    <summary>CrewAI 1.15.2 added dynamic LLM model loading in the crew wizard, inline skill definitions, and generated Flow Definition auth updates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.2</id>
+      <title>Release 1.15.2 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-08-02</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-08-02" />
+    <summary>Mastra 1.50.0 added a LiveKit package for realtime voice agents and workflow-backed voice turns.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.50.0</id>
+      <title>Release @mastra/core@1.50.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.50.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-07-01</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-01" />
+    <summary>Semantic Kernel Python 1.44.0 updated dependency versions, including tornado and pyjwt bumps.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/python-1.44.0</id>
+      <title>Release python-1.44.0 · microsoft/semantic-kernel</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/python-1.44.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-07-02</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-02" />
+    <summary>Semantic Kernel .NET 1.78.0 updated package versions and included runtime and connector fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/dotnet-1.78.0</id>
+      <title>Release dotnet-1.78.0 · microsoft/semantic-kernel</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/dotnet-1.78.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-07-03</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-03" />
+    <summary>Mastra 1.49.0 added opt-in storage retention policies and storage.prune() across core and supported storage backends.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.49.0</id>
+      <title>Release @mastra/core@1.49.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.49.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-07-04</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-07-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-04" />
+    <summary>OpenAI Agents SDK 0.18.0 changed the default RealtimeAgent model to gpt-realtime-2.1.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.18.0</id>
+      <title>Release v0.18.0 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.18.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-06-01</id>
+    <title>LangGraph — release</title>
+    <updated>2026-07-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-06-01" />
+    <summary>LangGraph 1.2.8 fixed updateState behavior for delta channels on fresh threads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.8</id>
+      <title>Release 1.2.8 · langchain-ai/langgraph</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.8" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-06-02</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-07-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-06-02" />
+    <summary>OpenAI Agents SDK 0.17.8 added invalid final-output recovery handling and fixed realtime session cancellation propagation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.17.8</id>
+      <title>Release v0.17.8 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.17.8" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-03-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-07-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-03-01" />
+    <summary>Microsoft Agent Framework .NET 1.13.0 added Foundry Hosting per-user session isolation, skill approval options, public skill-source APIs, configurable default-approval harness behavior, and new file-editing tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0</id>
+      <title>Release dotnet-1.13.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-01-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-01-01" />
+    <summary>Mastra 1.48.0 added cron-scheduled agent heartbeats, file-based agent and subagent auto-registration, durable suspended-run recovery, and stronger auth-context propagation across durable and Inngest execution paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.48.0</id>
+      <title>Release @mastra/core@1.48.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.48.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-01-03</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-01-03" />
+    <summary>Mastra 1.47.0 added AI SDK v7 model support, DurableAgent API parity for stream/resume/generate, gateway-first model discovery, AgentController routing, and eval quality gates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.47.0</id>
+      <title>Release @mastra/core@1.47.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.47.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-30-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-06-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-30-01" />
+    <summary>Microsoft Agent Framework Python 1.10.0 added Foundry conversation-session helpers and adaptive eval support, standalone Durable Task worker hosting, and stricter approval defaults for experimental file-access tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0</id>
+      <title>Release python-1.10.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-30-02</id>
+    <title>LangGraph — release</title>
+    <updated>2026-06-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-30-02" />
+    <summary>LangGraph 1.2.7 fixed DeltaChannel overwrite snapshotting, preserved Overwrite values through JSON round trips, emitted valid exit-mode delta task IDs, and refreshed Redis, LangSmith, cryptography, Tornado, and PyJWT dependencies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.7</id>
+      <title>Release langgraph==1.2.7 · langchain-ai/langgraph</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-27-02</id>
+    <title>CrewAI — release</title>
+    <updated>2026-06-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-27-02" />
+    <summary>CrewAI 1.15.1 required explicit CrewAI project definitions, initialized Git repositories for generated projects, improved CLI deploy handoff, and fixed an SSRF redirect bypass in scraping fetches.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.1</id>
+      <title>Release 1.15.1 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-27-01</id>
+    <title>Paperclip — release</title>
+    <updated>2026-06-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-27-01" />
+    <summary>Paperclip v2026.626.0 made Hermes a built-in local and remote gateway adapter, added task watchdogs for long-running agent work, and surfaced sandbox runtime status directly in issue threads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0</id>
+      <title>Release v2026.626.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-25-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-06-25T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-25-01" />
+    <summary>CrewAI 1.15.0 added declarative flow loading and CLI support for conversational flows, while also fixing credential-file permission enforcement and a skill-archive path-traversal issue.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.0</id>
+      <title>Release 1.15.0 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-24-03</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-06-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-24-03" />
+    <summary>OpenAI Agents SDK 0.17.7 exposed configurable WebSocket size limits, added buffered Chat Completions tool-call streaming, made AdvancedSQLiteSession add_items atomic, and tightened sandbox, guardrail, and Realtime multi-agent edge cases.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.17.7</id>
+      <title>Release v0.17.7 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.17.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-24-02</id>
+    <title>LlamaIndex — release</title>
+    <updated>2026-06-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-24-02" />
+    <summary>LlamaIndex 0.14.23 advanced multimodal synthesis, preserved URL-backed video and document memory blocks, added document/video block parsing for FunctionTool output, and fixed workflow state mutation leaks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/run-llama/llama_index/releases/tag/v0.14.23</id>
+      <title>Release v0.14.23 · run-llama/llama_index</title>
+      <link href="https://github.com/run-llama/llama_index/releases/tag/v0.14.23" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-24-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-06-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-24-01" />
+    <summary>Mastra 1.46.0 reworked Harness around isolated sessions with remote HTTP and JS-client control, enabling safer concurrent multi-user agent hosting and deterministic tool-mocked experiments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.46.0</id>
+      <title>Release @mastra/core@1.46.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.46.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-19-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-06-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-19-01" />
+    <summary>OpenAI Agents SDK 0.17.6 added pre-approval tool-input guardrails and SDK-only custom tool-output metadata, tightening human approval control points around agent tool execution.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.17.6</id>
+      <title>Release v0.17.6 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.17.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-18-02</id>
+    <title>Paperclip — release</title>
+    <updated>2026-06-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-18-02" />
+    <summary>Paperclip v2026.618.0 added a Skills Store, self-hostable Kubernetes sandbox execution, per-company tenant isolation, workspace artifact viewing, and opt-in OpenTelemetry instrumentation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.618.0</id>
+      <title>Release v2026.618.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.618.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-18-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-06-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-18-01" />
+    <summary>Microsoft Agent Framework Python 1.9.0 added tool-approval middleware, integrated approvals into Harness agents, denied MCP server-initiated sampling by default, and promoted orchestrations to stable.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.9.0</id>
+      <title>Release python-1.9.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.9.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-17-01</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-06-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-17-01" />
+    <summary>Semantic Kernel Python 1.43.1 added function_choice_behavior support to Azure AI and OpenAI Assistant agents, fixed MessagePack handling, and rejected encoded dot-segment paths in OpenAPI plugins.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1</id>
+      <title>Release python-1.43.1 · microsoft/semantic-kernel</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-04</id>
+    <title>Mastra — release</title>
+    <updated>2026-06-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-04" />
+    <summary>Mastra 1.42.0 added trusted system-actor execution for background workflows, tool suspension primitives across agents, thread-state durability, and new observability/storage options for production agent operations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.42.0</id>
+      <title>June 12, 2026 · @mastra/core@1.42.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.42.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-03</id>
+    <title>CrewAI — release</title>
+    <updated>2026-06-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-03" />
+    <summary>CrewAI 1.14.7 added pluggable backends for memory, knowledge, RAG, and flow, plus a chat API, Snowflake Cortex provider support, and dependency CVE fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.7</id>
+      <title>Release 1.14.7 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-02</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-06-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-02" />
+    <summary>Microsoft Agent Framework Python 1.8.1 added MCP long-running task support and OpenTelemetry spans aligned to GenAI semantic conventions, while tightening MCP tool-argument filtering.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.8.1</id>
+      <title>Release python-1.8.1 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.8.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-07-02</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-06-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-07-02" />
+    <summary>AWS added interactive PTY-backed shells to Bedrock AgentCore Runtime, letting teams reconnect into live agent sessions for debugging, file inspection, and terminal-native coding-agent workflows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/</id>
+      <title>Amazon Bedrock AgentCore Runtime introduces interactive shells for terminal access into agent sessions</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/06/amazon-bedrock-agentcore-runtime/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-28-03</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-05-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-28-03" />
+    <summary>Microsoft Agent Framework 1.7.0 added harness agents, A2A session support, and new Foundry integration hooks, extending the framework&apos;s orchestration and inter-agent workflow surface.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.7.0</id>
+      <title>python-1.7.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.7.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-27-01</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-05-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-27-01" />
+    <summary>AWS introduced AgentCore payments in preview, adding managed agent micropayments for APIs, web content, MCP servers, and other agents via x402-backed transaction flows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/</id>
+      <title>Agents that transact: Introducing Amazon Bedrock AgentCore payments, built with Coinbase and Stripe</title>
+      <link href="https://aws.amazon.com/blogs/machine-learning/agents-that-transact-introducing-amazon-bedrock-agentcore-payments-built-with-coinbase-and-stripe/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-15-03</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-05-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-15-03" />
+    <summary>Microsoft Agent Framework 1.4.0 introduced experimental skills API breaking changes, migrated its A2A layer to a2a-sdk v1.0, and tightened default DevUI access controls and CORS posture.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0</id>
+      <title>Release python-1.4.0 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.4.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-12-02</id>
+    <title>LangGraph — release</title>
+    <updated>2026-05-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-12-02" />
+    <summary>LangGraph 1.2.0 promoted its alpha packages to official releases and added durable error-handler resume across host crashes, improving reliability for stateful production agent workflows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.0</id>
+      <title>Release langgraph==1.2.0 · langchain-ai/langgraph · GitHub</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-08-02</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-05-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-08-02" />
+    <summary>Microsoft Agent Framework Python 1.3.0 added class-based skill definitions plus experimental session-mode and todo-list harness context providers, expanding structured agent composition patterns.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.3.0</id>
+      <title>Release python-1.3.0 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.3.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-08-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-05-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-08-01" />
+    <summary>OpenAI Agents SDK 0.16.0 changed the default model to gpt-5.4-mini for runs without an explicit model, altering baseline behavior, reasoning defaults, and potential cost/perf expectations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.16.0</id>
+      <title>Release v0.16.0 · openai/openai-agents-python · GitHub</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.16.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-06-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-05-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-06-01" />
+    <summary>Mastra 1.32.0 introduced fine-grained authorization checks across agent runs, tool and workflow execution, memory thread access, server adapters, and MCP paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.32.0</id>
+      <title>Release @mastra/core@1.32.0 · mastra-ai/mastra · GitHub</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.32.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-02-01</id>
+    <title>Google Agent Builder + ADK — feature</title>
+    <updated>2026-05-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-02-01" />
+    <summary>Google made 50+ fully managed MCP servers available for Google Cloud services, expanding protocol-aligned tool integration options for Vertex AI and Gemini Enterprise agent builds.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, high" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone</id>
+      <title>50+ fully managed MCP servers now available for Google Cloud services</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/google-managed-mcp-servers-are-available-for-everyone" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-01-03</id>
+    <title>AWS Bedrock Agents — feature</title>
+    <updated>2026-05-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-01-03" />
+    <summary>AWS announced Amazon Bedrock AgentCore availability in the South America (São Paulo) Region, extending managed agent runtime coverage into an additional geography.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/</id>
+      <title>Amazon Bedrock AgentCore is now available in the South America (São Paulo) Region</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/05/agentcore-sao-paulo-region/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-05-01-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-05-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-05-01-01" />
+    <summary>OpenAI Agents SDK 0.15.0 changed refusal handling to raise ModelRefusalError explicitly instead of surfacing empty outputs, a behavior change that can affect run-loop integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.15.0</id>
+      <title>Release v0.15.0 · openai/openai-agents-python · GitHub</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-30-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-04-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-30-01" />
+    <summary>CrewAI 1.14.4 added Azure OpenAI Responses API support, Azure AI Inference credential-scope forwarding, Vertex AI workload identity guidance, and new research/search tools integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.4</id>
+      <title>Release 1.14.4 · crewAIInc/crewAI · GitHub</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.4" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-29-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-04-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-29-01" />
+    <summary>Microsoft Agent Framework Python 1.2.2 added an Azure AI Content Understanding context provider for documents, images, audio, and video, expanding enterprise attachment analysis paths.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.2.2</id>
+      <title>Release python-1.2.2 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.2.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-28-01</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-04-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-28-01" />
+    <summary>Semantic Kernel Python 1.41.3 added SQL Server field and table name escaping and extended in-memory collection filter blocklists, tightening connector safety for production use.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/python-1.41.3</id>
+      <title>Release python-1.41.3 · microsoft/semantic-kernel · GitHub</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/python-1.41.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-24-02</id>
+    <title>CrewAI — release</title>
+    <updated>2026-04-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-24-02" />
+    <summary>CrewAI 1.14.3 added Bedrock V4 support, checkpoint and fork support for standalone agents, Azure DefaultAzureCredential fallback, and security dependency patches.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.14.3</id>
+      <title>Release 1.14.3 · crewAIInc/crewAI · GitHub</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.14.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-24-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-04-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-24-01" />
+    <summary>Microsoft Agent Framework Python 1.2.0 added a functional workflow API, OpenTelemetry support for GitHubCopilotAgent, and an A2A bridge, extending interoperability and observability for production agent deployments.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0</id>
+      <title>Release python-1.2.0 · microsoft/agent-framework · GitHub</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.2.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-02</id>
+    <title>Microsoft Foundry Agent Service — feature</title>
+    <updated>2026-04-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-02" />
+    <summary>Microsoft announced hosted agents preview, Toolbox preview, memory preview, and Foundry Toolkit for VS Code GA as part of the developer path from local builds to production deployment.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, high" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/</id>
+      <title>From Local to Production: The Complete Developer Journey for Building, Composing, and Deploying AI Agents</title>
+      <link href="https://devblogs.microsoft.com/foundry/from-local-to-production-the-complete-developer-journey-for-building-composing-and-deploying-ai-agents/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-22-01</id>
+    <title>Google Agent Builder + ADK — rename</title>
+    <updated>2026-04-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-22-01" />
+    <summary>Google launched Gemini Enterprise Agent Platform, folding Vertex AI and Agent Builder capabilities under a renamed platform with Agent Runtime, Agent Registry, Agent Identity, and related governance surfaces.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, rename, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-14-01</id>
+    <title>CrewAI pre-release adds Bedrock strict-mode fixes</title>
+    <updated>2026-04-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-14-01" />
+    <summary>CrewAI posted a new pre-release on April 14 with resume hints for devtools failure handling and a Bedrock Converse API strict-mode fix, extending its agent runtime integrations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases</id>
+      <title>Releases · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-09-01</id>
+    <title>OpenAI Agents SDK release hardens tracing and SQL session handling</title>
+    <updated>2026-04-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-09-01" />
+    <summary>The OpenAI Agents SDK April 9 release hardened SQLite and SQLAlchemy session handling and expanded tracing documentation, signaling continued stabilization of the production agent stack.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases</id>
+      <title>Releases · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-08-01</id>
+    <title>Semantic Kernel refreshes prompt serialization and dependencies</title>
+    <updated>2026-04-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-08-01" />
+    <summary>Semantic Kernel&apos;s April 8 release included prompt-template serialization improvements and dependency updates, keeping Microsoft&apos;s orchestration SDK active as Agent Framework work continues.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases</id>
+      <title>Releases · microsoft/semantic-kernel</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-16-01</id>
+    <title>LlamaIndex coordinates agent-stack package updates and drops Python 3.9</title>
+    <updated>2026-03-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-16-01" />
+    <summary>LlamaIndex&apos;s March 16 release notes show coordinated package updates across the agent stack, including AgentMesh and Azure-related modules, alongside deprecation of Python 3.9 support.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/run-llama/llama_index/releases</id>
+      <title>Releases · run-llama/llama_index</title>
+      <link href="https://github.com/run-llama/llama_index/releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-03-03-01</id>
+    <title>Mastra adds source-available Enterprise License paths beside its Apache 2.0 core</title>
+    <updated>2026-03-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-03-03-01" />
+    <summary>Mastra introduced ee/ directories under the source-available Mastra Enterprise License alongside the Apache 2.0 core, moving the repo from a single permissive license to a dual-license model.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, license-change, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/pull/13163</id>
+      <title>mastra PR #13163: auth core, server RBAC, and adapter permission enforcement</title>
+      <link href="https://github.com/mastra-ai/mastra/pull/13163" />
+    </source>
+  </entry>
+</feed>

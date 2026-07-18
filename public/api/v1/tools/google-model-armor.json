@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "google-model-armor",
+    "name": "Google Model Armor",
+    "category": "governance",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Model-agnostic prompt and response safety screening layer across Google enterprise infrastructure.",
+    "strengths": [
+      "Model-agnostic screening",
+      "Google security integration",
+      "Enterprise API fit"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://cloud.google.com/security-command-center/docs/model-armor-overview",
+    "websiteUrl": "https://cloud.google.com/",
+    "pricing": "Pay-as-you-go.",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "governance",
+      "gcp",
+      "safety"
+    ],
+    "logoKind": "official-vendor",
+    "logoNotes": "Google Cloud does not expose a standalone public Model Armor logo on the official product page; this uses the owner-controlled Google Cloud header logo (`https://www.gstatic.com/cgc/google-cloud-logo.svg`) as the shared vendor mark for the service.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Worth evaluating for Google-first estates that need managed prompt and response protection, especially around injection and unsafe content controls.",
+    "logoUrl": "/logos/google-cloud.svg",
+    "logoSourceUrl": "https://cloud.google.com/security/products/model-armor",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "US/EU regional endpoints; in-memory processing without durable retention unless logging enabled.",
+        "sourceUrl": "https://docs.cloud.google.com/model-armor/overview"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Stateless cloud-native SaaS via regional API; standalone or with Security Command Center.",
+        "sourceUrl": "https://cloud.google.com/security/products/model-armor",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit logs via Cloud Logging filtering on modelarmor.googleapis.com.",
+        "sourceUrl": "https://docs.cloud.google.com/model-armor/overview"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Runs on SOC 2 Type II Google Cloud infrastructure.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Runs on ISO/IEC 27001-certified Google Cloud infrastructure.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Model Armor not confirmed in Google Cloud ISO 42001 scope as of 2026-05."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Prompt/response screening component; supports operators' compliance, not itself high-risk."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary GCP SaaS; full dependency on GCP.",
+        "sourceUrl": "https://cloud.google.com/security/products/model-armor",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

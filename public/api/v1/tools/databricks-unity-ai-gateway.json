@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "databricks-unity-ai-gateway",
+    "name": "Databricks Unity AI Gateway",
+    "category": "governance",
+    "type": "vendor",
+    "vendor": "Databricks",
+    "description": "Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.",
+    "strengths": [
+      "Usage tracking and audit logging",
+      "Permissions, rate limits, and traffic controls",
+      "Governance for endpoints and MCP interactions"
+    ],
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
+    "websiteUrl": "https://www.databricks.com/product/ai",
+    "pricing": "Underlying Databricks platform consumption still applies; current AI Gateway beta governance features are documented as no-charge.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "status": "active",
+    "tags": [
+      "governance",
+      "databricks",
+      "mcp",
+      "guardrails",
+      "observability"
+    ],
+    "logoKind": "official-vendor",
+    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity AI Gateway does not expose a distinct standalone public mark.",
+    "logoReviewedAt": "2026-05-24",
+    "logoUrl": "/logos/databricks.png",
+    "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
+    "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Customer-selected cloud region (AWS/Azure/GCP); AI Guardrails limited to pay-per-token regions; no GovCloud.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/ai-gateway/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS layer within Databricks on AWS/Azure/GCP; no standalone self-hosted (Beta).",
+        "sourceUrl": "https://www.databricks.com/product/artificial-intelligence/ai-gateway",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit logging for MCP/AI endpoint requests; inference tables store request/response as Delta.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/ai-gateway/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Databricks SOC 2 Type II across AWS/Azure/GCP.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/soc"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Databricks ISO/IEC 27001:2022 certified across clouds.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Databricks references ISO 42001 as a customer framework (DASF 2.0) but has not published its own certification.",
+        "sourceUrl": "https://www.databricks.com/blog/announcing-databricks-ai-security-framework-20"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Governance control-plane component; helps customers govern their own AI."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; lock-in to Databricks-centric stacks.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

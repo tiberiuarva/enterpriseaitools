@@ -1,0 +1,96 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "microsoft-foundry-agent-service",
+    "name": "Microsoft Foundry Agent Service",
+    "category": "agents",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Fully managed agent platform with deep Microsoft 365 integration and broad model access.",
+    "strengths": [
+      "One-click Teams and M365 deployment",
+      "Supports MCP, A2A, and OpenAPI",
+      "Access to 11,000+ models"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/azure/ai-foundry/",
+    "websiteUrl": "https://azure.microsoft.com/en-us/products/ai-foundry/",
+    "pricing": "Free platform access; pay for tokens and tools.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "C#",
+      "JavaScript",
+      "TypeScript",
+      "Java"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "azure",
+      "mcp",
+      "a2a",
+      "managed"
+    ],
+    "logoKind": "service-icon",
+    "logoNotes": "Official Microsoft Foundry product image/logo asset reused for Foundry Agent Service. Microsoft has a dedicated Agent Service product page, but the public visual identity still appears to reuse the broader Foundry branding rather than expose a distinct standalone mark.",
+    "logoReviewedAt": "2026-05-15",
+    "practitionerNote": "Best fit when agent delivery needs to stay close to Azure, M365, and enterprise identity controls rather than a standalone framework stack.",
+    "logoUrl": "/logos/microsoft-foundry.jpg",
+    "logoSourceUrl": "https://azure.microsoft.com/en-us/products/ai-agent-service/",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "EU Data Zone pins prompts/responses to EU; Global Standard may cross region.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/concepts/deployment-types"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed SaaS on Azure; Foundry Local enables on-device/on-prem.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/overview",
+        "models": [
+          "saas",
+          "on-prem"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit/RequestResponse/Trace diagnostic logs to Azure Monitor / Log Analytics.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/ai-foundry/agents/how-to/metrics"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Azure SOC 2 Type II (semi-annual) covers AI Foundry.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Covered by Microsoft Azure ISO/IEC 27001 certification.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Microsoft Foundry is listed in scope for ISO/IEC 42001:2023.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent hosting surface; GPAI obligations attach to the underlying model providers and the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Azure SaaS; moderate ecosystem lock-in.",
+        "sourceUrl": "https://azure.microsoft.com/en-us/products/ai-agent-service/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

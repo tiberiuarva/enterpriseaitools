@@ -19,6 +19,7 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Side-by-side comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer for enterprise AI tools.",
   path: "/platforms",
+  atomFeedPath: "/updates-platforms.xml",
 });
 
 const comparisonRows = [

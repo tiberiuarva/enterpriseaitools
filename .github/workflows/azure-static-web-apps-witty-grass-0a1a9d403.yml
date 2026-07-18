@@ -40,12 +40,20 @@ jobs:
         run: npm run check-governance-data
       - name: Check updates data
         run: npm run check-updates-data
+      - name: Check tool-card data
+        run: npm run check-tool-card-data
+      - name: Typecheck
+        run: npx tsc --noEmit
       - name: Test EU AI Act timeline logic
         run: npm run test:eu-ai-act
       - name: Build static site
         run: npm run build
       - name: Check generated SEO artifacts
         run: npm run check-generated-artifacts
+      - name: Check open-data artifacts
+        run: npm run check-open-data
+      - name: Check SEO readiness
+        run: npm run check-seo-readiness
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         if: github.event_name != 'pull_request'

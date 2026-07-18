@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-07-11",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "databricks-genie-code",
+    "name": "Databricks Genie Code",
+    "category": "assistants",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "Databricks",
+    "description": "Context-aware Databricks coding assistant for SQL, Python, debugging, and agentic data-work flows.",
+    "strengths": [
+      "Understands Unity Catalog metadata",
+      "Helps generate, explain, and fix SQL/Python",
+      "Agent mode across notebooks, Lakeflow, dashboards, and MLflow"
+    ],
+    "clouds": [
+      "aws",
+      "azure",
+      "gcp"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
+    "websiteUrl": "https://www.databricks.com/product/ai",
+    "pricing": "Current Genie Code capabilities are documented without a separate add-on fee, but Databricks workspace and compute consumption still apply.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "SQL"
+    ],
+    "status": "active",
+    "tags": [
+      "assistants",
+      "coding",
+      "databricks",
+      "sql",
+      "python"
+    ],
+    "logoKind": "official-vendor",
+    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Code does not expose a distinct standalone public mark.",
+    "logoReviewedAt": "2026-05-24",
+    "logoUrl": "/logos/databricks.png",
+    "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
+    "practitionerNote": "Useful for data teams already living in Databricks, especially where table metadata and notebook context matter more than general-purpose IDE breadth.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "AI assistive feature using Databricks Geos; residency per workspace region across clouds.",
+        "sourceUrl": "https://docs.databricks.com/aws/en/databricks-ai/databricks-ai-trust"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS within the customer's Databricks workspace (AWS/Azure/GCP).",
+        "sourceUrl": "https://docs.databricks.com/aws/en/genie-code/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Interactions logged to the system.access.audit system table.",
+        "sourceUrl": "https://www.databricks.com/blog/introducing-genie-code"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Databricks SOC 2 Type II across clouds/regions.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/soc"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Databricks ISO/IEC 27001:2022 certified across clouds.",
+        "sourceUrl": "https://www.databricks.com/trust/compliance/iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No Databricks ISO 42001 certification found as of 2026-05."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability).",
+        "sourceUrl": "https://www.databricks.com/product/ai",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-05-26"
+    }
+  }
+}

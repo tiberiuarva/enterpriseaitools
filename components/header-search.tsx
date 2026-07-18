@@ -266,7 +266,7 @@ export function HeaderSearch({ entries, compact = false, collapsed = false }: He
       )}
 
       <div className="sr-only" aria-live="polite">
-        {hasQuery ? `${results.length} matches found` : "Type to search tools and platforms"}
+        {hasQuery ? `${results.length} matches found` : "Type to search tools, platforms, and site pages"}
       </div>
     </div>
   );
@@ -329,7 +329,7 @@ function SearchResults({
                   <div className="flex items-center justify-between gap-3">
                     <span className="text-sm font-medium text-[var(--color-text-primary)]">{entry.label}</span>
                     <span className="rounded-full border border-[var(--color-border)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-secondary)]">
-                      {entry.kind === "tool" ? "Tool" : "Platform"}
+                      {entry.kind === "tool" ? "Tool" : entry.kind === "platform" ? "Platform" : "Page"}
                     </span>
                   </div>
                   <div className="mt-1 text-xs text-[var(--color-text-secondary)]">{entry.section}</div>
@@ -339,7 +339,7 @@ function SearchResults({
           })}
         </ul>
       ) : (
-        <div className="px-3 py-4 text-sm text-[var(--color-text-secondary)]">No tools or platforms match that query yet.</div>
+        <div className="px-3 py-4 text-sm text-[var(--color-text-secondary)]">No tools, platforms, or pages match that query yet.</div>
       )}
     </div>
   );

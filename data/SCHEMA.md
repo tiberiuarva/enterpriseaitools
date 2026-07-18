@@ -30,6 +30,7 @@ Top-level shape:
 | `cloudBadgeReviewedAt` | string | no | Calendar ISO date (`YYYY-MM-DD`) for an explicit cloud-badge review when the tool is intentionally left cloud-neutral |
 | `license` | string | yes | Exact license label |
 | `licenseWarning` | string | no | Caveat for source-available, proprietary core, branding, etc. |
+| `licenseHistory` | LicenseHistoryEvent[] | no | Source-backed license transitions, ascending by `date` (see the LicenseHistoryEvent table below). Present only when at least one verified transition exists — an absent field means "no license change on record", never "unknown". |
 | `githubUrl` | string | no | Official repository URL |
 | `githubStars` | number | no | Open source star count only when verified |
 | `version` | string | no | Current stable version |
@@ -49,6 +50,34 @@ Top-level shape:
 | `logoReviewedAt` | string | yes | Calendar ISO date (`YYYY-MM-DD`) when logo provenance was last checked. Required for every site record. |
 | `tags` | string[] | no | Search/filter helpers |
 | `governance` | object | yes | Governance posture — see "Tool governance object" below. Required on every tool. |
+
+### LicenseHistoryEvent (`tool.licenseHistory[]`)
+
+Source-backed license lifecycle tracking (milestone 5). Events are ascending by
+`date`; the newest event's `toLicense` must match the tool's current `license`
+label. Never append an event without a verified primary source — and never edit
+the `license` field itself outside the data-correction flow.
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `date` | string | yes | ISO `YYYY-MM-DD` the new license took effect (announcement date if the effective date is not stated). |
+| `fromLicense` | string | yes | Prior license, SPDX expression where possible. |
+| `toLicense` | string | yes | New license, SPDX expression where possible. |
+| `direction` | `open \| restrictive` | yes | From the adopter's perspective: `restrictive` = more restrictions than before (relicense/rug-pull direction), `open` = fewer (reversal/opening). |
+| `sourceUrl` | string | yes | `https://` primary source (vendor announcement, repo commit/release) backing the transition. |
+| `sourceTitle` | string | no | Human label for the source link. |
+| `notes` | string | no | Plain-language context (e.g. which components are affected). |
+| `convertsOn` | string | no | For delayed-conversion licenses (BUSL-style): ISO date the license automatically changes again. |
+| `convertsTo` | string | no | License the `convertsOn` date converts to. Required when `convertsOn` is set. |
+
+Workflow: a newly detected license change (snapshot diff or research) gets, in
+one PR — the verified `license`/`licenseWarning` correction via the
+data-correction flow, a `licenseHistory` event, and a `license-change` entry in
+`updates.json` (which feeds `updates-licenses.xml`). The pairing is enforced by
+`scripts/check-updates-data.mjs`; events predating the update feed's
+operational window (the oldest `updates.json` entry) are exempt and stay
+`licenseHistory`-only — see
+`docs/research/license-history-backfill-2026-07-17.md` for that policy.
 
 ### Tool governance object (`tool.governance`)
 
@@ -182,7 +211,7 @@ Entries must be ordered newest first.
 | `toolId` | string | yes | Foreign key to `tools.json` or a stable platform id |
 | `toolName` | string | yes | Denormalized display name |
 | `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
-| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition` | yes | Update type |
+| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
 | `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |
@@ -322,6 +351,40 @@ deferral in `summary` until the amendment is published in the Official Journal.
 | `appliesOn` | string | yes | ISO `YYYY-MM-DD` legally-in-force application date. |
 | `summary` | string | yes | One- to two-sentence status, including any provisional deferral and its proposed new date. |
 | `sourceUrl` | string | yes | `https://` primary source backing the entry's claim (official Commission timeline for in-force dates; the relevant legislative-status page for a proposed deferral). |
+
+## `eu-ai-act-obligations.json`
+
+EU AI Act obligation knowledge layer rendered on `/eu-ai-act` and, per risk
+tier, on each per-tool page. Consumed, validated, and typed by
+`lib/eu-ai-act-obligations.ts` (`parseObligationsDataset` throws on any shape
+violation at module load, so a malformed dataset fails the build) and covered
+by `lib/eu-ai-act-obligations.test.ts`. Source of truth for feed artifacts:
+`public/eu-ai-act-deadlines.ics` is generated from the timeline in
+`eu-ai-act.json`; the obligations file feeds page content only.
+
+Top-level shape:
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `asOf` | string | yes | ISO `YYYY-MM-DD` date the legal-status summary was last verified. The weekly Radar refreshes this whenever the omnibus/legislative status moves — and reviews it at minimum monthly. |
+| `statusSummary` | string | yes | Plain-language "where the law stands" paragraph. States adopted-law dates as law and any pending amendment as provisional. |
+| `statusSourceUrl` | string | yes | `https://` legislative-status source for the summary. |
+| `obligations` | array | yes | Obligation objects, unique `id` each. |
+
+### Obligation object fields
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `id` | string | yes | Stable lowercase-kebab id. |
+| `articles` | string | yes | Human-readable article reference, e.g. `Articles 8–17`. |
+| `title` | string | yes | Short obligation name. |
+| `actors` | string[] | yes | Any of `provider \| deployer \| gpai-provider`. |
+| `riskTiers` | string[] | yes | Any of `prohibited \| high-risk \| limited-risk \| minimal-risk \| all`. `all` = every concrete tier. Tool pages map `governance.euAiAct.role` onto this; `gpai-provider`-only obligations never map from a tool risk tier. |
+| `kind` | string | yes | `mandatory \| voluntary`. |
+| `appliesFrom` | string | yes | ISO `YYYY-MM-DD` legally-in-force application date under the adopted Act. |
+| `deferral` | object | no | Pending amendment only: `proposedDate` (ISO date, must be later than `appliesFrom`), `status` (plain language, names the instrument and that it is not yet in the Official Journal), `sourceUrl` (`https://` legislative-status page). Remove the field once the amendment is published and fold the new date into `appliesFrom`. |
+| `summary` | string | yes | One- to two-sentence plain-language description of the duty. |
+| `sourceUrl` | string | yes | `https://` official text (EUR-Lex for article-mapped duties; Commission policy page acceptable for GPAI context). |
 
 ## Data freshness
 
