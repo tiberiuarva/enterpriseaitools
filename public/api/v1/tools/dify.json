@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-11",
+  "generatedAt": "2026-07-18",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,8 +18,8 @@
     "license": "Modified Apache 2.0",
     "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
     "githubUrl": "https://github.com/langgenius/dify",
-    "githubStars": 148466,
-    "version": "1.15.0",
+    "githubStars": 149192,
+    "version": "1.16.0",
     "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
     "pricingModel": "freemium",
     "status": "active",
@@ -39,7 +39,7 @@
       "gcp"
     ],
     "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely.",
-    "lastRelease": "2026-06-25",
+    "lastRelease": "2026-07-17",
     "governance": {
       "dataResidency": {
         "status": "partial",

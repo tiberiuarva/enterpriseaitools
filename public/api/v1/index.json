@@ -1,7 +1,7 @@
 {
   "name": "enterpriseai.tools open data API",
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-07-11",
+  "generatedAt": "2026-07-18",
   "source": "https://www.enterpriseai.tools",
   "documentation": "https://www.enterpriseai.tools/data/",
   "schema": "https://github.com/tiberiuarva/enterpriseaitools/blob/main/data/SCHEMA.md",
@@ -17,7 +17,7 @@
   "counts": {
     "tools": 48,
     "platforms": 3,
-    "updates": 88
+    "updates": 95
   },
   "toolIds": [
     "amazon-q-apps",

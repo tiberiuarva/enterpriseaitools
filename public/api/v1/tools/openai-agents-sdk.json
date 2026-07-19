@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-11",
+  "generatedAt": "2026-07-18",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/openai/openai-agents-python",
-    "githubStars": 27802,
-    "version": "0.18.2",
+    "githubStars": 27984,
+    "version": "0.18.3",
     "docsUrl": "https://openai.github.io/openai-agents-python/",
     "pricingModel": "free",
     "status": "active",
@@ -37,7 +37,7 @@
       "gcp"
     ],
     "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-    "lastRelease": "2026-07-11",
+    "lastRelease": "2026-07-17",
     "logoUrl": "/logos/openai.svg",
     "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
     "governance": {

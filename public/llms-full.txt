@@ -1,6 +1,6 @@
 # enterpriseai.tools — full content
 
-> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-07-11.
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-07-18.
 
 Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. No analytics, no sign-up, no data capture.
 
@@ -29,7 +29,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Atomic Agents
 - Page: https://www.enterpriseai.tools/tools/atomic-agents/
 - Vendor: BrainBlend AI | Type: opensource | License: MIT
-- Status: active | Version: 2.9.0 | Last release: 2026-07-09
+- Status: active | Version: 2.9.1 | Last release: 2026-07-13
 - Minimalist agent framework emphasizing composability and predictable building blocks.
 - Strengths: Schema-first building blocks; Composable design; Focused API surface
 - Governance posture:
@@ -101,7 +101,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### CrewAI
 - Page: https://www.enterpriseai.tools/tools/crewai/
 - Vendor: crewAI Inc. | Type: opensource | License: MIT
-- Status: active | Version: 1.15.2 | Last release: 2026-07-08
+- Status: active | Version: 1.15.4 | Last release: 2026-07-17
 - Open source multi-agent framework focused on autonomous teams and task coordination.
 - Strengths: Large community ecosystem; Crew-based task coordination; Built for multi-agent coordination
 - Governance posture:
@@ -191,7 +191,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Mastra
 - Page: https://www.enterpriseai.tools/tools/mastra/
 - Vendor: Mastra AI | Type: opensource | License: Apache 2.0 core + EE paths (caution: Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.)
-- Status: active | Version: 1.50.0 | Last release: 2026-07-08
+- Status: active | Version: 1.51.0 | Last release: 2026-07-15
 - Agent framework focused on composable workflows, tooling, and modern developer ergonomics.
 - Strengths: Apache 2.0 plus enterprise path; Fast growth; Modern DX
 - Governance posture:
@@ -245,7 +245,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### OpenAI Agents SDK
 - Page: https://www.enterpriseai.tools/tools/openai-agents-sdk/
 - Vendor: OpenAI | Type: opensource | License: MIT
-- Status: active | Version: 0.18.2 | Last release: 2026-07-11
+- Status: active | Version: 0.18.3 | Last release: 2026-07-17
 - Production successor to Swarm for agentic OpenAI workflows with broader model support.
 - Strengths: Hosted tracing support; Production successor to Swarm; Handoffs and tool orchestration
 - Governance posture:
@@ -337,7 +337,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Dify
 - Page: https://www.enterpriseai.tools/tools/dify/
 - Vendor: Dify | Type: opensource | License: Modified Apache 2.0 (caution: Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.)
-- Status: active | Version: 1.15.0 | Last release: 2026-06-25
+- Status: active | Version: 1.16.0 | Last release: 2026-07-17
 - Application development and workflow platform for LLM apps with plugin and enterprise features.
 - Strengths: App + workflow surface in one stack; Built-in BaaS-style app publishing; Plugin architecture
 - Governance posture:
@@ -427,7 +427,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### n8n
 - Page: https://www.enterpriseai.tools/tools/n8n/
 - Vendor: n8n | Type: opensource | License: Sustainable Use License (caution: n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.)
-- Status: active | Version: 2.29.10 | Last release: 2026-07-10
+- Status: active | Version: 2.30.7 | Last release: 2026-07-17
 - Workflow automation platform with strong self-hosting support and broad integration coverage.
 - Strengths: Large integration catalog; Strong workflow automation ecosystem; Low-code orchestration builder
 - Governance posture:
@@ -898,6 +898,13 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ## Recent updates
 
+- 2026-07-17 — CrewAI (release, low impact): CrewAI 1.15.4 promoted the Skills Repository out of experimental status and added Flows in Studio documentation. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.4]
+- 2026-07-17 — OpenAI Agents SDK (release, low impact): OpenAI Agents SDK 0.18.3 added configurable task/turn tracing spans and realtime response usage tracking in session context. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.3]
+- 2026-07-17 — n8n (release, low impact): n8n 2.30.7 added provenance-attested source linting for community packages and fixed SES request signing. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7]
+- 2026-07-17 — Dify (release, medium impact): Dify 1.16.0 introduced the beta Dify Agent experience with shell-style agent capabilities and Skills packaging. [source: https://github.com/langgenius/dify/releases/tag/1.16.0]
+- 2026-07-16 — CrewAI (release, low impact): CrewAI 1.15.3 added execution-boundary interception hooks, an organization ID parameter, and declarative flows on the TUI. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.3]
+- 2026-07-16 — n8n (release, low impact): n8n 2.30.6 required execution mode for MCP workflow executions, tightening workflow execution behavior. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.6]
+- 2026-07-15 — Mastra (release, medium impact): Mastra core 1.51.0 added durable agent crash recovery APIs and opt-in boot-time recovery for orphaned running runs. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.51.0]
 - 2026-07-11 — OpenAI Agents SDK (release, medium impact): OpenAI Agents SDK 0.18.2 added GPT-5.6 request controls and hosted multi-agent beta support, plus sandbox and usage fixes. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.2]
 - 2026-07-10 — Microsoft Agent Framework (release, medium impact): Microsoft Agent Framework Python 1.11.0 added message injection middleware for enqueuing messages into active runs. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.11.0]
 - 2026-07-10 — LangGraph (release, low impact): LangGraph 1.2.9 fixed updateState metadata and counters for delta channels. [source: https://github.com/langchain-ai/langgraph/releases/tag/1.2.9]
@@ -922,7 +929,6 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-07-01 — NeMo Guardrails (release, high impact): NeMo Guardrails 0.23.0 expanded IORails with streaming and non-streaming tool-call validation, added a standalone /v1/checks validation endpoint, and improved OpenTelemetry observability for production guardrail pipelines. [source: https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.23.0]
 - 2026-07-01 — Mastra (release, high impact): Mastra 1.47.0 added AI SDK v7 model support, DurableAgent API parity for stream/resume/generate, gateway-first model discovery, AgentController routing, and eval quality gates. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.47.0]
 - 2026-06-30 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.10.0 added Foundry conversation-session helpers and adaptive eval support, standalone Durable Task worker hosting, and stricter approval defaults for experimental file-access tools. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.10.0]
-- 2026-06-30 — LangGraph (release, medium impact): LangGraph 1.2.7 fixed DeltaChannel overwrite snapshotting, preserved Overwrite values through JSON round trips, emitted valid exit-mode delta task IDs, and refreshed Redis, LangSmith, cryptography, Tornado, and PyJWT dependencies. [source: https://github.com/langchain-ai/langgraph/releases/tag/1.2.7]
 - 2026-06-27 — Paperclip (release, high impact): Paperclip v2026.626.0 made Hermes a built-in local and remote gateway adapter, added task watchdogs for long-running agent work, and surfaced sandbox runtime status directly in issue threads. [source: https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0]
 - 2026-06-27 — CrewAI (release, high impact): CrewAI 1.15.1 required explicit CrewAI project definitions, initialized Git repositories for generated projects, improved CLI deploy handoff, and fixed an SSRF redirect bypass in scraping fetches. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.1]
 - 2026-06-25 — CrewAI (release, high impact): CrewAI 1.15.0 added declarative flow loading and CLI support for conversational flows, while also fixing credential-file permission enforcement and a skill-archive path-traversal issue. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.0]
@@ -937,7 +943,6 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-06-17 — Semantic Kernel (release, high impact): Semantic Kernel Python 1.43.1 added function_choice_behavior support to Azure AI and OpenAI Assistant agents, fixed MessagePack handling, and rejected encoded dot-segment paths in OpenAPI plugins. [source: https://github.com/microsoft/semantic-kernel/releases/tag/python-1.43.1]
 - 2026-06-12 — Amazon Bedrock (market-event, high impact): AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive. [source: https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/]
 - 2026-06-07 — Microsoft Foundry (feature, high impact): Microsoft announced Foundry Managed Compute, adding a managed GPU platform for hosting open-source and custom models through the same Foundry endpoint, SDKs, and billing surface used for frontier-model deployments. [source: https://devblogs.microsoft.com/foundry/announcing-foundry-managed-compute/]
-- 2026-05-28 — Gemini Enterprise Agent Platform (deprecation, high impact): Google deprecated Vertex AI Extensions and said the service will shut down after 2026-11-26, directing teams to migrate agent integrations to Agent Platform to avoid disruption. [source: https://cloud.google.com/vertex-ai/docs/release-notes]
 
 ## Data access
 - Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json
