@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Corrections are resolved in public by comparing sources — see the [impartiality policy](https://www.enterpriseai.tools/impartiality/). For license labels use the **License correction** template instead.
+        Corrections are resolved in public by comparing sources — see [editorial independence](https://www.enterpriseai.tools/impartiality/). For license labels use the **License correction** template instead.
   - type: input
     id: tool
     attributes:

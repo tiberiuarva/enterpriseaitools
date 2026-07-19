@@ -111,7 +111,7 @@ export default function MethodologyPage() {
             </a>{" "}
             and the{" "}
             <a href={withBasePath("/impartiality")} className="text-[var(--color-primary)] hover:underline">
-              impartiality policy
+              editorial-independence note
             </a>
           </p>
         </section>

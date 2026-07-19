@@ -5,30 +5,22 @@ import { lastUpdated } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { githubRepoUrl, withBasePath } from "@/lib/site";
 
-const PAGE_TITLE = "Impartiality — nothing here can be bought";
+const PAGE_TITLE = "Editorial independence & corrections";
 const PAGE_DESCRIPTION =
-  "The permanent no-pay-to-play policy: no listing fees, no sponsored placement, no paid badges, no vendor influence — and a public, source-based correction path for disputed facts.";
+  "How placement is decided, how corrections are handled, how the project is funded, and what data it collects — a plain, factual note for the record.";
 const LAST_REVIEWED = "2026-07-17";
 
-const POLICY_POINTS = [
-  "No listing fees. No product has ever paid to be listed, and none can.",
-  "No sponsored placement or ranking. Position on any page is determined by data and written rules, never by spend.",
-  "No paid badges or “verified” programs. A verification date on a record reflects our review, not a vendor purchase.",
-  "No advertising, no affiliate links, no referral revenue from any listed vendor.",
-  "No vendor influence on verdicts. When editorial assessments ship, they will carry a dated rationale and the same no-vendor-influence rule.",
-];
-
-const PRIVACY_POINTS = [
-  "No analytics and no tracking scripts — we cannot see who you are, and we do not want to.",
-  "No cookies, no email capture, no lead funnel. Subscribing means RSS/Atom or the calendar feed, which identify nobody.",
-  "No runtime third-party requests: pages are static files, and nothing phones home when you read them.",
+const PLACEMENT_POINTS = [
+  "Listing, position, and any future verdict or score are decided by data and written rules — not by payment.",
+  "There are no listing fees, sponsored slots, or paid “verified” badges. A verification date reflects a review, not a purchase.",
+  "No advertising, affiliate links, or referral revenue from listed vendors.",
 ];
 
 const CORRECTION_STEPS = [
-  "Open a public issue in the repository naming the record, the field, the value you believe is wrong, and the primary source that supports the correction.",
-  "Corrections are resolved by comparing sources, in public, in the issue thread — never by who is asking or what they spend.",
+  "Open a public issue naming the record, the field, the value you believe is wrong, and the primary source that supports the correction.",
+  "Corrections are resolved by comparing sources, in public, in the issue thread.",
   "License corrections follow a stricter path: the upstream LICENSE file is re-read and the record changes only after verification, with the change logged in the public feed.",
-  "Vendors are welcome to correct facts about their own products this way. Facts can be corrected; position cannot be bought.",
+  "Vendors are welcome to correct facts about their own products this way.",
 ];
 
 export const metadata: Metadata = buildMetadata({
@@ -43,7 +35,7 @@ export default function ImpartialityPage() {
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
-      { name: "Impartiality", url: pageUrl },
+      { name: "Editorial independence", url: pageUrl },
     ]),
     buildWebPageJsonLd({ name: PAGE_TITLE, url: pageUrl, description: PAGE_DESCRIPTION }),
   ];
@@ -58,19 +50,17 @@ export default function ImpartialityPage() {
             Home
           </a>
           <span aria-hidden="true"> / </span>
-          <span>Impartiality</span>
+          <span>Editorial independence</span>
         </nav>
 
         <section className="card-flat p-6 md:p-8">
-          <h1 className="text-h1 text-[var(--color-text-primary)]">Nothing here can be bought</h1>
+          <h1 className="text-h1 text-[var(--color-text-primary)]">Editorial independence &amp; corrections</h1>
           <p className="mt-3 max-w-3xl text-sm leading-6 text-[var(--color-text-secondary)]">
-            Most tool directories monetize the listing itself — paid placement, paid “verified” badges, bid-ranked
-            positions, or analyst access economies. This site is built on the opposite premise: the data is the product,
-            and its value depends on no one being able to influence it. This page is the standing policy that makes that
-            checkable.
+            A short, factual note for the record: how placement is decided, how to correct something that is wrong, how
+            the project is funded, and what it collects about you.
           </p>
           <p className="mt-4 text-xs text-[var(--color-text-secondary)]">
-            Last reviewed <time dateTime={LAST_REVIEWED}>{LAST_REVIEWED}</time> · permanent policy · see also the{" "}
+            Last reviewed <time dateTime={LAST_REVIEWED}>{LAST_REVIEWED}</time> · see also the{" "}
             <a href={withBasePath("/methodology")} className="text-[var(--color-primary)] hover:underline">
               methodology
             </a>{" "}
@@ -81,36 +71,20 @@ export default function ImpartialityPage() {
           </p>
         </section>
 
-        <section id="policy" className="card-flat scroll-mt-24 p-6">
-          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">The no-pay-to-play policy</h2>
+        <section id="placement" className="card-flat scroll-mt-24 p-6">
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Placement is not for sale</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-            {POLICY_POINTS.map((point) => (
-              <li key={point.slice(0, 40)}>{point}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section id="funding" className="card-flat scroll-mt-24 p-6">
-          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">How the project is funded and run</h2>
-          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
-            enterpriseai.tools is an open-source project (MIT-licensed, public repository) maintained by Tiberiu Arva
-            and run on static hosting at negligible cost. There is no revenue model: no subscriptions, no ads, no paid
-            tiers, no sponsored content. That independence is deliberate — it removes every channel through which a
-            vendor could pay to shape the data.
-          </p>
-        </section>
-
-        <section id="privacy" className="card-flat scroll-mt-24 p-6">
-          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Zero tracking</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
-            {PRIVACY_POINTS.map((point) => (
+            {PLACEMENT_POINTS.map((point) => (
               <li key={point.slice(0, 40)}>{point}</li>
             ))}
           </ul>
         </section>
 
         <section id="corrections" className="card-flat scroll-mt-24 p-6">
-          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Corrections: resolved by sources, not by spend</h2>
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">Corrections</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
+            If a fact is wrong, the fastest way to fix it is to show the source.
+          </p>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-6 text-[var(--color-text-secondary)]">
             {CORRECTION_STEPS.map((step) => (
               <li key={step.slice(0, 40)}>{step}</li>
@@ -122,6 +96,25 @@ export default function ImpartialityPage() {
               the public repository
             </a>
             .
+          </p>
+        </section>
+
+        <section id="funding" className="card-flat scroll-mt-24 p-6">
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">How it is funded and run</h2>
+          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+            enterpriseai.tools is an open-source project (MIT-licensed, public repository) maintained by Tiberiu Arva and
+            run on static hosting at low cost. It carries no ads and no paid tiers today. Should the project ever take
+            funding — a donation, a grant, an acknowledged sponsor — it would be disclosed here and kept behind a firewall
+            from the data: nothing that touches listing, placement, wording, or a future verdict or score is ever for sale.
+          </p>
+        </section>
+
+        <section id="privacy" className="card-flat scroll-mt-24 p-6">
+          <h2 className="text-lg font-semibold text-[var(--color-text-primary)]">What it collects: nothing</h2>
+          <p className="mt-3 text-sm leading-6 text-[var(--color-text-secondary)]">
+            No analytics, no tracking scripts, no cookies, no email capture. Pages are static files with no runtime
+            third-party requests, so nothing phones home when you read them. Subscribing means RSS/Atom or the calendar
+            feed, which identify nobody.
           </p>
         </section>
 
@@ -137,8 +130,7 @@ export default function ImpartialityPage() {
             >
               Tiberiu Arva
             </a>{" "}
-            — through a regulated-enterprise delivery lens, and every edit is attributable in the public git history.
-            If this policy is ever violated, the evidence would be public; that is intentional.
+            — and every edit is attributable in the public git history.
           </p>
         </section>
       </main>

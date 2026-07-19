@@ -52,8 +52,8 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
   },
   {
     path: "/impartiality",
-    label: "Impartiality — no paid placement",
-    keywords: ["no pay to play", "sponsored", "corrections", "trust", "policy", "privacy", "no tracking"],
+    label: "Editorial independence",
+    keywords: ["corrections", "funding", "placement", "no paid placement", "impartiality", "privacy", "no tracking", "sponsorship"],
   },
   {
     path: "/about",

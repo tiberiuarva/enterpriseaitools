@@ -283,7 +283,7 @@ export default function Home() {
             Built to be relied on
           </h2>
           <p className="mt-2 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">
-            Every claim links to a primary source, nothing here can be bought, and the whole dataset is yours to take.
+            Every claim links to a primary source, placement is never for sale, and the whole dataset is yours to take.
           </p>
           <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
             {[
@@ -300,10 +300,10 @@ export default function Home() {
                 body: "The full dataset as versioned JSON, Atom feeds, and live README badges. No key, no tracking.",
               },
               {
-                href: "/impartiality",
+                href: "/methodology",
                 icon: ShieldCheck,
-                title: "Nothing here can be bought",
-                body: "No listing fees, no sponsored placement, no paid badges. Corrections are settled by sources, not spend.",
+                title: "Source-backed, by rule",
+                body: "Every claim links to a primary source; licenses are read from the upstream LICENSE file; placement is never for sale.",
               },
             ].map(({ href, icon: Icon, title, body }) => (
               <a

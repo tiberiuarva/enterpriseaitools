@@ -268,7 +268,7 @@ function buildApiV1Files() {
       documentation: `${toAbsoluteUrl("/data")}`,
       schema: "https://github.com/tiberiuarva/enterpriseaitools/blob/main/data/SCHEMA.md",
       datasetLicense: "MIT",
-      policy: "No paid placement, ever. Every record is source-backed; see /impartiality and /methodology.",
+      policy: "Placement is not for sale; every record is source-backed. See /impartiality and /methodology.",
       endpoints: {
         tools: `${siteUrl}/api/v1/tools.json`,
         platforms: `${siteUrl}/api/v1/platforms.json`,
@@ -333,7 +333,7 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 - [About](${siteUrl}/about/): project scope, sourcing standards, and contribution rules.
 - [Methodology](${siteUrl}/methodology/): how every claim is sourced and verified.
 - [Inclusion criteria](${siteUrl}/inclusion-criteria/): the written rules for what gets listed.
-- [Impartiality](${siteUrl}/impartiality/): the permanent no-paid-placement policy.
+- [Editorial independence](${siteUrl}/impartiality/): how placement is decided, corrections handled, and the project funded.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](${siteUrl}/llms-full.txt)

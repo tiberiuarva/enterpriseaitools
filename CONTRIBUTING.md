@@ -1,11 +1,11 @@
 # Contributing to enterpriseai.tools
 
 Contributions are welcome — and every one of them goes through the same gate:
-**source-backed or not published.** Nothing here can be bought; facts can be
-corrected by anyone with evidence, and position can be bought by no one. The
-full policies live on the site: [inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/),
-[methodology](https://www.enterpriseai.tools/methodology/), and the
-[impartiality policy](https://www.enterpriseai.tools/impartiality/).
+**source-backed or not published.** Facts can be corrected by anyone with
+evidence; placement is not for sale. The full policies live on the site:
+[inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/),
+[methodology](https://www.enterpriseai.tools/methodology/), and
+[editorial independence](https://www.enterpriseai.tools/impartiality/).
 
 ## Ways to contribute
 

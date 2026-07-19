@@ -20,7 +20,7 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - [About](https://www.enterpriseai.tools/about/): project scope, sourcing standards, and contribution rules.
 - [Methodology](https://www.enterpriseai.tools/methodology/): how every claim is sourced and verified.
 - [Inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/): the written rules for what gets listed.
-- [Impartiality](https://www.enterpriseai.tools/impartiality/): the permanent no-paid-placement policy.
+- [Editorial independence](https://www.enterpriseai.tools/impartiality/): how placement is decided, corrections handled, and the project funded.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](https://www.enterpriseai.tools/llms-full.txt)

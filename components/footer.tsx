@@ -40,7 +40,7 @@ const columns: FooterColumn[] = [
       { href: "/data", label: "Open data & API" },
       { href: "/methodology", label: "Methodology" },
       { href: "/inclusion-criteria", label: "Inclusion criteria" },
-      { href: "/impartiality", label: "Impartiality — no paid placement" },
+      { href: "/impartiality", label: "Editorial independence" },
     ],
   },
   {

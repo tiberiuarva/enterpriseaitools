@@ -232,8 +232,8 @@ export default function AboutPage() {
             {[
               {
                 href: "/impartiality",
-                title: "Nothing here can be bought",
-                body: "No listing fees, no sponsored placement, no paid badges, no vendor influence — the permanent policy, in writing.",
+                title: "Editorial independence",
+                body: "How placement is decided, how corrections work, how the project is funded, and what it collects — for the record.",
               },
               {
                 href: "/methodology",
@@ -384,7 +384,7 @@ export default function AboutPage() {
               <SectionHeading
                 eyebrow="Standards"
                 title="The page is only useful if the dataset stays defensible"
-                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed. The full, dated versions live on the methodology, inclusion-criteria, and impartiality pages."
+                intro="These are the sourcing and methodology rules that keep the tracker reviewable and evidence-backed. The full, dated versions live on the methodology, inclusion-criteria, and editorial-independence pages."
               />
               <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
                 <div className="card p-5">

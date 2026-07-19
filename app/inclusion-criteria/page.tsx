@@ -33,7 +33,7 @@ const STATUS_RULES = [
 const PROPOSAL_RULES = [
   "Anyone can propose a listing or a correction through the public repository — the proposal must satisfy every rule above and populate the schema's required fields with sources.",
   "Vendors may propose factual corrections to their own record with sources, exactly like anyone else.",
-  "No fee, sponsorship, badge program, or relationship accelerates or influences listing, placement, or wording — see the impartiality policy.",
+  "No fee, sponsorship, badge program, or relationship accelerates or influences listing, placement, or wording — see the editorial-independence note.",
 ];
 
 export const metadata: Metadata = buildMetadata({
@@ -94,7 +94,7 @@ export default function InclusionCriteriaPage() {
             </a>{" "}
             and the{" "}
             <a href={withBasePath("/impartiality")} className="text-[var(--color-primary)] hover:underline">
-              impartiality policy
+              editorial-independence note
             </a>
           </p>
         </section>

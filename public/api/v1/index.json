@@ -6,7 +6,7 @@
   "documentation": "https://www.enterpriseai.tools/data/",
   "schema": "https://github.com/tiberiuarva/enterpriseaitools/blob/main/data/SCHEMA.md",
   "datasetLicense": "MIT",
-  "policy": "No paid placement, ever. Every record is source-backed; see /impartiality and /methodology.",
+  "policy": "Placement is not for sale; every record is source-backed. See /impartiality and /methodology.",
   "endpoints": {
     "tools": "https://www.enterpriseai.tools/api/v1/tools.json",
     "platforms": "https://www.enterpriseai.tools/api/v1/platforms.json",
