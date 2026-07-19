@@ -2,10 +2,108 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-07-11T00:00:00.000Z</updated>
+  <updated>2026-07-18T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-07-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-17-01" />
+    <summary>CrewAI 1.15.4 promoted the Skills Repository out of experimental status and added Flows in Studio documentation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.4</id>
+      <title>Release 1.15.4 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.4" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-02</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-07-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-17-02" />
+    <summary>OpenAI Agents SDK 0.18.3 added configurable task/turn tracing spans and realtime response usage tracking in session context.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.18.3</id>
+      <title>Release v0.18.3 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.18.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-03</id>
+    <title>n8n — release</title>
+    <updated>2026-07-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-17-03" />
+    <summary>n8n 2.30.7 added provenance-attested source linting for community packages and fixed SES request signing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, low" />
+    <source>
+      <id>https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7</id>
+      <title>Release n8n@2.30.7 · n8n-io/n8n</title>
+      <link href="https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-04</id>
+    <title>Dify — release</title>
+    <updated>2026-07-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-17-04" />
+    <summary>Dify 1.16.0 introduced the beta Dify Agent experience with shell-style agent capabilities and Skills packaging.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langgenius/dify/releases/tag/1.16.0</id>
+      <title>Release 1.16.0 · langgenius/dify</title>
+      <link href="https://github.com/langgenius/dify/releases/tag/1.16.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-16-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-07-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-16-01" />
+    <summary>CrewAI 1.15.3 added execution-boundary interception hooks, an organization ID parameter, and declarative flows on the TUI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.3</id>
+      <title>Release 1.15.3 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-16-02</id>
+    <title>n8n — release</title>
+    <updated>2026-07-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-16-02" />
+    <summary>n8n 2.30.6 required execution mode for MCP workflow executions, tightening workflow execution behavior.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, low" />
+    <source>
+      <id>https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.6</id>
+      <title>Release n8n@2.30.6 · n8n-io/n8n</title>
+      <link href="https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-15-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-07-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-15-01" />
+    <summary>Mastra core 1.51.0 added durable agent crash recovery APIs and opt-in boot-time recovery for orphaned running runs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.51.0</id>
+      <title>Release @mastra/core@1.51.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.51.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-07-11-01</id>
     <title>OpenAI Agents SDK — release</title>

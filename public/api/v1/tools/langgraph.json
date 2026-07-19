@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-11",
+  "generatedAt": "2026-07-18",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/langchain-ai/langgraph",
-    "githubStars": 37008,
+    "githubStars": 37535,
     "version": "1.2.9",
     "docsUrl": "https://langchain-ai.github.io/langgraph/",
     "pricingModel": "freemium",

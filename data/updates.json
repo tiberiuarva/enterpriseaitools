@@ -1,6 +1,90 @@
 {
-  "lastUpdated": "2026-07-11",
+  "lastUpdated": "2026-07-18",
   "updates": [
+    {
+      "id": "update-2026-07-17-01",
+      "date": "2026-07-17",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.15.4 promoted the Skills Repository out of experimental status and added Flows in Studio documentation.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.4",
+      "sourceTitle": "Release 1.15.4 · crewAIInc/crewAI",
+      "impact": "low"
+    },
+    {
+      "id": "update-2026-07-17-02",
+      "date": "2026-07-17",
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "category": "agents",
+      "type": "release",
+      "summary": "OpenAI Agents SDK 0.18.3 added configurable task/turn tracing spans and realtime response usage tracking in session context.",
+      "sourceUrl": "https://github.com/openai/openai-agents-python/releases/tag/v0.18.3",
+      "sourceTitle": "Release v0.18.3 · openai/openai-agents-python",
+      "impact": "low"
+    },
+    {
+      "id": "update-2026-07-17-03",
+      "date": "2026-07-17",
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "n8n 2.30.7 added provenance-attested source linting for community packages and fixed SES request signing.",
+      "sourceUrl": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7",
+      "sourceTitle": "Release n8n@2.30.7 · n8n-io/n8n",
+      "impact": "low"
+    },
+    {
+      "id": "update-2026-07-17-04",
+      "date": "2026-07-17",
+      "toolId": "dify",
+      "toolName": "Dify",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Dify 1.16.0 introduced the beta Dify Agent experience with shell-style agent capabilities and Skills packaging.",
+      "sourceUrl": "https://github.com/langgenius/dify/releases/tag/1.16.0",
+      "sourceTitle": "Release 1.16.0 · langgenius/dify",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-07-16-01",
+      "date": "2026-07-16",
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "category": "agents",
+      "type": "release",
+      "summary": "CrewAI 1.15.3 added execution-boundary interception hooks, an organization ID parameter, and declarative flows on the TUI.",
+      "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.3",
+      "sourceTitle": "Release 1.15.3 · crewAIInc/crewAI",
+      "impact": "low"
+    },
+    {
+      "id": "update-2026-07-16-02",
+      "date": "2026-07-16",
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "n8n 2.30.6 required execution mode for MCP workflow executions, tightening workflow execution behavior.",
+      "sourceUrl": "https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.6",
+      "sourceTitle": "Release n8n@2.30.6 · n8n-io/n8n",
+      "impact": "low"
+    },
+    {
+      "id": "update-2026-07-15-01",
+      "date": "2026-07-15",
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "category": "agents",
+      "type": "release",
+      "summary": "Mastra core 1.51.0 added durable agent crash recovery APIs and opt-in boot-time recovery for orphaned running runs.",
+      "sourceUrl": "https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.51.0",
+      "sourceTitle": "Release @mastra/core@1.51.0 · mastra-ai/mastra",
+      "impact": "medium"
+    },
     {
       "id": "update-2026-07-11-01",
       "date": "2026-07-11",

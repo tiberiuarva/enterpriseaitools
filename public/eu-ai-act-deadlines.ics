@@ -8,7 +8,7 @@ X-WR-CALDESC:Application dates of Regulation (EU) 2024/1689, source-backe
  d. Not legal advice.
 BEGIN:VEVENT
 UID:eu-ai-act-2025-02-02@enterpriseai.tools
-DTSTAMP:20260711T000000Z
+DTSTAMP:20260718T000000Z
 DTSTART;VALUE=DATE:20250202
 SUMMARY:EU AI Act: Prohibited AI practices and AI literacy
 DESCRIPTION:In force. Bans on unacceptable-risk practices (Article 5) and
@@ -19,7 +19,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:eu-ai-act-2025-08-02@enterpriseai.tools
-DTSTAMP:20260711T000000Z
+DTSTAMP:20260718T000000Z
 DTSTART;VALUE=DATE:20250802
 SUMMARY:EU AI Act: Governance rules and general-purpose AI model obligati
  ons
@@ -32,7 +32,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:eu-ai-act-2026-08-02@enterpriseai.tools
-DTSTAMP:20260711T000000Z
+DTSTAMP:20260718T000000Z
 DTSTART;VALUE=DATE:20260802
 SUMMARY:EU AI Act: Most AI Act obligations\, including Annex III high-ris
  k systems
@@ -47,7 +47,7 @@ TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
 UID:eu-ai-act-2027-08-02@enterpriseai.tools
-DTSTAMP:20260711T000000Z
+DTSTAMP:20260718T000000Z
 DTSTART;VALUE=DATE:20270802
 SUMMARY:EU AI Act: High-risk AI systems embedded in regulated products
 DESCRIPTION:Application date for Annex I product-embedded high-risk syste

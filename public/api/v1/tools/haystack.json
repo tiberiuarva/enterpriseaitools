@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-11",
+  "generatedAt": "2026-07-18",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/deepset-ai/haystack",
-    "githubStars": 25865,
+    "githubStars": 25929,
     "version": "2.31.0",
     "docsUrl": "https://docs.haystack.deepset.ai/",
     "pricingModel": "free",
