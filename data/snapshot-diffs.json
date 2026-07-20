@@ -1,7 +1,337 @@
 {
-  "generatedAt": "2026-07-17",
-  "snapshotCount": 2,
+  "generatedAt": "2026-07-20",
+  "snapshotCount": 3,
   "events": [
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 6033,
+      "current": 6051,
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-07-09",
+      "current": "2026-07-13",
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "2.9.0",
+      "current": "2.9.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "autogen",
+      "toolName": "AutoGen",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 59647,
+      "current": 59800,
+      "highImpact": false
+    },
+    {
+      "toolId": "beeai-framework",
+      "toolName": "BeeAI Framework",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 3313,
+      "current": 3322,
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 55331,
+      "current": 55712,
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-07-08",
+      "current": "2026-07-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "1.15.2",
+      "current": "1.15.4",
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 148466,
+      "current": 149192,
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-06-25",
+      "current": "2026-07-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "1.15.0",
+      "current": "1.16.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 54516,
+      "current": 54704,
+      "highImpact": false
+    },
+    {
+      "toolId": "guardrails-ai",
+      "toolName": "Guardrails AI",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 7124,
+      "current": 7169,
+      "highImpact": false
+    },
+    {
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 25865,
+      "current": 25929,
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 151616,
+      "current": 151979,
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 37008,
+      "current": 37535,
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 50780,
+      "current": 50917,
+      "highImpact": false
+    },
+    {
+      "toolId": "llm-guard",
+      "toolName": "LLM Guard",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 3163,
+      "current": 3187,
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 26033,
+      "current": 26304,
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-07-08",
+      "current": "2026-07-15",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "1.50.0",
+      "current": "1.51.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 12023,
+      "current": 12195,
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 196010,
+      "current": 196880,
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-07-10",
+      "current": "2026-07-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "2.29.10",
+      "current": "2.30.7",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 6661,
+      "current": 6728,
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 27802,
+      "current": 27984,
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "lastRelease",
+      "previous": "2026-07-11",
+      "current": "2026-07-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "version",
+      "previous": "0.18.2",
+      "current": "0.18.3",
+      "highImpact": false
+    },
+    {
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 73345,
+      "current": 74070,
+      "highImpact": false
+    },
+    {
+      "toolId": "rebuff",
+      "toolName": "Rebuff",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 1510,
+      "current": 1513,
+      "highImpact": false
+    },
+    {
+      "toolId": "rivet",
+      "toolName": "Rivet",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 4631,
+      "current": 4638,
+      "highImpact": false
+    },
+    {
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "from": "2026-07-17",
+      "to": "2026-07-20",
+      "field": "githubStars",
+      "previous": 28293,
+      "current": 28327,
+      "highImpact": false
+    },
     {
       "toolId": "atomic-agents",
       "toolName": "Atomic Agents",
