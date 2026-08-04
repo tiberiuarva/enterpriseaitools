@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-18",
+  "generatedAt": "2026-08-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/Eigenwise/atomic-agents",
-    "githubStars": 6051,
+    "githubStars": 6111,
     "version": "2.9.1",
     "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
     "pricingModel": "free",

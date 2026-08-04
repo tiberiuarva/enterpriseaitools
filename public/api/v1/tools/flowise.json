@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-18",
+  "generatedAt": "2026-08-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "orchestration",
     "type": "opensource",
     "vendor": "Flowise",
-    "description": "Low-code orchestration and agent workflow builder now under Workday ownership.",
+    "description": "Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.",
     "strengths": [
       "Low-code orchestration builder",
       "Chatflow + agent workflow support",
@@ -28,11 +28,11 @@
       }
     ],
     "githubUrl": "https://github.com/FlowiseAI/Flowise",
-    "githubStars": 54704,
-    "version": "3.1.3",
+    "githubStars": 55137,
+    "version": "3.1.4",
     "docsUrl": "https://docs.flowiseai.com/",
     "pricingModel": "free",
-    "status": "active",
+    "status": "maintenance",
     "tags": [
       "orchestration",
       "low-code",
@@ -48,20 +48,19 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Practical low-code orchestration layer for teams moving quickly, provided they validate security posture and ownership-roadmap fit for production use.",
+    "practitionerNote": "Active feature development has ceased. The repository is scheduled for archival on August 10, 2026 and official project support ends August 31, while the Apache-2.0 source remains available for internal or community forks.",
     "governance": {
       "dataResidency": {
         "status": "partial",
-        "detail": "Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only.",
+        "detail": "Self-hosted deployment leaves data location under customer control; no current hosted-service residency commitment is asserted.",
         "sourceUrl": "https://docs.flowiseai.com/configuration/deployment.md"
       },
       "deployment": {
         "status": "yes",
-        "detail": "Self-hosted (Apache-2.0 core) or Flowise Cloud SaaS.",
-        "sourceUrl": "https://docs.flowiseai.com/configuration/deployment.md",
+        "detail": "The Apache-2.0 source remains available for self-hosted forks; the official repository is scheduled for archival on August 10, 2026 and project EOL on August 31, 2026.",
+        "sourceUrl": "https://flowiseai.com/sunset",
         "models": [
-          "self-hosted",
-          "saas"
+          "self-hosted"
         ]
       },
       "auditLogging": {
@@ -93,6 +92,6 @@
       },
       "reviewedAt": "2026-05-26"
     },
-    "lastRelease": "2026-06-25"
+    "lastRelease": "2026-07-29"
   }
 }

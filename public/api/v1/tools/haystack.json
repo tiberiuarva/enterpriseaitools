@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-18",
+  "generatedAt": "2026-08-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/deepset-ai/haystack",
-    "githubStars": 25929,
-    "version": "2.31.0",
+    "githubStars": 26107,
+    "version": "3.0.0",
     "docsUrl": "https://docs.haystack.deepset.ai/",
     "pricingModel": "free",
     "status": "active",
@@ -38,7 +38,7 @@
       "gcp"
     ],
     "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
-    "lastRelease": "2026-07-08",
+    "lastRelease": "2026-07-20",
     "governance": {
       "dataResidency": {
         "status": "yes",

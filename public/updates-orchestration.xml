@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-orchestration.xml</id>
   <title>enterpriseai.tools weekly updates — orchestration</title>
-  <updated>2026-07-18T00:00:00.000Z</updated>
+  <updated>2026-08-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-orchestration.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-29-01</id>
+    <title>Flowise — deprecation</title>
+    <updated>2026-07-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-29-01" />
+    <summary>Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, deprecation, high" />
+    <source>
+      <id>https://flowiseai.com/sunset</id>
+      <title>The Future of Flowise</title>
+      <link href="https://flowiseai.com/sunset" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-20-01</id>
+    <title>Haystack — release</title>
+    <updated>2026-07-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-20-01" />
+    <summary>Haystack 3.0 introduced intentional breaking changes alongside agent hooks and skills, run introspection, first-class async serving, a leaner core, and safer pipeline loading.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v3.0.0</id>
+      <title>Haystack v3.0.0</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v3.0.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-03</id>
     <title>n8n — release</title>

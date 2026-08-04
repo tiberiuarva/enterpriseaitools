@@ -211,7 +211,7 @@ Entries must be ordered newest first.
 | `toolId` | string | yes | Foreign key to `tools.json` or a stable platform id |
 | `toolName` | string | yes | Denormalized display name |
 | `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
-| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
+| `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. Use `deprecation` for a product/project feature freeze, repository archival, end-of-life notice, or revoked platform/model access. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
 | `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
 | `sourceUrl` | string | yes | Required for every entry, no exceptions |

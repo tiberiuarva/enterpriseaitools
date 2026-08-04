@@ -2,18 +2,18 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-platforms.xml</id>
   <title>enterpriseai.tools weekly updates — platforms</title>
-  <updated>2026-07-18T00:00:00.000Z</updated>
+  <updated>2026-08-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-platforms.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-05</id>
-    <title>Amazon Bedrock — market-event</title>
+    <title>Amazon Bedrock — deprecation</title>
     <updated>2026-06-12T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-06-13-05" />
     <summary>AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="platforms, market-event, high" />
+    <category term="platforms, deprecation, high" />
     <source>
       <id>https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/</id>
       <title>AWS announces Claude Fable 5, the first generally available Mythos-class model</title>

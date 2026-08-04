@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-18",
+  "generatedAt": "2026-08-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/i-am-bee/beeai-framework",
-    "githubStars": 3322,
-    "version": "0.1.81",
+    "githubStars": 3367,
+    "version": "0.1.82",
     "docsUrl": "https://framework.beeai.dev/introduction/welcome",
     "pricingModel": "free",
     "status": "active",
@@ -39,7 +39,7 @@
     "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation.",
     "logoSourceUrl": "https://framework.beeai.dev/",
     "logoUrl": "/logos/beeai-framework.svg",
-    "lastRelease": "2026-05-28",
+    "lastRelease": "2026-07-24",
     "governance": {
       "dataResidency": {
         "status": "yes",

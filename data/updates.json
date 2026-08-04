@@ -1,6 +1,66 @@
 {
-  "lastUpdated": "2026-07-18",
+  "lastUpdated": "2026-08-04",
   "updates": [
+    {
+      "id": "update-2026-08-03-01",
+      "date": "2026-08-03",
+      "toolId": "aws-bedrock-agents",
+      "toolName": "Amazon Bedrock Agents",
+      "category": "agents",
+      "type": "feature",
+      "summary": "Amazon Bedrock added 1 million-token context windows for OpenAI GPT-5.6 Sol, Terra, and Luna, expanding long-context options for agent and retrieval workloads.",
+      "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/",
+      "sourceTitle": "OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-07-30-01",
+      "date": "2026-07-30",
+      "toolId": "aws-bedrock-agents",
+      "toolName": "Amazon Bedrock Agents",
+      "category": "agents",
+      "type": "feature",
+      "summary": "Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family.",
+      "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/",
+      "sourceTitle": "Amazon Bedrock announces up to 80% lower prices for OpenAI GPT-5.6 models",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-07-29-01",
+      "date": "2026-07-29",
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "category": "orchestration",
+      "type": "deprecation",
+      "summary": "Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks.",
+      "sourceUrl": "https://flowiseai.com/sunset",
+      "sourceTitle": "The Future of Flowise",
+      "impact": "high"
+    },
+    {
+      "id": "update-2026-07-28-01",
+      "date": "2026-07-28",
+      "toolId": "aws-bedrock-agents",
+      "toolName": "Amazon Bedrock Agents",
+      "category": "agents",
+      "type": "feature",
+      "summary": "Amazon Bedrock AgentCore Gateway added support for the MCP 2026-07-28 specification, including its stateless core, governed extensions, and hardened authorization.",
+      "sourceUrl": "https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/",
+      "sourceTitle": "How AgentCore Gateway supports the MCP 2026-07-28 spec",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-07-20-01",
+      "date": "2026-07-20",
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Haystack 3.0 introduced intentional breaking changes alongside agent hooks and skills, run introspection, first-class async serving, a leaner core, and safer pipeline loading.",
+      "sourceUrl": "https://github.com/deepset-ai/haystack/releases/tag/v3.0.0",
+      "sourceTitle": "Haystack v3.0.0",
+      "impact": "high"
+    },
     {
       "id": "update-2026-07-17-01",
       "date": "2026-07-17",
@@ -559,7 +619,7 @@
       "toolId": "aws-bedrock",
       "toolName": "Amazon Bedrock",
       "category": "platforms",
-      "type": "market-event",
+      "type": "deprecation",
       "summary": "AWS announced Claude Fable 5 on Amazon Bedrock, then updated the notice to say Anthropic asked AWS to revoke access to Claude Fable 5 and Claude Mythos 5 under a US export-control directive.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/06/claude-fable-5-aws/",
       "sourceTitle": "AWS announces Claude Fable 5, the first generally available Mythos-class model",

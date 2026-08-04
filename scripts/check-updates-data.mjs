@@ -8,6 +8,16 @@ const repoRoot = path.resolve(scriptDir, "..");
 const updatesPath = path.join(repoRoot, "data", "updates.json");
 const toolsPath = path.join(repoRoot, "data", "tools.json");
 const isoCalendarDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+const validUpdateTypes = new Set([
+  "release",
+  "acquisition",
+  "deprecation",
+  "rename",
+  "funding",
+  "feature",
+  "model-addition",
+  "license-change",
+]);
 
 let updatesData;
 try {
@@ -49,6 +59,14 @@ if (!Array.isArray(updatesData.updates)) {
 
   if (newestUpdateDate && lastUpdated < newestUpdateDate) {
     findings.push(`data/updates.json lastUpdated (${lastUpdated}) must be on or after newest update date (${newestUpdateDate}).`);
+  }
+}
+
+if (Array.isArray(updatesData.updates)) {
+  for (const update of updatesData.updates) {
+    if (!validUpdateTypes.has(update?.type)) {
+      findings.push(`Update ${update?.id ?? "<missing id>"} has invalid type: ${String(update?.type)}.`);
+    }
   }
 }
 
