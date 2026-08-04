@@ -22,12 +22,12 @@
   </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-07-30-01</id>
-    <title>Amazon Bedrock Agents — pricing</title>
+    <title>Amazon Bedrock Agents — feature</title>
     <updated>2026-07-30T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-07-30-01" />
     <summary>Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, pricing, high" />
+    <category term="agents, feature, high" />
     <source>
       <id>https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/</id>
       <title>Amazon Bedrock announces up to 80% lower prices for OpenAI GPT-5.6 models</title>

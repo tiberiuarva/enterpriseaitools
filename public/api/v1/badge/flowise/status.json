@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "status",
-  "message": "active",
-  "color": "brightgreen",
+  "message": "maintenance",
+  "color": "yellow",
   "cacheSeconds": 86400
 }
