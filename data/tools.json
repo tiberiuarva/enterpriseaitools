@@ -1913,7 +1913,7 @@
       "governance": {
         "dataResidency": {
           "status": "partial",
-          "detail": "Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only.",
+          "detail": "Self-hosted deployment leaves data location under customer control; no current hosted-service residency commitment is asserted.",
           "sourceUrl": "https://docs.flowiseai.com/configuration/deployment.md"
         },
         "deployment": {

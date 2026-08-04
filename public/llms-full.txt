@@ -359,7 +359,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.
 - Strengths: Low-code orchestration builder; Chatflow + agent workflow support; Wide model/provider connectivity
 - Governance posture:
-  - Data residency: partial — Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only. [source: https://docs.flowiseai.com/configuration/deployment.md]
+  - Data residency: partial — Self-hosted deployment leaves data location under customer control; no current hosted-service residency commitment is asserted. [source: https://docs.flowiseai.com/configuration/deployment.md]
   - Deployment: yes (self-hosted) — The Apache-2.0 source remains available for self-hosted forks; the official repository is scheduled for archival on August 10, 2026 and project EOL on August 31, 2026. [source: https://flowiseai.com/sunset]
   - Audit logging: unknown — No dedicated audit-log documentation; enterprise tier may add capabilities.
   - SOC 2: unknown — No SOC 2 certification announced by Flowise directly.
