@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-07-18",
+  "generatedAt": "2026-08-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/Ironclad/rivet",
-    "githubStars": 4638,
+    "githubStars": 4656,
     "version": "1.11.3",
     "docsUrl": "https://rivet.ironcladapp.com/",
     "pricingModel": "free",

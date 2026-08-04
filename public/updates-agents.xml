@@ -2,10 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-agents.xml</id>
   <title>enterpriseai.tools weekly updates — agents</title>
-  <updated>2026-07-18T00:00:00.000Z</updated>
+  <updated>2026-08-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-03-01</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-08-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-03-01" />
+    <summary>Amazon Bedrock added 1 million-token context windows for OpenAI GPT-5.6 Sol, Terra, and Luna, expanding long-context options for agent and retrieval workloads.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/</id>
+      <title>OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-30-01</id>
+    <title>Amazon Bedrock Agents — pricing</title>
+    <updated>2026-07-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-30-01" />
+    <summary>Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, pricing, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/</id>
+      <title>Amazon Bedrock announces up to 80% lower prices for OpenAI GPT-5.6 models</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-28-01</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-07-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-28-01" />
+    <summary>Amazon Bedrock AgentCore Gateway added support for the MCP 2026-07-28 specification, including its stateless core, governed extensions, and hardened authorization.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/</id>
+      <title>How AgentCore Gateway supports the MCP 2026-07-28 spec</title>
+      <link href="https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-07-17-01</id>
     <title>CrewAI — release</title>
