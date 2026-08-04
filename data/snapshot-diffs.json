@@ -147,6 +147,27 @@
       "toolName": "Flowise",
       "from": "2026-07-17",
       "to": "2026-08-04",
+      "field": "governance.deployment",
+      "previous": {
+        "status": "yes",
+        "models": [
+          "saas",
+          "self-hosted"
+        ]
+      },
+      "current": {
+        "status": "yes",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "highImpact": false
+    },
+    {
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "from": "2026-07-17",
+      "to": "2026-08-04",
       "field": "lastRelease",
       "previous": "2026-06-25",
       "current": "2026-07-29",

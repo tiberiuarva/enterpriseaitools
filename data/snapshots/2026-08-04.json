@@ -907,7 +907,6 @@
         "deployment": {
           "status": "yes",
           "models": [
-            "saas",
             "self-hosted"
           ]
         },
@@ -2051,7 +2050,7 @@
         "ISO 27001",
         "SOC 2"
       ],
-      "lastUpdated": "2026-08-04"
+      "lastUpdated": "2026-06-13"
     },
     {
       "id": "google-vertex-ai",

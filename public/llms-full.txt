@@ -356,11 +356,11 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Page: https://www.enterpriseai.tools/tools/flowise/
 - Vendor: Flowise | Type: opensource | License: Apache 2.0
 - Status: maintenance | Version: 3.1.4 | Last release: 2026-07-29
-- Low-code orchestration and agent workflow builder whose hosted Cloud service is scheduled to shut down on August 31, 2026; the open-source repository remains available.
+- Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.
 - Strengths: Low-code orchestration builder; Chatflow + agent workflow support; Wide model/provider connectivity
 - Governance posture:
-  - Data residency: partial — Self-hosted is customer-controlled. Flowise Cloud stores data in US East 1 only and is scheduled to shut down on August 31, 2026. [source: https://flowiseai.com/sunset]
-  - Deployment: yes (self-hosted, saas) — Self-hosted Apache-2.0 core remains available; Flowise Cloud SaaS is scheduled to shut down on August 31, 2026. [source: https://flowiseai.com/sunset]
+  - Data residency: partial — Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only. [source: https://docs.flowiseai.com/configuration/deployment.md]
+  - Deployment: yes (self-hosted) — The Apache-2.0 source remains available for self-hosted forks; the official repository is scheduled for archival on August 10, 2026 and project EOL on August 31, 2026. [source: https://flowiseai.com/sunset]
   - Audit logging: unknown — No dedicated audit-log documentation; enterprise tier may add capabilities.
   - SOC 2: unknown — No SOC 2 certification announced by Flowise directly.
   - ISO 27001: unknown — No ISO 27001 certification found in Flowise documentation.
@@ -900,7 +900,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 - 2026-08-03 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock added 1 million-token context windows for OpenAI GPT-5.6 Sol, Terra, and Luna, expanding long-context options for agent and retrieval workloads. [source: https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/]
 - 2026-07-30 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family. [source: https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/]
-- 2026-07-29 — Flowise (deprecation, high impact): Flowise announced it is winding down operations: new Cloud sign-ups stop August 10 and Flowise Cloud shuts down August 31; the open-source repository remains available. [source: https://flowiseai.com/sunset]
+- 2026-07-29 — Flowise (deprecation, high impact): Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks. [source: https://flowiseai.com/sunset]
 - 2026-07-28 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock AgentCore Gateway added support for the MCP 2026-07-28 specification, including its stateless core, governed extensions, and hardened authorization. [source: https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/]
 - 2026-07-20 — Haystack (release, high impact): Haystack 3.0 introduced intentional breaking changes alongside agent hooks and skills, run introspection, first-class async serving, a leaner core, and safer pipeline loading. [source: https://github.com/deepset-ai/haystack/releases/tag/v3.0.0]
 - 2026-07-17 — CrewAI (release, low impact): CrewAI 1.15.4 promoted the Skills Repository out of experimental status and added Flows in Studio documentation. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.4]

@@ -38,7 +38,7 @@
       "toolName": "Flowise",
       "category": "orchestration",
       "type": "deprecation",
-      "summary": "Flowise announced it is winding down operations: new Cloud sign-ups stop August 10 and Flowise Cloud shuts down August 31; the open-source repository remains available.",
+      "summary": "Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks.",
       "sourceUrl": "https://flowiseai.com/sunset",
       "sourceTitle": "The Future of Flowise",
       "impact": "high"

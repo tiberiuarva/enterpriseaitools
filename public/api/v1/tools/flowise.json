@@ -9,7 +9,7 @@
     "category": "orchestration",
     "type": "opensource",
     "vendor": "Flowise",
-    "description": "Low-code orchestration and agent workflow builder whose hosted Cloud service is scheduled to shut down on August 31, 2026; the open-source repository remains available.",
+    "description": "Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.",
     "strengths": [
       "Low-code orchestration builder",
       "Chatflow + agent workflow support",
@@ -48,20 +48,19 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "The self-hosted open-source project remains available, but Flowise is winding down operations and its hosted Cloud service is scheduled to shut down on August 31, 2026. New deployments should account for the maintenance and support uncertainty.",
+    "practitionerNote": "Active feature development has ceased. The repository is scheduled for archival on August 10, 2026 and official project support ends August 31, while the Apache-2.0 source remains available for internal or community forks.",
     "governance": {
       "dataResidency": {
         "status": "partial",
-        "detail": "Self-hosted is customer-controlled. Flowise Cloud stores data in US East 1 only and is scheduled to shut down on August 31, 2026.",
-        "sourceUrl": "https://flowiseai.com/sunset"
+        "detail": "Self-hosted is customer-controlled; Flowise Cloud stores data in US East 1 only.",
+        "sourceUrl": "https://docs.flowiseai.com/configuration/deployment.md"
       },
       "deployment": {
         "status": "yes",
-        "detail": "Self-hosted Apache-2.0 core remains available; Flowise Cloud SaaS is scheduled to shut down on August 31, 2026.",
+        "detail": "The Apache-2.0 source remains available for self-hosted forks; the official repository is scheduled for archival on August 10, 2026 and project EOL on August 31, 2026.",
         "sourceUrl": "https://flowiseai.com/sunset",
         "models": [
-          "self-hosted",
-          "saas"
+          "self-hosted"
         ]
       },
       "auditLogging": {

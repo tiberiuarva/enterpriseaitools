@@ -39,7 +39,7 @@
     <title>Flowise — deprecation</title>
     <updated>2026-07-29T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-07-29-01" />
-    <summary>Flowise announced it is winding down operations: new Cloud sign-ups stop August 10 and Flowise Cloud shuts down August 31; the open-source repository remains available.</summary>
+    <summary>Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, deprecation, high" />
     <source>
