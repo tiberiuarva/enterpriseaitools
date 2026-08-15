@@ -2,10 +2,94 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-08-04T00:00:00.000Z</updated>
+  <updated>2026-08-15T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-15-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-08-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-15-01" />
+    <summary>OpenAI Agents SDK 0.21.0 added provider-neutral deterministic testing utilities, OpenAI Python 3 compatibility, and hardened interruption snapshots, approvals, MCP lifecycle isolation, and sensitive-error redaction.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.21.0</id>
+      <title>Release v0.21.0 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.21.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-01</id>
+    <title>Guardrails AI — deprecation</title>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-01" />
+    <summary>Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, deprecation, high" />
+    <source>
+      <id>https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0</id>
+      <title>Release v0.11.0 · guardrails-ai/guardrails</title>
+      <link href="https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-13-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-08-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-13-01" />
+    <summary>Microsoft Agent Framework Python 1.14.0 added Mistral support, opt-in AGENT-HOOKS enforcement middleware, AG-UI checkpoint resume, and Foundry state stores, alongside experimental and beta breaking changes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0</id>
+      <title>Release python-1.14.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-12-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-08-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-12-01" />
+    <summary>Mastra core 1.58.0 added file-based agent schedules, Oracle Database storage and vector support, an in-process QuickJS transport, and dynamic workflow APIs, with stored-workflow naming and channel-format breaking changes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.58.0</id>
+      <title>Release @mastra/core@1.58.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.58.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-11-01</id>
+    <title>Langflow — release</title>
+    <updated>2026-08-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-11-01" />
+    <summary>Langflow 1.11.3 shipped a security-focused patch set covering SQL target overrides, path containment, symlink handling, ambiguous URL authorities, admin-only component builds, and MCP redirect-based SSRF exposure.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.11.3</id>
+      <title>Release 1.11.3 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.11.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-11-02</id>
+    <title>Atomic Agents — release</title>
+    <updated>2026-08-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-11-02" />
+    <summary>Atomic Agents 2.10.0 added typed video URL input support for OpenAI-compatible multimodal providers, including nested chat-history extraction and serialization.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/Eigenwise/atomic-agents/releases/tag/v2.10.0</id>
+      <title>Release v2.10.0 · Eigenwise/atomic-agents</title>
+      <link href="https://github.com/Eigenwise/atomic-agents/releases/tag/v2.10.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-03-01</id>
     <title>Amazon Bedrock Agents — feature</title>
