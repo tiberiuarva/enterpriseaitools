@@ -15,9 +15,9 @@
       "Structured output guardrails",
       "Python-first integration"
     ],
-    "license": "MIT",
+    "license": "Apache 2.0",
     "githubUrl": "https://github.com/guardrails-ai/guardrails",
-    "githubStars": 7250,
+    "githubStars": 7286,
     "docsUrl": "https://guardrailsai.com/docs",
     "pricingModel": "freemium",
     "status": "active",

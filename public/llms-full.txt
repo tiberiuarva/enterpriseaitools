@@ -572,7 +572,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Guardrails AI
 - Page: https://www.enterpriseai.tools/tools/guardrails-ai/
-- Vendor: Guardrails AI | Type: opensource | License: MIT
+- Vendor: Guardrails AI | Type: opensource | License: Apache 2.0
 - Status: active | Version: 0.11.0 | Last release: 2026-08-14
 - Validation-focused guardrails framework with a large validator ecosystem and freemium model.
 - Strengths: 50+ validators; Structured output guardrails; Python-first integration
