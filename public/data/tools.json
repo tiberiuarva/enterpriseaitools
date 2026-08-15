@@ -706,7 +706,7 @@
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
-      "statusNote": "Microsoft positions Agent Framework as the migration target for Semantic Kernel and AutoGen users.",
+      "statusNote": "Microsoft positions Agent Framework as the migration target for Semantic Kernel and AutoGen users. The version field tracks the Python package release line.",
       "tags": [
         "agents",
         "microsoft",

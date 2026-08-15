@@ -7,10 +7,10 @@
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-02</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-01</id>
     <title>Guardrails AI — deprecation</title>
     <updated>2026-08-14T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-02" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-01" />
     <summary>Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, deprecation, high" />

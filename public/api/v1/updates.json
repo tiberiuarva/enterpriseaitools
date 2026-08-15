@@ -20,6 +20,18 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-08-14-01",
+      "date": "2026-08-14",
+      "toolId": "guardrails-ai",
+      "toolName": "Guardrails AI",
+      "category": "governance",
+      "type": "deprecation",
+      "summary": "Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.",
+      "sourceUrl": "https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0",
+      "sourceTitle": "Release v0.11.0 · guardrails-ai/guardrails",
+      "impact": "high"
+    },
+    {
       "id": "update-2026-08-13-01",
       "date": "2026-08-13",
       "toolId": "microsoft-agent-framework",
@@ -29,18 +41,6 @@
       "summary": "Microsoft Agent Framework Python 1.14.0 added Mistral support, opt-in AGENT-HOOKS enforcement middleware, AG-UI checkpoint resume, and Foundry state stores, alongside experimental and beta breaking changes.",
       "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0",
       "sourceTitle": "Release python-1.14.0 · microsoft/agent-framework",
-      "impact": "high"
-    },
-    {
-      "id": "update-2026-08-14-02",
-      "date": "2026-08-14",
-      "toolId": "guardrails-ai",
-      "toolName": "Guardrails AI",
-      "category": "governance",
-      "type": "deprecation",
-      "summary": "Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.",
-      "sourceUrl": "https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0",
-      "sourceTitle": "Release v0.11.0 · guardrails-ai/guardrails",
       "impact": "high"
     },
     {

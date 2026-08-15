@@ -21,6 +21,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-01</id>
+    <title>Guardrails AI — deprecation</title>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-01" />
+    <summary>Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, deprecation, high" />
+    <source>
+      <id>https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0</id>
+      <title>Release v0.11.0 · guardrails-ai/guardrails</title>
+      <link href="https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-13-01</id>
     <title>Microsoft Agent Framework — release</title>
     <updated>2026-08-13T00:00:00.000Z</updated>
@@ -32,20 +46,6 @@
       <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0</id>
       <title>Release python-1.14.0 · microsoft/agent-framework</title>
       <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0" />
-    </source>
-  </entry>
-  <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-02</id>
-    <title>Guardrails AI — deprecation</title>
-    <updated>2026-08-14T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-02" />
-    <summary>Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI.</summary>
-    <author><name>enterpriseai.tools</name></author>
-    <category term="governance, deprecation, high" />
-    <source>
-      <id>https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0</id>
-      <title>Release v0.11.0 · guardrails-ai/guardrails</title>
-      <link href="https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0" />
     </source>
   </entry>
   <entry>
