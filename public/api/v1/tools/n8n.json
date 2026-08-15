@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-15",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -30,7 +30,7 @@
     ],
     "githubUrl": "https://github.com/n8n-io/n8n",
     "githubStars": 199287,
-    "version": "2.33.3",
+    "version": "2.35.3",
     "docsUrl": "https://docs.n8n.io/",
     "websiteUrl": "https://n8n.io/",
     "pricingModel": "freemium",
@@ -52,7 +52,7 @@
       "gcp"
     ],
     "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-    "lastRelease": "2026-07-31",
+    "lastRelease": "2026-08-14",
     "governance": {
       "dataResidency": {
         "status": "partial",

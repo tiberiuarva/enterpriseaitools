@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-04",
+  "lastUpdated": "2026-08-15",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -369,7 +369,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
       "githubStars": 56598,
-      "version": "1.15.10",
+      "version": "1.15.16",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -389,7 +389,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-07-31",
+      "lastRelease": "2026-08-14",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -695,8 +695,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
       "githubStars": 12588,
-      "version": "1.13.0",
-      "lastRelease": "2026-07-30",
+      "version": "1.14.0",
+      "lastRelease": "2026-08-13",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -783,7 +783,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 38837,
-      "version": "1.2.10",
+      "version": "1.2.11",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
       "status": "active",
@@ -802,7 +802,7 @@
       "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
       "logoUrl": "/logos/langgraph.svg",
       "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-      "lastRelease": "2026-07-28",
+      "lastRelease": "2026-08-11",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -875,7 +875,7 @@
       ],
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 26894,
-      "version": "1.55.0",
+      "version": "1.58.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
       "status": "active",
@@ -896,7 +896,7 @@
       "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
       "logoSourceUrl": "https://mastra.ai/",
       "logoUrl": "/logos/mastra.png",
-      "lastRelease": "2026-07-31",
+      "lastRelease": "2026-08-12",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -957,7 +957,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
       "githubStars": 28376,
-      "version": "0.19.3",
+      "version": "0.21.0",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -976,7 +976,7 @@
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-08-04",
+      "lastRelease": "2026-08-15",
       "logoUrl": "/logos/openai.svg",
       "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
       "governance": {
@@ -1039,7 +1039,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/Eigenwise/atomic-agents",
       "githubStars": 6111,
-      "version": "2.9.1",
+      "version": "2.10.0",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
       "pricingModel": "free",
       "status": "active",
@@ -1102,7 +1102,7 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "lastRelease": "2026-07-13"
+      "lastRelease": "2026-08-11"
     },
     {
       "id": "beeai-framework",
@@ -1540,7 +1540,7 @@
       ],
       "githubUrl": "https://github.com/n8n-io/n8n",
       "githubStars": 199287,
-      "version": "2.33.3",
+      "version": "2.35.3",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
       "pricingModel": "freemium",
@@ -1562,7 +1562,7 @@
         "gcp"
       ],
       "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-      "lastRelease": "2026-07-31",
+      "lastRelease": "2026-08-14",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1713,7 +1713,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
       "githubStars": 152827,
-      "version": "1.11.1",
+      "version": "1.11.3",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -1734,7 +1734,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-07-28",
+      "lastRelease": "2026-08-11",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -2550,7 +2550,7 @@
         "validators",
         "opensource"
       ],
-      "version": "0.10.0",
+      "version": "0.11.0",
       "logoKind": "project-logo",
       "logoNotes": "Official Guardrails AI project logo from the owner-controlled GitHub repo (`docs/assets/Guardrails-ai-logo-for-white-bg.svg`), committed byte-for-byte.",
       "logoReviewedAt": "2026-05-14",
@@ -2562,6 +2562,7 @@
       "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
       "logoUrl": "/logos/guardrails-ai.svg",
       "logoSourceUrl": "https://github.com/guardrails-ai/guardrails",
+      "lastRelease": "2026-08-14",
       "governance": {
         "dataResidency": {
           "status": "yes",

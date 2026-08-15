@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-04",
+  "generatedAt": "2026-08-15",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -26,7 +26,7 @@
       "validators",
       "opensource"
     ],
-    "version": "0.10.0",
+    "version": "0.11.0",
     "logoKind": "project-logo",
     "logoNotes": "Official Guardrails AI project logo from the owner-controlled GitHub repo (`docs/assets/Guardrails-ai-logo-for-white-bg.svg`), committed byte-for-byte.",
     "logoReviewedAt": "2026-05-14",
@@ -38,6 +38,7 @@
     "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
     "logoUrl": "/logos/guardrails-ai.svg",
     "logoSourceUrl": "https://github.com/guardrails-ai/guardrails",
+    "lastRelease": "2026-08-14",
     "governance": {
       "dataResidency": {
         "status": "yes",
