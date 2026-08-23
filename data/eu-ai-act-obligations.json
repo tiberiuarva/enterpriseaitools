@@ -109,9 +109,9 @@
       "actors": ["provider"],
       "riskTiers": ["high-risk"],
       "kind": "mandatory",
-      "appliesFrom": "2027-12-02",
-      "summary": "Providers of high-risk AI systems must operate a post-market monitoring system and report serious incidents to market-surveillance authorities within the deadlines set by Article 73. These duties apply from 2 December 2027 to stand-alone Annex III systems and from 2 August 2028 to systems embedded in Annex I regulated products.",
-      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
+      "appliesFrom": "2026-08-02",
+      "summary": "Providers of high-risk AI systems must operate a post-market monitoring system and report serious incidents to market-surveillance authorities within the deadlines set by Article 73.",
+      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
     },
     {
       "id": "voluntary-codes-of-conduct",
