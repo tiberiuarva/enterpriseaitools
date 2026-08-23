@@ -55,8 +55,8 @@
       "riskTiers": ["high-risk"],
       "kind": "mandatory",
       "appliesFrom": "2027-12-02",
-      "summary": "Providers of high-risk AI systems must implement a risk-management system, data governance, technical documentation, automatic event logging, transparency to deployers, human oversight, and appropriate accuracy, robustness, and cybersecurity.",
-      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+      "summary": "Providers of high-risk AI systems must implement a risk-management system, data governance, technical documentation, automatic event logging, transparency to deployers, human oversight, and appropriate accuracy, robustness, and cybersecurity. These requirements apply from 2 December 2027 to stand-alone Annex III systems and from 2 August 2028 to systems embedded in Annex I regulated products.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "high-risk-conformity-registration",
@@ -66,8 +66,8 @@
       "riskTiers": ["high-risk"],
       "kind": "mandatory",
       "appliesFrom": "2027-12-02",
-      "summary": "High-risk AI systems must pass the applicable conformity-assessment procedure, carry CE marking, and be registered in the EU database before being placed on the market or put into service.",
-      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+      "summary": "High-risk AI systems must pass the applicable conformity-assessment procedure, carry CE marking, and be registered in the EU database before being placed on the market or put into service. The obligations apply from 2 December 2027 to stand-alone Annex III systems and from 2 August 2028 to systems embedded in Annex I regulated products.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "high-risk-deployer-duties",
@@ -77,8 +77,8 @@
       "riskTiers": ["high-risk"],
       "kind": "mandatory",
       "appliesFrom": "2027-12-02",
-      "summary": "Deployers of high-risk AI systems must use them per the provider's instructions, assign competent human oversight, ensure relevant and representative input data where they control it, monitor operation, retain automatically generated logs, and report serious incidents.",
-      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+      "summary": "Deployers of high-risk AI systems must use them per the provider's instructions, assign competent human oversight, ensure relevant and representative input data where they control it, monitor operation, retain automatically generated logs, and report serious incidents. These duties apply from 2 December 2027 to stand-alone Annex III systems and from 2 August 2028 to systems embedded in Annex I regulated products.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "fundamental-rights-impact-assessment",
@@ -89,7 +89,7 @@
       "kind": "mandatory",
       "appliesFrom": "2027-12-02",
       "summary": "Bodies governed by public law, private entities providing public services, and deployers of certain Annex III systems must assess the impact on fundamental rights before first use of a high-risk AI system.",
-      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "limited-risk-transparency",
@@ -110,8 +110,8 @@
       "riskTiers": ["high-risk"],
       "kind": "mandatory",
       "appliesFrom": "2027-12-02",
-      "summary": "Providers of high-risk AI systems must operate a post-market monitoring system and report serious incidents to market-surveillance authorities within the deadlines set by Article 73.",
-      "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+      "summary": "Providers of high-risk AI systems must operate a post-market monitoring system and report serious incidents to market-surveillance authorities within the deadlines set by Article 73. These duties apply from 2 December 2027 to stand-alone Annex III systems and from 2 August 2028 to systems embedded in Annex I regulated products.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "voluntary-codes-of-conduct",
