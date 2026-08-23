@@ -45,12 +45,12 @@ const FAQ_ITEMS = [
   {
     question: "When do high-risk AI system obligations apply?",
     answer:
-      "Under the adopted AI Act, most remaining obligations — including Annex III high-risk requirements — are legally due on 2 August 2026. The Digital Omnibus on AI (provisional agreement, May 2026, not yet in the Official Journal) would defer stand-alone high-risk obligations to 2 December 2027 and product-embedded ones to 2 August 2028.",
+      "Regulation (EU) 2026/1744 fixes the application date for Sections 1-3 of the high-risk chapter at 2 December 2027 for stand-alone Annex III systems and 2 August 2028 for high-risk systems embedded in Annex I regulated products.",
   },
   {
     question: "Is this legal advice?",
     answer:
-      "No. This page maps tracked tools and roles to the official text of Regulation (EU) 2024/1689 with a source link on every claim. It is source-backed information to orient a compliance review, not legal advice.",
+      "No. This page maps tracked tools and roles to the official texts of Regulation (EU) 2024/1689 and its amendment, Regulation (EU) 2026/1744, with a source link on every claim. It is source-backed information to orient a compliance review, not legal advice.",
   },
 ];
 
