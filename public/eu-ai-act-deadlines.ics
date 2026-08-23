@@ -34,8 +34,7 @@ BEGIN:VEVENT
 UID:eu-ai-act-2026-08-02@enterpriseai.tools
 DTSTAMP:20260822T000000Z
 DTSTART;VALUE=DATE:20260802
-SUMMARY:EU AI Act: Most AI Act obligations\, including Annex III high-ris
- k systems
+SUMMARY:EU AI Act: General application of the AI Act
 DESCRIPTION:The AI Act's general application date. Regulation (EU) 2026/1
  744 moved Sections 1–3 of the high-risk chapter to fixed later dates whi
  le other obligations due on this date continue to apply. Source: https:/
