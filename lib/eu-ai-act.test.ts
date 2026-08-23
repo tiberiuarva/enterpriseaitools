@@ -5,10 +5,10 @@ import milestoneData from "../data/eu-ai-act.json" with { type: "json" };
 import { getCurrentAndNextMilestones, getDaysUntil } from "./eu-ai-act.ts";
 
 test("milestone dataset stays structurally explicit", () => {
-  assert.equal(milestoneData.length, 4);
+  assert.equal(milestoneData.length, 5);
   assert.deepEqual(
     milestoneData.map((milestone) => milestone.appliesOn),
-    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-08-02"],
+    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-12-02", "2028-08-02"],
   );
   for (const milestone of milestoneData) {
     assert.match(milestone.appliesOn, /^\d{4}-\d{2}-\d{2}$/);
@@ -39,7 +39,7 @@ test("getCurrentAndNextMilestones rolls a passed tranche into current milestones
   const result = getCurrentAndNextMilestones(new Date("2026-08-03T00:00:00Z"));
 
   assert.equal(result.hasUpcomingMilestone, true);
-  assert.equal(result.nextMilestone.appliesOn, "2027-08-02");
+  assert.equal(result.nextMilestone.appliesOn, "2027-12-02");
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
     ["2025-02-02", "2025-08-02", "2026-08-02"],
@@ -47,14 +47,14 @@ test("getCurrentAndNextMilestones rolls a passed tranche into current milestones
 });
 
 test("getCurrentAndNextMilestones falls back to the final tranche after all milestones pass", () => {
-  const result = getCurrentAndNextMilestones(new Date("2027-08-03T00:00:00Z"));
+  const result = getCurrentAndNextMilestones(new Date("2028-08-03T00:00:00Z"));
 
   assert.equal(result.hasUpcomingMilestone, false);
-  assert.equal(result.nextMilestone.appliesOn, "2027-08-02");
+  assert.equal(result.nextMilestone.appliesOn, "2028-08-02");
   assert.equal(result.nextMilestone.daysUntil, -1);
   assert.deepEqual(
     result.currentMilestones.map((milestone) => milestone.appliesOn),
-    ["2025-02-02", "2025-08-02", "2026-08-02"],
+    ["2025-02-02", "2025-08-02", "2026-08-02", "2027-12-02"],
   );
 });
 

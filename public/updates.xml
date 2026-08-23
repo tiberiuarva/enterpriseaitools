@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-08-15T00:00:00.000Z</updated>
+  <updated>2026-08-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-21-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-08-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-21-01" />
+    <summary>Microsoft Agent Framework Python 1.15.0 added optional A2UI support for agent-generated interfaces, first-class middleware failure signaling, and broader runtime and integration updates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0</id>
+      <title>Release python-1.15.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-20-01</id>
+    <title>CrewAI — release</title>
+    <updated>2026-08-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-20-01" />
+    <summary>CrewAI 1.15.17 expanded declarative conversational flows, improved oversized-message chunking, and fixed MCP HTTP and SSE server naming plus failed-attempt scope cleanup.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.17</id>
+      <title>Release 1.15.17 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.17" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-19-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-08-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-19-01" />
+    <summary>Mastra core 1.60.0 added durable execution for Agents API-created agents without redeployment and introduced a Cloudflare Sandbox provider for remote workspaces.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.60.0</id>
+      <title>Release @mastra/core@1.60.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.60.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-19-02</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-08-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-19-02" />
+    <summary>OpenAI Agents SDK 0.22.0 hardened runtime state and guardrail handling, including redaction of rejected terminal tool output, and tightened explicit OpenAI client configuration rules.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.22.0</id>
+      <title>Release v0.22.0 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.22.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-17-01</id>
+    <title>Paperclip — release</title>
+    <updated>2026-08-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-17-01" />
+    <summary>Paperclip v2026.817.0 delivered its first stable release through the new canary-to-stable channels, adding a first-class decisions workflow, full-fidelity company import/export, and managed CLI installation.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.817.0</id>
+      <title>Release v2026.817.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.817.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-15-01</id>
     <title>OpenAI Agents SDK — release</title>
