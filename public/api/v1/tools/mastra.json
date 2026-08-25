@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-15",
+  "generatedAt": "2026-08-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -28,8 +28,8 @@
       }
     ],
     "githubUrl": "https://github.com/mastra-ai/mastra",
-    "githubStars": 27208,
-    "version": "1.58.0",
+    "githubStars": 27372,
+    "version": "1.60.0",
     "docsUrl": "https://mastra.ai/docs",
     "pricingModel": "free",
     "status": "active",
@@ -50,7 +50,7 @@
     "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
     "logoSourceUrl": "https://mastra.ai/",
     "logoUrl": "/logos/mastra.png",
-    "lastRelease": "2026-08-12",
+    "lastRelease": "2026-08-19",
     "governance": {
       "dataResidency": {
         "status": "yes",
