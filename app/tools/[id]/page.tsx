@@ -92,6 +92,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
       authorName: CURATOR_NAME,
       datePublished: tool.publishedAt ?? SITE_LAUNCH_DATE,
       dateModified: tool.governance.reviewedAt,
+      imageUrl: `${siteUrl}/social-preview.png`,
     }),
   ];
 

@@ -96,6 +96,12 @@ After production domain is live and stable:
 
 ### P3
 - [x] Add live performance/Core Web Vitals checks to the launch workflow
+- [x] Normalise duplicate trailing-slash URLs at the host (`trailingSlash: auto`)
+      and emit trailing-slash internal links (`withTrailingSlash` in `lib/site.ts`)
+- [x] Give every sitemap URL its own `lastmod` instead of one shared build date
+- [x] Add `/tools/` as a crawlable index of every tracked record (was a 404)
+- [x] Add consent-gated GA4 plus `/privacy`, so Search Console has a traffic
+      counterpart without loading anything before opt-in
 - [ ] Track search-console metrics after production indexation starts
 - [x] Expose a machine-readable updates feed (`/updates.xml`) as part of the discoverability system
 - [ ] Expand content architecture beyond top-level hubs when there is source-backed material worth indexing

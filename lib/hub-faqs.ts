@@ -17,7 +17,7 @@ export const homeFaqs: HubFaq[] = [
   {
     question: "Is there a signup, paywall, or data capture?",
     answer:
-      "No. The whole site runs as a static export with no accounts, no analytics, no third-party trackers, and no email capture. The 'Help me evaluate' flow runs entirely in your browser.",
+      "No. The whole site runs as a static export with no accounts, no email capture, and no advertising. Google Analytics is the only third-party script, it loads only if you accept the consent prompt, and declining means no request to Google at all. The 'Help me evaluate' flow runs entirely in your browser either way.",
   },
   {
     question: "Where do the underlying facts come from?",

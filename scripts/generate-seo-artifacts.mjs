@@ -29,16 +29,47 @@ function toAbsoluteUrl(routePath) {
   return new URL(normalizedPath, `${siteUrl}/`).toString();
 }
 
+// Per-record review dates, so each sitemap entry can carry its own `lastmod`.
+// A sitemap where every URL shares one date tells a crawler nothing about which
+// pages actually changed, and Google discards `lastmod` it judges unreliable.
+const reviewedAtByToolId = new Map(toolsData.tools.map((tool) => [tool.id, tool.governance.reviewedAt]));
+
+function latestDate(dates) {
+  return dates.filter(Boolean).reduce((latest, date) => (date > latest ? date : latest), "");
+}
+
+function siteRouteLastModified(routePath) {
+  // The updates hub tracks the updates dataset; every other hub renders the
+  // tool dataset and moves with it.
+  return routePath === "/updates" ? updatesLastModified : lastModified;
+}
+
 function generateSitemapXml() {
+  const hubRoutes = siteRoutes.map((route) => ({
+    ...route,
+    lastModified: siteRouteLastModified(route.path),
+  }));
   const toolRoutes = toolsData.tools
-    .map((tool) => ({ path: `/tools/${tool.id}`, changeFrequency: "monthly", priority: 0.6 }))
+    .map((tool) => ({
+      path: `/tools/${tool.id}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+      lastModified: tool.governance.reviewedAt,
+    }))
     .sort((a, b) => a.path.localeCompare(b.path));
   const compareRoutes = comparisonSlugs
-    .map((entry) => ({ path: `/tools/compare/${entry.slug}`, changeFrequency: "monthly", priority: 0.5 }))
+    .map((entry) => ({
+      path: `/tools/compare/${entry.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      // A comparison is as fresh as the most recently reviewed tool it renders.
+      lastModified:
+        latestDate(entry.toolIds.map((id) => reviewedAtByToolId.get(id))) || lastModified,
+    }))
     .sort((a, b) => a.path.localeCompare(b.path));
-  const urls = [...siteRoutes, ...toolRoutes, ...compareRoutes]
+  const urls = [...hubRoutes, ...toolRoutes, ...compareRoutes]
     .map(
-      ({ path: routePath, changeFrequency, priority }) => `  <url>\n    <loc>${toAbsoluteUrl(routePath)}</loc>\n    <lastmod>${lastModified}</lastmod>\n    <changefreq>${changeFrequency}</changefreq>\n    <priority>${priority.toFixed(1)}</priority>\n  </url>`,
+      ({ path: routePath, changeFrequency, priority, lastModified: routeLastModified }) => `  <url>\n    <loc>${toAbsoluteUrl(routePath)}</loc>\n    <lastmod>${routeLastModified}</lastmod>\n    <changefreq>${changeFrequency}</changefreq>\n    <priority>${priority.toFixed(1)}</priority>\n  </url>`,
     )
     .join("\n");
 
@@ -315,10 +346,10 @@ function generateLlmsTxt() {
 
 > An open-source landscape tracker for enterprise AI tooling (${toolCount} tools across ${Object.keys(CATEGORY_LABELS).length} categories). Each record links to an official source; the dataset is governed by \`data/SCHEMA.md\` and updated weekly.
 
-Edited through a regulated-enterprise delivery lens: governance posture, deployment surface, ownership, sourcing quality, and operational fit are weighted above launch marketing. No analytics, no sign-up, no data capture.
+Edited through a regulated-enterprise delivery lens: governance posture, deployment surface, ownership, sourcing quality, and operational fit are weighted above launch marketing. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
 ## Per-tool pages
-Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
+Every tracked tool is indexed at ${siteUrl}/tools/ and has its own page at \`/tools/<id>\` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
 
 ## Hub pages
 - [Home](${siteUrl}/): overview of the four tracked categories and the foundation platforms.
@@ -334,6 +365,7 @@ Every tracked tool has its own page at \`/tools/<id>\` carrying the full source-
 - [Methodology](${siteUrl}/methodology/): how every claim is sourced and verified.
 - [Inclusion criteria](${siteUrl}/inclusion-criteria/): the written rules for what gets listed.
 - [Impartiality](${siteUrl}/impartiality/): the permanent no-paid-placement policy.
+- [Privacy](${siteUrl}/privacy/): what is and is not collected, and the consent-gated analytics policy.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](${siteUrl}/llms-full.txt)
@@ -445,7 +477,7 @@ function generateLlmsFullTxt() {
 
 > Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. ${toolsData.tools.length} tools across ${Object.keys(CATEGORY_LABELS).length} categories. Updated weekly; governed by data/SCHEMA.md. Generated ${lastModified}.
 
-Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. No analytics, no sign-up, no data capture.
+Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
 ## Foundation platforms
 

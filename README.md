@@ -68,7 +68,8 @@ Common contributions:
 - Next.js (static export) + TypeScript + Tailwind CSS
 - Data in JSON files (`data/tools.json`, `data/platforms.json`, `data/updates.json`)
 - Deployed on Azure Static Web Apps
-- No analytics, no cookies, no tracking
+- No ads, no email capture, no third-party trackers; Google Analytics is opt-in
+  only and loads nothing until you accept (see `/privacy`)
 
 ## Local development
 

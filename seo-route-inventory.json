@@ -210,6 +210,36 @@
     "requiresBreadcrumbs": true
   },
   {
+    "path": "/privacy",
+    "changeFrequency": "yearly",
+    "priority": 0.3,
+    "titleContains": "Privacy, cookies, and analytics",
+    "descriptionContains": "Exactly what this site collects and when",
+    "searchIntent": "privacy, cookie, and analytics policy",
+    "minTitleLength": 25,
+    "maxTitleLength": 65,
+    "minDescriptionLength": 110,
+    "maxDescriptionLength": 170,
+    "requiresCollectionPage": false,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
+    "path": "/tools",
+    "changeFrequency": "weekly",
+    "priority": 0.8,
+    "titleContains": "All tracked enterprise AI tools",
+    "descriptionContains": "The complete A-Z index of every enterprise AI tool tracked here",
+    "searchIntent": "full index of every tracked enterprise ai tool",
+    "minTitleLength": 25,
+    "maxTitleLength": 65,
+    "minDescriptionLength": 110,
+    "maxDescriptionLength": 170,
+    "requiresCollectionPage": true,
+    "requiresItemList": true,
+    "requiresBreadcrumbs": true
+  },
+  {
     "path": "/tools/compare",
     "changeFrequency": "monthly",
     "priority": 0.6,

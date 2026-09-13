@@ -1,3 +1,4 @@
+import { ConsentSettingsButton } from "@/components/consent-settings-button";
 import { githubRepoUrl, githubStargazersUrl, withBasePath } from "@/lib/site";
 
 type FooterColumn = {
@@ -19,6 +20,7 @@ const columns: FooterColumn[] = [
   {
     title: "Decide",
     links: [
+      { href: "/tools", label: "All tracked tools" },
       { href: "/tools/compare", label: "Compare tools" },
       { href: "/evaluate", label: "Help me evaluate" },
       { href: "/eu-ai-act", label: "EU AI Act tracker" },
@@ -41,6 +43,7 @@ const columns: FooterColumn[] = [
       { href: "/methodology", label: "Methodology" },
       { href: "/inclusion-criteria", label: "Inclusion criteria" },
       { href: "/impartiality", label: "Impartiality — no paid placement" },
+      { href: "/privacy", label: "Privacy, cookies & analytics" },
     ],
   },
   {
@@ -84,6 +87,11 @@ export function Footer({ lastUpdated }: FooterProps) {
                   </li>
                 ))}
               </ul>
+              {column.title === "Project" ? (
+                <div className="mt-2">
+                  <ConsentSettingsButton />
+                </div>
+              ) : null}
             </nav>
           ))}
         </div>

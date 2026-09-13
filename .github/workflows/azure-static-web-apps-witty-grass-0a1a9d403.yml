@@ -20,6 +20,12 @@ jobs:
       pull-requests: write
     env:
       NEXT_PUBLIC_BASE_PATH: ""
+      # Google Analytics 4 measurement ID. Set as a repository *variable*
+      # (Settings > Secrets and variables > Actions > Variables), never
+      # committed: this repo is public and the value differs per environment.
+      # When the variable is unset the build ships with no analytics and no
+      # consent banner, which is the correct behaviour for forks.
+      NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -44,8 +50,8 @@ jobs:
         run: npm run check-tool-card-data
       - name: Typecheck
         run: npx tsc --noEmit
-      - name: Test EU AI Act timeline logic
-        run: npm run test:eu-ai-act
+      - name: Unit tests
+        run: npm test
       - name: Build static site
         run: npm run build
       - name: Check generated SEO artifacts

@@ -2,10 +2,10 @@
 
 > An open-source landscape tracker for enterprise AI tooling (48 tools across 4 categories). Each record links to an official source; the dataset is governed by `data/SCHEMA.md` and updated weekly.
 
-Edited through a regulated-enterprise delivery lens: governance posture, deployment surface, ownership, sourcing quality, and operational fit are weighted above launch marketing. No analytics, no sign-up, no data capture.
+Edited through a regulated-enterprise delivery lens: governance posture, deployment surface, ownership, sourcing quality, and operational fit are weighted above launch marketing. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
 ## Per-tool pages
-Every tracked tool has its own page at `/tools/<id>` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
+Every tracked tool is indexed at https://www.enterpriseai.tools/tools/ and has its own page at `/tools/<id>` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
 
 ## Hub pages
 - [Home](https://www.enterpriseai.tools/): overview of the four tracked categories and the foundation platforms.
@@ -21,6 +21,7 @@ Every tracked tool has its own page at `/tools/<id>` carrying the full source-ba
 - [Methodology](https://www.enterpriseai.tools/methodology/): how every claim is sourced and verified.
 - [Inclusion criteria](https://www.enterpriseai.tools/inclusion-criteria/): the written rules for what gets listed.
 - [Impartiality](https://www.enterpriseai.tools/impartiality/): the permanent no-paid-placement policy.
+- [Privacy](https://www.enterpriseai.tools/privacy/): what is and is not collected, and the consent-gated analytics policy.
 
 ## Data
 - Full content for LLMs (single fetch): [llms-full.txt](https://www.enterpriseai.tools/llms-full.txt)

@@ -36,6 +36,11 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
     keywords: ["shortlist", "guided", "wizard", "recommendation", "governance fit"],
   },
   {
+    path: "/tools",
+    label: "All tracked tools",
+    keywords: ["index", "a-z", "every tool", "full list", "catalog", "directory"],
+  },
+  {
     path: "/tools/compare",
     label: "Compare tools",
     keywords: ["comparison", "side-by-side", "versus", "vs"],
@@ -54,6 +59,11 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
     path: "/impartiality",
     label: "Impartiality — no paid placement",
     keywords: ["no pay to play", "sponsored", "corrections", "trust", "policy", "privacy", "no tracking"],
+  },
+  {
+    path: "/privacy",
+    label: "Privacy, cookies & analytics",
+    keywords: ["privacy", "cookies", "analytics", "gdpr", "consent", "google analytics", "opt out", "tracking"],
   },
   {
     path: "/about",

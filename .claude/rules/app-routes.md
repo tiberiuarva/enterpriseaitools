@@ -19,8 +19,11 @@ subagent before touching code.
 5. **Structured data via `components/json-ld.tsx`.** Hub pages expect
    `WebSite`, `Organization`, `BreadcrumbList`, `CollectionPage`, and
    `ItemList` where applicable.
-6. **No runtime third-party fetches.** No analytics scripts, no third-party
-   fonts pulled at runtime, no client-side calls to vendor APIs.
+6. **No runtime third-party fetches.** The only permitted third-party script is
+   the consent-gated GA4 tag mounted once in `app/layout.tsx` via
+   `components/analytics.tsx`; it must never load before consent. No other
+   analytics, no third-party fonts pulled at runtime, no client-side calls to
+   vendor APIs.
 7. **No `NEXT_PUBLIC_BASE_PATH` for prod.** Local previews may set it via
    `scripts/publish-preview.sh`; production builds leave it unset.
 

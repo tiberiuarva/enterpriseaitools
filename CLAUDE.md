@@ -62,8 +62,15 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
    "MIT" is a release blocker, not a typo.
 5. **Canonical naming with aliases.** Render the current canonical name (Foundry,
    Amazon Q, Gemini Enterprise) and preserve prior names in `formerNames` / aliases.
-6. **Zero tracking.** No analytics, no third-party cookies, no runtime third-party
-   fonts. The deploy budget is bytes + privacy, not engagement.
+6. **Consent-gated analytics, nothing else.** Google Analytics 4 is the only
+   third-party script, and it must stay behind the consent banner: no request to
+   googletagmanager.com and no cookie before a visitor accepts. Advertising
+   consent signals stay denied permanently. No other trackers, no third-party
+   cookies, no runtime third-party fonts, no email capture. The measurement ID
+   comes from `NEXT_PUBLIC_GA_MEASUREMENT_ID` at build time and is never
+   committed; an unset variable means the build ships with no analytics at all.
+   Any change here must be mirrored in `/privacy`, `/impartiality`, the home FAQ,
+   and `llms.txt` — the site states these claims publicly.
 7. **No build-time secrets in the bundle.** Any token consumed by `scripts/` is read
    from env at build time and never inlined into output.
 
@@ -161,7 +168,9 @@ a successful Azure SWA upload.
 - Use `any` — use `unknown` + type guards (or a parser at the boundary)
 - Add `package.json` dependencies for things solvable with the standard lib or
   existing deps
-- Add runtime analytics, fonts, or trackers fetched at page load
+- Add any third-party script beyond the consent-gated GA4 tag, or load that tag
+  before consent — no runtime fonts, no trackers fetched at page load
+- Hardcode the GA measurement ID; it is a build-time env var (see principle 6)
 - Edit `data/*.json` without a verifiable source URL for every affected record
 - Rename a tool without preserving its prior name in `aliases` / `formerNames`
 - Skip tests for new `lib/` code, or use `test.skip` to bypass failures — fix the

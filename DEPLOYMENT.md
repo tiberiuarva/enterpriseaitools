@@ -70,7 +70,45 @@ Default coverage is `/`, `/platforms`, and `/agents`; pass explicit routes if an
    - submit `https://www.enterpriseai.tools/sitemap.xml`
    - inspect the core hub URLs for indexability
    - monitor coverage/crawl issues before making broader content changes
-7. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+8. Confirm the trailing-slash normalisation is live (`staticwebapp.config.json`
+   sets `"trailingSlash": "auto"`), so each page is indexed under exactly one URL
+   and the feeds and JSON API keep their file paths:
+
+```bash
+curl -sI https://www.enterpriseai.tools/platforms   # expect 301 -> /platforms/
+curl -sI https://www.enterpriseai.tools/index.html  # expect 301 -> /
+curl -sI https://www.enterpriseai.tools/platforms/  # expect 200
+curl -sI https://www.enterpriseai.tools/updates.xml # expect 200, NOT a redirect
+curl -sI https://www.enterpriseai.tools/api/v1/index.json  # expect 200
+```
+
+9. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+
+## Analytics configuration (build-time, never committed)
+
+Google Analytics 4 is wired through `NEXT_PUBLIC_GA_MEASUREMENT_ID`, read by
+`lib/analytics.ts` and inlined by `next build`. The repository is public, so the
+value lives in GitHub, not in source:
+
+1. GitHub repo -> **Settings** -> **Secrets and variables** -> **Actions** ->
+   **Variables** tab -> **New repository variable**
+2. Name `NEXT_PUBLIC_GA_MEASUREMENT_ID`, value the `G-XXXXXXXXXX` measurement ID
+3. Re-run the workflow; the deploy job passes it into the build step
+
+Notes:
+
+- Azure Static Web Apps **application settings do not work for this**. They are
+  only injected into managed API functions, and this site is a static export
+  built in GitHub Actions — the variable must exist at build time.
+- When the variable is unset the site builds with no analytics and no consent
+  banner. That is the intended behaviour for forks and local builds.
+- Nothing is requested from googletagmanager.com until a visitor accepts the
+  banner. Verify after deploy by loading the site with devtools open: there must
+  be zero requests to Google before clicking accept, and a `_ga` cookie only
+  after.
+- Changing the analytics posture means updating `/privacy`, `/impartiality`, the
+  home FAQ in `lib/hub-faqs.ts`, and the `llms.txt` copy in
+  `scripts/generate-seo-artifacts.mjs` in the same PR.
 
 ## Historical failure mode (resolved on the PR branch)
 
