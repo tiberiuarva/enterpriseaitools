@@ -50,22 +50,40 @@ export function parseConsent(value: string | null | undefined): ConsentState {
 }
 
 /**
- * Consent lives in the visitor's own browser and nowhere else. Every accessor
- * is wrapped: private browsing and storage-blocking extensions make these
- * throw, and the correct fallback is always "undecided", never "granted".
+ * The visitor's answer for this document, held in memory as well as in storage.
+ *
+ * Private browsing and storage-blocking extensions make every `localStorage`
+ * call throw. Without this fallback the banner buttons are inert in exactly
+ * those browsers: the write fails, the re-read returns "undecided", and the
+ * banner never closes — so the visitor can neither accept nor dismiss it.
+ */
+let inDocumentConsent: ConsentState = "unknown";
+
+/**
+ * Consent lives in the visitor's own browser and nowhere else. A readable
+ * stored value always wins, so a choice made in another tab still propagates;
+ * the in-memory value only covers the case where storage cannot be read.
  *
  * These touch `localStorage` only when called, so importing this module stays
  * free of side effects and safe at build time.
  */
 export function readStoredConsent(): ConsentState {
   try {
-    return parseConsent(globalThis.localStorage?.getItem(ANALYTICS_CONSENT_STORAGE_KEY));
+    const stored = parseConsent(globalThis.localStorage?.getItem(ANALYTICS_CONSENT_STORAGE_KEY));
+
+    if (stored !== "unknown") {
+      return stored;
+    }
   } catch {
-    return "unknown";
+    // Storage unavailable — fall through to the in-document answer.
   }
+
+  return inDocumentConsent;
 }
 
 export function storeConsent(choice: ConsentChoice): void {
+  inDocumentConsent = choice;
+
   try {
     globalThis.localStorage?.setItem(ANALYTICS_CONSENT_STORAGE_KEY, choice);
   } catch {
@@ -74,11 +92,91 @@ export function storeConsent(choice: ConsentChoice): void {
 }
 
 export function clearStoredConsent(): void {
+  inDocumentConsent = "unknown";
+
   try {
     globalThis.localStorage?.removeItem(ANALYTICS_CONSENT_STORAGE_KEY);
   } catch {
     // Nothing to clear when storage is unavailable.
   }
+}
+
+// ── Withdrawal ───────────────────────────────────────────────────────────────
+// Un-rendering the <Script> tags does not unload an already-executing gtag.js,
+// reset its consent state, or remove its cookies. Withdrawal has to say so
+// explicitly or analytics keeps running in the current document after the
+// visitor opts out.
+
+type GtagFunction = (...args: unknown[]) => void;
+
+function getGtag(): GtagFunction | null {
+  const candidate = (globalThis as { gtag?: unknown }).gtag;
+
+  return typeof candidate === "function" ? (candidate as GtagFunction) : null;
+}
+
+/** GA's documented per-property kill switch: `window['ga-disable-G-…'] = true`. */
+export function gaDisableFlag(id: string): string {
+  return `ga-disable-${id}`;
+}
+
+const GA_COOKIE_PREFIX = "_ga";
+
+/**
+ * Expires every GA cookie this document can see. GA writes them on the
+ * registrable domain, so clearing only the exact hostname would leave the
+ * cookie alive; each parent domain is expired too.
+ */
+export function clearAnalyticsCookies(): void {
+  const doc = (globalThis as { document?: { cookie: string } }).document;
+
+  if (!doc) {
+    return;
+  }
+
+  const names = doc.cookie
+    .split(";")
+    .map((entry) => entry.split("=")[0]?.trim())
+    .filter((name): name is string => Boolean(name) && name.startsWith(GA_COOKIE_PREFIX));
+
+  if (names.length === 0) {
+    return;
+  }
+
+  const hostname = (globalThis as { location?: { hostname?: string } }).location?.hostname ?? "";
+  const domains = new Set<string>([""]);
+
+  if (hostname) {
+    domains.add(hostname);
+    const labels = hostname.split(".");
+
+    for (let index = 0; index < labels.length - 1; index += 1) {
+      domains.add(`.${labels.slice(index).join(".")}`);
+    }
+  }
+
+  for (const name of names) {
+    for (const domain of domains) {
+      doc.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
+    }
+  }
+}
+
+/** Stops analytics in the current document and removes what it already stored. */
+export function revokeAnalytics(id: string): void {
+  (globalThis as Record<string, unknown>)[gaDisableFlag(id)] = true;
+  getGtag()?.("consent", "update", { analytics_storage: "denied" });
+  clearAnalyticsCookies();
+}
+
+/**
+ * Re-enables analytics after a withdrawal. Needed because `next/script` will
+ * not re-execute a source it has already loaded, so a second acceptance in the
+ * same document would otherwise stay disabled by the flag set above.
+ */
+export function reinstateAnalytics(id: string): void {
+  (globalThis as Record<string, unknown>)[gaDisableFlag(id)] = false;
+  getGtag()?.("consent", "update", { analytics_storage: "granted" });
 }
 
 export function gtagScriptSrc(id: string): string {

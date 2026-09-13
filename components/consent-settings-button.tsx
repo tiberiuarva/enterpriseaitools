@@ -1,6 +1,11 @@
 "use client";
 
-import { ANALYTICS_CONSENT_EVENT, clearStoredConsent, measurementId } from "@/lib/analytics";
+import {
+  ANALYTICS_CONSENT_EVENT,
+  clearStoredConsent,
+  measurementId,
+  revokeAnalytics,
+} from "@/lib/analytics";
 
 /**
  * Footer control that re-opens the consent banner so a visitor can change or
@@ -19,7 +24,11 @@ export function ConsentSettingsButton({
   label = "Analytics cookie settings",
   className = DEFAULT_CLASS,
 }: ConsentSettingsButtonProps) {
-  if (!measurementId) {
+  // Bound to a local so the null check still narrows inside the click handler:
+  // TypeScript discards narrowing of an imported binding across a closure.
+  const id = measurementId;
+
+  if (!id) {
     return null;
   }
 
@@ -27,9 +36,12 @@ export function ConsentSettingsButton({
     <button
       type="button"
       onClick={() => {
-        // Drop the stored answer first so the banner re-opens undecided rather
-        // than re-rendering the previous choice.
+        // Drop the stored answer so the banner re-opens undecided, and stop
+        // analytics straight away: an undecided visitor is not a consenting
+        // one, and dropping the stored choice alone would leave an
+        // already-loaded gtag.js running until navigation.
         clearStoredConsent();
+        revokeAnalytics(id);
         window.dispatchEvent(new Event(ANALYTICS_CONSENT_EVENT));
       }}
       className={className}

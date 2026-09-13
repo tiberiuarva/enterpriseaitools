@@ -8,6 +8,8 @@ import {
   gtagScriptSrc,
   measurementId,
   readStoredConsent,
+  reinstateAnalytics,
+  revokeAnalytics,
   storeConsent,
   type ConsentChoice,
   type ConsentState,
@@ -50,6 +52,19 @@ export function Analytics() {
 
   const choose = useCallback((choice: ConsentChoice) => {
     storeConsent(choice);
+
+    if (measurementId) {
+      // Declining after a previous acceptance has to stop the already-loaded
+      // library, not just stop rendering its <Script> tags. Accepting again in
+      // the same document has to undo that, because next/script will not
+      // re-execute a source it has already fetched.
+      if (choice === "granted") {
+        reinstateAnalytics(measurementId);
+      } else {
+        revokeAnalytics(measurementId);
+      }
+    }
+
     window.dispatchEvent(new Event(ANALYTICS_CONSENT_EVENT));
   }, []);
 

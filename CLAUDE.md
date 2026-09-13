@@ -41,7 +41,9 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
 - Hosted on Azure Static Web Apps (root domain `www.enterpriseai.tools`); deploy
   workflow `.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml`
 - No database — canonical data is versioned JSON under `data/`
-- No auth, no payments, no analytics, no cookies, no runtime third-party fetches
+- No auth, no payments. Consent-gated Google Analytics 4 is the only third-party
+  script and the only cookie, and it loads nothing before consent (principle 6);
+  no other runtime third-party fetches
 - Build-time only third-party APIs: GitHub REST (stars / latest release), Lighthouse
   (performance gate), upstream vendor docs URLs (provenance checks)
 - Testing: Node 22 built-in test runner (`node --experimental-strip-types --test`) for

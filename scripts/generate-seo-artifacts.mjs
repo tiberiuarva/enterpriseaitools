@@ -6,6 +6,7 @@ import updatesData from "../data/updates.json" with { type: "json" };
 import euAiActTimeline from "../data/eu-ai-act.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 import comparisonSlugs from "../data/comparison-slugs.json" with { type: "json" };
+import euAiActObligations from "../data/eu-ai-act-obligations.json" with { type: "json" };
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 // `data/tools.json` carries a top-level `lastUpdated` calendar date (see
@@ -38,16 +39,28 @@ function latestDate(dates) {
   return dates.filter(Boolean).reduce((latest, date) => (date > latest ? date : latest), "");
 }
 
-function siteRouteLastModified(routePath) {
-  // The updates hub tracks the updates dataset; every other hub renders the
-  // tool dataset and moves with it.
-  return routePath === "/updates" ? updatesLastModified : lastModified;
+// Routes whose freshness is driven by a dataset rather than an editorial review
+// date. Keeping these derived means the sitemap cannot drift from the page.
+const DATA_DRIVEN_ROUTE_DATES = {
+  "/updates": updatesLastModified,
+  "/eu-ai-act": euAiActObligations.asOf,
+};
+
+function siteRouteLastModified(route) {
+  // Precedence: dataset-derived, then the route's own review date from the
+  // inventory, then the tool dataset for hubs that simply render it.
+  //
+  // Every page that publishes an `article:modified_time` must end up with the
+  // same value here, or the sitemap advertises a freshness date the page itself
+  // contradicts — the exact defect this generator is meant to fix.
+  // `check-seo-readiness` fails the build if the two ever disagree.
+  return DATA_DRIVEN_ROUTE_DATES[route.path] ?? route.lastModified ?? lastModified;
 }
 
 function generateSitemapXml() {
   const hubRoutes = siteRoutes.map((route) => ({
     ...route,
-    lastModified: siteRouteLastModified(route.path),
+    lastModified: siteRouteLastModified(route),
   }));
   const toolRoutes = toolsData.tools
     .map((tool) => ({

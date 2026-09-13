@@ -147,7 +147,8 @@
     "maxDescriptionLength": 200,
     "requiresCollectionPage": false,
     "requiresItemList": false,
-    "requiresBreadcrumbs": true
+    "requiresBreadcrumbs": true,
+    "lastModified": "2026-07-17"
   },
   {
     "path": "/methodology",
@@ -162,7 +163,8 @@
     "maxDescriptionLength": 180,
     "requiresCollectionPage": false,
     "requiresItemList": false,
-    "requiresBreadcrumbs": true
+    "requiresBreadcrumbs": true,
+    "lastModified": "2026-07-17"
   },
   {
     "path": "/inclusion-criteria",
@@ -177,7 +179,8 @@
     "maxDescriptionLength": 200,
     "requiresCollectionPage": false,
     "requiresItemList": false,
-    "requiresBreadcrumbs": true
+    "requiresBreadcrumbs": true,
+    "lastModified": "2026-07-17"
   },
   {
     "path": "/impartiality",
@@ -192,7 +195,8 @@
     "maxDescriptionLength": 180,
     "requiresCollectionPage": false,
     "requiresItemList": false,
-    "requiresBreadcrumbs": true
+    "requiresBreadcrumbs": true,
+    "lastModified": "2026-07-17"
   },
   {
     "path": "/about",
@@ -222,7 +226,8 @@
     "maxDescriptionLength": 170,
     "requiresCollectionPage": false,
     "requiresItemList": false,
-    "requiresBreadcrumbs": true
+    "requiresBreadcrumbs": true,
+    "lastModified": "2026-09-13"
   },
   {
     "path": "/tools",

@@ -3,11 +3,15 @@ import { describe, it } from "node:test";
 import {
   ANALYTICS_CONSENT_STORAGE_KEY,
   buildGtagInitScript,
+  clearAnalyticsCookies,
   clearStoredConsent,
+  gaDisableFlag,
   gtagScriptSrc,
   normalizeMeasurementId,
   parseConsent,
   readStoredConsent,
+  reinstateAnalytics,
+  revokeAnalytics,
   storeConsent,
 } from "./analytics.ts";
 
@@ -123,27 +127,145 @@ describe("consent storage", () => {
     });
   });
 
-  it("falls back to undecided when storage throws", () => {
+  it("starts undecided and keeps the answer when storage throws", () => {
     withFakeStorage(() => {
+      clearStoredConsent();
       assert.equal(readStoredConsent(), "unknown");
-      // Must not throw — a blocked-storage browser still has to render.
+
+      // Storage is blocked, so the write cannot persist — but the choice must
+      // still apply to this page view, or the banner buttons look inert and the
+      // visitor can neither accept nor dismiss it.
       storeConsent("granted");
+      assert.equal(readStoredConsent(), "granted");
+
+      storeConsent("denied");
+      assert.equal(readStoredConsent(), "denied");
+
       clearStoredConsent();
       assert.equal(readStoredConsent(), "unknown");
     }, true);
   });
 
-  it("treats a missing storage API as undecided", () => {
+  it("keeps the answer when the storage API is missing entirely", () => {
     const original = Object.getOwnPropertyDescriptor(globalThis, "localStorage");
     Reflect.deleteProperty(globalThis, "localStorage");
 
     try {
+      clearStoredConsent();
       assert.equal(readStoredConsent(), "unknown");
       storeConsent("granted");
-      assert.equal(readStoredConsent(), "unknown");
+      assert.equal(readStoredConsent(), "granted");
     } finally {
+      clearStoredConsent();
       if (original) {
         Object.defineProperty(globalThis, "localStorage", original);
+      }
+    }
+  });
+
+  it("lets a readable stored value win, so another tab's choice propagates", () => {
+    withFakeStorage((store) => {
+      storeConsent("denied");
+      store.set(ANALYTICS_CONSENT_STORAGE_KEY, "granted");
+      assert.equal(readStoredConsent(), "granted");
+      clearStoredConsent();
+    });
+  });
+});
+
+describe("withdrawing analytics", () => {
+  const ID = "G-JR4SJGCHKF";
+
+  function withFakeDocument(run: (calls: unknown[][], cookieWrites: string[]) => void) {
+    const calls: unknown[][] = [];
+    const cookieWrites: string[] = [];
+    const saved = ["gtag", "document", "location", gaDisableFlag(ID)].map(
+      (key) => [key, Object.getOwnPropertyDescriptor(globalThis, key)] as const,
+    );
+
+    Object.defineProperty(globalThis, "gtag", {
+      value: (...args: unknown[]) => calls.push(args),
+      configurable: true,
+    });
+    Object.defineProperty(globalThis, "document", {
+      value: {
+        get cookie() {
+          return "_ga=GA1.1.x; _ga_JR4SJGCHKF=GS1.1.y; theme=dark";
+        },
+        set cookie(value: string) {
+          cookieWrites.push(value);
+        },
+      },
+      configurable: true,
+    });
+    Object.defineProperty(globalThis, "location", {
+      value: { hostname: "www.enterpriseai.tools" },
+      configurable: true,
+    });
+
+    try {
+      run(calls, cookieWrites);
+    } finally {
+      for (const [key, descriptor] of saved) {
+        if (descriptor) {
+          Object.defineProperty(globalThis, key, descriptor);
+        } else {
+          Reflect.deleteProperty(globalThis, key);
+        }
+      }
+    }
+  }
+
+  it("sets GA's kill switch and denies the consent signal", () => {
+    withFakeDocument((calls) => {
+      revokeAnalytics(ID);
+
+      assert.equal((globalThis as Record<string, unknown>)[gaDisableFlag(ID)], true);
+      assert.deepEqual(calls.at(0), [
+        "consent",
+        "update",
+        { analytics_storage: "denied" },
+      ]);
+    });
+  });
+
+  it("expires only the GA cookies, across the host and its parent domain", () => {
+    withFakeDocument((_calls, cookieWrites) => {
+      revokeAnalytics(ID);
+
+      assert.ok(cookieWrites.length > 0, "expected cookie writes");
+      assert.ok(cookieWrites.every((write) => write.startsWith("_ga")), "touched a non-GA cookie");
+      assert.ok(cookieWrites.some((write) => write.includes("domain=.enterpriseai.tools")));
+      assert.ok(cookieWrites.every((write) => write.includes("Max-Age=0")));
+      assert.ok(!cookieWrites.some((write) => write.startsWith("theme=")));
+    });
+  });
+
+  it("re-enables analytics when the visitor accepts again", () => {
+    withFakeDocument((calls) => {
+      revokeAnalytics(ID);
+      reinstateAnalytics(ID);
+
+      assert.equal((globalThis as Record<string, unknown>)[gaDisableFlag(ID)], false);
+      assert.deepEqual(calls.at(-1), [
+        "consent",
+        "update",
+        { analytics_storage: "granted" },
+      ]);
+    });
+  });
+
+  it("is safe to call before gtag has ever loaded", () => {
+    const saved = Object.getOwnPropertyDescriptor(globalThis, "gtag");
+    Reflect.deleteProperty(globalThis, "gtag");
+
+    try {
+      assert.doesNotThrow(() => revokeAnalytics(ID));
+      assert.doesNotThrow(() => reinstateAnalytics(ID));
+      assert.doesNotThrow(() => clearAnalyticsCookies());
+    } finally {
+      if (saved) {
+        Object.defineProperty(globalThis, "gtag", saved);
       }
     }
   });
