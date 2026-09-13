@@ -2,10 +2,136 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-08-22T00:00:00.000Z</updated>
+  <updated>2026-09-13T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-11-01</id>
+    <title>Mastra — release</title>
+    <updated>2026-09-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-11-01" />
+    <summary>Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0</id>
+      <title>Release @mastra/core@1.66.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-01</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-01" />
+    <summary>Microsoft Agent Framework Python 1.18.0 added shared vector-store abstractions and Azure AI Search, Redis, Qdrant, and pgvector connectors, plus bounded tool-loop duration and several credential, file, and checkpoint hardening changes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0</id>
+      <title>Release python-1.18.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-02</id>
+    <title>Cursor — feature</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-02" />
+    <summary>Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://cursor.com/changelog/projects</id>
+      <title>Cursor Projects · Cursor changelog</title>
+      <link href="https://cursor.com/changelog/projects" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-03</id>
+    <title>GitHub Copilot — feature</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-03" />
+    <summary>GitHub Copilot added Jira-to-implementation context in the Copilot app, experimental adaptive model routing in Copilot CLI, recurring agent automations in VS Code, and centrally managed JetBrains sandbox policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/</id>
+      <title>GitHub Copilot weekly releases — September 7</title>
+      <link href="https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-09-02</id>
+    <title>CrewAI — release</title>
+    <updated>2026-09-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-09-02" />
+    <summary>CrewAI 1.15.21 added telemetry for checkpoint runtime and CLI usage and fixed gateway-error reporting, UTF-8 JSON checkpoints, streaming tool-call arguments, and JSON Schema type-array handling.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.21</id>
+      <title>Release 1.15.21 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.21" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-09-01</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-09-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-09-01" />
+    <summary>OpenAI Agents SDK 0.22.2 added current image-generation tool options and hardened UnixLocal sandbox file handling against symlink races, following the broader MCP guardrail and isolation work in 0.22.1.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.22.2</id>
+      <title>Release v0.22.2 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.22.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-08-02</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-09-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-08-02" />
+    <summary>Amazon Bedrock made OpenAI GPT-6 Astra generally available with up to a 1 million-token input context window and support for advanced computer and browser use in agent workflows.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-on-amazon-bedrock/</id>
+      <title>OpenAI GPT-6 Astra is now generally available on Amazon Bedrock</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-on-amazon-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-08-03</id>
+    <title>Amazon Bedrock Agents — feature</title>
+    <updated>2026-09-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-08-03" />
+    <summary>Amazon Bedrock AgentCore Memory added direct long-term-memory ingestion for conversational or JSON payloads without first persisting a short-term memory event.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/09/agentcore-memory-direct-ingest/</id>
+      <title>Amazon Bedrock AgentCore Memory now supports direct ingestion to long-term memory</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/09/agentcore-memory-direct-ingest/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-25-01</id>
+    <title>Cursor — feature</title>
+    <updated>2026-08-25T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-25-01" />
+    <summary>Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, high" />
+    <source>
+      <id>https://cursor.com/security#certifications-and-third-party-assessments</id>
+      <title>Certifications and third-party assessments · Cursor Security</title>
+      <link href="https://cursor.com/security#certifications-and-third-party-assessments" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-21-01</id>
     <title>Microsoft Agent Framework — release</title>
@@ -172,6 +298,20 @@
       <id>https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/</id>
       <title>OpenAI GPT-5.6 Sol, Terra, and Luna now support 1 million token context windows on Amazon Bedrock</title>
       <link href="https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-31-01</id>
+    <title>Amazon Q Business — deprecation</title>
+    <updated>2026-07-31T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-31-01" />
+    <summary>Amazon Q Business closed to new customers; AWS will continue bug fixes and security updates for existing customers but will not consider new feature requests, and recommends migration to Amazon Quick.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html</id>
+      <title>Amazon Q Business availability change</title>
+      <link href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html" />
     </source>
   </entry>
   <entry>

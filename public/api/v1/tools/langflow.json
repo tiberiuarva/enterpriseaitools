@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/langflow-ai/langflow",
-    "githubStars": 153570,
-    "version": "1.11.4",
+    "githubStars": 154700,
+    "version": "1.12.1",
     "docsUrl": "https://docs.langflow.org/",
     "pricingModel": "free",
     "status": "active",
@@ -39,7 +39,7 @@
       "gcp"
     ],
     "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-    "lastRelease": "2026-08-19",
+    "lastRelease": "2026-09-08",
     "governance": {
       "dataResidency": {
         "status": "yes",

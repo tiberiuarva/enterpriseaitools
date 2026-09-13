@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/guardrails-ai/guardrails",
-    "githubStars": 7286,
+    "githubStars": 7404,
     "docsUrl": "https://guardrailsai.com/docs",
     "pricingModel": "freemium",
     "status": "active",

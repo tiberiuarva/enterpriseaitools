@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/run-llama/llama_index",
-    "githubStars": 51366,
+    "githubStars": 52144,
     "version": "0.14.23",
     "docsUrl": "https://docs.llamaindex.ai/",
     "pricingModel": "free",

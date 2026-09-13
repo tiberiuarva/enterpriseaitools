@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -60,12 +60,14 @@
         "sourceUrl": "https://cursor.com/security"
       },
       "iso27001": {
-        "status": "unknown",
-        "detail": "Listed by some secondary sources; no primary Anysphere certificate confirmed."
+        "status": "yes",
+        "detail": "Cursor states that it holds ISO/IEC 27001:2022 certification; the certificate is available through its trust portal.",
+        "sourceUrl": "https://cursor.com/security"
       },
       "iso42001": {
-        "status": "unknown",
-        "detail": "No ISO 42001 certification found for Cursor/Anysphere."
+        "status": "yes",
+        "detail": "Cursor states that it holds ISO/IEC 42001:2023 certification; the certificate is available through its trust portal.",
+        "sourceUrl": "https://cursor.com/security"
       },
       "euAiAct": {
         "status": "unknown",
@@ -78,7 +80,7 @@
         "sourceUrl": "https://cursor.com/",
         "level": "high"
       },
-      "reviewedAt": "2026-05-26"
+      "reviewedAt": "2026-09-13"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/protectai/rebuff",
-    "githubStars": 1516,
+    "githubStars": 1522,
     "docsUrl": "https://github.com/protectai/rebuff",
     "pricingModel": "free",
     "status": "archived",

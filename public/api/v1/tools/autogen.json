@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/microsoft/autogen",
-    "githubStars": 60215,
+    "githubStars": 60960,
     "version": "0.7.5",
     "docsUrl": "https://microsoft.github.io/autogen/",
     "pricingModel": "free",
