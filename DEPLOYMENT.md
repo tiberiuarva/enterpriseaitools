@@ -72,14 +72,30 @@ Default coverage is `/`, `/platforms`, and `/agents`; pass explicit routes if an
    - monitor coverage/crawl issues before making broader content changes
 8. Confirm the trailing-slash normalisation is live (`staticwebapp.config.json`
    sets `"trailingSlash": "auto"`), so each page is indexed under exactly one URL
-   and the feeds and JSON API keep their file paths:
+   while the feeds and JSON API keep their file paths:
 
 ```bash
-curl -sI https://www.enterpriseai.tools/platforms   # expect 301 -> /platforms/
-curl -sI https://www.enterpriseai.tools/index.html  # expect 301 -> /
-curl -sI https://www.enterpriseai.tools/platforms/  # expect 200
-curl -sI https://www.enterpriseai.tools/updates.xml # expect 200, NOT a redirect
-curl -sI https://www.enterpriseai.tools/api/v1/index.json  # expect 200
+curl -sI https://www.enterpriseai.tools/platforms          # expect 301 -> /platforms/
+curl -sI https://www.enterpriseai.tools/tools/langgraph    # expect 301 -> /tools/langgraph/
+curl -sI https://www.enterpriseai.tools/platforms/         # expect 200
+curl -sI https://www.enterpriseai.tools/updates.xml        # expect 200, NOT a redirect
+curl -sI https://www.enterpriseai.tools/api/v1/index.json  # expect 200, NOT a redirect
+curl -sI https://www.enterpriseai.tools/robots.txt         # expect 200, NOT a redirect
+```
+
+   Both halves of this — the page redirects and the untouched asset paths — were
+   reproduced against the Azure Static Web Apps emulator before merge:
+
+```bash
+cp staticwebapp.config.json out/ && npx swa start out --port 4599
+```
+
+   One caveat: the Azure docs also list `/index.html` -> `301 /` under this mode,
+   but the emulator serves it `200`. Check it after deploy and treat a `200` as a
+   known gap rather than a regression — it returned `200` before this change too:
+
+```bash
+curl -sI https://www.enterpriseai.tools/index.html   # 301 -> / preferred; 200 is the pre-existing behaviour
 ```
 
 9. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
