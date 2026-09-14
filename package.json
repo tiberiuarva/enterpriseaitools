@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-seo-artifacts.mjs && next build && node scripts/check-static-export-image-paths.mjs",
+    "build": "node scripts/generate-seo-artifacts.mjs && next build && node scripts/copy-swa-config.mjs && node scripts/check-static-export-image-paths.mjs",
     "lint": "eslint",
     "test": "node --experimental-strip-types --test lib/*.test.ts",
     "test:eu-ai-act": "node --experimental-strip-types --test lib/eu-ai-act.test.ts lib/eu-ai-act-obligations.test.ts",

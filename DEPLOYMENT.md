@@ -100,6 +100,34 @@ curl -sI https://www.enterpriseai.tools/index.html   # 301 -> / preferred; 200 i
 
 9. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
 
+## Azure config must ship inside `out/`
+
+`staticwebapp.config.json` lives at the repo root, but Azure Static Web Apps
+reads it from the **root of the uploaded artifact**. The deploy job sets
+`app_location: "out"` with `skip_app_build: true`, so only `out/` is uploaded.
+
+A config left at the repo root is therefore never seen by the platform, and
+every rule in it — routing, headers, the custom 404, trailing-slash
+normalisation — is silently ignored. Nothing fails: the workflow is green, the
+site serves, and the rules simply do nothing. This is exactly how the trailing
+slash change shipped inert the first time.
+
+`npm run build` now runs `scripts/copy-swa-config.mjs` after `next build` (which
+regenerates `out/` from scratch), and two gates keep it honest:
+
+- `npm run check-deploy-readiness` fails if `out/staticwebapp.config.json` is
+  missing or differs from the source.
+- `npm run smoke-test-live-site` fails if a non-slash page route does not `301`
+  in production, which is the only way to prove the config actually applied.
+
+To confirm by hand, compare a live response header against the config: the
+config sets `Cache-Control: public, max-age=0, must-revalidate`, so a live value
+of `max-age=30` means Azure is serving its own default and the config is absent.
+
+```bash
+curl -sI https://www.enterpriseai.tools/ | grep -i cache-control
+```
+
 ## Analytics configuration (build-time, never committed)
 
 Google Analytics 4 is wired through `NEXT_PUBLIC_GA_MEASUREMENT_ID`, read by
