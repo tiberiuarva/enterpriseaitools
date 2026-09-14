@@ -26,7 +26,7 @@ export default function EvaluatePage() {
     buildFaqPageJsonLd([
       {
         question: "Does this flow capture any data?",
-        answer: "No. The guided flow runs entirely in your browser; no answers, results, or analytics are sent anywhere. There is no signup, no email capture, and no backend.",
+        answer: "No. The guided flow runs entirely in your browser: your answers and the resulting shortlist are never transmitted, with or without analytics consent. There is no signup, no email capture, and no backend.",
       },
       {
         question: "How are results ranked?",

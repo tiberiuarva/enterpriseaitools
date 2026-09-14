@@ -8,21 +8,15 @@ import { lastUpdated, snapshotCount, snapshotDiffEvents, updates } from "@/lib/d
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { navItems, withBasePath } from "@/lib/site";
 
-export const metadata: Metadata = {
-  ...buildMetadata({
-    title: "Weekly updates",
-    description:
-      "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
-    path: "/updates",
-    modifiedTime: lastUpdated,
-  }),
-  alternates: {
-    ...buildMetadata({ path: "/updates" }).alternates,
-    types: {
-      "application/atom+xml": [{ title: "enterpriseai.tools weekly updates feed", url: `${siteUrl}/updates.xml` }],
-    },
-  },
-};
+// `buildMetadata` already advertises the site-wide Atom feed on every page, so
+// this route needs no bespoke `alternates` override.
+export const metadata: Metadata = buildMetadata({
+  title: "Weekly updates",
+  description:
+    "High-impact market intelligence for enterprise AI tooling, with expandable release tracking for lower-signal product changes.",
+  path: "/updates",
+  modifiedTime: lastUpdated,
+});
 
 export default function UpdatesPage() {
   const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));

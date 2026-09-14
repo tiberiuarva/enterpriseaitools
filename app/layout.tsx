@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans } from "next/font/google";
+import { Analytics } from "@/components/analytics";
 import { JsonLd, buildOrganizationJsonLd, buildWebSiteJsonLd } from "@/components/json-ld";
 import { SkipLinkFocus } from "@/components/skip-link-focus";
 import { siteUrl } from "@/lib/metadata";
@@ -89,6 +90,7 @@ export default function RootLayout({
       url: siteUrl,
       description: "Open source landscape tracker for enterprise AI tooling.",
       sameAs: [githubRepoUrl],
+      logoUrl: `${siteUrl}/apple-touch-icon.png`,
     }),
   ];
 
@@ -101,6 +103,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );

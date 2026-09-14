@@ -63,9 +63,10 @@ not belong on this roadmap.
 ## Non-negotiable guardrails (these constrain every milestone)
 
 - **No pay-to-play, no paid placement, no sponsored ranking — ever.** This is the moat.
-- **No tracking, no analytics, no email capture, no cookies.** Distribution is RSS,
-  badges, GitHub, and being citable — never a lead funnel. (Newsletter, if any, is
-  RSS-first.)
+- **No ads, no email capture, no lead funnel.** Audience measurement is limited to
+  consent-gated GA4 (nothing loads before a visitor opts in, advertising signals
+  permanently denied); there is no other tracking. Distribution is RSS, badges,
+  GitHub, and being citable. (Newsletter, if any, is RSS-first.)
 - **Static export only.** API and feeds are build-time JSON/XML artifacts, not server
   routes. No backend ever enters the bundle.
 - **Source-backed or not published.** Schema is law; license accuracy is P0.

@@ -10,7 +10,9 @@ materially changes the bundle or page count.
 - React 19.2.4
 - `output: "export"` (fully static export to `out/`)
 - `images.unoptimized: true` (required by static export)
-- No runtime analytics, no third-party fonts, no client-side third-party fetches
+- No third-party fonts and no client-side third-party fetches. The only
+  third-party script is the consent-gated GA4 tag, which loads nothing until a
+  visitor opts in — so the default page weight is unchanged
 
 ## Snapshot — captured during M12 work
 

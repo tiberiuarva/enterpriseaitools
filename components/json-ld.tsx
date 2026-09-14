@@ -116,12 +116,16 @@ export function buildToolArticleJsonLd({
   authorName,
   datePublished,
   dateModified,
+  imageUrl,
 }: {
   tool: Tool;
   url: string;
   authorName: string;
   datePublished: string;
   dateModified: string;
+  /** Absolute URL of a representative image. Google treats `image` as required
+   *  on Article; without it the page is ineligible for article rich results. */
+  imageUrl?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -133,11 +137,13 @@ export function buildToolArticleJsonLd({
     inLanguage: defaultLanguage,
     datePublished: normalizeJsonLdDate(datePublished),
     dateModified: normalizeJsonLdDate(dateModified),
+    ...(imageUrl ? { image: [imageUrl] } : {}),
     author: { "@type": "Person", name: authorName },
     publisher: {
       "@type": "Organization",
       name: "enterpriseai.tools",
       url: defaultSiteUrl,
+      logo: { "@type": "ImageObject", url: `${defaultSiteUrl}/apple-touch-icon.png` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     about: { "@type": "SoftwareApplication", "@id": `${url}#software` },
@@ -379,11 +385,15 @@ export function buildOrganizationJsonLd({
   url,
   description,
   sameAs,
+  logoUrl,
 }: {
   name: string;
   url: string;
   description: string;
   sameAs?: string[];
+  /** Absolute URL of the publisher mark. Google requires it on Organization
+   *  before the entity can carry a logo in knowledge panels. */
+  logoUrl?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -391,6 +401,7 @@ export function buildOrganizationJsonLd({
     name,
     url,
     description,
+    ...(logoUrl ? { logo: { "@type": "ImageObject", url: logoUrl } } : {}),
     ...(sameAs && sameAs.length > 0 ? { sameAs } : {}),
   };
 }

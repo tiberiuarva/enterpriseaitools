@@ -94,6 +94,45 @@ const failures = [];
 const seenTitles = new Map();
 const seenDescriptions = new Map();
 
+// `lastmod` keyed by `loc`, so each route's sitemap freshness date can be
+// compared against what the page itself publishes.
+const sitemapLastmodByLoc = new Map(
+  [...sitemapXml.matchAll(/<url>\s*<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map(
+    (match) => [match[1], match[2]],
+  ),
+);
+
+function readArticleModifiedDate(html) {
+  const value = html.match(/property="article:modified_time"\s+content="([^"]+)"/i)?.[1];
+
+  // Metadata carries a full timestamp; the sitemap carries a calendar date.
+  return value ? value.slice(0, 10) : null;
+}
+
+/**
+ * A page that publishes an `article:modified_time` is asserting when it last
+ * changed. If the sitemap advertises a different date for the same URL, one of
+ * them is lying to crawlers — which is exactly the stale-`lastmod` problem the
+ * generator exists to prevent. Fail the build rather than ship the mismatch.
+ */
+function checkLastmodMatchesPage(routeLabel, url, html) {
+  const declared = readArticleModifiedDate(html);
+
+  if (!declared) {
+    return;
+  }
+
+  const sitemapDate = sitemapLastmodByLoc.get(url);
+
+  if (!sitemapDate) {
+    failures.push(`${routeLabel} has no <lastmod> in sitemap.xml`);
+  } else if (sitemapDate !== declared) {
+    failures.push(
+      `${routeLabel} sitemap lastmod (${sitemapDate}) disagrees with the page's article:modified_time (${declared}) — update seo-route-inventory.json`,
+    );
+  }
+}
+
 if (!robotsTxt.includes(`Sitemap: ${siteUrl}/sitemap.xml`)) {
   failures.push(`robots.txt does not point at ${siteUrl}/sitemap.xml`);
 }
@@ -123,6 +162,8 @@ for (const route of routeInventory) {
   if (!sitemapXml.includes(`<loc>${expectedUrl}</loc>`)) {
     failures.push(`sitemap.xml is missing ${expectedUrl}`);
   }
+
+  checkLastmodMatchesPage(normalizedRoute, expectedUrl, html);
 
   if (!html.includes(`<link rel="canonical" href="${expectedUrl}"`)) {
     failures.push(`${normalizedRoute} is missing canonical ${expectedUrl}`);
@@ -300,6 +341,8 @@ if (sampleTool) {
     if (!/property="article:modified_time"/.test(toolHtml) && !/property="og:updated_time"/.test(toolHtml)) {
       failures.push(`/tools/${sampleTool.id}/ is missing an article modified-time meta tag`);
     }
+
+    checkLastmodMatchesPage(`/tools/${sampleTool.id}/`, absoluteUrl(`/tools/${sampleTool.id}`), toolHtml);
   }
 }
 

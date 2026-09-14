@@ -19,9 +19,10 @@ const POLICY_POINTS = [
 ];
 
 const PRIVACY_POINTS = [
-  "No analytics and no tracking scripts — we cannot see who you are, and we do not want to.",
-  "No cookies, no email capture, no lead funnel. Subscribing means RSS/Atom or the calendar feed, which identify nobody.",
-  "No runtime third-party requests: pages are static files, and nothing phones home when you read them.",
+  "Analytics are opt-in and aggregate. Google Analytics loads only after you accept the consent prompt; decline and no request is made to Google and no analytics cookie is written.",
+  "No advertising, no remarketing, and no data sold or shared with brokers. Advertising consent signals stay denied permanently, whatever you choose about analytics.",
+  "No email capture and no lead funnel. Subscribing means RSS/Atom or the calendar feed, which identify nobody.",
+  "No vendor ever sees who visited their record. Analytics reporting is aggregate and is never shared with a listed vendor.",
 ];
 
 const CORRECTION_STEPS = [

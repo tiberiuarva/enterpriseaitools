@@ -6,9 +6,10 @@ Always pair with the `static-export-safe` skill before touching code.
 
 ## Hard rules
 
-1. **Static-export safe.** No runtime third-party fetches, no analytics scripts,
-   no third-party fonts pulled at load. Components render from props and the
-   build-time dataset only.
+1. **Static-export safe.** No runtime third-party fetches, no third-party fonts
+   pulled at load. Components render from props and the build-time dataset only.
+   The single exception is `components/analytics.tsx`, which mounts the
+   consent-gated GA4 tag and only after the visitor accepts.
 2. **Server-first.** Default to server components. Add `'use client'` only when
    a component genuinely needs interactivity or browser APIs, and keep that
    client boundary as small as possible.
