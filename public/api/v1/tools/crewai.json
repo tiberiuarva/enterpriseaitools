@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/crewAIInc/crewAI",
-    "githubStars": 57488,
-    "version": "1.15.17",
+    "githubStars": 58436,
+    "version": "1.15.21",
     "docsUrl": "https://docs.crewai.com/",
     "pricingModel": "free",
     "status": "active",
@@ -38,7 +38,7 @@
       "gcp"
     ],
     "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-    "lastRelease": "2026-08-20",
+    "lastRelease": "2026-09-09",
     "governance": {
       "dataResidency": {
         "status": "yes",

@@ -1,6 +1,6 @@
 # enterpriseai.tools — full content
 
-> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-08-22.
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-09-13.
 
 Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
@@ -101,7 +101,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### CrewAI
 - Page: https://www.enterpriseai.tools/tools/crewai/
 - Vendor: crewAI Inc. | Type: opensource | License: MIT
-- Status: active | Version: 1.15.17 | Last release: 2026-08-20
+- Status: active | Version: 1.15.21 | Last release: 2026-09-09
 - Open source multi-agent framework focused on autonomous teams and task coordination.
 - Strengths: Large community ecosystem; Crew-based task coordination; Built for multi-agent coordination
 - Governance posture:
@@ -191,7 +191,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Mastra
 - Page: https://www.enterpriseai.tools/tools/mastra/
 - Vendor: Mastra AI | Type: opensource | License: Apache 2.0 core + EE paths (caution: Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.)
-- Status: active | Version: 1.60.0 | Last release: 2026-08-19
+- Status: active | Version: 1.66.0 | Last release: 2026-09-11
 - Agent framework focused on composable workflows, tooling, and modern developer ergonomics.
 - Strengths: Apache 2.0 plus enterprise path; Fast growth; Modern DX
 - Governance posture:
@@ -209,7 +209,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Microsoft Agent Framework
 - Page: https://www.enterpriseai.tools/tools/microsoft-agent-framework/
 - Vendor: Microsoft | Type: opensource | License: MIT
-- Status: active | Version: 1.15.0 | Last release: 2026-08-21
+- Status: active | Version: 1.18.0 | Last release: 2026-09-10
 - Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.
 - Strengths: Multi-language SDKs; Python and .NET support; Graph-based workflows and DevUI
 - Governance posture:
@@ -245,7 +245,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### OpenAI Agents SDK
 - Page: https://www.enterpriseai.tools/tools/openai-agents-sdk/
 - Vendor: OpenAI | Type: opensource | License: MIT
-- Status: active | Version: 0.22.0 | Last release: 2026-08-19
+- Status: active | Version: 0.22.2 | Last release: 2026-09-09
 - Production successor to Swarm for agentic OpenAI workflows with broader model support.
 - Strengths: Hosted tracing support; Production successor to Swarm; Handoffs and tool orchestration
 - Governance posture:
@@ -337,7 +337,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Dify
 - Page: https://www.enterpriseai.tools/tools/dify/
 - Vendor: Dify | Type: opensource | License: Modified Apache 2.0 (caution: Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.)
-- Status: active | Version: 1.16.1 | Last release: 2026-07-28
+- Status: active | Version: 1.17.1 | Last release: 2026-09-10
 - Application development and workflow platform for LLM apps with plugin and enterprise features.
 - Strengths: App + workflow surface in one stack; Built-in BaaS-style app publishing; Plugin architecture
 - Governance posture:
@@ -409,7 +409,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LangFlow
 - Page: https://www.enterpriseai.tools/tools/langflow/
 - Vendor: LangFlow / DataStax | Type: opensource | License: MIT
-- Status: active | Version: 1.11.4 | Last release: 2026-08-19
+- Status: active | Version: 1.12.1 | Last release: 2026-09-08
 - Visual flow builder for LLM pipelines and agent workflows with self-hosting support.
 - Strengths: Visual workflow canvas; LangChain ecosystem fit; API and playground handoff
 - Governance posture:
@@ -427,7 +427,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### n8n
 - Page: https://www.enterpriseai.tools/tools/n8n/
 - Vendor: n8n | Type: opensource | License: Sustainable Use License (caution: n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.)
-- Status: active | Version: 2.35.3 | Last release: 2026-08-14
+- Status: active | Version: 2.38.7 | Last release: 2026-09-11
 - Workflow automation platform with strong self-hosting support and broad integration coverage.
 - Strengths: Large integration catalog; Strong workflow automation ecosystem; Low-code orchestration builder
 - Governance posture:
@@ -683,9 +683,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Amazon Q Business
 - Page: https://www.enterpriseai.tools/tools/amazon-q-business/
 - Vendor: AWS | Type: vendor | License: Proprietary
-- Status: active
-- Enterprise business assistant with many data connectors and the lowest entry pricing in this segment.
-- Strengths: 40+ data connectors; Low entry price; Standalone business assistant
+- Status: deprecated
+- Enterprise business assistant for existing customers, with permissions-aware responses and broad data-source connectivity.
+- Strengths: 40+ data connectors; Permissions-aware responses; Existing-customer business assistant
 - Governance posture:
   - Data residency: partial — Primary-region storage; cross-region inference stays within geography; in-country needs AWS Support. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/cross-region-inference.html]
   - Deployment: yes (saas) — SaaS on AWS with 40+ connectors; no self-hosted option. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html]
@@ -745,11 +745,11 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - Deployment: yes (saas) — Standalone SaaS IDE; Privacy Mode (zero retention); MDM supported; no self-hosted LLM in standard tiers. [source: https://cursor.com/security]
   - Audit logging: yes — Enterprise audit logs (admin/security/auth) with SIEM streaming (Splunk/Datadog/S3). [source: https://cursor.com/docs/enterprise/compliance-and-monitoring]
   - SOC 2: yes — SOC 2 Type II available on request via trust.cursor.com. [source: https://cursor.com/security]
-  - ISO 27001: unknown — Listed by some secondary sources; no primary Anysphere certificate confirmed.
-  - ISO 42001: unknown — No ISO 42001 certification found for Cursor/Anysphere.
+  - ISO 27001: yes — Cursor states that it holds ISO/IEC 27001:2022 certification; the certificate is available through its trust portal. [source: https://cursor.com/security]
+  - ISO 42001: yes — Cursor states that it holds ISO/IEC 42001:2023 certification; the certificate is available through its trust portal. [source: https://cursor.com/security]
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
   - License risk: yes (risk: high) — Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape. [source: https://cursor.com/]
-- Governance reviewed: 2026-05-26
+- Governance reviewed: 2026-09-13
 - Links: docs: https://cursor.com/ | site: https://cursor.com/
 
 ### Databricks Genie Code
@@ -898,6 +898,15 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ## Recent updates
 
+- 2026-09-11 — Mastra (release, high impact): Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0]
+- 2026-09-10 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.18.0 added shared vector-store abstractions and Azure AI Search, Redis, Qdrant, and pgvector connectors, plus bounded tool-loop duration and several credential, file, and checkpoint hardening changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0]
+- 2026-09-10 — Cursor (feature, high impact): Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions. [source: https://cursor.com/changelog/projects]
+- 2026-09-10 — GitHub Copilot (feature, high impact): GitHub Copilot added Jira-to-implementation context in the Copilot app, experimental adaptive model routing in Copilot CLI, recurring agent automations in VS Code, and centrally managed JetBrains sandbox policies. [source: https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/]
+- 2026-09-09 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.22.2 added current image-generation tool options and hardened UnixLocal sandbox file handling against symlink races, following the broader MCP guardrail and isolation work in 0.22.1. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.22.2]
+- 2026-09-09 — CrewAI (release, medium impact): CrewAI 1.15.21 added telemetry for checkpoint runtime and CLI usage and fixed gateway-error reporting, UTF-8 JSON checkpoints, streaming tool-call arguments, and JSON Schema type-array handling. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.21]
+- 2026-09-08 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock made OpenAI GPT-6 Astra generally available with up to a 1 million-token input context window and support for advanced computer and browser use in agent workflows. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-on-amazon-bedrock/]
+- 2026-09-08 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock AgentCore Memory added direct long-term-memory ingestion for conversational or JSON payloads without first persisting a short-term memory event. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/agentcore-memory-direct-ingest/]
+- 2026-08-25 — Cursor (feature, high impact): Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification. [source: https://cursor.com/security#certifications-and-third-party-assessments]
 - 2026-08-21 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.15.0 added optional A2UI support for agent-generated interfaces, first-class middleware failure signaling, and broader runtime and integration updates. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0]
 - 2026-08-20 — CrewAI (release, medium impact): CrewAI 1.15.17 expanded declarative conversational flows, improved oversized-message chunking, and fixed MCP HTTP and SSE server naming plus failed-attempt scope cleanup. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.17]
 - 2026-08-19 — Mastra (release, high impact): Mastra core 1.60.0 added durable execution for Agents API-created agents without redeployment and introduced a Cloudflare Sandbox provider for remote workspaces. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.60.0]
@@ -910,6 +919,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-08-11 — Langflow (release, high impact): Langflow 1.11.3 shipped a security-focused patch set covering SQL target overrides, path containment, symlink handling, ambiguous URL authorities, admin-only component builds, and MCP redirect-based SSRF exposure. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.11.3]
 - 2026-08-11 — Atomic Agents (release, medium impact): Atomic Agents 2.10.0 added typed video URL input support for OpenAI-compatible multimodal providers, including nested chat-history extraction and serialization. [source: https://github.com/Eigenwise/atomic-agents/releases/tag/v2.10.0]
 - 2026-08-03 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock added 1 million-token context windows for OpenAI GPT-5.6 Sol, Terra, and Luna, expanding long-context options for agent and retrieval workloads. [source: https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/]
+- 2026-07-31 — Amazon Q Business (deprecation, high impact): Amazon Q Business closed to new customers; AWS will continue bug fixes and security updates for existing customers but will not consider new feature requests, and recommends migration to Amazon Quick. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html]
 - 2026-07-30 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family. [source: https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/]
 - 2026-07-29 — Flowise (deprecation, high impact): Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks. [source: https://flowiseai.com/sunset]
 - 2026-07-28 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock AgentCore Gateway added support for the MCP 2026-07-28 specification, including its stateless core, governed extensions, and hardened authorization. [source: https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/]
@@ -918,17 +928,6 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-07-17 — OpenAI Agents SDK (release, low impact): OpenAI Agents SDK 0.18.3 added configurable task/turn tracing spans and realtime response usage tracking in session context. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.3]
 - 2026-07-17 — n8n (release, low impact): n8n 2.30.7 added provenance-attested source linting for community packages and fixed SES request signing. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7]
 - 2026-07-17 — Dify (release, medium impact): Dify 1.16.0 introduced the beta Dify Agent experience with shell-style agent capabilities and Skills packaging. [source: https://github.com/langgenius/dify/releases/tag/1.16.0]
-- 2026-07-16 — CrewAI (release, low impact): CrewAI 1.15.3 added execution-boundary interception hooks, an organization ID parameter, and declarative flows on the TUI. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.3]
-- 2026-07-16 — n8n (release, low impact): n8n 2.30.6 required execution mode for MCP workflow executions, tightening workflow execution behavior. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.6]
-- 2026-07-15 — Mastra (release, medium impact): Mastra core 1.51.0 added durable agent crash recovery APIs and opt-in boot-time recovery for orphaned running runs. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.51.0]
-- 2026-07-11 — OpenAI Agents SDK (release, medium impact): OpenAI Agents SDK 0.18.2 added GPT-5.6 request controls and hosted multi-agent beta support, plus sandbox and usage fixes. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.2]
-- 2026-07-10 — Microsoft Agent Framework (release, medium impact): Microsoft Agent Framework Python 1.11.0 added message injection middleware for enqueuing messages into active runs. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.11.0]
-- 2026-07-10 — LangGraph (release, low impact): LangGraph 1.2.9 fixed updateState metadata and counters for delta channels. [source: https://github.com/langchain-ai/langgraph/releases/tag/1.2.9]
-- 2026-07-10 — LangGraph (release, low impact): LangGraph CLI 0.4.31 allowed langgraph-api versions up to 1.0.0 and updated CLI dependencies. [source: https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.31]
-- 2026-07-10 — n8n (release, low impact): n8n released 2.29.10 with an editor bug fix to keep AI Assistant thread state intact during editor hand-off. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.29.10]
-- 2026-07-09 — OpenAI Agents SDK (release, medium impact): OpenAI Agents SDK 0.18.1 added GPT-5.6 model defaults and migrated examples, with cache-write usage fixes. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.1]
-- 2026-07-09 — Atomic Agents (release, low impact): Atomic Agents 2.9.0 added pluggable chat history via BaseChatHistory for custom or persistent memory backends. [source: https://github.com/Eigenwise/atomic-agents/releases/tag/v2.9.0]
-- 2026-07-08 — Haystack (release, high impact): Haystack 2.31.0 began moving components out of core into dedicated packages ahead of 3.0. [source: https://github.com/deepset-ai/haystack/releases/tag/v2.31.0]
 
 ## Data access
 - Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -10,11 +10,11 @@
     "subcategory": "productivity",
     "type": "vendor",
     "vendor": "AWS",
-    "description": "Enterprise business assistant with many data connectors and the lowest entry pricing in this segment.",
+    "description": "Enterprise business assistant for existing customers, with permissions-aware responses and broad data-source connectivity.",
     "strengths": [
       "40+ data connectors",
-      "Low entry price",
-      "Standalone business assistant"
+      "Permissions-aware responses",
+      "Existing-customer business assistant"
     ],
     "clouds": [
       "aws"
@@ -22,9 +22,10 @@
     "license": "Proprietary",
     "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html",
     "websiteUrl": "https://aws.amazon.com/q/business/",
-    "pricing": "$20/user/mo Pro, $3/user/mo Lite entry.",
+    "pricing": "Existing-customer service; AWS states that Amazon Q Business is no longer open to new customers.",
     "pricingModel": "paid",
-    "status": "active",
+    "status": "deprecated",
+    "statusNote": "No longer open to new customers; AWS directs new customers to Amazon Quick for similar capabilities.",
     "tags": [
       "assistants",
       "productivity",
@@ -33,7 +34,7 @@
     "logoKind": "service-icon",
     "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
     "logoReviewedAt": "2026-05-15",
-    "practitionerNote": "Useful when enterprises want a connector-heavy internal assistant with AWS alignment, especially if a lower entry price matters for broad rollout.",
+    "practitionerNote": "Relevant only to existing Amazon Q Business deployments; AWS directs new customers to Amazon Quick for similar capabilities.",
     "logoUrl": "/logos/amazon-q.svg",
     "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
     "governance": {

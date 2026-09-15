@@ -2,10 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-governance.xml</id>
   <title>enterpriseai.tools weekly updates — governance</title>
-  <updated>2026-08-22T00:00:00.000Z</updated>
+  <updated>2026-09-13T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-governance.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-25-01</id>
+    <title>Cursor — feature</title>
+    <updated>2026-08-25T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-25-01" />
+    <summary>Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, high" />
+    <source>
+      <id>https://cursor.com/security#certifications-and-third-party-assessments</id>
+      <title>Certifications and third-party assessments · Cursor Security</title>
+      <link href="https://cursor.com/security#certifications-and-third-party-assessments" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-01</id>
     <title>Guardrails AI — deprecation</title>

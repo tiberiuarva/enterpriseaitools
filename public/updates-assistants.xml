@@ -2,10 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-08-22T00:00:00.000Z</updated>
+  <updated>2026-09-13T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-02</id>
+    <title>Cursor — feature</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-02" />
+    <summary>Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://cursor.com/changelog/projects</id>
+      <title>Cursor Projects · Cursor changelog</title>
+      <link href="https://cursor.com/changelog/projects" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-03</id>
+    <title>GitHub Copilot — feature</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-03" />
+    <summary>GitHub Copilot added Jira-to-implementation context in the Copilot app, experimental adaptive model routing in Copilot CLI, recurring agent automations in VS Code, and centrally managed JetBrains sandbox policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/</id>
+      <title>GitHub Copilot weekly releases — September 7</title>
+      <link href="https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-31-01</id>
+    <title>Amazon Q Business — deprecation</title>
+    <updated>2026-07-31T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-31-01" />
+    <summary>Amazon Q Business closed to new customers; AWS will continue bug fixes and security updates for existing customers but will not consider new feature requests, and recommends migration to Amazon Quick.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html</id>
+      <title>Amazon Q Business availability change</title>
+      <link href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-03-25-01</id>
     <title>GitHub Copilot expands model-training use of interaction data</title>

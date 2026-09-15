@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-08-22",
+  "generatedAt": "2026-09-13",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,7 +17,7 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/protectai/llm-guard",
-    "githubStars": 3202,
+    "githubStars": 3205,
     "docsUrl": "https://protectai.github.io/llm-guard/",
     "pricingModel": "free",
     "status": "maintenance",

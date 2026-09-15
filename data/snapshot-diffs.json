@@ -1,7 +1,387 @@
 {
-  "generatedAt": "2026-08-23",
-  "snapshotCount": 4,
+  "generatedAt": "2026-09-15",
+  "snapshotCount": 5,
   "events": [
+    {
+      "toolId": "amazon-q-business",
+      "toolName": "Amazon Q Business",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "status",
+      "previous": "active",
+      "current": "deprecated",
+      "highImpact": true
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 6177,
+      "current": 6238,
+      "highImpact": false
+    },
+    {
+      "toolId": "autogen",
+      "toolName": "AutoGen",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 60215,
+      "current": 60960,
+      "highImpact": false
+    },
+    {
+      "toolId": "beeai-framework",
+      "toolName": "BeeAI Framework",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 3367,
+      "current": 3400,
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 57488,
+      "current": 58436,
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-20",
+      "current": "2026-09-09",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "1.15.17",
+      "current": "1.15.21",
+      "highImpact": false
+    },
+    {
+      "toolId": "cursor",
+      "toolName": "Cursor",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "governance.iso27001",
+      "previous": "unknown",
+      "current": "yes",
+      "highImpact": true
+    },
+    {
+      "toolId": "cursor",
+      "toolName": "Cursor",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "governance.iso42001",
+      "previous": "unknown",
+      "current": "yes",
+      "highImpact": true
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 151300,
+      "current": 155576,
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-07-28",
+      "current": "2026-09-10",
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "1.16.1",
+      "current": "1.17.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 55137,
+      "current": 55456,
+      "highImpact": false
+    },
+    {
+      "toolId": "guardrails-ai",
+      "toolName": "Guardrails AI",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 7286,
+      "current": 7404,
+      "highImpact": false
+    },
+    {
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 26107,
+      "current": 26493,
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 153570,
+      "current": 154700,
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-19",
+      "current": "2026-09-08",
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "1.11.4",
+      "current": "1.12.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 39704,
+      "current": 41553,
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 51366,
+      "current": 52144,
+      "highImpact": false
+    },
+    {
+      "toolId": "llm-guard",
+      "toolName": "LLM Guard",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 3202,
+      "current": 3205,
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 27372,
+      "current": 27994,
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-19",
+      "current": "2026-09-11",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "1.60.0",
+      "current": "1.66.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 13058,
+      "current": 13498,
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-21",
+      "current": "2026-09-10",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "1.15.0",
+      "current": "1.18.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 200670,
+      "current": 204144,
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-14",
+      "current": "2026-09-11",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "2.35.3",
+      "current": "2.38.7",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 6869,
+      "current": 7109,
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 28877,
+      "current": 29401,
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "lastRelease",
+      "previous": "2026-08-19",
+      "current": "2026-09-09",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "version",
+      "previous": "0.22.0",
+      "current": "0.22.2",
+      "highImpact": false
+    },
+    {
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 79193,
+      "current": 80570,
+      "highImpact": false
+    },
+    {
+      "toolId": "rebuff",
+      "toolName": "Rebuff",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 1516,
+      "current": 1522,
+      "highImpact": false
+    },
+    {
+      "toolId": "rivet",
+      "toolName": "Rivet",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 4656,
+      "current": 4691,
+      "highImpact": false
+    },
+    {
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "from": "2026-08-22",
+      "to": "2026-09-13",
+      "field": "githubStars",
+      "previous": 28413,
+      "current": 28553,
+      "highImpact": false
+    },
     {
       "toolId": "atomic-agents",
       "toolName": "Atomic Agents",
