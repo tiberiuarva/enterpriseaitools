@@ -83,12 +83,19 @@ curl -sI https://www.enterpriseai.tools/api/v1/index.json  # expect 200, NOT a r
 curl -sI https://www.enterpriseai.tools/robots.txt         # expect 200, NOT a redirect
 ```
 
-   Both halves of this — the page redirects and the untouched asset paths — were
-   reproduced against the Azure Static Web Apps emulator before merge:
+   The page redirects and ordinary untouched asset paths were reproduced against
+   Azure Static Web Apps CLI 2.0.10 before merge:
 
 ```bash
 cp staticwebapp.config.json out/ && npx swa start out --port 4599
 ```
+
+   SWA CLI 2.0.10 reserves `/api/*` for Functions and returns `502` for
+   `/api/v1/index.json` when no Functions app is present, even though Azure
+   production serves this repository's static API file directly with `200`.
+   Treat that response as an emulator limitation and verify the API path against
+   production after deployment. The production smoke test still requires a
+   direct `200`.
 
    One caveat: the Azure docs also list `/index.html` -> `301 /` under this mode,
    but the emulator serves it `200`. Check it after deploy and treat a `200` as a

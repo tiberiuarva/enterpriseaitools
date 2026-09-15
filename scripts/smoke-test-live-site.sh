@@ -10,6 +10,7 @@ if [[ "$MODE" != "root" ]]; then
 fi
 
 BASE_URL="${1:-https://www.enterpriseai.tools}"
+BASE_URL="${BASE_URL%/}"
 
 check_html() {
   local url="$1"
@@ -43,21 +44,22 @@ done
 # returns 200 instead, the config is not deployed and every rule in it is inert.
 check_redirect() {
   local url="$1"
-  local expected_suffix="$2"
+  local expected_url="$2"
   local code location
   IFS=$'\t' read -r code location < <(
     curl -s -o /dev/null -w $'%{http_code}\t%{redirect_url}' "$url"
   )
-  [[ "$code" == "301" && "$location" == *"$expected_suffix" ]]
+  [[ "$code" == "301" && "$location" == "$expected_url" ]]
 }
 
 for path in /platforms /agents; do
   url="${BASE_URL}${path}"
-  check_redirect "$url" "${path}/" || {
-    echo "FAIL $url did not 301 to ${path}/ — staticwebapp.config.json is not being applied"
+  expected_url="${BASE_URL}${path}/"
+  check_redirect "$url" "$expected_url" || {
+    echo "FAIL $url did not 301 to $expected_url — staticwebapp.config.json is not being applied"
     exit 1
   }
-  echo "PASS $url -> ${path}/"
+  echo "PASS $url -> $expected_url"
 done
 
 # The same config must NOT rewrite non-HTML assets; that is why trailingSlash is
