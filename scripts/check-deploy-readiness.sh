@@ -15,7 +15,7 @@ pass() {
 
 WORKFLOW=".github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml"
 [[ -f "$WORKFLOW" ]] || fail "workflow file missing: $WORKFLOW"
-grep -q 'azure_static_web_apps_api_token: .*AZURE_STATIC_WEB_APPS_API_TOKEN' "$WORKFLOW" || fail "workflow must use AZURE_STATIC_WEB_APPS_API_TOKEN"
+grep -Fq 'azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403 }}' "$WORKFLOW" || fail "deploy job must use AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403"
 grep -q 'app_location: "out"' "$WORKFLOW" || fail "workflow must point app_location at prebuilt out directory"
 grep -q 'output_location: ""' "$WORKFLOW" || fail "workflow must leave output_location empty when uploading prebuilt out"
 grep -q 'skip_app_build: true' "$WORKFLOW" || fail "workflow must set skip_app_build: true when uploading prebuilt out"
@@ -47,6 +47,6 @@ pass "static export builds successfully and tracked generated artifacts stay in 
 pass "Azure config is present in the upload artifact"
 
 echo "External confirmation still required:"
-echo "- GitHub Actions secret AZURE_STATIC_WEB_APPS_API_TOKEN is configured"
+echo "- GitHub Actions secret AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403 is configured"
 echo "- Azure Static Web App is connected to this repo/branch"
 echo "- workflow succeeds on main and produces a live deploy"
