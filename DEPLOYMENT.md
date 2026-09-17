@@ -83,12 +83,19 @@ curl -sI https://www.enterpriseai.tools/api/v1/index.json  # expect 200, NOT a r
 curl -sI https://www.enterpriseai.tools/robots.txt         # expect 200, NOT a redirect
 ```
 
-   Both halves of this — the page redirects and the untouched asset paths — were
-   reproduced against the Azure Static Web Apps emulator before merge:
+   The page redirects and ordinary untouched asset paths were reproduced against
+   Azure Static Web Apps CLI 2.0.10 before merge:
 
 ```bash
 cp staticwebapp.config.json out/ && npx swa start out --port 4599
 ```
+
+   SWA CLI 2.0.10 reserves `/api/*` for Functions and returns `502` for
+   `/api/v1/index.json` when no Functions app is present, even though Azure
+   production serves this repository's static API file directly with `200`.
+   Treat that response as an emulator limitation and verify the API path against
+   production after deployment. The production smoke test still requires a
+   direct `200`.
 
    One caveat: the Azure docs also list `/index.html` -> `301 /` under this mode,
    but the emulator serves it `200`. Check it after deploy and treat a `200` as a
@@ -99,6 +106,34 @@ curl -sI https://www.enterpriseai.tools/index.html   # 301 -> / preferred; 200 i
 ```
 
 9. Only after deploy + SEO checks are green, proceed to the custom-domain checklist in `CUSTOM_DOMAIN.md`
+
+## Azure config must ship inside `out/`
+
+`staticwebapp.config.json` lives at the repo root, but Azure Static Web Apps
+reads it from the **root of the uploaded artifact**. The deploy job sets
+`app_location: "out"` with `skip_app_build: true`, so only `out/` is uploaded.
+
+A config left at the repo root is therefore never seen by the platform, and
+every rule in it — routing, headers, the custom 404, trailing-slash
+normalisation — is silently ignored. Nothing fails: the workflow is green, the
+site serves, and the rules simply do nothing. This is exactly how the trailing
+slash change shipped inert the first time.
+
+`npm run build` now runs `scripts/copy-swa-config.mjs` after `next build` (which
+regenerates `out/` from scratch), and two gates keep it honest:
+
+- `npm run check-deploy-readiness` fails if `out/staticwebapp.config.json` is
+  missing or differs from the source.
+- `npm run smoke-test-live-site` fails if a non-slash page route does not `301`
+  in production, which is the only way to prove the config actually applied.
+
+To confirm by hand, compare a live response header against the config: the
+config sets `Cache-Control: public, max-age=0, must-revalidate`, so a live value
+of `max-age=30` means Azure is serving its own default and the config is absent.
+
+```bash
+curl -sI https://www.enterpriseai.tools/ | grep -i cache-control
+```
 
 ## Analytics configuration (build-time, never committed)
 

@@ -36,8 +36,15 @@ pass "color-literal check passes (palette is single-sourced in app/globals.css)"
 
 npm run build >/dev/null
 [[ -f out/index.html ]] || fail "missing export output after build"
+# Azure reads staticwebapp.config.json from the root of the UPLOADED artifact
+# (out/), not the repo root. Without this the routing, header and trailing-slash
+# rules are silently ignored in production while looking correct in the repo.
+# Keep this repo-root source path aligned with scripts/copy-swa-config.mjs.
+[[ -f out/staticwebapp.config.json ]] || fail "out/staticwebapp.config.json missing — Azure would ignore staticwebapp.config.json entirely"
+diff -q staticwebapp.config.json out/staticwebapp.config.json >/dev/null || fail "out/staticwebapp.config.json differs from the source config"
 npm run check-generated-artifacts >/dev/null
 pass "static export builds successfully and tracked generated artifacts stay in sync"
+pass "Azure config is present in the upload artifact"
 
 echo "External confirmation still required:"
 echo "- GitHub Actions secret AZURE_STATIC_WEB_APPS_API_TOKEN is configured"
