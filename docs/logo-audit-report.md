@@ -9,9 +9,9 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 | agents | 14 | 0 (0%) | 4 | 9 | 0 | 1 |
 | orchestration | 11 | 0 (0%) | 5 | 5 | 0 | 1 |
 | governance | 10 | 0 (0%) | 3 | 4 | 0 | 3 |
-| assistants | 13 | 0 (0%) | 10 | 1 | 0 | 2 |
+| assistants | 13 | 1 (8%) | 9 | 1 | 0 | 2 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
-| **All site records** | **51** | **0 (0%)** | **25** | **19** | **0** | **7** |
+| **All site records** | **51** | **1 (2%)** | **24** | **19** | **0** | **7** |
 
 ## Inventory status
 
@@ -29,8 +29,8 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 | repo | 7 | 14% |
 | github-hosted | 2 | 4% |
 | docs-site | 4 | 8% |
-| vendor-site | 26 | 51% |
-| fallback-no-source | 0 | 0% |
+| vendor-site | 25 | 49% |
+| fallback-no-source | 1 | 2% |
 | other | 0 | 0% |
 
 ## Asset format mix
@@ -39,16 +39,17 @@ This tracks the rendered asset format. Fallback rows with no rendered image asse
 
 | Format | Count | Share |
 | --- | ---: | ---: |
-| SVG | 31 | 61% |
+| SVG | 30 | 59% |
 | PNG | 15 | 29% |
 | JPG | 4 | 8% |
 | AVIF | 1 | 2% |
+| NO-ASSET | 1 | 2% |
 
 ## Shared-asset reuse
 
 These rows are not automatically wrong, but they are where the system is still relying on family-brand or shared-platform reuse instead of distinct product marks.
 
-- `/logos/databricks.png` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity AI Gateway (governance), Databricks Genie Code (assistants), Databricks Genie Spaces (assistants)
+- `/logos/databricks.png` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity Gateway (governance), Databricks Genie Code (assistants), Databricks Genie Agents (assistants)
 - `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
 - `/logos/aws-bedrock.svg` → Amazon Bedrock Agents (agents), Amazon Bedrock Guardrails (governance)
 - `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)
@@ -63,6 +64,6 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Highest-priority cleanup signal
 
-- Fallback share is currently **0%**, so the next honest cleanup signal is source quality: **26 vendor-site marks**, **2 GitHub-hosted marks**, **4 docs-site marks**, and **6 shared-image reuse groups** still need periodic review.
+- Current worst category by fallback ratio: **assistants** with **1/13** fallback entries (8%).
 - Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix, shared-asset reuse, and review freshness are also acceptable.
 

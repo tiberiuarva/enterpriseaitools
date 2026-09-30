@@ -19,6 +19,7 @@ Top-level shape:
 |---|---|---:|---|
 | `id` | string | yes | Unique slug, e.g. `semantic-kernel` |
 | `name` | string | yes | Display name |
+| `aliases` | string[] | no | Prior product names (renames/rebrands). Never drop an entry; the slug `id` stays unchanged on rename. Rendered as "Formerly …" on the tool page and indexed by site search. |
 | `category` | `agents \| orchestration \| governance \| assistants` | yes | Primary category |
 | `subcategory` | string | no | Used mainly for assistants (`coding`, `productivity`, `build-your-own`) |
 | `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type |

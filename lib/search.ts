@@ -113,6 +113,7 @@ export const headerSearchEntries: SearchEntry[] = [
     section: categoryLabels[tool.category],
     keywords: uniqueKeywords([
       tool.vendor,
+      ...(tool.aliases ?? []),
       tool.license,
       ...(tool.tags ?? []),
       ...(tool.languages ?? []),

@@ -1,15 +1,15 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
     "id": "databricks-genie-spaces",
-    "name": "Databricks Genie Spaces",
+    "name": "Databricks Genie Agents",
     "category": "assistants",
     "type": "vendor",
     "vendor": "Databricks",
-    "description": "Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.",
+    "description": "Curated natural-language data agents (formerly Genie Spaces) for exploring governed enterprise datasets inside Databricks.",
     "strengths": [
       "Natural-language access to curated datasets",
       "Built on Unity Catalog governance",
@@ -21,9 +21,9 @@
       "gcp"
     ],
     "license": "Proprietary",
-    "docsUrl": "https://docs.databricks.com/aws/en/databricks-ai/",
+    "docsUrl": "https://docs.databricks.com/aws/en/genie/",
     "websiteUrl": "https://www.databricks.com/product/ai",
-    "pricing": "Packaged as part of Databricks AI assistive features; Databricks workspace and compute usage still apply.",
+    "pricing": "Pay-as-you-go since July 8, 2026 with 150 DBUs of free LLM usage per month; user billing paused and free through January 31, 2027.",
     "pricingModel": "paid",
     "languages": [
       "SQL"
@@ -36,7 +36,7 @@
       "analytics"
     ],
     "logoKind": "official-vendor",
-    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+    "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Agents does not expose a distinct standalone public mark.",
     "logoReviewedAt": "2026-05-24",
     "logoUrl": "/logos/databricks.png",
     "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
@@ -86,6 +86,9 @@
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "aliases": [
+      "Databricks Genie Spaces"
+    ]
   }
 }

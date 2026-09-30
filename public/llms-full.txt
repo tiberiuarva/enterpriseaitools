@@ -1,6 +1,6 @@
 # enterpriseai.tools — full content
 
-> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-09-13.
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-09-30.
 
 Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
@@ -29,7 +29,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Atomic Agents
 - Page: https://www.enterpriseai.tools/tools/atomic-agents/
 - Vendor: BrainBlend AI | Type: opensource | License: MIT
-- Status: active | Version: 2.10.0 | Last release: 2026-08-11
+- Status: active | Version: 2.10.3 | Last release: 2026-09-27
 - Minimalist agent framework emphasizing composability and predictable building blocks.
 - Strengths: Schema-first building blocks; Composable design; Focused API surface
 - Governance posture:
@@ -83,7 +83,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### BeeAI Framework
 - Page: https://www.enterpriseai.tools/tools/beeai-framework/
 - Vendor: Linux Foundation | Type: opensource | License: Apache 2.0
-- Status: active | Version: 0.1.82 | Last release: 2026-07-24
+- Status: active | Version: 0.1.85 | Last release: 2026-09-28
 - Open agent framework formerly known as Bee Agent Framework, now under Linux Foundation governance.
 - Strengths: Linux Foundation governance; Agent-oriented framework primitives; IBM/BeeAI lineage
 - Governance posture:
@@ -101,7 +101,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### CrewAI
 - Page: https://www.enterpriseai.tools/tools/crewai/
 - Vendor: crewAI Inc. | Type: opensource | License: MIT
-- Status: active | Version: 1.15.21 | Last release: 2026-09-09
+- Status: active | Version: 1.15.23 | Last release: 2026-09-28
 - Open source multi-agent framework focused on autonomous teams and task coordination.
 - Strengths: Large community ecosystem; Crew-based task coordination; Built for multi-agent coordination
 - Governance posture:
@@ -155,7 +155,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LangGraph
 - Page: https://www.enterpriseai.tools/tools/langgraph/
 - Vendor: LangChain | Type: opensource | License: MIT
-- Status: active | Version: 1.2.11 | Last release: 2026-08-11
+- Status: active | Version: 1.2.12 | Last release: 2026-09-21
 - Stateful agent orchestration framework with graph-based execution and durable workflows.
 - Strengths: Popular graph abstraction; Strong agent workflow patterns; LangChain ecosystem fit
 - Governance posture:
@@ -173,7 +173,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LlamaIndex
 - Page: https://www.enterpriseai.tools/tools/llamaindex/
 - Vendor: LlamaIndex Inc. | Type: opensource | License: MIT
-- Status: active | Version: 0.14.23 | Last release: 2026-06-24
+- Status: active | Version: 0.14.25 | Last release: 2026-09-21
 - Agent and retrieval framework with strong indexing, data connectors, and orchestration support.
 - Strengths: Strong retrieval tooling; Rich data connectors; Large ecosystem
 - Governance posture:
@@ -191,7 +191,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Mastra
 - Page: https://www.enterpriseai.tools/tools/mastra/
 - Vendor: Mastra AI | Type: opensource | License: Apache 2.0 core + EE paths (caution: Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.)
-- Status: active | Version: 1.66.0 | Last release: 2026-09-11
+- Status: active | Version: 1.72.0 | Last release: 2026-09-29
 - Agent framework focused on composable workflows, tooling, and modern developer ergonomics.
 - Strengths: Apache 2.0 plus enterprise path; Fast growth; Modern DX
 - Governance posture:
@@ -209,7 +209,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Microsoft Agent Framework
 - Page: https://www.enterpriseai.tools/tools/microsoft-agent-framework/
 - Vendor: Microsoft | Type: opensource | License: MIT
-- Status: active | Version: 1.18.0 | Last release: 2026-09-10
+- Status: active | Version: 1.19.0 | Last release: 2026-09-18
 - Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.
 - Strengths: Multi-language SDKs; Python and .NET support; Graph-based workflows and DevUI
 - Governance posture:
@@ -245,7 +245,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### OpenAI Agents SDK
 - Page: https://www.enterpriseai.tools/tools/openai-agents-sdk/
 - Vendor: OpenAI | Type: opensource | License: MIT
-- Status: active | Version: 0.22.2 | Last release: 2026-09-09
+- Status: active | Version: 0.22.3 | Last release: 2026-09-17
 - Production successor to Swarm for agentic OpenAI workflows with broader model support.
 - Strengths: Hosted tracing support; Production successor to Swarm; Handoffs and tool orchestration
 - Governance posture:
@@ -355,8 +355,8 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Flowise
 - Page: https://www.enterpriseai.tools/tools/flowise/
 - Vendor: Flowise | Type: opensource | License: Apache 2.0
-- Status: maintenance | Version: 3.1.4 | Last release: 2026-07-29
-- Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.
+- Status: archived | Version: 3.1.4 | Last release: 2026-07-29
+- Low-code orchestration and agent workflow builder; the repository was archived on August 13, 2026 and project end of life was August 31, 2026.
 - Strengths: Low-code orchestration builder; Chatflow + agent workflow support; Wide model/provider connectivity
 - Governance posture:
   - Data residency: partial — Self-hosted deployment leaves data location under customer control; no current hosted-service residency commitment is asserted. [source: https://docs.flowiseai.com/configuration/deployment.md]
@@ -391,7 +391,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Haystack
 - Page: https://www.enterpriseai.tools/tools/haystack/
 - Vendor: deepset | Type: opensource | License: Apache 2.0
-- Status: active | Version: 3.0.0 | Last release: 2026-07-20
+- Status: active | Version: 3.2.0 | Last release: 2026-09-24
 - LLM pipeline and retrieval orchestration framework rebranded toward the Haystack Enterprise Platform story.
 - Strengths: Mature pipeline patterns; Strong retrieval orientation; Production-oriented evaluation tooling
 - Governance posture:
@@ -409,7 +409,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LangFlow
 - Page: https://www.enterpriseai.tools/tools/langflow/
 - Vendor: LangFlow / DataStax | Type: opensource | License: MIT
-- Status: active | Version: 1.12.1 | Last release: 2026-09-08
+- Status: active | Version: 1.12.4 | Last release: 2026-09-29
 - Visual flow builder for LLM pipelines and agent workflows with self-hosting support.
 - Strengths: Visual workflow canvas; LangChain ecosystem fit; API and playground handoff
 - Governance posture:
@@ -427,7 +427,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### n8n
 - Page: https://www.enterpriseai.tools/tools/n8n/
 - Vendor: n8n | Type: opensource | License: Sustainable Use License (caution: n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.)
-- Status: active | Version: 2.38.7 | Last release: 2026-09-11
+- Status: active | Version: 2.41.4 | Last release: 2026-09-30
 - Workflow automation platform with strong self-hosting support and broad integration coverage.
 - Strengths: Large integration catalog; Strong workflow automation ecosystem; Low-code orchestration builder
 - Governance posture:
@@ -445,7 +445,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Paperclip
 - Page: https://www.enterpriseai.tools/tools/paperclip/
 - Vendor: Paperclip | Type: opensource | License: MIT
-- Status: active | Version: v2026.817.0 | Last release: 2026-08-17
+- Status: active | Version: v2026.916.1 | Last release: 2026-09-21
 - Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.
 - Strengths: Persistent multi-agent control plane; Built-in budgets and governance; Human approval gates
 - Governance posture:
@@ -534,7 +534,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://learn.microsoft.com/azure/ai-services/content-safety/overview | site: https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/
 
-### Databricks Unity AI Gateway
+### Databricks Unity Gateway (formerly Databricks Unity AI Gateway)
 - Page: https://www.enterpriseai.tools/tools/databricks-unity-ai-gateway/
 - Vendor: Databricks | Type: vendor | License: Proprietary
 - Status: active
@@ -609,8 +609,8 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LLM Guard
 - Page: https://www.enterpriseai.tools/tools/llm-guard/
 - Vendor: Palo Alto Networks (Protect AI) | Type: opensource | License: MIT
-- Status: maintenance | Version: 0.3.16
-- Open source safety filtering toolkit whose development has slowed following acquisition activity.
+- Status: archived | Version: 0.3.16
+- Open source LLM safety-filtering toolkit; the repository was archived in July 2026 and is no longer maintained.
 - Strengths: Prompt/output scanning; PII and toxicity detectors; Useful safety primitives
 - Governance posture:
   - Data residency: yes — Self-hosted library; data stays on operator infrastructure. [source: https://github.com/protectai/llm-guard]
@@ -627,7 +627,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### NeMo Guardrails
 - Page: https://www.enterpriseai.tools/tools/nemo-guardrails/
 - Vendor: NVIDIA | Type: opensource | License: Apache 2.0
-- Status: active | Version: 0.23.0 | Last release: 2026-07-01
+- Status: active | Version: 0.24.1 | Last release: 2026-09-16
 - Open source guardrails framework for LLM and agent safety with a dedicated Colang DSL.
 - Strengths: Purpose-built guardrails DSL; Conversation flow controls; NVIDIA ecosystem alignment
 - Governance posture:
@@ -701,9 +701,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Amazon Q Developer
 - Page: https://www.enterpriseai.tools/tools/amazon-q-developer/
 - Vendor: AWS | Type: vendor | License: Proprietary
-- Status: active
-- AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.
-- Strengths: AWS-native development fit; Free tier; Enterprise plans available
+- Status: deprecated
+- AWS coding assistant whose IDE plugins and paid subscriptions reach end of support on April 30, 2027; AWS steers new users to Kiro.
+- Strengths: AWS-native development fit; Console and chat integrations continue; Migration path to Kiro
 - Governance posture:
   - Data residency: partial — Pro tier stores in the profile region; free tier defaults US East; EU inference kept in EU. [source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/data-storage.html]
   - Deployment: yes (saas) — SaaS via IDE plugin / AWS console; no self-hosted option. [source: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html]
@@ -770,11 +770,11 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.databricks.com/aws/en/genie-code/ | site: https://www.databricks.com/product/ai
 
-### Databricks Genie Spaces
+### Databricks Genie Agents (formerly Databricks Genie Spaces)
 - Page: https://www.enterpriseai.tools/tools/databricks-genie-spaces/
 - Vendor: Databricks | Type: vendor | License: Proprietary
 - Status: active
-- Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.
+- Curated natural-language data agents (formerly Genie Spaces) for exploring governed enterprise datasets inside Databricks.
 - Strengths: Natural-language access to curated datasets; Built on Unity Catalog governance; Business-insight workflow inside the Databricks workspace
 - Governance posture:
   - Data residency: yes — AI assistive feature using Databricks Geos; residency per workspace region. [source: https://docs.databricks.com/aws/en/databricks-ai/databricks-ai-trust]
@@ -786,13 +786,13 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
   - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/ai]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://docs.databricks.com/aws/en/databricks-ai/ | site: https://www.databricks.com/product/ai
+- Links: docs: https://docs.databricks.com/aws/en/genie/ | site: https://www.databricks.com/product/ai
 
 ### Gemini Code Assist
 - Page: https://www.enterpriseai.tools/tools/gemini-code-assist/
 - Vendor: Google | Type: vendor | License: Proprietary
 - Status: active
-- Google coding assistant for IDE workflows with a generous free completion tier.
+- Google coding assistant for organisations (Standard and Enterprise editions); the individual free tier was retired in June 2026 in favour of Antigravity.
 - Strengths: VPC-SC + IP indemnification; Google ecosystem fit; Private codebase customization
 - Governance posture:
   - Data residency: partial — Stateless by default; Enterprise data-at-rest residency in US/EU; GitHub variant excluded from scope. [source: https://docs.cloud.google.com/gemini/docs/discover/certifications]
@@ -878,11 +878,11 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://learn.microsoft.com/microsoft-365-copilot/ | site: https://adoption.microsoft.com/en-us/microsoft-365-copilot/
 
-### Windsurf
+### Devin Desktop (formerly Windsurf)
 - Page: https://www.enterpriseai.tools/tools/windsurf/
 - Vendor: Cognition AI | Type: commercial | License: Proprietary
 - Status: active
-- Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.
+- Cognition's agentic coding IDE, renamed from Windsurf in June 2026, with an Agent Command Center over the full editor.
 - Strengths: Standalone IDE; Agentic coding workflows; Enterprise path available
 - Governance posture:
   - Data residency: partial — EU residency via Frankfurt (Enterprise); US default; FedRAMP High via AWS GovCloud. [source: https://windsurf.com/security]
@@ -894,10 +894,20 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
   - License risk: yes (risk: high) — Proprietary SaaS; 2025 ownership turbulence (Cognition acquisition) adds roadmap risk. [source: https://windsurf.com/]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://windsurf.com/ | site: https://windsurf.com/
+- Links: docs: https://devin.ai/ | site: https://devin.ai/
 
 ## Recent updates
 
+- 2026-09-30 — n8n (release, low impact): n8n 2.41.4 added an n8n Assistant onboarding thread for new Cloud sign-ups and usage-based credit top-ups, alongside execution and queue-handling fixes. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.4]
+- 2026-09-29 — Mastra (release, medium impact): Mastra core 1.72.0 added live channel resolvers for connecting channels without redeploying, persisted ownership leases for multi-worker background tasks, and a Microsoft Teams channel. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.72.0]
+- 2026-09-29 — LangFlow (release, medium impact): Langflow 1.12.4 shipped a security-hardening patch covering authentication, DNS validation, privilege enforcement, and sanitisation fixes. [source: https://github.com/langflow-ai/langflow/releases/tag/1.12.4]
+- 2026-09-28 — CrewAI (release, medium impact): CrewAI 1.15.23 added native Gemini 3.8 Flash support, evaluation of the last traced run through AMP, and richer task spans in tracing. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.23]
+- 2026-09-24 — Haystack (release, medium impact): Haystack 3.2.0 added an experimental SummarizationCompactor and TokenBudgetHook for agents, plus fluent Pipeline.add_components and connect_many helpers. [source: https://github.com/deepset-ai/haystack/releases/tag/v3.2.0]
+- 2026-09-22 — GitHub Copilot (model-addition, medium impact): Claude Opus 5.5 became selectable in GitHub Copilot for Pro+, Max, Business, and Enterprise plans across IDEs, GitHub.com, Copilot CLI, and the coding agent. [source: https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot]
+- 2026-09-21 — LlamaIndex (release, medium impact): LlamaIndex 0.14.25 resolved a large batch of security alerts and added Claude Opus 5 and Sonnet 5 support in the Anthropic and Bedrock Converse integrations. [source: https://github.com/run-llama/llama_index/releases/tag/v0.14.25]
+- 2026-09-18 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.19.0 added generic vector-store provider protocols with MongoDB and Azure DocumentDB connectors, with breaking changes to cookie persistence and MCP skill archives. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0]
+- 2026-09-18 — Amazon Bedrock Agents (feature, high impact): AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/]
+- 2026-09-16 — NeMo Guardrails (release, low impact): NeMo Guardrails 0.24.1 fixed benchmark concurrency measurement, Nemotron 3.5 response parsing, server overload handling, and combined-config loading. [source: https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1]
 - 2026-09-11 — Mastra (release, high impact): Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0]
 - 2026-09-10 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.18.0 added shared vector-store abstractions and Azure AI Search, Redis, Qdrant, and pgvector connectors, plus bounded tool-loop duration and several credential, file, and checkpoint hardening changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0]
 - 2026-09-10 — Cursor (feature, high impact): Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions. [source: https://cursor.com/changelog/projects]
@@ -915,19 +925,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-08-15 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.21.0 added provider-neutral deterministic testing utilities, OpenAI Python 3 compatibility, and hardened interruption snapshots, approvals, MCP lifecycle isolation, and sensitive-error redaction. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.21.0]
 - 2026-08-14 — Guardrails AI (deprecation, high impact): Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI. [source: https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0]
 - 2026-08-13 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.14.0 added Mistral support, opt-in AGENT-HOOKS enforcement middleware, AG-UI checkpoint resume, and Foundry state stores, alongside experimental and beta breaking changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0]
+- 2026-08-13 — Flowise (deprecation, high impact): Flowise archived its GitHub repository (read-only) ahead of the project end of life on August 31, 2026; the Apache-2.0 source remains available for forks. [source: https://github.com/FlowiseAI/Flowise]
 - 2026-08-12 — Mastra (release, high impact): Mastra core 1.58.0 added file-based agent schedules, Oracle Database storage and vector support, an in-process QuickJS transport, and dynamic workflow APIs, with stored-workflow naming and channel-format breaking changes. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.58.0]
 - 2026-08-11 — Langflow (release, high impact): Langflow 1.11.3 shipped a security-focused patch set covering SQL target overrides, path containment, symlink handling, ambiguous URL authorities, admin-only component builds, and MCP redirect-based SSRF exposure. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.11.3]
-- 2026-08-11 — Atomic Agents (release, medium impact): Atomic Agents 2.10.0 added typed video URL input support for OpenAI-compatible multimodal providers, including nested chat-history extraction and serialization. [source: https://github.com/Eigenwise/atomic-agents/releases/tag/v2.10.0]
-- 2026-08-03 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock added 1 million-token context windows for OpenAI GPT-5.6 Sol, Terra, and Luna, expanding long-context options for agent and retrieval workloads. [source: https://aws.amazon.com/about-aws/whats-new/2026/08/gpt-sol-terra-luna-long-context-bedrock/]
-- 2026-07-31 — Amazon Q Business (deprecation, high impact): Amazon Q Business closed to new customers; AWS will continue bug fixes and security updates for existing customers but will not consider new feature requests, and recommends migration to Amazon Quick. [source: https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html]
-- 2026-07-30 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock cut prices for OpenAI GPT-5.6 models by up to 80%, materially changing inference cost assumptions for workloads using the model family. [source: https://aws.amazon.com/about-aws/whats-new/2026/07/openai-gpt-terra-luna-pricing-bedrock/]
-- 2026-07-29 — Flowise (deprecation, high impact): Flowise announced an immediate feature-development freeze, repository archival on August 10, and project end of life on August 31; its Apache-2.0 source will remain available for forks. [source: https://flowiseai.com/sunset]
-- 2026-07-28 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock AgentCore Gateway added support for the MCP 2026-07-28 specification, including its stateless core, governed extensions, and hardened authorization. [source: https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/]
-- 2026-07-20 — Haystack (release, high impact): Haystack 3.0 introduced intentional breaking changes alongside agent hooks and skills, run introspection, first-class async serving, a leaner core, and safer pipeline loading. [source: https://github.com/deepset-ai/haystack/releases/tag/v3.0.0]
-- 2026-07-17 — CrewAI (release, low impact): CrewAI 1.15.4 promoted the Skills Repository out of experimental status and added Flows in Studio documentation. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.4]
-- 2026-07-17 — OpenAI Agents SDK (release, low impact): OpenAI Agents SDK 0.18.3 added configurable task/turn tracing spans and realtime response usage tracking in session context. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.18.3]
-- 2026-07-17 — n8n (release, low impact): n8n 2.30.7 added provenance-attested source linting for community packages and fixed SES request signing. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.30.7]
-- 2026-07-17 — Dify (release, medium impact): Dify 1.16.0 introduced the beta Dify Agent experience with shell-style agent capabilities and Skills packaging. [source: https://github.com/langgenius/dify/releases/tag/1.16.0]
 
 ## Data access
 - Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json

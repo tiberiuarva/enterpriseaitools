@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "status",
-  "message": "active",
-  "color": "brightgreen",
+  "message": "deprecated",
+  "color": "orange",
   "cacheSeconds": 86400
 }

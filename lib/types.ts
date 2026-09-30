@@ -70,6 +70,7 @@ export type LogoAuditMetadata =
 export type Tool = {
   id: string;
   name: string;
+  aliases?: string[];
   category: ToolCategory;
   subcategory?: string;
   type: ToolType;

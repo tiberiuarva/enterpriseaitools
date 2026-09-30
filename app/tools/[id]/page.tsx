@@ -116,6 +116,9 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
               <div className="min-w-0">
                 <h1 className="text-h1 text-[var(--color-text-primary)]">{tool.name}</h1>
                 {tool.vendor ? <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
+                {tool.aliases?.length ? (
+                  <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">Formerly {tool.aliases.join(", ")}</p>
+                ) : null}
               </div>
             </div>
             <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${toolTypeTintStyles[tool.type]}`}>

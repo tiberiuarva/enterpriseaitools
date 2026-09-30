@@ -419,7 +419,7 @@ function claimLine(label, claim) {
 function toolBlock(tool) {
   const g = tool.governance ?? {};
   const lines = [
-    `### ${tool.name}`,
+    `### ${tool.name}${tool.aliases?.length ? ` (formerly ${tool.aliases.join(", ")})` : ""}`,
     `- Page: ${siteUrl}/tools/${tool.id}/`,
     `- Vendor: ${tool.vendor ?? "—"} | Type: ${tool.type} | License: ${tool.license}${tool.licenseWarning ? ` (caution: ${tool.licenseWarning})` : ""}`,
     `- Status: ${tool.status}${tool.version ? ` | Version: ${tool.version}` : ""}${tool.lastRelease ? ` | Last release: ${tool.lastRelease}` : ""}`,

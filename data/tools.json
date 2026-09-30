@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-13",
+  "lastUpdated": "2026-09-30",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -369,7 +369,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
       "githubStars": 58436,
-      "version": "1.15.21",
+      "version": "1.15.23",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -389,7 +389,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-09-09",
+      "lastRelease": "2026-09-28",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -532,7 +532,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/run-llama/llama_index",
       "githubStars": 52144,
-      "version": "0.14.23",
+      "version": "0.14.25",
       "docsUrl": "https://docs.llamaindex.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -552,7 +552,7 @@
       "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows.",
       "logoSourceUrl": "https://www.llamaindex.ai/brand",
       "logoUrl": "/logos/llamaindex.svg",
-      "lastRelease": "2026-06-24",
+      "lastRelease": "2026-09-21",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -695,8 +695,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
       "githubStars": 13498,
-      "version": "1.18.0",
-      "lastRelease": "2026-09-10",
+      "version": "1.19.0",
+      "lastRelease": "2026-09-18",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -783,7 +783,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 41553,
-      "version": "1.2.11",
+      "version": "1.2.12",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
       "status": "active",
@@ -802,7 +802,7 @@
       "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
       "logoUrl": "/logos/langgraph.svg",
       "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-      "lastRelease": "2026-08-11",
+      "lastRelease": "2026-09-21",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -875,7 +875,7 @@
       ],
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 27994,
-      "version": "1.66.0",
+      "version": "1.72.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
       "status": "active",
@@ -896,7 +896,7 @@
       "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
       "logoSourceUrl": "https://mastra.ai/",
       "logoUrl": "/logos/mastra.png",
-      "lastRelease": "2026-09-11",
+      "lastRelease": "2026-09-29",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -957,7 +957,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
       "githubStars": 29401,
-      "version": "0.22.2",
+      "version": "0.22.3",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -976,7 +976,7 @@
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-09-09",
+      "lastRelease": "2026-09-17",
       "logoUrl": "/logos/openai.svg",
       "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
       "governance": {
@@ -1039,7 +1039,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/Eigenwise/atomic-agents",
       "githubStars": 6238,
-      "version": "2.10.0",
+      "version": "2.10.3",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
       "pricingModel": "free",
       "status": "active",
@@ -1102,7 +1102,7 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "lastRelease": "2026-08-11"
+      "lastRelease": "2026-09-27"
     },
     {
       "id": "beeai-framework",
@@ -1119,7 +1119,7 @@
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/i-am-bee/beeai-framework",
       "githubStars": 3400,
-      "version": "0.1.82",
+      "version": "0.1.85",
       "docsUrl": "https://framework.beeai.dev/introduction/welcome",
       "pricingModel": "free",
       "status": "active",
@@ -1140,7 +1140,7 @@
       "practitionerNote": "Interesting IBM-backed open framework for governed agent patterns, but most teams should still validate ecosystem depth before broad standardisation.",
       "logoSourceUrl": "https://framework.beeai.dev/",
       "logoUrl": "/logos/beeai-framework.svg",
-      "lastRelease": "2026-07-24",
+      "lastRelease": "2026-09-28",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -1540,7 +1540,7 @@
       ],
       "githubUrl": "https://github.com/n8n-io/n8n",
       "githubStars": 204144,
-      "version": "2.38.7",
+      "version": "2.41.4",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
       "pricingModel": "freemium",
@@ -1562,7 +1562,7 @@
         "gcp"
       ],
       "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-      "lastRelease": "2026-09-11",
+      "lastRelease": "2026-09-30",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1627,8 +1627,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/paperclipai/paperclip",
       "githubStars": 80570,
-      "version": "v2026.817.0",
-      "lastRelease": "2026-08-17",
+      "version": "v2026.916.1",
+      "lastRelease": "2026-09-21",
       "docsUrl": "https://paperclip.ing/docs",
       "websiteUrl": "https://paperclip.ing/",
       "pricingModel": "free",
@@ -1713,7 +1713,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
       "githubStars": 154700,
-      "version": "1.12.1",
+      "version": "1.12.4",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -1734,7 +1734,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-09-08",
+      "lastRelease": "2026-09-29",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -1870,7 +1870,7 @@
       "category": "orchestration",
       "type": "opensource",
       "vendor": "Flowise",
-      "description": "Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.",
+      "description": "Low-code orchestration and agent workflow builder; the repository was archived on August 13, 2026 and project end of life was August 31, 2026.",
       "strengths": [
         "Low-code orchestration builder",
         "Chatflow + agent workflow support",
@@ -1893,7 +1893,7 @@
       "version": "3.1.4",
       "docsUrl": "https://docs.flowiseai.com/",
       "pricingModel": "free",
-      "status": "maintenance",
+      "status": "archived",
       "tags": [
         "orchestration",
         "low-code",
@@ -1909,7 +1909,7 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Active feature development has ceased. The repository is scheduled for archival on August 10, 2026 and official project support ends August 31, while the Apache-2.0 source remains available for internal or community forks.",
+      "practitionerNote": "Active development has ended. The repository was archived (read-only) on August 13, 2026 and official support ended August 31, 2026; the Apache-2.0 source remains available for internal or community forks, but plan a migration for production workloads.",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1953,7 +1953,8 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "lastRelease": "2026-07-29"
+      "lastRelease": "2026-07-29",
+      "statusNote": "Repository archived by the owner on August 13, 2026; project end of life August 31, 2026 with no named successor."
     },
     {
       "id": "haystack",
@@ -1970,7 +1971,7 @@
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
       "githubStars": 26493,
-      "version": "3.0.0",
+      "version": "3.2.0",
       "docsUrl": "https://docs.haystack.deepset.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -1990,7 +1991,7 @@
         "gcp"
       ],
       "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
-      "lastRelease": "2026-07-20",
+      "lastRelease": "2026-09-24",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -2358,7 +2359,7 @@
     },
     {
       "id": "databricks-unity-ai-gateway",
-      "name": "Databricks Unity AI Gateway",
+      "name": "Databricks Unity Gateway",
       "category": "governance",
       "type": "vendor",
       "vendor": "Databricks",
@@ -2376,7 +2377,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
       "websiteUrl": "https://www.databricks.com/product/ai",
-      "pricing": "Underlying Databricks platform consumption still applies; current AI Gateway beta governance features are documented as no-charge.",
+      "pricing": "Underlying Databricks platform and model-serving consumption applies; no separate gateway price is published.",
       "pricingModel": "paid",
       "languages": [
         "Python",
@@ -2442,7 +2443,10 @@
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
-      }
+      },
+      "aliases": [
+        "Databricks Unity AI Gateway"
+      ]
     },
     {
       "id": "nemo-guardrails",
@@ -2470,7 +2474,7 @@
         "opensource",
         "nvidia"
       ],
-      "version": "0.23.0",
+      "version": "0.24.1",
       "logoKind": "official-vendor",
       "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
       "logoReviewedAt": "2026-05-15",
@@ -2482,7 +2486,7 @@
       "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
       "logoUrl": "/logos/nvidia.svg",
       "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
-      "lastRelease": "2026-07-01",
+      "lastRelease": "2026-09-16",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -2613,7 +2617,7 @@
       "category": "governance",
       "type": "opensource",
       "vendor": "Palo Alto Networks (Protect AI)",
-      "description": "Open source safety filtering toolkit whose development has slowed following acquisition activity.",
+      "description": "Open source LLM safety-filtering toolkit; the repository was archived in July 2026 and is no longer maintained.",
       "strengths": [
         "Prompt/output scanning",
         "PII and toxicity detectors",
@@ -2624,8 +2628,8 @@
       "githubStars": 3205,
       "docsUrl": "https://protectai.github.io/llm-guard/",
       "pricingModel": "free",
-      "status": "maintenance",
-      "statusNote": "Development slowed significantly post acquisition. Last meaningful commit noted as December 2025 in the guide.",
+      "status": "archived",
+      "statusNote": "Repository archived by the owner on July 9, 2026; the project and its Hugging Face models are no longer under active development.",
       "tags": [
         "governance",
         "opensource",
@@ -2640,7 +2644,7 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline.",
+      "practitionerNote": "Archived: fine as a reference for prompt/output scanner design, but do not start new production dependencies on it; pick a maintained guardrail layer instead.",
       "logoUrl": "/logos/llm-guard.png",
       "logoSourceUrl": "https://protectai.github.io/llm-guard/",
       "governance": {
@@ -2933,7 +2937,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.github.com/copilot",
       "websiteUrl": "https://github.com/features/copilot",
-      "pricing": "Individual $10/mo; Business $39/user/mo; Enterprise custom.",
+      "pricing": "Free; Pro $10/mo; Pro+ $39/mo; Max $100/mo; Business $19 and Enterprise $39 per granted seat/mo, with monthly AI credit allowances.",
       "pricingModel": "paid",
       "status": "active",
       "tags": [
@@ -3003,11 +3007,11 @@
       "subcategory": "coding",
       "type": "vendor",
       "vendor": "AWS",
-      "description": "AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.",
+      "description": "AWS coding assistant whose IDE plugins and paid subscriptions reach end of support on April 30, 2027; AWS steers new users to Kiro.",
       "strengths": [
         "AWS-native development fit",
-        "Free tier",
-        "Enterprise plans available"
+        "Console and chat integrations continue",
+        "Migration path to Kiro"
       ],
       "clouds": [
         "aws"
@@ -3015,9 +3019,9 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
       "websiteUrl": "https://aws.amazon.com/q/developer/",
-      "pricing": "$19/user/mo Pro; $39/user/mo Pro+.",
+      "pricing": "$19/user/mo Pro for existing subscribers only; closed to new signups.",
       "pricingModel": "paid",
-      "status": "active",
+      "status": "deprecated",
       "tags": [
         "assistants",
         "coding",
@@ -3026,7 +3030,7 @@
       "logoKind": "service-icon",
       "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
       "logoReviewedAt": "2026-05-15",
-      "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows.",
+      "practitionerNote": "Do not start new rollouts. Existing AWS-heavy teams should plan the move to Kiro (IDE/CLI) before April 2027, and to AWS Transform for Java/.NET upgrade work.",
       "logoUrl": "/logos/amazon-q.svg",
       "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
       "governance": {
@@ -3074,7 +3078,8 @@
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
-      }
+      },
+      "statusNote": "Announced April 30, 2026: new signups blocked from May 15, 2026 and IDE plugins plus paid subscriptions end support on April 30, 2027. Amazon Q in the AWS console, docs, and Slack/Teams chat is unaffected."
     },
     {
       "id": "gemini-code-assist",
@@ -3083,7 +3088,7 @@
       "subcategory": "coding",
       "type": "vendor",
       "vendor": "Google",
-      "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
+      "description": "Google coding assistant for organisations (Standard and Enterprise editions); the individual free tier was retired in June 2026 in favour of Antigravity.",
       "strengths": [
         "VPC-SC + IP indemnification",
         "Google ecosystem fit",
@@ -3178,7 +3183,7 @@
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
       "websiteUrl": "https://www.databricks.com/product/ai",
-      "pricing": "Current Genie Code capabilities are documented without a separate add-on fee, but Databricks workspace and compute consumption still apply.",
+      "pricing": "Pay-as-you-go since July 8, 2026 with a free monthly LLM usage allowance (150 DBUs); workspace and compute usage still apply.",
       "pricingModel": "paid",
       "languages": [
         "Python",
@@ -3327,36 +3332,35 @@
     },
     {
       "id": "windsurf",
-      "name": "Windsurf",
+      "name": "Devin Desktop",
       "category": "assistants",
       "subcategory": "coding",
       "type": "commercial",
       "vendor": "Cognition AI",
-      "description": "Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.",
+      "description": "Cognition's agentic coding IDE, renamed from Windsurf in June 2026, with an Agent Command Center over the full editor.",
       "strengths": [
         "Standalone IDE",
         "Agentic coding workflows",
         "Enterprise path available"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://windsurf.com/",
-      "websiteUrl": "https://windsurf.com/",
-      "pricing": "$20 Pro; $200 Max.",
+      "docsUrl": "https://devin.ai/",
+      "websiteUrl": "https://devin.ai/",
+      "pricing": "Free; Pro $20/mo; Max $200/mo; Team $80/mo base + $40/dev; Enterprise custom.",
       "pricingModel": "paid",
       "status": "active",
-      "statusNote": "OpenAI acquisition deal collapsed; Google hired key staff; Cognition acquired remaining product and brand.",
+      "statusNote": "Renamed from Windsurf to Devin Desktop on June 2, 2026 after Cognition's July 2025 acquisition of the Windsurf product and brand.",
       "tags": [
         "assistants",
         "coding",
+        "devin",
         "windsurf"
       ],
-      "logoKind": "service-icon",
-      "logoNotes": "Official Windsurf favicon/icon asset from the owner-controlled site (`/favicon.svg`). Checked-in copy preserves the vendor-provided cream background tile and adds a title for accessibility, so it is source-verified but not byte-identical.",
-      "logoReviewedAt": "2026-05-14",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: the product was renamed from Windsurf to Devin Desktop; the old Windsurf mark is retired and a reviewed Devin Desktop asset has not been sourced yet.",
+      "logoReviewedAt": "2026-09-30",
       "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
       "cloudBadgeReviewedAt": "2026-05-08",
-      "logoUrl": "/logos/windsurf.svg",
-      "logoSourceUrl": "https://windsurf.com/",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -3403,7 +3407,10 @@
           "level": "high"
         },
         "reviewedAt": "2026-05-26"
-      }
+      },
+      "aliases": [
+        "Windsurf"
+      ]
     },
     {
       "id": "microsoft-365-copilot",
@@ -3570,11 +3577,11 @@
     },
     {
       "id": "databricks-genie-spaces",
-      "name": "Databricks Genie Spaces",
+      "name": "Databricks Genie Agents",
       "category": "assistants",
       "type": "vendor",
       "vendor": "Databricks",
-      "description": "Natural-language data assistant surface for exploring selected enterprise datasets inside Databricks.",
+      "description": "Curated natural-language data agents (formerly Genie Spaces) for exploring governed enterprise datasets inside Databricks.",
       "strengths": [
         "Natural-language access to curated datasets",
         "Built on Unity Catalog governance",
@@ -3586,9 +3593,9 @@
         "gcp"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://docs.databricks.com/aws/en/databricks-ai/",
+      "docsUrl": "https://docs.databricks.com/aws/en/genie/",
       "websiteUrl": "https://www.databricks.com/product/ai",
-      "pricing": "Packaged as part of Databricks AI assistive features; Databricks workspace and compute usage still apply.",
+      "pricing": "Pay-as-you-go since July 8, 2026 with 150 DBUs of free LLM usage per month; user billing paused and free through January 31, 2027.",
       "pricingModel": "paid",
       "languages": [
         "SQL"
@@ -3601,7 +3608,7 @@
         "analytics"
       ],
       "logoKind": "official-vendor",
-      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+      "logoNotes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Agents does not expose a distinct standalone public mark.",
       "logoReviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png",
       "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
@@ -3651,7 +3658,10 @@
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
-      }
+      },
+      "aliases": [
+        "Databricks Genie Spaces"
+      ]
     },
     {
       "id": "amazon-q-business",
@@ -3754,7 +3764,7 @@
       "license": "Proprietary",
       "docsUrl": "https://learn.microsoft.com/microsoft-copilot-studio/",
       "websiteUrl": "https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/",
-      "pricing": "Free with M365 Copilot; $200/mo standalone.",
+      "pricing": "$200/pack/mo for 25,000 Copilot Credits (tenant-wide) or pay-as-you-go; agent building included with Microsoft 365 Copilot.",
       "pricingModel": "paid",
       "status": "active",
       "statusNote": "Formerly Power Virtual Agents (renamed Nov 2023).",

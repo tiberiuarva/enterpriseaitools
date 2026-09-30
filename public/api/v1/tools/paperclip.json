@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,8 +18,8 @@
     "license": "MIT",
     "githubUrl": "https://github.com/paperclipai/paperclip",
     "githubStars": 80570,
-    "version": "v2026.817.0",
-    "lastRelease": "2026-08-17",
+    "version": "v2026.916.1",
+    "lastRelease": "2026-09-21",
     "docsUrl": "https://paperclip.ing/docs",
     "websiteUrl": "https://paperclip.ing/",
     "pricingModel": "free",

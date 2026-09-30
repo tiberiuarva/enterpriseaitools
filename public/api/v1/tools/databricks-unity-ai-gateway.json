@@ -1,11 +1,11 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
     "id": "databricks-unity-ai-gateway",
-    "name": "Databricks Unity AI Gateway",
+    "name": "Databricks Unity Gateway",
     "category": "governance",
     "type": "vendor",
     "vendor": "Databricks",
@@ -23,7 +23,7 @@
     "license": "Proprietary",
     "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
     "websiteUrl": "https://www.databricks.com/product/ai",
-    "pricing": "Underlying Databricks platform consumption still applies; current AI Gateway beta governance features are documented as no-charge.",
+    "pricing": "Underlying Databricks platform and model-serving consumption applies; no separate gateway price is published.",
     "pricingModel": "paid",
     "languages": [
       "Python",
@@ -89,6 +89,9 @@
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "aliases": [
+      "Databricks Unity AI Gateway"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "orchestration",
     "type": "opensource",
     "vendor": "Flowise",
-    "description": "Low-code orchestration and agent workflow builder under an immediate feature freeze, with repository archival scheduled for August 10, 2026 and project end of life for August 31, 2026.",
+    "description": "Low-code orchestration and agent workflow builder; the repository was archived on August 13, 2026 and project end of life was August 31, 2026.",
     "strengths": [
       "Low-code orchestration builder",
       "Chatflow + agent workflow support",
@@ -32,7 +32,7 @@
     "version": "3.1.4",
     "docsUrl": "https://docs.flowiseai.com/",
     "pricingModel": "free",
-    "status": "maintenance",
+    "status": "archived",
     "tags": [
       "orchestration",
       "low-code",
@@ -48,7 +48,7 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Active feature development has ceased. The repository is scheduled for archival on August 10, 2026 and official project support ends August 31, while the Apache-2.0 source remains available for internal or community forks.",
+    "practitionerNote": "Active development has ended. The repository was archived (read-only) on August 13, 2026 and official support ended August 31, 2026; the Apache-2.0 source remains available for internal or community forks, but plan a migration for production workloads.",
     "governance": {
       "dataResidency": {
         "status": "partial",
@@ -92,6 +92,7 @@
       },
       "reviewedAt": "2026-05-26"
     },
-    "lastRelease": "2026-07-29"
+    "lastRelease": "2026-07-29",
+    "statusNote": "Repository archived by the owner on August 13, 2026; project end of life August 31, 2026 with no named successor."
   }
 }

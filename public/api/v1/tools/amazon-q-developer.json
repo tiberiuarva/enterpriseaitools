@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -10,11 +10,11 @@
     "subcategory": "coding",
     "type": "vendor",
     "vendor": "AWS",
-    "description": "AWS coding assistant integrated into IDE workflows with agentic request limits and AWS-native context.",
+    "description": "AWS coding assistant whose IDE plugins and paid subscriptions reach end of support on April 30, 2027; AWS steers new users to Kiro.",
     "strengths": [
       "AWS-native development fit",
-      "Free tier",
-      "Enterprise plans available"
+      "Console and chat integrations continue",
+      "Migration path to Kiro"
     ],
     "clouds": [
       "aws"
@@ -22,9 +22,9 @@
     "license": "Proprietary",
     "docsUrl": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html",
     "websiteUrl": "https://aws.amazon.com/q/developer/",
-    "pricing": "$19/user/mo Pro; $39/user/mo Pro+.",
+    "pricing": "$19/user/mo Pro for existing subscribers only; closed to new signups.",
     "pricingModel": "paid",
-    "status": "active",
+    "status": "deprecated",
     "tags": [
       "assistants",
       "coding",
@@ -33,7 +33,7 @@
     "logoKind": "service-icon",
     "logoNotes": "Official AWS architecture icon for Amazon Q (`Arch_Amazon-Q_64.svg` from the AWS Architecture Icons pack), intentionally reused because AWS presents these surfaces as Amazon Q variants rather than with separate public per-variant icons.",
     "logoReviewedAt": "2026-05-15",
-    "practitionerNote": "Best fit for AWS-heavy engineering teams that want coding help tied closely to cloud context, IAM, and internal AWS workflows.",
+    "practitionerNote": "Do not start new rollouts. Existing AWS-heavy teams should plan the move to Kiro (IDE/CLI) before April 2027, and to AWS Transform for Java/.NET upgrade work.",
     "logoUrl": "/logos/amazon-q.svg",
     "logoSourceUrl": "https://aws.amazon.com/architecture/icons/",
     "governance": {
@@ -81,6 +81,7 @@
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "statusNote": "Announced April 30, 2026: new signups blocked from May 15, 2026 and IDE plugins plus paid subscriptions end support on April 30, 2027. Amazon Q in the AWS console, docs, and Slack/Teams chat is unaffected."
   }
 }

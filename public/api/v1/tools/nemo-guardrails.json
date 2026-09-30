@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -29,7 +29,7 @@
       "opensource",
       "nvidia"
     ],
-    "version": "0.23.0",
+    "version": "0.24.1",
     "logoKind": "official-vendor",
     "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
     "logoReviewedAt": "2026-05-15",
@@ -41,7 +41,7 @@
     "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
     "logoUrl": "/logos/nvidia.svg",
     "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
-    "lastRelease": "2026-07-01",
+    "lastRelease": "2026-09-16",
     "governance": {
       "dataResidency": {
         "status": "yes",

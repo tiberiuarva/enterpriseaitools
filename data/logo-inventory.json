@@ -376,15 +376,13 @@
       "logoUrl": "/logos/cursor.svg"
     },
     {
-      "name": "Windsurf",
+      "name": "Devin Desktop",
       "category": "assistants",
       "vendor": "Cognition AI",
       "status": "classified",
-      "sourceUrl": "https://windsurf.com/",
-      "notes": "Official Windsurf favicon/icon asset from the owner-controlled Windsurf site (`/favicon.svg`). Kept as a square service icon because the public wordmark asset is white-only while the favicon is the clean published standalone mark.",
-      "logoKind": "service-icon",
-      "reviewedAt": "2026-05-14",
-      "logoUrl": "/logos/windsurf.svg"
+      "notes": "Fallback: renamed from Windsurf to Devin Desktop on 2026-06-02; the Windsurf mark is retired and no reviewed Devin Desktop asset has been sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30"
     },
     {
       "name": "Microsoft 365 Copilot",
@@ -530,12 +528,12 @@
       "logoUrl": "/logos/databricks.png"
     },
     {
-      "name": "Databricks Unity AI Gateway",
+      "name": "Databricks Unity Gateway",
       "category": "governance",
       "vendor": "Databricks",
       "status": "classified",
       "sourceUrl": "https://brand.databricks.com/databricks-logo",
-      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity AI Gateway does not expose a distinct standalone public mark.",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity Gateway does not expose a distinct standalone public mark.",
       "logoKind": "official-vendor",
       "reviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png"
@@ -552,12 +550,12 @@
       "logoUrl": "/logos/databricks.png"
     },
     {
-      "name": "Databricks Genie Spaces",
+      "name": "Databricks Genie Agents",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
       "sourceUrl": "https://brand.databricks.com/databricks-logo",
-      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Agents does not expose a distinct standalone public mark.",
       "logoKind": "official-vendor",
       "reviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png"

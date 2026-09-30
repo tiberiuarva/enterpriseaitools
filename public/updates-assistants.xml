@@ -2,22 +2,22 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-09-13T00:00:00.000Z</updated>
+  <updated>2026-09-30T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-02</id>
-    <title>Cursor — feature</title>
-    <updated>2026-09-10T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-02" />
-    <summary>Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions.</summary>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-22-01</id>
+    <title>GitHub Copilot — model-addition</title>
+    <updated>2026-09-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-22-01" />
+    <summary>Claude Opus 5.5 became selectable in GitHub Copilot for Pro+, Max, Business, and Enterprise plans across IDEs, GitHub.com, Copilot CLI, and the coding agent.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, feature, high" />
+    <category term="assistants, model-addition, medium" />
     <source>
-      <id>https://cursor.com/changelog/projects</id>
-      <title>Cursor Projects · Cursor changelog</title>
-      <link href="https://cursor.com/changelog/projects" />
+      <id>https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot</id>
+      <title>Claude Opus 5.5 is now available in GitHub Copilot · GitHub Changelog</title>
+      <link href="https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot" />
     </source>
   </entry>
   <entry>
@@ -35,6 +35,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-10-02</id>
+    <title>Cursor — feature</title>
+    <updated>2026-09-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-10-02" />
+    <summary>Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://cursor.com/changelog/projects</id>
+      <title>Cursor Projects · Cursor changelog</title>
+      <link href="https://cursor.com/changelog/projects" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-07-31-01</id>
     <title>Amazon Q Business — deprecation</title>
     <updated>2026-07-31T00:00:00.000Z</updated>
@@ -46,6 +60,62 @@
       <id>https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html</id>
       <title>Amazon Q Business availability change</title>
       <link href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/qbusiness-availability-change.html" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-08-04</id>
+    <title>Databricks Genie Agents — rename</title>
+    <updated>2026-07-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-08-04" />
+    <summary>Databricks renamed Genie Spaces to Genie Agents and moved Genie to pay-as-you-go billing with 150 free DBUs of LLM usage per month.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, rename, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/july</id>
+      <title>Databricks platform release notes · July 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/july" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-18-04</id>
+    <title>Gemini Code Assist — deprecation</title>
+    <updated>2026-06-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-18-04" />
+    <summary>Gemini Code Assist stopped serving the individuals, Google AI Pro, and Google AI Ultra tiers; those users are directed to Antigravity, leaving Standard and Enterprise editions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/docs/codeassist/overview</id>
+      <title>Gemini Code Assist overview · Google Cloud</title>
+      <link href="https://docs.cloud.google.com/gemini/docs/codeassist/overview" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-06-02-01</id>
+    <title>Devin Desktop — rename</title>
+    <updated>2026-06-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-06-02-01" />
+    <summary>Cognition renamed the Windsurf editor to Devin Desktop, keeping plans, settings, and extensions, and made an Agent Command Center the default surface.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, rename, high" />
+    <source>
+      <id>https://devin.ai/blog/windsurf-is-now-devin-desktop</id>
+      <title>Windsurf is now Devin Desktop · Devin</title>
+      <link href="https://devin.ai/blog/windsurf-is-now-devin-desktop" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-04-30-02</id>
+    <title>Amazon Q Developer — deprecation</title>
+    <updated>2026-04-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-30-02" />
+    <summary>AWS announced end of support for Amazon Q Developer IDE plugins and paid subscriptions on April 30, 2027, blocked new signups from May 15, 2026, and recommended Kiro.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/</id>
+      <title>Amazon Q Developer end-of-support announcement · AWS DevOps Blog</title>
+      <link href="https://aws.amazon.com/blogs/devops/amazon-q-developer-end-of-support-announcement/" />
     </source>
   </entry>
   <entry>
