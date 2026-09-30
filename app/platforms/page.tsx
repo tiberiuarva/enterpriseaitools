@@ -231,7 +231,7 @@ export default function PlatformsPage() {
             },
             {
               href: "/governance",
-              title: "AI Governance",
+              title: "AI Guardrails & Agent Security",
               description: "Check guardrails, safety controls, and policy tooling mapped across the major cloud vendors.",
             },
             {

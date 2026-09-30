@@ -1,0 +1,84 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "descope-agentic-identity-hub",
+    "name": "Descope Agentic Identity Hub",
+    "type": "commercial",
+    "vendor": "Descope",
+    "description": "Control plane for AI agent identity: OAuth 2.1 MCP auth, token vault connections, scoped policies and a user-linked audit trail.",
+    "strengths": [
+      "OAuth 2.1 authorization for MCP servers",
+      "Token vault for agent connections",
+      "Enterprise-Managed Authorization (XAA)"
+    ],
+    "websiteUrl": "https://docs.descope.com/agentic-identity-hub",
+    "docsUrl": "https://docs.descope.com/agentic-identity-hub",
+    "pricing": "Free tier includes 2,000 monthly active consents and tokens; Pro from $249/mo and Growth from $799/mo (billed annually); Enterprise custom.",
+    "pricingModel": "freemium",
+    "tags": [
+      "agent-identity",
+      "mcp",
+      "oauth",
+      "descope"
+    ],
+    "practitionerNote": "Practical for teams exposing APIs or MCP servers to agents that need consent and scoped tokens fast; Gateways are still early access, so do not plan runtime enforcement around them yet.",
+    "statusNote": "Gateways feature in early access as of 2026-09-30.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Multi-region data residency across seven regions (US, EU, UK, Canada, Singapore, Australia, Brazil).",
+        "sourceUrl": "https://www.descope.com/security-compliance"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Descope-hosted SaaS; FedRAMP High authorized.",
+        "sourceUrl": "https://www.descope.com/security-compliance",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit trail connects every agent action back to the originating user.",
+        "sourceUrl": "https://docs.descope.com/agentic-identity-hub"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Descope is SOC 2 Type 2 certified.",
+        "sourceUrl": "https://www.descope.com/security-compliance"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Descope is ISO 27001 certified.",
+        "sourceUrl": "https://www.descope.com/security-compliance"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not mentioned on Descope's security and compliance page."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://www.descope.com/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

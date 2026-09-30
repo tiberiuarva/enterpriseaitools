@@ -3,6 +3,7 @@ import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { lastUpdated, tools } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -13,14 +14,9 @@ const PAGE_TITLE = "All tracked enterprise AI tools";
 const PAGE_DESCRIPTION =
   "The complete A-Z index of every enterprise AI tool tracked here, grouped by category with vendor, licence, and type — one link to every source-backed record.";
 
-const CATEGORY_LABELS: Record<ToolCategory, string> = {
-  agents: "AI Agent Frameworks",
-  orchestration: "AI Orchestration",
-  governance: "AI Governance",
-  assistants: "AI Assistants",
-};
-
-const CATEGORY_ORDER: ToolCategory[] = ["agents", "orchestration", "governance", "assistants"];
+const CATEGORY_LABELS = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].title]),
+) as Record<ToolCategory, string>;
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,

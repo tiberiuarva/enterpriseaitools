@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "auth0-for-ai-agents",
+    "name": "Auth0 for AI Agents",
+    "type": "commercial",
+    "vendor": "Okta (Auth0)",
+    "description": "Developer identity for AI agents: user login, Token Vault for third-party APIs, CIBA human approvals and fine-grained authorization for RAG.",
+    "strengths": [
+      "Token Vault with 35+ integrations",
+      "CIBA async human-in-the-loop approvals",
+      "FGA for RAG document filtering"
+    ],
+    "websiteUrl": "https://auth0.com/blog/auth0-for-ai-agents-generally-available/",
+    "docsUrl": "https://auth0.com/ai/docs",
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python"
+    ],
+    "pricing": "Free plan includes Secure Agentic AI workflows; add-on for Essentials/Professional adds 50% to the base price with unlimited Token Vault and all forms of CIBA.",
+    "pricingModel": "freemium",
+    "tags": [
+      "agent-identity",
+      "auth0",
+      "oauth",
+      "rag"
+    ],
+    "practitionerNote": "Best for teams building user-facing agents that call APIs on a user's behalf; it secures agent-to-API delegation, not enterprise-wide agent discovery or governance.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Data residency options for the AI agents features are not stated on the GA announcement or pricing page."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Delivered as part of the Auth0 cloud identity platform with SDKs for LangChain, LlamaIndex, Vercel AI SDK and Cloudflare Agents.",
+        "sourceUrl": "https://auth0.com/blog/auth0-for-ai-agents-generally-available/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Audit logging for agent flows is not described in the GA announcement or docs landing page reviewed."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "auth0.com/security redirects to Okta's trust center, which lists SOC 2 across Okta and Auth0; per-product scope not shown on the overview.",
+        "sourceUrl": "https://security.okta.com/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Okta trust center lists ISO/IEC 27001:2022 for the Okta and Auth0 offerings; per-product scope not shown on the overview.",
+        "sourceUrl": "https://security.okta.com/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not listed on the Okta/Auth0 trust center overview."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://auth0.com/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

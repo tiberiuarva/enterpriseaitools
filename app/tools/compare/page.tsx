@@ -74,7 +74,8 @@ export default function CompareIndexPage() {
           hubs={[
             { href: "/platforms", title: "Platforms", description: "Microsoft Foundry, Amazon Bedrock, and the Gemini Enterprise Agent Platform." },
             { href: "/agents", title: "AI Agent Frameworks", description: "Compare managed cloud agent stacks with open-source frameworks." },
-            { href: "/governance", title: "AI Governance", description: "Guardrails, safety controls, and policy tooling." },
+            { href: "/governance", title: "AI Guardrails & Agent Security", description: "Guardrails, safety controls, and agent security posture." },
+            { href: "/control-planes", title: "Agent Control Planes", description: "Registry, lifecycle, and policy across a fleet of agents." },
             { href: "/assistants", title: "AI Assistants", description: "Coding, productivity, and build-your-own assistants." },
           ]}
         />

@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "servicenow-ai-control-tower",
+    "name": "ServiceNow AI Control Tower",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "ServiceNow",
+    "description": "ServiceNow hub to discover, observe, govern, secure and measure AI models and agents, including those from other platforms.",
+    "strengths": [
+      "AI asset inventory across models, prompts and agents",
+      "Risk frameworks aligned to NIST and EU AI Act",
+      "Cost and ROI dashboards for AI spend"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html",
+    "websiteUrl": "https://www.servicenow.com/products/ai-control-tower.html",
+    "pricingModel": "contact",
+    "status": "active",
+    "statusNote": "Expansion announced 2026-05-05 (30 new discovery integrations, Traceloop-based observability, Veza access governance) with GA expected August 2026 per the release; GA of each piece not independently confirmed.",
+    "tags": [
+      "control-planes",
+      "ai-governance",
+      "risk-compliance",
+      "inventory"
+    ],
+    "practitionerNote": "Best fit where ServiceNow already runs GRC and IT workflows; some governance views need other ServiceNow licenses (e.g. Strategic Portfolio Management Professional).",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "ServiceNow trust pages could not be retrieved during review; residency for AI Control Tower data unverified."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Delivered as an application on the ServiceNow platform (current docs: Brazil release).",
+        "sourceUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Tracks AI-related cases and risk workflows and guardrail health; a dedicated audit log for third-party agent actions is not documented.",
+        "sourceUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "ServiceNow trust/compliance pages returned 403 during review; SOC 2 scope unverified."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "ServiceNow trust/compliance pages returned 403 during review; ISO 27001 scope unverified."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ServiceNow trust/compliance pages returned 403 during review; ISO 42001 scope unverified."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Governance tooling that helps assess AI systems against EU AI Act frameworks; not itself a high-risk AI system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary ServiceNow application; governance data lives on the ServiceNow platform.",
+        "sourceUrl": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "microsoft-entra-agent-id",
+    "name": "Microsoft Entra Agent ID",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Entra identity platform for AI agents: agent identities and blueprints with Conditional Access, ID Protection and governance.",
+    "strengths": [
+      "Agent identity blueprints for fleets",
+      "Conditional Access templates for agents",
+      "Federates Bedrock and n8n agents"
+    ],
+    "clouds": [
+      "azure"
+    ],
+    "docsUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
+    "pricing": "Agent ID is available to all Microsoft Entra customers; Conditional Access, ID Protection and governance for agents require a Microsoft Agent 365 license (included in Microsoft 365 E7).",
+    "pricingModel": "freemium",
+    "tags": [
+      "agent-identity",
+      "azure",
+      "conditional-access",
+      "non-human-identity"
+    ],
+    "practitionerNote": "Default choice for Microsoft-centric tenants; budget for Agent 365 licensing, because the base Agent ID platform does not include agent Conditional Access or access packages.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Agent ID docs reviewed do not state agent-specific data residency controls; follows the Entra tenant's home geography (not confirmed for Agent ID)."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Microsoft-managed SaaS within Microsoft Entra; third-party agents integrate via the Auth SDK sidecar or workload identity federation.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "All agent authentication and activity is logged in Entra sign-in and audit logs.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id"
+      },
+      "soc2": {
+        "status": "partial",
+        "detail": "Microsoft Entra ID is listed in Microsoft's Office 365 SOC 2 Type 2 scope for GCC/GCC High/DoD; Agent ID is not listed separately.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Azure ISO 27001 page lists service families (Azure, Microsoft 365) without naming Entra Agent ID; scope detail sits in the Service Trust Portal."
+      },
+      "iso42001": {
+        "status": "no",
+        "detail": "Not among the Microsoft AI services listed in scope for ISO/IEC 42001 (list covers Copilot, Copilot Studio, Foundry and others).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Microsoft SaaS tied to Entra and Agent 365 licensing.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

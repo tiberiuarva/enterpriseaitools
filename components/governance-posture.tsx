@@ -63,7 +63,7 @@ export function GovernancePosture({ governance }: { governance: ToolGovernance }
         <ClaimRow
           label="Deployment model"
           claim={governance.deployment}
-          suffix={`(${governance.deployment.models.join(", ")})`}
+          suffix={governance.deployment.models.length > 0 ? `(${governance.deployment.models.join(", ")})` : undefined}
         />
         <ClaimRow label="Audit logging" claim={governance.auditLogging} />
         <ClaimRow label="SOC 2" claim={governance.soc2} />

@@ -1,0 +1,83 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "ibm-watsonx-orchestrate",
+    "name": "IBM watsonx Orchestrate",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "IBM",
+    "description": "IBM agent platform whose Agentic Control Plane adds operations dashboards, policy and access governance, and a shared agent catalog.",
+    "strengths": [
+      "Shared catalog to publish and version agents",
+      "Policy, credential health and access overview",
+      "SaaS on AWS or IBM Cloud, or on-premises"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base",
+    "websiteUrl": "https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane",
+    "pricing": "30-day free trial; Essentials from $530/month, Standard from $6,360/month; Premium by quote.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Agentic Control Plane announced 2026-07-02, available on AWS and IBM Cloud.",
+    "tags": [
+      "control-planes",
+      "agentops",
+      "catalog",
+      "ibm"
+    ],
+    "practitionerNote": "Worth evaluating when agents must run on-premises or in regulated IBM/AWS GovCloud estates; the control plane is part of Orchestrate, so it governs best what is built or registered there.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Choice of IBM Cloud, AWS, AWS GovCloud (US) or on-premises installs lets customers place data; per-region detail not reviewed.",
+        "sourceUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS on AWS, IBM Cloud and AWS GovCloud (US), plus watsonx Orchestrate On-premises.",
+        "sourceUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base",
+        "models": [
+          "saas",
+          "on-prem"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Operational dashboards, agent analytics and observability traces; a dedicated audit log is not described in the announcement.",
+        "sourceUrl": "https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "No watsonx Orchestrate-specific SOC 2 scope found on IBM pages reviewed."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "watsonx Orchestrate is not named on the IBM Cloud ISO 27001 page reviewed; scope unverified."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 statement for watsonx Orchestrate found in reviewed sources."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent build and governance platform, not itself a high-risk AI system; obligations rest with deployers of specific agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary IBM product with published tiered subscription pricing.",
+        "sourceUrl": "https://www.ibm.com/products/watsonx-orchestrate/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

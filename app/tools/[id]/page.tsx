@@ -10,6 +10,7 @@ import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { WarningBox } from "@/components/warning-box";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { comparisonPairs } from "@/lib/comparisons";
 import { lastUpdated, snapshotDiffEvents, tools, updates } from "@/lib/data";
 import { FRESHNESS_THRESHOLD_DAYS, getFreshnessStatus } from "@/lib/freshness";
@@ -33,12 +34,9 @@ const UPDATE_TYPE_LABELS: Record<string, string> = {
   "license-change": "License change",
 };
 
-const CATEGORY_LABELS: Record<ToolCategory, string> = {
-  agents: "AI Agent Frameworks",
-  orchestration: "AI Orchestration",
-  governance: "AI Governance",
-  assistants: "AI Assistants",
-};
+const CATEGORY_LABELS = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].title]),
+) as Record<ToolCategory, string>;
 
 function getTool(id: string) {
   return tools.find((tool) => tool.id === id);

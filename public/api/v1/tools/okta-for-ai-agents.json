@@ -1,0 +1,82 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "okta-for-ai-agents",
+    "name": "Okta for AI Agents",
+    "type": "commercial",
+    "vendor": "Okta",
+    "description": "Discovers, registers and governs AI agents in Okta Universal Directory with scoped tokens, vaulted secrets and access reviews.",
+    "strengths": [
+      "Imports Agentforce, Bedrock, ServiceNow agents",
+      "Shadow agent detection via OAuth grants",
+      "Agent SSO via Cross App Access"
+    ],
+    "websiteUrl": "https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/",
+    "docsUrl": "https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm",
+    "pricing": "Okta for AI Agents is a separate paid subscription; Agent SSO is included in core Okta SSO at no additional cost.",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "okta",
+      "cross-app-access",
+      "governance"
+    ],
+    "practitionerNote": "Strongest fit where Okta is already the workforce IdP; start with the no-cost Agent SSO, then weigh the paid suite for discovery, certification reviews and the agent kill switch.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Agent-specific data residency is not described in the GA announcement or AI agents docs reviewed."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Delivered as part of Okta's cloud identity service; no self-hosted option described.",
+        "sourceUrl": "https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit via System Log events, plus SIEM telemetry streaming for agent activity.",
+        "sourceUrl": "https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Okta trust center lists SOC 2; product-level scope is not broken out on the overview.",
+        "sourceUrl": "https://security.okta.com/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Okta trust center lists ISO/IEC 27001:2022; product-level scope is not broken out on the overview.",
+        "sourceUrl": "https://security.okta.com/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not listed on the Okta trust center overview."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

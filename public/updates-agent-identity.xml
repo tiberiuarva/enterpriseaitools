@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-agent-identity.xml</id>
+  <title>enterpriseai.tools weekly updates — agent-identity</title>
+  <updated>2026-09-30T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-agent-identity.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-24-01</id>
+    <title>Okta for AI Agents — feature</title>
+    <updated>2026-08-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-24-01" />
+    <summary>Okta made Agent SSO generally available, built on the Cross App Access standard and included in core Okta SSO.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/</id>
+      <title>Okta brings first-class identity to AI agents with Agent SSO · Okta</title>
+      <link href="https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-28-02</id>
+    <title>Saviynt Zuma — release</title>
+    <updated>2026-07-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-28-02" />
+    <summary>Saviynt launched Zuma, an AI identity security platform with agent discovery, runtime intent-aware access, and governance for AI agents and non-human identities.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, release, medium" />
+    <source>
+      <id>https://saviynt.com/press-release/saviynt-launches-zuma-ai-security-platform</id>
+      <title>Saviynt launches Zuma · Saviynt</title>
+      <link href="https://saviynt.com/press-release/saviynt-launches-zuma-ai-security-platform" />
+    </source>
+  </entry>
+</feed>

@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "hermes-agent",
+    "name": "Hermes Agent",
+    "type": "opensource",
+    "vendor": "Nous Research",
+    "description": "Self-improving open-source agent with persistent memory, built-in cron and a gateway to 20+ chat apps; runs on a laptop, VPS or cloud sandbox.",
+    "strengths": [
+      "Learns and reuses its own skills",
+      "Cron jobs deliver to any chat platform",
+      "7 terminal backends incl. Docker, SSH, Modal"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/NousResearch/hermes-agent",
+    "version": "0.21.5",
+    "lastRelease": "2026-09-24",
+    "docsUrl": "https://hermes-agent.nousresearch.com/docs/",
+    "pricing": "Free and open source; model and hosting costs are separate.",
+    "pricingModel": "free",
+    "languages": [
+      "Python"
+    ],
+    "status": "active",
+    "tags": [
+      "always-on-agents",
+      "self-hosted",
+      "open-source",
+      "messaging"
+    ],
+    "practitionerNote": "Use a container or remote sandbox backend with command approval on rather than the local terminal backend. Self-written skills and memory mean you should review what it has learned before trusting it with production credentials.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted; operator chooses where it runs (local, VPS, cloud sandbox). Model calls go to the configured provider.",
+        "sourceUrl": "https://hermes-agent.nousresearch.com/docs/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted locally or on remote backends (Docker, SSH, Daytona, Singularity, Modal, Vercel Sandbox).",
+        "sourceUrl": "https://hermes-agent.nousresearch.com/docs/",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Searchable session history and command approval; no dedicated audit log documented.",
+        "sourceUrl": "https://hermes-agent.nousresearch.com/docs/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.",
+        "role": "not-applicable"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT (Copyright Nous Research) — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

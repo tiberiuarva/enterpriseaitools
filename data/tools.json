@@ -3989,6 +3989,4206 @@
         },
         "reviewedAt": "2026-05-26"
       }
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "aliases": [
+        "Clawd",
+        "Clawdbot",
+        "Moltbot"
+      ],
+      "type": "opensource",
+      "vendor": "OpenClaw Foundation",
+      "description": "Self-hosted personal AI agent that runs on your own machine and acts for you through WhatsApp, Telegram, Slack, Teams and 20+ chat apps.",
+      "strengths": [
+        "Gateway bridges 20+ messaging channels",
+        "Built-in `openclaw security audit` command",
+        "Foundation-stewarded, no paid tier"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/openclaw/openclaw",
+      "version": "2026.9.7",
+      "lastRelease": "2026-09-30",
+      "docsUrl": "https://docs.openclaw.ai",
+      "websiteUrl": "https://openclaw.ai",
+      "pricing": "Free and open source; no subscription or hosted tier (model provider costs are separate).",
+      "pricingModel": "free",
+      "languages": [
+        "TypeScript"
+      ],
+      "status": "active",
+      "statusNote": "Security history: CVE-2026-25253 (1-click RCE via gateway token exfiltration, CVSS 8.8) affected versions <= 2026.1.28 and was fixed in 2026.1.29; all ClawHub skills have been scanned with VirusTotal since 2026-02-07.",
+      "tags": [
+        "always-on-agents",
+        "self-hosted",
+        "messaging",
+        "open-source"
+      ],
+      "practitionerNote": "Treat it as privileged software with access to your accounts: keep the gateway on loopback, stay on current releases, allowlist DM senders and vet third-party ClawHub skills. The docs state one trust boundary per gateway, so it is not built for hostile multi-tenant use.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Runs on the operator's own machine; prompts still go to whichever model provider is configured.",
+          "sourceUrl": "https://openclaw.ai"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted on macOS, Windows or Linux; no hosted tier offered.",
+          "sourceUrl": "https://openclaw.ai",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "`openclaw security audit` reports configuration drift by severity; no documented activity/audit log for agent actions.",
+          "sourceUrl": "https://docs.openclaw.ai/gateway/security"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT (Copyright OpenClaw Foundation) — permissive, OSI-approved.",
+          "sourceUrl": "https://raw.githubusercontent.com/openclaw/openclaw/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "microsoft-autopilot",
+      "name": "Microsoft Autopilot",
+      "aliases": [
+        "Microsoft Scout"
+      ],
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Always-on Copilot agent with its own Entra identity that works in Teams, Outlook and M365 on a user's behalf; built on OpenClaw.",
+      "strengths": [
+        "Own governed Entra ID identity",
+        "Purview DLP and sensitivity labels enforced",
+        "Human sign-off for sensitive actions"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+      "websiteUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "pricing": "Usage-based billing rather than a per-user license (per Microsoft's 2026-09-25 announcement); rates not published.",
+      "pricingModel": "paid",
+      "clouds": [
+        "azure"
+      ],
+      "status": "active",
+      "statusNote": "Private preview: announced as Microsoft Scout on 2026-06-02 for Frontier program organisations, renamed Autopilot on 2026-09-25 with private preview expanding at end of September 2026. Not Windows Autopilot (device provisioning).",
+      "tags": [
+        "always-on-agents",
+        "microsoft-365",
+        "copilot",
+        "preview"
+      ],
+      "practitionerNote": "Only for Frontier-enrolled tenants for now; preview prerequisites include Intune configuration and opt-in attestation. Plan identity, Purview policy and usage-based cost controls before piloting, since the agent acts continuously under its own identity.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Microsoft says the agent lives in the customer tenant, but no data-residency commitment is published for the preview."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Microsoft-managed service running across cloud, desktop and web, inside the customer's Microsoft 365 tenant.",
+          "sourceUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Microsoft states it has 'permissions, audit and governance behind it'; the specific audit log surface for the preview is not documented.",
+          "sourceUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "detail": "General-purpose workplace agent; risk class depends on use and the vendor has not published an EU AI Act classification.",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Microsoft service built on the MIT-licensed OpenClaw runtime; tied to Microsoft 365 and usage-based billing.",
+          "sourceUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30"
+    },
+    {
+      "id": "grok-bot",
+      "name": "Grok Bot",
+      "type": "commercial",
+      "vendor": "xAI",
+      "description": "xAI's always-on bots with their own cloud computers that work across apps 24/7; Team Bots add shared bots for Teams and Enterprise plans.",
+      "strengths": [
+        "Own cloud computer per bot",
+        "Separate usage pool from Grok/Cursor plans",
+        "Shared Team Bots deployable in Slack"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://x.ai/news/introducing-grok-bot",
+      "websiteUrl": "https://x.ai",
+      "pricing": "Included (beta) with SuperGrok, SuperGrok Plus/Heavy, Cursor Pro/Pro+/Ultra and Cursor Teams plans; enterprise via sales.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Beta: launched 2026-08-11, expanded to more plans 2026-08-26; Team Bots in public beta on Teams and Enterprise plans since 2026-09-28; enterprise waitlist.",
+      "tags": [
+        "always-on-agents",
+        "xai",
+        "cloud-agent",
+        "beta"
+      ],
+      "practitionerNote": "Bots hold credentials and act across tools while unattended, so scope plugin credentials tightly. xAI has not published enterprise compliance detail for Bots, so treat it as a pilot rather than a regulated-workload option.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "No data-residency options stated in the Grok Bot or Team Bots announcements."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "xAI-hosted; each bot runs on its own cloud computer, accessed from desktop and iOS.",
+          "sourceUrl": "https://x.ai/news/introducing-grok-bot",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Announcements do not describe audit logs or admin activity logs."
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "detail": "General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary xAI service bundled with Grok/Cursor subscriptions.",
+          "sourceUrl": "https://x.ai/news/grok-bot-more-plans",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "meta-muse",
+      "name": "Muse",
+      "type": "vendor",
+      "vendor": "Meta",
+      "description": "Meta's consumer and small-business personal AI agent that keeps working on tasks in a secure VM and is reached via the Muse app or WhatsApp.",
+      "strengths": [
+        "Reachable via app, web and WhatsApp",
+        "Per-app access you can revoke",
+        "Approval before publishing, sending or spending"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "websiteUrl": "https://muse.ai",
+      "pricing": "Free for most use, with subscription plans for more (prices not published).",
+      "pricingModel": "freemium",
+      "status": "active",
+      "statusNote": "Consumer launch 2026-09-08 in the US (iOS, Android, web); small-business version launched 2026-09-29 in the US and Canada.",
+      "tags": [
+        "always-on-agents",
+        "consumer",
+        "small-business",
+        "meta"
+      ],
+      "practitionerNote": "A consumer and small-business product, not an enterprise-managed agent: there are no published admin, audit or compliance controls. Suits sole traders connecting Shopify, QuickBooks or Meta ad accounts, not governed corporate data.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "No data-residency options stated; available in the US (and US/Canada for small business)."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Meta-hosted; tasks run on 'Muse Secure VM', a dedicated virtual machine.",
+          "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "No audit logging described in the launch posts; controls are per-user app access and approvals."
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Consumer product; Meta has not published certification scope for Muse."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Consumer product; Meta has not published certification scope for Muse."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Consumer product; Meta has not published certification scope for Muse."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "detail": "Not yet offered in the EU; no classification published.",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Meta consumer service.",
+          "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "gemini-spark",
+      "name": "Gemini Spark",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Consumer 24/7 personal agent in the Gemini app that runs in Google's cloud and acts across Gmail, Docs, Slides and connected apps.",
+      "strengths": [
+        "Runs on Gemini 3.5 with Antigravity harness",
+        "Native Gmail, Docs and Slides integration",
+        "Asks before spending money or sending email"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+      "websiteUrl": "https://gemini.google.com",
+      "pricing": "Beta planned for US Google AI Ultra subscribers at launch.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Announced at Google I/O in May 2026: trusted-tester rollout, then a beta for US Google AI Ultra subscribers.",
+      "tags": [
+        "always-on-agents",
+        "consumer",
+        "google-workspace",
+        "beta"
+      ],
+      "practitionerNote": "Launched on consumer Google AI subscriptions, not as a managed Workspace admin feature, so check the account type before connecting work mail. The launch post names no business or enterprise availability.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "No data-residency controls stated for Spark."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Google-hosted cloud agent that keeps running when the user's devices are off.",
+          "sourceUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "No audit logging described in the launch post."
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "detail": "General-purpose consumer agent; risk class depends on use and the vendor has not published an EU AI Act classification.",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Google service tied to Google AI subscriptions.",
+          "sourceUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "manus",
+      "name": "Manus",
+      "type": "commercial",
+      "vendor": "Manus",
+      "description": "Autonomous general AI agent with its own sandbox computer, scheduled tasks, Telegram access and a desktop 'My Computer' mode.",
+      "strengths": [
+        "Context-preserving Scheduled Tasks 2.0",
+        "Runs from Telegram chats",
+        "Per-command approval in My Computer"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://manus.im/docs",
+      "websiteUrl": "https://manus.im",
+      "status": "active",
+      "statusNote": "Manus announced it resumed independent operations on 2026-09-01; the transition involved data backup/restore and a temporary interruption to access.",
+      "tags": [
+        "always-on-agents",
+        "cloud-agent",
+        "scheduled-tasks"
+      ],
+      "practitionerNote": "Team/Enterprise plans add SSO-style admin, audit logs and a no-training commitment; use those rather than personal plans for work data. Recheck contracts and data location after the September 2026 ownership transition.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "No customer-selectable data residency documented on the pages reviewed."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Manus-hosted cloud sandbox, plus a desktop app that can act on the local computer with per-command approval.",
+          "sourceUrl": "https://manus.im/blog/manus-my-computer-desktop",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Team plan includes audit logging and an admin dashboard for usage and permissions.",
+          "sourceUrl": "https://manus.im/team"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Team plan page states SOC 2 Type II.",
+          "sourceUrl": "https://manus.im/team"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Team plan page states ISO 27001 certification.",
+          "sourceUrl": "https://manus.im/team"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 certification stated on the pages reviewed."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "detail": "General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; model providers barred from training on Team/Enterprise data.",
+          "sourceUrl": "https://manus.im/team",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "type": "opensource",
+      "vendor": "Nous Research",
+      "description": "Self-improving open-source agent with persistent memory, built-in cron and a gateway to 20+ chat apps; runs on a laptop, VPS or cloud sandbox.",
+      "strengths": [
+        "Learns and reuses its own skills",
+        "Cron jobs deliver to any chat platform",
+        "7 terminal backends incl. Docker, SSH, Modal"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/NousResearch/hermes-agent",
+      "version": "0.21.5",
+      "lastRelease": "2026-09-24",
+      "docsUrl": "https://hermes-agent.nousresearch.com/docs/",
+      "pricing": "Free and open source; model and hosting costs are separate.",
+      "pricingModel": "free",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "tags": [
+        "always-on-agents",
+        "self-hosted",
+        "open-source",
+        "messaging"
+      ],
+      "practitionerNote": "Use a container or remote sandbox backend with command approval on rather than the local terminal backend. Self-written skills and memory mean you should review what it has learned before trusting it with production credentials.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted; operator chooses where it runs (local, VPS, cloud sandbox). Model calls go to the configured provider.",
+          "sourceUrl": "https://hermes-agent.nousresearch.com/docs/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted locally or on remote backends (Docker, SSH, Daytona, Singularity, Modal, Vercel Sandbox).",
+          "sourceUrl": "https://hermes-agent.nousresearch.com/docs/",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Searchable session history and command approval; no dedicated audit log documented.",
+          "sourceUrl": "https://hermes-agent.nousresearch.com/docs/"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT (Copyright Nous Research) — permissive, OSI-approved.",
+          "sourceUrl": "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "nanoclaw",
+      "name": "NanoClaw",
+      "type": "opensource",
+      "vendor": "NanoClaw",
+      "description": "Lightweight OpenClaw alternative that runs each personal agent in its own container, messaged from WhatsApp, Telegram, Slack and more.",
+      "strengths": [
+        "Per-agent container isolation",
+        "Built on Claude Agent SDK, Codex optional",
+        "Script-gated scheduled jobs"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/nanocoai/nanoclaw",
+      "version": "2.4.0",
+      "lastRelease": "2026-09-23",
+      "docsUrl": "https://docs.nanoclaw.dev",
+      "pricing": "Free and open source; you bring your own model provider account.",
+      "pricingModel": "free",
+      "languages": [
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "always-on-agents",
+        "self-hosted",
+        "open-source",
+        "containers"
+      ],
+      "practitionerNote": "A good fit when you want an OpenClaw-style assistant with a smaller surface and OS-level isolation. The docs note the sandbox is 'not a guarantee that every action is safe', so mount only the folders each agent needs.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Runs on the operator's own computer; cloud model providers still process the requests sent to them.",
+          "sourceUrl": "https://docs.nanoclaw.dev"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted on macOS, Linux or WSL2 with Docker containers per agent.",
+          "sourceUrl": "https://github.com/nanocoai/nanoclaw",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "No audit logging documented on the pages reviewed."
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT — permissive, OSI-approved.",
+          "sourceUrl": "https://github.com/nanocoai/nanoclaw/blob/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "category": "always-on-agents",
+      "logoKind": "fallback",
+      "logoReviewedAt": "2026-09-30",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "publishedAt": "2026-09-30",
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "langfuse",
+      "name": "Langfuse",
+      "category": "observability",
+      "type": "opensource",
+      "vendor": "Langfuse (ClickHouse)",
+      "description": "Open-source LLM engineering platform for tracing, evaluations, prompt management and cost/latency dashboards, built on OpenTelemetry.",
+      "strengths": [
+        "MIT core self-hostable at production scale",
+        "Prompt management with versioning and playground",
+        "OpenTelemetry-based tracing with 100+ integrations"
+      ],
+      "license": "MIT core + EE paths",
+      "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
+      "githubUrl": "https://github.com/langfuse/langfuse",
+      "githubStars": 35236,
+      "version": "4.48.0",
+      "lastRelease": "2026-09-30",
+      "docsUrl": "https://langfuse.com/docs",
+      "websiteUrl": "https://langfuse.com",
+      "pricing": "Self-hosted MIT core is free. Cloud: Hobby free (50k units/month), Core $29/month, Pro $199/month, Enterprise $2,499/month.",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "tracing",
+        "evaluation",
+        "prompt-management",
+        "opentelemetry"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "ClickHouse acquired Langfuse in January 2026 and committed to keeping the core MIT. Self-hosting means running Postgres, ClickHouse, Redis/Valkey and S3-compatible storage, and audit logs and SCIM are Enterprise-only, so budget for both before choosing self-hosting over Langfuse Cloud.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Langfuse Cloud offers US (us-west-2), EU (eu-west-1), JP (ap-northeast-1) and a HIPAA region; self-hosting keeps all data in the operator's infrastructure.",
+          "sourceUrl": "https://langfuse.com/security"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Managed Langfuse Cloud, or self-hosted via Docker Compose (single VM) or Kubernetes/Helm on AWS, Azure or GCP.",
+          "sourceUrl": "https://langfuse.com/self-hosting",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Audit logs are listed only on the Enterprise cloud plan ($2,499/month) and in the licensed EE features. Lower tiers and the MIT core have none.",
+          "sourceUrl": "https://langfuse.com/pricing"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Langfuse Cloud has completed a SOC 2 Type II audit (report on Pro/Team/Enterprise plans). Self-hosted deployments rely on the operator's controls.",
+          "sourceUrl": "https://langfuse.com/security/soc2"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Langfuse Cloud is ISO 27001 certified (certificate on request for Pro/Team/Enterprise). Not applicable to self-hosted instances.",
+          "sourceUrl": "https://langfuse.com/security/iso27001"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "The Langfuse security page lists SOC 2, ISO 27001, HIPAA and GDPR but does not mention ISO 42001."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Observability and evaluation tooling for AI applications, not an AI system placed on the market. Obligations rest with the deployer of the traced system."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Open core: MIT outside the ee/ directories, with a commercial license required for EE features in production. ClickHouse committed to keeping the core MIT after the acquisition.",
+          "sourceUrl": "https://raw.githubusercontent.com/langfuse/langfuse/main/LICENSE",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "arize-phoenix",
+      "name": "Arize Phoenix",
+      "category": "observability",
+      "type": "opensource",
+      "vendor": "Arize AI",
+      "description": "Source-available AI observability and evaluation platform: OpenTelemetry/OpenInference tracing, evals, prompt iteration and experiments.",
+      "strengths": [
+        "OpenInference instrumentation on OpenTelemetry",
+        "LLM, code and human-label evaluators",
+        "Datasets and experiments to compare app versions"
+      ],
+      "license": "Elastic License 2.0",
+      "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
+      "githubUrl": "https://github.com/Arize-ai/phoenix",
+      "githubStars": 11662,
+      "version": "20.16.0",
+      "lastRelease": "2026-09-23",
+      "docsUrl": "https://arize.com/docs/phoenix",
+      "websiteUrl": "https://arize.com/pricing/",
+      "pricing": "Phoenix open source is free and self-hosted. The commercial Arize AX has Free ($0), Pro ($50/month) and custom Enterprise tiers.",
+      "pricingModel": "free",
+      "languages": [
+        "Python",
+        "TypeScript",
+        "Java"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "tracing",
+        "evaluation",
+        "opentelemetry",
+        "source-available"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "A strong local-first option for internal tracing and evals, and OpenInference instrumentation keeps traces portable. The ELv2 license rules out reselling Phoenix as a managed service, and certifications (SOC 2, ISO 27001) belong to Arize's commercial AX platform, not to a self-hosted Phoenix.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted on Docker, Kubernetes or any cloud, so the operator controls where trace data lives.",
+          "sourceUrl": "https://arize.com/docs/phoenix"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted via Docker or Kubernetes. Managed and self-hosted enterprise options are sold separately as Arize AX.",
+          "sourceUrl": "https://arize.com/docs/phoenix",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "The Phoenix docs overview does not describe a native audit or access log for user actions."
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted software. SOC 2 applies to the operator's infrastructure (Arize's own SOC 2 covers its commercial AX platform)."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted software. ISO 27001 applies to the operator's ISMS (Arize's certification covers the company and AX, not a self-hosted Phoenix)."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted software. ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer of the traced system."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Elastic License 2.0: source-available and not OSI-approved. It bans offering Phoenix as a hosted or managed service and bans circumventing license keys.",
+          "sourceUrl": "https://raw.githubusercontent.com/Arize-ai/phoenix/main/LICENSE",
+          "level": "high"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "mlflow",
+      "name": "MLflow",
+      "category": "observability",
+      "type": "opensource",
+      "vendor": "Linux Foundation (MLflow project)",
+      "description": "Open-source AI engineering platform with OpenTelemetry-compatible GenAI tracing, LLM-judge evaluation, prompt registry and AI gateway.",
+      "strengths": [
+        "Tracing supports OpenTelemetry GenAI conventions",
+        "Prompt registry with automated optimization",
+        "Managed on Databricks, SageMaker and Azure ML"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/mlflow/mlflow",
+      "githubStars": 28197,
+      "version": "3.16.1",
+      "lastRelease": "2026-09-17",
+      "docsUrl": "https://mlflow.org/docs/latest/genai/",
+      "websiteUrl": "https://mlflow.org",
+      "pricing": "Free and open source. Trace data stays on your own infrastructure. Managed hosting is billed by the cloud provider.",
+      "pricingModel": "free",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "tracing",
+        "evaluation",
+        "prompt-management",
+        "mlops"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "The natural choice for teams already running MLflow for classic ML, since GenAI traces, evals and prompts sit beside existing experiments and models. Upgrade self-hosted servers to 3.16.1 or later, which removed a default basic-auth admin password.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted: trace data is stored on the operator's own infrastructure. Managed variants follow the hosting cloud's region.",
+          "sourceUrl": "https://mlflow.org/docs/latest/genai/tracing/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted OSS server, or managed through Databricks, AWS SageMaker, Azure Machine Learning or Red Hat OpenShift AI.",
+          "sourceUrl": "https://mlflow.org/docs/latest/genai/",
+          "models": [
+            "self-hosted",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "The GenAI docs describe trace capture but not a native user or admin audit log for the OSS server. Managed platforms may add their own."
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source software. SOC 2 applies to the operator or the managed-service provider, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source software. ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted open-source software. ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Developer and observability tooling, not an AI system placed on the market. Obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Apache 2.0, a permissive OSI-approved license.",
+          "sourceUrl": "https://raw.githubusercontent.com/mlflow/mlflow/master/LICENSE.txt",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "opik",
+      "name": "Opik",
+      "category": "observability",
+      "type": "opensource",
+      "vendor": "Comet",
+      "description": "Open-source platform to trace, evaluate and monitor LLM apps, RAG systems and agents, with LLM-as-a-judge metrics and prompt optimization.",
+      "strengths": [
+        "Apache 2.0 server and UI self-hostable",
+        "PyTest integration for LLM CI checks",
+        "Python and TypeScript SDKs plus OpenTelemetry"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/comet-ml/opik",
+      "githubStars": 22308,
+      "version": "2.2.86",
+      "lastRelease": "2026-09-30",
+      "docsUrl": "https://www.comet.com/docs/opik/quickstart",
+      "websiteUrl": "https://www.comet.com/site/pricing/",
+      "pricing": "Open source is free. Cloud: Free $0 (25k spans/month, 10 members), Pro $19/month (100k spans/month), Enterprise custom.",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "tracing",
+        "evaluation",
+        "prompt-optimization"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "The Apache 2.0 license makes self-hosting low-risk, but self-hosted Opik lacks user management, so plan for network-level access control. Comet's docs describe the Docker install as not production-ready and point to Kubernetes/Helm for production.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosting on Kubernetes keeps data in the operator's infrastructure. Comet Cloud regions are not stated on the pages reviewed.",
+          "sourceUrl": "https://www.comet.com/docs/opik/self-host/overview"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Comet-hosted cloud, local Docker Compose (not production-ready), or production Kubernetes/Helm.",
+          "sourceUrl": "https://www.comet.com/docs/opik/self-host/overview",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "The pages reviewed do not describe audit logs, and self-hosted Opik ships without user management."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Comet lists SOC 2 Type 2 on its Trust Center, covering the Comet-hosted service. Self-hosted instances rely on the operator's controls.",
+          "sourceUrl": "https://trust.comet.com/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Comet lists ISO/IEC 27001:2022 on its Trust Center (company and hosted service). Not applicable to self-hosted instances.",
+          "sourceUrl": "https://trust.comet.com/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "The Comet Trust Center lists ISO 9001, ISO 27001 and SOC 2 but not ISO 42001."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Apache 2.0. The README says the server, web app and core observability and evaluation can be self-hosted without a commercial license.",
+          "sourceUrl": "https://raw.githubusercontent.com/comet-ml/opik/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "langsmith",
+      "name": "LangSmith",
+      "category": "observability",
+      "type": "commercial",
+      "vendor": "LangChain",
+      "description": "Framework-agnostic platform from LangChain for tracing, monitoring, evaluating and deploying LLM apps and agents, with OpenTelemetry ingest.",
+      "strengths": [
+        "Works beyond LangChain (OpenAI, CrewAI, Vercel AI)",
+        "Cloud in US, EU, APAC and AWS regions",
+        "Self-hosted and hybrid options on Enterprise"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.langchain.com/langsmith/observability",
+      "websiteUrl": "https://www.langchain.com/langsmith",
+      "pricing": "Developer $0/seat (5k base traces/month), Plus $39/seat/month (10k base traces/month) then pay-as-you-go, Enterprise custom.",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "tracing",
+        "evaluation",
+        "langchain"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "The lowest-friction option for LangChain and LangGraph shops, but it also ingests OpenTelemetry from other stacks. Base traces keep only 14 days (extended traces 180), and audit logs, self-hosting and hybrid all need the Enterprise plan.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "SaaS regions include GCP us-central1, europe-west4 and australia-southeast1, plus AWS us-east-2. Enterprise can self-host. Payment data is stored in the US.",
+          "sourceUrl": "https://docs.langchain.com/langsmith/cloud"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Cloud SaaS on all plans. Hybrid and self-hosted (Kubernetes in customer infrastructure) are Enterprise add-ons.",
+          "sourceUrl": "https://docs.langchain.com/langsmith/self-hosted",
+          "models": [
+            "saas",
+            "hybrid",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Tamper-resistant audit logs of administrative and configuration actions, available only on Enterprise plans.",
+          "sourceUrl": "https://docs.langchain.com/langsmith/audit-logs"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "The LangChain Trust Center did not render verifiable certification details, and the LangSmith cloud docs make no SOC 2 claim."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "No ISO 27001 claim could be verified on the LangSmith docs or a rendered Trust Center page."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 claim could be verified on the LangSmith docs or a rendered Trust Center page."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS. Self-hosting is an Enterprise add-on with no open-source path.",
+          "sourceUrl": "https://www.langchain.com/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "braintrust",
+      "name": "Braintrust",
+      "category": "observability",
+      "type": "commercial",
+      "vendor": "Braintrust",
+      "description": "Commercial AI observability and evaluation platform for tracing agents, running evals and experiments, and building datasets from production logs.",
+      "strengths": [
+        "SDKs for TypeScript, Python, Go, Java, Ruby, C#",
+        "Hybrid data plane on AWS, GCP or Azure",
+        "Unlimited users even on free tier"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.braintrust.dev/docs",
+      "websiteUrl": "https://www.braintrust.dev/pricing",
+      "pricing": "Starter $0/month (1 GB processed data, 10k scores, 14-day retention), Pro $249/month (5 GB, 50k scores, 30-day retention), Enterprise custom.",
+      "pricingModel": "freemium",
+      "languages": [
+        "TypeScript",
+        "Python",
+        "Go",
+        "Java",
+        "Ruby",
+        "C#"
+      ],
+      "status": "active",
+      "tags": [
+        "observability",
+        "evaluation",
+        "tracing",
+        "experiments"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "practitionerNote": "Suits eval-heavy teams that want experiments and production logs in one place. For data-sensitive workloads the Enterprise hybrid model keeps traces, datasets and prompts in your cloud while Braintrust runs the UI and auth control plane.",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Enterprise hybrid and self-hosted deployments keep traces, logs, datasets and prompts in the customer's cloud account and region. Hosted-SaaS regions are not stated.",
+          "sourceUrl": "https://www.braintrust.dev/docs/guides/self-hosting"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Hosted SaaS, or Enterprise-only hybrid with a customer data plane (Terraform for AWS, GCP, Azure) and a Braintrust-managed control plane.",
+          "sourceUrl": "https://www.braintrust.dev/docs/guides/self-hosting",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "The security docs mention only monitoring API key usage through activity logs. No dedicated audit-log feature was verified."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Braintrust states it is SOC 2 Type II compliant.",
+          "sourceUrl": "https://www.braintrust.dev/docs/security"
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "The Braintrust security docs do not mention ISO 27001, and the Trust Center did not render certification details."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "The Braintrust security docs do not mention ISO 42001."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS. Hybrid deployment still depends on the Braintrust-managed control plane.",
+          "sourceUrl": "https://www.braintrust.dev/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "datadog-agent-observability",
+      "name": "Datadog Agent Observability",
+      "aliases": [
+        "Datadog LLM Observability"
+      ],
+      "category": "observability",
+      "type": "vendor",
+      "vendor": "Datadog",
+      "description": "Datadog module for end-to-end tracing of LLM and agent apps, with cost/latency dashboards, quality clustering and sensitive-data redaction.",
+      "strengths": [
+        "Correlates LLM spans with existing APM data",
+        "Built-in sensitive-data scanning and redaction",
+        "SDKs for Python, Node.js and Java"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.datadoghq.com/llm_observability/",
+      "websiteUrl": "https://www.datadoghq.com/pricing/list/",
+      "pricing": "From $160/month (annual) for the first 100k LLM spans at 15-day retention, then $3.50 per 10K LLM spans (annual; $5 on-demand). Longer retention costs more.",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "Node.js",
+        "Java"
+      ],
+      "status": "active",
+      "statusNote": "Datadog's docs now title the product \"Agent Observability\" and still use \"LLM Observability\" interchangeably. Not available on the US1-FED/US2-FED government sites (checked 2026-09-30).",
+      "tags": [
+        "observability",
+        "apm",
+        "tracing",
+        "cost-monitoring"
+      ],
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "practitionerNote": "Best fit for organisations already standardised on Datadog that want LLM traces next to infrastructure and APM data under existing audit and compliance controls. Span-based billing grows with agent step count, so model cost before instrumenting chatty multi-step agents.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "The customer picks a Datadog site: US1/US3/US5, EU1 (Germany), AP1 (Japan), AP2 (Australia) or UK1. The product is not supported on FED sites.",
+          "sourceUrl": "https://docs.datadoghq.com/getting_started/site/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Datadog-hosted SaaS only.",
+          "sourceUrl": "https://docs.datadoghq.com/llm_observability/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Datadog Audit Trail records user activity, API requests and resource changes across the organisation.",
+          "sourceUrl": "https://docs.datadoghq.com/account_management/audit_trail/"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Datadog lists SOC 2 Type 2 on its Trust Center (company-wide; product-level scope not separately stated).",
+          "sourceUrl": "https://trust.datadoghq.com/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Datadog lists ISO/IEC 27001 (plus 27017, 27018 and 27701) on its Trust Center.",
+          "sourceUrl": "https://trust.datadoghq.com/"
+        },
+        "iso42001": {
+          "status": "yes",
+          "detail": "Datadog lists ISO/IEC 42001:2023 on its Trust Center (company-wide; module scope not separately stated).",
+          "sourceUrl": "https://trust.datadoghq.com/"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Monitoring tooling, not an AI system placed on the market. Obligations rest with the deployer of the monitored system."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS tied to the Datadog platform, with span-based metered billing.",
+          "sourceUrl": "https://www.datadoghq.com/pricing/list/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "Anthropic",
+      "description": "Agentic coding tool for terminal, IDE, desktop and web that reads codebases, edits files, runs commands and handles git workflows.",
+      "strengths": [
+        "Runs on Bedrock, Vertex and Foundry",
+        "Managed settings and permission policies",
+        "OpenTelemetry usage export"
+      ],
+      "license": "Proprietary",
+      "licenseWarning": "The public GitHub repo is not open source: LICENSE.md is an Anthropic copyright notice that points to the Commercial Terms of Service. No OSI license applies.",
+      "githubUrl": "https://github.com/anthropics/claude-code",
+      "docsUrl": "https://code.claude.com/docs/",
+      "websiteUrl": "https://claude.com/pricing",
+      "pricing": "Included in Pro ($20/mo, $17 annual), Max (from $100/mo), Team (standard $25/mo, $20 annual; premium $125/mo, $100 annual) and Enterprise ($20/seat/mo + usage at API rates); or PAYG via API/cloud providers.",
+      "pricingModel": "paid",
+      "clouds": [
+        "aws",
+        "gcp",
+        "azure"
+      ],
+      "tags": [
+        "assistants",
+        "coding",
+        "agentic-coding",
+        "cli"
+      ],
+      "practitionerNote": "Route through Bedrock, Google Cloud Agent Platform or Microsoft Foundry to keep inference and billing inside an existing cloud estate; enforce managed permissions centrally, since the agent can execute shell commands on developer machines.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Inference region follows the chosen provider (AWS/GCP/Azure regions); Anthropic-direct plans offer US-only inference on Enterprise; local transcripts cached on the developer machine.",
+          "sourceUrl": "https://code.claude.com/docs/en/third-party-integrations"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Local client with inference via Anthropic, Amazon Bedrock, Claude Platform on AWS, Google Cloud Agent Platform or Microsoft Foundry; cloud sessions can run in self-hosted environments.",
+          "sourceUrl": "https://code.claude.com/docs/en/third-party-integrations",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Enterprise audit logs and Compliance API; OpenTelemetry export of prompts (opt-in), tool results and permission decisions; CloudTrail / Cloud Audit Logs / Azure Monitor on cloud providers.",
+          "sourceUrl": "https://code.claude.com/docs/en/monitoring-usage"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Anthropic SOC 2 Type I and Type II cover commercial products (Claude for Work, Anthropic API).",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Anthropic ISO/IEC 27001:2022 covers commercial products (Claude for Work, Anthropic API).",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "iso42001": {
+          "status": "yes",
+          "detail": "Anthropic ISO/IEC 42001:2023 covers commercial products (Claude for Work, Anthropic API).",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary tool under Anthropic Commercial Terms; model choice limited to Claude.",
+          "sourceUrl": "https://github.com/anthropics/claude-code/blob/main/LICENSE.md",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "openai-codex",
+      "name": "OpenAI Codex",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "OpenAI",
+      "description": "OpenAI coding agent available as an open-source CLI, IDE extension, ChatGPT app surfaces and hosted Codex Cloud tasks.",
+      "strengths": [
+        "Apache 2.0 Rust CLI",
+        "Included in ChatGPT plans",
+        "Compliance API codex_log events"
+      ],
+      "license": "Apache 2.0 (CLI); Proprietary (cloud)",
+      "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
+      "githubUrl": "https://github.com/openai/codex",
+      "githubStars": 127396,
+      "version": "0.159.2",
+      "lastRelease": "2026-09-29",
+      "docsUrl": "https://learn.chatgpt.com/docs",
+      "websiteUrl": "https://learn.chatgpt.com/docs/pricing",
+      "pricing": "Included in ChatGPT Free, Go ($8/mo), Plus ($20/mo), Pro (from $100/mo), Business ($20/user/mo annual, 2+ users) and Enterprise/Edu (contact sales); or API-key usage at API rates.",
+      "pricingModel": "freemium",
+      "languages": [
+        "Rust"
+      ],
+      "tags": [
+        "assistants",
+        "coding",
+        "agentic-coding",
+        "cli"
+      ],
+      "practitionerNote": "Separate local clients from Codex Cloud in workspace RBAC; OpenAI notes the Compliance API does not record every local command or file operation, so pair it with endpoint controls. Use API keys, not seats, for CI automation.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Data and inference residency apply only to eligible content and supported workloads, subject to agreement, region and configuration; not supported with UAE inference residency.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Local CLI/IDE/desktop clients plus OpenAI-hosted Codex Cloud; no self-hosted model option.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Compliance API append-only stream with codex_log, conversation_message and AUTH_LOG events; OTel events for local use; does not capture every local command or file operation.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/compliance-api"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "OpenAI SOC 2 Type 2 (Jul 2025-Jun 2026) covers ChatGPT Enterprise/Edu/Team and API Platform; Codex-specific scope not separately listed.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "OpenAI ISO/IEC 27001:2022 covers ChatGPT business plans and API Platform; Codex-specific scope not separately listed.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "iso42001": {
+          "status": "yes",
+          "detail": "OpenAI ISO/IEC 42001:2023 listed on trust portal for ChatGPT business plans and API Platform; Codex-specific scope not separately listed.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published OpenAI EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "CLI is Apache 2.0 (permissive) but depends on proprietary OpenAI models and Codex Cloud.",
+          "sourceUrl": "https://github.com/openai/codex/blob/main/LICENSE",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "AWS agentic development environment (IDE, CLI, web) built around spec-driven development; successor to Amazon Q Developer.",
+      "strengths": [
+        "Specs, steering files and hooks",
+        "Admin model and MCP allow-lists",
+        "Prompt logs and CloudTrail"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://kiro.dev/docs/",
+      "websiteUrl": "https://kiro.dev/pricing",
+      "pricing": "Free (50 credits); Pro $20, Pro+ $40, Pro Max $100, Power $200 per user/mo with 1,000-10,000 credits and add-on credits at $0.04; Enterprise via sales.",
+      "pricingModel": "freemium",
+      "clouds": [
+        "aws"
+      ],
+      "statusNote": "AWS announced on 2026-04-30 that Amazon Q Developer IDE plugins and paid subscriptions reach end of support on 2027-04-30 and positioned Kiro as the transition path. Kiro Mobile is in preview.",
+      "tags": [
+        "assistants",
+        "coding",
+        "aws",
+        "spec-driven"
+      ],
+      "practitionerNote": "Default migration target for Amazon Q Developer estates: plan the move before the 2027-04-30 end of support, and use IAM Identity Center with model and MCP allow-lists before enabling Cloud Sessions, which are off by default.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Enterprise content stored in the region where the profile is configured; cross-region Bedrock inference within a geography; free/individual content stored in US East (N. Virginia).",
+          "sourceUrl": "https://kiro.dev/docs/privacy-and-security/data-protection/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Desktop IDE and CLI clients with AWS-hosted inference; no self-hosted option.",
+          "sourceUrl": "https://kiro.dev/docs/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "CloudTrail API events, prompt logs of IDE/CLI chat prompts, and per-user activity reports.",
+          "sourceUrl": "https://kiro.dev/docs/enterprise/monitor-and-track/"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Kiro compliance page lists HIPAA eligibility and ISO 27001 only; not found in AWS SOC services-in-scope list at review time."
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Kiro is in scope of AWS ISO/IEC 27001:2022 certification (EY CertifyPoint).",
+          "sourceUrl": "https://kiro.dev/docs/privacy-and-security/compliance-validation/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Not listed on the Kiro compliance validation page at review time."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published AWS EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary AWS service; AWS identity and billing lock-in.",
+          "sourceUrl": "https://kiro.dev/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "chatgpt-enterprise",
+      "name": "ChatGPT Enterprise",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "OpenAI",
+      "description": "Enterprise tier of ChatGPT with workspace RBAC, SCIM-synced groups, Compliance API, data residency options and bundled Codex.",
+      "strengths": [
+        "Compliance API for SIEM export",
+        "SCIM groups and workspace RBAC",
+        "No training on business data by default"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+      "websiteUrl": "https://openai.com/chatgpt/enterprise/",
+      "pricing": "Custom pricing via OpenAI sales (Enterprise & Edu).",
+      "pricingModel": "contact",
+      "tags": [
+        "assistants",
+        "productivity",
+        "chatgpt"
+      ],
+      "practitionerNote": "Confirm up front which content and workloads are eligible for data residency and EKM, and note that strict zero data retention is not offered for Work Cloud features.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Data and inference residency apply only to eligible content and supported workloads, subject to agreement, region and configuration.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "OpenAI-hosted SaaS (web, desktop, mobile); no self-hosted option.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Compliance API provides an append-only compliance log stream (conversation, auth and Codex events) for SIEM or data lake export.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/compliance-api"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "SOC 2 Type 2 (Jul 2025-Jun 2026) covers ChatGPT Enterprise.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "ISO/IEC 27001:2022 (plus 27017/27018/27701) covers ChatGPT Enterprise.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "iso42001": {
+          "status": "yes",
+          "detail": "ISO/IEC 42001:2023 listed on OpenAI trust portal covering ChatGPT Enterprise.",
+          "sourceUrl": "https://trust.openai.com"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published OpenAI EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; OpenAI model and workspace lock-in.",
+          "sourceUrl": "https://learn.chatgpt.com/docs/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "claude-enterprise",
+      "name": "Claude Enterprise",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "productivity",
+      "type": "vendor",
+      "vendor": "Anthropic",
+      "description": "Enterprise plan for Claude on web, desktop and mobile, bundling Claude Code and Cowork with SSO, SCIM, audit logs and Compliance API.",
+      "strengths": [
+        "Claude Code and Cowork per seat",
+        "Customer-managed encryption keys",
+        "US-only inference option"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan",
+      "websiteUrl": "https://claude.com/solutions/enterprise",
+      "pricing": "$20/seat/mo plus usage at API rates, billed annually; self-serve minimum 20 seats, sales-assisted minimum 50.",
+      "pricingModel": "paid",
+      "tags": [
+        "assistants",
+        "productivity",
+        "claude"
+      ],
+      "practitionerNote": "The seat fee covers access only and all usage bills at API rates with no included tokens, so set spend controls before broad rollout. Connectors cover Microsoft 365, Google Workspace, Slack and GitHub.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "US-only inference option; no broader regional residency stated on the plan page.",
+          "sourceUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Anthropic-hosted SaaS (web, desktop, mobile); no self-hosted option.",
+          "sourceUrl": "https://claude.com/solutions/enterprise",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Audit logs of user actions, system events and data access, plus Compliance API.",
+          "sourceUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Anthropic SOC 2 Type I and Type II cover Claude for Work.",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Anthropic ISO/IEC 27001:2022 covers Claude for Work.",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "iso42001": {
+          "status": "yes",
+          "detail": "Anthropic ISO/IEC 42001:2023 covers Claude for Work.",
+          "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; Anthropic model lock-in.",
+          "sourceUrl": "https://claude.com/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "google-antigravity",
+      "name": "Google Antigravity",
+      "category": "assistants",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "subcategory": "coding",
+      "type": "vendor",
+      "vendor": "Google",
+      "description": "Google agent-first development platform (desktop app, IDE, CLI, SDK) on Gemini; replaced consumer Gemini Code Assist in June 2026.",
+      "strengths": [
+        "Asynchronous subagents",
+        "VPC-SC and us/eu endpoints",
+        "Gemini Enterprise license path"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://antigravity.google/docs/home/",
+      "websiteUrl": "https://antigravity.google/",
+      "pricing": "Free tier with weekly quotas; higher quotas with Google AI Pro/Ultra plus opt-in AI credit overages; enterprise via Google Cloud consumption billing or Gemini Enterprise Standard/Plus licenses.",
+      "pricingModel": "freemium",
+      "clouds": [
+        "gcp"
+      ],
+      "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; Gemini Code Assist Standard/Enterprise access is unchanged.",
+      "tags": [
+        "assistants",
+        "coding",
+        "gcp",
+        "agentic-coding"
+      ],
+      "practitionerNote": "For enterprise use, sign in via a Google Cloud project or Gemini Enterprise license so Google Cloud terms, VPC Service Controls and regional endpoints apply; consumer sign-ins do not carry those controls. Organisational contract tiers are not yet supported.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Enterprise path supports regional data residency and VPC Service Controls with global, us and eu endpoints; consumer plans not covered.",
+          "sourceUrl": "https://antigravity.google/docs/enterprise"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Desktop/IDE/CLI clients with Google-hosted Gemini models via consumer plans or a Google Cloud project; no self-hosted models.",
+          "sourceUrl": "https://antigravity.google/docs/enterprise",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "On the enterprise path, telemetry and model interactions route to the customer Google Cloud project (request-response logging); no product-level audit log documented for consumer plans.",
+          "sourceUrl": "https://antigravity.google/docs/enterprise"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "No Antigravity-specific SOC 2 scope statement found at review time."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "No Antigravity-specific ISO 27001 scope statement found at review time."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No Antigravity-specific ISO 42001 scope statement found at review time."
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk",
+          "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Google EU AI Act conformity statement for this product."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Google product; Gemini and Google Cloud lock-in.",
+          "sourceUrl": "https://antigravity.google/docs/plans",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "microsoft-agent-365",
+      "name": "Microsoft Agent 365",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Control plane to observe, govern and secure an organization's AI agents via a central registry, Entra, Purview and Defender.",
+      "strengths": [
+        "Central agent registry and agent map",
+        "Entra, Purview and Defender coverage for agents",
+        "Agent activity in Purview unified audit log"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+      "websiteUrl": "https://www.microsoft.com/microsoft-agent-365",
+      "pricing": "$15.00 user/month paid yearly (standalone); included in Microsoft 365 E7 ($99.00 user/month paid yearly).",
+      "pricingModel": "paid",
+      "clouds": [
+        "azure"
+      ],
+      "status": "active",
+      "statusNote": "Generally available for the Commercial segment since 2026-05-01; registry sync with AWS Bedrock and Google Cloud was announced as public preview at GA.",
+      "tags": [
+        "control-planes",
+        "registry",
+        "microsoft-365",
+        "agent-security"
+      ],
+      "practitionerNote": "Strongest fit for Microsoft 365 / E5 tenants that want agent inventory and policy in the same Entra, Purview and Defender stack as users; licensing is per user, so model cost against everyone who owns or uses managed agents.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Agent 365 overview and GA post do not state data-residency commitments specific to Agent 365."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Microsoft-hosted cloud service managed from the Microsoft 365 admin center; no self-hosted option.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Agent invocations, tool calls, inference calls and guardrail events are recorded in the Microsoft 365 (Purview) audit log.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/purview/audit-log-activities"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "No Agent 365-specific SOC 2 scope statement found in the reviewed sources."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "No Agent 365-specific ISO 27001 scope statement found in the reviewed sources."
+        },
+        "iso42001": {
+          "status": "no",
+          "detail": "Agent 365 is not in Microsoft's published list of AI services in scope for ISO 42001 (as of review).",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Governance and security tooling for agents, not itself an AI system placed on the market; obligations rest with agent providers and deployers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Microsoft SaaS licensed per user; ties agent governance to the Microsoft 365 security stack.",
+          "sourceUrl": "https://www.microsoft.com/microsoft-agent-365",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "amazon-bedrock-agentcore",
+      "name": "Amazon Bedrock AgentCore",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "AWS",
+      "description": "AWS services to run, govern and observe agents from any framework: Runtime, Gateway, Identity, Policy, Observability and Agent Registry.",
+      "strengths": [
+        "Agent Registry auto-discovery across AWS Organizations",
+        "Policy controls on agent-tool access",
+        "Per-service consumption pricing"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html",
+      "pricing": "Consumption-based per service, e.g. Runtime $0.1276 per vCPU-hour, Policy $0.000025 per authorization request, Gateway $0.005 per 1,000 invocations; Agent Registry includes a monthly free allowance (5,000 records).",
+      "pricingModel": "paid",
+      "clouds": [
+        "aws"
+      ],
+      "status": "active",
+      "statusNote": "GA since October 2025; Policy GA March 2026; AWS Agent Registry GA August 2026 (preview from April 2026).",
+      "tags": [
+        "control-planes",
+        "aws",
+        "registry",
+        "agent-policy"
+      ],
+      "practitionerNote": "Use it as the governance and runtime layer for agents on AWS; the registry and policy pieces are strongest when agents run on AgentCore Runtime/Gateway. Bedrock Agents (the managed agent builder) is tracked separately.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Regional service (including AWS GovCloud US-West); Agent Registry supports customer-managed KMS keys. No multi-cloud or sovereign option.",
+          "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Fully managed AWS service; no self-hosted option.",
+          "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Control-plane API calls (e.g. Agent Registry, Gateway) are logged to AWS CloudTrail as management events.",
+          "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cloudtrail.html"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "AgentCore is in scope for SOC 2 per AWS compliance validation.",
+          "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "AgentCore is compliant with ISO 27001:2022 (plus 27017, 27018, 27701).",
+          "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO 42001 is not listed on the AgentCore compliance validation page."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Infrastructure for building and governing agents, not itself an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary AWS service; framework-agnostic agents, but registry, policy and identity are AWS-bound.",
+          "sourceUrl": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "mulesoft-agent-fabric",
+      "name": "MuleSoft Agent Fabric",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "Salesforce (MuleSoft)",
+      "description": "MuleSoft suite to register, route, govern and visualize agents, MCP servers and APIs across vendors using MCP and A2A.",
+      "strengths": [
+        "Agent Registry with auto-discovery scanners",
+        "Omni Gateway policies for agent and LLM traffic",
+        "Agent Visualizer for multi-agent flows"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.mulesoft.com/general/agent-fabric-overview",
+      "websiteUrl": "https://www.salesforce.com/news/stories/mulesoft-agent-fabric-announcement/",
+      "pricingModel": "contact",
+      "status": "active",
+      "statusNote": "Announced 2025-09-25; Registry, Broker and Visualizer were slated for GA in October 2025 per the announcement.",
+      "tags": [
+        "control-planes",
+        "registry",
+        "mcp",
+        "a2a"
+      ],
+      "practitionerNote": "Natural fit for organizations already on Anypoint that want agent governance on the same gateway as their APIs; less compelling without an existing MuleSoft footprint.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Anypoint Platform offers US, EU, Canada, Japan, India, Australia and Government control planes; Agent Fabric availability per control plane not confirmed.",
+          "sourceUrl": "https://docs.mulesoft.com/hosting-home/"
+        },
+        "deployment": {
+          "status": "partial",
+          "detail": "MuleSoft-managed control planes plus hybrid runtime options (Runtime Fabric, hybrid runtimes); which Agent Fabric components run outside MuleSoft cloud is not stated.",
+          "sourceUrl": "https://docs.mulesoft.com/hosting-home/",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Agent Fabric overview describes monitoring via Agent Visualizer but no audit-log statement was found."
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "MuleSoft trust center could not be retrieved during review; Agent Fabric SOC 2 scope unverified."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "MuleSoft trust center could not be retrieved during review; Agent Fabric ISO 27001 scope unverified."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 statement found for MuleSoft or Agent Fabric in reviewed sources."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Integration and governance tooling for agents, not itself an AI system placed on the market."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Salesforce/MuleSoft product; pricing not published.",
+          "sourceUrl": "https://docs.mulesoft.com/general/agent-fabric-overview",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "servicenow-ai-control-tower",
+      "name": "ServiceNow AI Control Tower",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "ServiceNow",
+      "description": "ServiceNow hub to discover, observe, govern, secure and measure AI models and agents, including those from other platforms.",
+      "strengths": [
+        "AI asset inventory across models, prompts and agents",
+        "Risk frameworks aligned to NIST and EU AI Act",
+        "Cost and ROI dashboards for AI spend"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html",
+      "websiteUrl": "https://www.servicenow.com/products/ai-control-tower.html",
+      "pricingModel": "contact",
+      "status": "active",
+      "statusNote": "Expansion announced 2026-05-05 (30 new discovery integrations, Traceloop-based observability, Veza access governance) with GA expected August 2026 per the release; GA of each piece not independently confirmed.",
+      "tags": [
+        "control-planes",
+        "ai-governance",
+        "risk-compliance",
+        "inventory"
+      ],
+      "practitionerNote": "Best fit where ServiceNow already runs GRC and IT workflows; some governance views need other ServiceNow licenses (e.g. Strategic Portfolio Management Professional).",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "ServiceNow trust pages could not be retrieved during review; residency for AI Control Tower data unverified."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Delivered as an application on the ServiceNow platform (current docs: Brazil release).",
+          "sourceUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Tracks AI-related cases and risk workflows and guardrail health; a dedicated audit log for third-party agent actions is not documented.",
+          "sourceUrl": "https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "ServiceNow trust/compliance pages returned 403 during review; SOC 2 scope unverified."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "ServiceNow trust/compliance pages returned 403 during review; ISO 27001 scope unverified."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ServiceNow trust/compliance pages returned 403 during review; ISO 42001 scope unverified."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Governance tooling that helps assess AI systems against EU AI Act frameworks; not itself a high-risk AI system."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary ServiceNow application; governance data lives on the ServiceNow platform.",
+          "sourceUrl": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "ibm-watsonx-orchestrate",
+      "name": "IBM watsonx Orchestrate",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "IBM",
+      "description": "IBM agent platform whose Agentic Control Plane adds operations dashboards, policy and access governance, and a shared agent catalog.",
+      "strengths": [
+        "Shared catalog to publish and version agents",
+        "Policy, credential health and access overview",
+        "SaaS on AWS or IBM Cloud, or on-premises"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base",
+      "websiteUrl": "https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane",
+      "pricing": "30-day free trial; Essentials from $530/month, Standard from $6,360/month; Premium by quote.",
+      "pricingModel": "paid",
+      "status": "active",
+      "statusNote": "Agentic Control Plane announced 2026-07-02, available on AWS and IBM Cloud.",
+      "tags": [
+        "control-planes",
+        "agentops",
+        "catalog",
+        "ibm"
+      ],
+      "practitionerNote": "Worth evaluating when agents must run on-premises or in regulated IBM/AWS GovCloud estates; the control plane is part of Orchestrate, so it governs best what is built or registered there.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Choice of IBM Cloud, AWS, AWS GovCloud (US) or on-premises installs lets customers place data; per-region detail not reviewed.",
+          "sourceUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "SaaS on AWS, IBM Cloud and AWS GovCloud (US), plus watsonx Orchestrate On-premises.",
+          "sourceUrl": "https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base",
+          "models": [
+            "saas",
+            "on-prem"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Operational dashboards, agent analytics and observability traces; a dedicated audit log is not described in the announcement.",
+          "sourceUrl": "https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "No watsonx Orchestrate-specific SOC 2 scope found on IBM pages reviewed."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "watsonx Orchestrate is not named on the IBM Cloud ISO 27001 page reviewed; scope unverified."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 statement for watsonx Orchestrate found in reviewed sources."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Agent build and governance platform, not itself a high-risk AI system; obligations rest with deployers of specific agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary IBM product with published tiered subscription pricing.",
+          "sourceUrl": "https://www.ibm.com/products/watsonx-orchestrate/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "workday-agent-system-of-record",
+      "name": "Workday Agent System of Record",
+      "category": "control-planes",
+      "type": "vendor",
+      "vendor": "Workday",
+      "description": "Workday hub to register, govern and measure Workday, customer and partner AI agents alongside people and financial data.",
+      "strengths": [
+        "Agent lifecycle managed like employees",
+        "Agent Gateway supports MCP and A2A",
+        "Agent ROI next to HR and finance data"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+      "websiteUrl": "https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html",
+      "pricingModel": "contact",
+      "status": "active",
+      "tags": [
+        "control-planes",
+        "registry",
+        "hr-finance",
+        "agent-roi"
+      ],
+      "practitionerNote": "Fits Workday HCM/Financials customers who want agents measured and permissioned in the same model as the workforce; it is not a general runtime or security layer for agents outside the Workday ecosystem.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "GA post mentions support for regional compliance requirements but gives no residency detail for ASOR."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Delivered as part of the Workday cloud platform.",
+          "sourceUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Records and tracks AI agent interactions under Workday's security model; audit export detail not documented.",
+          "sourceUrl": "https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Workday SOC 2 Type II covers Workday Enterprise Products; ASOR is not named explicitly."
+        },
+        "iso27001": {
+          "status": "partial",
+          "detail": "ISO 27001:2022 scope includes Workday Platform and Product Extensions; ASOR not named explicitly.",
+          "sourceUrl": "https://www.workday.com/en-us/why-workday/trust/compliance.html"
+        },
+        "iso42001": {
+          "status": "partial",
+          "detail": "ISO 42001 scope includes Workday Platform and core applications; ASOR not named explicitly.",
+          "sourceUrl": "https://www.workday.com/en-us/why-workday/trust/compliance.html"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Agent management and analytics layer, not itself an AI system placed on the market; HR-use agents it governs may carry their own classification."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Workday SaaS; pricing not published.",
+          "sourceUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "kore-ai-agent-management-platform",
+      "name": "Kore.ai Agent Management Platform",
+      "category": "control-planes",
+      "type": "commercial",
+      "vendor": "Kore.ai",
+      "description": "Vendor-neutral control center to observe, govern, evaluate and track cost of agents built on many frameworks and platforms.",
+      "strengths": [
+        "Governs LangGraph, CrewAI, AgentCore and Foundry agents",
+        "Evaluation studio before production",
+        "Cost and anomaly tracking tied to outcomes"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://www.kore.ai/news/kore-ai-launches-agent-management-platform",
+      "pricingModel": "contact",
+      "status": "active",
+      "statusNote": "Launched 2026-03-17; no product documentation for AMP was found, only the launch announcement.",
+      "tags": [
+        "control-planes",
+        "multi-vendor",
+        "observability",
+        "evaluation"
+      ],
+      "practitionerNote": "Candidate for neutral oversight when agents span several clouds and frameworks; confirm connector depth for each platform in a pilot because public detail beyond the launch release is thin.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Kore.ai trust center does not publish region-specific hosting detail."
+        },
+        "deployment": {
+          "status": "partial",
+          "detail": "Kore.ai platform offers multi-tenant SaaS, on-premises and dedicated VPC; AMP-specific availability per model not stated.",
+          "sourceUrl": "https://trust.kore.ai/",
+          "models": [
+            "saas",
+            "on-prem",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Launch release describes observability and governance but no audit-log statement."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Kore.ai holds SOC 2 Type II (company level).",
+          "sourceUrl": "https://trust.kore.ai/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Kore.ai holds ISO/IEC 27001:2022 (company level).",
+          "sourceUrl": "https://trust.kore.ai/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO 42001 is not listed on the Kore.ai trust center."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Agent governance tooling, not itself an AI system placed on the market; obligations rest with deployers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary commercial product; pricing not published.",
+          "sourceUrl": "https://www.kore.ai/news/kore-ai-launches-agent-management-platform",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "litellm",
+      "name": "LiteLLM",
+      "category": "gateways",
+      "type": "opensource",
+      "vendor": "BerriAI",
+      "description": "Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.",
+      "strengths": [
+        "Virtual keys with per-team spend tracking",
+        "100+ providers behind one OpenAI-format API",
+        "Built-in MCP and agent gateway"
+      ],
+      "license": "MIT",
+      "licenseWarning": "Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.",
+      "githubUrl": "https://github.com/BerriAI/litellm",
+      "version": "1.103.1",
+      "lastRelease": "2026-09-30",
+      "docsUrl": "https://docs.litellm.ai/",
+      "websiteUrl": "https://www.litellm.ai/ai-gateway",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "tags": [
+        "gateways",
+        "llm-proxy",
+        "cost-tracking",
+        "mcp",
+        "open-core"
+      ],
+      "practitionerNote": "A common default for platform teams that want a self-hosted LLM proxy with per-team keys and budgets. Pin exact versions and verify release provenance: on 2026-03-24 malicious litellm 1.82.7 and 1.82.8 packages were published to PyPI with a credential stealer (the official Docker images were not affected), so anyone who installed them should rotate secrets.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "When self-hosted, no data or telemetry is stored on LiteLLM servers; data stays in the operator's infrastructure.",
+          "sourceUrl": "https://docs.litellm.ai/docs/data_security"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted proxy via CLI or Docker container; Terraform modules for AWS and GCP in the repo.",
+          "sourceUrl": "https://github.com/BerriAI/litellm",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Audit logs exist but are listed as a LiteLLM Enterprise feature (commercial license).",
+          "sourceUrl": "https://docs.litellm.ai/"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "BerriAI states SOC 2 Type II, with the report in the LiteLLM Trust Center. Self-hosted deployments rely on the operator's own controls.",
+          "sourceUrl": "https://docs.litellm.ai/docs/data_security"
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "ISO 27001 is listed on trust.litellm.ai, but the public page did not confirm certification status; the data-security docs name only SOC 2 Type II."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO 42001 is listed on trust.litellm.ai, but the public page did not confirm certification status."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Routing and proxy infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT core, but enterprise/ is under a commercial BerriAI license that requires a subscription for production use.",
+          "sourceUrl": "https://raw.githubusercontent.com/BerriAI/litellm/main/LICENSE",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "portkey-ai-gateway",
+      "name": "Portkey AI Gateway",
+      "category": "gateways",
+      "type": "opensource",
+      "vendor": "Portkey (Palo Alto Networks)",
+      "description": "Open-source AI gateway that routes to 250+ LLMs with fallbacks, caching and 50+ guardrails; managed SaaS and private-cloud options.",
+      "strengths": [
+        "50+ integrated input/output guardrails",
+        "Fallbacks, retries and load balancing",
+        "MCP gateway with auth and observability"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/Portkey-AI/gateway",
+      "version": "1.15.2",
+      "lastRelease": "2026-01-12",
+      "docsUrl": "https://portkey.ai/docs",
+      "websiteUrl": "https://portkey.ai/features/ai-gateway",
+      "pricing": "Developer free (10k recorded logs/month); Production $49/month (100k logs, $9 per extra 100k up to 3M); Enterprise custom with VPC/private cloud.",
+      "pricingModel": "freemium",
+      "status": "active",
+      "statusNote": "Palo Alto Networks completed its acquisition of Portkey on 2026-05-29, and Portkey is now the AI gateway for Prisma AIRS. Gateway 2.0, which merges Portkey's production gateway into the open-source codebase, has been a pre-release on the 2.0.0 branch since 2026-03-24.",
+      "tags": [
+        "gateways",
+        "guardrails",
+        "llm-routing",
+        "mcp"
+      ],
+      "practitionerNote": "The OSS gateway is easy to self-host, while logs, audit logs and private-cloud deployment come with the paid tiers. Now that Palo Alto Networks owns Portkey, check the roadmap and licensing of the open-source repo before standardising on it.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-host the OSS gateway, or use Enterprise VPC hosting / private cloud with data isolation.",
+          "sourceUrl": "https://portkey.ai/pricing"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "OSS gateway (self-hosted), managed SaaS, and Enterprise hybrid / private-cloud deployments.",
+          "sourceUrl": "https://portkey.ai/docs",
+          "models": [
+            "self-hosted",
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Audit logs of administrative activity are an Enterprise plan feature.",
+          "sourceUrl": "https://portkey.ai/docs/product/enterprise-offering/audit-logs"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Portkey states it is SOC 2 certified; the Enterprise plan lists SOC2 Type 2. Applies to the hosted service, not self-hosted OSS.",
+          "sourceUrl": "https://portkey.ai/docs"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Portkey states it is ISO 27001 certified (hosted service).",
+          "sourceUrl": "https://portkey.ai/docs"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 claim found in Portkey docs or pricing pages."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Routing and guardrail infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT (main branch LICENSE) — permissive, OSI-approved. Paid features are in the hosted plans, not the repo.",
+          "sourceUrl": "https://raw.githubusercontent.com/Portkey-AI/gateway/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "kong-ai-gateway",
+      "name": "Kong AI Gateway",
+      "category": "gateways",
+      "type": "commercial",
+      "vendor": "Kong",
+      "description": "AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.",
+      "strengths": [
+        "Builds on existing Kong API gateway estates",
+        "Generates MCP servers from REST APIs",
+        "Token-based rate limiting and PII redaction"
+      ],
+      "license": "Proprietary",
+      "licenseWarning": "Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.",
+      "githubUrl": "https://github.com/Kong/kong",
+      "docsUrl": "https://developer.konghq.com/ai-gateway/",
+      "websiteUrl": "https://konghq.com/pricing",
+      "pricing": "Konnect Plus from $25/month plus usage (AI Gateway plugins as add-ons, 5 LLMs included); semantic caching and prompt guards only in Enterprise (custom, annual).",
+      "pricingModel": "paid",
+      "status": "active",
+      "tags": [
+        "gateways",
+        "mcp",
+        "api-management",
+        "semantic-caching"
+      ],
+      "practitionerNote": "Makes most sense if Kong already runs your API traffic, because AI and MCP policies reuse the same data plane and control plane. Budget for Enterprise: most advanced AI and MCP plugins are not in the OSS build.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Data planes run in customer infrastructure; Konnect control planes available in AU, EU, ME, US, IN and SG (beta) regions.",
+          "sourceUrl": "https://developer.konghq.com/konnect-platform/geos/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Konnect SaaS control plane, self-hosted Kong Gateway Enterprise, or hybrid.",
+          "sourceUrl": "https://developer.konghq.com/ai-gateway/",
+          "models": [
+            "saas",
+            "self-hosted",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Structured AI audit logs record payloads, token usage, model, latency, cost and guardrail block/mask outcomes; MCP traffic logging captures sessions and tool calls.",
+          "sourceUrl": "https://developer.konghq.com/ai-gateway/ai-audit-log-reference/"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Kong's trust center (trust.konghq.com) is JavaScript-rendered, and its certifications could not be read from a primary source in this review."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Kong's trust center could not be read from a primary source in this review."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 claim found in the Kong sources reviewed."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "API/AI gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Open core: Apache 2.0 gateway, with key AI and MCP plugins available only in AI Gateway Enterprise.",
+          "sourceUrl": "https://developer.konghq.com/plugins/ai-proxy-advanced/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "azure-apim-ai-gateway",
+      "name": "Azure API Management AI gateway",
+      "category": "gateways",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "AI gateway policies in Azure API Management for LLM, MCP and A2A APIs: token limits, semantic caching, content safety and load balancing.",
+      "strengths": [
+        "Per-consumer token limits and quotas",
+        "PTU-aware priority load balancing",
+        "Foundry integration for models, agents, tools"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities",
+      "websiteUrl": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+      "pricingModel": "paid",
+      "clouds": [
+        "azure"
+      ],
+      "status": "active",
+      "statusNote": "The AI gateway is part of API Management, not a separate offering, and availability varies by service tier. The unified model API and the AI gateway in Microsoft Foundry integration are in preview (as of 2026-09-30).",
+      "tags": [
+        "gateways",
+        "azure",
+        "token-quotas",
+        "mcp"
+      ],
+      "practitionerNote": "The natural choice for Azure OpenAI / Foundry estates that already run APIM, especially to spread PTU and pay-as-you-go capacity across many apps. Check that the policies you need are available in your APIM tier, and note that semantic caching needs Azure Managed Redis or another RediSearch-compatible cache.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Instances deploy to chosen Azure regions; the self-hosted gateway (Developer/Premium) keeps traffic in customer environments, but it still sends config, heartbeat and optional telemetry traffic to Azure.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Managed Azure service; the containerized self-hosted gateway enables hybrid and multicloud data planes.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Logs prompts, completions and token usage to Azure Monitor / Application Insights, with a built-in token dashboard.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Azure is covered by the Azure SOC 2 Type 2 attestation; per-service scope is in the audit report.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Azure is covered by the Azure ISO/IEC 27001:2022 certificate; per-service scope is in the certificate.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO 42001 scope for API Management not confirmed in the sources reviewed."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "API gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Azure service; policies are APIM-specific, so there is Azure lock-in.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "cloudflare-ai-gateway",
+      "name": "Cloudflare AI Gateway",
+      "category": "gateways",
+      "type": "vendor",
+      "vendor": "Cloudflare",
+      "description": "Edge-hosted AI gateway adding analytics, logging, caching, rate limiting, model fallback, DLP and guardrails in front of LLM providers.",
+      "strengths": [
+        "Core analytics, caching and rate limiting free",
+        "Dynamic routing with model fallback",
+        "Per-request log and payload opt-out"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://developers.cloudflare.com/ai-gateway/",
+      "pricing": "Core features (analytics, caching, rate limiting) free on all plans; guardrails billed via Workers AI tokens; 5% fee on Unified Billing credits; Logpush on paid plans ($0.05/million beyond 10M/month).",
+      "pricingModel": "freemium",
+      "status": "active",
+      "statusNote": "Gateways first created on or after 2026-09-24 use Workers Logs pricing and retention; older customers stay on Legacy Logs.",
+      "tags": [
+        "gateways",
+        "edge",
+        "caching",
+        "observability"
+      ],
+      "practitionerNote": "The cheapest way to add caching, rate limits and usage analytics in front of LLM providers, especially for apps already on Workers. Logs capture full prompts and responses by default, so turn off payload logging where privacy rules require it.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Runs on Cloudflare's global network; the AI Gateway docs reviewed do not document regional processing or storage controls."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Fully managed Cloudflare service; no self-hosted option.",
+          "sourceUrl": "https://developers.cloudflare.com/ai-gateway/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Request logs record prompt, response, provider, tokens, cost, status, DLP and guardrail actions, and can be disabled per gateway or per request.",
+          "sourceUrl": "https://developers.cloudflare.com/ai-gateway/observability/logging/"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "AI Gateway is explicitly listed in Cloudflare's SOC 2 Type II scope (Developer Platform).",
+          "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/soc-2/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "ISO 27001:2022 covers the Cloudflare global cloud platform; AI Gateway is not named individually.",
+          "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/"
+        },
+        "iso42001": {
+          "status": "no",
+          "detail": "Cloudflare's ISO page lists 27001, 27018 and 27701 only; no ISO 42001.",
+          "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Proxy and observability infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary managed service; configuration is Cloudflare-specific.",
+          "sourceUrl": "https://developers.cloudflare.com/ai-gateway/reference/pricing/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "agentgateway",
+      "name": "agentgateway",
+      "category": "gateways",
+      "type": "opensource",
+      "vendor": "Linux Foundation",
+      "description": "Rust proxy for agent traffic that governs MCP, A2A and LLM calls with CEL-based RBAC, budgets and guardrails; runs standalone or on Kubernetes.",
+      "strengths": [
+        "MCP, A2A and LLM in one proxy",
+        "CEL policy engine for fine-grained RBAC",
+        "Kubernetes Gateway API controller built in"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/agentgateway/agentgateway",
+      "version": "1.5.0",
+      "lastRelease": "2026-08-27",
+      "docsUrl": "https://agentgateway.dev/docs/",
+      "pricingModel": "free",
+      "languages": [
+        "Rust"
+      ],
+      "status": "active",
+      "tags": [
+        "gateways",
+        "mcp",
+        "a2a",
+        "kubernetes"
+      ],
+      "practitionerNote": "A strong vendor-neutral pick for Kubernetes platform teams that want one policy point for agent tool calls and LLM traffic. It moves quickly and v1.5.0 had breaking changes (e.g. JWT issuer/audience now required), so read the release notes before upgrading.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted binary or Kubernetes deployment; operator controls placement.",
+          "sourceUrl": "https://agentgateway.dev/docs/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Standalone binary/Docker or Kubernetes with a built-in control plane and Gateway API.",
+          "sourceUrl": "https://agentgateway.dev/docs/",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Access logs (incl. token timing), distributed traces and a UI logs view; no dedicated audit-log product.",
+          "sourceUrl": "https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Network proxy component, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Apache 2.0 — permissive, OSI-approved; Linux Foundation project.",
+          "sourceUrl": "https://raw.githubusercontent.com/agentgateway/agentgateway/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "docker-mcp-gateway",
+      "name": "Docker MCP Gateway",
+      "category": "gateways",
+      "type": "opensource",
+      "vendor": "Docker",
+      "description": "Open-source docker mcp CLI plugin that proxies MCP servers run in isolated containers, with central secrets, OAuth and call tracing.",
+      "strengths": [
+        "Runs MCP servers in isolated containers",
+        "Secrets and OAuth handled centrally",
+        "Shareable server profiles via OCI registries"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/docker/mcp-gateway",
+      "version": "0.44.1",
+      "docsUrl": "https://docs.docker.com/ai/mcp-gateway/",
+      "pricingModel": "freemium",
+      "languages": [
+        "Go"
+      ],
+      "status": "active",
+      "statusNote": "The OSS CLI plugin is generally available; the MCP Gateway as part of Docker AI Governance is invite-only (as of 2026-09-30).",
+      "tags": [
+        "gateways",
+        "mcp",
+        "containers",
+        "secrets"
+      ],
+      "practitionerNote": "A good fit for developer workstations and CI that already use Docker Desktop, because MCP servers run sandboxed instead of as raw npx/uvx processes. Central org-wide policy needs the invite-only Docker AI Governance offering.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Runs locally or on operator hosts via Docker; MCP servers execute in local containers.",
+          "sourceUrl": "https://docs.docker.com/ai/mcp-gateway/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Runs in Docker Desktop via MCP Toolkit, or as a standalone CLI plugin binary.",
+          "sourceUrl": "https://docs.docker.com/ai/mcp-gateway/",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Built-in logging and call tracing of MCP operations; no dedicated audit-log store documented.",
+          "sourceUrl": "https://github.com/docker/mcp-gateway"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS CLI; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS CLI; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS CLI; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "MCP proxy tooling, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT — permissive, OSI-approved (copyright Docker).",
+          "sourceUrl": "https://raw.githubusercontent.com/docker/mcp-gateway/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "microsoft-entra-agent-id",
+      "name": "Microsoft Entra Agent ID",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Entra identity platform for AI agents: agent identities and blueprints with Conditional Access, ID Protection and governance.",
+      "strengths": [
+        "Agent identity blueprints for fleets",
+        "Conditional Access templates for agents",
+        "Federates Bedrock and n8n agents"
+      ],
+      "clouds": [
+        "azure"
+      ],
+      "docsUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
+      "pricing": "Agent ID is available to all Microsoft Entra customers; Conditional Access, ID Protection and governance for agents require a Microsoft Agent 365 license (included in Microsoft 365 E7).",
+      "pricingModel": "freemium",
+      "tags": [
+        "agent-identity",
+        "azure",
+        "conditional-access",
+        "non-human-identity"
+      ],
+      "practitionerNote": "Default choice for Microsoft-centric tenants; budget for Agent 365 licensing, because the base Agent ID platform does not include agent Conditional Access or access packages.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Agent ID docs reviewed do not state agent-specific data residency controls; follows the Entra tenant's home geography (not confirmed for Agent ID)."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Microsoft-managed SaaS within Microsoft Entra; third-party agents integrate via the Auth SDK sidecar or workload identity federation.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "All agent authentication and activity is logged in Entra sign-in and audit logs.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id"
+        },
+        "soc2": {
+          "status": "partial",
+          "detail": "Microsoft Entra ID is listed in Microsoft's Office 365 SOC 2 Type 2 scope for GCC/GCC High/DoD; Agent ID is not listed separately.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2"
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Azure ISO 27001 page lists service families (Azure, Microsoft 365) without naming Entra Agent ID; scope detail sits in the Service Trust Portal."
+        },
+        "iso42001": {
+          "status": "no",
+          "detail": "Not among the Microsoft AI services listed in scope for ISO/IEC 42001 (list covers Copilot, Copilot Studio, Foundry and others).",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Microsoft SaaS tied to Entra and Agent 365 licensing.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "okta-for-ai-agents",
+      "name": "Okta for AI Agents",
+      "type": "commercial",
+      "vendor": "Okta",
+      "description": "Discovers, registers and governs AI agents in Okta Universal Directory with scoped tokens, vaulted secrets and access reviews.",
+      "strengths": [
+        "Imports Agentforce, Bedrock, ServiceNow agents",
+        "Shadow agent detection via OAuth grants",
+        "Agent SSO via Cross App Access"
+      ],
+      "websiteUrl": "https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/",
+      "docsUrl": "https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm",
+      "pricing": "Okta for AI Agents is a separate paid subscription; Agent SSO is included in core Okta SSO at no additional cost.",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "okta",
+        "cross-app-access",
+        "governance"
+      ],
+      "practitionerNote": "Strongest fit where Okta is already the workforce IdP; start with the no-cost Agent SSO, then weigh the paid suite for discovery, certification reviews and the agent kill switch.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Agent-specific data residency is not described in the GA announcement or AI agents docs reviewed."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Delivered as part of Okta's cloud identity service; no self-hosted option described.",
+          "sourceUrl": "https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Audit via System Log events, plus SIEM telemetry streaming for agent activity.",
+          "sourceUrl": "https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Okta trust center lists SOC 2; product-level scope is not broken out on the overview.",
+          "sourceUrl": "https://security.okta.com/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Okta trust center lists ISO/IEC 27001:2022; product-level scope is not broken out on the overview.",
+          "sourceUrl": "https://security.okta.com/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not listed on the Okta trust center overview."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "auth0-for-ai-agents",
+      "name": "Auth0 for AI Agents",
+      "type": "commercial",
+      "vendor": "Okta (Auth0)",
+      "description": "Developer identity for AI agents: user login, Token Vault for third-party APIs, CIBA human approvals and fine-grained authorization for RAG.",
+      "strengths": [
+        "Token Vault with 35+ integrations",
+        "CIBA async human-in-the-loop approvals",
+        "FGA for RAG document filtering"
+      ],
+      "websiteUrl": "https://auth0.com/blog/auth0-for-ai-agents-generally-available/",
+      "docsUrl": "https://auth0.com/ai/docs",
+      "languages": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ],
+      "pricing": "Free plan includes Secure Agentic AI workflows; add-on for Essentials/Professional adds 50% to the base price with unlimited Token Vault and all forms of CIBA.",
+      "pricingModel": "freemium",
+      "tags": [
+        "agent-identity",
+        "auth0",
+        "oauth",
+        "rag"
+      ],
+      "practitionerNote": "Best for teams building user-facing agents that call APIs on a user's behalf; it secures agent-to-API delegation, not enterprise-wide agent discovery or governance.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Data residency options for the AI agents features are not stated on the GA announcement or pricing page."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Delivered as part of the Auth0 cloud identity platform with SDKs for LangChain, LlamaIndex, Vercel AI SDK and Cloudflare Agents.",
+          "sourceUrl": "https://auth0.com/blog/auth0-for-ai-agents-generally-available/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Audit logging for agent flows is not described in the GA announcement or docs landing page reviewed."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "auth0.com/security redirects to Okta's trust center, which lists SOC 2 across Okta and Auth0; per-product scope not shown on the overview.",
+          "sourceUrl": "https://security.okta.com/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Okta trust center lists ISO/IEC 27001:2022 for the Okta and Auth0 offerings; per-product scope not shown on the overview.",
+          "sourceUrl": "https://security.okta.com/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not listed on the Okta/Auth0 trust center overview."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://auth0.com/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "idira-secure-ai-agents",
+      "name": "Idira Secure AI Agents",
+      "type": "commercial",
+      "vendor": "Palo Alto Networks (Idira)",
+      "description": "Discovers AI agents across SaaS, cloud and dev environments and brokers their MCP tool access with just-in-time privilege and audit.",
+      "strengths": [
+        "Agent Identity Broker for MCP",
+        "Just-in-time, zero standing privileges",
+        "PAM heritage from CyberArk"
+      ],
+      "websiteUrl": "https://www.paloaltonetworks.com/idira",
+      "docsUrl": "https://www.paloaltonetworks.com/idira",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "privileged-access",
+        "mcp",
+        "idira"
+      ],
+      "practitionerNote": "Fits organisations already on CyberArk PAM that want agent access routed through a broker; the May 2026 Idira rebrand means docs and URLs are still moving.",
+      "statusNote": "CyberArk's platform was rebranded as Idira by Palo Alto Networks in May 2026.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Data residency for Secure AI Agents is not stated on the Idira pages reviewed."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Delivered as part of the Idira identity security platform; agent traffic routed through the Agent Identity Broker. Self-hosted options not stated.",
+          "sourceUrl": "https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Logs capture which agent requested what action and when, via the Identity Broker.",
+          "sourceUrl": "https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/"
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Palo Alto Networks trust center lists SOC 2 Type II for Palo Alto Networks but does not name Idira or CyberArk products in scope."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Palo Alto Networks ISO 27000 page does not list Idira or CyberArk products in scope."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Palo Alto Networks lists ISO 42001, but Idira/CyberArk product scope is not stated."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://www.paloaltonetworks.com/idira",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "ping-identity-for-ai",
+      "name": "Ping Identity for AI",
+      "type": "commercial",
+      "vendor": "Ping Identity",
+      "description": "Runtime identity for AI agents: Agent IAM Core, an Agent Gateway enforcing fine-grained authorization, and agent detection.",
+      "strengths": [
+        "Agent Gateway runtime enforcement",
+        "Delegated scoped tokens, no impersonation",
+        "Detects external agents via bot signals"
+      ],
+      "websiteUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+      "docsUrl": "https://developer.pingidentity.com/identity-for-ai/",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "ping-identity",
+        "mcp",
+        "authorization"
+      ],
+      "practitionerNote": "Worth evaluating when agents must be authorised per request at a gateway; builds on PingOne, so value is highest for existing Ping customers.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Data residency for Identity for AI is not stated in the launch release or docs landing page."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Built on the PingOne cloud platform; GA globally by 2026-03-31.",
+          "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Agent Gateway centralizes monitoring and audit of agent interactions.",
+          "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Ping trust center states SOC 2 Type 2; product scope not specified.",
+          "sourceUrl": "https://www.pingidentity.com/en/legal/trust-center.html"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Ping trust center states ISO 27001 (plus 27018); product scope not specified.",
+          "sourceUrl": "https://www.pingidentity.com/en/legal/trust-center.html"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not mentioned on the Ping trust center."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "sailpoint-agent-identity-security",
+      "name": "SailPoint Agent Identity Security",
+      "type": "commercial",
+      "vendor": "SailPoint",
+      "description": "Discovers and governs AI agents in SailPoint Identity Security Cloud with human owners, access reviews and revocation.",
+      "strengths": [
+        "Aggregates AWS, Azure, GCP, Salesforce agents",
+        "Multiple human owners per agent",
+        "Access certifications for agents"
+      ],
+      "websiteUrl": "https://www.sailpoint.com/products/agent-identity-security",
+      "docsUrl": "https://documentation.sailpoint.com/saas/help/agent/index.html",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "identity-governance",
+        "access-reviews",
+        "sailpoint"
+      ],
+      "practitionerNote": "Governance-first: good for ownership and access certification of agents alongside human identities, not for runtime token issuance or MCP enforcement.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Data residency for agent data is not stated on the product or docs page."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Part of SailPoint Identity Security Cloud (SaaS).",
+          "sourceUrl": "https://www.sailpoint.com/products/agent-identity-security",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Agent-specific audit logging is not described on the product or docs page reviewed."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "SailPoint completes an annual SOC 2 Type 2 audit of Identity Security Cloud.",
+          "sourceUrl": "https://www.sailpoint.com/why-us/trust/cybersecurity"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Identity Security Cloud is ISO 27001 certified.",
+          "sourceUrl": "https://www.sailpoint.com/why-us/trust/cybersecurity"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not mentioned on the SailPoint cybersecurity trust page."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://www.sailpoint.com/products/agent-identity-security",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "saviynt-zuma",
+      "name": "Saviynt Zuma",
+      "type": "commercial",
+      "vendor": "Saviynt",
+      "description": "Saviynt's AI identity security platform: discovers agents, MCP servers and NHIs, maps access paths and governs agent lifecycle.",
+      "strengths": [
+        "Discovers agents, tools and MCP servers",
+        "Maps agent access paths to data",
+        "Broad connectors incl. AgentCore, n8n"
+      ],
+      "websiteUrl": "https://saviynt.com/products/identity-security-for-ai",
+      "docsUrl": "https://saviynt.com/products/identity-security-for-ai",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "non-human-identity",
+        "mcp",
+        "saviynt"
+      ],
+      "practitionerNote": "Broad discovery coverage across agent builders is the draw; confirm which connectors and runtime controls are in your tier, as the product page gives no pricing or deployment detail.",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Saviynt states data residency in 25+ regions for its platform; Zuma-specific residency not stated.",
+          "sourceUrl": "https://saviynt.com/trust-compliance-security"
+        },
+        "deployment": {
+          "status": "unknown",
+          "detail": "The Zuma page does not state deployment model; a free trial is offered.",
+          "models": []
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Audit logging is not described on the Zuma page."
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Saviynt holds a SOC 2 Type II report (company-level; Zuma scope not stated).",
+          "sourceUrl": "https://saviynt.com/trust-compliance-security"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Saviynt is ISO 27001:2022 certified (company-level; Zuma scope not stated).",
+          "sourceUrl": "https://saviynt.com/trust-compliance-security"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not mentioned on the Saviynt trust page."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://saviynt.com/products/identity-security-for-ai",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "aembit-iam-for-agentic-ai",
+      "name": "Aembit IAM for Agentic AI",
+      "type": "commercial",
+      "vendor": "Aembit",
+      "description": "Policy-based, just-in-time access for AI agents via an MCP Authorization Server and MCP Identity Gateway with credential injection.",
+      "strengths": [
+        "Blended agent-plus-human identity policy",
+        "No standing credentials for agents",
+        "MCP Identity Gateway credential exchange"
+      ],
+      "websiteUrl": "https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/",
+      "docsUrl": "https://docs.aembit.io/",
+      "pricing": "Starter free (3 agents); Teams $20/agent/month (10 to 500 agents); Enterprise custom.",
+      "pricingModel": "freemium",
+      "tags": [
+        "agent-identity",
+        "mcp",
+        "workload-identity",
+        "just-in-time"
+      ],
+      "practitionerNote": "Good fit for securing agent-to-MCP traffic without handing agents secrets; note the gateway is a self-run Linux VM and free-tier log retention is 24 hours.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Data residency for the managed authorization service is not stated in the GA post or pricing page."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Managed MCP Authorization Server plus a self-hosted Linux VM MCP Identity Gateway; containerized options on roadmap.",
+          "sourceUrl": "https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Structured audit logs that integrate with SIEM; retention 24h (Starter), 7 days (Teams), custom (Enterprise).",
+          "sourceUrl": "https://aembit.io/pricing/"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Aembit states SOC 2 Type II certification.",
+          "sourceUrl": "https://aembit.io/blog/aembit-achieves-iso-27001-certification/"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "ISO/IEC 27001:2022 certified (Sensiba LLP, ANAB-accredited), announced March 2025.",
+          "sourceUrl": "https://aembit.io/blog/aembit-achieves-iso-27001-certification/"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO/IEC 42001 certification found on Aembit's pages reviewed."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://aembit.io/pricing/",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "descope-agentic-identity-hub",
+      "name": "Descope Agentic Identity Hub",
+      "type": "commercial",
+      "vendor": "Descope",
+      "description": "Control plane for AI agent identity: OAuth 2.1 MCP auth, token vault connections, scoped policies and a user-linked audit trail.",
+      "strengths": [
+        "OAuth 2.1 authorization for MCP servers",
+        "Token vault for agent connections",
+        "Enterprise-Managed Authorization (XAA)"
+      ],
+      "websiteUrl": "https://docs.descope.com/agentic-identity-hub",
+      "docsUrl": "https://docs.descope.com/agentic-identity-hub",
+      "pricing": "Free tier includes 2,000 monthly active consents and tokens; Pro from $249/mo and Growth from $799/mo (billed annually); Enterprise custom.",
+      "pricingModel": "freemium",
+      "tags": [
+        "agent-identity",
+        "mcp",
+        "oauth",
+        "descope"
+      ],
+      "practitionerNote": "Practical for teams exposing APIs or MCP servers to agents that need consent and scoped tokens fast; Gateways are still early access, so do not plan runtime enforcement around them yet.",
+      "statusNote": "Gateways feature in early access as of 2026-09-30.",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Multi-region data residency across seven regions (US, EU, UK, Canada, Singapore, Australia, Brazil).",
+          "sourceUrl": "https://www.descope.com/security-compliance"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Descope-hosted SaaS; FedRAMP High authorized.",
+          "sourceUrl": "https://www.descope.com/security-compliance",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Audit trail connects every agent action back to the originating user.",
+          "sourceUrl": "https://docs.descope.com/agentic-identity-hub"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Descope is SOC 2 Type 2 certified.",
+          "sourceUrl": "https://www.descope.com/security-compliance"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Descope is ISO 27001 certified.",
+          "sourceUrl": "https://www.descope.com/security-compliance"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "ISO/IEC 42001 is not mentioned on Descope's security and compliance page."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "sourceUrl": "https://www.descope.com/pricing",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "status": "active",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "id": "google-agent-identity",
+      "name": "Google Agent Identity",
+      "type": "vendor",
+      "vendor": "Google Cloud",
+      "description": "SPIFFE-based cryptographic identity for agents on Gemini Enterprise Agent Platform, usable as an IAM principal with auto-rotated certs.",
+      "strengths": [
+        "SPIFFE IDs as IAM principals",
+        "Auto-rotated 24-hour X.509 certificates",
+        "Works with VPC-SC and PAB"
+      ],
+      "clouds": [
+        "gcp"
+      ],
+      "docsUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+      "pricingModel": "contact",
+      "tags": [
+        "agent-identity",
+        "gcp",
+        "spiffe",
+        "iam"
+      ],
+      "practitionerNote": "Natural choice for agents on Agent Runtime, Gemini Enterprise or Cloud Run; identities are scoped to Google Cloud, so cross-cloud agents still need a broker or federation.",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "Agent Identity overview does not state data residency; governed by the hosting Google Cloud resource location."
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Managed Google Cloud service for Agent Runtime, Gemini Enterprise and Cloud Run agents.",
+          "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Audit logs record actions both when the agent acts as itself and on behalf of an end user.",
+          "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Gemini Enterprise Agent Platform and IAM are in scope for Google Cloud SOC 1/2/3 reports.",
+          "sourceUrl": "https://cloud.google.com/security/compliance/services-in-scope"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Gemini Enterprise Agent Platform and IAM are in scope for ISO 27001/27017/27018.",
+          "sourceUrl": "https://cloud.google.com/security/compliance/services-in-scope"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Google Cloud ISO/IEC 42001 service scope could not be confirmed for Agent Identity."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Google Cloud service; identities tied to Google Cloud IAM.",
+          "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "pydantic-ai",
+      "name": "Pydantic AI",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "Pydantic",
+      "description": "Type-safe Python agent framework from the Pydantic team with model-agnostic providers and durable execution integrations.",
+      "strengths": [
+        "Typed tools, deps and structured outputs",
+        "Temporal/DBOS/Prefect durable execution",
+        "OpenTelemetry tracing via Logfire"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/pydantic/pydantic-ai",
+      "githubStars": 20292,
+      "version": "2.52.0",
+      "lastRelease": "2026-09-29",
+      "docsUrl": "https://pydantic.dev/docs/ai/overview/",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "python",
+        "type-safety",
+        "durable-execution"
+      ],
+      "practitionerNote": "Good fit for Python teams that want typed, testable agent code and to swap model providers by string; pair with Temporal or DBOS for long-running work. v1 still gets security patches (v1.107.7 alongside v2.52.0), so pin a major version deliberately.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted library; operator controls placement and model provider (Logfire cloud is optional and separate).",
+          "sourceUrl": "https://github.com/pydantic/pydantic-ai"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "OSS library run in the operator's own process; no hosted control plane required.",
+          "sourceUrl": "https://github.com/pydantic/pydantic-ai",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "No built-in audit log; OpenTelemetry instrumentation (optionally to Logfire) must be wired up by the operator.",
+          "sourceUrl": "https://pydantic.dev/docs/ai/overview/"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT — permissive, OSI-approved.",
+          "sourceUrl": "https://raw.githubusercontent.com/pydantic/pydantic-ai/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "strands-agents",
+      "name": "Strands Agents",
+      "category": "agents",
+      "type": "opensource",
+      "vendor": "AWS",
+      "description": "Amazon-maintained open-source SDK and harness for building model-driven AI agents in Python and TypeScript.",
+      "strengths": [
+        "Runs in-process, no hosted control plane",
+        "First-class Bedrock, Anthropic, OpenAI, Gemini",
+        "Built-in MCP and multi-agent patterns"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/strands-agents/harness-sdk",
+      "githubStars": 8583,
+      "version": "1.57.1",
+      "lastRelease": "2026-09-25",
+      "docsUrl": "https://strandsagents.com/",
+      "pricingModel": "free",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "clouds": [
+        "aws"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "aws",
+        "mcp",
+        "multi-agent"
+      ],
+      "practitionerNote": "Natural choice for AWS shops that would otherwise hand-write an agent loop, while still allowing non-Bedrock providers. The repo is now a monorepo (strands-agents/sdk-python redirects to harness-sdk) with separate python/, harness-cli/ and mcp/ release tracks, so pin the package you actually use.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Runs in the operator's own process with no hosted control plane; data placement follows the chosen model provider.",
+          "sourceUrl": "https://github.com/strands-agents/harness-sdk"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "OSS SDK embedded in the operator's application; no vendor SaaS required.",
+          "sourceUrl": "https://github.com/strands-agents/harness-sdk",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Observability hooks are provided, but there is no built-in audit log; the operator implements logging.",
+          "sourceUrl": "https://github.com/strands-agents/harness-sdk"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Apache 2.0 (LICENSE.APACHE, copyright Amazon.com, Inc.) — permissive, OSI-approved.",
+          "sourceUrl": "https://raw.githubusercontent.com/strands-agents/harness-sdk/main/LICENSE.APACHE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "claude-agent-sdk",
+      "name": "Claude Agent SDK",
+      "aliases": [
+        "Claude Code SDK"
+      ],
+      "category": "agents",
+      "type": "vendor",
+      "vendor": "Anthropic",
+      "description": "Anthropic's Python/TypeScript library that embeds Claude Code's agent loop, tools, hooks, subagents and MCP in your own app.",
+      "strengths": [
+        "Claude Code tools, hooks and subagents",
+        "Permission modes for tool approval",
+        "Bedrock, Vertex and Foundry auth options"
+      ],
+      "license": "MIT",
+      "licenseWarning": "The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.",
+      "githubUrl": "https://github.com/anthropics/claude-agent-sdk-python",
+      "githubStars": 8196,
+      "version": "0.2.162",
+      "lastRelease": "2026-09-29",
+      "docsUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+      "pricingModel": "paid",
+      "languages": [
+        "Python",
+        "TypeScript"
+      ],
+      "status": "active",
+      "tags": [
+        "agents",
+        "anthropic",
+        "mcp",
+        "coding-agents"
+      ],
+      "practitionerNote": "Fastest path to a Claude Code-grade agent inside your own process, but it is Claude-only and usage is billed through the Anthropic API or the Bedrock/Vertex/Foundry route you configure. Anthropic does not allow third-party products to offer claude.ai login, so plan for API-key auth.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Library runs in the operator's process; prompts go to the chosen provider (Anthropic API, Amazon Bedrock, Google Cloud, Microsoft Foundry), whose residency terms apply.",
+          "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/quickstart"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Library embedded in an application you operate; Anthropic-hosted Managed Agents is a separate product.",
+          "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "No built-in audit log; hooks let the operator intercept and log tool calls and lifecycle events.",
+          "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview"
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; SOC 2 applies to the operator and to the chosen model provider, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 27001 applies to the operator and to the chosen model provider, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation and model provider."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer (GPAI model obligations sit with Anthropic)."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT wrapper, but bundled Claude Code binary and Anthropic Commercial Terms govern use; tied to Claude models.",
+          "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "temporal",
+      "name": "Temporal",
+      "category": "orchestration",
+      "type": "opensource",
+      "vendor": "Temporal Technologies",
+      "description": "Durable execution platform that makes agent loops and workflows survive crashes, timeouts and multi-day human approvals.",
+      "strengths": [
+        "Crash-proof agent loops via workflows",
+        "OpenAI Agents SDK, Pydantic AI, ADK integrations",
+        "Self-host MIT server or Temporal Cloud"
+      ],
+      "license": "MIT",
+      "githubUrl": "https://github.com/temporalio/temporal",
+      "githubStars": 23389,
+      "version": "1.32.0",
+      "lastRelease": "2026-09-11",
+      "docsUrl": "https://docs.temporal.io/ai",
+      "websiteUrl": "https://temporal.io/",
+      "pricing": "Temporal Cloud pay-as-you-go from $50 per million actions (volume discounts to $25), plus storage; $150 trial credits for 90 days.",
+      "pricingModel": "freemium",
+      "languages": [
+        "Python",
+        "TypeScript",
+        "Go",
+        "Java",
+        "Rust"
+      ],
+      "status": "active",
+      "tags": [
+        "orchestration",
+        "durable-execution",
+        "workflows",
+        "human-in-the-loop"
+      ],
+      "practitionerNote": "Use when agents must run for hours or days, pause for approvals, and resume exactly after failures; it adds a workflow-determinism discipline teams must learn. In the OpenAI Agents SDK integration, sandbox support is pre-release and streaming is experimental.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Self-hosted server runs anywhere; Temporal Cloud lets customers pick AWS or GCP regions per namespace, with multi-region replication.",
+          "sourceUrl": "https://docs.temporal.io/cloud/regions"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "MIT server for self-hosting, or managed Temporal Cloud SaaS.",
+          "sourceUrl": "https://temporal.io/pricing",
+          "models": [
+            "self-hosted",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial",
+          "detail": "Temporal Cloud audit logs cover control-plane events only (users, API keys, namespaces); data-plane events need Export.",
+          "sourceUrl": "https://docs.temporal.io/cloud/audit-logging"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "Temporal Cloud is SOC 2 Type II certified; not applicable to self-hosted OSS.",
+          "sourceUrl": "https://temporal.io/security"
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Not listed on Temporal's security page or Trust Center (SOC 2 Type II, HIPAA, GDPR, CCPA shown)."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No ISO 42001 certification listed on Temporal's security page or Trust Center."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Workflow orchestration infrastructure, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "MIT server — permissive, OSI-approved; Temporal Cloud is proprietary SaaS.",
+          "sourceUrl": "https://raw.githubusercontent.com/temporalio/temporal/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "microsoft-purview-dspm",
+      "name": "Microsoft Purview Data Security Posture Management",
+      "aliases": [
+        "Microsoft Purview Data Security Posture Management for AI",
+        "DSPM for AI"
+      ],
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "Microsoft",
+      "description": "Purview posture tool that discovers AI apps and agents, flags oversharing and risky prompts, and applies DLP to AI use.",
+      "strengths": [
+        "AI observability for Copilot and agents",
+        "Oversharing risk assessments for SharePoint",
+        "One-click DLP policies for AI prompts"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
+      "websiteUrl": "https://purview.microsoft.com/",
+      "pricingModel": "paid",
+      "clouds": [
+        "azure"
+      ],
+      "status": "active",
+      "statusNote": "The standalone DSPM for AI experience is now labelled \"classic\" and replaced by the unified DSPM, which receives new features (Microsoft Learn, checked 2026-09-30).",
+      "tags": [
+        "governance",
+        "azure",
+        "dspm",
+        "data-security",
+        "copilot"
+      ],
+      "practitionerNote": "Strongest where Microsoft 365 Copilot, Copilot Studio and Foundry agents dominate; third-party AI sites need the Purview browser extension and device onboarding. Full capability requires Microsoft 365 E5 or Purview Suite licensing, and some options use pay-as-you-go billing.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "partial",
+          "detail": "Follows Microsoft 365 data location commitments (customer data kept in chosen geography); no customer-hosted option.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Microsoft-managed SaaS within the Microsoft Purview portal.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "AI prompts/responses and agent interactions captured in the Purview unified audit log and activity explorer.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview"
+        },
+        "soc2": {
+          "status": "partial",
+          "detail": "Office 365 SOC 2 Type 2 covers Compliance Manager (commercial) and the Purview portal in GCC/GCC High/DoD; DSPM not named separately.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "Microsoft Purview portal is listed in the Office 365 ISO 27001 in-scope services (commercial and government).",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+        },
+        "iso42001": {
+          "status": "no",
+          "detail": "Microsoft's ISO 42001 in-scope list covers Copilot, Copilot Studio, Foundry and Security Copilot, not Purview.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Data security/compliance tooling, not itself a high-risk AI system; its Compliance Manager templates help map AI regulations."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary Microsoft SaaS tied to Microsoft 365 E5/Purview Suite licensing; no OSS path.",
+          "sourceUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-get-started",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "zenity",
+      "name": "Zenity",
+      "category": "governance",
+      "type": "commercial",
+      "vendor": "Zenity",
+      "description": "AI agent security platform combining agent posture management, runtime detection and response, and inline blocking.",
+      "strengths": [
+        "AISPM checks agent config pre-launch",
+        "Runtime boundaries block unsafe actions",
+        "Covers Copilot Studio, Agentforce, Bedrock"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://zenity.io/platform",
+      "websiteUrl": "https://zenity.io/",
+      "status": "active",
+      "tags": [
+        "governance",
+        "agent-security",
+        "aispm",
+        "runtime-protection"
+      ],
+      "practitionerNote": "Fits security teams that must govern agents built across several SaaS and cloud agent platforms rather than one stack. Compliance reports are shared on request only, so budget time for vendor review.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "unknown",
+          "detail": "No hosting-region information published on the Zenity platform or Trust Center pages."
+        },
+        "deployment": {
+          "status": "unknown",
+          "detail": "Platform page describes coverage of SaaS, cloud, custom stacks and endpoints but not Zenity's own delivery model.",
+          "models": []
+        },
+        "auditLogging": {
+          "status": "yes",
+          "detail": "Advertises real-time, audit-ready logs of agent activity mapped to policy violations.",
+          "sourceUrl": "https://zenity.io/use-cases/business-needs/ai-agents-compliance"
+        },
+        "soc2": {
+          "status": "yes",
+          "detail": "SOC 2 Type II report listed on Trust Center (available on request).",
+          "sourceUrl": "https://zenity.io/company/trust-center"
+        },
+        "iso27001": {
+          "status": "yes",
+          "detail": "ISO 27001 (and ISO 27701) listed on Trust Center.",
+          "sourceUrl": "https://zenity.io/company/trust-center"
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "Not listed on Zenity's Trust Center."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Security tooling for AI agents, not itself a high-risk AI system; no EU AI Act mapping published."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary SaaS; no OSS path.",
+          "sourceUrl": "https://zenity.io/platform",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "prisma-airs",
+      "name": "Prisma AIRS",
+      "category": "governance",
+      "type": "vendor",
+      "vendor": "Palo Alto Networks",
+      "description": "Palo Alto Networks AI security platform for agent discovery, model scanning, red teaming, posture and runtime protection.",
+      "strengths": [
+        "Runtime security via API or network intercept",
+        "AI red teaming and model scanning",
+        "Agent inventory and posture management"
+      ],
+      "license": "Proprietary",
+      "docsUrl": "https://docs.paloaltonetworks.com/ai-runtime-security",
+      "websiteUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+      "status": "active",
+      "statusNote": "Prisma AIRS 3.0 announced 2026-03-23; its AI Agent Gateway was in limited preview at launch.",
+      "tags": [
+        "governance",
+        "agent-security",
+        "runtime-protection",
+        "red-teaming"
+      ],
+      "practitionerNote": "Best fit for Palo Alto Networks customers who want AI runtime controls in Strata Cloud Manager alongside existing firewalls. It absorbed Protect AI (acquisition closed 2025-07-22) and Portkey's AI gateway (closed 2026-05-29), so expect packaging changes.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "API intercept deployment profile selects region (Americas, EU-Germany, India, Singapore, Japan); some features process out of region.",
+          "sourceUrl": "https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/prisma-airs-supported-regions"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "SaaS API intercept, or network intercept (AI Runtime Firewall) deployed in customer cloud and managed via Strata Cloud Manager.",
+          "sourceUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+          "models": [
+            "saas",
+            "hybrid"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Logging via Strata Logging Service is referenced in docs navigation but audit-log scope was not verified."
+        },
+        "soc2": {
+          "status": "unknown",
+          "detail": "Palo Alto Networks publishes an organisation-level SOC 2+ report; Prisma AIRS product scope not confirmed."
+        },
+        "iso27001": {
+          "status": "unknown",
+          "detail": "Palo Alto Networks lists ISO certifications organisation-wide; Prisma AIRS scope not confirmed."
+        },
+        "iso42001": {
+          "status": "unknown",
+          "detail": "No Prisma AIRS ISO 42001 certification found on the Palo Alto Networks trust center."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Security tooling for AI systems, not itself a high-risk AI system placed on the market."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Proprietary platform tied to the Palo Alto Networks / Strata Cloud Manager ecosystem.",
+          "sourceUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
+    },
+    {
+      "id": "nvidia-nemoclaw",
+      "name": "NVIDIA NemoClaw",
+      "category": "governance",
+      "type": "opensource",
+      "vendor": "NVIDIA",
+      "description": "Open-source reference stack that runs always-on agents like OpenClaw inside NVIDIA OpenShell sandboxes with policy and managed inference.",
+      "strengths": [
+        "OpenShell sandbox with network policy",
+        "Credential custody outside the agent",
+        "Local or remote inference routing"
+      ],
+      "license": "Apache 2.0",
+      "githubUrl": "https://github.com/NVIDIA/NemoClaw",
+      "githubStars": 22609,
+      "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
+      "pricingModel": "free",
+      "status": "active",
+      "statusNote": "Alpha project per the README (checked 2026-09-30): maintainers respond on a best-effort basis; no tagged releases yet.",
+      "tags": [
+        "governance",
+        "sandboxing",
+        "agent-security",
+        "openclaw"
+      ],
+      "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Alpha status and no releases mean it is a pilot tool, not a production control.",
+      "logoKind": "fallback",
+      "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoReviewedAt": "2026-09-30",
+      "publishedAt": "2026-09-30",
+      "governance": {
+        "dataResidency": {
+          "status": "yes",
+          "detail": "Runs on operator hardware; inference goes local (Ollama/vLLM) or to a remote provider the operator selects.",
+          "sourceUrl": "https://docs.nvidia.com/nemoclaw/latest/"
+        },
+        "deployment": {
+          "status": "yes",
+          "detail": "Self-hosted on DGX Spark/Station, Linux, macOS or Windows WSL.",
+          "sourceUrl": "https://docs.nvidia.com/nemoclaw/latest/",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown",
+          "detail": "Audit logging is not described in the NemoClaw docs overview or README."
+        },
+        "soc2": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; SOC 2 applies to the operator's infrastructure, not the package."
+        },
+        "iso27001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; ISO 27001 applies to the operator's ISMS, not the package."
+        },
+        "iso42001": {
+          "status": "not-applicable",
+          "detail": "Self-hosted OSS; ISO 42001 applies to the deploying organisation."
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable",
+          "detail": "Sandboxing runtime component, not an AI system placed on the market; obligations rest with the deployer."
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "detail": "Apache 2.0 — permissive, OSI-approved.",
+          "sourceUrl": "https://raw.githubusercontent.com/NVIDIA/NemoClaw/main/LICENSE",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      },
+      "cloudBadgeReviewedAt": "2026-09-30"
     }
   ]
 }

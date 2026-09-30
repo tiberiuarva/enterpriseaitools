@@ -1,0 +1,84 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "microsoft-agent-365",
+    "name": "Microsoft Agent 365",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Control plane to observe, govern and secure an organization's AI agents via a central registry, Entra, Purview and Defender.",
+    "strengths": [
+      "Central agent registry and agent map",
+      "Entra, Purview and Defender coverage for agents",
+      "Agent activity in Purview unified audit log"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+    "websiteUrl": "https://www.microsoft.com/microsoft-agent-365",
+    "pricing": "$15.00 user/month paid yearly (standalone); included in Microsoft 365 E7 ($99.00 user/month paid yearly).",
+    "pricingModel": "paid",
+    "clouds": [
+      "azure"
+    ],
+    "status": "active",
+    "statusNote": "Generally available for the Commercial segment since 2026-05-01; registry sync with AWS Bedrock and Google Cloud was announced as public preview at GA.",
+    "tags": [
+      "control-planes",
+      "registry",
+      "microsoft-365",
+      "agent-security"
+    ],
+    "practitionerNote": "Strongest fit for Microsoft 365 / E5 tenants that want agent inventory and policy in the same Entra, Purview and Defender stack as users; licensing is per user, so model cost against everyone who owns or uses managed agents.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Agent 365 overview and GA post do not state data-residency commitments specific to Agent 365."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Microsoft-hosted cloud service managed from the Microsoft 365 admin center; no self-hosted option.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Agent invocations, tool calls, inference calls and guardrail events are recorded in the Microsoft 365 (Purview) audit log.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/purview/audit-log-activities"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "No Agent 365-specific SOC 2 scope statement found in the reviewed sources."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "No Agent 365-specific ISO 27001 scope statement found in the reviewed sources."
+      },
+      "iso42001": {
+        "status": "no",
+        "detail": "Agent 365 is not in Microsoft's published list of AI services in scope for ISO 42001 (as of review).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Governance and security tooling for agents, not itself an AI system placed on the market; obligations rest with agent providers and deployers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Microsoft SaaS licensed per user; ties agent governance to the Microsoft 365 security stack.",
+        "sourceUrl": "https://www.microsoft.com/microsoft-agent-365",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

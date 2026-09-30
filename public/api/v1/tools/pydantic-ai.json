@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "pydantic-ai",
+    "name": "Pydantic AI",
+    "category": "agents",
+    "type": "opensource",
+    "vendor": "Pydantic",
+    "description": "Type-safe Python agent framework from the Pydantic team with model-agnostic providers and durable execution integrations.",
+    "strengths": [
+      "Typed tools, deps and structured outputs",
+      "Temporal/DBOS/Prefect durable execution",
+      "OpenTelemetry tracing via Logfire"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/pydantic/pydantic-ai",
+    "githubStars": 20292,
+    "version": "2.52.0",
+    "lastRelease": "2026-09-29",
+    "docsUrl": "https://pydantic.dev/docs/ai/overview/",
+    "pricingModel": "freemium",
+    "languages": [
+      "Python"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "python",
+      "type-safety",
+      "durable-execution"
+    ],
+    "practitionerNote": "Good fit for Python teams that want typed, testable agent code and to swap model providers by string; pair with Temporal or DBOS for long-running work. v1 still gets security patches (v1.107.7 alongside v2.52.0), so pin a major version deliberately.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted library; operator controls placement and model provider (Logfire cloud is optional and separate).",
+        "sourceUrl": "https://github.com/pydantic/pydantic-ai"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "OSS library run in the operator's own process; no hosted control plane required.",
+        "sourceUrl": "https://github.com/pydantic/pydantic-ai",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "No built-in audit log; OpenTelemetry instrumentation (optionally to Logfire) must be wired up by the operator.",
+        "sourceUrl": "https://pydantic.dev/docs/ai/overview/"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://raw.githubusercontent.com/pydantic/pydantic-ai/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

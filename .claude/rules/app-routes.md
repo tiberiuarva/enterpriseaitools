@@ -37,7 +37,9 @@ subagent before touching code.
 
 ## Hub routes (canonical list)
 
-`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/governance/`,
-`/assistants/`, `/updates/`, `/about/`. Renaming or removing any of these is a
+`/`, `/platforms/`, `/agents/`, `/orchestration/`, `/gateways/`,
+`/observability/`, `/control-planes/`, `/agent-identity/`, `/governance/`,
+`/assistants/`, `/always-on-agents/`, `/updates/`, `/about/`. Category labels,
+order and hub copy come from `lib/categories.ts`. Renaming or removing any of these is a
 breaking SEO change — open a milestone and coordinate with redirects in
 `staticwebapp.config.json`.

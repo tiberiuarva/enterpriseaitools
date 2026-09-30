@@ -1,0 +1,81 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "ping-identity-for-ai",
+    "name": "Ping Identity for AI",
+    "type": "commercial",
+    "vendor": "Ping Identity",
+    "description": "Runtime identity for AI agents: Agent IAM Core, an Agent Gateway enforcing fine-grained authorization, and agent detection.",
+    "strengths": [
+      "Agent Gateway runtime enforcement",
+      "Delegated scoped tokens, no impersonation",
+      "Detects external agents via bot signals"
+    ],
+    "websiteUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+    "docsUrl": "https://developer.pingidentity.com/identity-for-ai/",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "ping-identity",
+      "mcp",
+      "authorization"
+    ],
+    "practitionerNote": "Worth evaluating when agents must be authorised per request at a gateway; builds on PingOne, so value is highest for existing Ping customers.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Data residency for Identity for AI is not stated in the launch release or docs landing page."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Built on the PingOne cloud platform; GA globally by 2026-03-31.",
+        "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Agent Gateway centralizes monitoring and audit of agent interactions.",
+        "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Ping trust center states SOC 2 Type 2; product scope not specified.",
+        "sourceUrl": "https://www.pingidentity.com/en/legal/trust-center.html"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Ping trust center states ISO 27001 (plus 27018); product scope not specified.",
+        "sourceUrl": "https://www.pingidentity.com/en/legal/trust-center.html"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not mentioned on the Ping trust center."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

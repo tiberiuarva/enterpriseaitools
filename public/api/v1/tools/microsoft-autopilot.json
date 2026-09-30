@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "microsoft-autopilot",
+    "name": "Microsoft Autopilot",
+    "aliases": [
+      "Microsoft Scout"
+    ],
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Always-on Copilot agent with its own Entra identity that works in Teams, Outlook and M365 on a user's behalf; built on OpenClaw.",
+    "strengths": [
+      "Own governed Entra ID identity",
+      "Purview DLP and sensitivity labels enforced",
+      "Human sign-off for sensitive actions"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+    "websiteUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+    "pricing": "Usage-based billing rather than a per-user license (per Microsoft's 2026-09-25 announcement); rates not published.",
+    "pricingModel": "paid",
+    "clouds": [
+      "azure"
+    ],
+    "status": "active",
+    "statusNote": "Private preview: announced as Microsoft Scout on 2026-06-02 for Frontier program organisations, renamed Autopilot on 2026-09-25 with private preview expanding at end of September 2026. Not Windows Autopilot (device provisioning).",
+    "tags": [
+      "always-on-agents",
+      "microsoft-365",
+      "copilot",
+      "preview"
+    ],
+    "practitionerNote": "Only for Frontier-enrolled tenants for now; preview prerequisites include Intune configuration and opt-in attestation. Plan identity, Purview policy and usage-based cost controls before piloting, since the agent acts continuously under its own identity.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Microsoft says the agent lives in the customer tenant, but no data-residency commitment is published for the preview."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Microsoft-managed service running across cloud, desktop and web, inside the customer's Microsoft 365 tenant.",
+        "sourceUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Microsoft states it has 'permissions, audit and governance behind it'; the specific audit log surface for the preview is not documented.",
+        "sourceUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Private-preview service; inclusion in Microsoft 365 compliance scope not yet published."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "detail": "General-purpose workplace agent; risk class depends on use and the vendor has not published an EU AI Act classification.",
+        "role": "unknown"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Microsoft service built on the MIT-licensed OpenClaw runtime; tied to Microsoft 365 and usage-based billing.",
+        "sourceUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30"
+  }
+}

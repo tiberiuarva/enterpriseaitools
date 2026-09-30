@@ -1,0 +1,90 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "braintrust",
+    "name": "Braintrust",
+    "category": "observability",
+    "type": "commercial",
+    "vendor": "Braintrust",
+    "description": "Commercial AI observability and evaluation platform for tracing agents, running evals and experiments, and building datasets from production logs.",
+    "strengths": [
+      "SDKs for TypeScript, Python, Go, Java, Ruby, C#",
+      "Hybrid data plane on AWS, GCP or Azure",
+      "Unlimited users even on free tier"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.braintrust.dev/docs",
+    "websiteUrl": "https://www.braintrust.dev/pricing",
+    "pricing": "Starter $0/month (1 GB processed data, 10k scores, 14-day retention), Pro $249/month (5 GB, 50k scores, 30-day retention), Enterprise custom.",
+    "pricingModel": "freemium",
+    "languages": [
+      "TypeScript",
+      "Python",
+      "Go",
+      "Java",
+      "Ruby",
+      "C#"
+    ],
+    "status": "active",
+    "tags": [
+      "observability",
+      "evaluation",
+      "tracing",
+      "experiments"
+    ],
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "practitionerNote": "Suits eval-heavy teams that want experiments and production logs in one place. For data-sensitive workloads the Enterprise hybrid model keeps traces, datasets and prompts in your cloud while Braintrust runs the UI and auth control plane.",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Enterprise hybrid and self-hosted deployments keep traces, logs, datasets and prompts in the customer's cloud account and region. Hosted-SaaS regions are not stated.",
+        "sourceUrl": "https://www.braintrust.dev/docs/guides/self-hosting"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Hosted SaaS, or Enterprise-only hybrid with a customer data plane (Terraform for AWS, GCP, Azure) and a Braintrust-managed control plane.",
+        "sourceUrl": "https://www.braintrust.dev/docs/guides/self-hosting",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "The security docs mention only monitoring API key usage through activity logs. No dedicated audit-log feature was verified."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Braintrust states it is SOC 2 Type II compliant.",
+        "sourceUrl": "https://www.braintrust.dev/docs/security"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "The Braintrust security docs do not mention ISO 27001, and the Trust Center did not render certification details."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "The Braintrust security docs do not mention ISO 42001."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS. Hybrid deployment still depends on the Braintrust-managed control plane.",
+        "sourceUrl": "https://www.braintrust.dev/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

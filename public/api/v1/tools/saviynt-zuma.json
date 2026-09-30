@@ -1,0 +1,78 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "saviynt-zuma",
+    "name": "Saviynt Zuma",
+    "type": "commercial",
+    "vendor": "Saviynt",
+    "description": "Saviynt's AI identity security platform: discovers agents, MCP servers and NHIs, maps access paths and governs agent lifecycle.",
+    "strengths": [
+      "Discovers agents, tools and MCP servers",
+      "Maps agent access paths to data",
+      "Broad connectors incl. AgentCore, n8n"
+    ],
+    "websiteUrl": "https://saviynt.com/products/identity-security-for-ai",
+    "docsUrl": "https://saviynt.com/products/identity-security-for-ai",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "non-human-identity",
+      "mcp",
+      "saviynt"
+    ],
+    "practitionerNote": "Broad discovery coverage across agent builders is the draw; confirm which connectors and runtime controls are in your tier, as the product page gives no pricing or deployment detail.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Saviynt states data residency in 25+ regions for its platform; Zuma-specific residency not stated.",
+        "sourceUrl": "https://saviynt.com/trust-compliance-security"
+      },
+      "deployment": {
+        "status": "unknown",
+        "detail": "The Zuma page does not state deployment model; a free trial is offered.",
+        "models": []
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Audit logging is not described on the Zuma page."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Saviynt holds a SOC 2 Type II report (company-level; Zuma scope not stated).",
+        "sourceUrl": "https://saviynt.com/trust-compliance-security"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Saviynt is ISO 27001:2022 certified (company-level; Zuma scope not stated).",
+        "sourceUrl": "https://saviynt.com/trust-compliance-security"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not mentioned on the Saviynt trust page."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://saviynt.com/products/identity-security-for-ai",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

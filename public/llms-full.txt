@@ -1,6 +1,6 @@
 # enterpriseai.tools — full content
 
-> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 48 tools across 4 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-09-30.
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 101 tools across 9 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-09-30.
 
 Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
@@ -97,6 +97,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - License risk: yes (risk: low) — Apache-2.0 — permissive, OSI-approved. [source: https://github.com/i-am-bee/beeai-framework/blob/main/LICENSE]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://framework.beeai.dev/introduction/welcome | repo: https://github.com/i-am-bee/beeai-framework
+
+### Claude Agent SDK (formerly Claude Code SDK)
+- Page: https://www.enterpriseai.tools/tools/claude-agent-sdk/
+- Vendor: Anthropic | Type: vendor | License: MIT (caution: The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.)
+- Status: active | Version: 0.2.162 | Last release: 2026-09-29
+- Anthropic's Python/TypeScript library that embeds Claude Code's agent loop, tools, hooks, subagents and MCP in your own app.
+- Strengths: Claude Code tools, hooks and subagents; Permission modes for tool approval; Bedrock, Vertex and Foundry auth options
+- Governance posture:
+  - Data residency: partial — Library runs in the operator's process; prompts go to the chosen provider (Anthropic API, Amazon Bedrock, Google Cloud, Microsoft Foundry), whose residency terms apply. [source: https://code.claude.com/docs/en/agent-sdk/quickstart]
+  - Deployment: yes (self-hosted) — Library embedded in an application you operate; Anthropic-hosted Managed Agents is a separate product. [source: https://code.claude.com/docs/en/agent-sdk/overview]
+  - Audit logging: partial — No built-in audit log; hooks let the operator intercept and log tool calls and lifecycle events. [source: https://code.claude.com/docs/en/agent-sdk/overview]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator and to the chosen model provider, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator and to the chosen model provider, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation and model provider.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer (GPAI model obligations sit with Anthropic).
+  - License risk: yes (risk: medium) — MIT wrapper, but bundled Claude Code binary and Anthropic Commercial Terms govern use; tied to Claude models. [source: https://code.claude.com/docs/en/agent-sdk/overview]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://code.claude.com/docs/en/agent-sdk/overview | repo: https://github.com/anthropics/claude-agent-sdk-python
 
 ### CrewAI
 - Page: https://www.enterpriseai.tools/tools/crewai/
@@ -260,6 +278,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://openai.github.io/openai-agents-python/ | repo: https://github.com/openai/openai-agents-python
 
+### Pydantic AI
+- Page: https://www.enterpriseai.tools/tools/pydantic-ai/
+- Vendor: Pydantic | Type: opensource | License: MIT
+- Status: active | Version: 2.52.0 | Last release: 2026-09-29
+- Type-safe Python agent framework from the Pydantic team with model-agnostic providers and durable execution integrations.
+- Strengths: Typed tools, deps and structured outputs; Temporal/DBOS/Prefect durable execution; OpenTelemetry tracing via Logfire
+- Governance posture:
+  - Data residency: yes — Self-hosted library; operator controls placement and model provider (Logfire cloud is optional and separate). [source: https://github.com/pydantic/pydantic-ai]
+  - Deployment: yes (self-hosted) — OSS library run in the operator's own process; no hosted control plane required. [source: https://github.com/pydantic/pydantic-ai]
+  - Audit logging: partial — No built-in audit log; OpenTelemetry instrumentation (optionally to Logfire) must be wired up by the operator. [source: https://pydantic.dev/docs/ai/overview/]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/pydantic/pydantic-ai/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://pydantic.dev/docs/ai/overview/ | repo: https://github.com/pydantic/pydantic-ai
+
 ### Semantic Kernel
 - Page: https://www.enterpriseai.tools/tools/semantic-kernel/
 - Vendor: Microsoft | Type: opensource | License: MIT
@@ -277,6 +313,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://raw.githubusercontent.com/microsoft/semantic-kernel/main/LICENSE]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://learn.microsoft.com/semantic-kernel/ | repo: https://github.com/microsoft/semantic-kernel
+
+### Strands Agents
+- Page: https://www.enterpriseai.tools/tools/strands-agents/
+- Vendor: AWS | Type: opensource | License: Apache 2.0
+- Status: active | Version: 1.57.1 | Last release: 2026-09-25
+- Amazon-maintained open-source SDK and harness for building model-driven AI agents in Python and TypeScript.
+- Strengths: Runs in-process, no hosted control plane; First-class Bedrock, Anthropic, OpenAI, Gemini; Built-in MCP and multi-agent patterns
+- Governance posture:
+  - Data residency: yes — Runs in the operator's own process with no hosted control plane; data placement follows the chosen model provider. [source: https://github.com/strands-agents/harness-sdk]
+  - Deployment: yes (self-hosted) — OSS SDK embedded in the operator's application; no vendor SaaS required. [source: https://github.com/strands-agents/harness-sdk]
+  - Audit logging: partial — Observability hooks are provided, but there is no built-in audit log; the operator implements logging. [source: https://github.com/strands-agents/harness-sdk]
+  - SOC 2: not-applicable — Self-hosted library; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted library; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted library; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache 2.0 (LICENSE.APACHE, copyright Amazon.com, Inc.) — permissive, OSI-approved. [source: https://raw.githubusercontent.com/strands-agents/harness-sdk/main/LICENSE.APACHE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://strandsagents.com/ | repo: https://github.com/strands-agents/harness-sdk
 
 ## AI Orchestration
 
@@ -478,7 +532,591 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://rivet.ironcladapp.com/ | repo: https://github.com/Ironclad/rivet
 
-## AI Governance
+### Temporal
+- Page: https://www.enterpriseai.tools/tools/temporal/
+- Vendor: Temporal Technologies | Type: opensource | License: MIT
+- Status: active | Version: 1.32.0 | Last release: 2026-09-11
+- Durable execution platform that makes agent loops and workflows survive crashes, timeouts and multi-day human approvals.
+- Strengths: Crash-proof agent loops via workflows; OpenAI Agents SDK, Pydantic AI, ADK integrations; Self-host MIT server or Temporal Cloud
+- Governance posture:
+  - Data residency: yes — Self-hosted server runs anywhere; Temporal Cloud lets customers pick AWS or GCP regions per namespace, with multi-region replication. [source: https://docs.temporal.io/cloud/regions]
+  - Deployment: yes (self-hosted, saas) — MIT server for self-hosting, or managed Temporal Cloud SaaS. [source: https://temporal.io/pricing]
+  - Audit logging: partial — Temporal Cloud audit logs cover control-plane events only (users, API keys, namespaces); data-plane events need Export. [source: https://docs.temporal.io/cloud/audit-logging]
+  - SOC 2: yes — Temporal Cloud is SOC 2 Type II certified; not applicable to self-hosted OSS. [source: https://temporal.io/security]
+  - ISO 27001: unknown — Not listed on Temporal's security page or Trust Center (SOC 2 Type II, HIPAA, GDPR, CCPA shown).
+  - ISO 42001: unknown — No ISO 42001 certification listed on Temporal's security page or Trust Center.
+  - EU AI Act: not-applicable (role: not-applicable) — Workflow orchestration infrastructure, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT server — permissive, OSI-approved; Temporal Cloud is proprietary SaaS. [source: https://raw.githubusercontent.com/temporalio/temporal/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.temporal.io/ai | site: https://temporal.io/ | repo: https://github.com/temporalio/temporal
+
+## AI & MCP Gateways
+
+### agentgateway
+- Page: https://www.enterpriseai.tools/tools/agentgateway/
+- Vendor: Linux Foundation | Type: opensource | License: Apache 2.0
+- Status: active | Version: 1.5.0 | Last release: 2026-08-27
+- Rust proxy for agent traffic that governs MCP, A2A and LLM calls with CEL-based RBAC, budgets and guardrails; runs standalone or on Kubernetes.
+- Strengths: MCP, A2A and LLM in one proxy; CEL policy engine for fine-grained RBAC; Kubernetes Gateway API controller built in
+- Governance posture:
+  - Data residency: yes — Self-hosted binary or Kubernetes deployment; operator controls placement. [source: https://agentgateway.dev/docs/]
+  - Deployment: yes (self-hosted) — Standalone binary/Docker or Kubernetes with a built-in control plane and Gateway API. [source: https://agentgateway.dev/docs/]
+  - Audit logging: partial — Access logs (incl. token timing), distributed traces and a UI logs view; no dedicated audit-log product. [source: https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0]
+  - SOC 2: not-applicable — Self-hosted OSS; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted OSS; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted OSS; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Network proxy component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache 2.0 — permissive, OSI-approved; Linux Foundation project. [source: https://raw.githubusercontent.com/agentgateway/agentgateway/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://agentgateway.dev/docs/ | repo: https://github.com/agentgateway/agentgateway
+
+### Azure API Management AI gateway
+- Page: https://www.enterpriseai.tools/tools/azure-apim-ai-gateway/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- AI gateway policies in Azure API Management for LLM, MCP and A2A APIs: token limits, semantic caching, content safety and load balancing.
+- Strengths: Per-consumer token limits and quotas; PTU-aware priority load balancing; Foundry integration for models, agents, tools
+- Governance posture:
+  - Data residency: yes — Instances deploy to chosen Azure regions; the self-hosted gateway (Developer/Premium) keeps traffic in customer environments, but it still sends config, heartbeat and optional telemetry traffic to Azure. [source: https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview]
+  - Deployment: yes (saas, hybrid) — Managed Azure service; the containerized self-hosted gateway enables hybrid and multicloud data planes. [source: https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview]
+  - Audit logging: yes — Logs prompts, completions and token usage to Azure Monitor / Application Insights, with a built-in token dashboard. [source: https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities]
+  - SOC 2: yes — Azure is covered by the Azure SOC 2 Type 2 attestation; per-service scope is in the audit report. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2]
+  - ISO 27001: yes — Azure is covered by the Azure ISO/IEC 27001:2022 certificate; per-service scope is in the certificate. [source: https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001]
+  - ISO 42001: unknown — ISO 42001 scope for API Management not confirmed in the sources reviewed.
+  - EU AI Act: not-applicable (role: not-applicable) — API gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers.
+  - License risk: yes (risk: medium) — Proprietary Azure service; policies are APIM-specific, so there is Azure lock-in. [source: https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities | site: https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview
+
+### Cloudflare AI Gateway
+- Page: https://www.enterpriseai.tools/tools/cloudflare-ai-gateway/
+- Vendor: Cloudflare | Type: vendor | License: Proprietary
+- Status: active
+- Edge-hosted AI gateway adding analytics, logging, caching, rate limiting, model fallback, DLP and guardrails in front of LLM providers.
+- Strengths: Core analytics, caching and rate limiting free; Dynamic routing with model fallback; Per-request log and payload opt-out
+- Governance posture:
+  - Data residency: unknown — Runs on Cloudflare's global network; the AI Gateway docs reviewed do not document regional processing or storage controls.
+  - Deployment: yes (saas) — Fully managed Cloudflare service; no self-hosted option. [source: https://developers.cloudflare.com/ai-gateway/]
+  - Audit logging: yes — Request logs record prompt, response, provider, tokens, cost, status, DLP and guardrail actions, and can be disabled per gateway or per request. [source: https://developers.cloudflare.com/ai-gateway/observability/logging/]
+  - SOC 2: yes — AI Gateway is explicitly listed in Cloudflare's SOC 2 Type II scope (Developer Platform). [source: https://www.cloudflare.com/trust-hub/compliance-resources/soc-2/]
+  - ISO 27001: yes — ISO 27001:2022 covers the Cloudflare global cloud platform; AI Gateway is not named individually. [source: https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/]
+  - ISO 42001: no — Cloudflare's ISO page lists 27001, 27018 and 27701 only; no ISO 42001. [source: https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/]
+  - EU AI Act: not-applicable (role: not-applicable) — Proxy and observability infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers.
+  - License risk: yes (risk: medium) — Proprietary managed service; configuration is Cloudflare-specific. [source: https://developers.cloudflare.com/ai-gateway/reference/pricing/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://developers.cloudflare.com/ai-gateway/
+
+### Docker MCP Gateway
+- Page: https://www.enterpriseai.tools/tools/docker-mcp-gateway/
+- Vendor: Docker | Type: opensource | License: MIT
+- Status: active | Version: 0.44.1
+- Open-source docker mcp CLI plugin that proxies MCP servers run in isolated containers, with central secrets, OAuth and call tracing.
+- Strengths: Runs MCP servers in isolated containers; Secrets and OAuth handled centrally; Shareable server profiles via OCI registries
+- Governance posture:
+  - Data residency: yes — Runs locally or on operator hosts via Docker; MCP servers execute in local containers. [source: https://docs.docker.com/ai/mcp-gateway/]
+  - Deployment: yes (self-hosted) — Runs in Docker Desktop via MCP Toolkit, or as a standalone CLI plugin binary. [source: https://docs.docker.com/ai/mcp-gateway/]
+  - Audit logging: partial — Built-in logging and call tracing of MCP operations; no dedicated audit-log store documented. [source: https://github.com/docker/mcp-gateway]
+  - SOC 2: not-applicable — Self-hosted OSS CLI; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted OSS CLI; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted OSS CLI; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — MCP proxy tooling, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved (copyright Docker). [source: https://raw.githubusercontent.com/docker/mcp-gateway/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.docker.com/ai/mcp-gateway/ | repo: https://github.com/docker/mcp-gateway
+
+### Kong AI Gateway
+- Page: https://www.enterpriseai.tools/tools/kong-ai-gateway/
+- Vendor: Kong | Type: commercial | License: Proprietary (caution: Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.)
+- Status: active
+- AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.
+- Strengths: Builds on existing Kong API gateway estates; Generates MCP servers from REST APIs; Token-based rate limiting and PII redaction
+- Governance posture:
+  - Data residency: yes — Data planes run in customer infrastructure; Konnect control planes available in AU, EU, ME, US, IN and SG (beta) regions. [source: https://developer.konghq.com/konnect-platform/geos/]
+  - Deployment: yes (saas, self-hosted, hybrid) — Konnect SaaS control plane, self-hosted Kong Gateway Enterprise, or hybrid. [source: https://developer.konghq.com/ai-gateway/]
+  - Audit logging: yes — Structured AI audit logs record payloads, token usage, model, latency, cost and guardrail block/mask outcomes; MCP traffic logging captures sessions and tool calls. [source: https://developer.konghq.com/ai-gateway/ai-audit-log-reference/]
+  - SOC 2: unknown — Kong's trust center (trust.konghq.com) is JavaScript-rendered, and its certifications could not be read from a primary source in this review.
+  - ISO 27001: unknown — Kong's trust center could not be read from a primary source in this review.
+  - ISO 42001: unknown — No ISO 42001 claim found in the Kong sources reviewed.
+  - EU AI Act: not-applicable (role: not-applicable) — API/AI gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: medium) — Open core: Apache 2.0 gateway, with key AI and MCP plugins available only in AI Gateway Enterprise. [source: https://developer.konghq.com/plugins/ai-proxy-advanced/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://developer.konghq.com/ai-gateway/ | site: https://konghq.com/pricing | repo: https://github.com/Kong/kong
+
+### LiteLLM
+- Page: https://www.enterpriseai.tools/tools/litellm/
+- Vendor: BerriAI | Type: opensource | License: MIT (caution: Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.)
+- Status: active | Version: 1.103.1 | Last release: 2026-09-30
+- Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.
+- Strengths: Virtual keys with per-team spend tracking; 100+ providers behind one OpenAI-format API; Built-in MCP and agent gateway
+- Governance posture:
+  - Data residency: yes — When self-hosted, no data or telemetry is stored on LiteLLM servers; data stays in the operator's infrastructure. [source: https://docs.litellm.ai/docs/data_security]
+  - Deployment: yes (self-hosted) — Self-hosted proxy via CLI or Docker container; Terraform modules for AWS and GCP in the repo. [source: https://github.com/BerriAI/litellm]
+  - Audit logging: partial — Audit logs exist but are listed as a LiteLLM Enterprise feature (commercial license). [source: https://docs.litellm.ai/]
+  - SOC 2: yes — BerriAI states SOC 2 Type II, with the report in the LiteLLM Trust Center. Self-hosted deployments rely on the operator's own controls. [source: https://docs.litellm.ai/docs/data_security]
+  - ISO 27001: unknown — ISO 27001 is listed on trust.litellm.ai, but the public page did not confirm certification status; the data-security docs name only SOC 2 Type II.
+  - ISO 42001: unknown — ISO 42001 is listed on trust.litellm.ai, but the public page did not confirm certification status.
+  - EU AI Act: not-applicable (role: not-applicable) — Routing and proxy infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers.
+  - License risk: yes (risk: medium) — MIT core, but enterprise/ is under a commercial BerriAI license that requires a subscription for production use. [source: https://raw.githubusercontent.com/BerriAI/litellm/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.litellm.ai/ | site: https://www.litellm.ai/ai-gateway | repo: https://github.com/BerriAI/litellm
+
+### Portkey AI Gateway
+- Page: https://www.enterpriseai.tools/tools/portkey-ai-gateway/
+- Vendor: Portkey (Palo Alto Networks) | Type: opensource | License: MIT
+- Status: active | Version: 1.15.2 | Last release: 2026-01-12
+- Open-source AI gateway that routes to 250+ LLMs with fallbacks, caching and 50+ guardrails; managed SaaS and private-cloud options.
+- Strengths: 50+ integrated input/output guardrails; Fallbacks, retries and load balancing; MCP gateway with auth and observability
+- Governance posture:
+  - Data residency: yes — Self-host the OSS gateway, or use Enterprise VPC hosting / private cloud with data isolation. [source: https://portkey.ai/pricing]
+  - Deployment: yes (self-hosted, saas, hybrid) — OSS gateway (self-hosted), managed SaaS, and Enterprise hybrid / private-cloud deployments. [source: https://portkey.ai/docs]
+  - Audit logging: partial — Audit logs of administrative activity are an Enterprise plan feature. [source: https://portkey.ai/docs/product/enterprise-offering/audit-logs]
+  - SOC 2: yes — Portkey states it is SOC 2 certified; the Enterprise plan lists SOC2 Type 2. Applies to the hosted service, not self-hosted OSS. [source: https://portkey.ai/docs]
+  - ISO 27001: yes — Portkey states it is ISO 27001 certified (hosted service). [source: https://portkey.ai/docs]
+  - ISO 42001: unknown — No ISO 42001 claim found in Portkey docs or pricing pages.
+  - EU AI Act: not-applicable (role: not-applicable) — Routing and guardrail infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers.
+  - License risk: yes (risk: low) — MIT (main branch LICENSE) — permissive, OSI-approved. Paid features are in the hosted plans, not the repo. [source: https://raw.githubusercontent.com/Portkey-AI/gateway/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://portkey.ai/docs | site: https://portkey.ai/features/ai-gateway | repo: https://github.com/Portkey-AI/gateway
+
+## AI Observability & Evaluation
+
+### Arize Phoenix
+- Page: https://www.enterpriseai.tools/tools/arize-phoenix/
+- Vendor: Arize AI | Type: opensource | License: Elastic License 2.0 (caution: Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.)
+- Status: active | Version: 20.16.0 | Last release: 2026-09-23
+- Source-available AI observability and evaluation platform: OpenTelemetry/OpenInference tracing, evals, prompt iteration and experiments.
+- Strengths: OpenInference instrumentation on OpenTelemetry; LLM, code and human-label evaluators; Datasets and experiments to compare app versions
+- Governance posture:
+  - Data residency: yes — Self-hosted on Docker, Kubernetes or any cloud, so the operator controls where trace data lives. [source: https://arize.com/docs/phoenix]
+  - Deployment: yes (self-hosted) — Self-hosted via Docker or Kubernetes. Managed and self-hosted enterprise options are sold separately as Arize AX. [source: https://arize.com/docs/phoenix]
+  - Audit logging: unknown — The Phoenix docs overview does not describe a native audit or access log for user actions.
+  - SOC 2: not-applicable — Self-hosted software. SOC 2 applies to the operator's infrastructure (Arize's own SOC 2 covers its commercial AX platform).
+  - ISO 27001: not-applicable — Self-hosted software. ISO 27001 applies to the operator's ISMS (Arize's certification covers the company and AX, not a self-hosted Phoenix).
+  - ISO 42001: not-applicable — Self-hosted software. ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer of the traced system.
+  - License risk: yes (risk: high) — Elastic License 2.0: source-available and not OSI-approved. It bans offering Phoenix as a hosted or managed service and bans circumventing license keys. [source: https://raw.githubusercontent.com/Arize-ai/phoenix/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://arize.com/docs/phoenix | site: https://arize.com/pricing/ | repo: https://github.com/Arize-ai/phoenix
+
+### Braintrust
+- Page: https://www.enterpriseai.tools/tools/braintrust/
+- Vendor: Braintrust | Type: commercial | License: Proprietary
+- Status: active
+- Commercial AI observability and evaluation platform for tracing agents, running evals and experiments, and building datasets from production logs.
+- Strengths: SDKs for TypeScript, Python, Go, Java, Ruby, C#; Hybrid data plane on AWS, GCP or Azure; Unlimited users even on free tier
+- Governance posture:
+  - Data residency: partial — Enterprise hybrid and self-hosted deployments keep traces, logs, datasets and prompts in the customer's cloud account and region. Hosted-SaaS regions are not stated. [source: https://www.braintrust.dev/docs/guides/self-hosting]
+  - Deployment: yes (saas, hybrid) — Hosted SaaS, or Enterprise-only hybrid with a customer data plane (Terraform for AWS, GCP, Azure) and a Braintrust-managed control plane. [source: https://www.braintrust.dev/docs/guides/self-hosting]
+  - Audit logging: unknown — The security docs mention only monitoring API key usage through activity logs. No dedicated audit-log feature was verified.
+  - SOC 2: yes — Braintrust states it is SOC 2 Type II compliant. [source: https://www.braintrust.dev/docs/security]
+  - ISO 27001: unknown — The Braintrust security docs do not mention ISO 27001, and the Trust Center did not render certification details.
+  - ISO 42001: unknown — The Braintrust security docs do not mention ISO 42001.
+  - EU AI Act: not-applicable (role: not-applicable) — Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer.
+  - License risk: yes (risk: medium) — Proprietary SaaS. Hybrid deployment still depends on the Braintrust-managed control plane. [source: https://www.braintrust.dev/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.braintrust.dev/docs | site: https://www.braintrust.dev/pricing
+
+### Datadog Agent Observability (formerly Datadog LLM Observability)
+- Page: https://www.enterpriseai.tools/tools/datadog-agent-observability/
+- Vendor: Datadog | Type: vendor | License: Proprietary
+- Status: active
+- Datadog module for end-to-end tracing of LLM and agent apps, with cost/latency dashboards, quality clustering and sensitive-data redaction.
+- Strengths: Correlates LLM spans with existing APM data; Built-in sensitive-data scanning and redaction; SDKs for Python, Node.js and Java
+- Governance posture:
+  - Data residency: yes — The customer picks a Datadog site: US1/US3/US5, EU1 (Germany), AP1 (Japan), AP2 (Australia) or UK1. The product is not supported on FED sites. [source: https://docs.datadoghq.com/getting_started/site/]
+  - Deployment: yes (saas) — Datadog-hosted SaaS only. [source: https://docs.datadoghq.com/llm_observability/]
+  - Audit logging: yes — Datadog Audit Trail records user activity, API requests and resource changes across the organisation. [source: https://docs.datadoghq.com/account_management/audit_trail/]
+  - SOC 2: yes — Datadog lists SOC 2 Type 2 on its Trust Center (company-wide; product-level scope not separately stated). [source: https://trust.datadoghq.com/]
+  - ISO 27001: yes — Datadog lists ISO/IEC 27001 (plus 27017, 27018 and 27701) on its Trust Center. [source: https://trust.datadoghq.com/]
+  - ISO 42001: yes — Datadog lists ISO/IEC 42001:2023 on its Trust Center (company-wide; module scope not separately stated). [source: https://trust.datadoghq.com/]
+  - EU AI Act: not-applicable (role: not-applicable) — Monitoring tooling, not an AI system placed on the market. Obligations rest with the deployer of the monitored system.
+  - License risk: yes (risk: medium) — Proprietary SaaS tied to the Datadog platform, with span-based metered billing. [source: https://www.datadoghq.com/pricing/list/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.datadoghq.com/llm_observability/ | site: https://www.datadoghq.com/pricing/list/
+
+### Langfuse
+- Page: https://www.enterpriseai.tools/tools/langfuse/
+- Vendor: Langfuse (ClickHouse) | Type: opensource | License: MIT core + EE paths (caution: Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).)
+- Status: active | Version: 4.48.0 | Last release: 2026-09-30
+- Open-source LLM engineering platform for tracing, evaluations, prompt management and cost/latency dashboards, built on OpenTelemetry.
+- Strengths: MIT core self-hostable at production scale; Prompt management with versioning and playground; OpenTelemetry-based tracing with 100+ integrations
+- Governance posture:
+  - Data residency: yes — Langfuse Cloud offers US (us-west-2), EU (eu-west-1), JP (ap-northeast-1) and a HIPAA region; self-hosting keeps all data in the operator's infrastructure. [source: https://langfuse.com/security]
+  - Deployment: yes (saas, self-hosted) — Managed Langfuse Cloud, or self-hosted via Docker Compose (single VM) or Kubernetes/Helm on AWS, Azure or GCP. [source: https://langfuse.com/self-hosting]
+  - Audit logging: partial — Audit logs are listed only on the Enterprise cloud plan ($2,499/month) and in the licensed EE features. Lower tiers and the MIT core have none. [source: https://langfuse.com/pricing]
+  - SOC 2: yes — Langfuse Cloud has completed a SOC 2 Type II audit (report on Pro/Team/Enterprise plans). Self-hosted deployments rely on the operator's controls. [source: https://langfuse.com/security/soc2]
+  - ISO 27001: yes — Langfuse Cloud is ISO 27001 certified (certificate on request for Pro/Team/Enterprise). Not applicable to self-hosted instances. [source: https://langfuse.com/security/iso27001]
+  - ISO 42001: unknown — The Langfuse security page lists SOC 2, ISO 27001, HIPAA and GDPR but does not mention ISO 42001.
+  - EU AI Act: not-applicable (role: not-applicable) — Observability and evaluation tooling for AI applications, not an AI system placed on the market. Obligations rest with the deployer of the traced system.
+  - License risk: yes (risk: medium) — Open core: MIT outside the ee/ directories, with a commercial license required for EE features in production. ClickHouse committed to keeping the core MIT after the acquisition. [source: https://raw.githubusercontent.com/langfuse/langfuse/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://langfuse.com/docs | site: https://langfuse.com | repo: https://github.com/langfuse/langfuse
+
+### LangSmith
+- Page: https://www.enterpriseai.tools/tools/langsmith/
+- Vendor: LangChain | Type: commercial | License: Proprietary
+- Status: active
+- Framework-agnostic platform from LangChain for tracing, monitoring, evaluating and deploying LLM apps and agents, with OpenTelemetry ingest.
+- Strengths: Works beyond LangChain (OpenAI, CrewAI, Vercel AI); Cloud in US, EU, APAC and AWS regions; Self-hosted and hybrid options on Enterprise
+- Governance posture:
+  - Data residency: yes — SaaS regions include GCP us-central1, europe-west4 and australia-southeast1, plus AWS us-east-2. Enterprise can self-host. Payment data is stored in the US. [source: https://docs.langchain.com/langsmith/cloud]
+  - Deployment: yes (saas, hybrid, self-hosted) — Cloud SaaS on all plans. Hybrid and self-hosted (Kubernetes in customer infrastructure) are Enterprise add-ons. [source: https://docs.langchain.com/langsmith/self-hosted]
+  - Audit logging: partial — Tamper-resistant audit logs of administrative and configuration actions, available only on Enterprise plans. [source: https://docs.langchain.com/langsmith/audit-logs]
+  - SOC 2: unknown — The LangChain Trust Center did not render verifiable certification details, and the LangSmith cloud docs make no SOC 2 claim.
+  - ISO 27001: unknown — No ISO 27001 claim could be verified on the LangSmith docs or a rendered Trust Center page.
+  - ISO 42001: unknown — No ISO 42001 claim could be verified on the LangSmith docs or a rendered Trust Center page.
+  - EU AI Act: not-applicable (role: not-applicable) — Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer.
+  - License risk: yes (risk: medium) — Proprietary SaaS. Self-hosting is an Enterprise add-on with no open-source path. [source: https://www.langchain.com/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.langchain.com/langsmith/observability | site: https://www.langchain.com/langsmith
+
+### MLflow
+- Page: https://www.enterpriseai.tools/tools/mlflow/
+- Vendor: Linux Foundation (MLflow project) | Type: opensource | License: Apache 2.0
+- Status: active | Version: 3.16.1 | Last release: 2026-09-17
+- Open-source AI engineering platform with OpenTelemetry-compatible GenAI tracing, LLM-judge evaluation, prompt registry and AI gateway.
+- Strengths: Tracing supports OpenTelemetry GenAI conventions; Prompt registry with automated optimization; Managed on Databricks, SageMaker and Azure ML
+- Governance posture:
+  - Data residency: yes — Self-hosted: trace data is stored on the operator's own infrastructure. Managed variants follow the hosting cloud's region. [source: https://mlflow.org/docs/latest/genai/tracing/]
+  - Deployment: yes (self-hosted, saas) — Self-hosted OSS server, or managed through Databricks, AWS SageMaker, Azure Machine Learning or Red Hat OpenShift AI. [source: https://mlflow.org/docs/latest/genai/]
+  - Audit logging: unknown — The GenAI docs describe trace capture but not a native user or admin audit log for the OSS server. Managed platforms may add their own.
+  - SOC 2: not-applicable — Self-hosted open-source software. SOC 2 applies to the operator or the managed-service provider, not the package.
+  - ISO 27001: not-applicable — Self-hosted open-source software. ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted open-source software. ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Developer and observability tooling, not an AI system placed on the market. Obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache 2.0, a permissive OSI-approved license. [source: https://raw.githubusercontent.com/mlflow/mlflow/master/LICENSE.txt]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://mlflow.org/docs/latest/genai/ | site: https://mlflow.org | repo: https://github.com/mlflow/mlflow
+
+### Opik
+- Page: https://www.enterpriseai.tools/tools/opik/
+- Vendor: Comet | Type: opensource | License: Apache 2.0
+- Status: active | Version: 2.2.86 | Last release: 2026-09-30
+- Open-source platform to trace, evaluate and monitor LLM apps, RAG systems and agents, with LLM-as-a-judge metrics and prompt optimization.
+- Strengths: Apache 2.0 server and UI self-hostable; PyTest integration for LLM CI checks; Python and TypeScript SDKs plus OpenTelemetry
+- Governance posture:
+  - Data residency: yes — Self-hosting on Kubernetes keeps data in the operator's infrastructure. Comet Cloud regions are not stated on the pages reviewed. [source: https://www.comet.com/docs/opik/self-host/overview]
+  - Deployment: yes (saas, self-hosted) — Comet-hosted cloud, local Docker Compose (not production-ready), or production Kubernetes/Helm. [source: https://www.comet.com/docs/opik/self-host/overview]
+  - Audit logging: unknown — The pages reviewed do not describe audit logs, and self-hosted Opik ships without user management.
+  - SOC 2: yes — Comet lists SOC 2 Type 2 on its Trust Center, covering the Comet-hosted service. Self-hosted instances rely on the operator's controls. [source: https://trust.comet.com/]
+  - ISO 27001: yes — Comet lists ISO/IEC 27001:2022 on its Trust Center (company and hosted service). Not applicable to self-hosted instances. [source: https://trust.comet.com/]
+  - ISO 42001: unknown — The Comet Trust Center lists ISO 9001, ISO 27001 and SOC 2 but not ISO 42001.
+  - EU AI Act: not-applicable (role: not-applicable) — Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache 2.0. The README says the server, web app and core observability and evaluation can be self-hosted without a commercial license. [source: https://raw.githubusercontent.com/comet-ml/opik/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.comet.com/docs/opik/quickstart | site: https://www.comet.com/site/pricing/ | repo: https://github.com/comet-ml/opik
+
+## Agent Control Planes
+
+### Amazon Bedrock AgentCore
+- Page: https://www.enterpriseai.tools/tools/amazon-bedrock-agentcore/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- AWS services to run, govern and observe agents from any framework: Runtime, Gateway, Identity, Policy, Observability and Agent Registry.
+- Strengths: Agent Registry auto-discovery across AWS Organizations; Policy controls on agent-tool access; Per-service consumption pricing
+- Governance posture:
+  - Data residency: partial — Regional service (including AWS GovCloud US-West); Agent Registry supports customer-managed KMS keys. No multi-cloud or sovereign option. [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html]
+  - Deployment: yes (saas) — Fully managed AWS service; no self-hosted option. [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html]
+  - Audit logging: yes — Control-plane API calls (e.g. Agent Registry, Gateway) are logged to AWS CloudTrail as management events. [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cloudtrail.html]
+  - SOC 2: yes — AgentCore is in scope for SOC 2 per AWS compliance validation. [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html]
+  - ISO 27001: yes — AgentCore is compliant with ISO 27001:2022 (plus 27017, 27018, 27701). [source: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html]
+  - ISO 42001: unknown — ISO 42001 is not listed on the AgentCore compliance validation page.
+  - EU AI Act: not-applicable (role: not-applicable) — Infrastructure for building and governing agents, not itself an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: medium) — Proprietary AWS service; framework-agnostic agents, but registry, policy and identity are AWS-bound. [source: https://aws.amazon.com/bedrock/agentcore/pricing/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html
+
+### IBM watsonx Orchestrate
+- Page: https://www.enterpriseai.tools/tools/ibm-watsonx-orchestrate/
+- Vendor: IBM | Type: vendor | License: Proprietary
+- Status: active
+- IBM agent platform whose Agentic Control Plane adds operations dashboards, policy and access governance, and a shared agent catalog.
+- Strengths: Shared catalog to publish and version agents; Policy, credential health and access overview; SaaS on AWS or IBM Cloud, or on-premises
+- Governance posture:
+  - Data residency: partial — Choice of IBM Cloud, AWS, AWS GovCloud (US) or on-premises installs lets customers place data; per-region detail not reviewed. [source: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base]
+  - Deployment: yes (saas, on-prem) — SaaS on AWS, IBM Cloud and AWS GovCloud (US), plus watsonx Orchestrate On-premises. [source: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base]
+  - Audit logging: partial — Operational dashboards, agent analytics and observability traces; a dedicated audit log is not described in the announcement. [source: https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane]
+  - SOC 2: unknown — No watsonx Orchestrate-specific SOC 2 scope found on IBM pages reviewed.
+  - ISO 27001: unknown — watsonx Orchestrate is not named on the IBM Cloud ISO 27001 page reviewed; scope unverified.
+  - ISO 42001: unknown — No ISO 42001 statement for watsonx Orchestrate found in reviewed sources.
+  - EU AI Act: not-applicable (role: not-applicable) — Agent build and governance platform, not itself a high-risk AI system; obligations rest with deployers of specific agents.
+  - License risk: yes (risk: medium) — Proprietary IBM product with published tiered subscription pricing. [source: https://www.ibm.com/products/watsonx-orchestrate/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.ibm.com/docs/en/watsonx/watson-orchestrate/base | site: https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane
+
+### Kore.ai Agent Management Platform
+- Page: https://www.enterpriseai.tools/tools/kore-ai-agent-management-platform/
+- Vendor: Kore.ai | Type: commercial | License: Proprietary
+- Status: active
+- Vendor-neutral control center to observe, govern, evaluate and track cost of agents built on many frameworks and platforms.
+- Strengths: Governs LangGraph, CrewAI, AgentCore and Foundry agents; Evaluation studio before production; Cost and anomaly tracking tied to outcomes
+- Governance posture:
+  - Data residency: unknown — Kore.ai trust center does not publish region-specific hosting detail.
+  - Deployment: partial (saas, on-prem, self-hosted) — Kore.ai platform offers multi-tenant SaaS, on-premises and dedicated VPC; AMP-specific availability per model not stated. [source: https://trust.kore.ai/]
+  - Audit logging: unknown — Launch release describes observability and governance but no audit-log statement.
+  - SOC 2: yes — Kore.ai holds SOC 2 Type II (company level). [source: https://trust.kore.ai/]
+  - ISO 27001: yes — Kore.ai holds ISO/IEC 27001:2022 (company level). [source: https://trust.kore.ai/]
+  - ISO 42001: unknown — ISO 42001 is not listed on the Kore.ai trust center.
+  - EU AI Act: not-applicable (role: not-applicable) — Agent governance tooling, not itself an AI system placed on the market; obligations rest with deployers.
+  - License risk: yes (risk: medium) — Proprietary commercial product; pricing not published. [source: https://www.kore.ai/news/kore-ai-launches-agent-management-platform]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.kore.ai/news/kore-ai-launches-agent-management-platform
+
+### Microsoft Agent 365
+- Page: https://www.enterpriseai.tools/tools/microsoft-agent-365/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Control plane to observe, govern and secure an organization's AI agents via a central registry, Entra, Purview and Defender.
+- Strengths: Central agent registry and agent map; Entra, Purview and Defender coverage for agents; Agent activity in Purview unified audit log
+- Governance posture:
+  - Data residency: unknown — Agent 365 overview and GA post do not state data-residency commitments specific to Agent 365.
+  - Deployment: yes (saas) — Microsoft-hosted cloud service managed from the Microsoft 365 admin center; no self-hosted option. [source: https://learn.microsoft.com/en-us/microsoft-agent-365/overview]
+  - Audit logging: yes — Agent invocations, tool calls, inference calls and guardrail events are recorded in the Microsoft 365 (Purview) audit log. [source: https://learn.microsoft.com/en-us/purview/audit-log-activities]
+  - SOC 2: unknown — No Agent 365-specific SOC 2 scope statement found in the reviewed sources.
+  - ISO 27001: unknown — No Agent 365-specific ISO 27001 scope statement found in the reviewed sources.
+  - ISO 42001: no — Agent 365 is not in Microsoft's published list of AI services in scope for ISO 42001 (as of review). [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: not-applicable (role: not-applicable) — Governance and security tooling for agents, not itself an AI system placed on the market; obligations rest with agent providers and deployers.
+  - License risk: yes (risk: medium) — Proprietary Microsoft SaaS licensed per user; ties agent governance to the Microsoft 365 security stack. [source: https://www.microsoft.com/microsoft-agent-365]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.microsoft.com/en-us/microsoft-agent-365/overview | site: https://www.microsoft.com/microsoft-agent-365
+
+### MuleSoft Agent Fabric
+- Page: https://www.enterpriseai.tools/tools/mulesoft-agent-fabric/
+- Vendor: Salesforce (MuleSoft) | Type: vendor | License: Proprietary
+- Status: active
+- MuleSoft suite to register, route, govern and visualize agents, MCP servers and APIs across vendors using MCP and A2A.
+- Strengths: Agent Registry with auto-discovery scanners; Omni Gateway policies for agent and LLM traffic; Agent Visualizer for multi-agent flows
+- Governance posture:
+  - Data residency: partial — Anypoint Platform offers US, EU, Canada, Japan, India, Australia and Government control planes; Agent Fabric availability per control plane not confirmed. [source: https://docs.mulesoft.com/hosting-home/]
+  - Deployment: partial (saas, hybrid) — MuleSoft-managed control planes plus hybrid runtime options (Runtime Fabric, hybrid runtimes); which Agent Fabric components run outside MuleSoft cloud is not stated. [source: https://docs.mulesoft.com/hosting-home/]
+  - Audit logging: unknown — Agent Fabric overview describes monitoring via Agent Visualizer but no audit-log statement was found.
+  - SOC 2: unknown — MuleSoft trust center could not be retrieved during review; Agent Fabric SOC 2 scope unverified.
+  - ISO 27001: unknown — MuleSoft trust center could not be retrieved during review; Agent Fabric ISO 27001 scope unverified.
+  - ISO 42001: unknown — No ISO 42001 statement found for MuleSoft or Agent Fabric in reviewed sources.
+  - EU AI Act: not-applicable (role: not-applicable) — Integration and governance tooling for agents, not itself an AI system placed on the market.
+  - License risk: yes (risk: medium) — Proprietary Salesforce/MuleSoft product; pricing not published. [source: https://docs.mulesoft.com/general/agent-fabric-overview]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.mulesoft.com/general/agent-fabric-overview | site: https://www.salesforce.com/news/stories/mulesoft-agent-fabric-announcement/
+
+### ServiceNow AI Control Tower
+- Page: https://www.enterpriseai.tools/tools/servicenow-ai-control-tower/
+- Vendor: ServiceNow | Type: vendor | License: Proprietary
+- Status: active
+- ServiceNow hub to discover, observe, govern, secure and measure AI models and agents, including those from other platforms.
+- Strengths: AI asset inventory across models, prompts and agents; Risk frameworks aligned to NIST and EU AI Act; Cost and ROI dashboards for AI spend
+- Governance posture:
+  - Data residency: unknown — ServiceNow trust pages could not be retrieved during review; residency for AI Control Tower data unverified.
+  - Deployment: yes (saas) — Delivered as an application on the ServiceNow platform (current docs: Brazil release). [source: https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html]
+  - Audit logging: partial — Tracks AI-related cases and risk workflows and guardrail health; a dedicated audit log for third-party agent actions is not documented. [source: https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html]
+  - SOC 2: unknown — ServiceNow trust/compliance pages returned 403 during review; SOC 2 scope unverified.
+  - ISO 27001: unknown — ServiceNow trust/compliance pages returned 403 during review; ISO 27001 scope unverified.
+  - ISO 42001: unknown — ServiceNow trust/compliance pages returned 403 during review; ISO 42001 scope unverified.
+  - EU AI Act: not-applicable (role: not-applicable) — Governance tooling that helps assess AI systems against EU AI Act frameworks; not itself a high-risk AI system.
+  - License risk: yes (risk: medium) — Proprietary ServiceNow application; governance data lives on the ServiceNow platform. [source: https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.servicenow.com/docs/r/intelligent-experiences/ai-control-tower/ai-control-tower-home-page.html | site: https://www.servicenow.com/products/ai-control-tower.html
+
+### Workday Agent System of Record
+- Page: https://www.enterpriseai.tools/tools/workday-agent-system-of-record/
+- Vendor: Workday | Type: vendor | License: Proprietary
+- Status: active
+- Workday hub to register, govern and measure Workday, customer and partner AI agents alongside people and financial data.
+- Strengths: Agent lifecycle managed like employees; Agent Gateway supports MCP and A2A; Agent ROI next to HR and finance data
+- Governance posture:
+  - Data residency: unknown — GA post mentions support for regional compliance requirements but gives no residency detail for ASOR.
+  - Deployment: yes (saas) — Delivered as part of the Workday cloud platform. [source: https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html]
+  - Audit logging: partial — Records and tracks AI agent interactions under Workday's security model; audit export detail not documented. [source: https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html]
+  - SOC 2: unknown — Workday SOC 2 Type II covers Workday Enterprise Products; ASOR is not named explicitly.
+  - ISO 27001: partial — ISO 27001:2022 scope includes Workday Platform and Product Extensions; ASOR not named explicitly. [source: https://www.workday.com/en-us/why-workday/trust/compliance.html]
+  - ISO 42001: partial — ISO 42001 scope includes Workday Platform and core applications; ASOR not named explicitly. [source: https://www.workday.com/en-us/why-workday/trust/compliance.html]
+  - EU AI Act: not-applicable (role: not-applicable) — Agent management and analytics layer, not itself an AI system placed on the market; HR-use agents it governs may carry their own classification.
+  - License risk: yes (risk: medium) — Proprietary Workday SaaS; pricing not published. [source: https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html | site: https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html
+
+## Agent Identity & Access
+
+### Aembit IAM for Agentic AI
+- Page: https://www.enterpriseai.tools/tools/aembit-iam-for-agentic-ai/
+- Vendor: Aembit | Type: commercial | License: Proprietary
+- Status: active
+- Policy-based, just-in-time access for AI agents via an MCP Authorization Server and MCP Identity Gateway with credential injection.
+- Strengths: Blended agent-plus-human identity policy; No standing credentials for agents; MCP Identity Gateway credential exchange
+- Governance posture:
+  - Data residency: unknown — Data residency for the managed authorization service is not stated in the GA post or pricing page.
+  - Deployment: yes (saas, hybrid) — Managed MCP Authorization Server plus a self-hosted Linux VM MCP Identity Gateway; containerized options on roadmap. [source: https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/]
+  - Audit logging: yes — Structured audit logs that integrate with SIEM; retention 24h (Starter), 7 days (Teams), custom (Enterprise). [source: https://aembit.io/pricing/]
+  - SOC 2: yes — Aembit states SOC 2 Type II certification. [source: https://aembit.io/blog/aembit-achieves-iso-27001-certification/]
+  - ISO 27001: yes — ISO/IEC 27001:2022 certified (Sensiba LLP, ANAB-accredited), announced March 2025. [source: https://aembit.io/blog/aembit-achieves-iso-27001-certification/]
+  - ISO 42001: unknown — No ISO/IEC 42001 certification found on Aembit's pages reviewed.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://aembit.io/pricing/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.aembit.io/ | site: https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/
+
+### Auth0 for AI Agents
+- Page: https://www.enterpriseai.tools/tools/auth0-for-ai-agents/
+- Vendor: Okta (Auth0) | Type: commercial | License: Proprietary
+- Status: active
+- Developer identity for AI agents: user login, Token Vault for third-party APIs, CIBA human approvals and fine-grained authorization for RAG.
+- Strengths: Token Vault with 35+ integrations; CIBA async human-in-the-loop approvals; FGA for RAG document filtering
+- Governance posture:
+  - Data residency: unknown — Data residency options for the AI agents features are not stated on the GA announcement or pricing page.
+  - Deployment: yes (saas) — Delivered as part of the Auth0 cloud identity platform with SDKs for LangChain, LlamaIndex, Vercel AI SDK and Cloudflare Agents. [source: https://auth0.com/blog/auth0-for-ai-agents-generally-available/]
+  - Audit logging: unknown — Audit logging for agent flows is not described in the GA announcement or docs landing page reviewed.
+  - SOC 2: yes — auth0.com/security redirects to Okta's trust center, which lists SOC 2 across Okta and Auth0; per-product scope not shown on the overview. [source: https://security.okta.com/]
+  - ISO 27001: yes — Okta trust center lists ISO/IEC 27001:2022 for the Okta and Auth0 offerings; per-product scope not shown on the overview. [source: https://security.okta.com/]
+  - ISO 42001: unknown — ISO/IEC 42001 is not listed on the Okta/Auth0 trust center overview.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://auth0.com/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://auth0.com/ai/docs | site: https://auth0.com/blog/auth0-for-ai-agents-generally-available/
+
+### Descope Agentic Identity Hub
+- Page: https://www.enterpriseai.tools/tools/descope-agentic-identity-hub/
+- Vendor: Descope | Type: commercial | License: Proprietary
+- Status: active
+- Control plane for AI agent identity: OAuth 2.1 MCP auth, token vault connections, scoped policies and a user-linked audit trail.
+- Strengths: OAuth 2.1 authorization for MCP servers; Token vault for agent connections; Enterprise-Managed Authorization (XAA)
+- Governance posture:
+  - Data residency: yes — Multi-region data residency across seven regions (US, EU, UK, Canada, Singapore, Australia, Brazil). [source: https://www.descope.com/security-compliance]
+  - Deployment: yes (saas) — Descope-hosted SaaS; FedRAMP High authorized. [source: https://www.descope.com/security-compliance]
+  - Audit logging: yes — Audit trail connects every agent action back to the originating user. [source: https://docs.descope.com/agentic-identity-hub]
+  - SOC 2: yes — Descope is SOC 2 Type 2 certified. [source: https://www.descope.com/security-compliance]
+  - ISO 27001: yes — Descope is ISO 27001 certified. [source: https://www.descope.com/security-compliance]
+  - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on Descope's security and compliance page.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.descope.com/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.descope.com/agentic-identity-hub | site: https://docs.descope.com/agentic-identity-hub
+
+### Google Agent Identity
+- Page: https://www.enterpriseai.tools/tools/google-agent-identity/
+- Vendor: Google Cloud | Type: vendor | License: Proprietary
+- Status: active
+- SPIFFE-based cryptographic identity for agents on Gemini Enterprise Agent Platform, usable as an IAM principal with auto-rotated certs.
+- Strengths: SPIFFE IDs as IAM principals; Auto-rotated 24-hour X.509 certificates; Works with VPC-SC and PAB
+- Governance posture:
+  - Data residency: unknown — Agent Identity overview does not state data residency; governed by the hosting Google Cloud resource location.
+  - Deployment: yes (saas) — Managed Google Cloud service for Agent Runtime, Gemini Enterprise and Cloud Run agents. [source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview]
+  - Audit logging: yes — Audit logs record actions both when the agent acts as itself and on behalf of an end user. [source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview]
+  - SOC 2: yes — Gemini Enterprise Agent Platform and IAM are in scope for Google Cloud SOC 1/2/3 reports. [source: https://cloud.google.com/security/compliance/services-in-scope]
+  - ISO 27001: yes — Gemini Enterprise Agent Platform and IAM are in scope for ISO 27001/27017/27018. [source: https://cloud.google.com/security/compliance/services-in-scope]
+  - ISO 42001: unknown — Google Cloud ISO/IEC 42001 service scope could not be confirmed for Agent Identity.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary Google Cloud service; identities tied to Google Cloud IAM. [source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview
+
+### Idira Secure AI Agents
+- Page: https://www.enterpriseai.tools/tools/idira-secure-ai-agents/
+- Vendor: Palo Alto Networks (Idira) | Type: commercial | License: Proprietary
+- Status: active
+- Discovers AI agents across SaaS, cloud and dev environments and brokers their MCP tool access with just-in-time privilege and audit.
+- Strengths: Agent Identity Broker for MCP; Just-in-time, zero standing privileges; PAM heritage from CyberArk
+- Governance posture:
+  - Data residency: unknown — Data residency for Secure AI Agents is not stated on the Idira pages reviewed.
+  - Deployment: yes (saas) — Delivered as part of the Idira identity security platform; agent traffic routed through the Agent Identity Broker. Self-hosted options not stated. [source: https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/]
+  - Audit logging: yes — Logs capture which agent requested what action and when, via the Identity Broker. [source: https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/]
+  - SOC 2: unknown — Palo Alto Networks trust center lists SOC 2 Type II for Palo Alto Networks but does not name Idira or CyberArk products in scope.
+  - ISO 27001: unknown — Palo Alto Networks ISO 27000 page does not list Idira or CyberArk products in scope.
+  - ISO 42001: unknown — Palo Alto Networks lists ISO 42001, but Idira/CyberArk product scope is not stated.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.paloaltonetworks.com/idira]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.paloaltonetworks.com/idira | site: https://www.paloaltonetworks.com/idira
+
+### Microsoft Entra Agent ID
+- Page: https://www.enterpriseai.tools/tools/microsoft-entra-agent-id/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Entra identity platform for AI agents: agent identities and blueprints with Conditional Access, ID Protection and governance.
+- Strengths: Agent identity blueprints for fleets; Conditional Access templates for agents; Federates Bedrock and n8n agents
+- Governance posture:
+  - Data residency: unknown — Agent ID docs reviewed do not state agent-specific data residency controls; follows the Entra tenant's home geography (not confirmed for Agent ID).
+  - Deployment: yes (saas) — Microsoft-managed SaaS within Microsoft Entra; third-party agents integrate via the Auth SDK sidecar or workload identity federation. [source: https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id]
+  - Audit logging: yes — All agent authentication and activity is logged in Entra sign-in and audit logs. [source: https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id]
+  - SOC 2: partial — Microsoft Entra ID is listed in Microsoft's Office 365 SOC 2 Type 2 scope for GCC/GCC High/DoD; Agent ID is not listed separately. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2]
+  - ISO 27001: unknown — Azure ISO 27001 page lists service families (Azure, Microsoft 365) without naming Entra Agent ID; scope detail sits in the Service Trust Portal.
+  - ISO 42001: no — Not among the Microsoft AI services listed in scope for ISO/IEC 42001 (list covers Copilot, Copilot Studio, Foundry and others). [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary Microsoft SaaS tied to Entra and Agent 365 licensing. [source: https://learn.microsoft.com/en-us/entra/fundamentals/licensing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id
+
+### Okta for AI Agents
+- Page: https://www.enterpriseai.tools/tools/okta-for-ai-agents/
+- Vendor: Okta | Type: commercial | License: Proprietary
+- Status: active
+- Discovers, registers and governs AI agents in Okta Universal Directory with scoped tokens, vaulted secrets and access reviews.
+- Strengths: Imports Agentforce, Bedrock, ServiceNow agents; Shadow agent detection via OAuth grants; Agent SSO via Cross App Access
+- Governance posture:
+  - Data residency: unknown — Agent-specific data residency is not described in the GA announcement or AI agents docs reviewed.
+  - Deployment: yes (saas) — Delivered as part of Okta's cloud identity service; no self-hosted option described. [source: https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/]
+  - Audit logging: yes — Audit via System Log events, plus SIEM telemetry streaming for agent activity. [source: https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm]
+  - SOC 2: yes — Okta trust center lists SOC 2; product-level scope is not broken out on the overview. [source: https://security.okta.com/]
+  - ISO 27001: yes — Okta trust center lists ISO/IEC 27001:2022; product-level scope is not broken out on the overview. [source: https://security.okta.com/]
+  - ISO 42001: unknown — ISO/IEC 42001 is not listed on the Okta trust center overview.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm | site: https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/
+
+### Ping Identity for AI
+- Page: https://www.enterpriseai.tools/tools/ping-identity-for-ai/
+- Vendor: Ping Identity | Type: commercial | License: Proprietary
+- Status: active
+- Runtime identity for AI agents: Agent IAM Core, an Agent Gateway enforcing fine-grained authorization, and agent detection.
+- Strengths: Agent Gateway runtime enforcement; Delegated scoped tokens, no impersonation; Detects external agents via bot signals
+- Governance posture:
+  - Data residency: unknown — Data residency for Identity for AI is not stated in the launch release or docs landing page.
+  - Deployment: yes (saas) — Built on the PingOne cloud platform; GA globally by 2026-03-31. [source: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI]
+  - Audit logging: yes — Agent Gateway centralizes monitoring and audit of agent interactions. [source: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI]
+  - SOC 2: yes — Ping trust center states SOC 2 Type 2; product scope not specified. [source: https://www.pingidentity.com/en/legal/trust-center.html]
+  - ISO 27001: yes — Ping trust center states ISO 27001 (plus 27018); product scope not specified. [source: https://www.pingidentity.com/en/legal/trust-center.html]
+  - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the Ping trust center.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://developer.pingidentity.com/identity-for-ai/ | site: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI
+
+### SailPoint Agent Identity Security
+- Page: https://www.enterpriseai.tools/tools/sailpoint-agent-identity-security/
+- Vendor: SailPoint | Type: commercial | License: Proprietary
+- Status: active
+- Discovers and governs AI agents in SailPoint Identity Security Cloud with human owners, access reviews and revocation.
+- Strengths: Aggregates AWS, Azure, GCP, Salesforce agents; Multiple human owners per agent; Access certifications for agents
+- Governance posture:
+  - Data residency: unknown — Data residency for agent data is not stated on the product or docs page.
+  - Deployment: yes (saas) — Part of SailPoint Identity Security Cloud (SaaS). [source: https://www.sailpoint.com/products/agent-identity-security]
+  - Audit logging: unknown — Agent-specific audit logging is not described on the product or docs page reviewed.
+  - SOC 2: yes — SailPoint completes an annual SOC 2 Type 2 audit of Identity Security Cloud. [source: https://www.sailpoint.com/why-us/trust/cybersecurity]
+  - ISO 27001: yes — Identity Security Cloud is ISO 27001 certified. [source: https://www.sailpoint.com/why-us/trust/cybersecurity]
+  - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the SailPoint cybersecurity trust page.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.sailpoint.com/products/agent-identity-security]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://documentation.sailpoint.com/saas/help/agent/index.html | site: https://www.sailpoint.com/products/agent-identity-security
+
+### Saviynt Zuma
+- Page: https://www.enterpriseai.tools/tools/saviynt-zuma/
+- Vendor: Saviynt | Type: commercial | License: Proprietary
+- Status: active
+- Saviynt's AI identity security platform: discovers agents, MCP servers and NHIs, maps access paths and governs agent lifecycle.
+- Strengths: Discovers agents, tools and MCP servers; Maps agent access paths to data; Broad connectors incl. AgentCore, n8n
+- Governance posture:
+  - Data residency: partial — Saviynt states data residency in 25+ regions for its platform; Zuma-specific residency not stated. [source: https://saviynt.com/trust-compliance-security]
+  - Deployment: unknown — The Zuma page does not state deployment model; a free trial is offered.
+  - Audit logging: unknown — Audit logging is not described on the Zuma page.
+  - SOC 2: yes — Saviynt holds a SOC 2 Type II report (company-level; Zuma scope not stated). [source: https://saviynt.com/trust-compliance-security]
+  - ISO 27001: yes — Saviynt is ISO 27001:2022 certified (company-level; Zuma scope not stated). [source: https://saviynt.com/trust-compliance-security]
+  - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the Saviynt trust page.
+  - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://saviynt.com/products/identity-security-for-ai]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://saviynt.com/products/identity-security-for-ai | site: https://saviynt.com/products/identity-security-for-ai
+
+## AI Guardrails & Agent Security
 
 ### Arthur GenAI Engine
 - Page: https://www.enterpriseai.tools/tools/arthur-genai-engine/
@@ -624,6 +1262,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://protectai.github.io/llm-guard/ | repo: https://github.com/protectai/llm-guard
 
+### Microsoft Purview Data Security Posture Management (formerly Microsoft Purview Data Security Posture Management for AI, DSPM for AI)
+- Page: https://www.enterpriseai.tools/tools/microsoft-purview-dspm/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Purview posture tool that discovers AI apps and agents, flags oversharing and risky prompts, and applies DLP to AI use.
+- Strengths: AI observability for Copilot and agents; Oversharing risk assessments for SharePoint; One-click DLP policies for AI prompts
+- Governance posture:
+  - Data residency: partial — Follows Microsoft 365 data location commitments (customer data kept in chosen geography); no customer-hosted option. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001]
+  - Deployment: yes (saas) — Microsoft-managed SaaS within the Microsoft Purview portal. [source: https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about]
+  - Audit logging: yes — AI prompts/responses and agent interactions captured in the Purview unified audit log and activity explorer. [source: https://learn.microsoft.com/en-us/purview/ai-microsoft-purview]
+  - SOC 2: partial — Office 365 SOC 2 Type 2 covers Compliance Manager (commercial) and the Purview portal in GCC/GCC High/DoD; DSPM not named separately. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2]
+  - ISO 27001: yes — Microsoft Purview portal is listed in the Office 365 ISO 27001 in-scope services (commercial and government). [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001]
+  - ISO 42001: no — Microsoft's ISO 42001 in-scope list covers Copilot, Copilot Studio, Foundry and Security Copilot, not Purview. [source: https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001]
+  - EU AI Act: not-applicable (role: not-applicable) — Data security/compliance tooling, not itself a high-risk AI system; its Compliance Manager templates help map AI regulations.
+  - License risk: yes (risk: medium) — Proprietary Microsoft SaaS tied to Microsoft 365 E5/Purview Suite licensing; no OSS path. [source: https://learn.microsoft.com/en-us/purview/data-security-posture-management-get-started]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about | site: https://purview.microsoft.com/
+
 ### NeMo Guardrails
 - Page: https://www.enterpriseai.tools/tools/nemo-guardrails/
 - Vendor: NVIDIA | Type: opensource | License: Apache 2.0
@@ -642,6 +1298,42 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.nvidia.com/nemo/guardrails/ | repo: https://github.com/NVIDIA-NeMo/Guardrails
 
+### NVIDIA NemoClaw
+- Page: https://www.enterpriseai.tools/tools/nvidia-nemoclaw/
+- Vendor: NVIDIA | Type: opensource | License: Apache 2.0
+- Status: active
+- Open-source reference stack that runs always-on agents like OpenClaw inside NVIDIA OpenShell sandboxes with policy and managed inference.
+- Strengths: OpenShell sandbox with network policy; Credential custody outside the agent; Local or remote inference routing
+- Governance posture:
+  - Data residency: yes — Runs on operator hardware; inference goes local (Ollama/vLLM) or to a remote provider the operator selects. [source: https://docs.nvidia.com/nemoclaw/latest/]
+  - Deployment: yes (self-hosted) — Self-hosted on DGX Spark/Station, Linux, macOS or Windows WSL. [source: https://docs.nvidia.com/nemoclaw/latest/]
+  - Audit logging: unknown — Audit logging is not described in the NemoClaw docs overview or README.
+  - SOC 2: not-applicable — Self-hosted OSS; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted OSS; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted OSS; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Sandboxing runtime component, not an AI system placed on the market; obligations rest with the deployer.
+  - License risk: yes (risk: low) — Apache 2.0 — permissive, OSI-approved. [source: https://raw.githubusercontent.com/NVIDIA/NemoClaw/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.nvidia.com/nemoclaw/latest/ | repo: https://github.com/NVIDIA/NemoClaw
+
+### Prisma AIRS
+- Page: https://www.enterpriseai.tools/tools/prisma-airs/
+- Vendor: Palo Alto Networks | Type: vendor | License: Proprietary
+- Status: active
+- Palo Alto Networks AI security platform for agent discovery, model scanning, red teaming, posture and runtime protection.
+- Strengths: Runtime security via API or network intercept; AI red teaming and model scanning; Agent inventory and posture management
+- Governance posture:
+  - Data residency: yes — API intercept deployment profile selects region (Americas, EU-Germany, India, Singapore, Japan); some features process out of region. [source: https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/prisma-airs-supported-regions]
+  - Deployment: yes (saas, hybrid) — SaaS API intercept, or network intercept (AI Runtime Firewall) deployed in customer cloud and managed via Strata Cloud Manager. [source: https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security]
+  - Audit logging: unknown — Logging via Strata Logging Service is referenced in docs navigation but audit-log scope was not verified.
+  - SOC 2: unknown — Palo Alto Networks publishes an organisation-level SOC 2+ report; Prisma AIRS product scope not confirmed.
+  - ISO 27001: unknown — Palo Alto Networks lists ISO certifications organisation-wide; Prisma AIRS scope not confirmed.
+  - ISO 42001: unknown — No Prisma AIRS ISO 42001 certification found on the Palo Alto Networks trust center.
+  - EU AI Act: not-applicable (role: not-applicable) — Security tooling for AI systems, not itself a high-risk AI system placed on the market.
+  - License risk: yes (risk: medium) — Proprietary platform tied to the Palo Alto Networks / Strata Cloud Manager ecosystem. [source: https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.paloaltonetworks.com/ai-runtime-security | site: https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security
+
 ### Rebuff
 - Page: https://www.enterpriseai.tools/tools/rebuff/
 - Vendor: Palo Alto Networks | Type: opensource | License: Apache 2.0
@@ -659,6 +1351,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - License risk: yes (risk: low) — Apache-2.0 — permissive; archived (abandonment risk). [source: https://github.com/protectai/rebuff/blob/main/LICENSE]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://github.com/protectai/rebuff | repo: https://github.com/protectai/rebuff
+
+### Zenity
+- Page: https://www.enterpriseai.tools/tools/zenity/
+- Vendor: Zenity | Type: commercial | License: Proprietary
+- Status: active
+- AI agent security platform combining agent posture management, runtime detection and response, and inline blocking.
+- Strengths: AISPM checks agent config pre-launch; Runtime boundaries block unsafe actions; Covers Copilot Studio, Agentforce, Bedrock
+- Governance posture:
+  - Data residency: unknown — No hosting-region information published on the Zenity platform or Trust Center pages.
+  - Deployment: unknown — Platform page describes coverage of SaaS, cloud, custom stacks and endpoints but not Zenity's own delivery model.
+  - Audit logging: yes — Advertises real-time, audit-ready logs of agent activity mapped to policy violations. [source: https://zenity.io/use-cases/business-needs/ai-agents-compliance]
+  - SOC 2: yes — SOC 2 Type II report listed on Trust Center (available on request). [source: https://zenity.io/company/trust-center]
+  - ISO 27001: yes — ISO 27001 (and ISO 27701) listed on Trust Center. [source: https://zenity.io/company/trust-center]
+  - ISO 42001: unknown — Not listed on Zenity's Trust Center.
+  - EU AI Act: not-applicable (role: not-applicable) — Security tooling for AI agents, not itself a high-risk AI system; no EU AI Act mapping published.
+  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path. [source: https://zenity.io/platform]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://zenity.io/platform | site: https://zenity.io/
 
 ## AI Assistants
 
@@ -715,6 +1425,60 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - License risk: yes (risk: medium) — Proprietary SaaS; AWS toolchain lock-in. [source: https://aws.amazon.com/q/developer/]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html | site: https://aws.amazon.com/q/developer/
+
+### ChatGPT Enterprise
+- Page: https://www.enterpriseai.tools/tools/chatgpt-enterprise/
+- Vendor: OpenAI | Type: vendor | License: Proprietary
+- Status: active
+- Enterprise tier of ChatGPT with workspace RBAC, SCIM-synced groups, Compliance API, data residency options and bundled Codex.
+- Strengths: Compliance API for SIEM export; SCIM groups and workspace RBAC; No training on business data by default
+- Governance posture:
+  - Data residency: partial — Data and inference residency apply only to eligible content and supported workloads, subject to agreement, region and configuration. [source: https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security]
+  - Deployment: yes (saas) — OpenAI-hosted SaaS (web, desktop, mobile); no self-hosted option. [source: https://learn.chatgpt.com/docs/enterprise/admin-setup]
+  - Audit logging: yes — Compliance API provides an append-only compliance log stream (conversation, auth and Codex events) for SIEM or data lake export. [source: https://learn.chatgpt.com/docs/enterprise/compliance-api]
+  - SOC 2: yes — SOC 2 Type 2 (Jul 2025-Jun 2026) covers ChatGPT Enterprise. [source: https://trust.openai.com]
+  - ISO 27001: yes — ISO/IEC 27001:2022 (plus 27017/27018/27701) covers ChatGPT Enterprise. [source: https://trust.openai.com]
+  - ISO 42001: yes — ISO/IEC 42001:2023 listed on OpenAI trust portal covering ChatGPT Enterprise. [source: https://trust.openai.com]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published OpenAI EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — Proprietary SaaS; OpenAI model and workspace lock-in. [source: https://learn.chatgpt.com/docs/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.chatgpt.com/docs/enterprise/admin-setup | site: https://openai.com/chatgpt/enterprise/
+
+### Claude Code
+- Page: https://www.enterpriseai.tools/tools/claude-code/
+- Vendor: Anthropic | Type: vendor | License: Proprietary (caution: The public GitHub repo is not open source: LICENSE.md is an Anthropic copyright notice that points to the Commercial Terms of Service. No OSI license applies.)
+- Status: active
+- Agentic coding tool for terminal, IDE, desktop and web that reads codebases, edits files, runs commands and handles git workflows.
+- Strengths: Runs on Bedrock, Vertex and Foundry; Managed settings and permission policies; OpenTelemetry usage export
+- Governance posture:
+  - Data residency: partial — Inference region follows the chosen provider (AWS/GCP/Azure regions); Anthropic-direct plans offer US-only inference on Enterprise; local transcripts cached on the developer machine. [source: https://code.claude.com/docs/en/third-party-integrations]
+  - Deployment: yes (saas, hybrid) — Local client with inference via Anthropic, Amazon Bedrock, Claude Platform on AWS, Google Cloud Agent Platform or Microsoft Foundry; cloud sessions can run in self-hosted environments. [source: https://code.claude.com/docs/en/third-party-integrations]
+  - Audit logging: partial — Enterprise audit logs and Compliance API; OpenTelemetry export of prompts (opt-in), tool results and permission decisions; CloudTrail / Cloud Audit Logs / Azure Monitor on cloud providers. [source: https://code.claude.com/docs/en/monitoring-usage]
+  - SOC 2: yes — Anthropic SOC 2 Type I and Type II cover commercial products (Claude for Work, Anthropic API). [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - ISO 27001: yes — Anthropic ISO/IEC 27001:2022 covers commercial products (Claude for Work, Anthropic API). [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - ISO 42001: yes — Anthropic ISO/IEC 42001:2023 covers commercial products (Claude for Work, Anthropic API). [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — Proprietary tool under Anthropic Commercial Terms; model choice limited to Claude. [source: https://github.com/anthropics/claude-code/blob/main/LICENSE.md]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://code.claude.com/docs/ | site: https://claude.com/pricing | repo: https://github.com/anthropics/claude-code
+
+### Claude Enterprise
+- Page: https://www.enterpriseai.tools/tools/claude-enterprise/
+- Vendor: Anthropic | Type: vendor | License: Proprietary
+- Status: active
+- Enterprise plan for Claude on web, desktop and mobile, bundling Claude Code and Cowork with SSO, SCIM, audit logs and Compliance API.
+- Strengths: Claude Code and Cowork per seat; Customer-managed encryption keys; US-only inference option
+- Governance posture:
+  - Data residency: partial — US-only inference option; no broader regional residency stated on the plan page. [source: https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan]
+  - Deployment: yes (saas) — Anthropic-hosted SaaS (web, desktop, mobile); no self-hosted option. [source: https://claude.com/solutions/enterprise]
+  - Audit logging: yes — Audit logs of user actions, system events and data access, plus Compliance API. [source: https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan]
+  - SOC 2: yes — Anthropic SOC 2 Type I and Type II cover Claude for Work. [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - ISO 27001: yes — Anthropic ISO/IEC 27001:2022 covers Claude for Work. [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - ISO 42001: yes — Anthropic ISO/IEC 42001:2023 covers Claude for Work. [source: https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — Proprietary SaaS; Anthropic model lock-in. [source: https://claude.com/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan | site: https://claude.com/solutions/enterprise
 
 ### Copilot Studio
 - Page: https://www.enterpriseai.tools/tools/copilot-studio/
@@ -860,6 +1624,42 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.github.com/copilot | site: https://github.com/features/copilot
 
+### Google Antigravity
+- Page: https://www.enterpriseai.tools/tools/google-antigravity/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Google agent-first development platform (desktop app, IDE, CLI, SDK) on Gemini; replaced consumer Gemini Code Assist in June 2026.
+- Strengths: Asynchronous subagents; VPC-SC and us/eu endpoints; Gemini Enterprise license path
+- Governance posture:
+  - Data residency: partial — Enterprise path supports regional data residency and VPC Service Controls with global, us and eu endpoints; consumer plans not covered. [source: https://antigravity.google/docs/enterprise]
+  - Deployment: yes (saas, hybrid) — Desktop/IDE/CLI clients with Google-hosted Gemini models via consumer plans or a Google Cloud project; no self-hosted models. [source: https://antigravity.google/docs/enterprise]
+  - Audit logging: partial — On the enterprise path, telemetry and model interactions route to the customer Google Cloud project (request-response logging); no product-level audit log documented for consumer plans. [source: https://antigravity.google/docs/enterprise]
+  - SOC 2: unknown — No Antigravity-specific SOC 2 scope statement found at review time.
+  - ISO 27001: unknown — No Antigravity-specific ISO 27001 scope statement found at review time.
+  - ISO 42001: unknown — No Antigravity-specific ISO 42001 scope statement found at review time.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published Google EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — Proprietary Google product; Gemini and Google Cloud lock-in. [source: https://antigravity.google/docs/plans]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://antigravity.google/docs/home/ | site: https://antigravity.google/
+
+### Kiro
+- Page: https://www.enterpriseai.tools/tools/kiro/
+- Vendor: AWS | Type: vendor | License: Proprietary
+- Status: active
+- AWS agentic development environment (IDE, CLI, web) built around spec-driven development; successor to Amazon Q Developer.
+- Strengths: Specs, steering files and hooks; Admin model and MCP allow-lists; Prompt logs and CloudTrail
+- Governance posture:
+  - Data residency: partial — Enterprise content stored in the region where the profile is configured; cross-region Bedrock inference within a geography; free/individual content stored in US East (N. Virginia). [source: https://kiro.dev/docs/privacy-and-security/data-protection/]
+  - Deployment: yes (saas) — Desktop IDE and CLI clients with AWS-hosted inference; no self-hosted option. [source: https://kiro.dev/docs/]
+  - Audit logging: yes — CloudTrail API events, prompt logs of IDE/CLI chat prompts, and per-user activity reports. [source: https://kiro.dev/docs/enterprise/monitor-and-track/]
+  - SOC 2: unknown — Kiro compliance page lists HIPAA eligibility and ISO 27001 only; not found in AWS SOC services-in-scope list at review time.
+  - ISO 27001: yes — Kiro is in scope of AWS ISO/IEC 27001:2022 certification (EY CertifyPoint). [source: https://kiro.dev/docs/privacy-and-security/compliance-validation/]
+  - ISO 42001: unknown — Not listed on the Kiro compliance validation page at review time.
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published AWS EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — Proprietary AWS service; AWS identity and billing lock-in. [source: https://kiro.dev/pricing]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://kiro.dev/docs/ | site: https://kiro.dev/pricing
+
 ### Microsoft 365 Copilot
 - Page: https://www.enterpriseai.tools/tools/microsoft-365-copilot/
 - Vendor: Microsoft | Type: vendor | License: Proprietary
@@ -877,6 +1677,24 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - License risk: yes (risk: medium) — Proprietary SaaS; deep M365 Graph / Azure lock-in. [source: https://adoption.microsoft.com/en-us/microsoft-365-copilot/]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://learn.microsoft.com/microsoft-365-copilot/ | site: https://adoption.microsoft.com/en-us/microsoft-365-copilot/
+
+### OpenAI Codex
+- Page: https://www.enterpriseai.tools/tools/openai-codex/
+- Vendor: OpenAI | Type: vendor | License: Apache 2.0 (CLI); Proprietary (cloud) (caution: Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.)
+- Status: active | Version: 0.159.2 | Last release: 2026-09-29
+- OpenAI coding agent available as an open-source CLI, IDE extension, ChatGPT app surfaces and hosted Codex Cloud tasks.
+- Strengths: Apache 2.0 Rust CLI; Included in ChatGPT plans; Compliance API codex_log events
+- Governance posture:
+  - Data residency: partial — Data and inference residency apply only to eligible content and supported workloads, subject to agreement, region and configuration; not supported with UAE inference residency. [source: https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security]
+  - Deployment: yes (saas, hybrid) — Local CLI/IDE/desktop clients plus OpenAI-hosted Codex Cloud; no self-hosted model option. [source: https://learn.chatgpt.com/docs/enterprise/admin-setup]
+  - Audit logging: partial — Compliance API append-only stream with codex_log, conversation_message and AUTH_LOG events; OTel events for local use; does not capture every local command or file operation. [source: https://learn.chatgpt.com/docs/enterprise/compliance-api]
+  - SOC 2: yes — OpenAI SOC 2 Type 2 (Jul 2025-Jun 2026) covers ChatGPT Enterprise/Edu/Team and API Platform; Codex-specific scope not separately listed. [source: https://trust.openai.com]
+  - ISO 27001: yes — OpenAI ISO/IEC 27001:2022 covers ChatGPT business plans and API Platform; Codex-specific scope not separately listed. [source: https://trust.openai.com]
+  - ISO 42001: yes — OpenAI ISO/IEC 42001:2023 listed on trust portal for ChatGPT business plans and API Platform; Codex-specific scope not separately listed. [source: https://trust.openai.com]
+  - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category (general-purpose assistant); no published OpenAI EU AI Act conformity statement for this product.
+  - License risk: yes (risk: medium) — CLI is Apache 2.0 (permissive) but depends on proprietary OpenAI models and Codex Cloud. [source: https://github.com/openai/codex/blob/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://learn.chatgpt.com/docs | site: https://learn.chatgpt.com/docs/pricing | repo: https://github.com/openai/codex
 
 ### Devin Desktop (formerly Windsurf)
 - Page: https://www.enterpriseai.tools/tools/windsurf/
@@ -896,38 +1714,185 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - Governance reviewed: 2026-05-26
 - Links: docs: https://devin.ai/ | site: https://devin.ai/
 
+## Always-on AI Agents
+
+### Gemini Spark
+- Page: https://www.enterpriseai.tools/tools/gemini-spark/
+- Vendor: Google | Type: vendor | License: Proprietary
+- Status: active
+- Consumer 24/7 personal agent in the Gemini app that runs in Google's cloud and acts across Gmail, Docs, Slides and connected apps.
+- Strengths: Runs on Gemini 3.5 with Antigravity harness; Native Gmail, Docs and Slides integration; Asks before spending money or sending email
+- Governance posture:
+  - Data residency: unknown — No data-residency controls stated for Spark.
+  - Deployment: yes (saas) — Google-hosted cloud agent that keeps running when the user's devices are off. [source: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/]
+  - Audit logging: unknown — No audit logging described in the launch post.
+  - SOC 2: unknown — Consumer Gemini app feature; certification scope for Spark not published.
+  - ISO 27001: unknown — Consumer Gemini app feature; certification scope for Spark not published.
+  - ISO 42001: unknown — Consumer Gemini app feature; certification scope for Spark not published.
+  - EU AI Act: unknown (role: unknown) — General-purpose consumer agent; risk class depends on use and the vendor has not published an EU AI Act classification.
+  - License risk: yes (risk: medium) — Proprietary Google service tied to Google AI subscriptions. [source: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/ | site: https://gemini.google.com
+
+### Grok Bot
+- Page: https://www.enterpriseai.tools/tools/grok-bot/
+- Vendor: xAI | Type: commercial | License: Proprietary
+- Status: active
+- xAI's always-on bots with their own cloud computers that work across apps 24/7; Team Bots add shared bots for Teams and Enterprise plans.
+- Strengths: Own cloud computer per bot; Separate usage pool from Grok/Cursor plans; Shared Team Bots deployable in Slack
+- Governance posture:
+  - Data residency: unknown — No data-residency options stated in the Grok Bot or Team Bots announcements.
+  - Deployment: yes (saas) — xAI-hosted; each bot runs on its own cloud computer, accessed from desktop and iOS. [source: https://x.ai/news/introducing-grok-bot]
+  - Audit logging: unknown — Announcements do not describe audit logs or admin activity logs.
+  - SOC 2: unknown — xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot.
+  - ISO 27001: unknown — xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot.
+  - ISO 42001: unknown — xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot.
+  - EU AI Act: unknown (role: unknown) — General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.
+  - License risk: yes (risk: medium) — Proprietary xAI service bundled with Grok/Cursor subscriptions. [source: https://x.ai/news/grok-bot-more-plans]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://x.ai/news/introducing-grok-bot | site: https://x.ai
+
+### Hermes Agent
+- Page: https://www.enterpriseai.tools/tools/hermes-agent/
+- Vendor: Nous Research | Type: opensource | License: MIT
+- Status: active | Version: 0.21.5 | Last release: 2026-09-24
+- Self-improving open-source agent with persistent memory, built-in cron and a gateway to 20+ chat apps; runs on a laptop, VPS or cloud sandbox.
+- Strengths: Learns and reuses its own skills; Cron jobs deliver to any chat platform; 7 terminal backends incl. Docker, SSH, Modal
+- Governance posture:
+  - Data residency: yes — Self-hosted; operator chooses where it runs (local, VPS, cloud sandbox). Model calls go to the configured provider. [source: https://hermes-agent.nousresearch.com/docs/]
+  - Deployment: yes (self-hosted) — Self-hosted locally or on remote backends (Docker, SSH, Daytona, Singularity, Modal, Vercel Sandbox). [source: https://hermes-agent.nousresearch.com/docs/]
+  - Audit logging: partial — Searchable session history and command approval; no dedicated audit log documented. [source: https://hermes-agent.nousresearch.com/docs/]
+  - SOC 2: not-applicable — Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted open-source agent; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT (Copyright Nous Research) — permissive, OSI-approved. [source: https://github.com/NousResearch/hermes-agent/blob/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://hermes-agent.nousresearch.com/docs/ | repo: https://github.com/NousResearch/hermes-agent
+
+### Manus
+- Page: https://www.enterpriseai.tools/tools/manus/
+- Vendor: Manus | Type: commercial | License: Proprietary
+- Status: active
+- Autonomous general AI agent with its own sandbox computer, scheduled tasks, Telegram access and a desktop 'My Computer' mode.
+- Strengths: Context-preserving Scheduled Tasks 2.0; Runs from Telegram chats; Per-command approval in My Computer
+- Governance posture:
+  - Data residency: unknown — No customer-selectable data residency documented on the pages reviewed.
+  - Deployment: yes (saas, hybrid) — Manus-hosted cloud sandbox, plus a desktop app that can act on the local computer with per-command approval. [source: https://manus.im/blog/manus-my-computer-desktop]
+  - Audit logging: yes — Team plan includes audit logging and an admin dashboard for usage and permissions. [source: https://manus.im/team]
+  - SOC 2: yes — Team plan page states SOC 2 Type II. [source: https://manus.im/team]
+  - ISO 27001: yes — Team plan page states ISO 27001 certification. [source: https://manus.im/team]
+  - ISO 42001: unknown — No ISO 42001 certification stated on the pages reviewed.
+  - EU AI Act: unknown (role: unknown) — General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.
+  - License risk: yes (risk: medium) — Proprietary SaaS; model providers barred from training on Team/Enterprise data. [source: https://manus.im/team]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://manus.im/docs | site: https://manus.im
+
+### Muse
+- Page: https://www.enterpriseai.tools/tools/meta-muse/
+- Vendor: Meta | Type: vendor | License: Proprietary
+- Status: active
+- Meta's consumer and small-business personal AI agent that keeps working on tasks in a secure VM and is reached via the Muse app or WhatsApp.
+- Strengths: Reachable via app, web and WhatsApp; Per-app access you can revoke; Approval before publishing, sending or spending
+- Governance posture:
+  - Data residency: unknown — No data-residency options stated; available in the US (and US/Canada for small business).
+  - Deployment: yes (saas) — Meta-hosted; tasks run on 'Muse Secure VM', a dedicated virtual machine. [source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/]
+  - Audit logging: unknown — No audit logging described in the launch posts; controls are per-user app access and approvals.
+  - SOC 2: unknown — Consumer product; Meta has not published certification scope for Muse.
+  - ISO 27001: unknown — Consumer product; Meta has not published certification scope for Muse.
+  - ISO 42001: unknown — Consumer product; Meta has not published certification scope for Muse.
+  - EU AI Act: unknown (role: unknown) — Not yet offered in the EU; no classification published.
+  - License risk: yes (risk: medium) — Proprietary Meta consumer service. [source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/ | site: https://muse.ai
+
+### Microsoft Autopilot (formerly Microsoft Scout)
+- Page: https://www.enterpriseai.tools/tools/microsoft-autopilot/
+- Vendor: Microsoft | Type: vendor | License: Proprietary
+- Status: active
+- Always-on Copilot agent with its own Entra identity that works in Teams, Outlook and M365 on a user's behalf; built on OpenClaw.
+- Strengths: Own governed Entra ID identity; Purview DLP and sensitivity labels enforced; Human sign-off for sensitive actions
+- Governance posture:
+  - Data residency: unknown — Microsoft says the agent lives in the customer tenant, but no data-residency commitment is published for the preview.
+  - Deployment: yes (saas) — Microsoft-managed service running across cloud, desktop and web, inside the customer's Microsoft 365 tenant. [source: https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/]
+  - Audit logging: partial — Microsoft states it has 'permissions, audit and governance behind it'; the specific audit log surface for the preview is not documented. [source: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/]
+  - SOC 2: unknown — Private-preview service; inclusion in Microsoft 365 compliance scope not yet published.
+  - ISO 27001: unknown — Private-preview service; inclusion in Microsoft 365 compliance scope not yet published.
+  - ISO 42001: unknown — Private-preview service; inclusion in Microsoft 365 compliance scope not yet published.
+  - EU AI Act: unknown (role: unknown) — General-purpose workplace agent; risk class depends on use and the vendor has not published an EU AI Act classification.
+  - License risk: yes (risk: medium) — Proprietary Microsoft service built on the MIT-licensed OpenClaw runtime; tied to Microsoft 365 and usage-based billing. [source: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/ | site: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/
+
+### NanoClaw
+- Page: https://www.enterpriseai.tools/tools/nanoclaw/
+- Vendor: NanoClaw | Type: opensource | License: MIT
+- Status: active | Version: 2.4.0 | Last release: 2026-09-23
+- Lightweight OpenClaw alternative that runs each personal agent in its own container, messaged from WhatsApp, Telegram, Slack and more.
+- Strengths: Per-agent container isolation; Built on Claude Agent SDK, Codex optional; Script-gated scheduled jobs
+- Governance posture:
+  - Data residency: yes — Runs on the operator's own computer; cloud model providers still process the requests sent to them. [source: https://docs.nanoclaw.dev]
+  - Deployment: yes (self-hosted) — Self-hosted on macOS, Linux or WSL2 with Docker containers per agent. [source: https://github.com/nanocoai/nanoclaw]
+  - Audit logging: unknown — No audit logging documented on the pages reviewed.
+  - SOC 2: not-applicable — Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted open-source agent; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT — permissive, OSI-approved. [source: https://github.com/nanocoai/nanoclaw/blob/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.nanoclaw.dev | repo: https://github.com/nanocoai/nanoclaw
+
+### OpenClaw (formerly Clawd, Clawdbot, Moltbot)
+- Page: https://www.enterpriseai.tools/tools/openclaw/
+- Vendor: OpenClaw Foundation | Type: opensource | License: MIT
+- Status: active | Version: 2026.9.7 | Last release: 2026-09-30
+- Self-hosted personal AI agent that runs on your own machine and acts for you through WhatsApp, Telegram, Slack, Teams and 20+ chat apps.
+- Strengths: Gateway bridges 20+ messaging channels; Built-in `openclaw security audit` command; Foundation-stewarded, no paid tier
+- Governance posture:
+  - Data residency: yes — Runs on the operator's own machine; prompts still go to whichever model provider is configured. [source: https://openclaw.ai]
+  - Deployment: yes (self-hosted) — Self-hosted on macOS, Windows or Linux; no hosted tier offered. [source: https://openclaw.ai]
+  - Audit logging: partial — `openclaw security audit` reports configuration drift by severity; no documented activity/audit log for agent actions. [source: https://docs.openclaw.ai/gateway/security]
+  - SOC 2: not-applicable — Self-hosted open-source agent runtime; SOC 2 applies to the operator's infrastructure, not the package.
+  - ISO 27001: not-applicable — Self-hosted open-source agent runtime; ISO 27001 applies to the operator's ISMS, not the package.
+  - ISO 42001: not-applicable — Self-hosted open-source agent runtime; ISO 42001 applies to the deploying organisation.
+  - EU AI Act: not-applicable (role: not-applicable) — Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.
+  - License risk: yes (risk: low) — MIT (Copyright OpenClaw Foundation) — permissive, OSI-approved. [source: https://raw.githubusercontent.com/openclaw/openclaw/main/LICENSE]
+- Governance reviewed: 2026-09-30
+- Links: docs: https://docs.openclaw.ai | site: https://openclaw.ai | repo: https://github.com/openclaw/openclaw
+
 ## Recent updates
 
 - 2026-09-30 — n8n (release, low impact): n8n 2.41.4 added an n8n Assistant onboarding thread for new Cloud sign-ups and usage-based credit top-ups, alongside execution and queue-handling fixes. [source: https://github.com/n8n-io/n8n/releases/tag/n8n%402.41.4]
 - 2026-09-29 — Mastra (release, medium impact): Mastra core 1.72.0 added live channel resolvers for connecting channels without redeploying, persisted ownership leases for multi-worker background tasks, and a Microsoft Teams channel. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.72.0]
 - 2026-09-29 — LangFlow (release, medium impact): Langflow 1.12.4 shipped a security-hardening patch covering authentication, DNS validation, privilege enforcement, and sanitisation fixes. [source: https://github.com/langflow-ai/langflow/releases/tag/1.12.4]
 - 2026-09-28 — CrewAI (release, medium impact): CrewAI 1.15.23 added native Gemini 3.8 Flash support, evaluation of the last traced run through AMP, and richer task spans in tracing. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.23]
+- 2026-09-28 — Grok Bot (feature, medium impact): xAI opened Team Bots, shared always-on bots for Grok Teams and Enterprise plans, as a public beta. [source: https://x.ai/news/team-bots]
+- 2026-09-25 — Microsoft Autopilot (rename, high impact): Microsoft renamed its always-on agent Microsoft Scout to Autopilot in the new Copilot, with usage-based billing and a private preview expanding to more Frontier customers at the end of September. [source: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/]
 - 2026-09-24 — Haystack (release, medium impact): Haystack 3.2.0 added an experimental SummarizationCompactor and TokenBudgetHook for agents, plus fluent Pipeline.add_components and connect_many helpers. [source: https://github.com/deepset-ai/haystack/releases/tag/v3.2.0]
 - 2026-09-22 — GitHub Copilot (model-addition, medium impact): Claude Opus 5.5 became selectable in GitHub Copilot for Pro+, Max, Business, and Enterprise plans across IDEs, GitHub.com, Copilot CLI, and the coding agent. [source: https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot]
 - 2026-09-21 — LlamaIndex (release, medium impact): LlamaIndex 0.14.25 resolved a large batch of security alerts and added Claude Opus 5 and Sonnet 5 support in the Anthropic and Bedrock Converse integrations. [source: https://github.com/run-llama/llama_index/releases/tag/v0.14.25]
 - 2026-09-18 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.19.0 added generic vector-store provider protocols with MongoDB and Azure DocumentDB connectors, with breaking changes to cookie persistence and MCP skill archives. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0]
 - 2026-09-18 — Amazon Bedrock Agents (feature, high impact): AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/]
+- 2026-09-17 — MLflow (release, medium impact): MLflow 3.16.1 removed the default basic-auth admin password (a security fix for self-hosted servers) and added scorer timeouts. [source: https://github.com/mlflow/mlflow/releases/tag/v3.16.1]
 - 2026-09-16 — NeMo Guardrails (release, low impact): NeMo Guardrails 0.24.1 fixed benchmark concurrency measurement, Nemotron 3.5 response parsing, server overload handling, and combined-config loading. [source: https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1]
 - 2026-09-11 — Mastra (release, high impact): Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0]
+- 2026-09-11 — Temporal (release, medium impact): Temporal Server 1.32.0 made Standalone Activities generally available and added Serverless Workers support for Amazon Bedrock AgentCore Runtime. [source: https://github.com/temporalio/temporal/releases/tag/v1.32.0]
 - 2026-09-10 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.18.0 added shared vector-store abstractions and Azure AI Search, Redis, Qdrant, and pgvector connectors, plus bounded tool-loop duration and several credential, file, and checkpoint hardening changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0]
 - 2026-09-10 — Cursor (feature, high impact): Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions. [source: https://cursor.com/changelog/projects]
 - 2026-09-10 — GitHub Copilot (feature, high impact): GitHub Copilot added Jira-to-implementation context in the Copilot app, experimental adaptive model routing in Copilot CLI, recurring agent automations in VS Code, and centrally managed JetBrains sandbox policies. [source: https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/]
 - 2026-09-09 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.22.2 added current image-generation tool options and hardened UnixLocal sandbox file handling against symlink races, following the broader MCP guardrail and isolation work in 0.22.1. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.22.2]
 - 2026-09-09 — CrewAI (release, medium impact): CrewAI 1.15.21 added telemetry for checkpoint runtime and CLI usage and fixed gateway-error reporting, UTF-8 JSON checkpoints, streaming tool-call arguments, and JSON Schema type-array handling. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.21]
+- 2026-09-08 — Muse (release, medium impact): Meta launched Muse in the US, a personal AI agent that runs tasks in its own secure VM and is reachable in the Muse app and WhatsApp. [source: https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/]
 - 2026-09-08 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock made OpenAI GPT-6 Astra generally available with up to a 1 million-token input context window and support for advanced computer and browser use in agent workflows. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-on-amazon-bedrock/]
 - 2026-09-08 — Amazon Bedrock Agents (feature, medium impact): Amazon Bedrock AgentCore Memory added direct long-term-memory ingestion for conversational or JSON payloads without first persisting a short-term memory event. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/agentcore-memory-direct-ingest/]
+- 2026-08-27 — agentgateway (release, medium impact): agentgateway 1.5.0 added API-key-scoped LLM budgets, native Gemini APIs, and guardrails on tool calls, with breaking JWT and token-count changes. [source: https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0]
 - 2026-08-25 — Cursor (feature, high impact): Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification. [source: https://cursor.com/security#certifications-and-third-party-assessments]
+- 2026-08-24 — Okta for AI Agents (feature, medium impact): Okta made Agent SSO generally available, built on the Cross App Access standard and included in core Okta SSO. [source: https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/]
 - 2026-08-21 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.15.0 added optional A2UI support for agent-generated interfaces, first-class middleware failure signaling, and broader runtime and integration updates. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0]
 - 2026-08-20 — CrewAI (release, medium impact): CrewAI 1.15.17 expanded declarative conversational flows, improved oversized-message chunking, and fixed MCP HTTP and SSE server naming plus failed-attempt scope cleanup. [source: https://github.com/crewAIInc/crewAI/releases/tag/1.15.17]
 - 2026-08-19 — Mastra (release, high impact): Mastra core 1.60.0 added durable execution for Agents API-created agents without redeployment and introduced a Cloudflare Sandbox provider for remote workspaces. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.60.0]
 - 2026-08-19 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.22.0 hardened runtime state and guardrail handling, including redaction of rejected terminal tool output, and tightened explicit OpenAI client configuration rules. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.22.0]
 - 2026-08-17 — Paperclip (release, high impact): Paperclip v2026.817.0 delivered its first stable release through the new canary-to-stable channels, adding a first-class decisions workflow, full-fidelity company import/export, and managed CLI installation. [source: https://github.com/paperclipai/paperclip/releases/tag/v2026.817.0]
-- 2026-08-15 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.21.0 added provider-neutral deterministic testing utilities, OpenAI Python 3 compatibility, and hardened interruption snapshots, approvals, MCP lifecycle isolation, and sensitive-error redaction. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.21.0]
-- 2026-08-14 — Guardrails AI (deprecation, high impact): Guardrails AI 0.11.0 deprecated its Hub CLI and private validator registry as the project moved validator distribution to public PyPI. [source: https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0]
-- 2026-08-13 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.14.0 added Mistral support, opt-in AGENT-HOOKS enforcement middleware, AG-UI checkpoint resume, and Foundry state stores, alongside experimental and beta breaking changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.14.0]
-- 2026-08-13 — Flowise (deprecation, high impact): Flowise archived its GitHub repository (read-only) ahead of the project end of life on August 31, 2026; the Apache-2.0 source remains available for forks. [source: https://github.com/FlowiseAI/Flowise]
-- 2026-08-12 — Mastra (release, high impact): Mastra core 1.58.0 added file-based agent schedules, Oracle Database storage and vector support, an in-process QuickJS transport, and dynamic workflow APIs, with stored-workflow naming and channel-format breaking changes. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.58.0]
-- 2026-08-11 — Langflow (release, high impact): Langflow 1.11.3 shipped a security-focused patch set covering SQL target overrides, path containment, symlink handling, ambiguous URL authorities, admin-only component builds, and MCP redirect-based SSRF exposure. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.11.3]
 
 ## Data access
 - Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json

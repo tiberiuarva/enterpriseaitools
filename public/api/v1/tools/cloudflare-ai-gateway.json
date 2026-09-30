@@ -1,0 +1,83 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "cloudflare-ai-gateway",
+    "name": "Cloudflare AI Gateway",
+    "category": "gateways",
+    "type": "vendor",
+    "vendor": "Cloudflare",
+    "description": "Edge-hosted AI gateway adding analytics, logging, caching, rate limiting, model fallback, DLP and guardrails in front of LLM providers.",
+    "strengths": [
+      "Core analytics, caching and rate limiting free",
+      "Dynamic routing with model fallback",
+      "Per-request log and payload opt-out"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://developers.cloudflare.com/ai-gateway/",
+    "pricing": "Core features (analytics, caching, rate limiting) free on all plans; guardrails billed via Workers AI tokens; 5% fee on Unified Billing credits; Logpush on paid plans ($0.05/million beyond 10M/month).",
+    "pricingModel": "freemium",
+    "status": "active",
+    "statusNote": "Gateways first created on or after 2026-09-24 use Workers Logs pricing and retention; older customers stay on Legacy Logs.",
+    "tags": [
+      "gateways",
+      "edge",
+      "caching",
+      "observability"
+    ],
+    "practitionerNote": "The cheapest way to add caching, rate limits and usage analytics in front of LLM providers, especially for apps already on Workers. Logs capture full prompts and responses by default, so turn off payload logging where privacy rules require it.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Runs on Cloudflare's global network; the AI Gateway docs reviewed do not document regional processing or storage controls."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Fully managed Cloudflare service; no self-hosted option.",
+        "sourceUrl": "https://developers.cloudflare.com/ai-gateway/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Request logs record prompt, response, provider, tokens, cost, status, DLP and guardrail actions, and can be disabled per gateway or per request.",
+        "sourceUrl": "https://developers.cloudflare.com/ai-gateway/observability/logging/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "AI Gateway is explicitly listed in Cloudflare's SOC 2 Type II scope (Developer Platform).",
+        "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/soc-2/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO 27001:2022 covers the Cloudflare global cloud platform; AI Gateway is not named individually.",
+        "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/"
+      },
+      "iso42001": {
+        "status": "no",
+        "detail": "Cloudflare's ISO page lists 27001, 27018 and 27701 only; no ISO 42001.",
+        "sourceUrl": "https://www.cloudflare.com/trust-hub/compliance-resources/iso-certifications/"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Proxy and observability infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary managed service; configuration is Cloudflare-specific.",
+        "sourceUrl": "https://developers.cloudflare.com/ai-gateway/reference/pricing/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

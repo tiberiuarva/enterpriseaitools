@@ -1,6 +1,6 @@
 # Milestone 9 — Category expansion: agent control planes and MCP provenance
 
-**Status:** [ ] planned
+**Status:** [ ] in progress — categories shipped 2026-09-30; MCP-server provenance lens still open
 **Horizon:** 3 — Coverage & reach
 **Pillars:** Own the unowned gaps (5); Freshness as a feature (2)
 **Branch when built:** `milestone/9-category-expansion`
@@ -61,6 +61,18 @@ cost of the trust model.
   signals, each source-verified.
 - Canonical names and aliases reflect the latest rebrands; no broken external references.
 - Dataset counts stay consistent across surfaces (the M0 invariant); `/ship-check` green.
+
+## Progress (2026-09-30)
+
+Shipped: five new hubs, each schema-first and source-backed — `/always-on-agents/`,
+`/control-planes/`, `/agent-identity/`, `/observability/`, `/gateways/` — plus the
+`governance` hub relabelled "AI Guardrails & Agent Security" (slug unchanged) and gap-fill
+records in existing hubs. Labels and order live in `lib/categories.ts`.
+
+Still open: the curated MCP-server provenance lens; platform `categoryMapping` entries for the
+new hubs; real logo assets for the new records (all use `fallback` today); OpenAI Frontier,
+ChatGPT Dots and Perplexity Computer, left out because their primary sources were
+unreachable during research.
 
 ## Depends on / feeds
 

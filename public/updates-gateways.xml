@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
+  <title>enterpriseai.tools weekly updates — gateways</title>
+  <updated>2026-09-30T00:00:00.000Z</updated>
+  <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
+  <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
+  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-27-01</id>
+    <title>agentgateway — release</title>
+    <updated>2026-08-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-27-01" />
+    <summary>agentgateway 1.5.0 added API-key-scoped LLM budgets, native Gemini APIs, and guardrails on tool calls, with breaking JWT and token-count changes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0</id>
+      <title>Release v1.5.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0" />
+    </source>
+  </entry>
+</feed>

@@ -49,6 +49,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-28-02</id>
+    <title>Grok Bot — feature</title>
+    <updated>2026-09-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-28-02" />
+    <summary>xAI opened Team Bots, shared always-on bots for Grok Teams and Enterprise plans, as a public beta.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, feature, medium" />
+    <source>
+      <id>https://x.ai/news/team-bots</id>
+      <title>Team Bots · xAI</title>
+      <link href="https://x.ai/news/team-bots" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-28-01</id>
     <title>CrewAI — release</title>
     <updated>2026-09-28T00:00:00.000Z</updated>
@@ -60,6 +74,20 @@
       <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.23</id>
       <title>Release 1.15.23 · crewAIInc/crewAI</title>
       <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.23" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-25-01</id>
+    <title>Microsoft Autopilot — rename</title>
+    <updated>2026-09-25T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-25-01" />
+    <summary>Microsoft renamed its always-on agent Microsoft Scout to Autopilot in the new Copilot, with usage-based billing and a private preview expanding to more Frontier customers at the end of September.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, rename, high" />
+    <source>
+      <id>https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/</id>
+      <title>Introducing the new Copilot with Home, Code and Autopilot · Official Microsoft Blog</title>
+      <link href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" />
     </source>
   </entry>
   <entry>
@@ -133,6 +161,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-17-01</id>
+    <title>MLflow — release</title>
+    <updated>2026-09-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-17-01" />
+    <summary>MLflow 3.16.1 removed the default basic-auth admin password (a security fix for self-hosted servers) and added scorer timeouts.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, medium" />
+    <source>
+      <id>https://github.com/mlflow/mlflow/releases/tag/v3.16.1</id>
+      <title>Release v3.16.1 · mlflow/mlflow</title>
+      <link href="https://github.com/mlflow/mlflow/releases/tag/v3.16.1" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-16-01</id>
     <title>NeMo Guardrails — release</title>
     <updated>2026-09-16T00:00:00.000Z</updated>
@@ -144,6 +186,20 @@
       <id>https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1</id>
       <title>Release v0.24.1 · NVIDIA-NeMo/Guardrails</title>
       <link href="https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-11-02</id>
+    <title>Temporal — release</title>
+    <updated>2026-09-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-11-02" />
+    <summary>Temporal Server 1.32.0 made Standalone Activities generally available and added Serverless Workers support for Amazon Bedrock AgentCore Runtime.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/temporalio/temporal/releases/tag/v1.32.0</id>
+      <title>Release v1.32.0 · temporalio/temporal</title>
+      <link href="https://github.com/temporalio/temporal/releases/tag/v1.32.0" />
     </source>
   </entry>
   <entry>
@@ -259,6 +315,34 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-08-01</id>
+    <title>Muse — release</title>
+    <updated>2026-09-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-08-01" />
+    <summary>Meta launched Muse in the US, a personal AI agent that runs tasks in its own secure VM and is reachable in the Muse app and WhatsApp.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, medium" />
+    <source>
+      <id>https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/</id>
+      <title>Introducing Muse · Meta Newsroom</title>
+      <link href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-27-01</id>
+    <title>agentgateway — release</title>
+    <updated>2026-08-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-27-01" />
+    <summary>agentgateway 1.5.0 added API-key-scoped LLM budgets, native Gemini APIs, and guardrails on tool calls, with breaking JWT and token-count changes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0</id>
+      <title>Release v1.5.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-25-01</id>
     <title>Cursor — feature</title>
     <updated>2026-08-25T00:00:00.000Z</updated>
@@ -270,6 +354,20 @@
       <id>https://cursor.com/security#certifications-and-third-party-assessments</id>
       <title>Certifications and third-party assessments · Cursor Security</title>
       <link href="https://cursor.com/security#certifications-and-third-party-assessments" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-24-01</id>
+    <title>Okta for AI Agents — feature</title>
+    <updated>2026-08-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-24-01" />
+    <summary>Okta made Agent SSO generally available, built on the Cross App Access standard and included in core Okta SSO.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/</id>
+      <title>Okta brings first-class identity to AI agents with Agent SSO · Okta</title>
+      <link href="https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/" />
     </source>
   </entry>
   <entry>
@@ -494,6 +592,20 @@
       <id>https://flowiseai.com/sunset</id>
       <title>The Future of Flowise</title>
       <link href="https://flowiseai.com/sunset" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-28-02</id>
+    <title>Saviynt Zuma — release</title>
+    <updated>2026-07-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-28-02" />
+    <summary>Saviynt launched Zuma, an AI identity security platform with agent discovery, runtime intent-aware access, and governance for AI agents and non-human identities.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, release, medium" />
+    <source>
+      <id>https://saviynt.com/press-release/saviynt-launches-zuma-ai-security-platform</id>
+      <title>Saviynt launches Zuma · Saviynt</title>
+      <link href="https://saviynt.com/press-release/saviynt-launches-zuma-ai-security-platform" />
     </source>
   </entry>
   <entry>
@@ -928,6 +1040,20 @@
       <id>https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0</id>
       <title>Release dotnet-1.13.0 · microsoft/agent-framework</title>
       <link href="https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-02-01</id>
+    <title>IBM watsonx Orchestrate — feature</title>
+    <updated>2026-07-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-02-01" />
+    <summary>IBM added an Agentic Control Plane to watsonx Orchestrate with operations dashboards, policy and access governance, and a shared agent catalog, on AWS and IBM Cloud.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane</id>
+      <title>Introducing the Agentic Control Plane · IBM</title>
+      <link href="https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane" />
     </source>
   </entry>
   <entry>

@@ -1,0 +1,82 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "kore-ai-agent-management-platform",
+    "name": "Kore.ai Agent Management Platform",
+    "category": "control-planes",
+    "type": "commercial",
+    "vendor": "Kore.ai",
+    "description": "Vendor-neutral control center to observe, govern, evaluate and track cost of agents built on many frameworks and platforms.",
+    "strengths": [
+      "Governs LangGraph, CrewAI, AgentCore and Foundry agents",
+      "Evaluation studio before production",
+      "Cost and anomaly tracking tied to outcomes"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.kore.ai/news/kore-ai-launches-agent-management-platform",
+    "pricingModel": "contact",
+    "status": "active",
+    "statusNote": "Launched 2026-03-17; no product documentation for AMP was found, only the launch announcement.",
+    "tags": [
+      "control-planes",
+      "multi-vendor",
+      "observability",
+      "evaluation"
+    ],
+    "practitionerNote": "Candidate for neutral oversight when agents span several clouds and frameworks; confirm connector depth for each platform in a pilot because public detail beyond the launch release is thin.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Kore.ai trust center does not publish region-specific hosting detail."
+      },
+      "deployment": {
+        "status": "partial",
+        "detail": "Kore.ai platform offers multi-tenant SaaS, on-premises and dedicated VPC; AMP-specific availability per model not stated.",
+        "sourceUrl": "https://trust.kore.ai/",
+        "models": [
+          "saas",
+          "on-prem",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Launch release describes observability and governance but no audit-log statement."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Kore.ai holds SOC 2 Type II (company level).",
+        "sourceUrl": "https://trust.kore.ai/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Kore.ai holds ISO/IEC 27001:2022 (company level).",
+        "sourceUrl": "https://trust.kore.ai/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO 42001 is not listed on the Kore.ai trust center."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent governance tooling, not itself an AI system placed on the market; obligations rest with deployers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary commercial product; pricing not published.",
+        "sourceUrl": "https://www.kore.ai/news/kore-ai-launches-agent-management-platform",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

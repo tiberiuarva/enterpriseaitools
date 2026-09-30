@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "label": "license",
+  "message": "MIT core + EE paths",
+  "color": "yellow",
+  "cacheSeconds": 86400
+}

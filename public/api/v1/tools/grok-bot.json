@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "grok-bot",
+    "name": "Grok Bot",
+    "type": "commercial",
+    "vendor": "xAI",
+    "description": "xAI's always-on bots with their own cloud computers that work across apps 24/7; Team Bots add shared bots for Teams and Enterprise plans.",
+    "strengths": [
+      "Own cloud computer per bot",
+      "Separate usage pool from Grok/Cursor plans",
+      "Shared Team Bots deployable in Slack"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://x.ai/news/introducing-grok-bot",
+    "websiteUrl": "https://x.ai",
+    "pricing": "Included (beta) with SuperGrok, SuperGrok Plus/Heavy, Cursor Pro/Pro+/Ultra and Cursor Teams plans; enterprise via sales.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Beta: launched 2026-08-11, expanded to more plans 2026-08-26; Team Bots in public beta on Teams and Enterprise plans since 2026-09-28; enterprise waitlist.",
+    "tags": [
+      "always-on-agents",
+      "xai",
+      "cloud-agent",
+      "beta"
+    ],
+    "practitionerNote": "Bots hold credentials and act across tools while unattended, so scope plugin credentials tightly. xAI has not published enterprise compliance detail for Bots, so treat it as a pilot rather than a regulated-workload option.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "No data-residency options stated in the Grok Bot or Team Bots announcements."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "xAI-hosted; each bot runs on its own cloud computer, accessed from desktop and iOS.",
+        "sourceUrl": "https://x.ai/news/introducing-grok-bot",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Announcements do not describe audit logs or admin activity logs."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "xAI announcement pages link to security and privacy portals but do not state certification scope for Grok Bot."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "detail": "General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.",
+        "role": "unknown"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary xAI service bundled with Grok/Cursor subscriptions.",
+        "sourceUrl": "https://x.ai/news/grok-bot-more-plans",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

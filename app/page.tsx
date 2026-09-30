@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import {
+  Activity,
   ArrowUpRight,
   Bot,
   BriefcaseBusiness,
   CalendarClock,
   Database,
+  Fingerprint,
   GitBranch,
   GitCompare,
   Landmark,
   Layers3,
+  LayoutDashboard,
+  Network,
+  Radio,
   Scale,
   ShieldCheck,
 } from "lucide-react";
@@ -21,6 +26,7 @@ import { homeFaqs } from "@/lib/hub-faqs";
 import { PlatformStrip } from "@/components/platform-strip";
 import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
 import { StatPill } from "@/components/stat-pill";
+import { CATEGORIES, CATEGORY_ORDER, type CategoryIconName } from "@/lib/categories";
 import { categoryDescriptions, lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
 import { filterToolsByCategory } from "@/lib/dataset-metrics";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
@@ -29,39 +35,34 @@ import type { ToolCategory } from "@/lib/types";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
-  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, plus leading open source AI tools across agents, orchestration, governance, and assistants.";
+  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, plus the agent, gateway, observability, control-plane, identity, and assistant tools.";
 
 export const metadata: Metadata = buildMetadata({
   title: homepageTitle,
   description: homepageDescription,
 });
 
-const categoryMeta = {
-  agents: {
-    href: "/agents",
-    icon: Bot,
-    name: "AI Agent Frameworks",
-    description: "Cloud agent platforms and open source frameworks.",
-  },
-  orchestration: {
-    href: "/orchestration",
-    icon: GitBranch,
-    name: "AI Orchestration",
-    description: "Workflow engines, pipelines, and automation layers.",
-  },
-  governance: {
-    href: "/governance",
-    icon: ShieldCheck,
-    name: "AI Governance",
-    description: "Guardrails, safety controls, and policy tooling.",
-  },
-  assistants: {
-    href: "/assistants",
-    icon: BriefcaseBusiness,
-    name: "AI Assistants",
-    description: "Coding copilots, productivity assistants, and platforms.",
-  },
-} as const;
+const categoryIcons = {
+  bot: Bot,
+  "git-branch": GitBranch,
+  "shield-check": ShieldCheck,
+  "briefcase-business": BriefcaseBusiness,
+  radio: Radio,
+  "layout-dashboard": LayoutDashboard,
+  fingerprint: Fingerprint,
+  activity: Activity,
+  network: Network,
+} as const satisfies Record<CategoryIconName, unknown>;
+
+const categoryMeta = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => {
+    const meta = CATEGORIES[category];
+    return [
+      category,
+      { href: `/${category}`, icon: categoryIcons[meta.iconName], name: meta.title, description: meta.summary },
+    ];
+  }),
+) as Record<ToolCategory, { href: string; icon: (typeof categoryIcons)[CategoryIconName]; name: string; description: string }>;
 
 function formatUpdateLabel(value: string) {
   return value
@@ -71,7 +72,7 @@ function formatUpdateLabel(value: string) {
 }
 
 export default function Home() {
-  const categoryKeys = Object.keys(categoryMeta) as ToolCategory[];
+  const categoryKeys = CATEGORY_ORDER;
   const categoryCards = categoryKeys.map((key) => {
     const categoryTools = filterToolsByCategory(tools, key);
 
@@ -126,15 +127,20 @@ export default function Home() {
           description: "Tracked workflow engines, automation layers, and orchestration tooling for enterprise AI systems.",
         },
         {
-          name: "AI governance tools catalog",
+          name: "AI guardrails and agent security catalog",
           url: `${siteUrl}/governance/`,
-          description: "Tracked guardrails, safety controls, and governance tooling for enterprise AI systems.",
+          description: "Tracked guardrails, safety controls, and agent security posture tooling for enterprise AI systems.",
         },
         {
           name: "AI assistants catalog",
           url: `${siteUrl}/assistants/`,
           description: "Tracked coding assistants, productivity copilots, and assistant platforms for enterprise use.",
         },
+        ...(["gateways", "observability", "control-planes", "agent-identity", "always-on-agents"] as const).map((category) => ({
+          name: `${CATEGORIES[category].title} catalog`,
+          url: `${siteUrl}/${category}/`,
+          description: CATEGORIES[category].summary,
+        })),
         {
           name: "Enterprise AI tooling updates feed",
           url: `${siteUrl}/updates.xml`,
@@ -159,7 +165,7 @@ export default function Home() {
                 Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
               </h1>
               <p className="mt-4 text-body text-[var(--color-text-secondary)]">
-                Updated weekly. Compare the cloud foundations, then the agent, orchestration, governance, and assistant layers.
+                Updated weekly. Compare the cloud foundations, then each layer of the agent stack: build, run, govern, and use.
               </p>
             </div>
 
@@ -197,7 +203,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {categoryCards.map((category) => (
             <CategoryCard key={category.href} {...category} />
           ))}

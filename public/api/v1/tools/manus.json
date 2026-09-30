@@ -1,0 +1,81 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "manus",
+    "name": "Manus",
+    "type": "commercial",
+    "vendor": "Manus",
+    "description": "Autonomous general AI agent with its own sandbox computer, scheduled tasks, Telegram access and a desktop 'My Computer' mode.",
+    "strengths": [
+      "Context-preserving Scheduled Tasks 2.0",
+      "Runs from Telegram chats",
+      "Per-command approval in My Computer"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://manus.im/docs",
+    "websiteUrl": "https://manus.im",
+    "status": "active",
+    "statusNote": "Manus announced it resumed independent operations on 2026-09-01; the transition involved data backup/restore and a temporary interruption to access.",
+    "tags": [
+      "always-on-agents",
+      "cloud-agent",
+      "scheduled-tasks"
+    ],
+    "practitionerNote": "Team/Enterprise plans add SSO-style admin, audit logs and a no-training commitment; use those rather than personal plans for work data. Recheck contracts and data location after the September 2026 ownership transition.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "No customer-selectable data residency documented on the pages reviewed."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Manus-hosted cloud sandbox, plus a desktop app that can act on the local computer with per-command approval.",
+        "sourceUrl": "https://manus.im/blog/manus-my-computer-desktop",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Team plan includes audit logging and an admin dashboard for usage and permissions.",
+        "sourceUrl": "https://manus.im/team"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Team plan page states SOC 2 Type II.",
+        "sourceUrl": "https://manus.im/team"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Team plan page states ISO 27001 certification.",
+        "sourceUrl": "https://manus.im/team"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 certification stated on the pages reviewed."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "detail": "General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.",
+        "role": "unknown"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; model providers barred from training on Team/Enterprise data.",
+        "sourceUrl": "https://manus.im/team",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

@@ -6,6 +6,7 @@ import { SnapshotDiffFeed } from "@/components/snapshot-diff-feed";
 import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, snapshotCount, snapshotDiffEvents, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
+import { CATEGORY_ORDER } from "@/lib/categories";
 import { navItems, withBasePath } from "@/lib/site";
 
 // `buildMetadata` already advertises the site-wide Atom feed on every page, so
@@ -19,7 +20,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function UpdatesPage() {
-  const hubLinks = navItems.filter((item) => ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"].includes(item.href));
+  const hubLinks = navItems.filter((item) => ["/platforms", ...CATEGORY_ORDER.map((category) => `/${category}`)].includes(item.href));
   const pageUrl = `${siteUrl}/updates/`;
   const atomFeedUrl = `${siteUrl}/updates.xml`;
   const description =
@@ -129,7 +130,7 @@ export default function UpdatesPage() {
               },
               {
                 href: "/governance",
-                title: "AI Governance",
+                title: "AI Guardrails & Agent Security",
                 description: "Inspect guardrails and policy tooling after governance or safety updates land.",
               },
               {

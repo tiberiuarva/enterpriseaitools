@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "prisma-airs",
+    "name": "Prisma AIRS",
+    "category": "governance",
+    "type": "vendor",
+    "vendor": "Palo Alto Networks",
+    "description": "Palo Alto Networks AI security platform for agent discovery, model scanning, red teaming, posture and runtime protection.",
+    "strengths": [
+      "Runtime security via API or network intercept",
+      "AI red teaming and model scanning",
+      "Agent inventory and posture management"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.paloaltonetworks.com/ai-runtime-security",
+    "websiteUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+    "status": "active",
+    "statusNote": "Prisma AIRS 3.0 announced 2026-03-23; its AI Agent Gateway was in limited preview at launch.",
+    "tags": [
+      "governance",
+      "agent-security",
+      "runtime-protection",
+      "red-teaming"
+    ],
+    "practitionerNote": "Best fit for Palo Alto Networks customers who want AI runtime controls in Strata Cloud Manager alongside existing firewalls. It absorbed Protect AI (acquisition closed 2025-07-22) and Portkey's AI gateway (closed 2026-05-29), so expect packaging changes.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "API intercept deployment profile selects region (Americas, EU-Germany, India, Singapore, Japan); some features process out of region.",
+        "sourceUrl": "https://docs.paloaltonetworks.com/ai-runtime-security/activation-and-onboarding/prisma-airs-supported-regions"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "SaaS API intercept, or network intercept (AI Runtime Firewall) deployed in customer cloud and managed via Strata Cloud Manager.",
+        "sourceUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Logging via Strata Logging Service is referenced in docs navigation but audit-log scope was not verified."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Palo Alto Networks publishes an organisation-level SOC 2+ report; Prisma AIRS product scope not confirmed."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Palo Alto Networks lists ISO certifications organisation-wide; Prisma AIRS scope not confirmed."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No Prisma AIRS ISO 42001 certification found on the Palo Alto Networks trust center."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Security tooling for AI systems, not itself a high-risk AI system placed on the market."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary platform tied to the Palo Alto Networks / Strata Cloud Manager ecosystem.",
+        "sourceUrl": "https://www.paloaltonetworks.com/prisma/prisma-ai-runtime-security",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "claude-agent-sdk",
+    "name": "Claude Agent SDK",
+    "aliases": [
+      "Claude Code SDK"
+    ],
+    "category": "agents",
+    "type": "vendor",
+    "vendor": "Anthropic",
+    "description": "Anthropic's Python/TypeScript library that embeds Claude Code's agent loop, tools, hooks, subagents and MCP in your own app.",
+    "strengths": [
+      "Claude Code tools, hooks and subagents",
+      "Permission modes for tool approval",
+      "Bedrock, Vertex and Foundry auth options"
+    ],
+    "license": "MIT",
+    "licenseWarning": "The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.",
+    "githubUrl": "https://github.com/anthropics/claude-agent-sdk-python",
+    "githubStars": 8196,
+    "version": "0.2.162",
+    "lastRelease": "2026-09-29",
+    "docsUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "status": "active",
+    "tags": [
+      "agents",
+      "anthropic",
+      "mcp",
+      "coding-agents"
+    ],
+    "practitionerNote": "Fastest path to a Claude Code-grade agent inside your own process, but it is Claude-only and usage is billed through the Anthropic API or the Bedrock/Vertex/Foundry route you configure. Anthropic does not allow third-party products to offer claude.ai login, so plan for API-key auth.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Library runs in the operator's process; prompts go to the chosen provider (Anthropic API, Amazon Bedrock, Google Cloud, Microsoft Foundry), whose residency terms apply.",
+        "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/quickstart"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Library embedded in an application you operate; Anthropic-hosted Managed Agents is a separate product.",
+        "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "No built-in audit log; hooks let the operator intercept and log tool calls and lifecycle events.",
+        "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; SOC 2 applies to the operator and to the chosen model provider, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 27001 applies to the operator and to the chosen model provider, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted library; ISO 42001 applies to the deploying organisation and model provider."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Developer component, not an AI system placed on the market; obligations rest with the deployer (GPAI model obligations sit with Anthropic)."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT wrapper, but bundled Claude Code binary and Anthropic Commercial Terms govern use; tied to Claude models.",
+        "sourceUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

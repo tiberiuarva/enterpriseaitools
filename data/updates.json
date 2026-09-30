@@ -38,6 +38,18 @@
       "impact": "medium"
     },
     {
+      "id": "update-2026-09-28-02",
+      "date": "2026-09-28",
+      "toolId": "grok-bot",
+      "toolName": "Grok Bot",
+      "category": "always-on-agents",
+      "type": "feature",
+      "summary": "xAI opened Team Bots, shared always-on bots for Grok Teams and Enterprise plans, as a public beta.",
+      "sourceUrl": "https://x.ai/news/team-bots",
+      "sourceTitle": "Team Bots · xAI",
+      "impact": "medium"
+    },
+    {
       "id": "update-2026-09-28-01",
       "date": "2026-09-28",
       "toolId": "crewai",
@@ -48,6 +60,18 @@
       "sourceUrl": "https://github.com/crewAIInc/crewAI/releases/tag/1.15.23",
       "sourceTitle": "Release 1.15.23 · crewAIInc/crewAI",
       "impact": "medium"
+    },
+    {
+      "id": "update-2026-09-25-01",
+      "date": "2026-09-25",
+      "toolId": "microsoft-autopilot",
+      "toolName": "Microsoft Autopilot",
+      "category": "always-on-agents",
+      "type": "rename",
+      "summary": "Microsoft renamed its always-on agent Microsoft Scout to Autopilot in the new Copilot, with usage-based billing and a private preview expanding to more Frontier customers at the end of September.",
+      "sourceUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "sourceTitle": "Introducing the new Copilot with Home, Code and Autopilot · Official Microsoft Blog",
+      "impact": "high"
     },
     {
       "id": "update-2026-09-24-01",
@@ -110,6 +134,18 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-09-17-01",
+      "date": "2026-09-17",
+      "toolId": "mlflow",
+      "toolName": "MLflow",
+      "category": "observability",
+      "type": "release",
+      "summary": "MLflow 3.16.1 removed the default basic-auth admin password (a security fix for self-hosted servers) and added scorer timeouts.",
+      "sourceUrl": "https://github.com/mlflow/mlflow/releases/tag/v3.16.1",
+      "sourceTitle": "Release v3.16.1 · mlflow/mlflow",
+      "impact": "medium"
+    },
+    {
       "id": "update-2026-09-16-01",
       "date": "2026-09-16",
       "toolId": "nemo-guardrails",
@@ -120,6 +156,18 @@
       "sourceUrl": "https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1",
       "sourceTitle": "Release v0.24.1 · NVIDIA-NeMo/Guardrails",
       "impact": "low"
+    },
+    {
+      "id": "update-2026-09-11-02",
+      "date": "2026-09-11",
+      "toolId": "temporal",
+      "toolName": "Temporal",
+      "category": "orchestration",
+      "type": "release",
+      "summary": "Temporal Server 1.32.0 made Standalone Activities generally available and added Serverless Workers support for Amazon Bedrock AgentCore Runtime.",
+      "sourceUrl": "https://github.com/temporalio/temporal/releases/tag/v1.32.0",
+      "sourceTitle": "Release v1.32.0 · temporalio/temporal",
+      "impact": "medium"
     },
     {
       "id": "update-2026-09-11-01",
@@ -218,6 +266,30 @@
       "impact": "high"
     },
     {
+      "id": "update-2026-09-08-01",
+      "date": "2026-09-08",
+      "toolId": "meta-muse",
+      "toolName": "Muse",
+      "category": "always-on-agents",
+      "type": "release",
+      "summary": "Meta launched Muse in the US, a personal AI agent that runs tasks in its own secure VM and is reachable in the Muse app and WhatsApp.",
+      "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      "sourceTitle": "Introducing Muse · Meta Newsroom",
+      "impact": "medium"
+    },
+    {
+      "id": "update-2026-08-27-01",
+      "date": "2026-08-27",
+      "toolId": "agentgateway",
+      "toolName": "agentgateway",
+      "category": "gateways",
+      "type": "release",
+      "summary": "agentgateway 1.5.0 added API-key-scoped LLM budgets, native Gemini APIs, and guardrails on tool calls, with breaking JWT and token-count changes.",
+      "sourceUrl": "https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0",
+      "sourceTitle": "Release v1.5.0 · agentgateway/agentgateway",
+      "impact": "medium"
+    },
+    {
       "id": "update-2026-08-25-01",
       "date": "2026-08-25",
       "toolId": "cursor",
@@ -228,6 +300,18 @@
       "sourceUrl": "https://cursor.com/security#certifications-and-third-party-assessments",
       "sourceTitle": "Certifications and third-party assessments · Cursor Security",
       "impact": "high"
+    },
+    {
+      "id": "update-2026-08-24-01",
+      "date": "2026-08-24",
+      "toolId": "okta-for-ai-agents",
+      "toolName": "Okta for AI Agents",
+      "category": "agent-identity",
+      "type": "feature",
+      "summary": "Okta made Agent SSO generally available, built on the Cross App Access standard and included in core Okta SSO.",
+      "sourceUrl": "https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/",
+      "sourceTitle": "Okta brings first-class identity to AI agents with Agent SSO · Okta",
+      "impact": "medium"
     },
     {
       "id": "update-2026-08-21-01",
@@ -420,6 +504,18 @@
       "sourceUrl": "https://flowiseai.com/sunset",
       "sourceTitle": "The Future of Flowise",
       "impact": "high"
+    },
+    {
+      "id": "update-2026-07-28-02",
+      "date": "2026-07-28",
+      "toolId": "saviynt-zuma",
+      "toolName": "Saviynt Zuma",
+      "category": "agent-identity",
+      "type": "release",
+      "summary": "Saviynt launched Zuma, an AI identity security platform with agent discovery, runtime intent-aware access, and governance for AI agents and non-human identities.",
+      "sourceUrl": "https://saviynt.com/press-release/saviynt-launches-zuma-ai-security-platform",
+      "sourceTitle": "Saviynt launches Zuma · Saviynt",
+      "impact": "medium"
     },
     {
       "id": "update-2026-07-28-01",
@@ -792,6 +888,18 @@
       "sourceUrl": "https://github.com/microsoft/agent-framework/releases/tag/dotnet-1.13.0",
       "sourceTitle": "Release dotnet-1.13.0 · microsoft/agent-framework",
       "impact": "high"
+    },
+    {
+      "id": "update-2026-07-02-01",
+      "date": "2026-07-02",
+      "toolId": "ibm-watsonx-orchestrate",
+      "toolName": "IBM watsonx Orchestrate",
+      "category": "control-planes",
+      "type": "feature",
+      "summary": "IBM added an Agentic Control Plane to watsonx Orchestrate with operations dashboards, policy and access governance, and a shared agent catalog, on AWS and IBM Cloud.",
+      "sourceUrl": "https://www.ibm.com/new/announcements/introducing-the-agentic-control-plane",
+      "sourceTitle": "Introducing the Agentic Control Plane · IBM",
+      "impact": "medium"
     },
     {
       "id": "update-2026-07-01-03",

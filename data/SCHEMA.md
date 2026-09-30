@@ -20,7 +20,7 @@ Top-level shape:
 | `id` | string | yes | Unique slug, e.g. `semantic-kernel` |
 | `name` | string | yes | Display name |
 | `aliases` | string[] | no | Prior product names (renames/rebrands). Never drop an entry; the slug `id` stays unchanged on rename. Rendered as "Formerly …" on the tool page and indexed by site search. |
-| `category` | `agents \| orchestration \| governance \| assistants` | yes | Primary category |
+| `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents` | yes | Primary category; one per record, matching its hub route (`/<category>/`). Labels and order live in `lib/categories.ts`. `governance` renders as "AI Guardrails & Agent Security" (slug kept for URL stability). |
 | `subcategory` | string | no | Used mainly for assistants (`coding`, `productivity`, `build-your-own`) |
 | `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type |
 | `vendor` | string | no | Parent company or maintainer |
@@ -91,7 +91,7 @@ Each dimension is a `GovernanceClaim`: `{ status, detail, sourceUrl?, sourceTitl
 | Field | Type | Required | Notes |
 |---|---|---:|---|
 | `dataResidency` | GovernanceClaim | yes | Can the customer control where data is stored/processed? |
-| `deployment` | GovernanceClaim + `models` | yes | `models`: array of `saas \| self-hosted \| on-prem \| sovereign \| hybrid` |
+| `deployment` | GovernanceClaim + `models` | yes | `models`: array of `saas \| self-hosted \| on-prem \| sovereign \| hybrid`; may be empty only when `status` is `unknown` (vendor does not publish its delivery model) |
 | `auditLogging` | GovernanceClaim | yes | Native audit/access logs available? |
 | `soc2` | GovernanceClaim | yes | SOC 2 Type II attestation |
 | `iso27001` | GovernanceClaim | yes | ISO/IEC 27001 certification |

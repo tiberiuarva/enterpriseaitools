@@ -1,0 +1,82 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "google-agent-identity",
+    "name": "Google Agent Identity",
+    "type": "vendor",
+    "vendor": "Google Cloud",
+    "description": "SPIFFE-based cryptographic identity for agents on Gemini Enterprise Agent Platform, usable as an IAM principal with auto-rotated certs.",
+    "strengths": [
+      "SPIFFE IDs as IAM principals",
+      "Auto-rotated 24-hour X.509 certificates",
+      "Works with VPC-SC and PAB"
+    ],
+    "clouds": [
+      "gcp"
+    ],
+    "docsUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "gcp",
+      "spiffe",
+      "iam"
+    ],
+    "practitionerNote": "Natural choice for agents on Agent Runtime, Gemini Enterprise or Cloud Run; identities are scoped to Google Cloud, so cross-cloud agents still need a broker or federation.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Agent Identity overview does not state data residency; governed by the hosting Google Cloud resource location."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed Google Cloud service for Agent Runtime, Gemini Enterprise and Cloud Run agents.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit logs record actions both when the agent acts as itself and on behalf of an end user.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Gemini Enterprise Agent Platform and IAM are in scope for Google Cloud SOC 1/2/3 reports.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/services-in-scope"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Gemini Enterprise Agent Platform and IAM are in scope for ISO 27001/27017/27018.",
+        "sourceUrl": "https://cloud.google.com/security/compliance/services-in-scope"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Google Cloud ISO/IEC 42001 service scope could not be confirmed for Agent Identity."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Google Cloud service; identities tied to Google Cloud IAM.",
+        "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/agent-identity-overview",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

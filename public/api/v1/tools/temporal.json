@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "temporal",
+    "name": "Temporal",
+    "category": "orchestration",
+    "type": "opensource",
+    "vendor": "Temporal Technologies",
+    "description": "Durable execution platform that makes agent loops and workflows survive crashes, timeouts and multi-day human approvals.",
+    "strengths": [
+      "Crash-proof agent loops via workflows",
+      "OpenAI Agents SDK, Pydantic AI, ADK integrations",
+      "Self-host MIT server or Temporal Cloud"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/temporalio/temporal",
+    "githubStars": 23389,
+    "version": "1.32.0",
+    "lastRelease": "2026-09-11",
+    "docsUrl": "https://docs.temporal.io/ai",
+    "websiteUrl": "https://temporal.io/",
+    "pricing": "Temporal Cloud pay-as-you-go from $50 per million actions (volume discounts to $25), plus storage; $150 trial credits for 90 days.",
+    "pricingModel": "freemium",
+    "languages": [
+      "Python",
+      "TypeScript",
+      "Go",
+      "Java",
+      "Rust"
+    ],
+    "status": "active",
+    "tags": [
+      "orchestration",
+      "durable-execution",
+      "workflows",
+      "human-in-the-loop"
+    ],
+    "practitionerNote": "Use when agents must run for hours or days, pause for approvals, and resume exactly after failures; it adds a workflow-determinism discipline teams must learn. In the OpenAI Agents SDK integration, sandbox support is pre-release and streaming is experimental.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted server runs anywhere; Temporal Cloud lets customers pick AWS or GCP regions per namespace, with multi-region replication.",
+        "sourceUrl": "https://docs.temporal.io/cloud/regions"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "MIT server for self-hosting, or managed Temporal Cloud SaaS.",
+        "sourceUrl": "https://temporal.io/pricing",
+        "models": [
+          "self-hosted",
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Temporal Cloud audit logs cover control-plane events only (users, API keys, namespaces); data-plane events need Export.",
+        "sourceUrl": "https://docs.temporal.io/cloud/audit-logging"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Temporal Cloud is SOC 2 Type II certified; not applicable to self-hosted OSS.",
+        "sourceUrl": "https://temporal.io/security"
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Not listed on Temporal's security page or Trust Center (SOC 2 Type II, HIPAA, GDPR, CCPA shown)."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 certification listed on Temporal's security page or Trust Center."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Workflow orchestration infrastructure, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT server — permissive, OSI-approved; Temporal Cloud is proprietary SaaS.",
+        "sourceUrl": "https://raw.githubusercontent.com/temporalio/temporal/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

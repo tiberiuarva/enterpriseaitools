@@ -6,17 +6,22 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 
 | Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| agents | 14 | 0 (0%) | 4 | 9 | 0 | 1 |
-| orchestration | 11 | 0 (0%) | 5 | 5 | 0 | 1 |
-| governance | 10 | 0 (0%) | 3 | 4 | 0 | 3 |
-| assistants | 13 | 1 (8%) | 9 | 1 | 0 | 2 |
+| agents | 17 | 3 (18%) | 4 | 9 | 0 | 1 |
+| orchestration | 12 | 1 (8%) | 5 | 5 | 0 | 1 |
+| gateways | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
+| observability | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
+| control-planes | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
+| agent-identity | 10 | 10 (100%) | 0 | 0 | 0 | 0 |
+| governance | 14 | 4 (29%) | 3 | 4 | 0 | 3 |
+| assistants | 19 | 7 (37%) | 9 | 1 | 0 | 2 |
+| always-on-agents | 8 | 8 (100%) | 0 | 0 | 0 | 0 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
-| **All site records** | **51** | **1 (2%)** | **24** | **19** | **0** | **7** |
+| **All site records** | **104** | **54 (52%)** | **24** | **19** | **0** | **7** |
 
 ## Inventory status
 
-- Inventory rows: **51**
-- Classified: **51**
+- Inventory rows: **104**
+- Classified: **104**
 - Unclassified: **0**
 
 ## Source-surface mix
@@ -25,12 +30,12 @@ This shows where the currently rendered imagery comes from. Zero fallbacks does 
 
 | Source surface | Count | Share |
 | --- | ---: | ---: |
-| icon-pack | 12 | 24% |
-| repo | 7 | 14% |
-| github-hosted | 2 | 4% |
-| docs-site | 4 | 8% |
-| vendor-site | 25 | 49% |
-| fallback-no-source | 1 | 2% |
+| icon-pack | 12 | 12% |
+| repo | 7 | 7% |
+| github-hosted | 2 | 2% |
+| docs-site | 4 | 4% |
+| vendor-site | 25 | 24% |
+| fallback-no-source | 54 | 52% |
 | other | 0 | 0% |
 
 ## Asset format mix
@@ -39,11 +44,11 @@ This tracks the rendered asset format. Fallback rows with no rendered image asse
 
 | Format | Count | Share |
 | --- | ---: | ---: |
-| SVG | 30 | 59% |
-| PNG | 15 | 29% |
-| JPG | 4 | 8% |
-| AVIF | 1 | 2% |
-| NO-ASSET | 1 | 2% |
+| NO-ASSET | 54 | 52% |
+| SVG | 30 | 29% |
+| PNG | 15 | 14% |
+| JPG | 4 | 4% |
+| AVIF | 1 | 1% |
 
 ## Shared-asset reuse
 
@@ -58,12 +63,12 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Review freshness
 
-- Reviewed within the last 14 days of the inventory snapshot (2026-05-15): **44**
+- Reviewed within the last 14 days of the inventory snapshot (2026-05-15): **97**
 - Reviewed 15-30 days before the snapshot: **7**
 - Reviewed more than 30 days before the snapshot: **0**
 
 ## Highest-priority cleanup signal
 
-- Current worst category by fallback ratio: **assistants** with **1/13** fallback entries (8%).
+- Current worst category by fallback ratio: **agent-identity** with **10/10** fallback entries (100%).
 - Treat this report as an audit gate: do not treat zero fallback count as full logo-system completion unless the source-surface mix, shared-asset reuse, and review freshness are also acceptable.
 

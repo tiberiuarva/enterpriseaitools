@@ -26,7 +26,7 @@ export function VendorToolsSection({
 
   return (
     <section className="card-flat p-6">
-      <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+      <h2 className="text-lg font-semibold">Major vendor tools</h2>
       <div className="mt-1 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-[var(--color-text-secondary)]">{description}</p>
         {clearFiltersLabel && onClearFilters ? (

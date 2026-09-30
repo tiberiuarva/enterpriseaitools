@@ -49,6 +49,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-11-02</id>
+    <title>Temporal — release</title>
+    <updated>2026-09-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-11-02" />
+    <summary>Temporal Server 1.32.0 made Standalone Activities generally available and added Serverless Workers support for Amazon Bedrock AgentCore Runtime.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/temporalio/temporal/releases/tag/v1.32.0</id>
+      <title>Release v1.32.0 · temporalio/temporal</title>
+      <link href="https://github.com/temporalio/temporal/releases/tag/v1.32.0" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-13-02</id>
     <title>Flowise — deprecation</title>
     <updated>2026-08-13T00:00:00.000Z</updated>

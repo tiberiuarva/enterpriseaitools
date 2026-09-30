@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "meta-muse",
+    "name": "Muse",
+    "type": "vendor",
+    "vendor": "Meta",
+    "description": "Meta's consumer and small-business personal AI agent that keeps working on tasks in a secure VM and is reached via the Muse app or WhatsApp.",
+    "strengths": [
+      "Reachable via app, web and WhatsApp",
+      "Per-app access you can revoke",
+      "Approval before publishing, sending or spending"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+    "websiteUrl": "https://muse.ai",
+    "pricing": "Free for most use, with subscription plans for more (prices not published).",
+    "pricingModel": "freemium",
+    "status": "active",
+    "statusNote": "Consumer launch 2026-09-08 in the US (iOS, Android, web); small-business version launched 2026-09-29 in the US and Canada.",
+    "tags": [
+      "always-on-agents",
+      "consumer",
+      "small-business",
+      "meta"
+    ],
+    "practitionerNote": "A consumer and small-business product, not an enterprise-managed agent: there are no published admin, audit or compliance controls. Suits sole traders connecting Shopify, QuickBooks or Meta ad accounts, not governed corporate data.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "No data-residency options stated; available in the US (and US/Canada for small business)."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Meta-hosted; tasks run on 'Muse Secure VM', a dedicated virtual machine.",
+        "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No audit logging described in the launch posts; controls are per-user app access and approvals."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Consumer product; Meta has not published certification scope for Muse."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Consumer product; Meta has not published certification scope for Muse."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Consumer product; Meta has not published certification scope for Muse."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "detail": "Not yet offered in the EU; no classification published.",
+        "role": "unknown"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Meta consumer service.",
+        "sourceUrl": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

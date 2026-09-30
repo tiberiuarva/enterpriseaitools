@@ -1,0 +1,89 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "portkey-ai-gateway",
+    "name": "Portkey AI Gateway",
+    "category": "gateways",
+    "type": "opensource",
+    "vendor": "Portkey (Palo Alto Networks)",
+    "description": "Open-source AI gateway that routes to 250+ LLMs with fallbacks, caching and 50+ guardrails; managed SaaS and private-cloud options.",
+    "strengths": [
+      "50+ integrated input/output guardrails",
+      "Fallbacks, retries and load balancing",
+      "MCP gateway with auth and observability"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/Portkey-AI/gateway",
+    "version": "1.15.2",
+    "lastRelease": "2026-01-12",
+    "docsUrl": "https://portkey.ai/docs",
+    "websiteUrl": "https://portkey.ai/features/ai-gateway",
+    "pricing": "Developer free (10k recorded logs/month); Production $49/month (100k logs, $9 per extra 100k up to 3M); Enterprise custom with VPC/private cloud.",
+    "pricingModel": "freemium",
+    "status": "active",
+    "statusNote": "Palo Alto Networks completed its acquisition of Portkey on 2026-05-29, and Portkey is now the AI gateway for Prisma AIRS. Gateway 2.0, which merges Portkey's production gateway into the open-source codebase, has been a pre-release on the 2.0.0 branch since 2026-03-24.",
+    "tags": [
+      "gateways",
+      "guardrails",
+      "llm-routing",
+      "mcp"
+    ],
+    "practitionerNote": "The OSS gateway is easy to self-host, while logs, audit logs and private-cloud deployment come with the paid tiers. Now that Palo Alto Networks owns Portkey, check the roadmap and licensing of the open-source repo before standardising on it.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-host the OSS gateway, or use Enterprise VPC hosting / private cloud with data isolation.",
+        "sourceUrl": "https://portkey.ai/pricing"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "OSS gateway (self-hosted), managed SaaS, and Enterprise hybrid / private-cloud deployments.",
+        "sourceUrl": "https://portkey.ai/docs",
+        "models": [
+          "self-hosted",
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Audit logs of administrative activity are an Enterprise plan feature.",
+        "sourceUrl": "https://portkey.ai/docs/product/enterprise-offering/audit-logs"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Portkey states it is SOC 2 certified; the Enterprise plan lists SOC2 Type 2. Applies to the hosted service, not self-hosted OSS.",
+        "sourceUrl": "https://portkey.ai/docs"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Portkey states it is ISO 27001 certified (hosted service).",
+        "sourceUrl": "https://portkey.ai/docs"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 claim found in Portkey docs or pricing pages."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Routing and guardrail infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT (main branch LICENSE) — permissive, OSI-approved. Paid features are in the hosted plans, not the repo.",
+        "sourceUrl": "https://raw.githubusercontent.com/Portkey-AI/gateway/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

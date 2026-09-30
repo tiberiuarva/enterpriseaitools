@@ -1,0 +1,91 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "arize-phoenix",
+    "name": "Arize Phoenix",
+    "category": "observability",
+    "type": "opensource",
+    "vendor": "Arize AI",
+    "description": "Source-available AI observability and evaluation platform: OpenTelemetry/OpenInference tracing, evals, prompt iteration and experiments.",
+    "strengths": [
+      "OpenInference instrumentation on OpenTelemetry",
+      "LLM, code and human-label evaluators",
+      "Datasets and experiments to compare app versions"
+    ],
+    "license": "Elastic License 2.0",
+    "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
+    "githubUrl": "https://github.com/Arize-ai/phoenix",
+    "githubStars": 11662,
+    "version": "20.16.0",
+    "lastRelease": "2026-09-23",
+    "docsUrl": "https://arize.com/docs/phoenix",
+    "websiteUrl": "https://arize.com/pricing/",
+    "pricing": "Phoenix open source is free and self-hosted. The commercial Arize AX has Free ($0), Pro ($50/month) and custom Enterprise tiers.",
+    "pricingModel": "free",
+    "languages": [
+      "Python",
+      "TypeScript",
+      "Java"
+    ],
+    "status": "active",
+    "tags": [
+      "observability",
+      "tracing",
+      "evaluation",
+      "opentelemetry",
+      "source-available"
+    ],
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "practitionerNote": "A strong local-first option for internal tracing and evals, and OpenInference instrumentation keeps traces portable. The ELv2 license rules out reselling Phoenix as a managed service, and certifications (SOC 2, ISO 27001) belong to Arize's commercial AX platform, not to a self-hosted Phoenix.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted on Docker, Kubernetes or any cloud, so the operator controls where trace data lives.",
+        "sourceUrl": "https://arize.com/docs/phoenix"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted via Docker or Kubernetes. Managed and self-hosted enterprise options are sold separately as Arize AX.",
+        "sourceUrl": "https://arize.com/docs/phoenix",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "The Phoenix docs overview does not describe a native audit or access log for user actions."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted software. SOC 2 applies to the operator's infrastructure (Arize's own SOC 2 covers its commercial AX platform)."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted software. ISO 27001 applies to the operator's ISMS (Arize's certification covers the company and AX, not a self-hosted Phoenix)."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted software. ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer of the traced system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Elastic License 2.0: source-available and not OSI-approved. It bans offering Phoenix as a hosted or managed service and bans circumventing license keys.",
+        "sourceUrl": "https://raw.githubusercontent.com/Arize-ai/phoenix/main/LICENSE",
+        "level": "high"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

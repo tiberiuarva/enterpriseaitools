@@ -1,0 +1,94 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "langfuse",
+    "name": "Langfuse",
+    "category": "observability",
+    "type": "opensource",
+    "vendor": "Langfuse (ClickHouse)",
+    "description": "Open-source LLM engineering platform for tracing, evaluations, prompt management and cost/latency dashboards, built on OpenTelemetry.",
+    "strengths": [
+      "MIT core self-hostable at production scale",
+      "Prompt management with versioning and playground",
+      "OpenTelemetry-based tracing with 100+ integrations"
+    ],
+    "license": "MIT core + EE paths",
+    "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
+    "githubUrl": "https://github.com/langfuse/langfuse",
+    "githubStars": 35236,
+    "version": "4.48.0",
+    "lastRelease": "2026-09-30",
+    "docsUrl": "https://langfuse.com/docs",
+    "websiteUrl": "https://langfuse.com",
+    "pricing": "Self-hosted MIT core is free. Cloud: Hobby free (50k units/month), Core $29/month, Pro $199/month, Enterprise $2,499/month.",
+    "pricingModel": "freemium",
+    "languages": [
+      "Python",
+      "TypeScript"
+    ],
+    "status": "active",
+    "tags": [
+      "observability",
+      "tracing",
+      "evaluation",
+      "prompt-management",
+      "opentelemetry"
+    ],
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "practitionerNote": "ClickHouse acquired Langfuse in January 2026 and committed to keeping the core MIT. Self-hosting means running Postgres, ClickHouse, Redis/Valkey and S3-compatible storage, and audit logs and SCIM are Enterprise-only, so budget for both before choosing self-hosting over Langfuse Cloud.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Langfuse Cloud offers US (us-west-2), EU (eu-west-1), JP (ap-northeast-1) and a HIPAA region; self-hosting keeps all data in the operator's infrastructure.",
+        "sourceUrl": "https://langfuse.com/security"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed Langfuse Cloud, or self-hosted via Docker Compose (single VM) or Kubernetes/Helm on AWS, Azure or GCP.",
+        "sourceUrl": "https://langfuse.com/self-hosting",
+        "models": [
+          "saas",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Audit logs are listed only on the Enterprise cloud plan ($2,499/month) and in the licensed EE features. Lower tiers and the MIT core have none.",
+        "sourceUrl": "https://langfuse.com/pricing"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Langfuse Cloud has completed a SOC 2 Type II audit (report on Pro/Team/Enterprise plans). Self-hosted deployments rely on the operator's controls.",
+        "sourceUrl": "https://langfuse.com/security/soc2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Langfuse Cloud is ISO 27001 certified (certificate on request for Pro/Team/Enterprise). Not applicable to self-hosted instances.",
+        "sourceUrl": "https://langfuse.com/security/iso27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "The Langfuse security page lists SOC 2, ISO 27001, HIPAA and GDPR but does not mention ISO 42001."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Observability and evaluation tooling for AI applications, not an AI system placed on the market. Obligations rest with the deployer of the traced system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Open core: MIT outside the ee/ directories, with a commercial license required for EE features in production. ClickHouse committed to keeping the core MIT after the acquisition.",
+        "sourceUrl": "https://raw.githubusercontent.com/langfuse/langfuse/main/LICENSE",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

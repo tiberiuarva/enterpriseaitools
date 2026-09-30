@@ -1,0 +1,77 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "zenity",
+    "name": "Zenity",
+    "category": "governance",
+    "type": "commercial",
+    "vendor": "Zenity",
+    "description": "AI agent security platform combining agent posture management, runtime detection and response, and inline blocking.",
+    "strengths": [
+      "AISPM checks agent config pre-launch",
+      "Runtime boundaries block unsafe actions",
+      "Covers Copilot Studio, Agentforce, Bedrock"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://zenity.io/platform",
+    "websiteUrl": "https://zenity.io/",
+    "status": "active",
+    "tags": [
+      "governance",
+      "agent-security",
+      "aispm",
+      "runtime-protection"
+    ],
+    "practitionerNote": "Fits security teams that must govern agents built across several SaaS and cloud agent platforms rather than one stack. Compliance reports are shared on request only, so budget time for vendor review.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "No hosting-region information published on the Zenity platform or Trust Center pages."
+      },
+      "deployment": {
+        "status": "unknown",
+        "detail": "Platform page describes coverage of SaaS, cloud, custom stacks and endpoints but not Zenity's own delivery model.",
+        "models": []
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Advertises real-time, audit-ready logs of agent activity mapped to policy violations.",
+        "sourceUrl": "https://zenity.io/use-cases/business-needs/ai-agents-compliance"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "SOC 2 Type II report listed on Trust Center (available on request).",
+        "sourceUrl": "https://zenity.io/company/trust-center"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO 27001 (and ISO 27701) listed on Trust Center.",
+        "sourceUrl": "https://zenity.io/company/trust-center"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Not listed on Zenity's Trust Center."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Security tooling for AI agents, not itself a high-risk AI system; no EU AI Act mapping published."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path.",
+        "sourceUrl": "https://zenity.io/platform",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

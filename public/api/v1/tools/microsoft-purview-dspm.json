@@ -1,0 +1,91 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "microsoft-purview-dspm",
+    "name": "Microsoft Purview Data Security Posture Management",
+    "aliases": [
+      "Microsoft Purview Data Security Posture Management for AI",
+      "DSPM for AI"
+    ],
+    "category": "governance",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "Purview posture tool that discovers AI apps and agents, flags oversharing and risky prompts, and applies DLP to AI use.",
+    "strengths": [
+      "AI observability for Copilot and agents",
+      "Oversharing risk assessments for SharePoint",
+      "One-click DLP policies for AI prompts"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
+    "websiteUrl": "https://purview.microsoft.com/",
+    "pricingModel": "paid",
+    "clouds": [
+      "azure"
+    ],
+    "status": "active",
+    "statusNote": "The standalone DSPM for AI experience is now labelled \"classic\" and replaced by the unified DSPM, which receives new features (Microsoft Learn, checked 2026-09-30).",
+    "tags": [
+      "governance",
+      "azure",
+      "dspm",
+      "data-security",
+      "copilot"
+    ],
+    "practitionerNote": "Strongest where Microsoft 365 Copilot, Copilot Studio and Foundry agents dominate; third-party AI sites need the Purview browser extension and device onboarding. Full capability requires Microsoft 365 E5 or Purview Suite licensing, and some options use pay-as-you-go billing.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Follows Microsoft 365 data location commitments (customer data kept in chosen geography); no customer-hosted option.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Microsoft-managed SaaS within the Microsoft Purview portal.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-learn-about",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "AI prompts/responses and agent interactions captured in the Purview unified audit log and activity explorer.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview"
+      },
+      "soc2": {
+        "status": "partial",
+        "detail": "Office 365 SOC 2 Type 2 covers Compliance Manager (commercial) and the Purview portal in GCC/GCC High/DoD; DSPM not named separately.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Microsoft Purview portal is listed in the Office 365 ISO 27001 in-scope services (commercial and government).",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "no",
+        "detail": "Microsoft's ISO 42001 in-scope list covers Copilot, Copilot Studio, Foundry and Security Copilot, not Purview.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Data security/compliance tooling, not itself a high-risk AI system; its Compliance Manager templates help map AI regulations."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Microsoft SaaS tied to Microsoft 365 E5/Purview Suite licensing; no OSS path.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/purview/data-security-posture-management-get-started",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

@@ -504,7 +504,7 @@ export default function AboutPage() {
               },
               {
                 href: "/governance",
-                title: "AI Governance",
+                title: "AI Guardrails & Agent Security",
                 description: "Inspect guardrails, safety controls, and policy tooling.",
               },
               {

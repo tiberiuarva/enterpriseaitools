@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "nanoclaw",
+    "name": "NanoClaw",
+    "type": "opensource",
+    "vendor": "NanoClaw",
+    "description": "Lightweight OpenClaw alternative that runs each personal agent in its own container, messaged from WhatsApp, Telegram, Slack and more.",
+    "strengths": [
+      "Per-agent container isolation",
+      "Built on Claude Agent SDK, Codex optional",
+      "Script-gated scheduled jobs"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/nanocoai/nanoclaw",
+    "version": "2.4.0",
+    "lastRelease": "2026-09-23",
+    "docsUrl": "https://docs.nanoclaw.dev",
+    "pricing": "Free and open source; you bring your own model provider account.",
+    "pricingModel": "free",
+    "languages": [
+      "TypeScript"
+    ],
+    "status": "active",
+    "tags": [
+      "always-on-agents",
+      "self-hosted",
+      "open-source",
+      "containers"
+    ],
+    "practitionerNote": "A good fit when you want an OpenClaw-style assistant with a smaller surface and OS-level isolation. The docs note the sandbox is 'not a guarantee that every action is safe', so mount only the folders each agent needs.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Runs on the operator's own computer; cloud model providers still process the requests sent to them.",
+        "sourceUrl": "https://docs.nanoclaw.dev"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Self-hosted on macOS, Linux or WSL2 with Docker containers per agent.",
+        "sourceUrl": "https://github.com/nanocoai/nanoclaw",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No audit logging documented on the pages reviewed."
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "detail": "Self-hosted open-source agent runtime, not an AI system placed on the market by the maintainer; obligations rest with the deployer.",
+        "role": "not-applicable"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved.",
+        "sourceUrl": "https://github.com/nanocoai/nanoclaw/blob/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

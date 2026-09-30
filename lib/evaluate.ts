@@ -1,3 +1,4 @@
+import { CATEGORIES, CATEGORY_ORDER } from "./categories.ts";
 import type { Tool, ToolCategory } from "./types.ts";
 
 // Pure, client-safe scoring for the guided "help me evaluate" flow.
@@ -27,12 +28,7 @@ export const EVALUATE_QUESTIONS: EvaluateQuestion[] = [
     id: "category",
     label: "What are you evaluating?",
     help: "We only compare tools within the layer you pick.",
-    options: [
-      { value: "agents", label: "Agent frameworks" },
-      { value: "orchestration", label: "Orchestration / workflow" },
-      { value: "governance", label: "Governance / guardrails" },
-      { value: "assistants", label: "Assistants / copilots" },
-    ],
+    options: CATEGORY_ORDER.map((category) => ({ value: category, label: CATEGORIES[category].evaluateLabel })),
   },
   {
     id: "sector",

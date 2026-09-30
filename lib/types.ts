@@ -1,4 +1,13 @@
-export type ToolCategory = "agents" | "orchestration" | "governance" | "assistants";
+export type ToolCategory =
+  | "agents"
+  | "orchestration"
+  | "governance"
+  | "assistants"
+  | "always-on-agents"
+  | "control-planes"
+  | "agent-identity"
+  | "observability"
+  | "gateways";
 export type ToolType = "vendor" | "opensource" | "commercial";
 export type PricingModel = "free" | "freemium" | "paid" | "contact";
 export type ToolStatus = "active" | "maintenance" | "deprecated" | "archived";

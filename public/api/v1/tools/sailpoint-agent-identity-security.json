@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "sailpoint-agent-identity-security",
+    "name": "SailPoint Agent Identity Security",
+    "type": "commercial",
+    "vendor": "SailPoint",
+    "description": "Discovers and governs AI agents in SailPoint Identity Security Cloud with human owners, access reviews and revocation.",
+    "strengths": [
+      "Aggregates AWS, Azure, GCP, Salesforce agents",
+      "Multiple human owners per agent",
+      "Access certifications for agents"
+    ],
+    "websiteUrl": "https://www.sailpoint.com/products/agent-identity-security",
+    "docsUrl": "https://documentation.sailpoint.com/saas/help/agent/index.html",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "identity-governance",
+      "access-reviews",
+      "sailpoint"
+    ],
+    "practitionerNote": "Governance-first: good for ownership and access certification of agents alongside human identities, not for runtime token issuance or MCP enforcement.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Data residency for agent data is not stated on the product or docs page."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Part of SailPoint Identity Security Cloud (SaaS).",
+        "sourceUrl": "https://www.sailpoint.com/products/agent-identity-security",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Agent-specific audit logging is not described on the product or docs page reviewed."
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "SailPoint completes an annual SOC 2 Type 2 audit of Identity Security Cloud.",
+        "sourceUrl": "https://www.sailpoint.com/why-us/trust/cybersecurity"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Identity Security Cloud is ISO 27001 certified.",
+        "sourceUrl": "https://www.sailpoint.com/why-us/trust/cybersecurity"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO/IEC 42001 is not mentioned on the SailPoint cybersecurity trust page."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "sourceUrl": "https://www.sailpoint.com/products/agent-identity-security",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}
