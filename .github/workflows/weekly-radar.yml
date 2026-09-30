@@ -18,6 +18,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   snapshot:
@@ -64,6 +65,21 @@ jobs:
             echo "PR already open for $branch"
             exit 0
           fi
-          gh pr create \
-            --title "Weekly Radar snapshot ${week} (automated)" \
-            --body "$(printf 'Automated weekly snapshot + derived diff events (mechanical half of the /radar SOP).\n\nBefore merging, complete the editorial half per .claude/commands/radar.md: verify any flagged license/status diffs against upstream sources, add source-backed updates.json entries, refresh stale governance reviews, and run the EU AI Act freshness check.\n\n## Data freshness report\n\n```\n%s\n```\n' "$FRESHNESS")"
+          body="$(printf 'Automated weekly snapshot + derived diff events (mechanical half of the /radar SOP).\n\nBefore merging, complete the editorial half per .claude/commands/radar.md: verify any flagged license/status diffs against upstream sources, add source-backed updates.json entries, refresh stale governance reviews, and run the EU AI Act freshness check.\n\n## Data freshness report\n\n```\n%s\n```\n' "$FRESHNESS")"
+          if gh pr create --title "Weekly Radar snapshot ${week} (automated)" --body "$body"; then
+            exit 0
+          fi
+          # Creating PRs with GITHUB_TOKEN needs the repo setting "Allow GitHub
+          # Actions to create and approve pull requests" (or RADAR_PR_TOKEN).
+          # Without it, surface the pushed branch as an issue instead of failing
+          # silently week after week.
+          echo "::warning::PR creation was refused; opening a tracking issue for ${branch} instead."
+          compare="https://github.com/${GITHUB_REPOSITORY}/compare/main...${branch}?expand=1"
+          existing="$(gh issue list --state open --search "Weekly Radar snapshot ${week} in:title" --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            echo "Issue #${existing} already tracks ${branch}"
+            exit 0
+          fi
+          gh issue create \
+            --title "Weekly Radar snapshot ${week}: open the PR manually" \
+            --body "$(printf 'The snapshot branch `%s` was pushed, but GitHub refused to let Actions open the PR.\n\nOpen it here: %s\n\nPermanent fix: enable *Settings -> Actions -> General -> Allow GitHub Actions to create and approve pull requests*, or add a fine-grained PAT as the `RADAR_PR_TOKEN` secret.\n\n%s' "$branch" "$compare" "$body")"
