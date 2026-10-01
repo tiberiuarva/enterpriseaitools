@@ -1,4 +1,4 @@
-import { navItems, withBasePath } from "@/lib/site";
+import { withBasePath } from "@/lib/site";
 
 type RelatedHub = {
   href: string;
@@ -12,8 +12,6 @@ type RelatedHubsProps = {
   currentPath?: string;
   hubs: RelatedHub[];
 };
-
-const navLabelByHref = new Map<string, string>(navItems.map((item) => [item.href, item.label]));
 
 export function RelatedHubs({
   title = "Related hubs",
@@ -40,7 +38,6 @@ export function RelatedHubs({
           >
             <div className="text-sm font-semibold text-[var(--color-text-primary)]">
               {hub.title}
-              {navLabelByHref.has(hub.href) ? <span className="sr-only"> ({navLabelByHref.get(hub.href)})</span> : null}
             </div>
             <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{hub.description}</p>
           </a>

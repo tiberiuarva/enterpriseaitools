@@ -2,7 +2,8 @@ import { ChevronDown, Menu, Moon, Star, Sun } from "lucide-react";
 import { HeaderSearch } from "@/components/header-search";
 import { headerSearchEntries } from "@/lib/search";
 import { CATEGORIES, FOUNDATION_LINK, STACK_LAYERS } from "@/lib/categories";
-import { githubStargazersUrl, navItems, withBasePath } from "@/lib/site";
+import { navItems } from "@/lib/nav";
+import { githubStargazersUrl, withBasePath } from "@/lib/site";
 import { VENDOR_STACKS } from "@/lib/stacks";
 
 type HeaderProps = {
@@ -65,7 +66,10 @@ const exploreGroups: NavGroup[] = [
     label: FOUNDATION_LINK.label,
     tagline: FOUNDATION_LINK.tagline,
     overview: { href: FOUNDATION_LINK.href, label: FOUNDATION_LINK.title },
-    links: VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
+    links: [
+      { href: "/stacks", label: "All vendor stacks" },
+      ...VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
+    ],
   },
   ...STACK_LAYERS.map((layer) => ({
     id: layer.id,

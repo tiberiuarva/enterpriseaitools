@@ -20,6 +20,7 @@ const columns: FooterColumn[] = [
     title: "Foundation",
     links: [
       { href: "/platforms", label: "Cloud AI platforms" },
+      { href: "/stacks", label: "All vendor stacks" },
       ...VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
     ],
   },

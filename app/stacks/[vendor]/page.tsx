@@ -40,6 +40,7 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
+      { name: "Vendor stacks", url: `${siteUrl}/stacks/` },
       { name: title, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({ name: title, url: pageUrl, description: describe(stack.name) }),
@@ -50,6 +51,23 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
     <HomeShell lastUpdated={lastUpdated} currentPath={`/stacks/${stack.slug}`}>
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <JsonLd data={jsonLd} />
+        <nav aria-label="Breadcrumb" className="text-sm text-[var(--color-text-secondary)]">
+          <ol className="flex flex-wrap items-center gap-x-1.5">
+            {[
+              { name: "Home", href: "/" },
+              { name: "Vendor stacks", href: "/stacks" },
+            ].map((crumb) => (
+              <li key={crumb.href} className="flex items-center gap-x-1.5">
+                <a href={withBasePath(crumb.href)} className="text-[var(--color-primary)] hover:underline">
+                  {crumb.name}
+                </a>
+                <span aria-hidden="true">/</span>
+              </li>
+            ))}
+            <li aria-current="page">{title}</li>
+          </ol>
+        </nav>
+
         <section className="card-flat p-6 md:p-10">
           <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Vendor stack</p>
           <h1 className="mt-3 text-h1 text-[var(--color-text-primary)]">{title}</h1>
@@ -59,13 +77,19 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
             category means nothing from {stack.name} is tracked there yet, not that the capability does not exist.
           </p>
           <nav aria-label="Other vendor stacks" className="mt-4 flex flex-wrap gap-2 text-sm">
-            {VENDOR_STACKS.filter((other) => other.slug !== stack.slug).map((other) => (
+            {[
+              ...VENDOR_STACKS.filter((other) => other.slug !== stack.slug).map((other) => ({
+                href: `/stacks/${other.slug}`,
+                label: `${other.name} stack`,
+              })),
+              { href: "/stacks", label: "All vendor stacks" },
+            ].map((link) => (
               <a
-                key={other.slug}
-                href={withBasePath(`/stacks/${other.slug}`)}
+                key={link.href}
+                href={withBasePath(link.href)}
                 className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
               >
-                {other.name} stack
+                {link.label}
               </a>
             ))}
           </nav>

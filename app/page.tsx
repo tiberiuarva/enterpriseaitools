@@ -11,7 +11,8 @@ import { lastUpdated, platforms, tools, updateCountByTool, updates } from "@/lib
 import { homeFaqs } from "@/lib/hub-faqs";
 import { JOURNEYS } from "@/lib/journeys";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
-import { updateSubjectHref, withBasePath } from "@/lib/site";
+import { updateSubjectHref } from "@/lib/nav";
+import { withBasePath } from "@/lib/site";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =

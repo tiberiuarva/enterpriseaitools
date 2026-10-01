@@ -5,11 +5,16 @@ import {
   buildVendorStack,
   countCoveredCategories,
   countUpdatesByTool,
+  getVendorStack,
   isCurrentTool,
+  pairsWith,
+  previewTools,
   suitesSpanningLayer,
   toolsAlsoCovering,
+  vendorStackForTool,
   vendorStackGaps,
-  vendorStackTools, getVendorStack, pairsWith, previewTools, vendorStackForTool } from "./stacks.ts";
+  vendorStackTools,
+} from "./stacks.ts";
 import type { Tool, ToolCategory } from "./types.ts";
 
 function tool(spec: Partial<Tool> & { id: string; category: ToolCategory }): Tool {
