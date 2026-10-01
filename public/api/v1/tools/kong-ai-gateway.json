@@ -7,6 +7,9 @@
     "id": "kong-ai-gateway",
     "name": "Kong AI Gateway",
     "category": "gateways",
+    "alsoCovers": [
+      "governance"
+    ],
     "type": "commercial",
     "vendor": "Kong",
     "description": "AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.",

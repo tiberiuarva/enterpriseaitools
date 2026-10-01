@@ -11,7 +11,7 @@ import type { ComparisonPair } from "@/lib/comparisons";
 import type { HubFaq } from "@/lib/hub-faqs";
 import { siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
-import type { CategoryIconName as IconName } from "@/lib/categories";
+import { CATEGORIES, layerForCategory, type CategoryIconName as IconName } from "@/lib/categories";
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
@@ -28,6 +28,8 @@ type CategoryPageProps = {
   enableFiltering?: boolean;
   faqs?: HubFaq[];
   relatedPairs?: ComparisonPair[];
+  // Tools listed in another category that also cover this one (`alsoCovers`).
+  alsoCoveredBy?: Tool[];
 };
 
 const iconMap = {
@@ -46,7 +48,7 @@ function sortByName(tools: Tool[]) {
   return [...tools].sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export function CategoryPage({ category, title, description, introParagraphs, iconName, tools, updates, platforms, comparison, enableFiltering = false, faqs, relatedPairs = [] }: CategoryPageProps) {
+export function CategoryPage({ category, title, description, introParagraphs, iconName, tools, updates, platforms, comparison, enableFiltering = false, faqs, relatedPairs = [], alsoCoveredBy = [] }: CategoryPageProps) {
   const Icon = iconMap[iconName];
   const vendorTools = sortByName(tools.filter((tool) => tool.type === "vendor"));
   const nonVendorTools = sortByName(tools.filter((tool) => tool.type !== "vendor"));
@@ -54,9 +56,11 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
   const visibleUpdates = updates.slice(0, 5);
 
   const pageUrl = `${siteUrl}/${category}/`;
+  const layer = layerForCategory(category);
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
+      { name: layer.label, url: `${siteUrl}${layer.href}/` },
       { name: title, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({
@@ -76,7 +80,13 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
           <div className="flex items-start gap-3">
             <Icon size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
             <div className="max-w-2xl">
-              <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
+              <a
+                href={withBasePath(layer.href)}
+                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
+              >
+                {layer.label} layer
+              </a>
+              <h1 className="mt-1 text-h1 text-[var(--color-text-primary)]">{title}</h1>
               <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
               {introParagraphs && introParagraphs.length > 0 ? (
                 <div className="mt-3 space-y-3 text-body-sm text-[var(--color-text-secondary)]">
@@ -95,7 +105,22 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
             </div>
           </dl>
         </div>
+        {alsoCoveredBy.length > 0 ? (
+          <p className="mt-6 border-t border-[var(--color-border)] pt-4 text-sm leading-6 text-[var(--color-text-secondary)]">
+            <span className="font-medium text-[var(--color-text-primary)]">Also covered by suites listed elsewhere: </span>
+            {alsoCoveredBy.map((tool, index) => (
+              <span key={tool.id}>
+                {index > 0 ? ", " : null}
+                <a href={withBasePath(`/tools/${tool.id}`)} className="text-[var(--color-primary)] hover:underline">
+                  {tool.name}
+                </a>{" "}
+                ({CATEGORIES[tool.category].navLabel})
+              </span>
+            ))}
+          </p>
+        ) : null}
       </section>
+
 
       {enableFiltering ? (
         <FilteredCategorySections

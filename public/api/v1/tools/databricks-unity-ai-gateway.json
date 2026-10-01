@@ -6,7 +6,11 @@
   "tool": {
     "id": "databricks-unity-ai-gateway",
     "name": "Databricks Unity Gateway",
-    "category": "governance",
+    "category": "gateways",
+    "alsoCovers": [
+      "governance",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "Databricks",
     "description": "Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.",
@@ -31,7 +35,7 @@
     ],
     "status": "active",
     "tags": [
-      "governance",
+      "gateways",
       "databricks",
       "mcp",
       "guardrails",
@@ -42,7 +46,7 @@
     "logoReviewedAt": "2026-05-24",
     "logoUrl": "/logos/databricks.png",
     "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
-    "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer.",
+    "practitionerNote": "Relevant when model, agent, and MCP traffic already runs on Databricks and the gateway, guardrails, and usage tracking should sit on the same platform rather than in a separate gateway product.",
     "governance": {
       "dataResidency": {
         "status": "partial",
@@ -80,7 +84,7 @@
       "euAiAct": {
         "status": "not-applicable",
         "role": "not-applicable",
-        "detail": "Governance control-plane component; helps customers govern their own AI."
+        "detail": "AI gateway component; helps customers govern their own AI."
       },
       "licenseRisk": {
         "status": "yes",

@@ -26,8 +26,8 @@ export type EvaluateQuestion = {
 export const EVALUATE_QUESTIONS: EvaluateQuestion[] = [
   {
     id: "category",
-    label: "What are you evaluating?",
-    help: "We only compare tools within the layer you pick.",
+    label: "What are you trying to do?",
+    help: "Each goal maps to one category of the stack; results compare tools within it.",
     options: CATEGORY_ORDER.map((category) => ({ value: category, label: CATEGORIES[category].evaluateLabel })),
   },
   {

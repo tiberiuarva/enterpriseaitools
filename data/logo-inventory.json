@@ -322,7 +322,7 @@
     },
     {
       "name": "Arthur GenAI Engine",
-      "category": "governance",
+      "category": "control-planes",
       "vendor": "Arthur",
       "status": "classified",
       "sourceUrl": "https://www.arthur.ai/",
@@ -497,7 +497,7 @@
     },
     {
       "name": "Paperclip",
-      "category": "orchestration",
+      "category": "control-planes",
       "vendor": "Paperclip",
       "status": "classified",
       "sourceUrl": "https://paperclip.ing/favicon.svg",
@@ -530,7 +530,7 @@
     },
     {
       "name": "Databricks Unity Gateway",
-      "category": "governance",
+      "category": "gateways",
       "vendor": "Databricks",
       "status": "classified",
       "sourceUrl": "https://brand.databricks.com/databricks-logo",

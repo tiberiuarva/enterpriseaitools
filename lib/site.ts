@@ -1,33 +1,8 @@
 const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim();
 export const basePath = rawBasePath && rawBasePath !== '/' ? rawBasePath.replace(/\/$/, '') : '';
 
-export const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/platforms', label: 'Platforms' },
-  { href: '/agents', label: 'Agents' },
-  { href: '/orchestration', label: 'Orchestration' },
-  { href: '/gateways', label: 'AI gateways' },
-  { href: '/observability', label: 'Observability' },
-  { href: '/control-planes', label: 'Control planes' },
-  { href: '/agent-identity', label: 'Agent identity' },
-  { href: '/governance', label: 'Guardrails & security' },
-  { href: '/assistants', label: 'Assistants' },
-  { href: '/always-on-agents', label: 'Always-on agents' },
-  { href: '/evaluate', label: 'Evaluate' },
-  // Intentionally not in the desktop categoryNav/utility groups (header.tsx):
-  // the full index and comparison intent are both contextual rather than
-  // navigational, so these stay out of the desktop bar (Hick's law) and surface
-  // only under the mobile "More" group via the uncategorizedLinks filter.
-  // Contextual cross-links and the footer carry desktop discovery.
-  { href: '/tools', label: 'All tracked tools' },
-  { href: '/tools/compare', label: 'Compare tools' },
-  { href: '/updates', label: 'Updates' },
-  { href: '/about', label: 'About' },
-] as const;
-
 export const githubRepoUrl = 'https://github.com/tiberiuarva/enterpriseaitools';
 export const githubStargazersUrl = 'https://github.com/tiberiuarva/enterpriseaitools/stargazers';
-export const platformPageHref = '/platforms';
 
 // A final path segment carrying an extension is a file (`/updates.xml`,
 // `/logos/n8n.svg`, `/api/v1/index.json`), never a page directory.

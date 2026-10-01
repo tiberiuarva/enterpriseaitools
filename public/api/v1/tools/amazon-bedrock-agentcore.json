@@ -7,6 +7,12 @@
     "id": "amazon-bedrock-agentcore",
     "name": "Amazon Bedrock AgentCore",
     "category": "control-planes",
+    "alsoCovers": [
+      "agent-identity",
+      "governance",
+      "observability",
+      "gateways"
+    ],
     "type": "vendor",
     "vendor": "AWS",
     "description": "AWS services to run, govern and observe agents from any framework: Runtime, Gateway, Identity, Policy, Observability and Agent Registry.",

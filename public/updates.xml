@@ -349,7 +349,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-08-25-01" />
     <summary>Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="governance, feature, high" />
+    <category term="assistants, feature, high" />
     <source>
       <id>https://cursor.com/security#certifications-and-third-party-assessments</id>
       <title>Certifications and third-party assessments · Cursor Security</title>
@@ -433,7 +433,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-08-17-01" />
     <summary>Paperclip v2026.817.0 delivered its first stable release through the new canary-to-stable channels, adding a first-class decisions workflow, full-fidelity company import/export, and managed CLI installation.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, release, high" />
+    <category term="control-planes, release, high" />
     <source>
       <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.817.0</id>
       <title>Release v2026.817.0 · paperclipai/paperclip</title>
@@ -937,7 +937,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-05" />
     <summary>Paperclip v2026.707.0 added user-specific runtime secrets and other workflow/runtime updates across 89 commits.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, low" />
+    <category term="control-planes, release, low" />
     <source>
       <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.707.0</id>
       <title>Release v2026.707.0 · paperclipai/paperclip</title>
@@ -1147,7 +1147,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-06-27-01" />
     <summary>Paperclip v2026.626.0 made Hermes a built-in local and remote gateway adapter, added task watchdogs for long-running agent work, and surfaced sandbox runtime status directly in issue threads.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, release, high" />
+    <category term="control-planes, release, high" />
     <source>
       <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.626.0</id>
       <title>Release v2026.626.0 · paperclipai/paperclip</title>
@@ -1301,7 +1301,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-06-18-02" />
     <summary>Paperclip v2026.618.0 added a Skills Store, self-hostable Kubernetes sandbox execution, per-company tenant isolation, workspace artifact viewing, and opt-in OpenTelemetry instrumentation.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, release, high" />
+    <category term="control-planes, release, high" />
     <source>
       <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.618.0</id>
       <title>Release v2026.618.0 · paperclipai/paperclip</title>
@@ -1749,7 +1749,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-04-28-02" />
     <summary>Paperclip v2026.428.0 added pause/resume controls for agents in the sidebar and improved handling for long issue threads, extending day-2 control-plane usability.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, medium" />
+    <category term="control-planes, release, medium" />
     <source>
       <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0</id>
       <title>Release v2026.428.0 · paperclipai/paperclip · GitHub</title>

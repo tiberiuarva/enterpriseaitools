@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CATEGORY_HUB_LINKS } from "@/lib/categories";
+import { CATEGORY_HUB_LINKS, FOUNDATION_LINK } from "@/lib/categories";
 import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildPlatformListJsonLd } from "@/components/json-ld";
 import { platformsFaqs } from "@/lib/hub-faqs";
@@ -16,7 +16,7 @@ import { withBasePath } from "@/lib/site";
 import type { PlatformMapping } from "@/lib/types";
 
 export const metadata: Metadata = buildMetadata({
-  title: "AI Platforms & Model Hubs",
+  title: FOUNDATION_LINK.pageTitle,
   description:
     "Side-by-side comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer for enterprise AI tools.",
   path: "/platforms",
@@ -85,14 +85,14 @@ export default function PlatformsPage() {
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
-      { name: "AI Platforms & Model Hubs", url: pageUrl },
+      { name: FOUNDATION_LINK.pageTitle, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({
-      name: "AI Platforms & Model Hubs",
+      name: FOUNDATION_LINK.pageTitle,
       url: pageUrl,
       description,
     }),
-    buildPlatformListJsonLd(platforms, "AI Platforms & Model Hubs", description, pageUrl),
+    buildPlatformListJsonLd(platforms, FOUNDATION_LINK.pageTitle, description, pageUrl),
     buildFaqPageJsonLd(platformsFaqs),
   ];
 
@@ -101,7 +101,7 @@ export default function PlatformsPage() {
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <JsonLd data={jsonLd} />
         <section className="card-flat p-6 md:p-10">
-          <h1 className="text-h1 text-[var(--color-text-primary)]">AI Platforms &amp; Model Hubs</h1>
+          <h1 className="text-h1 text-[var(--color-text-primary)]">{FOUNDATION_LINK.pageTitle}</h1>
           <p className="mt-3 max-w-2xl text-body text-[var(--color-text-secondary)]">
             Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform (formerly Vertex AI) are the foundation layer. The control-plane choice shapes identity, model access, governance defaults, and deployment options for everything you build on top.
           </p>
@@ -155,7 +155,7 @@ export default function PlatformsPage() {
           })}
         </section>
 
-        <ProtocolTrackingSection currentPath="/platforms" />
+        <ProtocolTrackingSection />
 
         <section className="card-flat p-6">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>

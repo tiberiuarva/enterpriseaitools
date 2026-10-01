@@ -39,7 +39,9 @@ subagent before touching code.
 
 `/`, `/platforms/`, `/agents/`, `/orchestration/`, `/gateways/`,
 `/observability/`, `/control-planes/`, `/agent-identity/`, `/governance/`,
-`/assistants/`, `/always-on-agents/`, `/updates/`, `/about/`. Category labels,
-order and hub copy come from `lib/categories.ts`. Renaming or removing any of these is a
+`/assistants/`, `/always-on-agents/`, `/updates/`, `/about/`, plus the layer
+pages `/build/`, `/control-plane/`, `/use/`, the vendor stacks `/stacks/`
+and `/stacks/{microsoft,aws,google}/`, and `/start/`. Category labels, layers, order
+and hub copy come from `lib/categories.ts`; vendor stacks from `lib/stacks.ts`. Renaming or removing any of these is a
 breaking SEO change — open a milestone and coordinate with redirects in
 `staticwebapp.config.json`.

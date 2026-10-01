@@ -1621,7 +1621,10 @@
     {
       "id": "paperclip",
       "name": "Paperclip",
-      "category": "orchestration",
+      "category": "control-planes",
+      "alsoCovers": [
+        "orchestration"
+      ],
       "type": "opensource",
       "vendor": "Paperclip",
       "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
@@ -1640,7 +1643,7 @@
       "pricingModel": "free",
       "status": "active",
       "tags": [
-        "orchestration",
+        "control-planes",
         "opensource",
         "multi-agent",
         "governance"
@@ -1657,7 +1660,7 @@
         "TypeScript",
         "JavaScript"
       ],
-      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
+      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but earlier-stage than the established agent registry and management suites.",
       "logoUrl": "/logos/paperclip.svg",
       "logoSourceUrl": "https://paperclip.ing/favicon.svg",
       "governance": {
@@ -2366,7 +2369,11 @@
     {
       "id": "databricks-unity-ai-gateway",
       "name": "Databricks Unity Gateway",
-      "category": "governance",
+      "category": "gateways",
+      "alsoCovers": [
+        "governance",
+        "observability"
+      ],
       "type": "vendor",
       "vendor": "Databricks",
       "description": "Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.",
@@ -2391,7 +2398,7 @@
       ],
       "status": "active",
       "tags": [
-        "governance",
+        "gateways",
         "databricks",
         "mcp",
         "guardrails",
@@ -2402,7 +2409,7 @@
       "logoReviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png",
       "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
-      "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer.",
+      "practitionerNote": "Relevant when model, agent, and MCP traffic already runs on Databricks and the gateway, guardrails, and usage tracking should sit on the same platform rather than in a separate gateway product.",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -2440,7 +2447,7 @@
         "euAiAct": {
           "status": "not-applicable",
           "role": "not-applicable",
-          "detail": "Governance control-plane component; helps customers govern their own AI."
+          "detail": "AI gateway component; helps customers govern their own AI."
         },
         "licenseRisk": {
           "status": "yes",
@@ -2854,7 +2861,10 @@
     {
       "id": "arthur-genai-engine",
       "name": "Arthur GenAI Engine",
-      "category": "governance",
+      "category": "control-planes",
+      "alsoCovers": [
+        "observability"
+      ],
       "type": "commercial",
       "vendor": "Arthur",
       "description": "Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.",
@@ -2870,7 +2880,7 @@
       "status": "active",
       "statusNote": "Rebranded from Arthur AI to Arthur GenAI Engine and pivoted toward agent discovery and governance.",
       "tags": [
-        "governance",
+        "control-planes",
         "commercial",
         "arthur"
       ],
@@ -5701,6 +5711,11 @@
       "id": "microsoft-agent-365",
       "name": "Microsoft Agent 365",
       "category": "control-planes",
+      "alsoCovers": [
+        "agent-identity",
+        "governance",
+        "observability"
+      ],
       "type": "vendor",
       "vendor": "Microsoft",
       "description": "Control plane to observe, govern and secure an organization's AI agents via a central registry, Entra, Purview and Defender.",
@@ -5779,6 +5794,12 @@
       "id": "amazon-bedrock-agentcore",
       "name": "Amazon Bedrock AgentCore",
       "category": "control-planes",
+      "alsoCovers": [
+        "agent-identity",
+        "governance",
+        "observability",
+        "gateways"
+      ],
       "type": "vendor",
       "vendor": "AWS",
       "description": "AWS services to run, govern and observe agents from any framework: Runtime, Gateway, Identity, Policy, Observability and Agent Registry.",
@@ -5858,6 +5879,10 @@
       "id": "mulesoft-agent-fabric",
       "name": "MuleSoft Agent Fabric",
       "category": "control-planes",
+      "alsoCovers": [
+        "gateways",
+        "observability"
+      ],
       "type": "vendor",
       "vendor": "Salesforce (MuleSoft)",
       "description": "MuleSoft suite to register, route, govern and visualize agents, MCP servers and APIs across vendors using MCP and A2A.",
@@ -5933,6 +5958,10 @@
       "id": "servicenow-ai-control-tower",
       "name": "ServiceNow AI Control Tower",
       "category": "control-planes",
+      "alsoCovers": [
+        "governance",
+        "observability"
+      ],
       "type": "vendor",
       "vendor": "ServiceNow",
       "description": "ServiceNow hub to discover, observe, govern, secure and measure AI models and agents, including those from other platforms.",
@@ -6007,6 +6036,10 @@
       "id": "ibm-watsonx-orchestrate",
       "name": "IBM watsonx Orchestrate",
       "category": "control-planes",
+      "alsoCovers": [
+        "agents",
+        "observability"
+      ],
       "type": "vendor",
       "vendor": "IBM",
       "description": "IBM agent platform whose Agentic Control Plane adds operations dashboards, policy and access governance, and a shared agent catalog.",
@@ -6084,6 +6117,9 @@
       "id": "workday-agent-system-of-record",
       "name": "Workday Agent System of Record",
       "category": "control-planes",
+      "alsoCovers": [
+        "gateways"
+      ],
       "type": "vendor",
       "vendor": "Workday",
       "description": "Workday hub to register, govern and measure Workday, customer and partner AI agents alongside people and financial data.",
@@ -6159,6 +6195,9 @@
       "id": "kore-ai-agent-management-platform",
       "name": "Kore.ai Agent Management Platform",
       "category": "control-planes",
+      "alsoCovers": [
+        "observability"
+      ],
       "type": "commercial",
       "vendor": "Kore.ai",
       "description": "Vendor-neutral control center to observe, govern, evaluate and track cost of agents built on many frameworks and platforms.",
@@ -6235,6 +6274,9 @@
       "id": "litellm",
       "name": "LiteLLM",
       "category": "gateways",
+      "alsoCovers": [
+        "governance"
+      ],
       "type": "opensource",
       "vendor": "BerriAI",
       "description": "Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.",
@@ -6318,6 +6360,10 @@
       "id": "portkey-ai-gateway",
       "name": "Portkey AI Gateway",
       "category": "gateways",
+      "alsoCovers": [
+        "governance",
+        "observability"
+      ],
       "type": "opensource",
       "vendor": "Portkey (Palo Alto Networks)",
       "description": "Open-source AI gateway that routes to 250+ LLMs with fallbacks, caching and 50+ guardrails; managed SaaS and private-cloud options.",
@@ -6401,6 +6447,9 @@
       "id": "kong-ai-gateway",
       "name": "Kong AI Gateway",
       "category": "gateways",
+      "alsoCovers": [
+        "governance"
+      ],
       "type": "commercial",
       "vendor": "Kong",
       "description": "AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.",
@@ -8043,6 +8092,9 @@
       "id": "prisma-airs",
       "name": "Prisma AIRS",
       "category": "governance",
+      "alsoCovers": [
+        "control-planes"
+      ],
       "type": "vendor",
       "vendor": "Palo Alto Networks",
       "description": "Palo Alto Networks AI security platform for agent discovery, model scanning, red teaming, posture and runtime protection.",

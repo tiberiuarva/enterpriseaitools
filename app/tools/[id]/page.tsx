@@ -9,8 +9,9 @@ import { JsonLd, buildBreadcrumbJsonLd, buildSoftwareApplicationJsonLd, buildToo
 import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
+import { ToolStackContext } from "@/components/tool-stack-context";
 import { WarningBox } from "@/components/warning-box";
-import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
+import { CATEGORIES, CATEGORY_ORDER, layerForCategory } from "@/lib/categories";
 import { comparisonPairs } from "@/lib/comparisons";
 import { lastUpdated, snapshotDiffEvents, tools, updates } from "@/lib/data";
 import { FRESHNESS_THRESHOLD_DAYS, getFreshnessStatus } from "@/lib/freshness";
@@ -73,6 +74,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   }
 
   const pageUrl = `${siteUrl}/tools/${tool.id}/`;
+  const layer = layerForCategory(tool.category);
   // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
   const toolHistory = updates.filter((update) => update.toolId === tool.id);
   const toolSnapshotDiffs = snapshotDiffEvents.filter((event) => event.toolId === tool.id);
@@ -80,6 +82,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
+      { name: layer.label, url: `${siteUrl}${layer.href}/` },
       { name: CATEGORY_LABELS[tool.category], url: `${siteUrl}/${tool.category}/` },
       { name: tool.name, url: pageUrl },
     ]),
@@ -99,12 +102,22 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-5xl flex-col gap-6 px-4 py-8 sm:px-6 lg:px-8">
         <JsonLd data={jsonLd} />
 
-        <nav className="text-sm text-[var(--color-text-secondary)]">
-          <a href={withBasePath(`/${tool.category}`)} className="text-[var(--color-primary)] hover:underline">
-            {CATEGORY_LABELS[tool.category]}
-          </a>
-          <span aria-hidden="true"> / </span>
-          <span>{tool.name}</span>
+        <nav aria-label="Breadcrumb" className="text-sm text-[var(--color-text-secondary)]">
+          <ol className="flex flex-wrap items-center gap-x-1.5">
+            {[
+              { name: "Home", href: "/" },
+              { name: layer.label, href: layer.href },
+              { name: CATEGORY_LABELS[tool.category], href: `/${tool.category}` },
+            ].map((crumb) => (
+              <li key={crumb.href} className="flex items-center gap-x-1.5">
+                <a href={withBasePath(crumb.href)} className="text-[var(--color-primary)] hover:underline">
+                  {crumb.name}
+                </a>
+                <span aria-hidden="true">/</span>
+              </li>
+            ))}
+            <li aria-current="page">{tool.name}</li>
+          </ol>
         </nav>
 
         <section className="card-flat p-6 md:p-8">
@@ -223,6 +236,8 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
             <strong>{tool.name}:</strong> {tool.licenseWarning ?? tool.statusNote}
           </WarningBox>
         ) : null}
+
+        <ToolStackContext tool={tool} tools={tools} />
 
         <GovernancePosture governance={tool.governance} />
 

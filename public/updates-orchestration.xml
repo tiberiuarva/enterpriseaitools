@@ -217,20 +217,6 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-07-07-05</id>
-    <title>Paperclip — release</title>
-    <updated>2026-07-07T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-07-05" />
-    <summary>Paperclip v2026.707.0 added user-specific runtime secrets and other workflow/runtime updates across 89 commits.</summary>
-    <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, low" />
-    <source>
-      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.707.0</id>
-      <title>Release v2026.707.0 · paperclipai/paperclip</title>
-      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.707.0" />
-    </source>
-  </entry>
-  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-06-25-03</id>
     <title>Flowise — release</title>
     <updated>2026-06-25T00:00:00.000Z</updated>
@@ -354,20 +340,6 @@
       <id>https://github.com/langgenius/dify/releases/tag/1.14.0</id>
       <title>Release v1.14.0 · langgenius/dify · GitHub</title>
       <link href="https://github.com/langgenius/dify/releases/tag/1.14.0" />
-    </source>
-  </entry>
-  <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-04-28-02</id>
-    <title>Paperclip — release</title>
-    <updated>2026-04-28T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-04-28-02" />
-    <summary>Paperclip v2026.428.0 added pause/resume controls for agents in the sidebar and improved handling for long issue threads, extending day-2 control-plane usability.</summary>
-    <author><name>enterpriseai.tools</name></author>
-    <category term="orchestration, release, medium" />
-    <source>
-      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0</id>
-      <title>Release v2026.428.0 · paperclipai/paperclip · GitHub</title>
-      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.428.0" />
     </source>
   </entry>
   <entry>

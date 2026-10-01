@@ -7,6 +7,9 @@
     "id": "kore-ai-agent-management-platform",
     "name": "Kore.ai Agent Management Platform",
     "category": "control-planes",
+    "alsoCovers": [
+      "observability"
+    ],
     "type": "commercial",
     "vendor": "Kore.ai",
     "description": "Vendor-neutral control center to observe, govern, evaluate and track cost of agents built on many frameworks and platforms.",

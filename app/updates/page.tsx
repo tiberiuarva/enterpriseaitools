@@ -7,7 +7,8 @@ import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, snapshotCount, snapshotDiffEvents, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { CATEGORY_HUB_LINKS, CATEGORY_ORDER } from "@/lib/categories";
-import { navItems, withBasePath } from "@/lib/site";
+import { navItems } from "@/lib/nav";
+import { withBasePath } from "@/lib/site";
 
 // `buildMetadata` already advertises the site-wide Atom feed on every page, so
 // this route needs no bespoke `alternates` override.

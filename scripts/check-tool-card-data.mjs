@@ -39,11 +39,11 @@ const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const TOOL_CATEGORIES = new Set([
   "agents",
   "orchestration",
-  "gateways",
-  "observability",
   "control-planes",
   "agent-identity",
   "governance",
+  "observability",
+  "gateways",
   "assistants",
   "always-on-agents",
 ]);
@@ -95,6 +95,16 @@ for (const tool of tools) {
       !tool.aliases.every((alias) => typeof alias === "string" && alias.trim().length > 0))
   ) {
     shapeFindings.push(`${tool.id}: aliases must be a non-empty array of non-empty strings when present`);
+  }
+  if (tool.alsoCovers !== undefined) {
+    const valid =
+      Array.isArray(tool.alsoCovers) &&
+      tool.alsoCovers.length > 0 &&
+      new Set(tool.alsoCovers).size === tool.alsoCovers.length &&
+      tool.alsoCovers.every((category) => TOOL_CATEGORIES.has(category) && category !== tool.category);
+    if (!valid) {
+      shapeFindings.push(`${tool.id}: alsoCovers must be a non-empty list of distinct categories other than "${tool.category}"`);
+    }
   }
   const strengths = tool.strengths ?? [];
 
