@@ -223,6 +223,8 @@ export const FOUNDATION_LINK = {
   tagline: "Cloud AI platforms the stack runs on",
   href: "/platforms",
   title: "Cloud AI platforms",
+  // The /platforms page's own title, used wherever a link should read like its destination.
+  pageTitle: "AI Platforms & Model Hubs",
 } as const;
 
 export function getStackLayer(id: LayerId): StackLayer {

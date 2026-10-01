@@ -84,8 +84,8 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
   },
   {
     path: FOUNDATION_LINK.href,
-    label: FOUNDATION_LINK.title,
-    keywords: ["foundation", "cloud platforms", "foundry", "bedrock", "vertex"],
+    label: FOUNDATION_LINK.pageTitle,
+    keywords: ["foundation", FOUNDATION_LINK.title, "model hubs", "foundry", "bedrock", "vertex"],
   },
   ...STACK_LAYERS.map((layer) => ({
     path: layer.href,
