@@ -34,6 +34,20 @@ const missingCloudBadgeCandidates = [];
 const licenseHistoryFindings = [];
 
 const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
+// Mirrors CATEGORY_ORDER in lib/categories.ts (lib/categories.test.ts keeps them in sync).
+// A typo here would silently drop a tool from every hub.
+const TOOL_CATEGORIES = new Set([
+  "agents",
+  "orchestration",
+  "gateways",
+  "observability",
+  "control-planes",
+  "agent-identity",
+  "governance",
+  "assistants",
+  "always-on-agents",
+]);
+const shapeFindings = [];
 const LICENSE_DIRECTIONS = new Set(["open", "restrictive"]);
 
 function checkLicenseHistory(tool) {
@@ -71,6 +85,17 @@ function checkLicenseHistory(tool) {
 
 for (const tool of tools) {
   checkLicenseHistory(tool);
+  if (!TOOL_CATEGORIES.has(tool.category)) {
+    shapeFindings.push(`${tool.id}: category "${tool.category}" is not one of ${[...TOOL_CATEGORIES].join(", ")}`);
+  }
+  if (
+    tool.aliases !== undefined &&
+    (!Array.isArray(tool.aliases) ||
+      tool.aliases.length === 0 ||
+      !tool.aliases.every((alias) => typeof alias === "string" && alias.trim().length > 0))
+  ) {
+    shapeFindings.push(`${tool.id}: aliases must be a non-empty array of non-empty strings when present`);
+  }
   const strengths = tool.strengths ?? [];
 
   if (strengths.length === 0) {
@@ -138,12 +163,23 @@ if (licenseHistoryFindings.length > 0) {
   }
 }
 
+if (shapeFindings.length > 0) {
+  console.error("Tool category/alias schema violations:");
+
+  for (const finding of shapeFindings) {
+    console.error(`- ${finding}`);
+  }
+}
+
 const hasFailingFindings =
-  missingStrengthFindings.length > 0 || genericStrengthFindings.length > 0 || licenseHistoryFindings.length > 0;
+  missingStrengthFindings.length > 0 ||
+  genericStrengthFindings.length > 0 ||
+  licenseHistoryFindings.length > 0 ||
+  shapeFindings.length > 0;
 
 if (hasFailingFindings) {
   console.error(
-    `Tool-card data check FAILED: ${missingStrengthFindings.length} tools missing strengths; ${genericStrengthFindings.length} tools still using generic strength placeholders; ${licenseHistoryFindings.length} license-history violations.`,
+    `Tool-card data check FAILED: ${missingStrengthFindings.length} tools missing strengths; ${genericStrengthFindings.length} tools still using generic strength placeholders; ${licenseHistoryFindings.length} license-history violations; ${shapeFindings.length} category/alias violations.`,
   );
   process.exitCode = 1;
 } else if (missingCloudBadgeCandidates.length > 0) {

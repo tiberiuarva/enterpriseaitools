@@ -29,7 +29,7 @@ export type CategoryMeta = {
 };
 
 // Display order is the reading order of the stack: build, run, govern, use.
-export const CATEGORY_ORDER: ToolCategory[] = [
+export const CATEGORY_ORDER: readonly ToolCategory[] = [
   "agents",
   "orchestration",
   "gateways",
@@ -40,6 +40,8 @@ export const CATEGORY_ORDER: ToolCategory[] = [
   "assistants",
   "always-on-agents",
 ];
+
+export type CategoryHubLink = { href: string; title: string; description: string };
 
 export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
   agents: {
@@ -160,3 +162,10 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
     schemaApplicationCategory: "BusinessApplication",
   },
 };
+
+// Hub links for "related hubs" blocks, so cross-links list every category.
+export const CATEGORY_HUB_LINKS: readonly CategoryHubLink[] = CATEGORY_ORDER.map((category) => ({
+  href: `/${category}`,
+  title: CATEGORIES[category].title,
+  description: CATEGORIES[category].summary,
+}));

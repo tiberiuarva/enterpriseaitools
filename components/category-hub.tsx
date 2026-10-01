@@ -8,8 +8,8 @@ import { categoryFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 import type { ToolCategory } from "@/lib/types";
 
-// Shared metadata + page body for hubs that need no bespoke layout. Hubs that
-// predate lib/categories.ts keep their own page files; newer hubs use this.
+// Shared metadata + page body for every category hub. Only /assistants keeps a
+// bespoke page, because it renders subcategory tabs in a client component.
 export function buildCategoryHubMetadata(category: ToolCategory) {
   const meta = CATEGORIES[category];
   return buildMetadata({

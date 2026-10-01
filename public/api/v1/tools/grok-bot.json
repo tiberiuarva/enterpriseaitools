@@ -15,8 +15,8 @@
       "Shared Team Bots deployable in Slack"
     ],
     "license": "Proprietary",
-    "docsUrl": "https://x.ai/news/introducing-grok-bot",
-    "websiteUrl": "https://x.ai",
+    "docsUrl": "https://docs.x.ai/grok-bot/overview",
+    "websiteUrl": "https://x.ai/news/introducing-grok-bot",
     "pricing": "Included (beta) with SuperGrok, SuperGrok Plus/Heavy, Cursor Pro/Pro+/Ultra and Cursor Teams plans; enterprise via sales.",
     "pricingModel": "paid",
     "status": "active",

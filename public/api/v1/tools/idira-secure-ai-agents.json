@@ -69,7 +69,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Palo Alto Networks (Idira) product; no open-source edition.",
         "sourceUrl": "https://www.paloaltonetworks.com/idira",
         "level": "medium"
       },

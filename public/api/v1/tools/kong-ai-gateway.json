@@ -15,7 +15,7 @@
       "Generates MCP servers from REST APIs",
       "Token-based rate limiting and PII redaction"
     ],
-    "license": "Proprietary",
+    "license": "Apache 2.0 core + Enterprise plugins",
     "licenseWarning": "Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.",
     "githubUrl": "https://github.com/Kong/kong",
     "docsUrl": "https://developer.konghq.com/ai-gateway/",

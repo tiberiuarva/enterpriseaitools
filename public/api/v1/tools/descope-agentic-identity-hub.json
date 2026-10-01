@@ -73,7 +73,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Descope service; agent and MCP-server identities are issued by Descope.",
         "sourceUrl": "https://www.descope.com/pricing",
         "level": "medium"
       },

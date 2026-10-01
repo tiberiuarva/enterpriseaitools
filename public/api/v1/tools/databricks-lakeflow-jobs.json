@@ -83,7 +83,7 @@
       "licenseRisk": {
         "status": "yes",
         "detail": "Proprietary Databricks service.",
-        "sourceUrl": "https://www.databricks.com/product/ai",
+        "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
         "level": "high"
       },
       "reviewedAt": "2026-05-26"

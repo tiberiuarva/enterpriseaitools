@@ -6,7 +6,7 @@ import { SnapshotDiffFeed } from "@/components/snapshot-diff-feed";
 import { UpdatesFeed } from "@/components/updates-feed";
 import { lastUpdated, snapshotCount, snapshotDiffEvents, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
-import { CATEGORY_ORDER } from "@/lib/categories";
+import { CATEGORY_HUB_LINKS, CATEGORY_ORDER } from "@/lib/categories";
 import { navItems, withBasePath } from "@/lib/site";
 
 // `buildMetadata` already advertises the site-wide Atom feed on every page, so
@@ -113,36 +113,9 @@ export default function UpdatesPage() {
             title="Continue into the tracked hubs"
             intro="Use the high-impact feed as a market scan, then pivot into the relevant comparison hubs or the contribution guide."
             hubs={[
-              {
-                href: "/platforms",
-                title: "Platforms",
-                description: "Return to the cloud foundation layer to compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform.",
-              },
-              {
-                href: "/agents",
-                title: "AI Agent Frameworks",
-                description: "Jump into managed agent platforms and open source frameworks after reading agent-related updates.",
-              },
-              {
-                href: "/orchestration",
-                title: "AI Orchestration",
-                description: "Review workflow engines and automation layers after orchestration-related product changes.",
-              },
-              {
-                href: "/governance",
-                title: "AI Guardrails & Agent Security",
-                description: "Inspect guardrails and policy tooling after governance or safety updates land.",
-              },
-              {
-                href: "/assistants",
-                title: "AI Assistants",
-                description: "Move into coding, productivity, and build-your-own assistant comparisons after assistant-related updates.",
-              },
-              {
-                href: "/about",
-                title: "About and contribution rules",
-                description: "Review sourcing and contribution rules before proposing additions or corrections.",
-              },
+              { href: "/platforms", title: "Platforms", description: "Return to the cloud foundation layer to compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform." },
+              ...CATEGORY_HUB_LINKS,
+              { href: "/about", title: "About and contribution rules", description: "Review sourcing and contribution rules before proposing additions or corrections." },
             ]}
           />
         </div>

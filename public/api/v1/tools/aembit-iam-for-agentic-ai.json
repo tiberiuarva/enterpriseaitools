@@ -72,7 +72,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Aembit service; secretless access depends on Aembit's identity broker.",
         "sourceUrl": "https://aembit.io/pricing/",
         "level": "medium"
       },

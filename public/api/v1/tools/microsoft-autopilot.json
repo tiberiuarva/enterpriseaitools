@@ -18,8 +18,7 @@
       "Human sign-off for sensitive actions"
     ],
     "license": "Proprietary",
-    "docsUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
-    "websiteUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+    "docsUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
     "pricing": "Usage-based billing rather than a per-user license (per Microsoft's 2026-09-25 announcement); rates not published.",
     "pricingModel": "paid",
     "clouds": [

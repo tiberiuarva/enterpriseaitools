@@ -22,7 +22,7 @@
     ],
     "license": "Proprietary",
     "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
-    "websiteUrl": "https://www.databricks.com/product/ai",
+    "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
     "pricing": "Underlying Databricks platform and model-serving consumption applies; no separate gateway price is published.",
     "pricingModel": "paid",
     "languages": [

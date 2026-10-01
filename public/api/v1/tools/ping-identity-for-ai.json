@@ -70,7 +70,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Ping Identity product; delegated-token flows run on Ping's platform.",
         "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
         "level": "medium"
       },

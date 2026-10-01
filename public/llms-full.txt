@@ -148,9 +148,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — ISO/IEC 27001:2022 certified across all three clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
   - ISO 42001: unknown — No public ISO 42001 certification listed on the Databricks trust pages as of 2026-05.
   - EU AI Act: not-applicable (role: not-applicable) — Developer toolset on a data platform; deployer carries obligations for systems built with it.
-  - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack. [source: https://www.databricks.com/product/ai]
+  - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack. [source: https://www.databricks.com/product/data-intelligence-platform]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://docs.databricks.com/aws/en/agents/gen-ai-capabilities | site: https://www.databricks.com/product/ai
+- Links: docs: https://docs.databricks.com/aws/en/agents/gen-ai-capabilities | site: https://www.databricks.com/product/data-intelligence-platform
 
 ### Google Agent Builder + ADK
 - Page: https://www.enterpriseai.tools/tools/google-agent-builder-adk/
@@ -384,7 +384,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — ISO/IEC 27001:2022 certified across all three clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
   - ISO 42001: unknown — No public ISO 42001 certification listed for Databricks as of 2026-05.
   - EU AI Act: not-applicable (role: not-applicable) — Data pipeline / ML workflow orchestrator, not an AI model provider.
-  - License risk: yes (risk: high) — Proprietary Databricks service. [source: https://www.databricks.com/product/ai]
+  - License risk: yes (risk: high) — Proprietary Databricks service. [source: https://www.databricks.com/product/data-intelligence-platform]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.databricks.com/aws/en/jobs | site: https://www.databricks.com/product/data-engineering
 
@@ -626,7 +626,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Kong AI Gateway
 - Page: https://www.enterpriseai.tools/tools/kong-ai-gateway/
-- Vendor: Kong | Type: commercial | License: Proprietary (caution: Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.)
+- Vendor: Kong | Type: commercial | License: Apache 2.0 core + Enterprise plugins (caution: Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.)
 - Status: active
 - AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.
 - Strengths: Builds on existing Kong API gateway estates; Generates MCP servers from REST APIs; Token-based rate limiting and PII redaction
@@ -950,7 +950,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — ISO/IEC 27001:2022 certified (Sensiba LLP, ANAB-accredited), announced March 2025. [source: https://aembit.io/blog/aembit-achieves-iso-27001-certification/]
   - ISO 42001: unknown — No ISO/IEC 42001 certification found on Aembit's pages reviewed.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://aembit.io/pricing/]
+  - License risk: yes (risk: medium) — Proprietary Aembit service; secretless access depends on Aembit's identity broker. [source: https://aembit.io/pricing/]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://docs.aembit.io/ | site: https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/
 
@@ -968,7 +968,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Okta trust center lists ISO/IEC 27001:2022 for the Okta and Auth0 offerings; per-product scope not shown on the overview. [source: https://security.okta.com/]
   - ISO 42001: unknown — ISO/IEC 42001 is not listed on the Okta/Auth0 trust center overview.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://auth0.com/pricing]
+  - License risk: yes (risk: medium) — Proprietary Auth0 (Okta) service; Token Vault and authorization flows are not portable to another provider. [source: https://auth0.com/pricing]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://auth0.com/ai/docs | site: https://auth0.com/blog/auth0-for-ai-agents-generally-available/
 
@@ -986,7 +986,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Descope is ISO 27001 certified. [source: https://www.descope.com/security-compliance]
   - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on Descope's security and compliance page.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.descope.com/pricing]
+  - License risk: yes (risk: medium) — Proprietary Descope service; agent and MCP-server identities are issued by Descope. [source: https://www.descope.com/pricing]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://docs.descope.com/agentic-identity-hub | site: https://docs.descope.com/agentic-identity-hub
 
@@ -1022,7 +1022,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: unknown — Palo Alto Networks ISO 27000 page does not list Idira or CyberArk products in scope.
   - ISO 42001: unknown — Palo Alto Networks lists ISO 42001, but Idira/CyberArk product scope is not stated.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.paloaltonetworks.com/idira]
+  - License risk: yes (risk: medium) — Proprietary Palo Alto Networks (Idira) product; no open-source edition. [source: https://www.paloaltonetworks.com/idira]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://www.paloaltonetworks.com/idira | site: https://www.paloaltonetworks.com/idira
 
@@ -1058,7 +1058,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Okta trust center lists ISO/IEC 27001:2022; product-level scope is not broken out on the overview. [source: https://security.okta.com/]
   - ISO 42001: unknown — ISO/IEC 42001 is not listed on the Okta trust center overview.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/]
+  - License risk: yes (risk: medium) — Proprietary; sold as a separate Okta subscription, with agent identities held in Okta Universal Directory. [source: https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://help.okta.com/oie/en-us/content/topics/ai-agents/ai-agents-home.htm | site: https://www.okta.com/blog/ai/okta-for-ai-agents-general-availability/
 
@@ -1076,7 +1076,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Ping trust center states ISO 27001 (plus 27018); product scope not specified. [source: https://www.pingidentity.com/en/legal/trust-center.html]
   - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the Ping trust center.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI]
+  - License risk: yes (risk: medium) — Proprietary Ping Identity product; delegated-token flows run on Ping's platform. [source: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://developer.pingidentity.com/identity-for-ai/ | site: https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI
 
@@ -1094,7 +1094,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Identity Security Cloud is ISO 27001 certified. [source: https://www.sailpoint.com/why-us/trust/cybersecurity]
   - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the SailPoint cybersecurity trust page.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://www.sailpoint.com/products/agent-identity-security]
+  - License risk: yes (risk: medium) — Proprietary SailPoint product; agent ownership and certifications live in SailPoint Identity Security Cloud. [source: https://www.sailpoint.com/products/agent-identity-security]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://documentation.sailpoint.com/saas/help/agent/index.html | site: https://www.sailpoint.com/products/agent-identity-security
 
@@ -1112,7 +1112,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Saviynt is ISO 27001:2022 certified (company-level; Zuma scope not stated). [source: https://saviynt.com/trust-compliance-security]
   - ISO 42001: unknown — ISO/IEC 42001 is not mentioned on the Saviynt trust page.
   - EU AI Act: not-applicable (role: not-applicable) — Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path, identity layer creates platform lock-in. [source: https://saviynt.com/products/identity-security-for-ai]
+  - License risk: yes (risk: medium) — Proprietary Saviynt product; no open-source edition. [source: https://saviynt.com/products/identity-security-for-ai]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://saviynt.com/products/identity-security-for-ai | site: https://saviynt.com/products/identity-security-for-ai
 
@@ -1188,7 +1188,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: not-applicable (role: not-applicable) — Governance control-plane component; helps customers govern their own AI.
   - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Databricks-centric stacks. [source: https://docs.databricks.com/aws/en/ai-gateway/]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://docs.databricks.com/aws/en/ai-gateway/ | site: https://www.databricks.com/product/ai
+- Links: docs: https://docs.databricks.com/aws/en/ai-gateway/ | site: https://www.databricks.com/product/data-intelligence-platform
 
 ### Google Model Armor
 - Page: https://www.enterpriseai.tools/tools/google-model-armor/
@@ -1366,7 +1366,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — ISO 27001 (and ISO 27701) listed on Trust Center. [source: https://zenity.io/company/trust-center]
   - ISO 42001: unknown — Not listed on Zenity's Trust Center.
   - EU AI Act: not-applicable (role: not-applicable) — Security tooling for AI agents, not itself a high-risk AI system; no EU AI Act mapping published.
-  - License risk: yes (risk: medium) — Proprietary SaaS; no OSS path. [source: https://zenity.io/platform]
+  - License risk: yes (risk: medium) — Proprietary Zenity product; no open-source edition. [source: https://zenity.io/platform]
 - Governance reviewed: 2026-09-30
 - Links: docs: https://zenity.io/platform | site: https://zenity.io/
 
@@ -1530,9 +1530,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
   - ISO 42001: unknown — No Databricks ISO 42001 certification found as of 2026-05.
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
-  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/ai]
+  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/data-intelligence-platform]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://docs.databricks.com/aws/en/genie-code/ | site: https://www.databricks.com/product/ai
+- Links: docs: https://docs.databricks.com/aws/en/genie-code/ | site: https://www.databricks.com/product/data-intelligence-platform
 
 ### Databricks Genie Agents (formerly Databricks Genie Spaces)
 - Page: https://www.enterpriseai.tools/tools/databricks-genie-spaces/
@@ -1548,9 +1548,9 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
   - ISO 42001: unknown — No Databricks ISO 42001 certification found as of 2026-05.
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
-  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/ai]
+  - License risk: yes (risk: medium) — Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability). [source: https://www.databricks.com/product/data-intelligence-platform]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://docs.databricks.com/aws/en/genie/ | site: https://www.databricks.com/product/ai
+- Links: docs: https://docs.databricks.com/aws/en/genie/ | site: https://www.databricks.com/product/data-intelligence-platform
 
 ### Gemini Code Assist
 - Page: https://www.enterpriseai.tools/tools/gemini-code-assist/
@@ -1712,7 +1712,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: unknown (role: limited-risk) — Assessed limited-risk by product category; no published vendor EU AI Act conformity assessment.
   - License risk: yes (risk: high) — Proprietary SaaS; 2025 ownership turbulence (Cognition acquisition) adds roadmap risk. [source: https://windsurf.com/]
 - Governance reviewed: 2026-05-26
-- Links: docs: https://devin.ai/ | site: https://devin.ai/
+- Links: docs: https://docs.devin.ai/desktop/getting-started | site: https://devin.ai/
 
 ## Always-on AI Agents
 
@@ -1750,7 +1750,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: unknown (role: unknown) — General-purpose agent product; risk class depends on use and the vendor has not published an EU AI Act classification.
   - License risk: yes (risk: medium) — Proprietary xAI service bundled with Grok/Cursor subscriptions. [source: https://x.ai/news/grok-bot-more-plans]
 - Governance reviewed: 2026-09-30
-- Links: docs: https://x.ai/news/introducing-grok-bot | site: https://x.ai
+- Links: docs: https://docs.x.ai/grok-bot/overview | site: https://x.ai/news/introducing-grok-bot
 
 ### Hermes Agent
 - Page: https://www.enterpriseai.tools/tools/hermes-agent/
@@ -1822,7 +1822,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - EU AI Act: unknown (role: unknown) — General-purpose workplace agent; risk class depends on use and the vendor has not published an EU AI Act classification.
   - License risk: yes (risk: medium) — Proprietary Microsoft service built on the MIT-licensed OpenClaw runtime; tied to Microsoft 365 and usage-based billing. [source: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/]
 - Governance reviewed: 2026-09-30
-- Links: docs: https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/ | site: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/
+- Links: docs: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/
 
 ### NanoClaw
 - Page: https://www.enterpriseai.tools/tools/nanoclaw/

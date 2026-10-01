@@ -63,9 +63,9 @@ These rows are not automatically wrong, but they are where the system is still r
 
 ## Review freshness
 
-- Reviewed within the last 14 days of the inventory snapshot (2026-05-15): **97**
-- Reviewed 15-30 days before the snapshot: **7**
-- Reviewed more than 30 days before the snapshot: **0**
+- Reviewed within the last 14 days of the inventory snapshot (2026-09-30): **54**
+- Reviewed 15-30 days before the snapshot: **0**
+- Reviewed more than 30 days before the snapshot: **50**
 
 ## Highest-priority cleanup signal
 

@@ -22,7 +22,7 @@
     ],
     "license": "Proprietary",
     "docsUrl": "https://docs.databricks.com/aws/en/agents/gen-ai-capabilities",
-    "websiteUrl": "https://www.databricks.com/product/ai",
+    "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
     "pricing": "Databricks platform consumption; feature-specific pricing depends on serving, storage, and compute.",
     "pricingModel": "paid",
     "languages": [
@@ -84,7 +84,7 @@
       "licenseRisk": {
         "status": "yes",
         "detail": "Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack.",
-        "sourceUrl": "https://www.databricks.com/product/ai",
+        "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"

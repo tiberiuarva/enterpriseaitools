@@ -67,7 +67,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Saviynt product; no open-source edition.",
         "sourceUrl": "https://saviynt.com/products/identity-security-for-ai",
         "level": "medium"
       },

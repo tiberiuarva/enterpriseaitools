@@ -59,8 +59,8 @@ describe("categories", () => {
     }
   });
 
-  it("scripts/check-open-data.mjs and logo-audit-report.mjs list every category", () => {
-    for (const file of ["check-open-data.mjs", "logo-audit-report.mjs"]) {
+  it("validator and report scripts list every category", () => {
+    for (const file of ["check-open-data.mjs", "logo-audit-report.mjs", "check-tool-card-data.mjs"]) {
       const script = readFileSync(new URL(`../scripts/${file}`, import.meta.url), "utf8");
       for (const category of CATEGORY_ORDER) {
         assert.ok(script.includes(`"${category}"`), `${file} is missing category ${category}`);

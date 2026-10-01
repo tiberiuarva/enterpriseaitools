@@ -23,7 +23,7 @@
     ],
     "license": "Proprietary",
     "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
-    "websiteUrl": "https://www.databricks.com/product/ai",
+    "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
     "pricing": "Pay-as-you-go since July 8, 2026 with a free monthly LLM usage allowance (150 DBUs); workspace and compute usage still apply.",
     "pricingModel": "paid",
     "languages": [
@@ -85,7 +85,7 @@
       "licenseRisk": {
         "status": "yes",
         "detail": "Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability).",
-        "sourceUrl": "https://www.databricks.com/product/ai",
+        "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"

@@ -75,7 +75,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+        "detail": "Proprietary Auth0 (Okta) service; Token Vault and authorization flows are not portable to another provider.",
         "sourceUrl": "https://auth0.com/pricing",
         "level": "medium"
       },

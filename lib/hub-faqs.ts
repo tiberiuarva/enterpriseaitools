@@ -127,7 +127,7 @@ export const alwaysOnAgentsFaqs: HubFaq[] = [
   {
     question: "What is an always-on AI agent?",
     answer:
-      "An agent that keeps working after the chat closes: it holds its own memory, credentials or identity, and usually its own cloud or local computer, and acts across email, chat, files, and web apps on a schedule or trigger rather than one prompt at a time. Microsoft, Meta, xAI, and Google all shipped products in this class in 2026, alongside open-source projects such as OpenClaw.",
+      "An agent that keeps working after the chat closes: it holds its own memory, credentials or identity, and usually its own cloud or local computer, and acts across email, chat, files, and web apps on a schedule or trigger rather than one prompt at a time. Microsoft, Meta, xAI, and Google all announced or shipped products in this class in 2026, alongside open-source projects such as OpenClaw.",
   },
   {
     question: "How is this different from an assistant or an agent framework?",

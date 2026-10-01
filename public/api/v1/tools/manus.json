@@ -76,6 +76,7 @@
     "logoReviewedAt": "2026-09-30",
     "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
     "publishedAt": "2026-09-30",
-    "cloudBadgeReviewedAt": "2026-09-30"
+    "cloudBadgeReviewedAt": "2026-09-30",
+    "pricingModel": "contact"
   }
 }

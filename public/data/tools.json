@@ -292,7 +292,7 @@
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/agents/gen-ai-capabilities",
-      "websiteUrl": "https://www.databricks.com/product/ai",
+      "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
       "pricing": "Databricks platform consumption; feature-specific pricing depends on serving, storage, and compute.",
       "pricingModel": "paid",
       "languages": [
@@ -354,7 +354,7 @@
         "licenseRisk": {
           "status": "yes",
           "detail": "Proprietary SaaS; lock-in to Unity Catalog / Vector Search / MLflow stack.",
-          "sourceUrl": "https://www.databricks.com/product/ai",
+          "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
@@ -1513,7 +1513,7 @@
         "licenseRisk": {
           "status": "yes",
           "detail": "Proprietary Databricks service.",
-          "sourceUrl": "https://www.databricks.com/product/ai",
+          "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
           "level": "high"
         },
         "reviewedAt": "2026-05-26"
@@ -2382,7 +2382,7 @@
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/ai-gateway/",
-      "websiteUrl": "https://www.databricks.com/product/ai",
+      "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
       "pricing": "Underlying Databricks platform and model-serving consumption applies; no separate gateway price is published.",
       "pricingModel": "paid",
       "languages": [
@@ -3188,7 +3188,7 @@
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
-      "websiteUrl": "https://www.databricks.com/product/ai",
+      "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
       "pricing": "Pay-as-you-go since July 8, 2026 with a free monthly LLM usage allowance (150 DBUs); workspace and compute usage still apply.",
       "pricingModel": "paid",
       "languages": [
@@ -3250,7 +3250,7 @@
         "licenseRisk": {
           "status": "yes",
           "detail": "Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability).",
-          "sourceUrl": "https://www.databricks.com/product/ai",
+          "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
@@ -3350,7 +3350,7 @@
         "Enterprise path available"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://devin.ai/",
+      "docsUrl": "https://docs.devin.ai/desktop/getting-started",
       "websiteUrl": "https://devin.ai/",
       "pricing": "Free; Pro $20/mo; Max $200/mo; Team $80/mo base + $40/dev; Enterprise custom.",
       "pricingModel": "paid",
@@ -3600,7 +3600,7 @@
       ],
       "license": "Proprietary",
       "docsUrl": "https://docs.databricks.com/aws/en/genie/",
-      "websiteUrl": "https://www.databricks.com/product/ai",
+      "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
       "pricing": "Pay-as-you-go since July 8, 2026 with 150 DBUs of free LLM usage per month; user billing paused and free through January 31, 2027.",
       "pricingModel": "paid",
       "languages": [
@@ -3660,7 +3660,7 @@
         "licenseRisk": {
           "status": "yes",
           "detail": "Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability).",
-          "sourceUrl": "https://www.databricks.com/product/ai",
+          "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
           "level": "medium"
         },
         "reviewedAt": "2026-05-26"
@@ -4098,8 +4098,7 @@
         "Human sign-off for sensitive actions"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://www.microsoft.com/en-us/copilot/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
-      "websiteUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "docsUrl": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
       "pricing": "Usage-based billing rather than a per-user license (per Microsoft's 2026-09-25 announcement); rates not published.",
       "pricingModel": "paid",
       "clouds": [
@@ -4175,8 +4174,8 @@
         "Shared Team Bots deployable in Slack"
       ],
       "license": "Proprietary",
-      "docsUrl": "https://x.ai/news/introducing-grok-bot",
-      "websiteUrl": "https://x.ai",
+      "docsUrl": "https://docs.x.ai/grok-bot/overview",
+      "websiteUrl": "https://x.ai/news/introducing-grok-bot",
       "pricing": "Included (beta) with SuperGrok, SuperGrok Plus/Heavy, Cursor Pro/Pro+/Ultra and Cursor Teams plans; enterprise via sales.",
       "pricingModel": "paid",
       "status": "active",
@@ -4458,7 +4457,8 @@
       "logoReviewedAt": "2026-09-30",
       "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
       "publishedAt": "2026-09-30",
-      "cloudBadgeReviewedAt": "2026-09-30"
+      "cloudBadgeReviewedAt": "2026-09-30",
+      "pricingModel": "contact"
     },
     {
       "id": "hermes-agent",
@@ -6409,7 +6409,7 @@
         "Generates MCP servers from REST APIs",
         "Token-based rate limiting and PII redaction"
       ],
-      "license": "Proprietary",
+      "license": "Apache 2.0 core + Enterprise plugins",
       "licenseWarning": "Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.",
       "githubUrl": "https://github.com/Kong/kong",
       "docsUrl": "https://developer.konghq.com/ai-gateway/",
@@ -6936,7 +6936,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary; sold as a separate Okta subscription, with agent identities held in Okta Universal Directory.",
           "sourceUrl": "https://www.okta.com/newsroom/press-releases/okta-brings-first-class-identity-to-ai-agents-with-agent-sso/",
           "level": "medium"
         },
@@ -7016,7 +7016,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Auth0 (Okta) service; Token Vault and authorization flows are not portable to another provider.",
           "sourceUrl": "https://auth0.com/pricing",
           "level": "medium"
         },
@@ -7090,7 +7090,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Palo Alto Networks (Idira) product; no open-source edition.",
           "sourceUrl": "https://www.paloaltonetworks.com/idira",
           "level": "medium"
         },
@@ -7165,7 +7165,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Ping Identity product; delegated-token flows run on Ping's platform.",
           "sourceUrl": "https://press.pingidentity.com/2026-03-24-Ping-Identity-Defines-the-Runtime-Identity-Standard-for-Autonomous-AI",
           "level": "medium"
         },
@@ -7239,7 +7239,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary SailPoint product; agent ownership and certifications live in SailPoint Identity Security Cloud.",
           "sourceUrl": "https://www.sailpoint.com/products/agent-identity-security",
           "level": "medium"
         },
@@ -7311,7 +7311,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Saviynt product; no open-source edition.",
           "sourceUrl": "https://saviynt.com/products/identity-security-for-ai",
           "level": "medium"
         },
@@ -7388,7 +7388,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Aembit service; secretless access depends on Aembit's identity broker.",
           "sourceUrl": "https://aembit.io/pricing/",
           "level": "medium"
         },
@@ -7466,7 +7466,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path, identity layer creates platform lock-in.",
+          "detail": "Proprietary Descope service; agent and MCP-server identities are issued by Descope.",
           "sourceUrl": "https://www.descope.com/pricing",
           "level": "medium"
         },
@@ -8030,13 +8030,14 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; no OSS path.",
+          "detail": "Proprietary Zenity product; no open-source edition.",
           "sourceUrl": "https://zenity.io/platform",
           "level": "medium"
         },
         "reviewedAt": "2026-09-30"
       },
-      "cloudBadgeReviewedAt": "2026-09-30"
+      "cloudBadgeReviewedAt": "2026-09-30",
+      "pricingModel": "contact"
     },
     {
       "id": "prisma-airs",
@@ -8110,7 +8111,8 @@
         },
         "reviewedAt": "2026-09-30"
       },
-      "cloudBadgeReviewedAt": "2026-09-30"
+      "cloudBadgeReviewedAt": "2026-09-30",
+      "pricingModel": "contact"
     },
     {
       "id": "nvidia-nemoclaw",

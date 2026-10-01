@@ -75,6 +75,7 @@
       },
       "reviewedAt": "2026-09-30"
     },
-    "cloudBadgeReviewedAt": "2026-09-30"
+    "cloudBadgeReviewedAt": "2026-09-30",
+    "pricingModel": "contact"
   }
 }

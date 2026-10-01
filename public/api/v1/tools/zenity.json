@@ -66,12 +66,13 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; no OSS path.",
+        "detail": "Proprietary Zenity product; no open-source edition.",
         "sourceUrl": "https://zenity.io/platform",
         "level": "medium"
       },
       "reviewedAt": "2026-09-30"
     },
-    "cloudBadgeReviewedAt": "2026-09-30"
+    "cloudBadgeReviewedAt": "2026-09-30",
+    "pricingModel": "contact"
   }
 }
