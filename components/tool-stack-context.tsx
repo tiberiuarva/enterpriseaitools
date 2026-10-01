@@ -32,14 +32,14 @@ export function ToolStackContext({ tool, tools }: ToolStackContextProps) {
         </a>{" "}
         layer.
         {tool.alsoCovers?.length
-          ? ` Also covers ${tool.alsoCovers.map((category) => CATEGORIES[category].navLabel.toLowerCase()).join(", ")}.`
+          ? ` Also covers ${tool.alsoCovers.map((category) => CATEGORIES[category].navLabel).join(", ")}.`
           : null}
       </p>
 
       <ol className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3" aria-label="Stack layers, with this tool's categories highlighted">
         {STACK_LAYERS.map((layer) => (
           <li key={layer.id} className="rounded-xl border border-[var(--color-border)] p-3">
-            <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">{layer.label}</div>
+            <div className="text-caption uppercase tracking-wide text-[var(--color-text-secondary)]">{layer.label}</div>
             <ul className="mt-2 flex flex-wrap gap-1.5">
               {layer.categories.map((category) => {
                 const active = covered.has(category);
@@ -51,7 +51,7 @@ export function ToolStackContext({ tool, tools }: ToolStackContextProps) {
                       className={`inline-flex rounded-full border px-2.5 py-1 text-xs font-medium transition ${
                         active
                           ? "border-[var(--color-primary)] bg-[var(--color-primary-soft)] text-[var(--color-primary)]"
-                          : "border-[var(--color-border)] text-[var(--color-text-tertiary)] hover:text-[var(--color-text-primary)]"
+                          : "border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]"
                       }`}
                     >
                       {active ? <span className="sr-only">Covers: </span> : null}
@@ -76,7 +76,7 @@ export function ToolStackContext({ tool, tools }: ToolStackContextProps) {
                   className="inline-flex flex-col rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm transition hover:border-[var(--color-primary)]"
                 >
                   <span className="font-medium text-[var(--color-text-primary)]">{pair.name}</span>
-                  <span className="text-xs text-[var(--color-text-tertiary)]">{CATEGORIES[pair.category].navLabel}</span>
+                  <span className="text-xs text-[var(--color-text-secondary)]">{CATEGORIES[pair.category].navLabel}</span>
                 </a>
               </li>
             ))}

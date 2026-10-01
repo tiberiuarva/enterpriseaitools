@@ -210,6 +210,21 @@
     "requiresBreadcrumbs": true
   },
   {
+    "path": "/stacks",
+    "changeFrequency": "weekly",
+    "priority": 0.8,
+    "titleContains": "Enterprise AI stacks by vendor",
+    "descriptionContains": "Compare what Microsoft, AWS and Google each offer",
+    "searchIntent": "compare microsoft aws google ai stacks",
+    "minTitleLength": 20,
+    "maxTitleLength": 65,
+    "minDescriptionLength": 110,
+    "maxDescriptionLength": 170,
+    "requiresCollectionPage": true,
+    "requiresItemList": false,
+    "requiresBreadcrumbs": true
+  },
+  {
     "path": "/stacks/microsoft",
     "changeFrequency": "weekly",
     "priority": 0.8,
@@ -259,7 +274,7 @@
     "changeFrequency": "weekly",
     "priority": 0.7,
     "titleContains": "Start with your question",
-    "descriptionContains": "Four step-by-step paths across the enterprise AI stack",
+    "descriptionContains": "step-by-step paths across the enterprise AI stack",
     "searchIntent": "where to start with enterprise ai tools",
     "minTitleLength": 20,
     "maxTitleLength": 65,

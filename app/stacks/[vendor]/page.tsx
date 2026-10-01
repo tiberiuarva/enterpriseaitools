@@ -7,7 +7,7 @@ import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { lastUpdated, platforms, tools, updateCountByTool } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
-import { VENDOR_STACKS, buildVendorStack, countCoveredCategories, getVendorStack } from "@/lib/stacks";
+import { VENDOR_STACKS, buildVendorStack, countCoveredCategories, getVendorStack, vendorStackGaps, vendorStackTools } from "@/lib/stacks";
 
 export function generateStaticParams(): { vendor: string }[] {
   return VENDOR_STACKS.map((stack) => ({ vendor: stack.slug }));
@@ -33,8 +33,8 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
 
   const rows = buildVendorStack(stack, tools);
   const covered = countCoveredCategories(rows);
-  const gaps = rows.flatMap((row) => row.cells.filter((cell) => cell.tools.length === 0).map((cell) => cell.category));
-  const vendorTools = [...new Map(rows.flatMap((row) => row.cells.flatMap((cell) => cell.tools)).map((tool) => [tool.id, tool])).values()];
+  const gaps = vendorStackGaps(rows);
+  const vendorTools = vendorStackTools(rows);
   const title = `${stack.name} enterprise AI stack`;
   const pageUrl = `${siteUrl}/stacks/${stack.slug}/`;
   const jsonLd = [
@@ -51,7 +51,7 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <JsonLd data={jsonLd} />
         <section className="card-flat p-6 md:p-10">
-          <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">Vendor stack</p>
+          <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Vendor stack</p>
           <h1 className="mt-3 text-h1 text-[var(--color-text-primary)]">{title}</h1>
           <p className="mt-3 max-w-3xl text-body text-[var(--color-text-secondary)]">
             The {vendorTools.length} current {stack.name} products tracked here, placed on the same stack map as the rest of the market.

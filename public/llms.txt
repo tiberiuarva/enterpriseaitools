@@ -22,7 +22,8 @@ Every tracked tool is indexed at https://www.enterpriseai.tools/tools/ and has i
 - Use ([https://www.enterpriseai.tools/use/](https://www.enterpriseai.tools/use/)):
   - [AI Assistants](https://www.enterpriseai.tools/assistants/): coding, productivity, build-your-own.
   - [Always-on AI Agents](https://www.enterpriseai.tools/always-on-agents/): persistent personal and team agents, with their security record.
-- Vendor stacks: what Microsoft ([https://www.enterpriseai.tools/stacks/microsoft/](https://www.enterpriseai.tools/stacks/microsoft/)), AWS ([https://www.enterpriseai.tools/stacks/aws/](https://www.enterpriseai.tools/stacks/aws/)) and Google ([https://www.enterpriseai.tools/stacks/google/](https://www.enterpriseai.tools/stacks/google/)) offer at each layer.
+- [Start with your question](https://www.enterpriseai.tools/start/): step-by-step paths across the stack (assistants rollout, first agent in production, governing existing agents, always-on agents).
+- Vendor stacks ([https://www.enterpriseai.tools/stacks/](https://www.enterpriseai.tools/stacks/)): what Microsoft ([https://www.enterpriseai.tools/stacks/microsoft/](https://www.enterpriseai.tools/stacks/microsoft/)), AWS ([https://www.enterpriseai.tools/stacks/aws/](https://www.enterpriseai.tools/stacks/aws/)) and Google ([https://www.enterpriseai.tools/stacks/google/](https://www.enterpriseai.tools/stacks/google/)) offer at each layer.
 - [Weekly updates](https://www.enterpriseai.tools/updates/): high-impact market intelligence + release log.
 - [EU AI Act tracker](https://www.enterpriseai.tools/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (https://www.enterpriseai.tools/eu-ai-act-deadlines.ics).
 - [Help me evaluate](https://www.enterpriseai.tools/evaluate/): guided client-side flow that ranks tools by governance fit.

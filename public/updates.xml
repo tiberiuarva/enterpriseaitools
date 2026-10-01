@@ -349,7 +349,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-08-25-01" />
     <summary>Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="governance, feature, high" />
+    <category term="assistants, feature, high" />
     <source>
       <id>https://cursor.com/security#certifications-and-third-party-assessments</id>
       <title>Certifications and third-party assessments · Cursor Security</title>

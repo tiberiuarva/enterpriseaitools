@@ -294,7 +294,7 @@
       "date": "2026-08-25",
       "toolId": "cursor",
       "toolName": "Cursor",
-      "category": "governance",
+      "category": "assistants",
       "type": "feature",
       "summary": "Cursor now states that it holds ISO/IEC 27001:2022 and ISO/IEC 42001:2023 certifications, alongside its SOC 2 Type II attestation and AIUC-1 certification.",
       "sourceUrl": "https://cursor.com/security#certifications-and-third-party-assessments",

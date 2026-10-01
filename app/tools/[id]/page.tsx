@@ -74,6 +74,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   }
 
   const pageUrl = `${siteUrl}/tools/${tool.id}/`;
+  const layer = layerForCategory(tool.category);
   // `updates` is pre-sorted newest-first in lib/data.ts; filtering preserves that order.
   const toolHistory = updates.filter((update) => update.toolId === tool.id);
   const toolSnapshotDiffs = snapshotDiffEvents.filter((event) => event.toolId === tool.id);
@@ -81,7 +82,7 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
-      { name: layerForCategory(tool.category).title, url: `${siteUrl}${layerForCategory(tool.category).href}/` },
+      { name: layer.label, url: `${siteUrl}${layer.href}/` },
       { name: CATEGORY_LABELS[tool.category], url: `${siteUrl}/${tool.category}/` },
       { name: tool.name, url: pageUrl },
     ]),
@@ -102,15 +103,21 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
         <JsonLd data={jsonLd} />
 
         <nav aria-label="Breadcrumb" className="text-sm text-[var(--color-text-secondary)]">
-          <a href={withBasePath(layerForCategory(tool.category).href)} className="text-[var(--color-primary)] hover:underline">
-            {layerForCategory(tool.category).label}
-          </a>
-          <span aria-hidden="true"> / </span>
-          <a href={withBasePath(`/${tool.category}`)} className="text-[var(--color-primary)] hover:underline">
-            {CATEGORY_LABELS[tool.category]}
-          </a>
-          <span aria-hidden="true"> / </span>
-          <span>{tool.name}</span>
+          <ol className="flex flex-wrap items-center gap-x-1.5">
+            {[
+              { name: "Home", href: "/" },
+              { name: layer.label, href: layer.href },
+              { name: CATEGORY_LABELS[tool.category], href: `/${tool.category}` },
+            ].map((crumb) => (
+              <li key={crumb.href} className="flex items-center gap-x-1.5">
+                <a href={withBasePath(crumb.href)} className="text-[var(--color-primary)] hover:underline">
+                  {crumb.name}
+                </a>
+                <span aria-hidden="true">/</span>
+              </li>
+            ))}
+            <li aria-current="page">{tool.name}</li>
+          </ol>
         </nav>
 
         <section className="card-flat p-6 md:p-8">

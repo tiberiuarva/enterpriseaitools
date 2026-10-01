@@ -56,10 +56,11 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
   const visibleUpdates = updates.slice(0, 5);
 
   const pageUrl = `${siteUrl}/${category}/`;
+  const layer = layerForCategory(category);
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
-      { name: layerForCategory(category).title, url: `${siteUrl}${layerForCategory(category).href}/` },
+      { name: layer.label, url: `${siteUrl}${layer.href}/` },
       { name: title, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({
@@ -80,10 +81,10 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
             <Icon size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
             <div className="max-w-2xl">
               <a
-                href={withBasePath(layerForCategory(category).href)}
-                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)] hover:text-[var(--color-primary)]"
+                href={withBasePath(layer.href)}
+                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
               >
-                {layerForCategory(category).label} layer
+                {layer.label} layer
               </a>
               <h1 className="mt-1 text-h1 text-[var(--color-text-primary)]">{title}</h1>
               <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
@@ -115,14 +116,14 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
             Suites listed under another category that include this capability too.
           </p>
           <ul className="mt-4 flex flex-wrap gap-2">
-            {sortByName(alsoCoveredBy).map((tool) => (
+            {alsoCoveredBy.map((tool) => (
               <li key={tool.id}>
                 <a
                   href={withBasePath(`/tools/${tool.id}`)}
                   className="inline-flex flex-col rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm transition hover:border-[var(--color-primary)]"
                 >
                   <span className="font-medium text-[var(--color-text-primary)]">{tool.name}</span>
-                  <span className="text-xs text-[var(--color-text-tertiary)]">{CATEGORIES[tool.category].navLabel}</span>
+                  <span className="text-xs text-[var(--color-text-secondary)]">{CATEGORIES[tool.category].navLabel}</span>
                 </a>
               </li>
             ))}

@@ -177,7 +177,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
-      { name: useLayer.title, url: `${siteUrl}${useLayer.href}/` },
+      { name: useLayer.label, url: `${siteUrl}${useLayer.href}/` },
       { name: title, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({
@@ -199,7 +199,7 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
             <div className="max-w-2xl">
               <a
                 href={withBasePath(useLayer.href)}
-                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)] hover:text-[var(--color-primary)]"
+                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-secondary)] hover:text-[var(--color-primary)]"
               >
                 {useLayer.label} layer
               </a>

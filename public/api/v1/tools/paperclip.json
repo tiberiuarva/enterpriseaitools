@@ -45,7 +45,7 @@
       "TypeScript",
       "JavaScript"
     ],
-    "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
+    "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but earlier-stage than the established agent registry and management suites.",
     "logoUrl": "/logos/paperclip.svg",
     "logoSourceUrl": "https://paperclip.ing/favicon.svg",
     "governance": {

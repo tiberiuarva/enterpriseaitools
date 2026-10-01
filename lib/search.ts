@@ -1,7 +1,8 @@
-import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
+import { CATEGORIES, CATEGORY_ORDER, STACK_LAYERS } from "@/lib/categories";
 import { platforms, tools } from "@/lib/data";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
+import { VENDOR_STACKS } from "@/lib/stacks";
 import type { ToolCategory } from "@/lib/types";
 
 export type SearchEntry = {
@@ -71,6 +72,31 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
     label: "About the project",
     keywords: ["contribute", "contact", "maintainer", "curator"],
   },
+  {
+    path: "/start",
+    label: "Start with your question",
+    keywords: ["where to start", "getting started", "roll out copilot", "first agent", "govern agents", "always-on agents", "guide"],
+  },
+  {
+    path: "/stacks",
+    label: "Enterprise AI stacks by vendor",
+    keywords: ["vendor stack", "microsoft", "aws", "google", "compare vendors"],
+  },
+  ...STACK_LAYERS.map((layer) => ({
+    path: layer.href,
+    label: layer.title,
+    keywords: [layer.label, layer.tagline, ...layer.categories.map((category) => CATEGORIES[category].navLabel)],
+  })),
+  ...CATEGORY_ORDER.map((category) => ({
+    path: `/${category}`,
+    label: CATEGORIES[category].title,
+    keywords: [CATEGORIES[category].navLabel, CATEGORIES[category].summary],
+  })),
+  ...VENDOR_STACKS.map((stack) => ({
+    path: `/stacks/${stack.slug}`,
+    label: `${stack.name} enterprise AI stack`,
+    keywords: [stack.name, `${stack.name} stack`, "vendor stack"],
+  })),
 ];
 
 const categoryLabels = Object.fromEntries(

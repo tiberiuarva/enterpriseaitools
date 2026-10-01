@@ -1654,7 +1654,7 @@
         "TypeScript",
         "JavaScript"
       ],
-      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but still earlier than more established workflow stacks.",
+      "practitionerNote": "Interesting control-plane option when budgets, approvals, and persistent agent operations matter, but earlier-stage than the established agent registry and management suites.",
       "logoUrl": "/logos/paperclip.svg",
       "logoSourceUrl": "https://paperclip.ing/favicon.svg",
       "governance": {
@@ -2403,7 +2403,7 @@
       "logoReviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png",
       "logoSourceUrl": "https://brand.databricks.com/databricks-logo",
-      "practitionerNote": "Relevant when governance needs to sit directly on Databricks-hosted agents, endpoints, and MCP access instead of being bolted on from a separate gateway layer.",
+      "practitionerNote": "Relevant when model, agent, and MCP traffic already runs on Databricks and the gateway, guardrails, and usage tracking should sit on the same platform rather than in a separate gateway product.",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -2441,7 +2441,7 @@
         "euAiAct": {
           "status": "not-applicable",
           "role": "not-applicable",
-          "detail": "Governance control-plane component; helps customers govern their own AI."
+          "detail": "AI gateway component; helps customers govern their own AI."
         },
         "licenseRisk": {
           "status": "yes",
@@ -5789,7 +5789,6 @@
       "name": "Amazon Bedrock AgentCore",
       "category": "control-planes",
       "alsoCovers": [
-        "agents",
         "agent-identity",
         "governance",
         "observability",

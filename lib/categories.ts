@@ -105,7 +105,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Compare agent registry and control plane suites — Microsoft Agent 365, Amazon Bedrock AgentCore, MuleSoft Agent Fabric, ServiceNow AI Control Tower.",
     summary: "Agent inventory, ownership, lifecycle, and fleet-wide policy: the management core of the control plane.",
     intro:
-      "These suites answer which agents exist, who owns them, and what policy applies across the fleet, often across several vendors. Most also bundle some identity, guardrail, and monitoring features; compare them on how many agent sources they can discover and govern.",
+      "These suites answer which agents exist, who owns them, and what policy applies across the fleet, often across several vendors. Most also bundle some identity, guardrail, and monitoring features; compare them on how many agent sources they can discover and govern. For the whole layer, including identity, guardrails, monitoring and gateways, see the control plane overview.",
     iconName: "layout-dashboard",
     evaluateLabel: "Inventory and manage the agents we have",
     schemaApplicationCategory: "BusinessApplication",
@@ -188,8 +188,8 @@ export type StackLayer = {
 // Three layers on top of the cloud platforms (the foundation, /platforms).
 // The split follows the industry framing: Forrester separates the build and
 // orchestration planes from the agent control plane, and places inventory,
-// identity, guardrails and monitoring inside the control plane; gateways sit
-// there as its enforcement point.
+// identity, guardrails and monitoring inside the control plane. This site also
+// places gateways there, as the point where policy is enforced on every call.
 export const STACK_LAYERS: readonly StackLayer[] = [
   {
     id: "build",
@@ -235,6 +235,27 @@ export const FOUNDATION_LINK = {
   href: "/platforms",
   title: "Cloud AI platforms",
 } as const;
+
+export function getStackLayer(id: LayerId): StackLayer {
+  const layer = STACK_LAYERS.find((candidate) => candidate.id === id);
+  if (!layer) throw new Error(`Unknown stack layer ${id}`);
+  return layer;
+}
+
+// Published framings the control plane grouping follows, shown on /control-plane.
+export const CONTROL_PLANE_FRAMING: readonly { name: string; summary: string; url: string }[] = [
+  {
+    name: "Forrester",
+    summary:
+      "Defines an agent control plane that inventories, governs, orchestrates and assures agents across vendors, separate from the planes that build agents and orchestrate processes.",
+    url: "https://www.forrester.com/blogs/announcing-our-evaluation-of-the-agent-control-plane-market/",
+  },
+  {
+    name: "Microsoft",
+    summary: "Positions Agent 365 as the control plane for agents, organised as observe, govern and secure.",
+    url: "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
+  },
+];
 
 export function layerForCategory(category: ToolCategory): StackLayer {
   const layer = STACK_LAYERS.find((candidate) => candidate.categories.includes(category));

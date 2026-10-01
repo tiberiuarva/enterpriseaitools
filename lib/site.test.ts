@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { withBasePath, withTrailingSlash } from "./site.ts";
+import { navItems, updateSubjectHref, withBasePath, withTrailingSlash } from "./site.ts";
 
 describe("withTrailingSlash", () => {
   it("adds the canonical trailing slash to page routes", () => {
@@ -59,5 +59,25 @@ describe("withBasePath", () => {
 
   it("falls back to the site root for an empty path", () => {
     assert.equal(withBasePath(""), "/");
+  });
+});
+
+describe("updateSubjectHref", () => {
+  it("sends platform updates to the platforms page anchor", () => {
+    assert.equal(updateSubjectHref({ category: "platforms", toolId: "aws-bedrock" }), "/platforms#aws-bedrock");
+  });
+
+  it("sends tool updates to the tool page", () => {
+    assert.equal(updateSubjectHref({ category: "agents", toolId: "crewai" }), "/tools/crewai");
+  });
+});
+
+describe("navItems", () => {
+  it("has unique hrefs and includes every category hub and layer page", () => {
+    const hrefs = navItems.map((item) => item.href);
+    assert.equal(new Set(hrefs).size, hrefs.length);
+    for (const href of ["/agents", "/control-planes", "/always-on-agents", "/build", "/control-plane", "/use", "/stacks/aws"]) {
+      assert.ok(hrefs.includes(href), `navItems is missing ${href}`);
+    }
   });
 });

@@ -385,7 +385,8 @@ Every tracked tool is indexed at ${siteUrl}/tools/ and has its own page at \`/to
 - Use ([${siteUrl}/use/](${siteUrl}/use/)):
   - [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
   - [Always-on AI Agents](${siteUrl}/always-on-agents/): persistent personal and team agents, with their security record.
-- Vendor stacks: what Microsoft ([${siteUrl}/stacks/microsoft/](${siteUrl}/stacks/microsoft/)), AWS ([${siteUrl}/stacks/aws/](${siteUrl}/stacks/aws/)) and Google ([${siteUrl}/stacks/google/](${siteUrl}/stacks/google/)) offer at each layer.
+- [Start with your question](${siteUrl}/start/): step-by-step paths across the stack (assistants rollout, first agent in production, governing existing agents, always-on agents).
+- Vendor stacks ([${siteUrl}/stacks/](${siteUrl}/stacks/)): what Microsoft ([${siteUrl}/stacks/microsoft/](${siteUrl}/stacks/microsoft/)), AWS ([${siteUrl}/stacks/aws/](${siteUrl}/stacks/aws/)) and Google ([${siteUrl}/stacks/google/](${siteUrl}/stacks/google/)) offer at each layer.
 - [Weekly updates](${siteUrl}/updates/): high-impact market intelligence + release log.
 - [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.

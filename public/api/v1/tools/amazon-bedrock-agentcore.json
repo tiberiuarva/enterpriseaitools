@@ -8,7 +8,6 @@
     "name": "Amazon Bedrock AgentCore",
     "category": "control-planes",
     "alsoCovers": [
-      "agents",
       "agent-identity",
       "governance",
       "observability",

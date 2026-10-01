@@ -1,51 +1,22 @@
 import { ArrowUpRight } from "lucide-react";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
-import { CATEGORIES, STACK_LAYERS, type LayerId } from "@/lib/categories";
+import { CATEGORIES, CONTROL_PLANE_FRAMING, getStackLayer, type LayerId } from "@/lib/categories";
 import { lastUpdated, tools, updateCountByTool, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
-import { previewTools } from "@/lib/stacks";
-
-// How analysts and vendors frame the control plane; shown on /control-plane so
-// the grouping is traceable to sources rather than asserted.
-const CONTROL_PLANE_SOURCES = [
-  {
-    name: "Forrester",
-    summary:
-      "Defines an agent control plane that inventories, governs, orchestrates and assures agents across vendors, separate from the planes that build agents and orchestrate processes.",
-    url: "https://www.forrester.com/blogs/announcing-our-evaluation-of-the-agent-control-plane-market/",
-  },
-  {
-    name: "Microsoft",
-    summary: "Positions Agent 365 as the control plane for agents, organised as observe, govern and secure.",
-    url: "https://learn.microsoft.com/en-us/microsoft-agent-365/overview",
-  },
-  {
-    name: "Gartner",
-    summary: "Tracks guardian agents: technology that supervises other agents, a category it expects to grow alongside agentic AI.",
-    url: "https://www.gartner.com/en/newsroom/press-releases/2025-06-11-gartner-predicts-that-guardian-agents-will-capture-10-15-percent-of-the-agentic-ai-market-by-2030",
-  },
-] as const;
-
-function getLayer(id: LayerId) {
-  const layer = STACK_LAYERS.find((candidate) => candidate.id === id);
-  if (!layer) throw new Error(`Unknown stack layer ${id}`);
-  return layer;
-}
+import { previewTools, suitesSpanningLayer } from "@/lib/stacks";
 
 export function buildLayerMetadata(id: LayerId) {
-  const layer = getLayer(id);
+  const layer = getStackLayer(id);
   return buildMetadata({ title: layer.title, description: layer.metaDescription, path: layer.href });
 }
 
 export function LayerPage({ id }: { id: LayerId }) {
-  const layer = getLayer(id);
+  const layer = getStackLayer(id);
   const pageUrl = `${siteUrl}${layer.href}/`;
   const layerTools = tools.filter((tool) => layer.categories.includes(tool.category));
-  const suites = tools
-    .filter((tool) => (tool.alsoCovers ?? []).filter((category) => layer.categories.includes(category)).length >= 2)
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const suites = suitesSpanningLayer(layer, tools);
   const layerUpdates = updates.filter((update) => (layer.categories as readonly string[]).includes(update.category)).slice(0, 4);
   const jsonLd = [
     buildBreadcrumbJsonLd([
@@ -61,10 +32,10 @@ export function LayerPage({ id }: { id: LayerId }) {
       <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <JsonLd data={jsonLd} />
         <section className="card-flat p-6 md:p-10">
-          <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">Stack layer · {layer.tagline}</p>
+          <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Stack layer · {layer.tagline}</p>
           <h1 className="mt-3 text-h1 text-[var(--color-text-primary)]">{layer.title}</h1>
           <p className="mt-3 max-w-3xl text-body text-[var(--color-text-secondary)]">{layer.intro}</p>
-          <p className="mt-4 text-sm text-[var(--color-text-tertiary)]">
+          <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
             {layerTools.length} tools in {layer.categories.length} categories ·{" "}
             <a href={withBasePath("/")} className="text-[var(--color-primary)] hover:underline">
               see the whole stack
@@ -90,7 +61,9 @@ export function LayerPage({ id }: { id: LayerId }) {
                         <ArrowUpRight size={16} aria-hidden="true" />
                       </a>
                     </h3>
-                    <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{count} tools</span>
+                    <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-secondary)]">
+                      {count} {count === 1 ? "tool" : "tools"}
+                    </span>
                   </div>
                   <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{meta.summary}</p>
                   {examples.length > 0 ? (
@@ -129,7 +102,7 @@ export function LayerPage({ id }: { id: LayerId }) {
                   </a>
                   <span className="text-sm text-[var(--color-text-secondary)]">
                     {CATEGORIES[tool.category].navLabel} · also{" "}
-                    {(tool.alsoCovers ?? []).map((category) => CATEGORIES[category].navLabel.toLowerCase()).join(", ")}
+                    {(tool.alsoCovers ?? []).map((category) => CATEGORIES[category].navLabel).join(", ")}
                   </span>
                 </li>
               ))}
@@ -147,10 +120,16 @@ export function LayerPage({ id }: { id: LayerId }) {
               where policy is enforced on every model and tool call.
             </p>
             <ul className="mt-4 flex flex-col gap-3">
-              {CONTROL_PLANE_SOURCES.map((source) => (
+              {CONTROL_PLANE_FRAMING.map((source) => (
                 <li key={source.name} className="text-sm leading-6 text-[var(--color-text-secondary)]">
                   <span className="font-semibold text-[var(--color-text-primary)]">{source.name}:</span> {source.summary}{" "}
-                  <a href={source.url} target="_blank" rel="noreferrer" className="font-medium text-[var(--color-primary)] hover:underline">
+                  <a
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${source.name} source (opens in a new tab)`}
+                    className="font-medium text-[var(--color-primary)] hover:underline"
+                  >
                     Source
                   </a>
                 </li>
@@ -167,11 +146,20 @@ export function LayerPage({ id }: { id: LayerId }) {
             <ul className="mt-4 flex flex-col gap-4">
               {layerUpdates.map((update) => (
                 <li key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
-                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">{update.date}</div>
+                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-secondary)]">{update.date}</div>
                   <a href={withBasePath(`/tools/${update.toolId}`)} className="mt-1 block font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-primary)]">
                     {update.toolName}
                   </a>
                   <p className="mt-1 text-sm leading-6 text-[var(--color-text-secondary)]">{update.summary}</p>
+                  <a
+                    href={update.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open source for ${update.toolName} in a new tab`}
+                    className="mt-1 inline-flex text-sm font-medium text-[var(--color-primary)] hover:underline"
+                  >
+                    Source
+                  </a>
                 </li>
               ))}
             </ul>

@@ -155,7 +155,7 @@ export default function PlatformsPage() {
           })}
         </section>
 
-        <ProtocolTrackingSection currentPath="/platforms" />
+        <ProtocolTrackingSection />
 
         <section className="card-flat p-6">
           <h2 className="text-lg font-semibold">How each platform maps into the tracked categories</h2>

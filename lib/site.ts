@@ -1,24 +1,20 @@
+import { CATEGORIES, FOUNDATION_LINK, STACK_LAYERS } from './categories.ts';
+import { getPlatformFragmentId } from './platform-fragments.ts';
+import { VENDOR_STACKS } from './stacks.ts';
+
 const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH?.trim();
 export const basePath = rawBasePath && rawBasePath !== '/' ? rawBasePath.replace(/\/$/, '') : '';
 
-export const navItems = [
+// Category, layer and vendor-stack entries derive from lib/categories.ts and
+// lib/stacks.ts so labels cannot drift from the header and footer.
+export const navItems: readonly { href: string; label: string }[] = [
   { href: '/', label: 'Home' },
-  { href: '/platforms', label: 'Cloud AI platforms' },
-  { href: '/build', label: 'Build & orchestrate' },
-  { href: '/agents', label: 'Agent frameworks' },
-  { href: '/orchestration', label: 'Workflows & orchestration' },
-  { href: '/control-plane', label: 'Control plane' },
-  { href: '/control-planes', label: 'Registry & management' },
-  { href: '/agent-identity', label: 'Identity & access' },
-  { href: '/governance', label: 'Guardrails & security' },
-  { href: '/observability', label: 'Monitoring & evaluation' },
-  { href: '/gateways', label: 'AI & MCP gateways' },
-  { href: '/use', label: 'Use' },
-  { href: '/assistants', label: 'Assistants & copilots' },
-  { href: '/always-on-agents', label: 'Always-on agents' },
-  { href: '/stacks/microsoft', label: 'Microsoft stack' },
-  { href: '/stacks/aws', label: 'AWS stack' },
-  { href: '/stacks/google', label: 'Google stack' },
+  { href: FOUNDATION_LINK.href, label: FOUNDATION_LINK.title },
+  ...STACK_LAYERS.flatMap((layer) => [
+    { href: layer.href, label: layer.label },
+    ...layer.categories.map((category) => ({ href: `/${category}`, label: CATEGORIES[category].navLabel })),
+  ]),
+  ...VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
   { href: '/start', label: 'Start with your question' },
   { href: '/evaluate', label: 'Evaluate' },
   // The full index and comparison pages are contextual rather than
@@ -27,7 +23,7 @@ export const navItems = [
   { href: '/tools/compare', label: 'Compare tools' },
   { href: '/updates', label: 'Updates' },
   { href: '/about', label: 'About' },
-] as const;
+];
 
 export const githubRepoUrl = 'https://github.com/tiberiuarva/enterpriseaitools';
 export const githubStargazersUrl = 'https://github.com/tiberiuarva/enterpriseaitools/stargazers';
@@ -79,4 +75,10 @@ export function withBasePath(path: string) {
   const normalized = withTrailingSlash(path);
 
   return basePath ? `${basePath}${normalized}` : normalized;
+}
+
+// Where an update's subject lives: platform updates point at the platform's
+// anchor on /platforms, everything else at its tool page.
+export function updateSubjectHref(update: { category: string; toolId: string }): string {
+  return update.category === 'platforms' ? `/platforms#${getPlatformFragmentId(update.toolId)}` : `/tools/${update.toolId}`;
 }

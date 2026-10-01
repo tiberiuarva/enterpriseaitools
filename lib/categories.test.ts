@@ -1,7 +1,7 @@
 import { strict as assert } from "node:assert";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
-import { CATEGORIES, CATEGORY_ORDER, STACK_LAYERS, layerForCategory } from "./categories.ts";
+import { CATEGORIES, CATEGORY_ORDER, CONTROL_PLANE_FRAMING, STACK_LAYERS, getStackLayer, layerForCategory } from "./categories.ts";
 
 const keys = Object.keys(CATEGORIES);
 
@@ -84,6 +84,18 @@ describe("categories", () => {
     for (const layer of STACK_LAYERS) {
       assert.ok(layer.metaDescription.length >= 90 && layer.metaDescription.length <= 160, `${layer.id} metaDescription is ${layer.metaDescription.length} chars`);
       assert.ok(!(CATEGORY_ORDER as readonly string[]).includes(layer.href.slice(1)), `${layer.href} collides with a category hub`);
+    }
+  });
+
+  it("getStackLayer resolves every layer id", () => {
+    for (const layer of STACK_LAYERS) assert.equal(getStackLayer(layer.id), layer);
+  });
+
+  it("control plane framing cites https sources", () => {
+    assert.ok(CONTROL_PLANE_FRAMING.length > 0);
+    for (const source of CONTROL_PLANE_FRAMING) {
+      assert.match(source.url, /^https:\/\//);
+      assert.ok(source.summary.trim().length > 0);
     }
   });
 });

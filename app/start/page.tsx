@@ -10,8 +10,7 @@ import { withBasePath } from "@/lib/site";
 import { previewTools } from "@/lib/stacks";
 
 const title = "Start with your question";
-const description =
-  "Four step-by-step paths across the enterprise AI stack: rolling out assistants, shipping a first agent, governing existing agents, and always-on agents.";
+const description = `${JOURNEYS.length} step-by-step paths across the enterprise AI stack: rolling out assistants, shipping a first agent, governing existing agents, and always-on agents.`;
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/start" });
 
@@ -83,11 +82,11 @@ export default function StartPage() {
                           {meta.navLabel}
                           <ArrowUpRight size={14} aria-hidden="true" />
                         </a>
-                        <span className="text-caption text-[var(--color-text-tertiary)]">{layerForCategory(step.category).label}</span>
+                        <span className="text-caption text-[var(--color-text-secondary)]">{layerForCategory(step.category).label}</span>
                       </div>
                       <p className="mt-1 text-sm leading-6 text-[var(--color-text-secondary)]">{step.decide}</p>
                       {examples.length > 0 ? (
-                        <p className="mt-1 text-xs text-[var(--color-text-tertiary)]">
+                        <p className="mt-1 text-xs text-[var(--color-text-secondary)]">
                           For example:{" "}
                           {examples.map((tool, toolIndex) => (
                             <span key={tool.id}>

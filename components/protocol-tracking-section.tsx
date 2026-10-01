@@ -8,14 +8,9 @@ const iconMap = {
   openapi: Braces,
 } as const;
 
-type ProtocolTrackingSectionProps = {
-  compact?: boolean;
-  currentPath?: "/" | "/platforms";
-};
-
-export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: ProtocolTrackingSectionProps) {
+// Rendered on /platforms only.
+export function ProtocolTrackingSection() {
   const snapshots = getProtocolSnapshots();
-  const isPlatformsPage = currentPath === "/platforms";
 
   return (
     <section className="card-flat p-6">
@@ -56,7 +51,7 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
                 ))}
               </div>
 
-              {!compact && snapshot.recentUpdates.length > 0 ? (
+              {snapshot.recentUpdates.length > 0 ? (
                 <div className="mt-4 border-t border-[var(--color-border)] pt-4">
                   <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">Recent dataset mentions</div>
                   <div className="mt-3 space-y-3">
@@ -77,13 +72,10 @@ export function ProtocolTrackingSection({ compact = false, currentPath = "/" }: 
 
       <div className="mt-5 flex flex-wrap gap-3">
         <a
-          href={withBasePath(isPlatformsPage ? "/updates" : "/platforms")}
+          href={withBasePath("/updates")}
           className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)]"
         >
-          {isPlatformsPage ? "Browse weekly updates" : "Compare platform support"}
-        </a>
-        <a href={withBasePath("/updates")} className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline">
-          Open updates feed
+          Browse weekly updates
         </a>
       </div>
     </section>

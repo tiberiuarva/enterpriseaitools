@@ -81,7 +81,7 @@ const primaryNavHrefs = new Set<string>([homeLink.href, ...explorePaths, ...util
 const uncategorizedLinks = navItems.filter((item) => !primaryNavHrefs.has(item.href));
 
 function navLinkClass(isCurrent: boolean) {
-  return `rounded-full px-3 py-2 text-sm font-medium transition ${
+  return `whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition ${
     isCurrent
       ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
       : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
@@ -140,10 +140,9 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               <details className="group">
                 <summary
                   aria-label="Explore the AI stack"
-                  aria-current={isExplorePath ? "page" : undefined}
                   aria-haspopup="true"
                   title="Explore the AI stack"
-                  className={`flex h-9 cursor-pointer list-none items-center gap-1 rounded-full px-3 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
+                  className={`flex h-9 cursor-pointer list-none items-center gap-1 whitespace-nowrap rounded-full px-3 text-sm font-medium transition [&::-webkit-details-marker]:hidden ${
                     isExplorePath
                       ? "bg-[var(--color-bg-card)] text-[var(--color-text-primary)]"
                       : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-card)] hover:text-[var(--color-text-primary)]"
@@ -157,7 +156,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     <div key={group.id} className="flex min-w-0 flex-col gap-1">
                       <div className="px-3 pb-1">
                         <div className={groupHeadingClass}>{group.label}</div>
-                        <p className="mt-1 text-xs text-[var(--color-text-tertiary)]">{group.tagline}</p>
+                        <p className="mt-1 text-xs text-[var(--color-text-secondary)]">{group.tagline}</p>
                       </div>
                       <NavLinkItem link={group.overview} currentPath={currentPath} className="text-[var(--color-text-primary)]" />
                       {group.links.map((link) => (
@@ -176,7 +175,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     key={item.href}
                     href={withBasePath(item.href)}
                     aria-current={isCurrent ? "page" : undefined}
-                    className={`${navLinkClass(isCurrent)}${item.href === "/start" ? " hidden lg:inline-flex" : ""}`}
+                    className={navLinkClass(isCurrent)}
                   >
                     {item.href === "/start" ? "Start here" : item.label}
                   </a>
@@ -245,7 +244,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                       </details>
                     );
                   })}
-                  <div className={`px-3 pt-2 ${groupHeadingClass}`}>Decide</div>
+                  <div className={`px-3 pt-2 ${groupHeadingClass}`}>Guides &amp; info</div>
                   {utilityLinks.map((item) => (
                     <NavLinkItem key={item.href} link={item} currentPath={currentPath} />
                   ))}

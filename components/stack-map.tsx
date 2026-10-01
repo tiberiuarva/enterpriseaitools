@@ -74,8 +74,8 @@ export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h
                           >
                             {meta.navLabel}
                           </a>
-                          <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">
-                            {vendor ? `${shown.length} of ${total}` : `${total} ${total === 1 ? "tool" : "tools"}`}
+                          <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-secondary)]">
+                            {vendor ? `${shown.length} tracked` : `${total} ${total === 1 ? "tool" : "tools"}`}
                           </span>
                         </div>
                         {shown.length > 0 ? (
@@ -85,7 +85,9 @@ export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h
                             ))}
                           </ul>
                         ) : (
-                          <p className="text-xs text-[var(--color-text-tertiary)]">No {vendor?.name} product tracked here yet.</p>
+                          <p className="text-xs text-[var(--color-text-secondary)]">
+                            {vendor ? `No ${vendor.name} product tracked here yet.` : "No current tools tracked yet."}
+                          </p>
                         )}
                       </li>
                     );

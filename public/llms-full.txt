@@ -1293,7 +1293,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - SOC 2: yes — Databricks SOC 2 Type II across AWS/Azure/GCP. [source: https://www.databricks.com/trust/compliance/soc]
   - ISO 27001: yes — Databricks ISO/IEC 27001:2022 certified across clouds. [source: https://www.databricks.com/trust/compliance/iso-27001]
   - ISO 42001: unknown — Databricks references ISO 42001 as a customer framework (DASF 2.0) but has not published its own certification. [source: https://www.databricks.com/blog/announcing-databricks-ai-security-framework-20]
-  - EU AI Act: not-applicable (role: not-applicable) — Governance control-plane component; helps customers govern their own AI.
+  - EU AI Act: not-applicable (role: not-applicable) — AI gateway component; helps customers govern their own AI.
   - License risk: yes (risk: medium) — Proprietary SaaS; lock-in to Databricks-centric stacks. [source: https://docs.databricks.com/aws/en/ai-gateway/]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://docs.databricks.com/aws/en/ai-gateway/ | site: https://www.databricks.com/product/data-intelligence-platform

@@ -11,7 +11,7 @@ import { lastUpdated, platforms, tools, updateCountByTool, updates } from "@/lib
 import { homeFaqs } from "@/lib/hub-faqs";
 import { JOURNEYS } from "@/lib/journeys";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
-import { withBasePath } from "@/lib/site";
+import { updateSubjectHref, withBasePath } from "@/lib/site";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
@@ -84,7 +84,7 @@ export default function Home() {
         <section className="card-flat p-6 md:p-10">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
             <div className="max-w-2xl">
-              <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">
+              <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">
                 Enterprise AI stack guide
               </p>
               <h1 className="mt-3 text-display text-[var(--color-text-primary)]">
@@ -140,7 +140,7 @@ export default function Home() {
                     {journey.question}
                   </h3>
                   <p className="hidden text-sm leading-6 text-[var(--color-text-secondary)] sm:block">{journey.summary}</p>
-                  <span className="mt-auto text-xs text-[var(--color-text-tertiary)]">{journey.steps.length} steps</span>
+                  <span className="mt-auto text-xs text-[var(--color-text-secondary)]">{journey.steps.length} steps</span>
                 </a>
               </li>
             ))}
@@ -161,11 +161,11 @@ export default function Home() {
             <ul className="mt-4 flex flex-col gap-4">
               {recentHighImpact.map((update) => (
                 <li key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
-                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
+                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-secondary)]">
                     {update.date} · {formatUpdateLabel(update.type)}
                   </div>
                   <a
-                    href={withBasePath(`/tools/${update.toolId}`)}
+                    href={withBasePath(updateSubjectHref(update))}
                     className="mt-1 block font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-primary)]"
                   >
                     {update.toolName}

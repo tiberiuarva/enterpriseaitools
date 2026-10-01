@@ -32,8 +32,6 @@ const latestDataDate = latestIsoDate([
 
 export const lastUpdated = latestDataDate ?? toolsData.lastUpdated;
 
-export const latestUpdate = updates[0] ?? null;
-
 export const snapshotDiffEvents = (snapshotDiffsData.events as SnapshotDiffEvent[])
   .slice()
   .sort((a, b) => b.to.localeCompare(a.to) || a.toolName.localeCompare(b.toolName) || a.field.localeCompare(b.field));
