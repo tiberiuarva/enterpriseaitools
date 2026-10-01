@@ -120,6 +120,17 @@ export type EvaluateResult = {
   cautions: string[];
 };
 
+// "Permissive open source" excludes proprietary products of any type and
+// open-core or source-available licenses, which always carry a licenseWarning.
+export function isPermissiveOpenSource(tool: Tool): boolean {
+  return (
+    tool.type === "opensource" &&
+    !tool.licenseWarning &&
+    !/proprietary/i.test(tool.license) &&
+    tool.governance.licenseRisk.level !== "high"
+  );
+}
+
 // Hard filters remove tools that cannot satisfy a stated requirement.
 function passesHardFilters(tool: Tool, answers: IntakeAnswers): boolean {
   if (tool.category !== answers.category) return false;
@@ -129,7 +140,7 @@ function passesHardFilters(tool: Tool, answers: IntakeAnswers): boolean {
   if (answers.deployment === "on-prem-required" && !models.includes("on-prem") && !models.includes("sovereign")) {
     return false;
   }
-  if (answers.ossTolerance === "permissive-required" && (tool.type === "vendor" || tool.governance.licenseRisk.level === "high")) {
+  if (answers.ossTolerance === "permissive-required" && !isPermissiveOpenSource(tool)) {
     return false;
   }
 

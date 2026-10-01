@@ -48,6 +48,17 @@ describe("categories", () => {
     );
   });
 
+  it("data/SCHEMA.md lists every category in each category enum", () => {
+    const schema = readFileSync(new URL("../data/SCHEMA.md", import.meta.url), "utf8");
+    const enumRows = schema.split("\n").filter((line) => line.startsWith("| `category` | `"));
+    assert.equal(enumRows.length, 3, "expected the tools, logo inventory and updates category rows");
+    for (const row of enumRows) {
+      for (const category of CATEGORY_ORDER) {
+        assert.ok(row.includes(category), `SCHEMA.md category row is missing ${category}: ${row.slice(0, 60)}`);
+      }
+    }
+  });
+
   it("scripts/check-open-data.mjs and logo-audit-report.mjs list every category", () => {
     for (const file of ["check-open-data.mjs", "logo-audit-report.mjs"]) {
       const script = readFileSync(new URL(`../scripts/${file}`, import.meta.url), "utf8");

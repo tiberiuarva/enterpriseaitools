@@ -167,7 +167,7 @@ Top-level shape:
 | Field | Type | Required | Notes |
 |---|---|---:|---|
 | `name` | string | yes | Display name as currently used in the site data |
-| `category` | `agents \| orchestration \| governance \| assistants \| platforms` | yes | Audit grouping only |
+| `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents \| platforms` | yes | Audit grouping only; matches the record's `category` (or `platforms`) |
 | `vendor` | string | no | Parent company or maintainer |
 | `logoUrl` | string | no | Relative asset path under `/public/logos/` |
 | `status` | `classified \| unclassified` | yes | Whether provenance was reviewed yet |
@@ -211,7 +211,7 @@ Entries must be ordered newest first.
 | `date` | string | yes | ISO date |
 | `toolId` | string | yes | Foreign key to `tools.json` or a stable platform id |
 | `toolName` | string | yes | Denormalized display name |
-| `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
+| `category` | `platforms \| agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents` | yes | Category bucket; must equal the referenced tool's `category` |
 | `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. Use `deprecation` for a product/project feature freeze, repository archival, end-of-life notice, or revoked platform/model access. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
 | `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |
