@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "azure-apim-ai-gateway",
+    "name": "Azure API Management AI gateway",
+    "category": "gateways",
+    "type": "vendor",
+    "vendor": "Microsoft",
+    "description": "AI gateway policies in Azure API Management for LLM, MCP and A2A APIs: token limits, semantic caching, content safety and load balancing.",
+    "strengths": [
+      "Per-consumer token limits and quotas",
+      "PTU-aware priority load balancing",
+      "Foundry integration for models, agents, tools"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities",
+    "websiteUrl": "https://learn.microsoft.com/en-us/azure/api-management/ai-gateway-overview",
+    "pricingModel": "paid",
+    "clouds": [
+      "azure"
+    ],
+    "status": "active",
+    "statusNote": "The AI gateway is part of API Management, not a separate offering, and availability varies by service tier. The unified model API and the AI gateway in Microsoft Foundry integration are in preview (as of 2026-09-30).",
+    "tags": [
+      "gateways",
+      "azure",
+      "token-quotas",
+      "mcp"
+    ],
+    "practitionerNote": "The natural choice for Azure OpenAI / Foundry estates that already run APIM, especially to spread PTU and pay-as-you-go capacity across many apps. Check that the policies you need are available in your APIM tier, and note that semantic caching needs Azure Managed Redis or another RediSearch-compatible cache.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Instances deploy to chosen Azure regions; the self-hosted gateway (Developer/Premium) keeps traffic in customer environments, but it still sends config, heartbeat and optional telemetry traffic to Azure.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed Azure service; the containerized self-hosted gateway enables hybrid and multicloud data planes.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/self-hosted-gateway-overview",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Logs prompts, completions and token usage to Azure Monitor / Application Insights, with a built-in token dashboard.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Azure is covered by the Azure SOC 2 Type 2 attestation; per-service scope is in the audit report.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-soc-2"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Azure is covered by the Azure ISO/IEC 27001:2022 certificate; per-service scope is in the certificate.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-iso-27001"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO 42001 scope for API Management not confirmed in the sources reviewed."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "API gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer and model providers."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Azure service; policies are APIM-specific, so there is Azure lock-in.",
+        "sourceUrl": "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

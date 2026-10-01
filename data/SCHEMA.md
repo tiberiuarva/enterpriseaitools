@@ -19,9 +19,10 @@ Top-level shape:
 |---|---|---:|---|
 | `id` | string | yes | Unique slug, e.g. `semantic-kernel` |
 | `name` | string | yes | Display name |
-| `category` | `agents \| orchestration \| governance \| assistants` | yes | Primary category |
+| `aliases` | string[] | no | Prior product names (renames/rebrands). Never drop an entry; the slug `id` stays unchanged on rename. Rendered as "Formerly …" on the tool page and indexed by site search. |
+| `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents` | yes | Primary category; one per record, matching its hub route (`/<category>/`). Labels and order live in `lib/categories.ts`. `governance` renders as "AI Guardrails & Agent Security" (slug kept for URL stability). |
 | `subcategory` | string | no | Used mainly for assistants (`coding`, `productivity`, `build-your-own`) |
-| `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type |
+| `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type. `opensource` means the self-hostable code is public; source-available or open-core licenses (Elastic, Sustainable Use, EE paths) keep `opensource` but must carry `licenseWarning`, which renders on the tool page and in the hub's "Important notes". |
 | `vendor` | string | no | Parent company or maintainer |
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |
@@ -90,7 +91,7 @@ Each dimension is a `GovernanceClaim`: `{ status, detail, sourceUrl?, sourceTitl
 | Field | Type | Required | Notes |
 |---|---|---:|---|
 | `dataResidency` | GovernanceClaim | yes | Can the customer control where data is stored/processed? |
-| `deployment` | GovernanceClaim + `models` | yes | `models`: array of `saas \| self-hosted \| on-prem \| sovereign \| hybrid` |
+| `deployment` | GovernanceClaim + `models` | yes | `models`: array of `saas \| self-hosted \| on-prem \| sovereign \| hybrid`; may be empty only when `status` is `unknown` (vendor does not publish its delivery model) |
 | `auditLogging` | GovernanceClaim | yes | Native audit/access logs available? |
 | `soc2` | GovernanceClaim | yes | SOC 2 Type II attestation |
 | `iso27001` | GovernanceClaim | yes | ISO/IEC 27001 certification |
@@ -166,7 +167,7 @@ Top-level shape:
 | Field | Type | Required | Notes |
 |---|---|---:|---|
 | `name` | string | yes | Display name as currently used in the site data |
-| `category` | `agents \| orchestration \| governance \| assistants \| platforms` | yes | Audit grouping only |
+| `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents \| platforms` | yes | Audit grouping only; matches the record's `category` (or `platforms`) |
 | `vendor` | string | no | Parent company or maintainer |
 | `logoUrl` | string | no | Relative asset path under `/public/logos/` |
 | `status` | `classified \| unclassified` | yes | Whether provenance was reviewed yet |
@@ -210,7 +211,7 @@ Entries must be ordered newest first.
 | `date` | string | yes | ISO date |
 | `toolId` | string | yes | Foreign key to `tools.json` or a stable platform id |
 | `toolName` | string | yes | Denormalized display name |
-| `category` | `platforms \| agents \| orchestration \| governance \| assistants` | yes | Category bucket |
+| `category` | `platforms \| agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents` | yes | Category bucket; must equal the referenced tool's `category` |
 | `type` | `release \| acquisition \| deprecation \| rename \| funding \| feature \| model-addition \| license-change` | yes | Update type. Use `deprecation` for a product/project feature freeze, repository archival, end-of-life notice, or revoked platform/model access. `license-change` entries feed the dedicated license feed (`updates-licenses.xml`) and must be paired with a `licenseHistory` event on the tool record in the same change. |
 | `title` | string | no | Short feed headline for cards and previews |
 | `summary` | string | yes | Max 280 chars target |

@@ -1,40 +1,39 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
     "id": "windsurf",
-    "name": "Windsurf",
+    "name": "Devin Desktop",
     "category": "assistants",
     "subcategory": "coding",
     "type": "commercial",
     "vendor": "Cognition AI",
-    "description": "Standalone coding IDE shaped by major 2025 acquisition turbulence and later Cognition ownership.",
+    "description": "Cognition's agentic coding IDE, renamed from Windsurf in June 2026, with an Agent Command Center over the full editor.",
     "strengths": [
       "Standalone IDE",
       "Agentic coding workflows",
       "Enterprise path available"
     ],
     "license": "Proprietary",
-    "docsUrl": "https://windsurf.com/",
-    "websiteUrl": "https://windsurf.com/",
-    "pricing": "$20 Pro; $200 Max.",
+    "docsUrl": "https://docs.devin.ai/desktop/getting-started",
+    "websiteUrl": "https://devin.ai/",
+    "pricing": "Free; Pro $20/mo; Max $200/mo; Team $80/mo base + $40/dev; Enterprise custom.",
     "pricingModel": "paid",
     "status": "active",
-    "statusNote": "OpenAI acquisition deal collapsed; Google hired key staff; Cognition acquired remaining product and brand.",
+    "statusNote": "Renamed from Windsurf to Devin Desktop on June 2, 2026 after Cognition's July 2025 acquisition of the Windsurf product and brand.",
     "tags": [
       "assistants",
       "coding",
+      "devin",
       "windsurf"
     ],
-    "logoKind": "service-icon",
-    "logoNotes": "Official Windsurf favicon/icon asset from the owner-controlled site (`/favicon.svg`). Checked-in copy preserves the vendor-provided cream background tile and adds a title for accessibility, so it is source-verified but not byte-identical.",
-    "logoReviewedAt": "2026-05-14",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: the product was renamed from Windsurf to Devin Desktop; the old Windsurf mark is retired and a reviewed Devin Desktop asset has not been sourced yet.",
+    "logoReviewedAt": "2026-09-30",
     "practitionerNote": "Can be attractive for teams chasing agentic coding workflows, but ownership churn means larger enterprises should validate roadmap stability before standardizing.",
     "cloudBadgeReviewedAt": "2026-05-08",
-    "logoUrl": "/logos/windsurf.svg",
-    "logoSourceUrl": "https://windsurf.com/",
     "governance": {
       "dataResidency": {
         "status": "partial",
@@ -81,6 +80,9 @@
         "level": "high"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "aliases": [
+      "Windsurf"
+    ]
   }
 }

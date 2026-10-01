@@ -78,7 +78,18 @@ function countOccurrences(haystack, needle) {
   return haystack.split(needle).length - 1;
 }
 
-const FEED_CATEGORIES = ["agents", "orchestration", "governance", "assistants", "platforms"];
+const FEED_CATEGORIES = [
+  "agents",
+  "orchestration",
+  "gateways",
+  "observability",
+  "control-planes",
+  "agent-identity",
+  "governance",
+  "assistants",
+  "always-on-agents",
+  "platforms",
+];
 for (const category of FEED_CATEGORIES) {
   const feedPath = path.join(publicDir, `updates-${category}.xml`);
   if (!existsSync(feedPath)) {

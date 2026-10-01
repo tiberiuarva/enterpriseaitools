@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -22,7 +22,7 @@
     "license": "Proprietary",
     "docsUrl": "https://learn.microsoft.com/microsoft-copilot-studio/",
     "websiteUrl": "https://adoption.microsoft.com/en-us/ai-agents/copilot-studio/",
-    "pricing": "Free with M365 Copilot; $200/mo standalone.",
+    "pricing": "$200/pack/mo for 25,000 Copilot Credits (tenant-wide) or pay-as-you-go; agent building included with Microsoft 365 Copilot.",
     "pricingModel": "paid",
     "status": "active",
     "statusNote": "Formerly Power Virtual Agents (renamed Nov 2023).",

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "governance",
     "type": "opensource",
     "vendor": "Palo Alto Networks (Protect AI)",
-    "description": "Open source safety filtering toolkit whose development has slowed following acquisition activity.",
+    "description": "Open source LLM safety-filtering toolkit; the repository was archived in July 2026 and is no longer maintained.",
     "strengths": [
       "Prompt/output scanning",
       "PII and toxicity detectors",
@@ -20,8 +20,8 @@
     "githubStars": 3205,
     "docsUrl": "https://protectai.github.io/llm-guard/",
     "pricingModel": "free",
-    "status": "maintenance",
-    "statusNote": "Development slowed significantly post acquisition. Last meaningful commit noted as December 2025 in the guide.",
+    "status": "archived",
+    "statusNote": "Repository archived by the owner on July 9, 2026; the project and its Hugging Face models are no longer under active development.",
     "tags": [
       "governance",
       "opensource",
@@ -36,7 +36,7 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Best for security-minded teams that want open source scanning around prompts and outputs and are comfortable assembling their own policy pipeline.",
+    "practitionerNote": "Archived: fine as a reference for prompt/output scanner design, but do not start new production dependencies on it; pick a maintained guardrail layer instead.",
     "logoUrl": "/logos/llm-guard.png",
     "logoSourceUrl": "https://protectai.github.io/llm-guard/",
     "governance": {

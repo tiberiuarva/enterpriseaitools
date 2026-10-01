@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "docker-mcp-gateway",
+    "name": "Docker MCP Gateway",
+    "category": "gateways",
+    "type": "opensource",
+    "vendor": "Docker",
+    "description": "Open-source docker mcp CLI plugin that proxies MCP servers run in isolated containers, with central secrets, OAuth and call tracing.",
+    "strengths": [
+      "Runs MCP servers in isolated containers",
+      "Secrets and OAuth handled centrally",
+      "Shareable server profiles via OCI registries"
+    ],
+    "license": "MIT",
+    "githubUrl": "https://github.com/docker/mcp-gateway",
+    "version": "0.44.1",
+    "docsUrl": "https://docs.docker.com/ai/mcp-gateway/",
+    "pricingModel": "freemium",
+    "languages": [
+      "Go"
+    ],
+    "status": "active",
+    "statusNote": "The OSS CLI plugin is generally available; the MCP Gateway as part of Docker AI Governance is invite-only (as of 2026-09-30).",
+    "tags": [
+      "gateways",
+      "mcp",
+      "containers",
+      "secrets"
+    ],
+    "practitionerNote": "A good fit for developer workstations and CI that already use Docker Desktop, because MCP servers run sandboxed instead of as raw npx/uvx processes. Central org-wide policy needs the invite-only Docker AI Governance offering.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Runs locally or on operator hosts via Docker; MCP servers execute in local containers.",
+        "sourceUrl": "https://docs.docker.com/ai/mcp-gateway/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Runs in Docker Desktop via MCP Toolkit, or as a standalone CLI plugin binary.",
+        "sourceUrl": "https://docs.docker.com/ai/mcp-gateway/",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Built-in logging and call tracing of MCP operations; no dedicated audit-log store documented.",
+        "sourceUrl": "https://github.com/docker/mcp-gateway"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS CLI; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS CLI; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS CLI; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "MCP proxy tooling, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "MIT — permissive, OSI-approved (copyright Docker).",
+        "sourceUrl": "https://raw.githubusercontent.com/docker/mcp-gateway/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "openai-codex",
+    "name": "OpenAI Codex",
+    "category": "assistants",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "OpenAI",
+    "description": "OpenAI coding agent available as an open-source CLI, IDE extension, ChatGPT app surfaces and hosted Codex Cloud tasks.",
+    "strengths": [
+      "Apache 2.0 Rust CLI",
+      "Included in ChatGPT plans",
+      "Compliance API codex_log events"
+    ],
+    "license": "Apache 2.0 (CLI); Proprietary (cloud)",
+    "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
+    "githubUrl": "https://github.com/openai/codex",
+    "version": "0.159.2",
+    "lastRelease": "2026-09-29",
+    "docsUrl": "https://learn.chatgpt.com/docs",
+    "websiteUrl": "https://learn.chatgpt.com/docs/pricing",
+    "pricing": "Included in ChatGPT Free, Go ($8/mo), Plus ($20/mo), Pro (from $100/mo), Business ($20/user/mo annual, 2+ users) and Enterprise/Edu (contact sales); or API-key usage at API rates.",
+    "pricingModel": "freemium",
+    "languages": [
+      "Rust"
+    ],
+    "tags": [
+      "assistants",
+      "coding",
+      "agentic-coding",
+      "cli"
+    ],
+    "practitionerNote": "Separate local clients from Codex Cloud in workspace RBAC; OpenAI notes the Compliance API does not record every local command or file operation, so pair it with endpoint controls. Use API keys, not seats, for CI automation.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Data and inference residency apply only to eligible content and supported workloads, subject to agreement, region and configuration; not supported with UAE inference residency.",
+        "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/chatgpt-work-cloud-security"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Local CLI/IDE/desktop clients plus OpenAI-hosted Codex Cloud; no self-hosted model option.",
+        "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/admin-setup",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Compliance API append-only stream with codex_log, conversation_message and AUTH_LOG events; OTel events for local use; does not capture every local command or file operation.",
+        "sourceUrl": "https://learn.chatgpt.com/docs/enterprise/compliance-api"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "OpenAI SOC 2 Type 2 (Jul 2025-Jun 2026) covers ChatGPT Enterprise/Edu/Team and API Platform; Codex-specific scope not separately listed.",
+        "sourceUrl": "https://trust.openai.com"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "OpenAI ISO/IEC 27001:2022 covers ChatGPT business plans and API Platform; Codex-specific scope not separately listed.",
+        "sourceUrl": "https://trust.openai.com"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "OpenAI ISO/IEC 42001:2023 listed on trust portal for ChatGPT business plans and API Platform; Codex-specific scope not separately listed.",
+        "sourceUrl": "https://trust.openai.com"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category (general-purpose assistant); no published OpenAI EU AI Act conformity statement for this product."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "CLI is Apache 2.0 (permissive) but depends on proprietary OpenAI models and Codex Cloud.",
+        "sourceUrl": "https://github.com/openai/codex/blob/main/LICENSE",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

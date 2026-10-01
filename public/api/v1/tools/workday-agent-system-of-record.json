@@ -1,0 +1,81 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "workday-agent-system-of-record",
+    "name": "Workday Agent System of Record",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "Workday",
+    "description": "Workday hub to register, govern and measure Workday, customer and partner AI agents alongside people and financial data.",
+    "strengths": [
+      "Agent lifecycle managed like employees",
+      "Agent Gateway supports MCP and A2A",
+      "Agent ROI next to HR and finance data"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+    "websiteUrl": "https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html",
+    "pricingModel": "contact",
+    "status": "active",
+    "tags": [
+      "control-planes",
+      "registry",
+      "hr-finance",
+      "agent-roi"
+    ],
+    "practitionerNote": "Fits Workday HCM/Financials customers who want agents measured and permissioned in the same model as the workforce; it is not a general runtime or security layer for agents outside the Workday ecosystem.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "GA post mentions support for regional compliance requirements but gives no residency detail for ASOR."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Delivered as part of the Workday cloud platform.",
+        "sourceUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Records and tracks AI agent interactions under Workday's security model; audit export detail not documented.",
+        "sourceUrl": "https://blog.workday.com/en-us/managing-ai-powered-future-of-work.html"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Workday SOC 2 Type II covers Workday Enterprise Products; ASOR is not named explicitly."
+      },
+      "iso27001": {
+        "status": "partial",
+        "detail": "ISO 27001:2022 scope includes Workday Platform and Product Extensions; ASOR not named explicitly.",
+        "sourceUrl": "https://www.workday.com/en-us/why-workday/trust/compliance.html"
+      },
+      "iso42001": {
+        "status": "partial",
+        "detail": "ISO 42001 scope includes Workday Platform and core applications; ASOR not named explicitly.",
+        "sourceUrl": "https://www.workday.com/en-us/why-workday/trust/compliance.html"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Agent management and analytics layer, not itself an AI system placed on the market; HR-use agents it governs may carry their own classification."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Workday SaaS; pricing not published.",
+        "sourceUrl": "https://www.workday.com/en-us/artificial-intelligence/agent-system-of-record.html",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

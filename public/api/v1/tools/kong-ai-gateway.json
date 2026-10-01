@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "kong-ai-gateway",
+    "name": "Kong AI Gateway",
+    "category": "gateways",
+    "type": "commercial",
+    "vendor": "Kong",
+    "description": "AI and MCP governance layer on Kong Gateway: multi-LLM routing, semantic caching, prompt guards, PII redaction and MCP OAuth.",
+    "strengths": [
+      "Builds on existing Kong API gateway estates",
+      "Generates MCP servers from REST APIs",
+      "Token-based rate limiting and PII redaction"
+    ],
+    "license": "Apache 2.0 core + Enterprise plugins",
+    "licenseWarning": "Open core: Kong Gateway and six basic AI plugins (ai-proxy, ai-prompt-guard, ai-prompt-decorator, ai-prompt-template, ai-request/response-transformer) are Apache 2.0, but advanced plugins such as AI Proxy Advanced and the MCP gateway features need the paid AI Gateway Enterprise offering.",
+    "githubUrl": "https://github.com/Kong/kong",
+    "docsUrl": "https://developer.konghq.com/ai-gateway/",
+    "websiteUrl": "https://konghq.com/pricing",
+    "pricing": "Konnect Plus from $25/month plus usage (AI Gateway plugins as add-ons, 5 LLMs included); semantic caching and prompt guards only in Enterprise (custom, annual).",
+    "pricingModel": "paid",
+    "status": "active",
+    "tags": [
+      "gateways",
+      "mcp",
+      "api-management",
+      "semantic-caching"
+    ],
+    "practitionerNote": "Makes most sense if Kong already runs your API traffic, because AI and MCP policies reuse the same data plane and control plane. Budget for Enterprise: most advanced AI and MCP plugins are not in the OSS build.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Data planes run in customer infrastructure; Konnect control planes available in AU, EU, ME, US, IN and SG (beta) regions.",
+        "sourceUrl": "https://developer.konghq.com/konnect-platform/geos/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Konnect SaaS control plane, self-hosted Kong Gateway Enterprise, or hybrid.",
+        "sourceUrl": "https://developer.konghq.com/ai-gateway/",
+        "models": [
+          "saas",
+          "self-hosted",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Structured AI audit logs record payloads, token usage, model, latency, cost and guardrail block/mask outcomes; MCP traffic logging captures sessions and tool calls.",
+        "sourceUrl": "https://developer.konghq.com/ai-gateway/ai-audit-log-reference/"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Kong's trust center (trust.konghq.com) is JavaScript-rendered, and its certifications could not be read from a primary source in this review."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Kong's trust center could not be read from a primary source in this review."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 claim found in the Kong sources reviewed."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "API/AI gateway infrastructure, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Open core: Apache 2.0 gateway, with key AI and MCP plugins available only in AI Gateway Enterprise.",
+        "sourceUrl": "https://developer.konghq.com/plugins/ai-proxy-advanced/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

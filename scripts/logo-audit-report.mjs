@@ -30,7 +30,18 @@ if (!generatedAt) {
   throw new Error("Missing generatedAt in data/logo-inventory.json");
 }
 
-const categoryOrder = ["agents", "orchestration", "governance", "assistants", "platforms"];
+const categoryOrder = [
+  "agents",
+  "orchestration",
+  "gateways",
+  "observability",
+  "control-planes",
+  "agent-identity",
+  "governance",
+  "assistants",
+  "always-on-agents",
+  "platforms",
+];
 const logoKindOrder = ["fallback", "service-icon", "project-logo", "official-product", "official-vendor"];
 const sourceSurfaceOrder = ["icon-pack", "repo", "github-hosted", "docs-site", "vendor-site", "fallback-no-source", "other"];
 const allowedStatuses = new Set(["classified", "unclassified"]);

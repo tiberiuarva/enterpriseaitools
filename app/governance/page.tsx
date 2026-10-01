@@ -1,40 +1,8 @@
 import type { Metadata } from "next";
-import { CategoryPage } from "@/components/category-page";
-import { HomeShell } from "@/components/home-shell";
-import { categoryComparisons } from "@/lib/category-comparisons";
-import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
-import { getComparisonsForToolIds } from "@/lib/comparisons";
-import { governanceFaqs } from "@/lib/hub-faqs";
-import { buildMetadata } from "@/lib/metadata";
+import { CategoryHub, buildCategoryHubMetadata } from "@/components/category-hub";
 
-export const metadata: Metadata = buildMetadata({
-  title: "AI Governance",
-  description:
-    "Compare Azure AI Content Safety, Amazon Bedrock Guardrails, Google Model Armor, and third-party guardrails tooling for enterprise AI governance.",
-  path: "/governance",
-  atomFeedPath: "/updates-governance.xml",
-});
+export const metadata: Metadata = buildCategoryHubMetadata("governance");
 
 export default function GovernancePage() {
-  const tools = getToolsByCategory("governance");
-  return (
-    <HomeShell lastUpdated={lastUpdated} currentPath="/governance">
-      <CategoryPage
-        category="governance"
-        title="AI Governance"
-        description={categoryDescriptions.governance}
-        introParagraphs={[
-          "Compare cloud guardrails with independent safety vendors on certifications, data residency, and deployment ownership — full details on each tool's page.",
-        ]}
-        iconName="shield-check"
-        tools={tools}
-        updates={getUpdatesByCategory("governance")}
-        platforms={getPlatformsForCategory("governance")}
-        comparison={categoryComparisons.governance}
-        enableFiltering
-        faqs={governanceFaqs}
-        relatedPairs={getComparisonsForToolIds(tools.map((tool) => tool.id))}
-      />
-    </HomeShell>
-  );
+  return <CategoryHub category="governance" />;
 }

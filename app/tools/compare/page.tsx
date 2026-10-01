@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CATEGORY_HUB_LINKS } from "@/lib/categories";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { RelatedHubs } from "@/components/related-hubs";
@@ -73,9 +74,7 @@ export default function CompareIndexPage() {
           intro="Use the category hubs to compare every tracked tool within a category, or pivot into the platform foundation layer."
           hubs={[
             { href: "/platforms", title: "Platforms", description: "Microsoft Foundry, Amazon Bedrock, and the Gemini Enterprise Agent Platform." },
-            { href: "/agents", title: "AI Agent Frameworks", description: "Compare managed cloud agent stacks with open-source frameworks." },
-            { href: "/governance", title: "AI Governance", description: "Guardrails, safety controls, and policy tooling." },
-            { href: "/assistants", title: "AI Assistants", description: "Coding, productivity, and build-your-own assistants." },
+            ...CATEGORY_HUB_LINKS,
           ]}
         />
       </main>

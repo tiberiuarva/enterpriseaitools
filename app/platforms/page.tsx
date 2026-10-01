@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { CATEGORY_HUB_LINKS } from "@/lib/categories";
 import { HubFaqs } from "@/components/hub-faqs";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildPlatformListJsonLd } from "@/components/json-ld";
 import { platformsFaqs } from "@/lib/hub-faqs";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformMark } from "@/components/platform-mark";
@@ -91,6 +92,7 @@ export default function PlatformsPage() {
       url: pageUrl,
       description,
     }),
+    buildPlatformListJsonLd(platforms, "AI Platforms & Model Hubs", description, pageUrl),
     buildFaqPageJsonLd(platformsFaqs),
   ];
 
@@ -217,38 +219,11 @@ export default function PlatformsPage() {
         <RelatedHubs
           currentPath="/platforms"
           title="Explore category hubs"
-          intro="Use the category hubs to drill from the cloud foundation layer into tracked agent, orchestration, governance, assistant, and update pages."
+          intro="Use the category hubs to drill from the cloud foundation layer into each tracked layer of the agent stack, then follow the update feed."
           hubs={[
-            {
-              href: "/agents",
-              title: "AI Agent Frameworks",
-              description: "Compare managed cloud agent stacks with open source agent frameworks used in enterprise deployments.",
-            },
-            {
-              href: "/orchestration",
-              title: "AI Orchestration",
-              description: "Review workflow engines, pipeline builders, and automation layers connected to the platform layer.",
-            },
-            {
-              href: "/governance",
-              title: "AI Governance",
-              description: "Check guardrails, safety controls, and policy tooling mapped across the major cloud vendors.",
-            },
-            {
-              href: "/assistants",
-              title: "AI Assistants",
-              description: "Explore coding assistants, productivity copilots, and build-your-own assistant platforms.",
-            },
-            {
-              href: "/updates",
-              title: "Weekly updates",
-              description: "Follow releases, deprecations, acquisitions, and other market changes across the tracked landscape.",
-            },
-            {
-              href: "/about",
-              title: "About and contribution rules",
-              description: "Review sourcing standards, contribution rules, and project scope before editing tracked platform data.",
-            },
+            ...CATEGORY_HUB_LINKS,
+            { href: "/updates", title: "Weekly updates", description: "Follow releases, deprecations, acquisitions, and other market changes across the tracked landscape." },
+            { href: "/about", title: "About and contribution rules", description: "Review sourcing standards, contribution rules, and project scope before editing tracked platform data." },
           ]}
         />
       </main>

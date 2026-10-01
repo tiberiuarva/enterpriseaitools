@@ -2,6 +2,7 @@ import platformsData from "@/data/platforms.json";
 import snapshotDiffsData from "@/data/snapshot-diffs.json";
 import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { filterToolsByCategory, latestIsoDate } from "@/lib/dataset-metrics";
 import type { Platform, SnapshotDiffEvent, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
@@ -40,12 +41,9 @@ export const snapshotDiffEvents = (snapshotDiffsData.events as SnapshotDiffEvent
 export const snapshotDiffsGeneratedAt = snapshotDiffsData.generatedAt ?? null;
 export const snapshotCount = snapshotDiffsData.snapshotCount ?? 0;
 
-export const categoryDescriptions: Record<ToolCategory, string> = {
-  agents: "Managed cloud agent platforms and open source agent frameworks.",
-  orchestration: "Workflow engines, automation platforms, and orchestration tooling.",
-  governance: "Guardrails, content safety, policy, and AI governance controls.",
-  assistants: "Coding copilots, productivity assistants, and build-your-own assistant platforms.",
-};
+export const categoryDescriptions = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].summary]),
+) as Record<ToolCategory, string>;
 
 export function getToolsByCategory(category: ToolCategory) {
   return filterToolsByCategory(tools, category);

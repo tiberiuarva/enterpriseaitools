@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "gemini-spark",
+    "name": "Gemini Spark",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Consumer 24/7 personal agent in the Gemini app that runs in Google's cloud and acts across Gmail, Docs, Slides and connected apps.",
+    "strengths": [
+      "Runs on Gemini 3.5 with Antigravity harness",
+      "Native Gmail, Docs and Slides integration",
+      "Asks before spending money or sending email"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+    "websiteUrl": "https://gemini.google.com",
+    "pricing": "Beta planned for US Google AI Ultra subscribers at launch.",
+    "pricingModel": "paid",
+    "status": "active",
+    "statusNote": "Announced at Google I/O in May 2026: trusted-tester rollout, then a beta for US Google AI Ultra subscribers.",
+    "tags": [
+      "always-on-agents",
+      "consumer",
+      "google-workspace",
+      "beta"
+    ],
+    "practitionerNote": "Launched on consumer Google AI subscriptions, not as a managed Workspace admin feature, so check the account type before connecting work mail. The launch post names no business or enterprise availability.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "No data-residency controls stated for Spark."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Google-hosted cloud agent that keeps running when the user's devices are off.",
+        "sourceUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "No audit logging described in the launch post."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Consumer Gemini app feature; certification scope for Spark not published."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "detail": "General-purpose consumer agent; risk class depends on use and the vendor has not published an EU AI Act classification.",
+        "role": "unknown"
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Google service tied to Google AI subscriptions.",
+        "sourceUrl": "https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "category": "always-on-agents",
+    "logoKind": "fallback",
+    "logoReviewedAt": "2026-09-30",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "publishedAt": "2026-09-30",
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

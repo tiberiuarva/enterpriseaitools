@@ -1,0 +1,93 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "datadog-agent-observability",
+    "name": "Datadog Agent Observability",
+    "aliases": [
+      "Datadog LLM Observability"
+    ],
+    "category": "observability",
+    "type": "vendor",
+    "vendor": "Datadog",
+    "description": "Datadog module for end-to-end tracing of LLM and agent apps, with cost/latency dashboards, quality clustering and sensitive-data redaction.",
+    "strengths": [
+      "Correlates LLM spans with existing APM data",
+      "Built-in sensitive-data scanning and redaction",
+      "SDKs for Python, Node.js and Java"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.datadoghq.com/llm_observability/",
+    "websiteUrl": "https://www.datadoghq.com/pricing/list/",
+    "pricing": "From $160/month (annual) for the first 100k LLM spans at 15-day retention, then $3.50 per 10K LLM spans (annual; $5 on-demand). Longer retention costs more.",
+    "pricingModel": "paid",
+    "languages": [
+      "Python",
+      "Node.js",
+      "Java"
+    ],
+    "status": "active",
+    "statusNote": "Datadog's docs now title the product \"Agent Observability\" and still use \"LLM Observability\" interchangeably. Not available on the US1-FED/US2-FED government sites (checked 2026-09-30).",
+    "tags": [
+      "observability",
+      "apm",
+      "tracing",
+      "cost-monitoring"
+    ],
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "practitionerNote": "Best fit for organisations already standardised on Datadog that want LLM traces next to infrastructure and APM data under existing audit and compliance controls. Span-based billing grows with agent step count, so model cost before instrumenting chatty multi-step agents.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "The customer picks a Datadog site: US1/US3/US5, EU1 (Germany), AP1 (Japan), AP2 (Australia) or UK1. The product is not supported on FED sites.",
+        "sourceUrl": "https://docs.datadoghq.com/getting_started/site/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Datadog-hosted SaaS only.",
+        "sourceUrl": "https://docs.datadoghq.com/llm_observability/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Datadog Audit Trail records user activity, API requests and resource changes across the organisation.",
+        "sourceUrl": "https://docs.datadoghq.com/account_management/audit_trail/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Datadog lists SOC 2 Type 2 on its Trust Center (company-wide; product-level scope not separately stated).",
+        "sourceUrl": "https://trust.datadoghq.com/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Datadog lists ISO/IEC 27001 (plus 27017, 27018 and 27701) on its Trust Center.",
+        "sourceUrl": "https://trust.datadoghq.com/"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Datadog lists ISO/IEC 42001:2023 on its Trust Center (company-wide; module scope not separately stated).",
+        "sourceUrl": "https://trust.datadoghq.com/"
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Monitoring tooling, not an AI system placed on the market. Obligations rest with the deployer of the monitored system."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS tied to the Datadog platform, with span-based metered billing.",
+        "sourceUrl": "https://www.datadoghq.com/pricing/list/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

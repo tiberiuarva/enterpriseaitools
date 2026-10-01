@@ -1,0 +1,80 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "idira-secure-ai-agents",
+    "name": "Idira Secure AI Agents",
+    "type": "commercial",
+    "vendor": "Palo Alto Networks (Idira)",
+    "description": "Discovers AI agents across SaaS, cloud and dev environments and brokers their MCP tool access with just-in-time privilege and audit.",
+    "strengths": [
+      "Agent Identity Broker for MCP",
+      "Just-in-time, zero standing privileges",
+      "PAM heritage from CyberArk"
+    ],
+    "websiteUrl": "https://www.paloaltonetworks.com/idira",
+    "docsUrl": "https://www.paloaltonetworks.com/idira",
+    "pricingModel": "contact",
+    "tags": [
+      "agent-identity",
+      "privileged-access",
+      "mcp",
+      "idira"
+    ],
+    "practitionerNote": "Fits organisations already on CyberArk PAM that want agent access routed through a broker; the May 2026 Idira rebrand means docs and URLs are still moving.",
+    "statusNote": "CyberArk's platform was rebranded as Idira by Palo Alto Networks in May 2026.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Data residency for Secure AI Agents is not stated on the Idira pages reviewed."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Delivered as part of the Idira identity security platform; agent traffic routed through the Agent Identity Broker. Self-hosted options not stated.",
+        "sourceUrl": "https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Logs capture which agent requested what action and when, via the Identity Broker.",
+        "sourceUrl": "https://www.paloaltonetworks.com/blog/identity-security/securing-claude-ai-agents-idira/"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "Palo Alto Networks trust center lists SOC 2 Type II for Palo Alto Networks but does not name Idira or CyberArk products in scope."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "Palo Alto Networks ISO 27000 page does not list Idira or CyberArk products in scope."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "Palo Alto Networks lists ISO 42001, but Idira/CyberArk product scope is not stated."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Palo Alto Networks (Idira) product; no open-source edition.",
+        "sourceUrl": "https://www.paloaltonetworks.com/idira",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

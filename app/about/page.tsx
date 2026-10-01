@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CATEGORY_HUB_LINKS } from "@/lib/categories";
 import { JsonLd, buildAboutPageJsonLd, buildBreadcrumbJsonLd } from "@/components/json-ld";
 import { HomeShell } from "@/components/home-shell";
 import { RelatedHubs } from "@/components/related-hubs";
@@ -487,36 +488,9 @@ export default function AboutPage() {
             title="Start from the main indexed hubs"
             intro="Use the main hub pages to browse the tracked platform/category landscape after reviewing sourcing and contribution rules."
             hubs={[
-              {
-                href: "/platforms",
-                title: "Platforms",
-                description: "Compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer.",
-              },
-              {
-                href: "/agents",
-                title: "AI Agent Frameworks",
-                description: "Explore managed cloud agent services and open source agent frameworks.",
-              },
-              {
-                href: "/orchestration",
-                title: "AI Orchestration",
-                description: "Review workflow engines, pipelines, and automation layers.",
-              },
-              {
-                href: "/governance",
-                title: "AI Governance",
-                description: "Inspect guardrails, safety controls, and policy tooling.",
-              },
-              {
-                href: "/assistants",
-                title: "AI Assistants",
-                description: "Browse coding, productivity, and build-your-own assistant comparisons.",
-              },
-              {
-                href: "/updates",
-                title: "Weekly updates",
-                description: "Track releases, deprecations, acquisitions, and other notable enterprise AI changes.",
-              },
+              { href: "/platforms", title: "Platforms", description: "Compare Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform as the foundation layer." },
+              ...CATEGORY_HUB_LINKS,
+              { href: "/updates", title: "Weekly updates", description: "Track releases, deprecations, acquisitions, and other notable enterprise AI changes." },
             ]}
           />
         </section>

@@ -18,11 +18,17 @@ const recentUpdatesLimit = 30;
 const highImpactRetentionDays = 45;
 const publicDir = path.resolve("public");
 
+// Mirrors lib/categories.ts (titles + display order); scripts cannot import TS.
 const CATEGORY_LABELS = {
   agents: "AI Agent Frameworks",
   orchestration: "AI Orchestration",
-  governance: "AI Governance",
+  gateways: "AI & MCP Gateways",
+  observability: "AI Observability & Evaluation",
+  "control-planes": "Agent Control Planes",
+  "agent-identity": "Agent Identity & Access",
+  governance: "AI Guardrails & Agent Security",
   assistants: "AI Assistants",
+  "always-on-agents": "Always-on AI Agents",
 };
 
 function toAbsoluteUrl(routePath) {
@@ -121,7 +127,7 @@ function generateUpdatesAtomFeed(feedUpdates = updatesData.updates, { fileName =
   return `<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n  <id>${siteUrl}/${fileName}</id>\n  <title>enterpriseai.tools weekly updates${escapeXml(titleSuffix)}</title>\n  <updated>${isoDate(feedUpdated)}</updated>\n  <link href="${siteUrl}/${fileName}" rel="self" />\n  <link href="${toAbsoluteUrl("/updates")}" rel="alternate" />\n  <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>\n${entries}\n</feed>\n`;
 }
 
-const FEED_CATEGORIES = ["agents", "orchestration", "governance", "assistants", "platforms"];
+const FEED_CATEGORIES = [...Object.keys(CATEGORY_LABELS), "platforms"];
 
 function generateCategoryFeeds() {
   const categoryFeeds = FEED_CATEGORIES.map((category) => {
@@ -365,12 +371,17 @@ Edited through a regulated-enterprise delivery lens: governance posture, deploym
 Every tracked tool is indexed at ${siteUrl}/tools/ and has its own page at \`/tools/<id>\` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
 
 ## Hub pages
-- [Home](${siteUrl}/): overview of the four tracked categories and the foundation platforms.
+- [Home](${siteUrl}/): overview of the ${Object.keys(CATEGORY_LABELS).length} tracked categories and the foundation platforms.
 - [AI Platforms & Model Hubs](${siteUrl}/platforms/): Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform (formerly Google Vertex AI).
 - [AI Agent Frameworks](${siteUrl}/agents/): cloud agent platforms + open-source frameworks.
 - [AI Orchestration](${siteUrl}/orchestration/): workflow engines and automation.
-- [AI Governance](${siteUrl}/governance/): guardrails, content safety, policy.
+- [AI & MCP Gateways](${siteUrl}/gateways/): LLM routing, cost control, and MCP tool governance.
+- [AI Observability & Evaluation](${siteUrl}/observability/): tracing, evals, and cost monitoring.
+- [Agent Control Planes](${siteUrl}/control-planes/): registry, lifecycle, and policy across agent fleets.
+- [Agent Identity & Access](${siteUrl}/agent-identity/): identities and scoped access for AI agents.
+- [AI Guardrails & Agent Security](${siteUrl}/governance/): guardrails, content safety, agent security posture.
 - [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
+- [Always-on AI Agents](${siteUrl}/always-on-agents/): persistent personal and team agents, with their security record.
 - [Weekly updates](${siteUrl}/updates/): high-impact market intelligence + release log.
 - [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.
@@ -419,7 +430,7 @@ function claimLine(label, claim) {
 function toolBlock(tool) {
   const g = tool.governance ?? {};
   const lines = [
-    `### ${tool.name}`,
+    `### ${tool.name}${tool.aliases?.length ? ` (formerly ${tool.aliases.join(", ")})` : ""}`,
     `- Page: ${siteUrl}/tools/${tool.id}/`,
     `- Vendor: ${tool.vendor ?? "—"} | Type: ${tool.type} | License: ${tool.license}${tool.licenseWarning ? ` (caution: ${tool.licenseWarning})` : ""}`,
     `- Status: ${tool.status}${tool.version ? ` | Version: ${tool.version}` : ""}${tool.lastRelease ? ` | Last release: ${tool.lastRelease}` : ""}`,

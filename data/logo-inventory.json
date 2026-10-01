@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T09:06:00.000Z",
+  "generatedAt": "2026-09-30T00:00:00.000Z",
   "items": [
     {
       "name": "Microsoft Foundry Agent Service",
@@ -376,15 +376,14 @@
       "logoUrl": "/logos/cursor.svg"
     },
     {
-      "name": "Windsurf",
+      "name": "Devin Desktop",
       "category": "assistants",
       "vendor": "Cognition AI",
       "status": "classified",
-      "sourceUrl": "https://windsurf.com/",
-      "notes": "Official Windsurf favicon/icon asset from the owner-controlled Windsurf site (`/favicon.svg`). Kept as a square service icon because the public wordmark asset is white-only while the favicon is the clean published standalone mark.",
-      "logoKind": "service-icon",
-      "reviewedAt": "2026-05-14",
-      "logoUrl": "/logos/windsurf.svg"
+      "notes": "Fallback: renamed from Windsurf to Devin Desktop on 2026-06-02; the Windsurf mark is retired and no reviewed Devin Desktop asset has been sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
     },
     {
       "name": "Microsoft 365 Copilot",
@@ -530,12 +529,12 @@
       "logoUrl": "/logos/databricks.png"
     },
     {
-      "name": "Databricks Unity AI Gateway",
+      "name": "Databricks Unity Gateway",
       "category": "governance",
       "vendor": "Databricks",
       "status": "classified",
       "sourceUrl": "https://brand.databricks.com/databricks-logo",
-      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity AI Gateway does not expose a distinct standalone public mark.",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Unity Gateway does not expose a distinct standalone public mark.",
       "logoKind": "official-vendor",
       "reviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png"
@@ -552,15 +551,545 @@
       "logoUrl": "/logos/databricks.png"
     },
     {
-      "name": "Databricks Genie Spaces",
+      "name": "Databricks Genie Agents",
       "category": "assistants",
       "vendor": "Databricks",
       "status": "classified",
       "sourceUrl": "https://brand.databricks.com/databricks-logo",
-      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Spaces does not expose a distinct standalone public mark.",
+      "notes": "Official Databricks wordmark reused across Databricks product entries because the public Databricks brand portal exposes the vendor lockup, while Genie Agents does not expose a distinct standalone public mark.",
       "logoKind": "official-vendor",
       "reviewedAt": "2026-05-24",
       "logoUrl": "/logos/databricks.png"
+    },
+    {
+      "name": "OpenClaw",
+      "category": "always-on-agents",
+      "vendor": "OpenClaw Foundation",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Microsoft Autopilot",
+      "category": "always-on-agents",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Grok Bot",
+      "category": "always-on-agents",
+      "vendor": "xAI",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Muse",
+      "category": "always-on-agents",
+      "vendor": "Meta",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Gemini Spark",
+      "category": "always-on-agents",
+      "vendor": "Google",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Manus",
+      "category": "always-on-agents",
+      "vendor": "Manus",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Hermes Agent",
+      "category": "always-on-agents",
+      "vendor": "Nous Research",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "NanoClaw",
+      "category": "always-on-agents",
+      "vendor": "NanoClaw",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Langfuse",
+      "category": "observability",
+      "vendor": "Langfuse (ClickHouse)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Arize Phoenix",
+      "category": "observability",
+      "vendor": "Arize AI",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "MLflow",
+      "category": "observability",
+      "vendor": "Linux Foundation (MLflow project)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Opik",
+      "category": "observability",
+      "vendor": "Comet",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "LangSmith",
+      "category": "observability",
+      "vendor": "LangChain",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Braintrust",
+      "category": "observability",
+      "vendor": "Braintrust",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Datadog Agent Observability",
+      "category": "observability",
+      "vendor": "Datadog",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Claude Code",
+      "category": "assistants",
+      "vendor": "Anthropic",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "OpenAI Codex",
+      "category": "assistants",
+      "vendor": "OpenAI",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Kiro",
+      "category": "assistants",
+      "vendor": "AWS",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "ChatGPT Enterprise",
+      "category": "assistants",
+      "vendor": "OpenAI",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Claude Enterprise",
+      "category": "assistants",
+      "vendor": "Anthropic",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Google Antigravity",
+      "category": "assistants",
+      "vendor": "Google",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Microsoft Agent 365",
+      "category": "control-planes",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Amazon Bedrock AgentCore",
+      "category": "control-planes",
+      "vendor": "AWS",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "MuleSoft Agent Fabric",
+      "category": "control-planes",
+      "vendor": "Salesforce (MuleSoft)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "ServiceNow AI Control Tower",
+      "category": "control-planes",
+      "vendor": "ServiceNow",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "IBM watsonx Orchestrate",
+      "category": "control-planes",
+      "vendor": "IBM",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Workday Agent System of Record",
+      "category": "control-planes",
+      "vendor": "Workday",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Kore.ai Agent Management Platform",
+      "category": "control-planes",
+      "vendor": "Kore.ai",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "LiteLLM",
+      "category": "gateways",
+      "vendor": "BerriAI",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Portkey AI Gateway",
+      "category": "gateways",
+      "vendor": "Portkey (Palo Alto Networks)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Kong AI Gateway",
+      "category": "gateways",
+      "vendor": "Kong",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Azure API Management AI gateway",
+      "category": "gateways",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Cloudflare AI Gateway",
+      "category": "gateways",
+      "vendor": "Cloudflare",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "agentgateway",
+      "category": "gateways",
+      "vendor": "Linux Foundation",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Docker MCP Gateway",
+      "category": "gateways",
+      "vendor": "Docker",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Microsoft Entra Agent ID",
+      "category": "agent-identity",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Okta for AI Agents",
+      "category": "agent-identity",
+      "vendor": "Okta",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Auth0 for AI Agents",
+      "category": "agent-identity",
+      "vendor": "Okta (Auth0)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Idira Secure AI Agents",
+      "category": "agent-identity",
+      "vendor": "Palo Alto Networks (Idira)",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Ping Identity for AI",
+      "category": "agent-identity",
+      "vendor": "Ping Identity",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "SailPoint Agent Identity Security",
+      "category": "agent-identity",
+      "vendor": "SailPoint",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Saviynt Zuma",
+      "category": "agent-identity",
+      "vendor": "Saviynt",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Aembit IAM for Agentic AI",
+      "category": "agent-identity",
+      "vendor": "Aembit",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Descope Agentic Identity Hub",
+      "category": "agent-identity",
+      "vendor": "Descope",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Google Agent Identity",
+      "category": "agent-identity",
+      "vendor": "Google Cloud",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Pydantic AI",
+      "category": "agents",
+      "vendor": "Pydantic",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Strands Agents",
+      "category": "agents",
+      "vendor": "AWS",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Claude Agent SDK",
+      "category": "agents",
+      "vendor": "Anthropic",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Temporal",
+      "category": "orchestration",
+      "vendor": "Temporal Technologies",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Microsoft Purview Data Security Posture Management",
+      "category": "governance",
+      "vendor": "Microsoft",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Zenity",
+      "category": "governance",
+      "vendor": "Zenity",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "Prisma AIRS",
+      "category": "governance",
+      "vendor": "Palo Alto Networks",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
+    },
+    {
+      "name": "NVIDIA NemoClaw",
+      "category": "governance",
+      "vendor": "NVIDIA",
+      "status": "classified",
+      "notes": "Fallback: no reviewed logo asset sourced yet.",
+      "logoKind": "fallback",
+      "reviewedAt": "2026-09-30",
+      "sourceUrl": null
     }
   ]
 }

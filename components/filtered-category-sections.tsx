@@ -222,8 +222,8 @@ export function FilteredCategorySections({ category, tools, updates, platforms, 
     }
 
     return hasActiveNarrowingFilter
-      ? "Vendor tool cards stay visible near the top and respect the current filters. Detailed vendor comparison rows are still being added for this category."
-      : "Vendor tool cards are shown near the top of the page. Detailed vendor comparison rows are still being added for this category.";
+      ? "Tools from the major platform vendors stay visible near the top and respect the current filters; independent and open-source options follow below."
+      : "Tools from the major platform vendors are listed first; independent and open-source options follow below.";
   }
 
   return (

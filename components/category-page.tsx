@@ -1,4 +1,4 @@
-import { ArrowUpRight, Bot, BriefcaseBusiness, GitBranch, ShieldCheck } from "lucide-react";
+import { Activity, ArrowUpRight, Bot, BriefcaseBusiness, Fingerprint, GitBranch, LayoutDashboard, Network, Radio, ShieldCheck } from "lucide-react";
 import { FilteredCategorySections } from "@/components/filtered-category-sections";
 import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
@@ -11,10 +11,9 @@ import type { ComparisonPair } from "@/lib/comparisons";
 import type { HubFaq } from "@/lib/hub-faqs";
 import { siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
+import type { CategoryIconName as IconName } from "@/lib/categories";
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
-
-type IconName = "bot" | "git-branch" | "shield-check" | "briefcase-business";
 
 type CategoryPageProps = {
   category: ToolCategory;
@@ -36,7 +35,12 @@ const iconMap = {
   "git-branch": GitBranch,
   "shield-check": ShieldCheck,
   "briefcase-business": BriefcaseBusiness,
-} as const;
+  radio: Radio,
+  "layout-dashboard": LayoutDashboard,
+  fingerprint: Fingerprint,
+  activity: Activity,
+  network: Network,
+} as const satisfies Record<IconName, unknown>;
 
 function sortByName(tools: Tool[]) {
   return [...tools].sort((a, b) => a.name.localeCompare(b.name));
@@ -108,7 +112,7 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
           <PlatformCategoryBar category={category} platforms={platforms} />
           {vendorTools.length > 0 ? (
             <section className="card-flat p-6">
-              <h2 className="text-lg font-semibold">Cloud vendor tools</h2>
+              <h2 className="text-lg font-semibold">Major vendor tools</h2>
               <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
                 {comparison
                   ? "Compare the cloud-native vendor offerings first, then use the broader open source and third-party list below to assess alternatives."

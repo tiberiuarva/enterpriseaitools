@@ -2,10 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-governance.xml</id>
   <title>enterpriseai.tools weekly updates — governance</title>
-  <updated>2026-09-13T00:00:00.000Z</updated>
+  <updated>2026-09-30T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-governance.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-16-01</id>
+    <title>NeMo Guardrails — release</title>
+    <updated>2026-09-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-16-01" />
+    <summary>NeMo Guardrails 0.24.1 fixed benchmark concurrency measurement, Nemotron 3.5 response parsing, server overload handling, and combined-config loading.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, low" />
+    <source>
+      <id>https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1</id>
+      <title>Release v0.24.1 · NVIDIA-NeMo/Guardrails</title>
+      <link href="https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-25-01</id>
     <title>Cursor — feature</title>
@@ -32,6 +46,20 @@
       <id>https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0</id>
       <title>Release v0.11.0 · guardrails-ai/guardrails</title>
       <link href="https://github.com/guardrails-ai/guardrails/releases/tag/v0.11.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-07-09-04</id>
+    <title>LLM Guard — deprecation</title>
+    <updated>2026-07-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-07-09-04" />
+    <summary>Protect AI archived the LLM Guard repository; the project and its Hugging Face models are no longer under active development.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, deprecation, high" />
+    <source>
+      <id>https://github.com/protectai/llm-guard/blob/main/README.md</id>
+      <title>LLM Guard README (archive notice) · protectai/llm-guard</title>
+      <link href="https://github.com/protectai/llm-guard/blob/main/README.md" />
     </source>
   </entry>
   <entry>

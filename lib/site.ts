@@ -6,8 +6,13 @@ export const navItems = [
   { href: '/platforms', label: 'Platforms' },
   { href: '/agents', label: 'Agents' },
   { href: '/orchestration', label: 'Orchestration' },
-  { href: '/governance', label: 'Governance' },
+  { href: '/gateways', label: 'AI gateways' },
+  { href: '/observability', label: 'Observability' },
+  { href: '/control-planes', label: 'Control planes' },
+  { href: '/agent-identity', label: 'Agent identity' },
+  { href: '/governance', label: 'Guardrails & security' },
   { href: '/assistants', label: 'Assistants' },
+  { href: '/always-on-agents', label: 'Always-on agents' },
   { href: '/evaluate', label: 'Evaluate' },
   // Intentionally not in the desktop categoryNav/utility groups (header.tsx):
   // the full index and comparison intent are both contextual rather than

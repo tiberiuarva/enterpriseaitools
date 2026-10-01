@@ -80,7 +80,7 @@ const rows: Row[] = [
     render: (tool) => (
       <ClaimCell
         claim={tool.governance.deployment}
-        suffix={`(${tool.governance.deployment.models.join(", ")})`}
+        suffix={tool.governance.deployment.models.length > 0 ? `(${tool.governance.deployment.models.join(", ")})` : undefined}
       />
     ),
   },

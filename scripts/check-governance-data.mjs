@@ -61,8 +61,11 @@ for (const tool of tools) {
 
   validateClaim(findings, toolId, "deployment", governance.deployment);
   const models = governance.deployment?.models;
-  if (!Array.isArray(models) || models.length === 0) {
-    findings.push(`${toolId}: governance.deployment.models must be a non-empty array`);
+  // An empty list is only honest when the vendor does not publish its delivery
+  // model; any asserted deployment status must name at least one model.
+  const modelsMayBeEmpty = governance.deployment?.status === "unknown";
+  if (!Array.isArray(models) || (models.length === 0 && !modelsMayBeEmpty)) {
+    findings.push(`${toolId}: governance.deployment.models must be a non-empty array unless deployment.status is "unknown"`);
   } else {
     const invalid = models.filter((model) => !DEPLOYMENT_MODELS.has(model));
     if (invalid.length > 0) {

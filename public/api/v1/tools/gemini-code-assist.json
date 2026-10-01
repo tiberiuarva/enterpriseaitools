@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -10,7 +10,7 @@
     "subcategory": "coding",
     "type": "vendor",
     "vendor": "Google",
-    "description": "Google coding assistant for IDE workflows with a generous free completion tier.",
+    "description": "Google coding assistant for organisations (Standard and Enterprise editions); the individual free tier was retired in June 2026 in favour of Antigravity.",
     "strengths": [
       "VPC-SC + IP indemnification",
       "Google ecosystem fit",

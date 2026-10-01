@@ -1,0 +1,84 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "claude-enterprise",
+    "name": "Claude Enterprise",
+    "category": "assistants",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "subcategory": "productivity",
+    "type": "vendor",
+    "vendor": "Anthropic",
+    "description": "Enterprise plan for Claude on web, desktop and mobile, bundling Claude Code and Cowork with SSO, SCIM, audit logs and Compliance API.",
+    "strengths": [
+      "Claude Code and Cowork per seat",
+      "Customer-managed encryption keys",
+      "US-only inference option"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan",
+    "websiteUrl": "https://claude.com/solutions/enterprise",
+    "pricing": "$20/seat/mo plus usage at API rates, billed annually; self-serve minimum 20 seats, sales-assisted minimum 50.",
+    "pricingModel": "paid",
+    "tags": [
+      "assistants",
+      "productivity",
+      "claude"
+    ],
+    "practitionerNote": "The seat fee covers access only and all usage bills at API rates with no included tokens, so set spend controls before broad rollout. Connectors cover Microsoft 365, Google Workspace, Slack and GitHub.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "US-only inference option; no broader regional residency stated on the plan page.",
+        "sourceUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Anthropic-hosted SaaS (web, desktop, mobile); no self-hosted option.",
+        "sourceUrl": "https://claude.com/solutions/enterprise",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Audit logs of user actions, system events and data access, plus Compliance API.",
+        "sourceUrl": "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Anthropic SOC 2 Type I and Type II cover Claude for Work.",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Anthropic ISO/IEC 27001:2022 covers Claude for Work.",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Anthropic ISO/IEC 42001:2023 covers Claude for Work.",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS; Anthropic model lock-in.",
+        "sourceUrl": "https://claude.com/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

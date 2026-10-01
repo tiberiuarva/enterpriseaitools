@@ -1,0 +1,92 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "category": "assistants",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "Anthropic",
+    "description": "Agentic coding tool for terminal, IDE, desktop and web that reads codebases, edits files, runs commands and handles git workflows.",
+    "strengths": [
+      "Runs on Bedrock, Vertex and Foundry",
+      "Managed settings and permission policies",
+      "OpenTelemetry usage export"
+    ],
+    "license": "Proprietary",
+    "licenseWarning": "The public GitHub repo is not open source: LICENSE.md is an Anthropic copyright notice that points to the Commercial Terms of Service. No OSI license applies.",
+    "githubUrl": "https://github.com/anthropics/claude-code",
+    "docsUrl": "https://code.claude.com/docs/",
+    "websiteUrl": "https://claude.com/pricing",
+    "pricing": "Included in Pro ($20/mo, $17 annual), Max (from $100/mo), Team (standard $25/mo, $20 annual; premium $125/mo, $100 annual) and Enterprise ($20/seat/mo + usage at API rates); or PAYG via API/cloud providers.",
+    "pricingModel": "paid",
+    "clouds": [
+      "aws",
+      "gcp",
+      "azure"
+    ],
+    "tags": [
+      "assistants",
+      "coding",
+      "agentic-coding",
+      "cli"
+    ],
+    "practitionerNote": "Route through Bedrock, Google Cloud Agent Platform or Microsoft Foundry to keep inference and billing inside an existing cloud estate; enforce managed permissions centrally, since the agent can execute shell commands on developer machines.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Inference region follows the chosen provider (AWS/GCP/Azure regions); Anthropic-direct plans offer US-only inference on Enterprise; local transcripts cached on the developer machine.",
+        "sourceUrl": "https://code.claude.com/docs/en/third-party-integrations"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Local client with inference via Anthropic, Amazon Bedrock, Claude Platform on AWS, Google Cloud Agent Platform or Microsoft Foundry; cloud sessions can run in self-hosted environments.",
+        "sourceUrl": "https://code.claude.com/docs/en/third-party-integrations",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Enterprise audit logs and Compliance API; OpenTelemetry export of prompts (opt-in), tool results and permission decisions; CloudTrail / Cloud Audit Logs / Azure Monitor on cloud providers.",
+        "sourceUrl": "https://code.claude.com/docs/en/monitoring-usage"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Anthropic SOC 2 Type I and Type II cover commercial products (Claude for Work, Anthropic API).",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "Anthropic ISO/IEC 27001:2022 covers commercial products (Claude for Work, Anthropic API).",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "iso42001": {
+        "status": "yes",
+        "detail": "Anthropic ISO/IEC 42001:2023 covers commercial products (Claude for Work, Anthropic API).",
+        "sourceUrl": "https://privacy.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Anthropic EU AI Act conformity statement for this product."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary tool under Anthropic Commercial Terms; model choice limited to Claude.",
+        "sourceUrl": "https://github.com/anthropics/claude-code/blob/main/LICENSE.md",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -19,7 +19,7 @@
     "license": "Proprietary",
     "docsUrl": "https://docs.github.com/copilot",
     "websiteUrl": "https://github.com/features/copilot",
-    "pricing": "Individual $10/mo; Business $39/user/mo; Enterprise custom.",
+    "pricing": "Free; Pro $10/mo; Pro+ $39/mo; Max $100/mo; Business $19 and Enterprise $39 per granted seat/mo, with monthly AI credit allowances.",
     "pricingModel": "paid",
     "status": "active",
     "tags": [

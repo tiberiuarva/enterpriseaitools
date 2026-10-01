@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "google-antigravity",
+    "name": "Google Antigravity",
+    "category": "assistants",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "subcategory": "coding",
+    "type": "vendor",
+    "vendor": "Google",
+    "description": "Google agent-first development platform (desktop app, IDE, CLI, SDK) on Gemini; replaced consumer Gemini Code Assist in June 2026.",
+    "strengths": [
+      "Asynchronous subagents",
+      "VPC-SC and us/eu endpoints",
+      "Gemini Enterprise license path"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://antigravity.google/docs/home/",
+    "websiteUrl": "https://antigravity.google/",
+    "pricing": "Free tier with weekly quotas; higher quotas with Google AI Pro/Ultra plus opt-in AI credit overages; enterprise via Google Cloud consumption billing or Gemini Enterprise Standard/Plus licenses.",
+    "pricingModel": "freemium",
+    "clouds": [
+      "gcp"
+    ],
+    "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; Gemini Code Assist Standard/Enterprise access is unchanged.",
+    "tags": [
+      "assistants",
+      "coding",
+      "gcp",
+      "agentic-coding"
+    ],
+    "practitionerNote": "For enterprise use, sign in via a Google Cloud project or Gemini Enterprise license so Google Cloud terms, VPC Service Controls and regional endpoints apply; consumer sign-ins do not carry those controls. Organisational contract tiers are not yet supported.",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Enterprise path supports regional data residency and VPC Service Controls with global, us and eu endpoints; consumer plans not covered.",
+        "sourceUrl": "https://antigravity.google/docs/enterprise"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Desktop/IDE/CLI clients with Google-hosted Gemini models via consumer plans or a Google Cloud project; no self-hosted models.",
+        "sourceUrl": "https://antigravity.google/docs/enterprise",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "On the enterprise path, telemetry and model interactions route to the customer Google Cloud project (request-response logging); no product-level audit log documented for consumer plans.",
+        "sourceUrl": "https://antigravity.google/docs/enterprise"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "No Antigravity-specific SOC 2 scope statement found at review time."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "No Antigravity-specific ISO 27001 scope statement found at review time."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No Antigravity-specific ISO 42001 scope statement found at review time."
+      },
+      "euAiAct": {
+        "status": "unknown",
+        "role": "limited-risk",
+        "detail": "Assessed limited-risk by product category (general-purpose assistant); no published Google EU AI Act conformity statement for this product."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Google product; Gemini and Google Cloud lock-in.",
+        "sourceUrl": "https://antigravity.google/docs/plans",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

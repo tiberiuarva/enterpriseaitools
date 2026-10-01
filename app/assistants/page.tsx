@@ -1,29 +1,22 @@
 import type { Metadata } from "next";
 import { AssistantsPageClient } from "@/components/assistants-page-client";
+import { buildCategoryHubMetadata } from "@/components/category-hub";
 import { HomeShell } from "@/components/home-shell";
-import { categoryDescriptions, getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { CATEGORIES } from "@/lib/categories";
+import { getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
 import { getComparisonsForToolIds } from "@/lib/comparisons";
 import { assistantsFaqs } from "@/lib/hub-faqs";
-import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = buildMetadata({
-  title: "AI Assistants",
-  description:
-    "Compare coding assistants, productivity copilots, and build-your-own assistant platforms across Microsoft, AWS, Google, and independent vendors.",
-  path: "/assistants",
-  atomFeedPath: "/updates-assistants.xml",
-});
+export const metadata: Metadata = buildCategoryHubMetadata("assistants");
 
 export default function AssistantsPage() {
   const tools = getToolsByCategory("assistants");
   return (
     <HomeShell lastUpdated={lastUpdated} currentPath="/assistants">
       <AssistantsPageClient
-        title="AI Assistants"
-        description={categoryDescriptions.assistants}
-        introParagraphs={[
-          "Compare coding, productivity, and build-your-own assistants on deployment surface, admin controls, and certification posture — full details on each tool's page.",
-        ]}
+        title={CATEGORIES.assistants.title}
+        description={CATEGORIES.assistants.summary}
+        introParagraphs={[CATEGORIES.assistants.intro]}
         tools={tools}
         updates={getUpdatesByCategory("assistants")}
         platforms={getPlatformsForCategory("assistants")}

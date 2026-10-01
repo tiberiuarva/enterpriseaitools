@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,7 +18,7 @@
     "license": "MIT",
     "githubUrl": "https://github.com/langchain-ai/langgraph",
     "githubStars": 41553,
-    "version": "1.2.11",
+    "version": "1.2.12",
     "docsUrl": "https://langchain-ai.github.io/langgraph/",
     "pricingModel": "freemium",
     "status": "active",
@@ -37,7 +37,7 @@
     "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
     "logoUrl": "/logos/langgraph.svg",
     "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-    "lastRelease": "2026-08-11",
+    "lastRelease": "2026-09-21",
     "governance": {
       "dataResidency": {
         "status": "yes",

@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { evaluateTools, scoreTool, EVALUATE_QUESTIONS, type IntakeAnswers } from "./evaluate.ts";
+import { evaluateTools, isPermissiveOpenSource, scoreTool, EVALUATE_QUESTIONS, type IntakeAnswers } from "./evaluate.ts";
 import type { GovernanceStatus, Tool } from "./types.ts";
 
 type ToolSpec = {
@@ -15,6 +15,8 @@ type ToolSpec = {
   iso27001?: GovernanceStatus;
   iso42001?: GovernanceStatus;
   licenseLevel?: string;
+  license?: string;
+  licenseWarning?: string;
   status?: Tool["status"];
 };
 
@@ -25,6 +27,8 @@ function makeTool(spec: ToolSpec): Tool {
     name: spec.id,
     category: spec.category ?? "agents",
     type: spec.type ?? "opensource",
+    license: spec.license ?? "MIT",
+    ...(spec.licenseWarning ? { licenseWarning: spec.licenseWarning } : {}),
     status: spec.status ?? "active",
     governance: {
       dataResidency: claim(spec.residency),
@@ -73,14 +77,25 @@ test("self-hosted-required removes managed-only tools", () => {
   assert.deepEqual(results.map((r) => r.tool.id), ["selfhost"]);
 });
 
-test("permissive-required filters out vendor and high-license-risk tools", () => {
+test("permissive-required keeps only permissive open source", () => {
   const tools = [
     makeTool({ id: "vendorish", type: "vendor", models: ["saas"] }),
     makeTool({ id: "high-risk-oss", type: "opensource", licenseLevel: "high" }),
+    makeTool({ id: "proprietary-commercial", type: "commercial", license: "Proprietary", licenseLevel: "medium" }),
+    makeTool({ id: "open-core", type: "opensource", license: "MIT core + EE paths", licenseLevel: "medium", licenseWarning: "EE paths are commercial" }),
     makeTool({ id: "oss", type: "opensource", licenseLevel: "low" }),
   ];
   const results = evaluateTools(tools, { ...baseAnswers, ossTolerance: "permissive-required" });
   assert.deepEqual(results.map((r) => r.tool.id), ["oss"]);
+});
+
+test("isPermissiveOpenSource accepts only permissive open source", () => {
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "mit" })), true);
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "warned", licenseWarning: "EE paths are commercial" })), false);
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "proprietary", license: "Proprietary" })), false);
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "split", license: "MIT (SDK); Proprietary (binary)" })), false);
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "high", licenseLevel: "high" })), false);
+  assert.equal(isPermissiveOpenSource(makeTool({ id: "commercial", type: "commercial" })), false);
 });
 
 test("on-prem-required removes tools without on-prem or sovereign", () => {

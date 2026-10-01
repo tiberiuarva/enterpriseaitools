@@ -1,3 +1,4 @@
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { platforms, tools } from "@/lib/data";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
@@ -72,12 +73,9 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
   },
 ];
 
-const categoryLabels: Record<ToolCategory, string> = {
-  agents: "Agents",
-  orchestration: "Orchestration",
-  governance: "Governance",
-  assistants: "Assistants",
-};
+const categoryLabels = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].navLabel]),
+) as Record<ToolCategory, string>;
 
 function uniqueKeywords(values: Array<string | undefined>) {
   return Array.from(
@@ -113,6 +111,7 @@ export const headerSearchEntries: SearchEntry[] = [
     section: categoryLabels[tool.category],
     keywords: uniqueKeywords([
       tool.vendor,
+      ...(tool.aliases ?? []),
       tool.license,
       ...(tool.tags ?? []),
       ...(tool.languages ?? []),

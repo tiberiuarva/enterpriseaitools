@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "agentgateway",
+    "name": "agentgateway",
+    "category": "gateways",
+    "type": "opensource",
+    "vendor": "Linux Foundation",
+    "description": "Rust proxy for agent traffic that governs MCP, A2A and LLM calls with CEL-based RBAC, budgets and guardrails; runs standalone or on Kubernetes.",
+    "strengths": [
+      "MCP, A2A and LLM in one proxy",
+      "CEL policy engine for fine-grained RBAC",
+      "Kubernetes Gateway API controller built in"
+    ],
+    "license": "Apache 2.0",
+    "githubUrl": "https://github.com/agentgateway/agentgateway",
+    "version": "1.5.0",
+    "lastRelease": "2026-08-27",
+    "docsUrl": "https://agentgateway.dev/docs/",
+    "pricingModel": "free",
+    "languages": [
+      "Rust"
+    ],
+    "status": "active",
+    "tags": [
+      "gateways",
+      "mcp",
+      "a2a",
+      "kubernetes"
+    ],
+    "practitionerNote": "A strong vendor-neutral pick for Kubernetes platform teams that want one policy point for agent tool calls and LLM traffic. It moves quickly and v1.5.0 had breaking changes (e.g. JWT issuer/audience now required), so read the release notes before upgrading.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "Self-hosted binary or Kubernetes deployment; operator controls placement.",
+        "sourceUrl": "https://agentgateway.dev/docs/"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Standalone binary/Docker or Kubernetes with a built-in control plane and Gateway API.",
+        "sourceUrl": "https://agentgateway.dev/docs/",
+        "models": [
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Access logs (incl. token timing), distributed traces and a UI logs view; no dedicated audit-log product.",
+        "sourceUrl": "https://github.com/agentgateway/agentgateway/releases/tag/v1.5.0"
+      },
+      "soc2": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS; SOC 2 applies to the operator's infrastructure, not the package."
+      },
+      "iso27001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS; ISO 27001 applies to the operator's ISMS, not the package."
+      },
+      "iso42001": {
+        "status": "not-applicable",
+        "detail": "Self-hosted OSS; ISO 42001 applies to the deploying organisation."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Network proxy component, not an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Apache 2.0 — permissive, OSI-approved; Linux Foundation project.",
+        "sourceUrl": "https://raw.githubusercontent.com/agentgateway/agentgateway/main/LICENSE",
+        "level": "low"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

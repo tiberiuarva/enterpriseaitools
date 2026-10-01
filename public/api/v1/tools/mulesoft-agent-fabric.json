@@ -1,0 +1,81 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "mulesoft-agent-fabric",
+    "name": "MuleSoft Agent Fabric",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "Salesforce (MuleSoft)",
+    "description": "MuleSoft suite to register, route, govern and visualize agents, MCP servers and APIs across vendors using MCP and A2A.",
+    "strengths": [
+      "Agent Registry with auto-discovery scanners",
+      "Omni Gateway policies for agent and LLM traffic",
+      "Agent Visualizer for multi-agent flows"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.mulesoft.com/general/agent-fabric-overview",
+    "websiteUrl": "https://www.salesforce.com/news/stories/mulesoft-agent-fabric-announcement/",
+    "pricingModel": "contact",
+    "status": "active",
+    "statusNote": "Announced 2025-09-25; Registry, Broker and Visualizer were slated for GA in October 2025 per the announcement.",
+    "tags": [
+      "control-planes",
+      "registry",
+      "mcp",
+      "a2a"
+    ],
+    "practitionerNote": "Natural fit for organizations already on Anypoint that want agent governance on the same gateway as their APIs; less compelling without an existing MuleSoft footprint.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Anypoint Platform offers US, EU, Canada, Japan, India, Australia and Government control planes; Agent Fabric availability per control plane not confirmed.",
+        "sourceUrl": "https://docs.mulesoft.com/hosting-home/"
+      },
+      "deployment": {
+        "status": "partial",
+        "detail": "MuleSoft-managed control planes plus hybrid runtime options (Runtime Fabric, hybrid runtimes); which Agent Fabric components run outside MuleSoft cloud is not stated.",
+        "sourceUrl": "https://docs.mulesoft.com/hosting-home/",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "unknown",
+        "detail": "Agent Fabric overview describes monitoring via Agent Visualizer but no audit-log statement was found."
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "MuleSoft trust center could not be retrieved during review; Agent Fabric SOC 2 scope unverified."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "MuleSoft trust center could not be retrieved during review; Agent Fabric ISO 27001 scope unverified."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 statement found for MuleSoft or Agent Fabric in reviewed sources."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Integration and governance tooling for agents, not itself an AI system placed on the market."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Salesforce/MuleSoft product; pricing not published.",
+        "sourceUrl": "https://docs.mulesoft.com/general/agent-fabric-overview",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

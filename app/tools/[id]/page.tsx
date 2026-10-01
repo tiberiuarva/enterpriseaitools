@@ -10,6 +10,7 @@ import { RelatedComparisons } from "@/components/related-comparisons";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
 import { WarningBox } from "@/components/warning-box";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { comparisonPairs } from "@/lib/comparisons";
 import { lastUpdated, snapshotDiffEvents, tools, updates } from "@/lib/data";
 import { FRESHNESS_THRESHOLD_DAYS, getFreshnessStatus } from "@/lib/freshness";
@@ -33,12 +34,9 @@ const UPDATE_TYPE_LABELS: Record<string, string> = {
   "license-change": "License change",
 };
 
-const CATEGORY_LABELS: Record<ToolCategory, string> = {
-  agents: "AI Agent Frameworks",
-  orchestration: "AI Orchestration",
-  governance: "AI Governance",
-  assistants: "AI Assistants",
-};
+const CATEGORY_LABELS = Object.fromEntries(
+  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].title]),
+) as Record<ToolCategory, string>;
 
 function getTool(id: string) {
   return tools.find((tool) => tool.id === id);
@@ -116,6 +114,9 @@ export default async function ToolPage({ params }: { params: Promise<{ id: strin
               <div className="min-w-0">
                 <h1 className="text-h1 text-[var(--color-text-primary)]">{tool.name}</h1>
                 {tool.vendor ? <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">{tool.vendor}</p> : null}
+                {tool.aliases?.length ? (
+                  <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">Formerly {tool.aliases.join(", ")}</p>
+                ) : null}
               </div>
             </div>
             <span className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${toolTypeTintStyles[tool.type]}`}>

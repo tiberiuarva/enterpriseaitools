@@ -1,0 +1,85 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "amazon-bedrock-agentcore",
+    "name": "Amazon Bedrock AgentCore",
+    "category": "control-planes",
+    "type": "vendor",
+    "vendor": "AWS",
+    "description": "AWS services to run, govern and observe agents from any framework: Runtime, Gateway, Identity, Policy, Observability and Agent Registry.",
+    "strengths": [
+      "Agent Registry auto-discovery across AWS Organizations",
+      "Policy controls on agent-tool access",
+      "Per-service consumption pricing"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html",
+    "pricing": "Consumption-based per service, e.g. Runtime $0.1276 per vCPU-hour, Policy $0.000025 per authorization request, Gateway $0.005 per 1,000 invocations; Agent Registry includes a monthly free allowance (5,000 records).",
+    "pricingModel": "paid",
+    "clouds": [
+      "aws"
+    ],
+    "status": "active",
+    "statusNote": "GA since October 2025; Policy GA March 2026; AWS Agent Registry GA August 2026 (preview from April 2026).",
+    "tags": [
+      "control-planes",
+      "aws",
+      "registry",
+      "agent-policy"
+    ],
+    "practitionerNote": "Use it as the governance and runtime layer for agents on AWS; the registry and policy pieces are strongest when agents run on AgentCore Runtime/Gateway. Bedrock Agents (the managed agent builder) is tracked separately.",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "governance": {
+      "dataResidency": {
+        "status": "partial",
+        "detail": "Regional service (including AWS GovCloud US-West); Agent Registry supports customer-managed KMS keys. No multi-cloud or sovereign option.",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Fully managed AWS service; no self-hosted option.",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html",
+        "models": [
+          "saas"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Control-plane API calls (e.g. Agent Registry, Gateway) are logged to AWS CloudTrail as management events.",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-cloudtrail.html"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "AgentCore is in scope for SOC 2 per AWS compliance validation.",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "AgentCore is compliant with ISO 27001:2022 (plus 27017, 27018, 27701).",
+        "sourceUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/compliance-validation.html"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "ISO 42001 is not listed on the AgentCore compliance validation page."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Infrastructure for building and governing agents, not itself an AI system placed on the market; obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary AWS service; framework-agnostic agents, but registry, policy and identity are AWS-bound.",
+        "sourceUrl": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    }
+  }
+}

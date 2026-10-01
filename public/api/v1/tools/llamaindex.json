@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,7 +18,7 @@
     "license": "MIT",
     "githubUrl": "https://github.com/run-llama/llama_index",
     "githubStars": 52144,
-    "version": "0.14.23",
+    "version": "0.14.25",
     "docsUrl": "https://docs.llamaindex.ai/",
     "pricingModel": "free",
     "status": "active",
@@ -38,7 +38,7 @@
     "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows.",
     "logoSourceUrl": "https://www.llamaindex.ai/brand",
     "logoUrl": "/logos/llamaindex.svg",
-    "lastRelease": "2026-06-24",
+    "lastRelease": "2026-09-21",
     "governance": {
       "dataResidency": {
         "status": "yes",

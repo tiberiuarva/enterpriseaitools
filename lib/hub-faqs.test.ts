@@ -1,11 +1,16 @@
 import { strict as assert } from "node:assert";
 import { describe, it } from "node:test";
 import {
+  agentIdentityFaqs,
   agentsFaqs,
+  alwaysOnAgentsFaqs,
   assistantsFaqs,
   categoryFaqs,
+  controlPlanesFaqs,
+  gatewaysFaqs,
   governanceFaqs,
   homeFaqs,
+  observabilityFaqs,
   orchestrationFaqs,
   platformsFaqs,
   type HubFaq,
@@ -18,6 +23,11 @@ const allHubs: Record<string, HubFaq[]> = {
   orchestration: orchestrationFaqs,
   governance: governanceFaqs,
   assistants: assistantsFaqs,
+  "always-on-agents": alwaysOnAgentsFaqs,
+  "control-planes": controlPlanesFaqs,
+  "agent-identity": agentIdentityFaqs,
+  observability: observabilityFaqs,
+  gateways: gatewaysFaqs,
 };
 
 describe("hub-faqs", () => {
@@ -45,5 +55,10 @@ describe("hub-faqs", () => {
     assert.equal(categoryFaqs.orchestration, orchestrationFaqs);
     assert.equal(categoryFaqs.governance, governanceFaqs);
     assert.equal(categoryFaqs.assistants, assistantsFaqs);
+    assert.equal(categoryFaqs["always-on-agents"], alwaysOnAgentsFaqs);
+    assert.equal(categoryFaqs["control-planes"], controlPlanesFaqs);
+    assert.equal(categoryFaqs["agent-identity"], agentIdentityFaqs);
+    assert.equal(categoryFaqs.observability, observabilityFaqs);
+    assert.equal(categoryFaqs.gateways, gatewaysFaqs);
   });
 });

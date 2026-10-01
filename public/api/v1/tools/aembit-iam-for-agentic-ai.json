@@ -1,0 +1,83 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "category": "agent-identity",
+    "license": "Proprietary",
+    "status": "active",
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "id": "aembit-iam-for-agentic-ai",
+    "name": "Aembit IAM for Agentic AI",
+    "type": "commercial",
+    "vendor": "Aembit",
+    "description": "Policy-based, just-in-time access for AI agents via an MCP Authorization Server and MCP Identity Gateway with credential injection.",
+    "strengths": [
+      "Blended agent-plus-human identity policy",
+      "No standing credentials for agents",
+      "MCP Identity Gateway credential exchange"
+    ],
+    "websiteUrl": "https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/",
+    "docsUrl": "https://docs.aembit.io/",
+    "pricing": "Starter free (3 agents); Teams $20/agent/month (10 to 500 agents); Enterprise custom.",
+    "pricingModel": "freemium",
+    "tags": [
+      "agent-identity",
+      "mcp",
+      "workload-identity",
+      "just-in-time"
+    ],
+    "practitionerNote": "Good fit for securing agent-to-MCP traffic without handing agents secrets; note the gateway is a self-run Linux VM and free-tier log retention is 24 hours.",
+    "governance": {
+      "dataResidency": {
+        "status": "unknown",
+        "detail": "Data residency for the managed authorization service is not stated in the GA post or pricing page."
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Managed MCP Authorization Server plus a self-hosted Linux VM MCP Identity Gateway; containerized options on roadmap.",
+        "sourceUrl": "https://aembit.io/blog/aembit-iam-for-agentic-ai-is-now-generally-available/",
+        "models": [
+          "saas",
+          "hybrid"
+        ]
+      },
+      "auditLogging": {
+        "status": "yes",
+        "detail": "Structured audit logs that integrate with SIEM; retention 24h (Starter), 7 days (Teams), custom (Enterprise).",
+        "sourceUrl": "https://aembit.io/pricing/"
+      },
+      "soc2": {
+        "status": "yes",
+        "detail": "Aembit states SOC 2 Type II certification.",
+        "sourceUrl": "https://aembit.io/blog/aembit-achieves-iso-27001-certification/"
+      },
+      "iso27001": {
+        "status": "yes",
+        "detail": "ISO/IEC 27001:2022 certified (Sensiba LLP, ANAB-accredited), announced March 2025.",
+        "sourceUrl": "https://aembit.io/blog/aembit-achieves-iso-27001-certification/"
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO/IEC 42001 certification found on Aembit's pages reviewed."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Identity and access-control tooling for agents, not itself an AI system placed on the market; AI Act obligations rest with the provider/deployer of the governed agents."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary Aembit service; secretless access depends on Aembit's identity broker.",
+        "sourceUrl": "https://aembit.io/pricing/",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

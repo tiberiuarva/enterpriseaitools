@@ -2,15 +2,13 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { useMemo, useState } from "react";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import type { UpdateEntry, UpdateImpact } from "@/lib/types";
 
 const categoryOptions = [
   { label: "All", value: "all" },
   { label: "Platforms", value: "platforms" },
-  { label: "Agents", value: "agents" },
-  { label: "Orchestration", value: "orchestration" },
-  { label: "Governance", value: "governance" },
-  { label: "Assistants", value: "assistants" },
+  ...CATEGORY_ORDER.map((category) => ({ label: CATEGORIES[category].navLabel, value: category })),
 ] as const;
 
 const viewOptions = [

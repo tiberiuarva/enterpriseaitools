@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-30",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -23,8 +23,8 @@
     ],
     "license": "Proprietary",
     "docsUrl": "https://docs.databricks.com/aws/en/genie-code/",
-    "websiteUrl": "https://www.databricks.com/product/ai",
-    "pricing": "Current Genie Code capabilities are documented without a separate add-on fee, but Databricks workspace and compute consumption still apply.",
+    "websiteUrl": "https://www.databricks.com/product/data-intelligence-platform",
+    "pricing": "Pay-as-you-go since July 8, 2026 with a free monthly LLM usage allowance (150 DBUs); workspace and compute usage still apply.",
     "pricingModel": "paid",
     "languages": [
       "Python",
@@ -85,7 +85,7 @@
       "licenseRisk": {
         "status": "yes",
         "detail": "Proprietary SaaS; Unity Catalog / workspace lock-in (multi-cloud eases portability).",
-        "sourceUrl": "https://www.databricks.com/product/ai",
+        "sourceUrl": "https://www.databricks.com/product/data-intelligence-platform",
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"

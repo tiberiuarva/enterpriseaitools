@@ -1,0 +1,86 @@
+{
+  "source": "https://www.enterpriseai.tools",
+  "generatedAt": "2026-09-30",
+  "schemaVersion": "1.0.0",
+  "datasetLicense": "MIT",
+  "tool": {
+    "id": "langsmith",
+    "name": "LangSmith",
+    "category": "observability",
+    "type": "commercial",
+    "vendor": "LangChain",
+    "description": "Framework-agnostic platform from LangChain for tracing, monitoring, evaluating and deploying LLM apps and agents, with OpenTelemetry ingest.",
+    "strengths": [
+      "Works beyond LangChain (OpenAI, CrewAI, Vercel AI)",
+      "Cloud in US, EU, APAC and AWS regions",
+      "Self-hosted and hybrid options on Enterprise"
+    ],
+    "license": "Proprietary",
+    "docsUrl": "https://docs.langchain.com/langsmith/observability",
+    "websiteUrl": "https://www.langchain.com/langsmith",
+    "pricing": "Developer $0/seat (5k base traces/month), Plus $39/seat/month (10k base traces/month) then pay-as-you-go, Enterprise custom.",
+    "pricingModel": "freemium",
+    "languages": [
+      "Python"
+    ],
+    "status": "active",
+    "tags": [
+      "observability",
+      "tracing",
+      "evaluation",
+      "langchain"
+    ],
+    "logoKind": "fallback",
+    "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
+    "logoReviewedAt": "2026-09-30",
+    "publishedAt": "2026-09-30",
+    "practitionerNote": "The lowest-friction option for LangChain and LangGraph shops, but it also ingests OpenTelemetry from other stacks. Base traces keep only 14 days (extended traces 180), and audit logs, self-hosting and hybrid all need the Enterprise plan.",
+    "governance": {
+      "dataResidency": {
+        "status": "yes",
+        "detail": "SaaS regions include GCP us-central1, europe-west4 and australia-southeast1, plus AWS us-east-2. Enterprise can self-host. Payment data is stored in the US.",
+        "sourceUrl": "https://docs.langchain.com/langsmith/cloud"
+      },
+      "deployment": {
+        "status": "yes",
+        "detail": "Cloud SaaS on all plans. Hybrid and self-hosted (Kubernetes in customer infrastructure) are Enterprise add-ons.",
+        "sourceUrl": "https://docs.langchain.com/langsmith/self-hosted",
+        "models": [
+          "saas",
+          "hybrid",
+          "self-hosted"
+        ]
+      },
+      "auditLogging": {
+        "status": "partial",
+        "detail": "Tamper-resistant audit logs of administrative and configuration actions, available only on Enterprise plans.",
+        "sourceUrl": "https://docs.langchain.com/langsmith/audit-logs"
+      },
+      "soc2": {
+        "status": "unknown",
+        "detail": "The LangChain Trust Center did not render verifiable certification details, and the LangSmith cloud docs make no SOC 2 claim."
+      },
+      "iso27001": {
+        "status": "unknown",
+        "detail": "No ISO 27001 claim could be verified on the LangSmith docs or a rendered Trust Center page."
+      },
+      "iso42001": {
+        "status": "unknown",
+        "detail": "No ISO 42001 claim could be verified on the LangSmith docs or a rendered Trust Center page."
+      },
+      "euAiAct": {
+        "status": "not-applicable",
+        "role": "not-applicable",
+        "detail": "Observability and evaluation tooling, not an AI system placed on the market. Obligations rest with the deployer."
+      },
+      "licenseRisk": {
+        "status": "yes",
+        "detail": "Proprietary SaaS. Self-hosting is an Enterprise add-on with no open-source path.",
+        "sourceUrl": "https://www.langchain.com/pricing",
+        "level": "medium"
+      },
+      "reviewedAt": "2026-09-30"
+    },
+    "cloudBadgeReviewedAt": "2026-09-30"
+  }
+}

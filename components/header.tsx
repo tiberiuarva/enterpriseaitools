@@ -51,7 +51,18 @@ const themeScript = `(() => {
 
 const homeLink = navItems.find((item) => item.href === "/") ?? { href: "/", label: "Home" };
 const utilityHrefs = ["/evaluate", "/updates", "/about"] as const;
-const categoryNavHrefs = ["/platforms", "/agents", "/orchestration", "/governance", "/assistants"] as const;
+const categoryNavHrefs = [
+  "/platforms",
+  "/agents",
+  "/orchestration",
+  "/gateways",
+  "/observability",
+  "/control-planes",
+  "/agent-identity",
+  "/governance",
+  "/assistants",
+  "/always-on-agents",
+] as const;
 const utilityLinks = navItems.filter((item) => utilityHrefs.includes(item.href as (typeof utilityHrefs)[number]));
 const categoryLinks = navItems.filter((item) => categoryNavHrefs.includes(item.href as (typeof categoryNavHrefs)[number]));
 const primaryNavHrefs = new Set<string>([homeLink.href, ...categoryNavHrefs, ...utilityHrefs]);
