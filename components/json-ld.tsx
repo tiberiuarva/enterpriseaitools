@@ -1,5 +1,6 @@
 import { siteUrl as defaultSiteUrl } from "@/lib/metadata";
-import type { Tool, ToolCategory } from "@/lib/types";
+import { CATEGORIES } from "@/lib/categories";
+import type { Platform, Tool } from "@/lib/types";
 
 type JsonLdValue = Record<string, unknown> | Array<Record<string, unknown>>;
 
@@ -59,20 +60,6 @@ export function JsonLd({ data }: JsonLdProps) {
   );
 }
 
-// schema.org applicationCategory: security/identity products are SecurityApplication,
-// end-user assistants and agents are BusinessApplication, the rest are developer tooling.
-const APPLICATION_CATEGORY: Record<ToolCategory, string> = {
-  agents: "DeveloperApplication",
-  orchestration: "DeveloperApplication",
-  gateways: "DeveloperApplication",
-  observability: "DeveloperApplication",
-  "control-planes": "BusinessApplication",
-  "agent-identity": "SecurityApplication",
-  governance: "SecurityApplication",
-  assistants: "BusinessApplication",
-  "always-on-agents": "BusinessApplication",
-};
-
 export function buildToolListJsonLd(tools: Tool[], name: string, description: string, url: string) {
   return {
     "@context": "https://schema.org",
@@ -88,7 +75,7 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
         "@type": "SoftwareApplication",
         name: tool.name,
         description: tool.description,
-        applicationCategory: APPLICATION_CATEGORY[tool.category],
+        applicationCategory: CATEGORIES[tool.category].schemaApplicationCategory,
         operatingSystem: "Any",
         ...(tool.version ? { softwareVersion: tool.version } : {}),
         ...(tool.docsUrl ? { url: tool.docsUrl } : {}),
@@ -101,6 +88,30 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
   };
 }
 
+export function buildPlatformListJsonLd(platforms: Platform[], name: string, description: string, url: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    description,
+    url,
+    numberOfItems: platforms.length,
+    itemListElement: platforms.map((platform, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "SoftwareApplication",
+        name: platform.name,
+        description: platform.description,
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Any",
+        url: platform.docsUrl,
+        publisher: { "@type": "Organization", name: platform.vendor },
+      },
+    })),
+  };
+}
+
 export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
   return {
     "@context": "https://schema.org",
@@ -108,7 +119,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
     "@id": `${url}#software`,
     name: tool.name,
     description: tool.description,
-    applicationCategory: APPLICATION_CATEGORY[tool.category],
+    applicationCategory: CATEGORIES[tool.category].schemaApplicationCategory,
     operatingSystem: "Any",
     url,
     ...(tool.governance?.reviewedAt ? { dateModified: normalizeJsonLdDate(tool.governance.reviewedAt) } : {}),

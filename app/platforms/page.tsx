@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { HubFaqs } from "@/components/hub-faqs";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildPlatformListJsonLd } from "@/components/json-ld";
 import { platformsFaqs } from "@/lib/hub-faqs";
 import { HomeShell } from "@/components/home-shell";
 import { PlatformMark } from "@/components/platform-mark";
@@ -91,27 +91,7 @@ export default function PlatformsPage() {
       url: pageUrl,
       description,
     }),
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: "AI Platforms & Model Hubs",
-      description,
-      url: pageUrl,
-      numberOfItems: platforms.length,
-      itemListElement: platforms.map((platform, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "SoftwareApplication",
-          name: platform.name,
-          description: platform.description,
-          applicationCategory: "DeveloperApplication",
-          operatingSystem: "Any",
-          url: platform.docsUrl,
-          publisher: { "@type": "Organization", name: platform.vendor },
-        },
-      })),
-    },
+    buildPlatformListJsonLd(platforms, "AI Platforms & Model Hubs", description, pageUrl),
     buildFaqPageJsonLd(platformsFaqs),
   ];
 

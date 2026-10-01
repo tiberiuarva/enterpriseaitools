@@ -17,13 +17,15 @@ export type CategoryMeta = {
   navLabel: string;
   // Hub page H1 and the name used in feeds, llms.txt and the tools index.
   title: string;
-  // Page <meta> description; 90–170 chars keeps the SEO readiness gate happy.
+  // Page <meta> description; 90–160 chars so search snippets are not truncated.
   metaDescription: string;
   // One-line summary reused on cards and hub intros.
   summary: string;
   intro: string;
   iconName: CategoryIconName;
   evaluateLabel: string;
+  // schema.org applicationCategory for this category's SoftwareApplication JSON-LD.
+  schemaApplicationCategory: "DeveloperApplication" | "BusinessApplication" | "SecurityApplication";
 };
 
 // Display order is the reading order of the stack: build, run, govern, use.
@@ -51,6 +53,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Compare cloud-native agent platforms with open-source frameworks on governance posture, deployment surface, and license risk — full details on each tool's page.",
     iconName: "bot",
     evaluateLabel: "Agent frameworks",
+    schemaApplicationCategory: "DeveloperApplication",
   },
   orchestration: {
     slug: "orchestration",
@@ -63,6 +66,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Compare cloud workflow services with open-source orchestration platforms on deployment options, audit trails, and governance fit — full details on each tool's page.",
     iconName: "git-branch",
     evaluateLabel: "Orchestration / workflow",
+    schemaApplicationCategory: "DeveloperApplication",
   },
   gateways: {
     slug: "gateways",
@@ -75,6 +79,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "An AI gateway sits between applications and model providers to centralise keys, quotas, cost tracking, caching, and guardrails; an MCP gateway does the same for the tools agents call. Compare them on deployment ownership and license terms.",
     iconName: "network",
     evaluateLabel: "AI / MCP gateways",
+    schemaApplicationCategory: "DeveloperApplication",
   },
   observability: {
     slug: "observability",
@@ -87,6 +92,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Observability tools record what models and agents actually did — traces, tool calls, cost, latency — and evaluation tools score it. Compare self-hosted and SaaS options on license terms and data residency.",
     iconName: "activity",
     evaluateLabel: "Observability / evaluation",
+    schemaApplicationCategory: "DeveloperApplication",
   },
   "control-planes": {
     slug: "control-planes",
@@ -99,6 +105,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "An agent control plane answers: which agents exist, who owns them, what are they allowed to do, and are they healthy? Compare hyperscaler, SaaS-platform, and independent options on the scope of agents they can govern.",
     iconName: "layout-dashboard",
     evaluateLabel: "Agent control planes",
+    schemaApplicationCategory: "BusinessApplication",
   },
   "agent-identity": {
     slug: "agent-identity",
@@ -111,6 +118,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Agents need their own identities, least-privilege access, owners, and access reviews — the same controls people get. Compare identity-provider, governance, and privileged-access vendors on how they register, authorise, and audit agents.",
     iconName: "fingerprint",
     evaluateLabel: "Agent identity & access",
+    schemaApplicationCategory: "SecurityApplication",
   },
   governance: {
     slug: "governance",
@@ -123,6 +131,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Compare cloud guardrails with independent safety and agent-security vendors on certifications, data residency, and deployment ownership — full details on each tool's page.",
     iconName: "shield-check",
     evaluateLabel: "Guardrails / agent security",
+    schemaApplicationCategory: "SecurityApplication",
   },
   assistants: {
     slug: "assistants",
@@ -135,6 +144,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Compare coding, productivity, and build-your-own assistants on deployment surface, admin controls, and certification posture — full details on each tool's page.",
     iconName: "briefcase-business",
     evaluateLabel: "Assistants / copilots",
+    schemaApplicationCategory: "BusinessApplication",
   },
   "always-on-agents": {
     slug: "always-on-agents",
@@ -147,5 +157,6 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
       "Always-on agents keep running after you close the chat: they hold their own identity, memory, and compute, and act across apps and messaging without a prompt each time. That autonomy is the risk — check each tool's approval gates, sandboxing, audit trail, and security record before allowing it on corporate data.",
     iconName: "radio",
     evaluateLabel: "Always-on agents",
+    schemaApplicationCategory: "BusinessApplication",
   },
 };
