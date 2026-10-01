@@ -3,7 +3,7 @@ import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { RelatedHubs } from "@/components/related-hubs";
 import { ToolIdentityBadge } from "@/components/tool-identity-badge";
-import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
+import { CATEGORIES, CATEGORY_ORDER, STACK_LAYERS } from "@/lib/categories";
 import { lastUpdated, tools } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
@@ -58,15 +58,27 @@ export default function ToolsIndexPage() {
           </p>
         </section>
 
-        <nav aria-label="Jump to category" className="card-flat flex flex-wrap gap-2 p-4">
-          {CATEGORY_ORDER.map((category) => (
-            <a
-              key={category}
-              href={`#${category}`}
-              className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)]"
-            >
-              {CATEGORY_LABELS[category]}
-            </a>
+        <nav aria-label="Jump to category" className="card-flat grid grid-cols-1 gap-4 p-4 md:grid-cols-3">
+          {STACK_LAYERS.map((layer) => (
+            <div key={layer.id} className="min-w-0">
+              <a
+                href={withBasePath(layer.href)}
+                className="text-caption uppercase tracking-[0.08em] text-[var(--color-text-tertiary)] hover:text-[var(--color-primary)]"
+              >
+                {layer.label}
+              </a>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {layer.categories.map((category) => (
+                  <a
+                    key={category}
+                    href={`#${category}`}
+                    className="rounded-full border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)]"
+                  >
+                    {CATEGORIES[category].navLabel}
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
 

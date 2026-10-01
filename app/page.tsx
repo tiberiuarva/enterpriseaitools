@@ -1,68 +1,26 @@
 import type { Metadata } from "next";
-import {
-  Activity,
-  ArrowUpRight,
-  Bot,
-  BriefcaseBusiness,
-  CalendarClock,
-  Database,
-  Fingerprint,
-  GitBranch,
-  GitCompare,
-  Landmark,
-  Layers3,
-  LayoutDashboard,
-  Network,
-  Radio,
-  Scale,
-  ShieldCheck,
-} from "lucide-react";
-import { CategoryCard } from "@/components/category-card";
+import { ArrowUpRight, Bot, CalendarClock, Compass, Database, GitCompare, Layers3, ListChecks, Scale, ShieldCheck } from "lucide-react";
 import { HomeShell } from "@/components/home-shell";
 import { HubFaqs } from "@/components/hub-faqs";
 import { JsonLd, buildDataCatalogJsonLd, buildFaqPageJsonLd, buildWebPageJsonLd } from "@/components/json-ld";
-import { comparisonPairs } from "@/lib/comparisons";
-import { homeFaqs } from "@/lib/hub-faqs";
-import { PlatformStrip } from "@/components/platform-strip";
-import { ProtocolTrackingSection } from "@/components/protocol-tracking-section";
+import { StackMap } from "@/components/stack-map";
 import { StatPill } from "@/components/stat-pill";
-import { CATEGORIES, CATEGORY_ORDER, type CategoryIconName } from "@/lib/categories";
-import { categoryDescriptions, lastUpdated, latestUpdate, platforms, tools } from "@/lib/data";
-import { filterToolsByCategory } from "@/lib/dataset-metrics";
+import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
+import { comparisonPairs } from "@/lib/comparisons";
+import { lastUpdated, platforms, tools, updateCountByTool, updates } from "@/lib/data";
+import { homeFaqs } from "@/lib/hub-faqs";
+import { JOURNEYS } from "@/lib/journeys";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
-import type { ToolCategory } from "@/lib/types";
 
 const homepageTitle = "Enterprise AI tools landscape tracker";
 const homepageDescription =
-  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, plus the agent, gateway, observability, control-plane, identity, and assistant tools.";
+  "Track Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform, and the tools to build, control and use AI agents, each claim source-backed.";
 
 export const metadata: Metadata = buildMetadata({
   title: homepageTitle,
   description: homepageDescription,
 });
-
-const categoryIcons = {
-  bot: Bot,
-  "git-branch": GitBranch,
-  "shield-check": ShieldCheck,
-  "briefcase-business": BriefcaseBusiness,
-  radio: Radio,
-  "layout-dashboard": LayoutDashboard,
-  fingerprint: Fingerprint,
-  activity: Activity,
-  network: Network,
-} as const satisfies Record<CategoryIconName, unknown>;
-
-const categoryMeta = Object.fromEntries(
-  CATEGORY_ORDER.map((category) => {
-    const meta = CATEGORIES[category];
-    return [
-      category,
-      { href: `/${category}`, icon: categoryIcons[meta.iconName], name: meta.title, description: meta.summary },
-    ];
-  }),
-) as Record<ToolCategory, { href: string; icon: (typeof categoryIcons)[CategoryIconName]; name: string; description: string }>;
 
 function formatUpdateLabel(value: string) {
   return value
@@ -72,19 +30,7 @@ function formatUpdateLabel(value: string) {
 }
 
 export default function Home() {
-  const categoryKeys = CATEGORY_ORDER;
-  const categoryCards = categoryKeys.map((key) => {
-    const categoryTools = filterToolsByCategory(tools, key);
-
-    return {
-      ...categoryMeta[key],
-      count: categoryTools.length,
-      previewTools: categoryTools.slice(0, 3).map((tool) => ({
-        id: tool.id,
-        name: tool.name,
-      })),
-    };
-  });
+  const recentHighImpact = updates.filter((update) => update.impact === "high").slice(0, 3);
 
   const jsonLd = [
     buildWebPageJsonLd({
@@ -139,157 +85,140 @@ export default function Home() {
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
             <div className="max-w-2xl">
               <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-tertiary)]">
-                Enterprise AI tooling landscape
+                Enterprise AI stack guide
               </p>
               <h1 className="mt-3 text-display text-[var(--color-text-primary)]">
-                Tracking what Azure, AWS, and GCP offer alongside the best open source alternatives.
+                Every layer of the enterprise AI stack, compared with sources.
               </h1>
               <p className="mt-4 text-body text-[var(--color-text-secondary)]">
-                Updated weekly. Compare the cloud foundations, then each layer of the agent stack: build, run, govern, and use.
+                From the cloud platforms up to the agents your staff use: {tools.length} tools across building, controlling and
+                using AI, each claim linked to a primary source. Updated weekly.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3 md:shrink-0 md:flex-col md:items-stretch md:gap-2">
-              <StatPill icon={Landmark} label="Categories" value={Object.keys(categoryDescriptions).length} />
+              <StatPill icon={Layers3} label="Categories" value={CATEGORY_ORDER.length} />
               <StatPill icon={Bot} label="Tools tracked" value={tools.length} highlighted />
               <StatPill icon={CalendarClock} label="Updated" value={lastUpdated} />
             </div>
           </div>
         </section>
 
-        <section className="card-flat p-6">
-          <div className="flex items-start gap-3">
-            <Layers3 size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
-            <div className="max-w-2xl">
-              <h2 className="text-h2 text-[var(--color-text-primary)]">Foundation AI platforms</h2>
-              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                The base stack behind much of the market. Category pages then break out each vendor&apos;s own services versus the open-source and commercial tools teams pair with them.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-5">
-            <PlatformStrip platforms={platforms} />
-          </div>
-
-          <div className="mt-5">
-            <a
-              href={withBasePath("/platforms")}
-              className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
-            >
-              Open platform comparison
-              <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </section>
-
-        <section className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {categoryCards.map((category) => (
-            <CategoryCard key={category.href} {...category} />
-          ))}
-        </section>
-
-        <section className="card-flat p-6">
-          <div className="max-w-4xl">
-            <h2 className="text-h2 text-[var(--color-text-primary)]">What is changing in the enterprise AI market</h2>
+        <section aria-labelledby="stack-map-heading" className="flex flex-col gap-4">
+          <div className="max-w-3xl">
+            <h2 id="stack-map-heading" className="text-h2 text-[var(--color-text-primary)]">
+              The enterprise AI stack
+            </h2>
             <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-              Teams now evaluate the control plane, delivery layer, governance boundary, and standards layer separately. This tracker follows those seams.
+              Teams build agents, control them, and put AI in people&apos;s hands, all on top of a cloud platform. Pick a layer or a
+              category to compare the tools in it.
             </p>
           </div>
+          <StackMap tools={tools} activity={updateCountByTool} platforms={platforms} headingLevel="h3" />
+        </section>
 
-          <div className="mt-6 grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2 xl:grid-cols-4">
-            <div>
-              <h3 className="text-h3 text-[var(--color-text-primary)]">Foundation clouds set the defaults</h3>
+        <section aria-labelledby="start-heading" className="card-flat p-6">
+          <div className="flex items-start gap-3">
+            <Compass size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
+            <div className="max-w-3xl">
+              <h2 id="start-heading" className="text-h2 text-[var(--color-text-primary)]">
+                Start with your question
+              </h2>
               <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                Microsoft, AWS, and Google define identity, model access, and the first route to production.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-[var(--color-text-primary)]">Delivery layers compete above the cloud</h3>
-              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                Agent, orchestration, and assistant layers compete on openness and integration depth.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-[var(--color-text-primary)]">Governance is a hard adoption gate</h3>
-              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                Guardrails matter where they touch approvals, auditability, and data handling.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-h3 text-[var(--color-text-primary)]">Standards support starts to matter</h3>
-              <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                MCP, A2A, and OpenAPI signal ecosystem fit and tool portability.
+                Not sure which category you need? Pick the job you are trying to get done.
               </p>
             </div>
           </div>
+          <ul className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
+            {JOURNEYS.map((journey) => (
+              <li key={journey.id}>
+                <a
+                  href={`${withBasePath("/start")}#${journey.id}`}
+                  className="card group flex h-full flex-col gap-2 p-5 transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                >
+                  <h3 className="text-sm font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)]">
+                    {journey.question}
+                  </h3>
+                  <p className="hidden text-sm leading-6 text-[var(--color-text-secondary)] sm:block">{journey.summary}</p>
+                  <span className="mt-auto text-xs text-[var(--color-text-tertiary)]">{journey.steps.length} steps</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        <ProtocolTrackingSection compact currentPath="/" />
-
-        <section
-          aria-labelledby="compare-tile-heading"
-          className="card-flat p-6"
-        >
-          <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-            <div className="flex items-start gap-3">
-              <GitCompare size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)]" />
-              <div className="max-w-2xl">
-                <h2 id="compare-tile-heading" className="text-h2 text-[var(--color-text-primary)]">
-                  Compare tools side-by-side
-                </h2>
-                <p className="mt-2 text-body-sm text-[var(--color-text-secondary)]">
-                  {comparisonPairs.length} curated head-to-head comparisons across agent platforms, guardrails,
-                  and assistants — every governance dimension laid out column-by-column.
-                </p>
-                <ul className="mt-3 flex flex-wrap gap-2 text-xs text-[var(--color-text-secondary)]">
-                  {comparisonPairs.slice(0, 3).map((pair) => (
-                    <li
-                      key={pair.slug}
-                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-2.5 py-1"
-                    >
-                      {pair.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+        {recentHighImpact.length > 0 ? (
+          <section aria-labelledby="this-week-heading" className="card-flat p-6">
+            <div className="flex flex-wrap items-baseline justify-between gap-2">
+              <h2 id="this-week-heading" className="text-h2 text-[var(--color-text-primary)]">
+                What changed recently
+              </h2>
+              <a href={withBasePath("/updates")} className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline">
+                All updates
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </a>
             </div>
-            <a
-              href={withBasePath("/tools/compare")}
-              className="inline-flex shrink-0 items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-card)]"
-            >
-              Open comparisons
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          </div>
-        </section>
+            <ul className="mt-4 flex flex-col gap-4">
+              {recentHighImpact.map((update) => (
+                <li key={update.id} className="border-l-2 border-[var(--color-primary)] pl-4">
+                  <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
+                    {update.date} · {formatUpdateLabel(update.type)}
+                  </div>
+                  <a
+                    href={withBasePath(`/tools/${update.toolId}`)}
+                    className="mt-1 block font-semibold text-[var(--color-text-primary)] hover:text-[var(--color-primary)]"
+                  >
+                    {update.toolName}
+                  </a>
+                  <p className="mt-1 line-clamp-3 text-sm leading-6 text-[var(--color-text-secondary)] sm:line-clamp-none">{update.summary}</p>
+                  <a
+                    href={update.sourceUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open source for ${update.toolName} in a new tab`}
+                    className="mt-1 inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
+                  >
+                    Source
+                    <ArrowUpRight size={14} aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-        <section aria-labelledby="trust-tiles-heading" className="card-flat p-6">
-          <h2 id="trust-tiles-heading" className="text-h2 text-[var(--color-text-primary)]">
-            Built to be relied on
+        <section aria-labelledby="decide-heading" className="card-flat p-6">
+          <h2 id="decide-heading" className="text-h2 text-[var(--color-text-primary)]">
+            More ways to decide
           </h2>
           <p className="mt-2 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">
-            Every claim links to a primary source, nothing here can be bought, and the whole dataset is yours to take.
+            Every claim links to a primary source, no listing or ranking here can be bought, and the whole dataset is open.
           </p>
-          <div className="mt-5 grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="mt-5 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
             {[
+              {
+                href: "/tools/compare",
+                icon: GitCompare,
+                title: "Compare tools side by side",
+                body: `${comparisonPairs.length} head-to-head comparisons, every governance dimension column by column.`,
+              },
+              {
+                href: "/evaluate",
+                icon: ListChecks,
+                title: "Get a shortlist",
+                body: "Answer a few questions about your goal and constraints and get a ranked, source-backed shortlist.",
+              },
               {
                 href: "/eu-ai-act",
                 icon: Scale,
                 title: "EU AI Act tracker",
-                body: "Which obligations apply to your role and risk tier, from when — with a deadline calendar you can subscribe to.",
+                body: "Which obligations apply to your role and risk tier, and from when, with a subscribable deadline calendar.",
               },
               {
                 href: "/data",
                 icon: Database,
                 title: "Open data & API",
-                body: "The full dataset as versioned JSON, Atom feeds, and live README badges. No key, no tracking.",
-              },
-              {
-                href: "/impartiality",
-                icon: ShieldCheck,
-                title: "Nothing here can be bought",
-                body: "No listing fees, no sponsored placement, no paid badges. Corrections are settled by sources, not spend.",
+                body: "The full dataset as versioned JSON, Atom feeds and README badges. No key, no tracking.",
               },
             ].map(({ href, icon: Icon, title, body }) => (
               <a
@@ -303,67 +232,18 @@ export default function Home() {
                     {title}
                   </h3>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">{body}</p>
+                <p className="mt-2 hidden text-sm leading-6 text-[var(--color-text-secondary)] sm:block">{body}</p>
               </a>
             ))}
           </div>
+          <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
+            <ShieldCheck size={16} aria-hidden="true" className="mr-1 inline align-[-3px] text-[var(--color-text-secondary)]" />
+            <a href={withBasePath("/impartiality")} className="font-medium text-[var(--color-primary)] hover:underline">
+              Nothing here can be bought
+            </a>
+            : no listing fees, sponsored placement or paid badges.
+          </p>
         </section>
-
-        {latestUpdate ? (
-          <section className="card-flat p-5">
-            <div className="border-l-4 border-[var(--color-primary)] pl-4">
-              <div className="text-caption uppercase tracking-wide text-[var(--color-text-tertiary)]">
-                Latest update · {latestUpdate.date}
-              </div>
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wide text-[var(--color-text-secondary)]">
-                <span>{formatUpdateLabel(latestUpdate.category)}</span>
-                <span aria-hidden="true">•</span>
-                <span>{formatUpdateLabel(latestUpdate.type)}</span>
-                {latestUpdate.impact ? (
-                  <>
-                    <span aria-hidden="true">•</span>
-                    <span>{formatUpdateLabel(latestUpdate.impact)} impact</span>
-                  </>
-                ) : null}
-              </div>
-              <div className="mt-2 text-base font-semibold text-[var(--color-text-primary)]">{latestUpdate.title ?? latestUpdate.toolName}</div>
-              <div className="mt-1 text-sm font-medium text-[var(--color-text-secondary)]">{latestUpdate.toolName}</div>
-              <p className="mt-2 text-sm leading-6 text-[var(--color-text-secondary)]">
-                {latestUpdate.summary}
-              </p>
-              {latestUpdate.sourceTitle ? (
-                <p className="mt-3 text-sm text-[var(--color-text-secondary)]">
-                  Source: <span className="font-medium text-[var(--color-text-primary)]">{latestUpdate.sourceTitle}</span>
-                </p>
-              ) : null}
-              <div className="mt-4 flex flex-wrap gap-3">
-                <a
-                  className="inline-flex items-center gap-1 rounded-full bg-[var(--color-primary)] px-4 py-2 text-sm font-medium text-[var(--color-text-inverse)] transition hover:bg-[var(--color-accent-strong)]"
-                  href={withBasePath("/updates")}
-                >
-                  Open updates feed
-                </a>
-                <a
-                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline"
-                  href={latestUpdate.sourceUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Open source for ${latestUpdate.toolName} in a new tab`}
-                >
-                  Read source
-                  <ArrowUpRight size={16} />
-                </a>
-                <a
-                  className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-primary)] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
-                  href={`${withBasePath("/updates")}#auto-detected`}
-                >
-                  See auto-detected changes
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </section>
-        ) : null}
 
         <HubFaqs faqs={homeFaqs} />
       </main>

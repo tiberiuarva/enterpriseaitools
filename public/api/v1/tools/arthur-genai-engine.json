@@ -6,7 +6,10 @@
   "tool": {
     "id": "arthur-genai-engine",
     "name": "Arthur GenAI Engine",
-    "category": "governance",
+    "category": "control-planes",
+    "alsoCovers": [
+      "observability"
+    ],
     "type": "commercial",
     "vendor": "Arthur",
     "description": "Agent governance and discovery platform following Arthur AI's January 2026 GenAI Engine rename.",
@@ -22,7 +25,7 @@
     "status": "active",
     "statusNote": "Rebranded from Arthur AI to Arthur GenAI Engine and pivoted toward agent discovery and governance.",
     "tags": [
-      "governance",
+      "control-planes",
       "commercial",
       "arthur"
     ],

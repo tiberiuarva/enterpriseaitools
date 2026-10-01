@@ -81,6 +81,7 @@ export type Tool = {
   name: string;
   aliases?: string[];
   category: ToolCategory;
+  alsoCovers?: ToolCategory[];
   subcategory?: string;
   type: ToolType;
   vendor?: string;

@@ -2,8 +2,8 @@ import platformsData from "@/data/platforms.json";
 import snapshotDiffsData from "@/data/snapshot-diffs.json";
 import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
-import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
 import { filterToolsByCategory, latestIsoDate } from "@/lib/dataset-metrics";
+import { countUpdatesByTool } from "@/lib/stacks";
 import type { Platform, SnapshotDiffEvent, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
 export const tools = toolsData.tools as Tool[];
@@ -41,10 +41,6 @@ export const snapshotDiffEvents = (snapshotDiffsData.events as SnapshotDiffEvent
 export const snapshotDiffsGeneratedAt = snapshotDiffsData.generatedAt ?? null;
 export const snapshotCount = snapshotDiffsData.snapshotCount ?? 0;
 
-export const categoryDescriptions = Object.fromEntries(
-  CATEGORY_ORDER.map((category) => [category, CATEGORIES[category].summary]),
-) as Record<ToolCategory, string>;
-
 export function getToolsByCategory(category: ToolCategory) {
   return filterToolsByCategory(tools, category);
 }
@@ -63,3 +59,6 @@ export function getPlatformsForCategory(category: ToolCategory) {
     categoryKey.some((key) => key in platform.categoryMapping),
   );
 }
+
+// Update-feed activity per tool, used to pick recognisable preview tools.
+export const updateCountByTool = countUpdatesByTool(updates);

@@ -7,6 +7,9 @@
     "id": "prisma-airs",
     "name": "Prisma AIRS",
     "category": "governance",
+    "alsoCovers": [
+      "control-planes"
+    ],
     "type": "vendor",
     "vendor": "Palo Alto Networks",
     "description": "Palo Alto Networks AI security platform for agent discovery, model scanning, red teaming, posture and runtime protection.",

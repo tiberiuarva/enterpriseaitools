@@ -7,12 +7,12 @@ Generated from current repo data via `npm run report-logo-audit`. No wall-clock 
 | Category | Total | Fallback | Service icon | Project logo | Official product | Official vendor |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | agents | 17 | 3 (18%) | 4 | 9 | 0 | 1 |
-| orchestration | 12 | 1 (8%) | 5 | 5 | 0 | 1 |
-| gateways | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
-| observability | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
-| control-planes | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
+| orchestration | 11 | 1 (9%) | 4 | 5 | 0 | 1 |
+| control-planes | 9 | 7 (78%) | 1 | 1 | 0 | 0 |
 | agent-identity | 10 | 10 (100%) | 0 | 0 | 0 | 0 |
-| governance | 14 | 4 (29%) | 3 | 4 | 0 | 3 |
+| governance | 12 | 4 (33%) | 3 | 3 | 0 | 2 |
+| observability | 7 | 7 (100%) | 0 | 0 | 0 | 0 |
+| gateways | 8 | 7 (88%) | 0 | 0 | 0 | 1 |
 | assistants | 19 | 7 (37%) | 9 | 1 | 0 | 2 |
 | always-on-agents | 8 | 8 (100%) | 0 | 0 | 0 | 0 |
 | platforms | 3 | 0 (0%) | 3 | 0 | 0 | 0 |
@@ -54,7 +54,7 @@ This tracks the rendered asset format. Fallback rows with no rendered image asse
 
 These rows are not automatically wrong, but they are where the system is still relying on family-brand or shared-platform reuse instead of distinct product marks.
 
-- `/logos/databricks.png` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity Gateway (governance), Databricks Genie Code (assistants), Databricks Genie Agents (assistants)
+- `/logos/databricks.png` → Databricks Mosaic AI Agent Framework (agents), Databricks Lakeflow Jobs (orchestration), Databricks Unity Gateway (gateways), Databricks Genie Code (assistants), Databricks Genie Agents (assistants)
 - `/logos/amazon-q.svg` → Amazon Q Developer (assistants), Amazon Q Business (assistants), Amazon Q Apps (assistants)
 - `/logos/aws-bedrock.svg` → Amazon Bedrock Agents (agents), Amazon Bedrock Guardrails (governance)
 - `/logos/gemini-shared.png` → Gemini for Workspace (assistants), Gemini Enterprise (assistants)

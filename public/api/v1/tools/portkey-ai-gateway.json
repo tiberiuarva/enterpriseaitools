@@ -7,6 +7,10 @@
     "id": "portkey-ai-gateway",
     "name": "Portkey AI Gateway",
     "category": "gateways",
+    "alsoCovers": [
+      "governance",
+      "observability"
+    ],
     "type": "opensource",
     "vendor": "Portkey (Palo Alto Networks)",
     "description": "Open-source AI gateway that routes to 250+ LLMs with fallbacks, caching and 50+ guardrails; managed SaaS and private-cloud options.",

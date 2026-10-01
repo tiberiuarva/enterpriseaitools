@@ -7,6 +7,9 @@
     "id": "litellm",
     "name": "LiteLLM",
     "category": "gateways",
+    "alsoCovers": [
+      "governance"
+    ],
     "type": "opensource",
     "vendor": "BerriAI",
     "description": "Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.",

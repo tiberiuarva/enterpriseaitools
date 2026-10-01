@@ -22,11 +22,11 @@ const publicDir = path.resolve("public");
 const CATEGORY_LABELS = {
   agents: "AI Agent Frameworks",
   orchestration: "AI Orchestration",
-  gateways: "AI & MCP Gateways",
-  observability: "AI Observability & Evaluation",
-  "control-planes": "Agent Control Planes",
+  "control-planes": "Agent Registry & Management",
   "agent-identity": "Agent Identity & Access",
   governance: "AI Guardrails & Agent Security",
+  observability: "AI Observability & Evaluation",
+  gateways: "AI & MCP Gateways",
   assistants: "AI Assistants",
   "always-on-agents": "Always-on AI Agents",
 };
@@ -371,17 +371,21 @@ Edited through a regulated-enterprise delivery lens: governance posture, deploym
 Every tracked tool is indexed at ${siteUrl}/tools/ and has its own page at \`/tools/<id>\` carrying the full source-backed governance posture (data residency, deployment model, audit logging, SOC 2 / ISO 27001 / ISO 42001, EU AI Act role, license risk), with a primary source URL on every asserted claim.
 
 ## Hub pages
-- [Home](${siteUrl}/): overview of the ${Object.keys(CATEGORY_LABELS).length} tracked categories and the foundation platforms.
+- [Home](${siteUrl}/): stack map of the ${Object.keys(CATEGORY_LABELS).length} tracked categories in three layers (build & orchestrate, control plane, use) on top of the foundation platforms.
 - [AI Platforms & Model Hubs](${siteUrl}/platforms/): Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform (formerly Google Vertex AI).
-- [AI Agent Frameworks](${siteUrl}/agents/): cloud agent platforms + open-source frameworks.
-- [AI Orchestration](${siteUrl}/orchestration/): workflow engines and automation.
-- [AI & MCP Gateways](${siteUrl}/gateways/): LLM routing, cost control, and MCP tool governance.
-- [AI Observability & Evaluation](${siteUrl}/observability/): tracing, evals, and cost monitoring.
-- [Agent Control Planes](${siteUrl}/control-planes/): registry, lifecycle, and policy across agent fleets.
-- [Agent Identity & Access](${siteUrl}/agent-identity/): identities and scoped access for AI agents.
-- [AI Guardrails & Agent Security](${siteUrl}/governance/): guardrails, content safety, agent security posture.
-- [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
-- [Always-on AI Agents](${siteUrl}/always-on-agents/): persistent personal and team agents, with their security record.
+- Build & orchestrate ([${siteUrl}/build/](${siteUrl}/build/)):
+  - [AI Agent Frameworks](${siteUrl}/agents/): cloud agent platforms + open-source frameworks.
+  - [AI Orchestration](${siteUrl}/orchestration/): workflow engines and automation.
+- Control plane: govern, secure, observe ([${siteUrl}/control-plane/](${siteUrl}/control-plane/)):
+  - [Agent Registry & Management](${siteUrl}/control-planes/): agent inventory, ownership, lifecycle, fleet policy.
+  - [Agent Identity & Access](${siteUrl}/agent-identity/): identities and scoped access for AI agents.
+  - [AI Guardrails & Agent Security](${siteUrl}/governance/): guardrails, content safety, agent security posture.
+  - [AI Observability & Evaluation](${siteUrl}/observability/): tracing, evals, and cost monitoring.
+  - [AI & MCP Gateways](${siteUrl}/gateways/): LLM routing, cost control, and MCP tool governance.
+- Use ([${siteUrl}/use/](${siteUrl}/use/)):
+  - [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
+  - [Always-on AI Agents](${siteUrl}/always-on-agents/): persistent personal and team agents, with their security record.
+- Vendor stacks: what Microsoft ([${siteUrl}/stacks/microsoft/](${siteUrl}/stacks/microsoft/)), AWS ([${siteUrl}/stacks/aws/](${siteUrl}/stacks/aws/)) and Google ([${siteUrl}/stacks/google/](${siteUrl}/stacks/google/)) offer at each layer.
 - [Weekly updates](${siteUrl}/updates/): high-impact market intelligence + release log.
 - [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.

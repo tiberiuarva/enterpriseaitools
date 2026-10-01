@@ -1,7 +1,7 @@
 import { strict as assert } from "node:assert";
 import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
-import { CATEGORIES, CATEGORY_ORDER } from "./categories.ts";
+import { CATEGORIES, CATEGORY_ORDER, STACK_LAYERS, layerForCategory } from "./categories.ts";
 
 const keys = Object.keys(CATEGORIES);
 
@@ -65,6 +65,25 @@ describe("categories", () => {
       for (const category of CATEGORY_ORDER) {
         assert.ok(script.includes(`"${category}"`), `${file} is missing category ${category}`);
       }
+    }
+  });
+
+  it("stack layers cover every category exactly once, in CATEGORY_ORDER", () => {
+    assert.deepEqual(
+      STACK_LAYERS.flatMap((layer) => layer.categories),
+      [...CATEGORY_ORDER],
+    );
+    for (const category of CATEGORY_ORDER) {
+      assert.ok(layerForCategory(category).categories.includes(category));
+    }
+  });
+
+  it("stack layers have unique ids and hrefs and fitting meta descriptions", () => {
+    assert.equal(new Set(STACK_LAYERS.map((layer) => layer.id)).size, STACK_LAYERS.length);
+    assert.equal(new Set(STACK_LAYERS.map((layer) => layer.href)).size, STACK_LAYERS.length);
+    for (const layer of STACK_LAYERS) {
+      assert.ok(layer.metaDescription.length >= 90 && layer.metaDescription.length <= 160, `${layer.id} metaDescription is ${layer.metaDescription.length} chars`);
+      assert.ok(!(CATEGORY_ORDER as readonly string[]).includes(layer.href.slice(1)), `${layer.href} collides with a category hub`);
     }
   });
 });

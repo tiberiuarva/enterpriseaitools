@@ -1,5 +1,7 @@
 import { ConsentSettingsButton } from "@/components/consent-settings-button";
+import { CATEGORIES, STACK_LAYERS } from "@/lib/categories";
 import { githubRepoUrl, githubStargazersUrl, withBasePath } from "@/lib/site";
+import { VENDOR_STACKS } from "@/lib/stacks";
 
 type FooterColumn = {
   title: string;
@@ -7,24 +9,24 @@ type FooterColumn = {
 };
 
 const columns: FooterColumn[] = [
-  {
-    title: "Catalog",
+  ...STACK_LAYERS.map((layer) => ({
+    title: layer.label,
     links: [
-      { href: "/platforms", label: "Platforms" },
-      { href: "/agents", label: "Agents" },
-      { href: "/orchestration", label: "Orchestration" },
-      { href: "/gateways", label: "AI gateways" },
-      { href: "/observability", label: "Observability" },
-      { href: "/control-planes", label: "Control planes" },
-      { href: "/agent-identity", label: "Agent identity" },
-      { href: "/governance", label: "Guardrails & security" },
-      { href: "/assistants", label: "Assistants" },
-      { href: "/always-on-agents", label: "Always-on agents" },
+      { href: layer.href, label: "Overview" },
+      ...layer.categories.map((category) => ({ href: `/${category}`, label: CATEGORIES[category].navLabel })),
+    ],
+  })),
+  {
+    title: "Foundation",
+    links: [
+      { href: "/platforms", label: "Cloud AI platforms" },
+      ...VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
     ],
   },
   {
     title: "Decide",
     links: [
+      { href: "/start", label: "Start with your question" },
       { href: "/tools", label: "All tracked tools" },
       { href: "/tools/compare", label: "Compare tools" },
       { href: "/evaluate", label: "Help me evaluate" },
@@ -61,6 +63,10 @@ const columns: FooterColumn[] = [
   },
 ];
 
+function slugify(value: string) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 type FooterProps = {
   lastUpdated: string;
 };
@@ -69,11 +75,11 @@ export function Footer({ lastUpdated }: FooterProps) {
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg-primary)]">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {columns.map((column) => (
-            <nav key={column.title} aria-labelledby={`footer-${column.title.toLowerCase()}`}>
+            <nav key={column.title} aria-labelledby={`footer-${slugify(column.title)}`}>
               <h2
-                id={`footer-${column.title.toLowerCase()}`}
+                id={`footer-${slugify(column.title)}`}
                 className="text-caption uppercase tracking-[0.08em] text-[var(--color-text-tertiary)]"
               >
                 {column.title}

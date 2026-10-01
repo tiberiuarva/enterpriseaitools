@@ -7,6 +7,10 @@
     "id": "mulesoft-agent-fabric",
     "name": "MuleSoft Agent Fabric",
     "category": "control-planes",
+    "alsoCovers": [
+      "gateways",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "Salesforce (MuleSoft)",
     "description": "MuleSoft suite to register, route, govern and visualize agents, MCP servers and APIs across vendors using MCP and A2A.",

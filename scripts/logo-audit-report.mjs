@@ -33,11 +33,11 @@ if (!generatedAt) {
 const categoryOrder = [
   "agents",
   "orchestration",
-  "gateways",
-  "observability",
   "control-planes",
   "agent-identity",
   "governance",
+  "observability",
+  "gateways",
   "assistants",
   "always-on-agents",
   "platforms",

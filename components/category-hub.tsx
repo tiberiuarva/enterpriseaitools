@@ -3,7 +3,7 @@ import { HomeShell } from "@/components/home-shell";
 import { CATEGORIES } from "@/lib/categories";
 import { categoryComparisons } from "@/lib/category-comparisons";
 import { getComparisonsForToolIds } from "@/lib/comparisons";
-import { getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated } from "@/lib/data";
+import { getPlatformsForCategory, getToolsByCategory, getUpdatesByCategory, lastUpdated, tools as allTools } from "@/lib/data";
 import { categoryFaqs } from "@/lib/hub-faqs";
 import { buildMetadata } from "@/lib/metadata";
 import type { ToolCategory } from "@/lib/types";
@@ -38,6 +38,7 @@ export function CategoryHub({ category }: { category: ToolCategory }) {
         enableFiltering
         faqs={categoryFaqs[category]}
         relatedPairs={getComparisonsForToolIds(tools.map((tool) => tool.id))}
+        alsoCoveredBy={allTools.filter((tool) => tool.alsoCovers?.includes(category))}
       />
     </HomeShell>
   );

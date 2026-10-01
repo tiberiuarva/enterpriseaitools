@@ -7,6 +7,10 @@
     "id": "ibm-watsonx-orchestrate",
     "name": "IBM watsonx Orchestrate",
     "category": "control-planes",
+    "alsoCovers": [
+      "agents",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "IBM",
     "description": "IBM agent platform whose Agentic Control Plane adds operations dashboards, policy and access governance, and a shared agent catalog.",

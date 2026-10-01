@@ -6,7 +6,10 @@
   "tool": {
     "id": "paperclip",
     "name": "Paperclip",
-    "category": "orchestration",
+    "category": "control-planes",
+    "alsoCovers": [
+      "orchestration"
+    ],
     "type": "opensource",
     "vendor": "Paperclip",
     "description": "Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.",
@@ -25,7 +28,7 @@
     "pricingModel": "free",
     "status": "active",
     "tags": [
-      "orchestration",
+      "control-planes",
       "opensource",
       "multi-agent",
       "governance"

@@ -7,6 +7,9 @@
     "id": "workday-agent-system-of-record",
     "name": "Workday Agent System of Record",
     "category": "control-planes",
+    "alsoCovers": [
+      "gateways"
+    ],
     "type": "vendor",
     "vendor": "Workday",
     "description": "Workday hub to register, govern and measure Workday, customer and partner AI agents alongside people and financial data.",

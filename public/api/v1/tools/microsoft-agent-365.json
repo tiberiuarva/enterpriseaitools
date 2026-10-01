@@ -7,6 +7,11 @@
     "id": "microsoft-agent-365",
     "name": "Microsoft Agent 365",
     "category": "control-planes",
+    "alsoCovers": [
+      "agent-identity",
+      "governance",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "Microsoft",
     "description": "Control plane to observe, govern and secure an organization's AI agents via a central registry, Entra, Purview and Defender.",

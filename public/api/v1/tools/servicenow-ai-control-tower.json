@@ -7,6 +7,10 @@
     "id": "servicenow-ai-control-tower",
     "name": "ServiceNow AI Control Tower",
     "category": "control-planes",
+    "alsoCovers": [
+      "governance",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "ServiceNow",
     "description": "ServiceNow hub to discover, observe, govern, secure and measure AI models and agents, including those from other platforms.",

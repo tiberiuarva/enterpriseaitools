@@ -12,6 +12,7 @@ import { ToolCard } from "@/components/tool-card";
 import { VendorToolsSection } from "@/components/vendor-tools-section";
 import { WarningBox } from "@/components/warning-box";
 import { assistantsComparisons, type AssistantsSubcategory } from "@/lib/assistants-comparisons";
+import { layerForCategory } from "@/lib/categories";
 import { filterTools, getAvailableLicenses, type CategoryFilterState } from "@/lib/category-filters";
 import type { ComparisonPair } from "@/lib/comparisons";
 import type { HubFaq } from "@/lib/hub-faqs";
@@ -172,9 +173,11 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
   }
 
   const pageUrl = `${siteUrl}/assistants/`;
+  const useLayer = layerForCategory("assistants");
   const jsonLd = [
     buildBreadcrumbJsonLd([
       { name: "Home", url: `${siteUrl}/` },
+      { name: useLayer.title, url: `${siteUrl}${useLayer.href}/` },
       { name: title, url: pageUrl },
     ]),
     buildCollectionPageJsonLd({
@@ -194,7 +197,13 @@ export function AssistantsPageClient({ title, description, introParagraphs, tool
           <div className="flex items-start gap-3">
             <BriefcaseBusiness size={20} aria-hidden="true" className="mt-2 shrink-0 text-[var(--color-text-secondary)]" />
             <div className="max-w-2xl">
-              <h1 className="text-h1 text-[var(--color-text-primary)]">{title}</h1>
+              <a
+                href={withBasePath(useLayer.href)}
+                className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)] hover:text-[var(--color-primary)]"
+              >
+                {useLayer.label} layer
+              </a>
+              <h1 className="mt-1 text-h1 text-[var(--color-text-primary)]">{title}</h1>
               <p className="mt-3 text-body text-[var(--color-text-secondary)]">{description}</p>
               {introParagraphs && introParagraphs.length > 0 ? (
                 <div className="mt-3 space-y-3 text-body-sm text-[var(--color-text-secondary)]">

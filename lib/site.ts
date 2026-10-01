@@ -3,22 +3,26 @@ export const basePath = rawBasePath && rawBasePath !== '/' ? rawBasePath.replace
 
 export const navItems = [
   { href: '/', label: 'Home' },
-  { href: '/platforms', label: 'Platforms' },
-  { href: '/agents', label: 'Agents' },
-  { href: '/orchestration', label: 'Orchestration' },
-  { href: '/gateways', label: 'AI gateways' },
-  { href: '/observability', label: 'Observability' },
-  { href: '/control-planes', label: 'Control planes' },
-  { href: '/agent-identity', label: 'Agent identity' },
+  { href: '/platforms', label: 'Cloud AI platforms' },
+  { href: '/build', label: 'Build & orchestrate' },
+  { href: '/agents', label: 'Agent frameworks' },
+  { href: '/orchestration', label: 'Workflows & orchestration' },
+  { href: '/control-plane', label: 'Control plane' },
+  { href: '/control-planes', label: 'Registry & management' },
+  { href: '/agent-identity', label: 'Identity & access' },
   { href: '/governance', label: 'Guardrails & security' },
-  { href: '/assistants', label: 'Assistants' },
+  { href: '/observability', label: 'Monitoring & evaluation' },
+  { href: '/gateways', label: 'AI & MCP gateways' },
+  { href: '/use', label: 'Use' },
+  { href: '/assistants', label: 'Assistants & copilots' },
   { href: '/always-on-agents', label: 'Always-on agents' },
+  { href: '/stacks/microsoft', label: 'Microsoft stack' },
+  { href: '/stacks/aws', label: 'AWS stack' },
+  { href: '/stacks/google', label: 'Google stack' },
+  { href: '/start', label: 'Start with your question' },
   { href: '/evaluate', label: 'Evaluate' },
-  // Intentionally not in the desktop categoryNav/utility groups (header.tsx):
-  // the full index and comparison intent are both contextual rather than
-  // navigational, so these stay out of the desktop bar (Hick's law) and surface
-  // only under the mobile "More" group via the uncategorizedLinks filter.
-  // Contextual cross-links and the footer carry desktop discovery.
+  // The full index and comparison pages are contextual rather than
+  // navigational: header.tsx shows them only in the mobile "More" group.
   { href: '/tools', label: 'All tracked tools' },
   { href: '/tools/compare', label: 'Compare tools' },
   { href: '/updates', label: 'Updates' },

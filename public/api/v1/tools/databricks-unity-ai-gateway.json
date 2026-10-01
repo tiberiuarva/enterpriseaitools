@@ -6,7 +6,11 @@
   "tool": {
     "id": "databricks-unity-ai-gateway",
     "name": "Databricks Unity Gateway",
-    "category": "governance",
+    "category": "gateways",
+    "alsoCovers": [
+      "governance",
+      "observability"
+    ],
     "type": "vendor",
     "vendor": "Databricks",
     "description": "Central AI governance layer for LLM endpoints, agents, MCP servers, and coding agents on Databricks.",
@@ -31,7 +35,7 @@
     ],
     "status": "active",
     "tags": [
-      "governance",
+      "gateways",
       "databricks",
       "mcp",
       "guardrails",

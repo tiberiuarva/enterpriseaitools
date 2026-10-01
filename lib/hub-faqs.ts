@@ -9,7 +9,7 @@ export const homeFaqs: HubFaq[] = [
   {
     question: "What does enterpriseai.tools track?",
     answer:
-      "Microsoft Foundry, Amazon Bedrock, and the Gemini Enterprise Agent Platform as the cloud foundation layer, plus the leading agent, orchestration, governance, and assistant tools that enterprises pair with them — each tracked record carries a verifiable source URL.",
+      "Microsoft Foundry, Amazon Bedrock, and the Gemini Enterprise Agent Platform as the cloud foundation layer, plus the leading tools to build, control and use AI agents that enterprises pair with them — each tracked record carries a verifiable source URL.",
   },
   {
     question: "How often is the data updated?",
@@ -91,7 +91,7 @@ export const governanceFaqs: HubFaq[] = [
   {
     question: "What does the guardrails & agent security hub cover?",
     answer:
-      "Runtime guardrails, content safety filters, model policy controls, and agent security posture tools — the layer that decides whether a prompt, output, or agent action is safe right now. Fleet-wide agent inventory lives under Agent Control Planes, and agent identities under Agent Identity & Access. Each per-tool page records data residency, audit logging, SOC 2 / ISO 27001 / ISO 42001, and EU AI Act role.",
+      "Runtime guardrails, content safety filters, model policy controls, and agent security posture tools — the layer that decides whether a prompt, output, or agent action is safe right now. Fleet-wide agent inventory lives under Agent Registry & Management and agent identities under Agent Identity & Access, both in the same control plane layer. Each per-tool page records data residency, audit logging, SOC 2 / ISO 27001 / ISO 42001, and EU AI Act role.",
   },
   {
     question: "Are EU AI Act risk-tier assignments tracked per tool?",
@@ -143,9 +143,9 @@ export const alwaysOnAgentsFaqs: HubFaq[] = [
 
 export const controlPlanesFaqs: HubFaq[] = [
   {
-    question: "What is an agent control plane?",
+    question: "How does this hub relate to the agent control plane?",
     answer:
-      "The management layer for a fleet of agents: a registry of which agents exist and who owns them, lifecycle controls to publish, pause or retire them, policy that applies across vendors, and observability of health, usage, and cost. Analysts now evaluate it as a market of its own, and vendors such as Microsoft (Agent 365) and IBM use the same term.",
+      "The control plane is the whole layer that governs, secures and observes agents: registry and management, identity and access, guardrails, monitoring, and gateways. This hub covers its management core, a registry of which agents exist and who owns them, lifecycle controls to publish, pause or retire them, and fleet-wide policy. Suites sold as a complete control plane, such as Microsoft Agent 365, are listed here and tagged with the other categories they also cover.",
   },
   {
     question: "Do I need one if I only use one cloud platform?",
@@ -155,7 +155,7 @@ export const controlPlanesFaqs: HubFaq[] = [
   {
     question: "How does this relate to agent identity and guardrails?",
     answer:
-      "Control planes answer which agents exist and what policy applies across the fleet. Agent identity tools answer who an agent is and what it may access. Guardrails answer whether a specific prompt, output, or action is safe right now. Many products span two layers; each is listed once under its primary purpose.",
+      "Registry and management answers which agents exist and what policy applies across the fleet. Identity tools answer who an agent is and what it may access. Guardrails answer whether a specific prompt, output, or action is safe right now. All three sit in the control plane; a product is listed once under its main function and tagged with any others it covers.",
   },
 ];
 
@@ -173,7 +173,7 @@ export const agentIdentityFaqs: HubFaq[] = [
   {
     question: "Who usually owns this purchase?",
     answer:
-      "The identity and access management team or the CISO, not the AI platform team — which is why it is tracked separately from agent control planes. Most vendors here extend an existing identity provider, governance, or privileged-access product to agents.",
+      "The identity and access management team or the CISO, not the AI platform team — which is why it is tracked separately from agent registry and management tools. Most vendors here extend an existing identity provider, governance, or privileged-access product to agents.",
   },
 ];
 
