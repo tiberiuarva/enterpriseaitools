@@ -1,4 +1,4 @@
-import { CATEGORIES, CATEGORY_ORDER, STACK_LAYERS } from "@/lib/categories";
+import { CATEGORIES, CATEGORY_ORDER, FOUNDATION_LINK, STACK_LAYERS } from "@/lib/categories";
 import { platforms, tools } from "@/lib/data";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
@@ -81,6 +81,11 @@ const pageEntries: Array<Pick<SearchEntry, "label" | "keywords"> & { path: strin
     path: "/stacks",
     label: "Enterprise AI stacks by vendor",
     keywords: ["vendor stack", "microsoft", "aws", "google", "compare vendors"],
+  },
+  {
+    path: FOUNDATION_LINK.href,
+    label: FOUNDATION_LINK.title,
+    keywords: ["foundation", "cloud platforms", "foundry", "bedrock", "vertex"],
   },
   ...STACK_LAYERS.map((layer) => ({
     path: layer.href,

@@ -105,31 +105,22 @@ export function CategoryPage({ category, title, description, introParagraphs, ic
             </div>
           </dl>
         </div>
+        {alsoCoveredBy.length > 0 ? (
+          <p className="mt-6 border-t border-[var(--color-border)] pt-4 text-sm leading-6 text-[var(--color-text-secondary)]">
+            <span className="font-medium text-[var(--color-text-primary)]">Also covered by suites listed elsewhere: </span>
+            {alsoCoveredBy.map((tool, index) => (
+              <span key={tool.id}>
+                {index > 0 ? ", " : null}
+                <a href={withBasePath(`/tools/${tool.id}`)} className="text-[var(--color-primary)] hover:underline">
+                  {tool.name}
+                </a>{" "}
+                ({CATEGORIES[tool.category].navLabel})
+              </span>
+            ))}
+          </p>
+        ) : null}
       </section>
 
-      {alsoCoveredBy.length > 0 ? (
-        <section aria-labelledby="also-covers-heading" className="card-flat p-6">
-          <h2 id="also-covers-heading" className="text-lg font-semibold">
-            Also covers this
-          </h2>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
-            Suites listed under another category that include this capability too.
-          </p>
-          <ul className="mt-4 flex flex-wrap gap-2">
-            {alsoCoveredBy.map((tool) => (
-              <li key={tool.id}>
-                <a
-                  href={withBasePath(`/tools/${tool.id}`)}
-                  className="inline-flex flex-col rounded-xl border border-[var(--color-border)] px-3 py-2 text-sm transition hover:border-[var(--color-primary)]"
-                >
-                  <span className="font-medium text-[var(--color-text-primary)]">{tool.name}</span>
-                  <span className="text-xs text-[var(--color-text-secondary)]">{CATEGORIES[tool.category].navLabel}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
 
       {enableFiltering ? (
         <FilteredCategorySections

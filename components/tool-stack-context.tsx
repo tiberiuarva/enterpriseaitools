@@ -67,7 +67,7 @@ export function ToolStackContext({ tool, tools }: ToolStackContextProps) {
 
       {pairs.length > 0 ? (
         <div className="mt-5">
-          <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Pairs with, from {tool.vendor}</h3>
+          <h3 className="text-sm font-semibold text-[var(--color-text-primary)]">Pairs with, from {vendorStack?.name ?? tool.vendor}</h3>
           <ul className="mt-2 flex flex-wrap gap-2">
             {pairs.map((pair) => (
               <li key={pair.id}>

@@ -5,7 +5,7 @@ import { CATEGORIES, CONTROL_PLANE_FRAMING, getStackLayer, type LayerId } from "
 import { lastUpdated, tools, updateCountByTool, updates } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
-import { previewTools, suitesSpanningLayer } from "@/lib/stacks";
+import { isCurrentTool, previewTools, suitesSpanningLayer } from "@/lib/stacks";
 
 export function buildLayerMetadata(id: LayerId) {
   const layer = getStackLayer(id);
@@ -36,7 +36,7 @@ export function LayerPage({ id }: { id: LayerId }) {
           <h1 className="mt-3 text-h1 text-[var(--color-text-primary)]">{layer.title}</h1>
           <p className="mt-3 max-w-3xl text-body text-[var(--color-text-secondary)]">{layer.intro}</p>
           <p className="mt-4 text-sm text-[var(--color-text-secondary)]">
-            {layerTools.length} tools in {layer.categories.length} categories ·{" "}
+            {layerTools.filter(isCurrentTool).length} current tools in {layer.categories.length} categories ·{" "}
             <a href={withBasePath("/")} className="text-[var(--color-primary)] hover:underline">
               see the whole stack
             </a>
@@ -50,7 +50,7 @@ export function LayerPage({ id }: { id: LayerId }) {
           <ul className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
             {layer.categories.map((category) => {
               const meta = CATEGORIES[category];
-              const count = tools.filter((tool) => tool.category === category).length;
+              const count = tools.filter((tool) => tool.category === category && isCurrentTool(tool)).length;
               const examples = previewTools(tools, category, 3, updateCountByTool);
               return (
                 <li key={category} className="card-flat flex flex-col gap-3 p-5">

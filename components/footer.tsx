@@ -1,5 +1,5 @@
 import { ConsentSettingsButton } from "@/components/consent-settings-button";
-import { CATEGORIES, STACK_LAYERS } from "@/lib/categories";
+import { CATEGORIES, FOUNDATION_LINK, STACK_LAYERS } from "@/lib/categories";
 import { githubRepoUrl, githubStargazersUrl, withBasePath } from "@/lib/site";
 import { VENDOR_STACKS } from "@/lib/stacks";
 
@@ -17,9 +17,9 @@ const columns: FooterColumn[] = [
     ],
   })),
   {
-    title: "Foundation",
+    title: FOUNDATION_LINK.label,
     links: [
-      { href: "/platforms", label: "Cloud AI platforms" },
+      { href: FOUNDATION_LINK.href, label: FOUNDATION_LINK.title },
       { href: "/stacks", label: "All vendor stacks" },
       ...VENDOR_STACKS.map((stack) => ({ href: `/stacks/${stack.slug}`, label: `${stack.name} stack` })),
     ],

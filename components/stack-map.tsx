@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CATEGORIES, FOUNDATION_LINK, STACK_LAYERS, type LayerId } from "@/lib/categories";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
-import { VENDOR_STACKS, buildVendorStack, previewTools, type VendorStack } from "@/lib/stacks";
+import { VENDOR_STACKS, buildVendorStack, isCurrentTool, previewTools, type VendorStack } from "@/lib/stacks";
 import type { Platform, Tool } from "@/lib/types";
 
 type StackMapProps = {
@@ -45,7 +45,7 @@ export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h
 
   return (
     <div className="flex flex-col gap-3">
-      <ol className="flex flex-col gap-3" aria-label={vendor ? `${vendor.name} products by stack layer` : "Enterprise AI stack layers"}>
+      <ul className="flex flex-col gap-3" aria-label={vendor ? `${vendor.name} products by stack layer` : "Enterprise AI stack layers"}>
         {[...STACK_LAYERS].reverse().map((layer) => {
           const cells = vendorRows?.find((row) => row.layer.id === layer.id)?.cells;
           return (
@@ -63,7 +63,7 @@ export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h
                 <ul className="grid min-w-0 flex-1 grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
                   {layer.categories.map((category) => {
                     const meta = CATEGORIES[category];
-                    const total = tools.filter((tool) => tool.category === category).length;
+                    const total = tools.filter((tool) => tool.category === category && isCurrentTool(tool)).length;
                     const shown = cells ? cells.find((cell) => cell.category === category)?.tools ?? [] : previewTools(tools, category, 3, activity);
                     return (
                       <li key={category} className="card-flat flex min-w-0 flex-col gap-2 px-3 py-2.5 sm:py-3">
@@ -122,7 +122,7 @@ export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h
             </ul>
           </div>
         </li>
-      </ol>
+      </ul>
       {!vendor ? (
         <p className="text-body-sm text-[var(--color-text-secondary)]">
           See one vendor across every layer:{" "}

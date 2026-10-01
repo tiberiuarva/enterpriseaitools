@@ -1,5 +1,5 @@
 import { siteUrl as defaultSiteUrl } from "@/lib/metadata";
-import { CATEGORIES } from "@/lib/categories";
+import { SCHEMA_APPLICATION_CATEGORY } from "@/lib/application-categories";
 import type { Platform, Tool } from "@/lib/types";
 
 type JsonLdValue = Record<string, unknown> | Array<Record<string, unknown>>;
@@ -75,7 +75,7 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
         "@type": "SoftwareApplication",
         name: tool.name,
         description: tool.description,
-        applicationCategory: CATEGORIES[tool.category].schemaApplicationCategory,
+        applicationCategory: SCHEMA_APPLICATION_CATEGORY[tool.category],
         operatingSystem: "Any",
         ...(tool.version ? { softwareVersion: tool.version } : {}),
         ...(tool.docsUrl ? { url: tool.docsUrl } : {}),
@@ -119,7 +119,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
     "@id": `${url}#software`,
     name: tool.name,
     description: tool.description,
-    applicationCategory: CATEGORIES[tool.category].schemaApplicationCategory,
+    applicationCategory: SCHEMA_APPLICATION_CATEGORY[tool.category],
     operatingSystem: "Any",
     url,
     ...(tool.governance?.reviewedAt ? { dateModified: normalizeJsonLdDate(tool.governance.reviewedAt) } : {}),

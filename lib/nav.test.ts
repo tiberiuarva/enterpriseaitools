@@ -20,4 +20,8 @@ describe("navItems", () => {
       assert.ok(hrefs.includes(href), `navItems is missing ${href}`);
     }
   });
+
+  it("starts with Home, which the header uses as its brand link", () => {
+    assert.deepEqual(navItems[0], { href: "/", label: "Home" });
+  });
 });

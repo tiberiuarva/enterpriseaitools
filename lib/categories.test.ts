@@ -27,7 +27,7 @@ describe("categories", () => {
   it("labels are non-empty and icons are unique", () => {
     for (const category of CATEGORY_ORDER) {
       const meta = CATEGORIES[category];
-      for (const field of ["navLabel", "title", "summary", "intro", "evaluateLabel", "schemaApplicationCategory"] as const) {
+      for (const field of ["navLabel", "title", "summary", "intro", "evaluateLabel"] as const) {
         assert.ok(meta[field].trim().length > 0, `${category}.${field} is empty`);
       }
     }

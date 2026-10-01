@@ -3,7 +3,6 @@ export const basePath = rawBasePath && rawBasePath !== '/' ? rawBasePath.replace
 
 export const githubRepoUrl = 'https://github.com/tiberiuarva/enterpriseaitools';
 export const githubStargazersUrl = 'https://github.com/tiberiuarva/enterpriseaitools/stargazers';
-export const platformPageHref = '/platforms';
 
 // A final path segment carrying an extension is a file (`/updates.xml`,
 // `/logos/n8n.svg`, `/api/v1/index.json`), never a page directory.

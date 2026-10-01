@@ -50,9 +50,25 @@ const themeScript = `(() => {
     applyTheme(next);
     try { window.localStorage.setItem(storageKey, next); } catch {}
   });
+  // Dropdown menus are native <details>; close them on Escape, an outside
+  // click, or when keyboard focus leaves, as a menu button would.
+  const menus = () => document.querySelectorAll('details[data-dismissable][open]');
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    menus().forEach((menu) => {
+      menu.open = false;
+      if (menu.contains(document.activeElement)) menu.querySelector('summary')?.focus();
+    });
+  });
+  document.addEventListener('click', (event) => {
+    menus().forEach((menu) => { if (!menu.contains(event.target)) menu.open = false; });
+  });
+  document.addEventListener('focusin', (event) => {
+    menus().forEach((menu) => { if (!menu.contains(event.target)) menu.open = false; });
+  });
 })();`;
 
-const homeLink = navItems.find((item) => item.href === "/") ?? { href: "/", label: "Home" };
+const homeLink = navItems[0];
 const utilityHrefs = ["/start", "/evaluate", "/updates", "/about"] as const;
 const utilityLinks = navItems.filter((item) => utilityHrefs.includes(item.href as (typeof utilityHrefs)[number]));
 
@@ -141,7 +157,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                 {homeLink.label}
               </a>
 
-              <details className="group">
+              <details className="group" data-dismissable>
                 <summary
                   aria-label="Explore the AI stack"
                   aria-haspopup="true"
@@ -181,7 +197,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     aria-current={isCurrent ? "page" : undefined}
                     className={navLinkClass(isCurrent)}
                   >
-                    {item.href === "/start" ? "Start here" : item.label}
+                    {item.shortLabel ?? item.label}
                   </a>
                 );
               })}
@@ -209,7 +225,7 @@ export function Header({ currentPath = "/" }: HeaderProps) {
               <Moon size={18} aria-hidden="true" className="theme-icon-when-light" />
             </button>
 
-            <details className="relative md:hidden">
+            <details className="relative md:hidden" data-dismissable>
               <summary
                 aria-label="Open navigation menu"
                 title="Open navigation menu"

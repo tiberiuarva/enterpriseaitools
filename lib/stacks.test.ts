@@ -1,7 +1,9 @@
 import { strict as assert } from "node:assert";
+import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import { STACK_LAYERS, getStackLayer } from "./categories.ts";
 import {
+  VENDOR_STACKS,
   buildVendorStack,
   countCoveredCategories,
   countUpdatesByTool,
@@ -13,6 +15,7 @@ import {
   toolsAlsoCovering,
   vendorStackForTool,
   vendorStackGaps,
+  vendorFamilies,
   vendorStackTools,
 } from "./stacks.ts";
 import type { Tool, ToolCategory } from "./types.ts";
@@ -109,4 +112,38 @@ describe("vendor stacks", () => {
     assert.deepEqual(pairsWith(agents, others).map((t) => t.id), ["x-guard", "x-gateway"]);
     assert.deepEqual(pairsWith(agents, others, 1).map((t) => t.id), ["x-guard"]);
   });
+
+  it("pairsWith matches vendor families across parent and product names", () => {
+    const others = [
+      tool({ id: "pan-gateway", category: "gateways", vendor: "Portkey (Palo Alto Networks)" }),
+      tool({ id: "pan-identity", category: "agent-identity", vendor: "Palo Alto Networks (Idira)" }),
+      tool({ id: "pan-guard", category: "governance", vendor: "Palo Alto Networks" }),
+      tool({ id: "lf-agents", category: "agents", vendor: "Linux Foundation" }),
+      tool({ id: "lf-observe", category: "observability", vendor: "Linux Foundation (MLflow project)" }),
+    ];
+    const gateway = others[0];
+    const mlflow = others[4];
+    assert.ok(gateway && mlflow);
+    assert.deepEqual(pairsWith(gateway, others).map((t) => t.id), ["pan-identity", "pan-guard"]);
+    assert.deepEqual(pairsWith(mlflow, others), []);
+    assert.deepEqual(vendorFamilies("LangFlow / DataStax"), ["langflow", "datastax"]);
+    assert.deepEqual(vendorFamilies("Linux Foundation"), []);
+  });
+});
+
+describe("vendor stacks match the dataset", () => {
+  const platforms = (JSON.parse(readFileSync(new URL("../data/platforms.json", import.meta.url), "utf8")) as { platforms: { id: string }[] }).platforms;
+  const tools = (JSON.parse(readFileSync(new URL("../data/tools.json", import.meta.url), "utf8")) as { tools: Tool[] }).tools;
+
+  for (const stack of VENDOR_STACKS) {
+    it(`${stack.slug}: platformId exists and every vendor name has a current tool`, () => {
+      assert.ok(platforms.some((platform) => platform.id === stack.platformId), `${stack.platformId} is not in data/platforms.json`);
+      for (const vendorName of stack.vendorNames) {
+        assert.ok(
+          tools.some((record) => record.vendor === vendorName && isCurrentTool(record)),
+          `no current tool in data/tools.json has vendor "${vendorName}"`,
+        );
+      }
+    });
+  }
 });

@@ -81,12 +81,26 @@ export function suitesSpanningLayer(layer: StackLayer, tools: readonly Tool[]): 
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 
-// Same vendor, other categories: the products a buyer of `tool` most likely pairs it with.
+// Foundations host unrelated projects, so sharing one says nothing about pairing.
+const NEUTRAL_HOSTS = new Set(["linux foundation"]);
+
+// The companies behind a vendor string: "Portkey (Palo Alto Networks)" and
+// "Palo Alto Networks (Idira)" both belong to the Palo Alto Networks family.
+export function vendorFamilies(vendor: string): string[] {
+  return vendor
+    .split(/[()/]/)
+    .map((part) => part.trim().toLowerCase())
+    .filter((part) => part.length > 0 && !NEUTRAL_HOSTS.has(part));
+}
+
+// Same vendor family, other categories: the products a buyer of `tool` most likely pairs it with.
 export function pairsWith(tool: Tool, tools: readonly Tool[], limit = 6): Tool[] {
   if (!tool.vendor) return [];
   const stack = vendorStackForTool(tool);
+  const families = new Set(vendorFamilies(tool.vendor));
   const sameVendor = (candidate: Tool) =>
-    stack ? candidate.vendor !== undefined && stack.vendorNames.includes(candidate.vendor) : candidate.vendor === tool.vendor;
+    candidate.vendor !== undefined &&
+    (stack ? stack.vendorNames.includes(candidate.vendor) : vendorFamilies(candidate.vendor).some((family) => families.has(family)));
   const order = new Map(STACK_LAYERS.flatMap((layer) => layer.categories).map((category, index) => [category, index]));
   return tools
     .filter((candidate) => candidate.id !== tool.id && candidate.category !== tool.category && sameVendor(candidate))
@@ -96,7 +110,7 @@ export function pairsWith(tool: Tool, tools: readonly Tool[], limit = 6): Tool[]
 }
 
 // A category's most recognisable current tools for preview chips: the most active in
-// the update feed first (a proxy for what buyers are watching), then cloud
+// the update feed first (a proxy for what buyers are watching), then
 // vendor products, then open source by stars, then by name.
 export function previewTools(
   tools: readonly Tool[],
