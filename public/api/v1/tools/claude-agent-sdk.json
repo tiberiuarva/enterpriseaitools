@@ -18,10 +18,9 @@
       "Permission modes for tool approval",
       "Bedrock, Vertex and Foundry auth options"
     ],
-    "license": "MIT",
+    "license": "MIT (SDK wrapper); Proprietary (bundled Claude Code)",
     "licenseWarning": "The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.",
     "githubUrl": "https://github.com/anthropics/claude-agent-sdk-python",
-    "githubStars": 8196,
     "version": "0.2.162",
     "lastRelease": "2026-09-29",
     "docsUrl": "https://code.claude.com/docs/en/agent-sdk/overview",

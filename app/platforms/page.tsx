@@ -91,6 +91,27 @@ export default function PlatformsPage() {
       url: pageUrl,
       description,
     }),
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "AI Platforms & Model Hubs",
+      description,
+      url: pageUrl,
+      numberOfItems: platforms.length,
+      itemListElement: platforms.map((platform, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "SoftwareApplication",
+          name: platform.name,
+          description: platform.description,
+          applicationCategory: "DeveloperApplication",
+          operatingSystem: "Any",
+          url: platform.docsUrl,
+          publisher: { "@type": "Organization", name: platform.vendor },
+        },
+      })),
+    },
     buildFaqPageJsonLd(platformsFaqs),
   ];
 

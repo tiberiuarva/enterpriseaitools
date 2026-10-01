@@ -18,7 +18,6 @@
     "license": "MIT core + EE paths",
     "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
     "githubUrl": "https://github.com/langfuse/langfuse",
-    "githubStars": 35236,
     "version": "4.48.0",
     "lastRelease": "2026-09-30",
     "docsUrl": "https://langfuse.com/docs",

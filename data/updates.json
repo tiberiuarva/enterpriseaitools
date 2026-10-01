@@ -112,9 +112,9 @@
     {
       "id": "update-2026-09-18-02",
       "date": "2026-09-18",
-      "toolId": "aws-bedrock-agents",
-      "toolName": "Amazon Bedrock Agents",
-      "category": "agents",
+      "toolId": "amazon-bedrock-agentcore",
+      "toolName": "Amazon Bedrock AgentCore",
+      "category": "control-planes",
       "type": "feature",
       "summary": "AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/",
@@ -405,8 +405,8 @@
       "category": "orchestration",
       "type": "deprecation",
       "summary": "Flowise archived its GitHub repository (read-only) ahead of the project end of life on August 31, 2026; the Apache-2.0 source remains available for forks.",
-      "sourceUrl": "https://github.com/FlowiseAI/Flowise",
-      "sourceTitle": "FlowiseAI/Flowise (archived) · GitHub",
+      "sourceUrl": "https://github.com/FlowiseAI/Flowise/discussions/6727",
+      "sourceTitle": "Future of Flowise · FlowiseAI/Flowise discussion #6727",
       "impact": "high"
     },
     {
@@ -693,8 +693,8 @@
       "category": "governance",
       "type": "deprecation",
       "summary": "Protect AI archived the LLM Guard repository; the project and its Hugging Face models are no longer under active development.",
-      "sourceUrl": "https://github.com/protectai/llm-guard",
-      "sourceTitle": "protectai/llm-guard (archived) · GitHub",
+      "sourceUrl": "https://github.com/protectai/llm-guard/blob/main/README.md",
+      "sourceTitle": "LLM Guard README (archive notice) · protectai/llm-guard",
       "impact": "high"
     },
     {

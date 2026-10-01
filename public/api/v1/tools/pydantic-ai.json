@@ -17,7 +17,6 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/pydantic/pydantic-ai",
-    "githubStars": 20292,
     "version": "2.52.0",
     "lastRelease": "2026-09-29",
     "docsUrl": "https://pydantic.dev/docs/ai/overview/",

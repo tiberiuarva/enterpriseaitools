@@ -116,27 +116,7 @@ export default function Home() {
           url: `${siteUrl}/platforms/`,
           description: "Structured comparison of Microsoft Foundry, Amazon Bedrock, and Gemini Enterprise Agent Platform foundations.",
         },
-        {
-          name: "AI agent tools catalog",
-          url: `${siteUrl}/agents/`,
-          description: "Tracked agent platforms and open source frameworks for enterprise AI delivery.",
-        },
-        {
-          name: "AI orchestration tools catalog",
-          url: `${siteUrl}/orchestration/`,
-          description: "Tracked workflow engines, automation layers, and orchestration tooling for enterprise AI systems.",
-        },
-        {
-          name: "AI guardrails and agent security catalog",
-          url: `${siteUrl}/governance/`,
-          description: "Tracked guardrails, safety controls, and agent security posture tooling for enterprise AI systems.",
-        },
-        {
-          name: "AI assistants catalog",
-          url: `${siteUrl}/assistants/`,
-          description: "Tracked coding assistants, productivity copilots, and assistant platforms for enterprise use.",
-        },
-        ...(["gateways", "observability", "control-planes", "agent-identity", "always-on-agents"] as const).map((category) => ({
+        ...CATEGORY_ORDER.map((category) => ({
           name: `${CATEGORIES[category].title} catalog`,
           url: `${siteUrl}/${category}/`,
           description: CATEGORIES[category].summary,

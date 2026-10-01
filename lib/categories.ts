@@ -105,7 +105,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
     navLabel: "Agent identity",
     title: "Agent Identity & Access",
     metaDescription:
-      "Compare identity and access management for AI agents — Microsoft Entra Agent ID, Okta, Auth0, Ping, SailPoint, Idira — on agent identities, scoped access, and reviews.",
+      "Compare identity and access management for AI agents — Microsoft Entra Agent ID, Okta, Auth0, Ping, SailPoint, Idira — on scoped access and reviews.",
     summary: "Identities, scoped access, and access reviews for AI agents as non-human principals.",
     intro:
       "Agents need their own identities, least-privilege access, owners, and access reviews — the same controls people get. Compare identity-provider, governance, and privileged-access vendors on how they register, authorise, and audit agents.",
@@ -117,7 +117,7 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
     navLabel: "Guardrails & security",
     title: "AI Guardrails & Agent Security",
     metaDescription:
-      "Compare AI guardrails and agent security — Azure AI Content Safety, Amazon Bedrock Guardrails, Google Model Armor, and third-party runtime safety and posture tools.",
+      "Compare AI guardrails and agent security — Azure AI Content Safety, Amazon Bedrock Guardrails, Google Model Armor, and third-party runtime safety tools.",
     summary: "Runtime guardrails, content safety, and agent security posture controls.",
     intro:
       "Compare cloud guardrails with independent safety and agent-security vendors on certifications, data residency, and deployment ownership — full details on each tool's page.",
@@ -149,7 +149,3 @@ export const CATEGORIES: Record<ToolCategory, CategoryMeta> = {
     evaluateLabel: "Always-on agents",
   },
 };
-
-export function categoryHref(category: ToolCategory) {
-  return `/${category}`;
-}

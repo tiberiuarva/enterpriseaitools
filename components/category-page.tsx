@@ -15,7 +15,6 @@ import type { CategoryIconName as IconName } from "@/lib/categories";
 import type { CategoryComparison } from "@/lib/category-comparisons";
 import type { Platform, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
 
-
 type CategoryPageProps = {
   category: ToolCategory;
   title: string;

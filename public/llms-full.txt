@@ -100,7 +100,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Claude Agent SDK (formerly Claude Code SDK)
 - Page: https://www.enterpriseai.tools/tools/claude-agent-sdk/
-- Vendor: Anthropic | Type: vendor | License: MIT (caution: The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.)
+- Vendor: Anthropic | Type: vendor | License: MIT (SDK wrapper); Proprietary (bundled Claude Code) (caution: The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.)
 - Status: active | Version: 0.2.162 | Last release: 2026-09-29
 - Anthropic's Python/TypeScript library that embeds Claude Code's agent loop, tools, hooks, subagents and MCP in your own app.
 - Strengths: Claude Code tools, hooks and subagents; Permission modes for tool approval; Bedrock, Vertex and Foundry auth options
@@ -644,7 +644,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### LiteLLM
 - Page: https://www.enterpriseai.tools/tools/litellm/
-- Vendor: BerriAI | Type: opensource | License: MIT (caution: Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.)
+- Vendor: BerriAI | Type: opensource | License: MIT core + EE paths (caution: Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.)
 - Status: active | Version: 1.103.1 | Last release: 2026-09-30
 - Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.
 - Strengths: Virtual keys with per-team spend tracking; 100+ providers behind one OpenAI-format API; Built-in MCP and agent gateway
@@ -1872,7 +1872,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 - 2026-09-22 — GitHub Copilot (model-addition, medium impact): Claude Opus 5.5 became selectable in GitHub Copilot for Pro+, Max, Business, and Enterprise plans across IDEs, GitHub.com, Copilot CLI, and the coding agent. [source: https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot]
 - 2026-09-21 — LlamaIndex (release, medium impact): LlamaIndex 0.14.25 resolved a large batch of security alerts and added Claude Opus 5 and Sonnet 5 support in the Anthropic and Bedrock Converse integrations. [source: https://github.com/run-llama/llama_index/releases/tag/v0.14.25]
 - 2026-09-18 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.19.0 added generic vector-store provider protocols with MongoDB and Azure DocumentDB connectors, with breaking changes to cookie persistence and MCP skill archives. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0]
-- 2026-09-18 — Amazon Bedrock Agents (feature, high impact): AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/]
+- 2026-09-18 — Amazon Bedrock AgentCore (feature, high impact): AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/]
 - 2026-09-17 — MLflow (release, medium impact): MLflow 3.16.1 removed the default basic-auth admin password (a security fix for self-hosted servers) and added scorer timeouts. [source: https://github.com/mlflow/mlflow/releases/tag/v3.16.1]
 - 2026-09-16 — NeMo Guardrails (release, low impact): NeMo Guardrails 0.24.1 fixed benchmark concurrency measurement, Nemotron 3.5 response parsing, server overload handling, and combined-config loading. [source: https://github.com/NVIDIA-NeMo/Guardrails/releases/tag/v0.24.1]
 - 2026-09-11 — Mastra (release, high impact): Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0]

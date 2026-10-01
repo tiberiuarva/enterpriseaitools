@@ -127,7 +127,7 @@ export const alwaysOnAgentsFaqs: HubFaq[] = [
   {
     question: "What is an always-on AI agent?",
     answer:
-      "An agent that keeps working after the chat closes: it holds its own memory, credentials or identity, and usually its own cloud or local computer, and acts across email, chat, files, and web apps on a schedule or trigger rather than one prompt at a time. Microsoft, OpenAI, Meta, xAI, and Google all shipped products in this class in 2026, alongside open-source projects such as OpenClaw.",
+      "An agent that keeps working after the chat closes: it holds its own memory, credentials or identity, and usually its own cloud or local computer, and acts across email, chat, files, and web apps on a schedule or trigger rather than one prompt at a time. Microsoft, Meta, xAI, and Google all shipped products in this class in 2026, alongside open-source projects such as OpenClaw.",
   },
   {
     question: "How is this different from an assistant or an agent framework?",
@@ -145,7 +145,7 @@ export const controlPlanesFaqs: HubFaq[] = [
   {
     question: "What is an agent control plane?",
     answer:
-      "The management layer for a fleet of agents: a registry of which agents exist and who owns them, lifecycle controls to publish, pause or retire them, policy that applies across vendors, and observability of health, usage, and cost. Forrester tracks it as the agent control plane market; vendors such as Microsoft (Agent 365) and IBM use the same term.",
+      "The management layer for a fleet of agents: a registry of which agents exist and who owns them, lifecycle controls to publish, pause or retire them, policy that applies across vendors, and observability of health, usage, and cost. Analysts now evaluate it as a market of its own, and vendors such as Microsoft (Agent 365) and IBM use the same term.",
   },
   {
     question: "Do I need one if I only use one cloud platform?",

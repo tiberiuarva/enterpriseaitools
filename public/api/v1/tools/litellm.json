@@ -15,7 +15,7 @@
       "100+ providers behind one OpenAI-format API",
       "Built-in MCP and agent gateway"
     ],
-    "license": "MIT",
+    "license": "MIT core + EE paths",
     "licenseWarning": "Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.",
     "githubUrl": "https://github.com/BerriAI/litellm",
     "version": "1.103.1",

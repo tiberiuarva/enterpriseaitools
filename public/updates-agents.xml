@@ -49,20 +49,6 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-09-18-02</id>
-    <title>Amazon Bedrock Agents — feature</title>
-    <updated>2026-09-18T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-18-02" />
-    <summary>AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions.</summary>
-    <author><name>enterpriseai.tools</name></author>
-    <category term="agents, feature, high" />
-    <source>
-      <id>https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/</id>
-      <title>The new AgentCore Runtime is now available in Amazon Bedrock AgentCore · AWS What’s New</title>
-      <link href="https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/" />
-    </source>
-  </entry>
-  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-18-01</id>
     <title>Microsoft Agent Framework — release</title>
     <updated>2026-09-18T00:00:00.000Z</updated>

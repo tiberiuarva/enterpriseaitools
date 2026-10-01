@@ -24,7 +24,6 @@
     "license": "Apache 2.0 (CLI); Proprietary (cloud)",
     "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
     "githubUrl": "https://github.com/openai/codex",
-    "githubStars": 127396,
     "version": "0.159.2",
     "lastRelease": "2026-09-29",
     "docsUrl": "https://learn.chatgpt.com/docs",

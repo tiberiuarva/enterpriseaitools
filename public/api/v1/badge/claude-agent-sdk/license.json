@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "license",
-  "message": "MIT",
+  "message": "MIT (SDK wrapper); Proprietary (bundled Claude Code)",
   "color": "yellow",
   "cacheSeconds": 86400
 }

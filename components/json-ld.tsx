@@ -1,5 +1,5 @@
 import { siteUrl as defaultSiteUrl } from "@/lib/metadata";
-import type { Tool } from "@/lib/types";
+import type { Tool, ToolCategory } from "@/lib/types";
 
 type JsonLdValue = Record<string, unknown> | Array<Record<string, unknown>>;
 
@@ -59,6 +59,20 @@ export function JsonLd({ data }: JsonLdProps) {
   );
 }
 
+// schema.org applicationCategory: security/identity products are SecurityApplication,
+// end-user assistants and agents are BusinessApplication, the rest are developer tooling.
+const APPLICATION_CATEGORY: Record<ToolCategory, string> = {
+  agents: "DeveloperApplication",
+  orchestration: "DeveloperApplication",
+  gateways: "DeveloperApplication",
+  observability: "DeveloperApplication",
+  "control-planes": "BusinessApplication",
+  "agent-identity": "SecurityApplication",
+  governance: "SecurityApplication",
+  assistants: "BusinessApplication",
+  "always-on-agents": "BusinessApplication",
+};
+
 export function buildToolListJsonLd(tools: Tool[], name: string, description: string, url: string) {
   return {
     "@context": "https://schema.org",
@@ -74,7 +88,7 @@ export function buildToolListJsonLd(tools: Tool[], name: string, description: st
         "@type": "SoftwareApplication",
         name: tool.name,
         description: tool.description,
-        applicationCategory: "DeveloperApplication",
+        applicationCategory: APPLICATION_CATEGORY[tool.category],
         operatingSystem: "Any",
         ...(tool.version ? { softwareVersion: tool.version } : {}),
         ...(tool.docsUrl ? { url: tool.docsUrl } : {}),
@@ -94,7 +108,7 @@ export function buildSoftwareApplicationJsonLd(tool: Tool, url: string) {
     "@id": `${url}#software`,
     name: tool.name,
     description: tool.description,
-    applicationCategory: "DeveloperApplication",
+    applicationCategory: APPLICATION_CATEGORY[tool.category],
     operatingSystem: "Any",
     url,
     ...(tool.governance?.reviewedAt ? { dateModified: normalizeJsonLdDate(tool.governance.reviewedAt) } : {}),

@@ -22,7 +22,7 @@ Top-level shape:
 | `aliases` | string[] | no | Prior product names (renames/rebrands). Never drop an entry; the slug `id` stays unchanged on rename. Rendered as "Formerly …" on the tool page and indexed by site search. |
 | `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents` | yes | Primary category; one per record, matching its hub route (`/<category>/`). Labels and order live in `lib/categories.ts`. `governance` renders as "AI Guardrails & Agent Security" (slug kept for URL stability). |
 | `subcategory` | string | no | Used mainly for assistants (`coding`, `productivity`, `build-your-own`) |
-| `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type |
+| `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type. `opensource` means the self-hostable code is public; source-available or open-core licenses (Elastic, Sustainable Use, EE paths) keep `opensource` but must carry `licenseWarning`, which renders on the tool page and in the hub's "Important notes". |
 | `vendor` | string | no | Parent company or maintainer |
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |

@@ -17,7 +17,6 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/mlflow/mlflow",
-    "githubStars": 28197,
     "version": "3.16.1",
     "lastRelease": "2026-09-17",
     "docsUrl": "https://mlflow.org/docs/latest/genai/",

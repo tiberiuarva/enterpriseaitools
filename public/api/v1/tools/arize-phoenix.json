@@ -18,7 +18,6 @@
     "license": "Elastic License 2.0",
     "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
     "githubUrl": "https://github.com/Arize-ai/phoenix",
-    "githubStars": 11662,
     "version": "20.16.0",
     "lastRelease": "2026-09-23",
     "docsUrl": "https://arize.com/docs/phoenix",

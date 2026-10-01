@@ -17,7 +17,6 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/temporalio/temporal",
-    "githubStars": 23389,
     "version": "1.32.0",
     "lastRelease": "2026-09-11",
     "docsUrl": "https://docs.temporal.io/ai",

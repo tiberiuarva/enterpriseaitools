@@ -66,20 +66,26 @@ jobs:
             exit 0
           fi
           body="$(printf 'Automated weekly snapshot + derived diff events (mechanical half of the /radar SOP).\n\nBefore merging, complete the editorial half per .claude/commands/radar.md: verify any flagged license/status diffs against upstream sources, add source-backed updates.json entries, refresh stale governance reviews, and run the EU AI Act freshness check.\n\n## Data freshness report\n\n```\n%s\n```\n' "$FRESHNESS")"
-          if gh pr create --title "Weekly Radar snapshot ${week} (automated)" --body "$body"; then
+          if out="$(gh pr create --title "Weekly Radar snapshot ${week} (automated)" --body "$body" 2>&1)"; then
+            echo "$out"
             exit 0
           fi
+          echo "$out" >&2
           # Creating PRs with GITHUB_TOKEN needs the repo setting "Allow GitHub
           # Actions to create and approve pull requests" (or RADAR_PR_TOKEN).
-          # Without it, surface the pushed branch as an issue instead of failing
-          # silently week after week.
+          # Only that refusal falls back to a tracking issue; any other failure
+          # stays a red run.
+          case "$out" in
+            *"not permitted to create or approve pull requests"*) ;;
+            *) exit 1 ;;
+          esac
           echo "::warning::PR creation was refused; opening a tracking issue for ${branch} instead."
           compare="https://github.com/${GITHUB_REPOSITORY}/compare/main...${branch}?expand=1"
-          existing="$(gh issue list --state open --search "Weekly Radar snapshot ${week} in:title" --json number --jq '.[0].number // empty')"
+          existing="$(gh issue list --state open --search "\"Weekly Radar snapshot ${week}:\" in:title" --json number --jq '.[0].number // empty')"
           if [ -n "$existing" ]; then
             echo "Issue #${existing} already tracks ${branch}"
             exit 0
           fi
           gh issue create \
             --title "Weekly Radar snapshot ${week}: open the PR manually" \
-            --body "$(printf 'The snapshot branch `%s` was pushed, but GitHub refused to let Actions open the PR.\n\nOpen it here: %s\n\nPermanent fix: enable *Settings -> Actions -> General -> Allow GitHub Actions to create and approve pull requests*, or add a fine-grained PAT as the `RADAR_PR_TOKEN` secret.\n\n%s' "$branch" "$compare" "$body")"
+            --body "$(printf 'The snapshot branch `%s` was pushed, but GitHub refused to let Actions open the PR.\n\nOpen it here: %s\n\nPermanent fix: enable *Settings -> Actions -> General -> Allow GitHub Actions to create and approve pull requests*, or add a fine-grained PAT as the `RADAR_PR_TOKEN` secret.\n\nGitHub said:\n\n```\n%s\n```\n\n%s' "$branch" "$compare" "$out" "$body")"

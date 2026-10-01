@@ -10,7 +10,7 @@ Live site: [www.enterpriseai.tools](https://www.enterpriseai.tools/)
 
 Enterprise architects evaluating AI tooling face the same friction every time: vendor marketing pages use different terminology for the same things, open source projects change names and licenses without warning, and the pace of acquisitions makes last month's comparison blog already stale.
 
-This tracker exists to cut through that. It compares what the three cloud vendors (Microsoft Foundry, AWS Bedrock, Google Vertex AI) offer alongside the leading open source alternatives, across four categories: agent frameworks, orchestration, governance, and assistants. Every data point is source-backed. Updates ship weekly.
+This tracker exists to cut through that. It compares what the three cloud vendors (Microsoft Foundry, Amazon Bedrock, Gemini Enterprise Agent Platform — formerly Google Vertex AI) offer alongside the leading open source and commercial alternatives, across nine layers of the agent stack: agent frameworks, orchestration, AI & MCP gateways, observability & evaluation, agent control planes, agent identity & access, guardrails & agent security, assistants, and always-on agents. Every data point is source-backed. Updates ship weekly.
 
 The lens is practitioner-first, with particular attention to what actually works in real enterprise environments.
 
