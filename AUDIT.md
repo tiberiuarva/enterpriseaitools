@@ -518,7 +518,7 @@ This is a candidate for extraction into a shared `RecentUpdates` component.
 | GitHub Actions workflow | ✅ `.github/workflows/azure-static-web-apps.yml` |
 | CI branches target correct branch | ❌ Targets `main` not `radar/review-ready-site-pass` (C-4) |
 | `staticwebapp.config.json` | ❌ Missing — deep links will 404 on Azure (C-1) |
-| `AZURE_STATIC_WEB_APPS_API_TOKEN` secret | ⚠️ Required in GitHub repository secrets; not verifiable from source |
+| `AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403` secret | ⚠️ Required in GitHub repository secrets; not verifiable from source |
 | `.env.example` | ❌ Missing (M-8) |
 | Custom domain readiness | ⚠️ `metadataBase` defaults to `https://enterpriseai.tools` — will need `NEXT_PUBLIC_SITE_URL` set in deployment |
 | `serve_enterpriseai.py` in root | ⚠️ Development artifact — should not be in production deploy (L-1) |
