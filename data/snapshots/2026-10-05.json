@@ -1,0 +1,4335 @@
+{
+  "snapshotDate": "2026-10-05",
+  "toolsLastUpdated": "2026-09-30",
+  "tools": [
+    {
+      "id": "aembit-iam-for-agentic-ai",
+      "name": "Aembit IAM for Agentic AI",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "agentgateway",
+      "name": "agentgateway",
+      "category": "gateways",
+      "license": "Apache 2.0",
+      "version": "1.5.0",
+      "lastRelease": "2026-08-27",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "amazon-bedrock-agentcore",
+      "name": "Amazon Bedrock AgentCore",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "amazon-q-apps",
+      "name": "Amazon Q Apps",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "amazon-q-business",
+      "name": "Amazon Q Business",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "deprecated",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "deprecated",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "arize-phoenix",
+      "name": "Arize Phoenix",
+      "category": "observability",
+      "license": "Elastic License 2.0",
+      "version": "20.16.0",
+      "lastRelease": "2026-09-23",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "arthur-genai-engine",
+      "name": "Arthur GenAI Engine",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "atomic-agents",
+      "name": "Atomic Agents",
+      "category": "agents",
+      "license": "MIT",
+      "version": "2.10.3",
+      "lastRelease": "2026-09-27",
+      "status": "active",
+      "githubStars": 6238,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "auth0-for-ai-agents",
+      "name": "Auth0 for AI Agents",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "autogen",
+      "name": "AutoGen",
+      "category": "agents",
+      "license": "MIT",
+      "version": "0.7.5",
+      "lastRelease": null,
+      "status": "maintenance",
+      "githubStars": 60960,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "aws-bedrock-agents",
+      "name": "Amazon Bedrock Agents",
+      "category": "agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "aws-bedrock-guardrails",
+      "name": "Amazon Bedrock Guardrails",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "aws-step-functions",
+      "name": "AWS Step Functions",
+      "category": "orchestration",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "no"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "azure-ai-content-safety",
+      "name": "Azure AI Content Safety",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "azure-apim-ai-gateway",
+      "name": "Azure API Management AI gateway",
+      "category": "gateways",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "azure-logic-apps",
+      "name": "Azure Logic Apps",
+      "category": "orchestration",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "on-prem",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "partial"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "beeai-framework",
+      "name": "BeeAI Framework",
+      "category": "agents",
+      "license": "Apache 2.0",
+      "version": "0.1.85",
+      "lastRelease": "2026-09-28",
+      "status": "active",
+      "githubStars": 3400,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "braintrust",
+      "name": "Braintrust",
+      "category": "observability",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "chatgpt-enterprise",
+      "name": "ChatGPT Enterprise",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "claude-agent-sdk",
+      "name": "Claude Agent SDK",
+      "category": "agents",
+      "license": "MIT (SDK wrapper); Proprietary (bundled Claude Code)",
+      "version": "0.2.162",
+      "lastRelease": "2026-09-29",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "claude-enterprise",
+      "name": "Claude Enterprise",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "cloudflare-ai-gateway",
+      "name": "Cloudflare AI Gateway",
+      "category": "gateways",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "no"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "copilot-studio",
+      "name": "Copilot Studio",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "crewai",
+      "name": "CrewAI",
+      "category": "agents",
+      "license": "MIT",
+      "version": "1.15.23",
+      "lastRelease": "2026-09-28",
+      "status": "active",
+      "githubStars": 58436,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "no"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-09-13"
+      }
+    },
+    {
+      "id": "databricks-genie-code",
+      "name": "Databricks Genie Code",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "databricks-genie-spaces",
+      "name": "Databricks Genie Agents",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "databricks-lakeflow-jobs",
+      "name": "Databricks Lakeflow Jobs",
+      "category": "orchestration",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "databricks-mosaic-ai-agent-framework",
+      "name": "Databricks Mosaic AI Agent Framework",
+      "category": "agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "databricks-unity-ai-gateway",
+      "name": "Databricks Unity Gateway",
+      "category": "gateways",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "datadog-agent-observability",
+      "name": "Datadog Agent Observability",
+      "category": "observability",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "descope-agentic-identity-hub",
+      "name": "Descope Agentic Identity Hub",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "dify",
+      "name": "Dify",
+      "category": "orchestration",
+      "license": "Modified Apache 2.0",
+      "version": "1.17.1",
+      "lastRelease": "2026-09-10",
+      "status": "active",
+      "githubStars": 155576,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "docker-mcp-gateway",
+      "name": "Docker MCP Gateway",
+      "category": "gateways",
+      "license": "MIT",
+      "version": "0.44.1",
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "flowise",
+      "name": "Flowise",
+      "category": "orchestration",
+      "license": "Apache 2.0",
+      "version": "3.1.4",
+      "lastRelease": "2026-07-29",
+      "status": "archived",
+      "githubStars": 55456,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "gemini-code-assist",
+      "name": "Gemini Code Assist",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "gemini-enterprise",
+      "name": "Gemini Enterprise",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "gemini-for-workspace",
+      "name": "Gemini for Workspace",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "gemini-spark",
+      "name": "Gemini Spark",
+      "category": "always-on-agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "google-agent-builder-adk",
+      "name": "Google Agent Builder + ADK",
+      "category": "agents",
+      "license": "Proprietary service + open source SDK",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "partial"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "google-agent-identity",
+      "name": "Google Agent Identity",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "google-antigravity",
+      "name": "Google Antigravity",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "google-cloud-workflows",
+      "name": "Google Cloud Workflows",
+      "category": "orchestration",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "google-model-armor",
+      "name": "Google Model Armor",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "grok-bot",
+      "name": "Grok Bot",
+      "category": "always-on-agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "guardrails-ai",
+      "name": "Guardrails AI",
+      "category": "governance",
+      "license": "Apache 2.0",
+      "version": "0.11.0",
+      "lastRelease": "2026-08-14",
+      "status": "active",
+      "githubStars": 7404,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "haystack",
+      "name": "Haystack",
+      "category": "orchestration",
+      "license": "Apache 2.0",
+      "version": "3.2.0",
+      "lastRelease": "2026-09-24",
+      "status": "active",
+      "githubStars": 26493,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "partial"
+        },
+        "iso27001": {
+          "status": "partial"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "category": "always-on-agents",
+      "license": "MIT",
+      "version": "0.21.5",
+      "lastRelease": "2026-09-24",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "ibm-watsonx-orchestrate",
+      "name": "IBM watsonx Orchestrate",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "idira-secure-ai-agents",
+      "name": "Idira Secure AI Agents",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "kong-ai-gateway",
+      "name": "Kong AI Gateway",
+      "category": "gateways",
+      "license": "Apache 2.0 core + Enterprise plugins",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "kore-ai-agent-management-platform",
+      "name": "Kore.ai Agent Management Platform",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "partial",
+          "models": [
+            "on-prem",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "lakera-guard",
+      "name": "Lakera Guard",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "langflow",
+      "name": "LangFlow",
+      "category": "orchestration",
+      "license": "MIT",
+      "version": "1.12.4",
+      "lastRelease": "2026-09-29",
+      "status": "active",
+      "githubStars": 154700,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "langfuse",
+      "name": "Langfuse",
+      "category": "observability",
+      "license": "MIT core + EE paths",
+      "version": "4.48.0",
+      "lastRelease": "2026-09-30",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "langgraph",
+      "name": "LangGraph",
+      "category": "agents",
+      "license": "MIT",
+      "version": "1.2.12",
+      "lastRelease": "2026-09-21",
+      "status": "active",
+      "githubStars": 41553,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "langsmith",
+      "name": "LangSmith",
+      "category": "observability",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "litellm",
+      "name": "LiteLLM",
+      "category": "gateways",
+      "license": "MIT core + EE paths",
+      "version": "1.103.1",
+      "lastRelease": "2026-09-30",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "llamaindex",
+      "name": "LlamaIndex",
+      "category": "agents",
+      "license": "MIT",
+      "version": "0.14.25",
+      "lastRelease": "2026-09-21",
+      "status": "active",
+      "githubStars": 52144,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "llm-guard",
+      "name": "LLM Guard",
+      "category": "governance",
+      "license": "MIT",
+      "version": "0.3.16",
+      "lastRelease": null,
+      "status": "archived",
+      "githubStars": 3205,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "manus",
+      "name": "Manus",
+      "category": "always-on-agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "mastra",
+      "name": "Mastra",
+      "category": "agents",
+      "license": "Apache 2.0 core + EE paths",
+      "version": "1.72.0",
+      "lastRelease": "2026-09-29",
+      "status": "active",
+      "githubStars": 27994,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "meta-muse",
+      "name": "Muse",
+      "category": "always-on-agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "microsoft-365-copilot",
+      "name": "Microsoft 365 Copilot",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "microsoft-agent-365",
+      "name": "Microsoft Agent 365",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "no"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "microsoft-agent-framework",
+      "name": "Microsoft Agent Framework",
+      "category": "agents",
+      "license": "MIT",
+      "version": "1.19.0",
+      "lastRelease": "2026-09-18",
+      "status": "active",
+      "githubStars": 13498,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "microsoft-autopilot",
+      "name": "Microsoft Autopilot",
+      "category": "always-on-agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "unknown"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "microsoft-entra-agent-id",
+      "name": "Microsoft Entra Agent ID",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "partial"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "no"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "microsoft-foundry-agent-service",
+      "name": "Microsoft Foundry Agent Service",
+      "category": "agents",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "on-prem",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "microsoft-purview-dspm",
+      "name": "Microsoft Purview Data Security Posture Management",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "partial"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "no"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "mlflow",
+      "name": "MLflow",
+      "category": "observability",
+      "license": "Apache 2.0",
+      "version": "3.16.1",
+      "lastRelease": "2026-09-17",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "mulesoft-agent-fabric",
+      "name": "MuleSoft Agent Fabric",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "partial",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "n8n",
+      "name": "n8n",
+      "category": "orchestration",
+      "license": "Sustainable Use License",
+      "version": "2.41.4",
+      "lastRelease": "2026-09-30",
+      "status": "active",
+      "githubStars": 204144,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "no"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "nanoclaw",
+      "name": "NanoClaw",
+      "category": "always-on-agents",
+      "license": "MIT",
+      "version": "2.4.0",
+      "lastRelease": "2026-09-23",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "nemo-guardrails",
+      "name": "NeMo Guardrails",
+      "category": "governance",
+      "license": "Apache 2.0",
+      "version": "0.24.1",
+      "lastRelease": "2026-09-16",
+      "status": "active",
+      "githubStars": 7109,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "nvidia-nemoclaw",
+      "name": "NVIDIA NemoClaw",
+      "category": "governance",
+      "license": "Apache 2.0",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "okta-for-ai-agents",
+      "name": "Okta for AI Agents",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "openai-agents-sdk",
+      "name": "OpenAI Agents SDK",
+      "category": "agents",
+      "license": "MIT",
+      "version": "0.22.3",
+      "lastRelease": "2026-09-17",
+      "status": "active",
+      "githubStars": 29401,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "openai-codex",
+      "name": "OpenAI Codex",
+      "category": "assistants",
+      "license": "Apache 2.0 (CLI); Proprietary (cloud)",
+      "version": "0.159.2",
+      "lastRelease": "2026-09-29",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "yes"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "category": "always-on-agents",
+      "license": "MIT",
+      "version": "2026.9.7",
+      "lastRelease": "2026-09-30",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "opik",
+      "name": "Opik",
+      "category": "observability",
+      "license": "Apache 2.0",
+      "version": "2.2.86",
+      "lastRelease": "2026-09-30",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "paperclip",
+      "name": "Paperclip",
+      "category": "control-planes",
+      "license": "MIT",
+      "version": "v2026.916.1",
+      "lastRelease": "2026-09-21",
+      "status": "active",
+      "githubStars": 80570,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "ping-identity-for-ai",
+      "name": "Ping Identity for AI",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "portkey-ai-gateway",
+      "name": "Portkey AI Gateway",
+      "category": "gateways",
+      "license": "MIT",
+      "version": "1.15.2",
+      "lastRelease": "2026-01-12",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "prisma-airs",
+      "name": "Prisma AIRS",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "pydantic-ai",
+      "name": "Pydantic AI",
+      "category": "agents",
+      "license": "MIT",
+      "version": "2.52.0",
+      "lastRelease": "2026-09-29",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "rebuff",
+      "name": "Rebuff",
+      "category": "governance",
+      "license": "Apache 2.0",
+      "version": "0.1.1",
+      "lastRelease": null,
+      "status": "archived",
+      "githubStars": 1522,
+      "governance": {
+        "dataResidency": {
+          "status": "not-applicable"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "rivet",
+      "name": "Rivet",
+      "category": "orchestration",
+      "license": "MIT",
+      "version": "1.11.3",
+      "lastRelease": null,
+      "status": "maintenance",
+      "githubStars": 4691,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "not-applicable"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "sailpoint-agent-identity-security",
+      "name": "SailPoint Agent Identity Security",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "saviynt-zuma",
+      "name": "Saviynt Zuma",
+      "category": "agent-identity",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "unknown",
+          "models": []
+        },
+        "auditLogging": {
+          "status": "unknown"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "semantic-kernel",
+      "name": "Semantic Kernel",
+      "category": "agents",
+      "license": "MIT",
+      "version": "1.44.0",
+      "lastRelease": "2026-07-07",
+      "status": "active",
+      "githubStars": 28553,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "servicenow-ai-control-tower",
+      "name": "ServiceNow AI Control Tower",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "strands-agents",
+      "name": "Strands Agents",
+      "category": "agents",
+      "license": "Apache 2.0",
+      "version": "1.57.1",
+      "lastRelease": "2026-09-25",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "not-applicable"
+        },
+        "iso27001": {
+          "status": "not-applicable"
+        },
+        "iso42001": {
+          "status": "not-applicable"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "temporal",
+      "name": "Temporal",
+      "category": "orchestration",
+      "license": "MIT",
+      "version": "1.32.0",
+      "lastRelease": "2026-09-11",
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "yes"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "low"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "windsurf",
+      "name": "Devin Desktop",
+      "category": "assistants",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "partial"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "hybrid",
+            "saas",
+            "self-hosted"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "unknown"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "unknown",
+          "role": "limited-risk"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "high"
+        },
+        "reviewedAt": "2026-05-26"
+      }
+    },
+    {
+      "id": "workday-agent-system-of-record",
+      "name": "Workday Agent System of Record",
+      "category": "control-planes",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "yes",
+          "models": [
+            "saas"
+          ]
+        },
+        "auditLogging": {
+          "status": "partial"
+        },
+        "soc2": {
+          "status": "unknown"
+        },
+        "iso27001": {
+          "status": "partial"
+        },
+        "iso42001": {
+          "status": "partial"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    },
+    {
+      "id": "zenity",
+      "name": "Zenity",
+      "category": "governance",
+      "license": "Proprietary",
+      "version": null,
+      "lastRelease": null,
+      "status": "active",
+      "githubStars": null,
+      "governance": {
+        "dataResidency": {
+          "status": "unknown"
+        },
+        "deployment": {
+          "status": "unknown",
+          "models": []
+        },
+        "auditLogging": {
+          "status": "yes"
+        },
+        "soc2": {
+          "status": "yes"
+        },
+        "iso27001": {
+          "status": "yes"
+        },
+        "iso42001": {
+          "status": "unknown"
+        },
+        "euAiAct": {
+          "status": "not-applicable",
+          "role": "not-applicable"
+        },
+        "licenseRisk": {
+          "status": "yes",
+          "level": "medium"
+        },
+        "reviewedAt": "2026-09-30"
+      }
+    }
+  ],
+  "platforms": [
+    {
+      "id": "aws-bedrock",
+      "name": "Amazon Bedrock",
+      "formerNames": [
+        "AWS Bedrock"
+      ],
+      "modelCount": "100+",
+      "onPremises": "No (Outposts for infrastructure only)",
+      "regions": "EU regions available",
+      "compliance": [
+        "HIPAA",
+        "ISO 27001",
+        "SOC 2"
+      ],
+      "lastUpdated": "2026-06-13"
+    },
+    {
+      "id": "google-vertex-ai",
+      "name": "Gemini Enterprise Agent Platform",
+      "formerNames": [
+        "Google Vertex AI",
+        "Vertex AI"
+      ],
+      "modelCount": "200+",
+      "onPremises": "No (Distributed Cloud for sovereign use cases)",
+      "regions": "EU regions available",
+      "compliance": [
+        "HIPAA",
+        "ISO 27001",
+        "SOC 2"
+      ],
+      "lastUpdated": "2026-05-30"
+    },
+    {
+      "id": "microsoft-foundry",
+      "name": "Microsoft Foundry",
+      "formerNames": [
+        "Azure AI Foundry",
+        "Azure AI Studio",
+        "Azure OpenAI Service"
+      ],
+      "modelCount": "11,000+",
+      "onPremises": "Yes (Foundry Local on NVIDIA hardware)",
+      "regions": "EU data residency available across multiple EU regions",
+      "compliance": [
+        "HIPAA",
+        "ISO 27001",
+        "SOC 2"
+      ],
+      "lastUpdated": "2026-05-30"
+    }
+  ]
+}
