@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -22,9 +22,9 @@
     "license": "Proprietary",
     "docsUrl": "https://cloud.google.com/gemini/docs/codeassist/overview",
     "websiteUrl": "https://cloud.google.com/products/gemini/code-assist",
-    "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise.",
+    "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise for existing subscribers only; closed to new purchases since 2026-10-09.",
     "pricingModel": "paid",
-    "status": "active",
+    "status": "deprecated",
     "tags": [
       "assistants",
       "coding",
@@ -82,6 +82,7 @@
         "level": "medium"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "statusNote": "From October 9, 2026, new Gemini Code Assist Standard and Enterprise subscriptions can no longer be purchased; existing subscriptions auto-renew through 2026 and auto-renewal ends in 2027. Google points customers to Antigravity."
   }
 }

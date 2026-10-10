@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-08-23",
-  "statusSummary": "As of 23 August 2026: the Digital Omnibus on AI is in force as Regulation (EU) 2026/1744. The prohibitions on unacceptable-risk AI practices and AI-literacy duty have applied since 2 February 2025, GPAI provider obligations since 2 August 2025, and the AI Act's general application date was 2 August 2026. The amendment fixed later dates for high-risk requirements: 2 December 2027 for stand-alone Annex III systems and 2 August 2028 for systems embedded in Annex I regulated products.",
+  "asOf": "2026-10-10",
+  "statusSummary": "As of 10 October 2026: the Digital Omnibus on AI is in force as Regulation (EU) 2026/1744. The prohibitions on unacceptable-risk AI practices and AI-literacy duty have applied since 2 February 2025, GPAI provider obligations since 2 August 2025, and the AI Act's general application date was 2 August 2026. The amendment adds new Article 5 prohibitions on AI-generated non-consensual intimate imagery and child sexual abuse material from 2 December 2026, gives generative AI systems placed on the market before 2 August 2026 until 2 December 2026 to meet Article 50(2) content marking, and fixes later dates for high-risk requirements: 2 December 2027 for stand-alone Annex III systems and 2 August 2028 for systems embedded in Annex I regulated products.",
   "statusSourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng",
   "obligations": [
     {
@@ -24,6 +24,17 @@
       "appliesFrom": "2025-02-02",
       "summary": "Placing on the market, putting into service, or using AI systems for the unacceptable-risk practices listed in Article 5 (e.g. social scoring, exploitative manipulation, untargeted facial-image scraping) is banned outright.",
       "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
+    },
+    {
+      "id": "prohibited-intimate-imagery-csam",
+      "articles": "Article 5(1)(ba)–(bb), 5(1a)–(1b)",
+      "title": "Prohibited non-consensual intimate imagery and CSAM generation",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["prohibited"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-12-02",
+      "summary": "Added by Regulation (EU) 2026/1744: AI systems that generate or manipulate realistic intimate or sexually explicit depictions of identifiable people without their explicit consent, or child sexual abuse material, are banned. Providers are caught when this is the intended purpose or a foreseeable outcome without adequate safeguards; deployers when they use a system for that purpose.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
     },
     {
       "id": "gpai-transparency",

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -21,8 +21,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/openclaw/openclaw",
-    "version": "2026.9.7",
-    "lastRelease": "2026-09-30",
+    "version": "2026.9.9",
+    "lastRelease": "2026-10-08",
     "docsUrl": "https://docs.openclaw.ai",
     "websiteUrl": "https://openclaw.ai",
     "pricing": "Free and open source; no subscription or hosted tier (model provider costs are separate).",

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -16,8 +16,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/NousResearch/hermes-agent",
-    "version": "0.21.5",
-    "lastRelease": "2026-09-24",
+    "version": "0.21.6",
+    "lastRelease": "2026-10-08",
     "docsUrl": "https://hermes-agent.nousresearch.com/docs/",
     "pricing": "Free and open source; model and hosting costs are separate.",
     "pricingModel": "free",

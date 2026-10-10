@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-always-on-agents.xml</id>
   <title>enterpriseai.tools weekly updates — always-on-agents</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-always-on-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-02</id>
+    <title>NanoClaw — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-02" />
+    <summary>NanoClaw v2026.10.0 moved to calendar versioning with stable, beta and edge update channels. OneCLI installs must upgrade the gateway to 1.42.0 to close a credential-injection bypass, and a WhatsApp message-spoofing flaw was patched.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, high" />
+    <source>
+      <id>https://github.com/nanocoai/nanoclaw/releases/tag/v2026.10.0</id>
+      <title>Release v2026.10.0 · nanocoai/nanoclaw</title>
+      <link href="https://github.com/nanocoai/nanoclaw/releases/tag/v2026.10.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-04</id>
+    <title>Hermes Agent — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-04" />
+    <summary>Hermes Agent 0.21.6 is the first release from the new stable pipeline and fixes dashboard auth, automatic execution of repo git filters, and an email allowlist bypass.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, medium" />
+    <source>
+      <id>https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6</id>
+      <title>Release v0.21.6 · NousResearch/hermes-agent</title>
+      <link href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-07</id>
+    <title>OpenClaw — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-07" />
+    <summary>OpenClaw stable 2026.9.9 shipped with 185 commits; a 2026.10.1 beta hotfix for update recovery and plugin loading followed the same day.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, medium" />
+    <source>
+      <id>https://github.com/openclaw/openclaw/releases/tag/v2026.9.9</id>
+      <title>Release v2026.9.9 · openclaw/openclaw</title>
+      <link href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.9" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-28-03</id>
+    <title>Manus — feature</title>
+    <updated>2026-09-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-28-03" />
+    <summary>Manus 2.0 added the Cascade harness, Cloud Computer for always-on projects, event-triggered Automations, Manus Studio, Computer Use and the Cue personal-agent app in early access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, feature, high" />
+    <source>
+      <id>https://manus.im/blog/introducing-manus-2-0</id>
+      <title>Introducing Manus 2.0</title>
+      <link href="https://manus.im/blog/introducing-manus-2-0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-28-02</id>
     <title>Grok Bot — feature</title>

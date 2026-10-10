@@ -14,7 +14,7 @@ test("obligations dataset parses and stays structurally explicit", () => {
   assert.match(dataset.asOf, /^\d{4}-\d{2}-\d{2}$/);
   assert.ok(dataset.statusSummary.length > 100);
   assert.match(dataset.statusSourceUrl, /^https:\/\//);
-  assert.equal(dataset.obligations.length, 11);
+  assert.equal(dataset.obligations.length, 12);
   for (const obligation of dataset.obligations) {
     assert.match(obligation.sourceUrl, /^https:\/\//);
     assert.match(obligation.appliesFrom, /^\d{4}-\d{2}-\d{2}$/);

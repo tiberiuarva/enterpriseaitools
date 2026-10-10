@@ -20,11 +20,11 @@ export const assistantsComparisons: Record<AssistantsSubcategory, AssistantsComp
       },
       {
         attribute: "Individual pricing",
-        values: ["$10/mo Pro, $39 Pro+", "$19/user/mo Pro", "~$19/mo Standard"],
+        values: ["$10/mo Pro, $39 Pro+", "$19/user/mo Pro", "~$19/mo Standard (no new sales)"],
       },
       {
         attribute: "Enterprise pricing",
-        values: ["$39/user/mo", "Custom", "~$45/user/mo"],
+        values: ["$39/user/mo", "Custom", "~$45/user/mo (no new sales)"],
       },
       {
         attribute: "IP indemnity",

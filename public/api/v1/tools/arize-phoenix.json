@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,8 +18,8 @@
     "license": "Elastic License 2.0",
     "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
     "githubUrl": "https://github.com/Arize-ai/phoenix",
-    "version": "20.16.0",
-    "lastRelease": "2026-09-23",
+    "version": "20.20.0",
+    "lastRelease": "2026-10-09",
     "docsUrl": "https://arize.com/docs/phoenix",
     "websiteUrl": "https://arize.com/pricing/",
     "pricing": "Phoenix open source is free and self-hosted. The commercial Arize AX has Free ($0), Pro ($50/month) and custom Enterprise tiers.",

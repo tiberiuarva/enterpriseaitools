@@ -1,7 +1,857 @@
 {
-  "generatedAt": "2026-09-15",
-  "snapshotCount": 5,
+  "generatedAt": "2026-10-10",
+  "snapshotCount": 6,
   "events": [
+    {
+      "toolId": "aembit-iam-for-agentic-ai",
+      "toolName": "Aembit IAM for Agentic AI",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "agentgateway",
+      "toolName": "agentgateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "amazon-bedrock-agentcore",
+      "toolName": "Amazon Bedrock AgentCore",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "amazon-q-developer",
+      "toolName": "Amazon Q Developer",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "status",
+      "previous": "active",
+      "current": "deprecated",
+      "highImpact": true
+    },
+    {
+      "toolId": "arize-phoenix",
+      "toolName": "Arize Phoenix",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-08-11",
+      "current": "2026-09-27",
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "2.10.0",
+      "current": "2.10.3",
+      "highImpact": false
+    },
+    {
+      "toolId": "auth0-for-ai-agents",
+      "toolName": "Auth0 for AI Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "azure-apim-ai-gateway",
+      "toolName": "Azure API Management AI gateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "beeai-framework",
+      "toolName": "BeeAI Framework",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-07-24",
+      "current": "2026-09-28",
+      "highImpact": false
+    },
+    {
+      "toolId": "beeai-framework",
+      "toolName": "BeeAI Framework",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "0.1.82",
+      "current": "0.1.85",
+      "highImpact": false
+    },
+    {
+      "toolId": "braintrust",
+      "toolName": "Braintrust",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "chatgpt-enterprise",
+      "toolName": "ChatGPT Enterprise",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "claude-agent-sdk",
+      "toolName": "Claude Agent SDK",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "claude-code",
+      "toolName": "Claude Code",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "claude-enterprise",
+      "toolName": "Claude Enterprise",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "cloudflare-ai-gateway",
+      "toolName": "Cloudflare AI Gateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-09",
+      "current": "2026-10-09",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.15.21",
+      "current": "1.15.27",
+      "highImpact": false
+    },
+    {
+      "toolId": "datadog-agent-observability",
+      "toolName": "Datadog Agent Observability",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "descope-agentic-identity-hub",
+      "toolName": "Descope Agentic Identity Hub",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "docker-mcp-gateway",
+      "toolName": "Docker MCP Gateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "flowise",
+      "toolName": "Flowise",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "status",
+      "previous": "maintenance",
+      "current": "archived",
+      "highImpact": true
+    },
+    {
+      "toolId": "gemini-code-assist",
+      "toolName": "Gemini Code Assist",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "status",
+      "previous": "active",
+      "current": "deprecated",
+      "highImpact": true
+    },
+    {
+      "toolId": "gemini-spark",
+      "toolName": "Gemini Spark",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "google-agent-identity",
+      "toolName": "Google Agent Identity",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "google-antigravity",
+      "toolName": "Google Antigravity",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "grok-bot",
+      "toolName": "Grok Bot",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-07-20",
+      "current": "2026-10-01",
+      "highImpact": false
+    },
+    {
+      "toolId": "haystack",
+      "toolName": "Haystack",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "3.0.0",
+      "current": "3.3.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "hermes-agent",
+      "toolName": "Hermes Agent",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "ibm-watsonx-orchestrate",
+      "toolName": "IBM watsonx Orchestrate",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "idira-secure-ai-agents",
+      "toolName": "Idira Secure AI Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "kiro",
+      "toolName": "Kiro",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "kong-ai-gateway",
+      "toolName": "Kong AI Gateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "kore-ai-agent-management-platform",
+      "toolName": "Kore.ai Agent Management Platform",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-08",
+      "current": "2026-10-06",
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.12.1",
+      "current": "1.12.5",
+      "highImpact": false
+    },
+    {
+      "toolId": "langfuse",
+      "toolName": "Langfuse",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-08-11",
+      "current": "2026-10-06",
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.2.11",
+      "current": "1.2.14",
+      "highImpact": false
+    },
+    {
+      "toolId": "langsmith",
+      "toolName": "LangSmith",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "litellm",
+      "toolName": "LiteLLM",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-06-24",
+      "current": "2026-09-21",
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "0.14.23",
+      "current": "0.14.25",
+      "highImpact": false
+    },
+    {
+      "toolId": "llm-guard",
+      "toolName": "LLM Guard",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "status",
+      "previous": "maintenance",
+      "current": "archived",
+      "highImpact": true
+    },
+    {
+      "toolId": "manus",
+      "toolName": "Manus",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-11",
+      "current": "2026-10-07",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.66.0",
+      "current": "1.75.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-365",
+      "toolName": "Microsoft Agent 365",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-10",
+      "current": "2026-10-08",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.18.0",
+      "current": "1.21.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-autopilot",
+      "toolName": "Microsoft Autopilot",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-entra-agent-id",
+      "toolName": "Microsoft Entra Agent ID",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-purview-dspm",
+      "toolName": "Microsoft Purview Data Security Posture Management",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "mlflow",
+      "toolName": "MLflow",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "mulesoft-agent-fabric",
+      "toolName": "MuleSoft Agent Fabric",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "meta-muse",
+      "toolName": "Muse",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-11",
+      "current": "2026-10-09",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "2.38.7",
+      "current": "2.42.6",
+      "highImpact": false
+    },
+    {
+      "toolId": "nanoclaw",
+      "toolName": "NanoClaw",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-07-01",
+      "current": "2026-09-16",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "0.23.0",
+      "current": "0.24.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "nvidia-nemoclaw",
+      "toolName": "NVIDIA NemoClaw",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "okta-for-ai-agents",
+      "toolName": "Okta for AI Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-09-09",
+      "current": "2026-10-02",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "0.22.2",
+      "current": "0.23.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-codex",
+      "toolName": "OpenAI Codex",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "openclaw",
+      "toolName": "OpenClaw",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "opik",
+      "toolName": "Opik",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-08-17",
+      "current": "2026-10-05",
+      "highImpact": false
+    },
+    {
+      "toolId": "paperclip",
+      "toolName": "Paperclip",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "v2026.817.0",
+      "current": "v2026.1005.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "ping-identity-for-ai",
+      "toolName": "Ping Identity for AI",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "portkey-ai-gateway",
+      "toolName": "Portkey AI Gateway",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "prisma-airs",
+      "toolName": "Prisma AIRS",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "pydantic-ai",
+      "toolName": "Pydantic AI",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "sailpoint-agent-identity-security",
+      "toolName": "SailPoint Agent Identity Security",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "saviynt-zuma",
+      "toolName": "Saviynt Zuma",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "lastRelease",
+      "previous": "2026-07-07",
+      "current": "2026-10-06",
+      "highImpact": false
+    },
+    {
+      "toolId": "semantic-kernel",
+      "toolName": "Semantic Kernel",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "version",
+      "previous": "1.44.0",
+      "current": "1.45.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "servicenow-ai-control-tower",
+      "toolName": "ServiceNow AI Control Tower",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "strands-agents",
+      "toolName": "Strands Agents",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "temporal",
+      "toolName": "Temporal",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "workday-agent-system-of-record",
+      "toolName": "Workday Agent System of Record",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
+    {
+      "toolId": "zenity",
+      "toolName": "Zenity",
+      "from": "2026-09-13",
+      "to": "2026-10-10",
+      "field": "tracked",
+      "previous": null,
+      "current": "added",
+      "highImpact": false
+    },
     {
       "toolId": "amazon-q-business",
       "toolName": "Amazon Q Business",

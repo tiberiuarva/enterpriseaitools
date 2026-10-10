@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-observability.xml</id>
   <title>enterpriseai.tools weekly updates — observability</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-observability.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-05</id>
+    <title>Langfuse — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-05" />
+    <summary>Langfuse 4.55 added FIPS-mode Docker images, a Google Cloud Storage export target and batch score ingestion; 4.56.0 adds spend alerts and moves score reads to read replicas.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, medium" />
+    <source>
+      <id>https://github.com/langfuse/langfuse/releases/tag/v4.56.0</id>
+      <title>Release v4.56.0 · langfuse/langfuse</title>
+      <link href="https://github.com/langfuse/langfuse/releases/tag/v4.56.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-06</id>
+    <title>Arize Phoenix — feature</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-06" />
+    <summary>Arize Phoenix 20.20.0 adds a Docker Sandboxes provider and MCP GraphQL tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, medium" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.20.0</id>
+      <title>Release arize-phoenix-v20.20.0 · Arize-ai/phoenix</title>
+      <link href="https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.20.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-09</id>
+    <title>Opik — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-09" />
+    <summary>Opik 2.2.96 is the latest release; the 2.2.92 line added a free-form SQL post-run check and a native Ollama integration.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, low" />
+    <source>
+      <id>https://github.com/comet-ml/opik/releases/tag/2.2.96</id>
+      <title>Release 2.2.96 · comet-ml/opik</title>
+      <link href="https://github.com/comet-ml/opik/releases/tag/2.2.96" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-01</id>
+    <title>MLflow — release</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-01" />
+    <summary>MLflow 3.17.0 adds typed judge decisions, fine-grained permissions for shared resources and faster SQL trace analytics. It requires a coordinated database upgrade.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, high" />
+    <source>
+      <id>https://github.com/mlflow/mlflow/releases/tag/v3.17.0</id>
+      <title>Release v3.17.0 · mlflow/mlflow</title>
+      <link href="https://github.com/mlflow/mlflow/releases/tag/v3.17.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-17-01</id>
     <title>MLflow — release</title>

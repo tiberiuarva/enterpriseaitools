@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -29,7 +29,7 @@
     "clouds": [
       "gcp"
     ],
-    "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; Gemini Code Assist Standard/Enterprise access is unchanged.",
+    "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; new Gemini Code Assist Standard/Enterprise subscriptions ended on 2026-10-09 and Google points those customers to Antigravity.",
     "tags": [
       "assistants",
       "coding",

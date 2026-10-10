@@ -2,10 +2,262 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-01</id>
+    <title>Gemini Code Assist — deprecation</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-01" />
+    <summary>Google stopped selling new Gemini Code Assist Standard and Enterprise subscriptions on October 9, 2026. Existing subscriptions auto-renew through 2026, auto-renewal ends in 2027, and Google points customers to Antigravity.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/docs/release-notes</id>
+      <title>Gemini for Google Cloud release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-01</id>
+    <title>OpenAI Codex — feature</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-01" />
+    <summary>Codex added GPT-6.1 Sol Ultrafast mode for Pro and eligible Enterprise and Edu plans. It is off by default for Enterprise and supports US and EEA/Switzerland inference residency.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-02</id>
+    <title>ChatGPT Enterprise — feature</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-02" />
+    <summary>GPT-6.1 Sol Ultrafast mode is available for eligible ChatGPT Enterprise workspaces. It is off by default and workspace owners must enable it.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-03</id>
+    <title>Gemini Enterprise — model-addition</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-03" />
+    <summary>Gemini Enterprise admins can enable Claude Opus 5.5 and Sonnet 5.5 for Antigravity tools. They are off by default and billed as consumption with overages enabled.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-02</id>
+    <title>GitHub Copilot — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-02" />
+    <summary>Claude Haiku 5.5 is generally available in GitHub Copilot for Pro, Pro+, Max, Business and Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot</id>
+      <title>Claude Haiku 5.5 in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-03</id>
+    <title>GitHub Copilot — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-03" />
+    <summary>Local sandboxing is generally available in Copilot CLI, the Copilot app and VS Code Agent Host sessions at no extra cost, with enterprise policies developers cannot weaken.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available</id>
+      <title>Local sandboxing for GitHub Copilot now generally available</title>
+      <link href="https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-04</id>
+    <title>Claude Code — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-04" />
+    <summary>Claude Code 2.1.293 made Claude Haiku 5.5 (1M context) the default Haiku model on the Anthropic API.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-05</id>
+    <title>Claude Enterprise — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-05" />
+    <summary>Anthropic released Claude Haiku 5.5, available on all Claude plans including Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://support.claude.com/en/articles/12138966-release-notes</id>
+      <title>Claude release notes</title>
+      <link href="https://support.claude.com/en/articles/12138966-release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-08</id>
+    <title>Google Antigravity — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-08" />
+    <summary>Antigravity 2.21.1 renamed Scheduled Tasks to Automations and added search across conversations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://antigravity.google/docs/changelog</id>
+      <title>Google Antigravity changelog</title>
+      <link href="https://antigravity.google/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-02</id>
+    <title>Gemini Enterprise — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-02" />
+    <summary>Gemini Enterprise added admin controls for Antigravity: Boost is generally available and Teamwork is in Preview.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-03</id>
+    <title>Databricks Genie Code — release</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-03" />
+    <summary>Genie Code CLI entered Beta as a terminal coding agent for data and AI work, with model access governed through Unity Gateway.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-04</id>
+    <title>Microsoft 365 Copilot — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-04" />
+    <summary>Microsoft 365 Copilot added Copilot Search with embedded chat, a switch-model option, custom skills in PowerPoint and Cowork adoption metrics in Viva Insights.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes</id>
+      <title>Microsoft 365 Copilot release notes</title>
+      <link href="https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-08</id>
+    <title>Cursor — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-08" />
+    <summary>Cursor added remote control of local agents from its iOS app. It is on by default except in Enterprise orgs, where admins must enable it.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://cursor.com/changelog</id>
+      <title>Cursor changelog</title>
+      <link href="https://cursor.com/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-01</id>
+    <title>GitHub Copilot — deprecation</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-01" />
+    <summary>GitHub deprecated Gemini 3.5 Flash, Gemini 3.6 Flash, Kimi K2.7 Code and Claude Opus 4.7 across Copilot; suggested replacements are Gemini 3.8 Flash, Kimi K3 and Claude Opus 5.5.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated</id>
+      <title>Selected models in GitHub Copilot deprecated</title>
+      <link href="https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-02</id>
+    <title>Kiro — model-addition</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-02" />
+    <summary>Kiro added experimental Claude Sonnet 5.5 support with a 1M-token context window across the IDE, CLI and Web.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-03</id>
+    <title>Gemini Enterprise — feature</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-03" />
+    <summary>Gemini Enterprise federated query mode (Preview) queries AlloyDB, BigQuery, Cloud SQL and Spanner data in place through MCP using each user’s credentials.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-02</id>
+    <title>Gemini Enterprise — deprecation</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-02" />
+    <summary>Gemini 2.5 Pro will be removed from the Gemini Enterprise app in the Canada and Japan in-country regions on October 20, 2026; it stays in global, US and EU.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, low" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-30-02</id>
+    <title>Kiro — feature</title>
+    <updated>2026-09-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-30-02" />
+    <summary>Kiro introduced multi-agent Workflows across the CLI, IDE and Web cloud sessions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-22-01</id>
     <title>GitHub Copilot — model-addition</title>
