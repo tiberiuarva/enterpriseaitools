@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
   <title>enterpriseai.tools weekly updates — gateways</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-08</id>
+    <title>LiteLLM — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-08" />
+    <summary>LiteLLM 1.104.2 is the latest stable release and backports the /v1/systemone and OpenAI-format /v1/decisions endpoints.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/BerriAI/litellm/releases/tag/v1.104.2</id>
+      <title>Release v1.104.2 · BerriAI/litellm</title>
+      <link href="https://github.com/BerriAI/litellm/releases/tag/v1.104.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-06</id>
+    <title>Databricks Unity Gateway — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-06" />
+    <summary>Unity Gateway external service policies (Beta) can send request and response content to a third-party guardrail vendor and block denied calls.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-04</id>
+    <title>Cloudflare AI Gateway — feature</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-04" />
+    <summary>Cloudflare launched a Web Search API in beta that runs through AI Gateway, with Ceramic.ai, Exa and Linkup as providers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/product/ai-gateway/</id>
+      <title>Cloudflare AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/changelog/product/ai-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-05</id>
+    <title>agentgateway — release</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-05" />
+    <summary>agentgateway 1.6.0 adds more resilient LLM routing, built-in cost tracking and enables the AgentgatewayModel API by default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.6.0</id>
+      <title>Release v1.6.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.6.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-30-03</id>
+    <title>Cloudflare AI Gateway — feature</title>
+    <updated>2026-09-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-30-03" />
+    <summary>Cloudflare AI Gateway added Machine Payments (beta), letting clients pay for eligible requests over x402 from a stablecoin wallet.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/product/ai-gateway/</id>
+      <title>Cloudflare AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/changelog/product/ai-gateway/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-08-27-01</id>
     <title>agentgateway — release</title>

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-10-10",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/temporalio/temporal",
-    "version": "1.32.0",
-    "lastRelease": "2026-09-11",
+    "version": "1.32.1",
+    "lastRelease": "2026-10-08",
     "docsUrl": "https://docs.temporal.io/ai",
     "websiteUrl": "https://temporal.io/",
     "pricing": "Temporal Cloud pay-as-you-go from $50 per million actions (volume discounts to $25), plus storage; $150 trial credits for 90 days.",

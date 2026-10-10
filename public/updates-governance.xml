@@ -2,10 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-governance.xml</id>
   <title>enterpriseai.tools weekly updates — governance</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-governance.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-07</id>
+    <title>Google Model Armor — feature</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-07" />
+    <summary>Model Armor improved prompt-injection and jailbreak protection for Workspace data such as emails, docs and files, on US and EU multi-region endpoints with filter version v3 or later.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/model-armor/release-notes</id>
+      <title>Model Armor release notes</title>
+      <link href="https://docs.cloud.google.com/model-armor/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-16-01</id>
     <title>NeMo Guardrails — release</title>

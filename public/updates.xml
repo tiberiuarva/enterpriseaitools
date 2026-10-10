@@ -2,10 +2,682 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-09-30T00:00:00.000Z</updated>
+  <updated>2026-10-10T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-01</id>
+    <title>Gemini Code Assist — deprecation</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-01" />
+    <summary>Google stopped selling new Gemini Code Assist Standard and Enterprise subscriptions on October 9, 2026. Existing subscriptions auto-renew through 2026, auto-renewal ends in 2027, and Google points customers to Antigravity.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/docs/release-notes</id>
+      <title>Gemini for Google Cloud release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-02</id>
+    <title>NanoClaw — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-02" />
+    <summary>NanoClaw v2026.10.0 moved to calendar versioning with stable, beta and edge update channels. OneCLI installs must upgrade the gateway to 1.42.0 to close a credential-injection bypass, and a WhatsApp message-spoofing flaw was patched.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, high" />
+    <source>
+      <id>https://github.com/nanocoai/nanoclaw/releases/tag/v2026.10.0</id>
+      <title>Release v2026.10.0 · nanocoai/nanoclaw</title>
+      <link href="https://github.com/nanocoai/nanoclaw/releases/tag/v2026.10.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-03</id>
+    <title>Pydantic AI — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-03" />
+    <summary>Pydantic AI 2.55.0 requires Python 3.11+, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5. Version 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.55.0</id>
+      <title>Release v2.55.0 · pydantic/pydantic-ai</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.55.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-04</id>
+    <title>n8n — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-04" />
+    <summary>n8n 2.42.6 blocks creating or updating workflows that use deprecated nodes and adds Gemini image models.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/n8n-io/n8n/releases/tag/n8n%402.42.6</id>
+      <title>Release n8n@2.42.6 · n8n-io/n8n</title>
+      <link href="https://github.com/n8n-io/n8n/releases/tag/n8n%402.42.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-05</id>
+    <title>Langfuse — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-05" />
+    <summary>Langfuse 4.55 added FIPS-mode Docker images, a Google Cloud Storage export target and batch score ingestion; 4.56.0 adds spend alerts and moves score reads to read replicas.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, medium" />
+    <source>
+      <id>https://github.com/langfuse/langfuse/releases/tag/v4.56.0</id>
+      <title>Release v4.56.0 · langfuse/langfuse</title>
+      <link href="https://github.com/langfuse/langfuse/releases/tag/v4.56.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-06</id>
+    <title>Arize Phoenix — feature</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-06" />
+    <summary>Arize Phoenix 20.20.0 adds a Docker Sandboxes provider and MCP GraphQL tools.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, medium" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.20.0</id>
+      <title>Release arize-phoenix-v20.20.0 · Arize-ai/phoenix</title>
+      <link href="https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.20.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-07</id>
+    <title>Google Model Armor — feature</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-07" />
+    <summary>Model Armor improved prompt-injection and jailbreak protection for Workspace data such as emails, docs and files, on US and EU multi-region endpoints with filter version v3 or later.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/model-armor/release-notes</id>
+      <title>Model Armor release notes</title>
+      <link href="https://docs.cloud.google.com/model-armor/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-08</id>
+    <title>CrewAI — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-08" />
+    <summary>CrewAI 1.15.27 adds DeepInfra as an OpenAI-compatible provider and stops sending stop sequences to GPT-6, GPT-5.6 and gpt-oss models.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/crewAIInc/crewAI/releases/tag/1.15.27</id>
+      <title>Release 1.15.27 · crewAIInc/crewAI</title>
+      <link href="https://github.com/crewAIInc/crewAI/releases/tag/1.15.27" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-09</id>
+    <title>Opik — release</title>
+    <updated>2026-10-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-09" />
+    <summary>Opik 2.2.96 is the latest release; the 2.2.92 line added a free-form SQL post-run check and a native Ollama integration.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, low" />
+    <source>
+      <id>https://github.com/comet-ml/opik/releases/tag/2.2.96</id>
+      <title>Release 2.2.96 · comet-ml/opik</title>
+      <link href="https://github.com/comet-ml/opik/releases/tag/2.2.96" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-01</id>
+    <title>OpenAI Codex — feature</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-01" />
+    <summary>Codex added GPT-6.1 Sol Ultrafast mode for Pro and eligible Enterprise and Edu plans. It is off by default for Enterprise and supports US and EEA/Switzerland inference residency.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-02</id>
+    <title>ChatGPT Enterprise — feature</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-02" />
+    <summary>GPT-6.1 Sol Ultrafast mode is available for eligible ChatGPT Enterprise workspaces. It is off by default and workspace owners must enable it.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-03</id>
+    <title>Gemini Enterprise — model-addition</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-03" />
+    <summary>Gemini Enterprise admins can enable Claude Opus 5.5 and Sonnet 5.5 for Antigravity tools. They are off by default and billed as consumption with overages enabled.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-04</id>
+    <title>Hermes Agent — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-04" />
+    <summary>Hermes Agent 0.21.6 is the first release from the new stable pipeline and fixes dashboard auth, automatic execution of repo git filters, and an email allowlist bypass.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, medium" />
+    <source>
+      <id>https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6</id>
+      <title>Release v0.21.6 · NousResearch/hermes-agent</title>
+      <link href="https://github.com/NousResearch/hermes-agent/releases/tag/v0.21.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-05</id>
+    <title>Microsoft Agent Framework — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-05" />
+    <summary>Agent Framework python-1.21.0 adds Purview policy evaluation for streamed responses and an alpha Oracle vector store. python-1.20.0 added hosting of native workflows over Foundry, with breaking changes to Foundry hosting settings.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/microsoft/agent-framework/releases/tag/python-1.21.0</id>
+      <title>Release python-1.21.0 · microsoft/agent-framework</title>
+      <link href="https://github.com/microsoft/agent-framework/releases/tag/python-1.21.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-06</id>
+    <title>Strands Agents — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-06" />
+    <summary>Strands Agents Python 1.59.0 and TypeScript 1.20.0 add Agent.shutdown(), agent.cancel() and a vended subagent tool, and graduate TypeScript bidirectional streaming.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/strands-agents/harness-sdk/releases/tag/python%2Fv1.59.0</id>
+      <title>Release python/v1.59.0 · strands-agents/harness-sdk</title>
+      <link href="https://github.com/strands-agents/harness-sdk/releases/tag/python%2Fv1.59.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-07</id>
+    <title>OpenClaw — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-07" />
+    <summary>OpenClaw stable 2026.9.9 shipped with 185 commits; a 2026.10.1 beta hotfix for update recovery and plugin loading followed the same day.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, medium" />
+    <source>
+      <id>https://github.com/openclaw/openclaw/releases/tag/v2026.9.9</id>
+      <title>Release v2026.9.9 · openclaw/openclaw</title>
+      <link href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.9" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-08</id>
+    <title>LiteLLM — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-08" />
+    <summary>LiteLLM 1.104.2 is the latest stable release and backports the /v1/systemone and OpenAI-format /v1/decisions endpoints.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/BerriAI/litellm/releases/tag/v1.104.2</id>
+      <title>Release v1.104.2 · BerriAI/litellm</title>
+      <link href="https://github.com/BerriAI/litellm/releases/tag/v1.104.2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-09</id>
+    <title>Temporal — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-09" />
+    <summary>Temporal 1.32.1 patches Standalone Activity task routing, task-queue user data and fair task garbage collection.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, low" />
+    <source>
+      <id>https://github.com/temporalio/temporal/releases/tag/v1.32.1</id>
+      <title>Release v1.32.1 · temporalio/temporal</title>
+      <link href="https://github.com/temporalio/temporal/releases/tag/v1.32.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-10</id>
+    <title>Claude Agent SDK — release</title>
+    <updated>2026-10-08T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-08-10" />
+    <summary>Claude Agent SDK 0.2.165 bundles Claude Code CLI 2.1.294.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165</id>
+      <title>Release v0.2.165 · anthropics/claude-agent-sdk-python</title>
+      <link href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-01</id>
+    <title>MLflow — release</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-01" />
+    <summary>MLflow 3.17.0 adds typed judge decisions, fine-grained permissions for shared resources and faster SQL trace analytics. It requires a coordinated database upgrade.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, high" />
+    <source>
+      <id>https://github.com/mlflow/mlflow/releases/tag/v3.17.0</id>
+      <title>Release v3.17.0 · mlflow/mlflow</title>
+      <link href="https://github.com/mlflow/mlflow/releases/tag/v3.17.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-02</id>
+    <title>GitHub Copilot — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-02" />
+    <summary>Claude Haiku 5.5 is generally available in GitHub Copilot for Pro, Pro+, Max, Business and Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot</id>
+      <title>Claude Haiku 5.5 in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-03</id>
+    <title>GitHub Copilot — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-03" />
+    <summary>Local sandboxing is generally available in Copilot CLI, the Copilot app and VS Code Agent Host sessions at no extra cost, with enterprise policies developers cannot weaken.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available</id>
+      <title>Local sandboxing for GitHub Copilot now generally available</title>
+      <link href="https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-04</id>
+    <title>Claude Code — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-04" />
+    <summary>Claude Code 2.1.293 made Claude Haiku 5.5 (1M context) the default Haiku model on the Anthropic API.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-05</id>
+    <title>Claude Enterprise — model-addition</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-05" />
+    <summary>Anthropic released Claude Haiku 5.5, available on all Claude plans including Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://support.claude.com/en/articles/12138966-release-notes</id>
+      <title>Claude release notes</title>
+      <link href="https://support.claude.com/en/articles/12138966-release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-06</id>
+    <title>Databricks Unity Gateway — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-06" />
+    <summary>Unity Gateway external service policies (Beta) can send request and response content to a third-party guardrail vendor and block denied calls.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-07</id>
+    <title>Mastra — release</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-07" />
+    <summary>Mastra core 1.75.0 adds a span query API, token and cost analytics, and @mastra/connect 1.0 with Microsoft Teams. Breaking: integrations is renamed providers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.75.0</id>
+      <title>Release @mastra/core@1.75.0 · mastra-ai/mastra</title>
+      <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.75.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-08</id>
+    <title>Google Antigravity — feature</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-08" />
+    <summary>Antigravity 2.21.1 renamed Scheduled Tasks to Automations and added search across conversations.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://antigravity.google/docs/changelog</id>
+      <title>Google Antigravity changelog</title>
+      <link href="https://antigravity.google/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-01</id>
+    <title>SailPoint Agent Identity Security — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-01" />
+    <summary>At Navigate 2026 SailPoint announced autonomous identity security agents, AI identity security posture management, an agent kill switch, runtime authorization, shadow-AI discovery and just-in-time provisioning for agents.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, high" />
+    <source>
+      <id>https://www.sailpoint.com/press-releases/sailpoint-unlocks-a-secure-agentic-era-with-autonomous-identity-security</id>
+      <title>SailPoint press release</title>
+      <link href="https://www.sailpoint.com/press-releases/sailpoint-unlocks-a-secure-agentic-era-with-autonomous-identity-security" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-02</id>
+    <title>Gemini Enterprise — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-02" />
+    <summary>Gemini Enterprise added admin controls for Antigravity: Boost is generally available and Teamwork is in Preview.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-03</id>
+    <title>Databricks Genie Code — release</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-03" />
+    <summary>Genie Code CLI entered Beta as a terminal coding agent for data and AI work, with model access governed through Unity Gateway.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-04</id>
+    <title>Microsoft 365 Copilot — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-04" />
+    <summary>Microsoft 365 Copilot added Copilot Search with embedded chat, a switch-model option, custom skills in PowerPoint and Cowork adoption metrics in Viva Insights.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes</id>
+      <title>Microsoft 365 Copilot release notes</title>
+      <link href="https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-05</id>
+    <title>LangFlow — release</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-05" />
+    <summary>Langflow 1.12.5 fixes MCP session leaks and timeouts, restricts built-in code execution to administrators and upgrades vulnerable dependencies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.12.5</id>
+      <title>Release v1.12.5 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.12.5" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-06</id>
+    <title>Semantic Kernel — release</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-06" />
+    <summary>Semantic Kernel python-1.45.0 removes an unsupported auth mode from the Copilot Studio agent (breaking) and hardens request validation; dotnet-1.81.0 shipped the same day.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/microsoft/semantic-kernel/releases/tag/python-1.45.0</id>
+      <title>Release python-1.45.0 · microsoft/semantic-kernel</title>
+      <link href="https://github.com/microsoft/semantic-kernel/releases/tag/python-1.45.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-07</id>
+    <title>LangGraph — release</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-07" />
+    <summary>LangGraph 1.2.14 fixes update_state and checkpoint branching issues.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/langchain-ai/langgraph/releases/tag/1.2.14</id>
+      <title>Release langgraph==1.2.14 · langchain-ai/langgraph</title>
+      <link href="https://github.com/langchain-ai/langgraph/releases/tag/1.2.14" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-06-08</id>
+    <title>Cursor — feature</title>
+    <updated>2026-10-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-08" />
+    <summary>Cursor added remote control of local agents from its iOS app. It is on by default except in Enterprise orgs, where admins must enable it.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://cursor.com/changelog</id>
+      <title>Cursor changelog</title>
+      <link href="https://cursor.com/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-05-01</id>
+    <title>Paperclip — release</title>
+    <updated>2026-10-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-05-01" />
+    <summary>Paperclip v2026.1005.0 adds Grok Build on the native runner, persistent agent files, GitHub skill sync and two-way Slack. Breaking: @-mentioning an agent no longer starts a run.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.1005.0</id>
+      <title>Release v2026.1005.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.1005.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-05-02</id>
+    <title>Databricks Lakeflow Jobs — feature</title>
+    <updated>2026-10-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-05-02" />
+    <summary>Lakeflow Jobs can now use up to five triggers per job (Beta), mixing trigger types and pausing each one separately.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-01</id>
+    <title>GitHub Copilot — deprecation</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-01" />
+    <summary>GitHub deprecated Gemini 3.5 Flash, Gemini 3.6 Flash, Kimi K2.7 Code and Claude Opus 4.7 across Copilot; suggested replacements are Gemini 3.8 Flash, Kimi K3 and Claude Opus 5.5.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated</id>
+      <title>Selected models in GitHub Copilot deprecated</title>
+      <link href="https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-02</id>
+    <title>Kiro — model-addition</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-02" />
+    <summary>Kiro added experimental Claude Sonnet 5.5 support with a 1M-token context window across the IDE, CLI and Web.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-03</id>
+    <title>Gemini Enterprise — feature</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-03" />
+    <summary>Gemini Enterprise federated query mode (Preview) queries AlloyDB, BigQuery, Cloud SQL and Spanner data in place through MCP using each user’s credentials.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-04</id>
+    <title>Cloudflare AI Gateway — feature</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-04" />
+    <summary>Cloudflare launched a Web Search API in beta that runs through AI Gateway, with Ceramic.ai, Exa and Linkup as providers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/product/ai-gateway/</id>
+      <title>Cloudflare AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/changelog/product/ai-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-05</id>
+    <title>agentgateway — release</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-05" />
+    <summary>agentgateway 1.6.0 adds more resilient LLM routing, built-in cost tracking and enables the AgentgatewayModel API by default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, medium" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.6.0</id>
+      <title>Release v1.6.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.6.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-06</id>
+    <title>Google Agent Builder + ADK — release</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-06" />
+    <summary>ADK for Python 2.11.0 adds graceful cancellation, approval pauses for tool nodes in workflows, a SQLite memory service and opt-in MCP SDK 2.x.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/google/adk-python/releases/tag/v2.11.0</id>
+      <title>Release v2.11.0 · google/adk-python</title>
+      <link href="https://github.com/google/adk-python/releases/tag/v2.11.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-02-07</id>
+    <title>OpenAI Agents SDK — release</title>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-02-07" />
+    <summary>OpenAI Agents SDK 0.23.x adds configurable MCP listing page limits and opt-in Docker removal protection for sandboxes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, low" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.23.1</id>
+      <title>Release v0.23.1 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.23.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-01</id>
+    <title>Haystack — release</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-01" />
+    <summary>Haystack 3.3.0 makes SentenceWindowRetriever query the document store once per call; BM25 retrieval now returns only documents matching a query term.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, low" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v3.3.0</id>
+      <title>Release v3.3.0 · deepset-ai/haystack</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v3.3.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-02</id>
+    <title>Gemini Enterprise — deprecation</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-02" />
+    <summary>Gemini 2.5 Pro will be removed from the Gemini Enterprise app in the Canada and Japan in-country regions on October 20, 2026; it stays in global, US and EU.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, low" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-30-02</id>
+    <title>Kiro — feature</title>
+    <updated>2026-09-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-30-02" />
+    <summary>Kiro introduced multi-agent Workflows across the CLI, IDE and Web cloud sessions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-30-03</id>
+    <title>Cloudflare AI Gateway — feature</title>
+    <updated>2026-09-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-30-03" />
+    <summary>Cloudflare AI Gateway added Machine Payments (beta), letting clients pay for eligible requests over x402 from a stablecoin wallet.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/product/ai-gateway/</id>
+      <title>Cloudflare AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/changelog/product/ai-gateway/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-30-01</id>
     <title>n8n — release</title>
@@ -46,6 +718,20 @@
       <id>https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.72.0</id>
       <title>Release @mastra/core@1.72.0 · mastra-ai/mastra</title>
       <link href="https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.72.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-28-03</id>
+    <title>Manus — feature</title>
+    <updated>2026-09-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-28-03" />
+    <summary>Manus 2.0 added the Cascade harness, Cloud Computer for always-on projects, event-triggered Automations, Manus Studio, Computer Use and the Cue personal-agent app in early access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, feature, high" />
+    <source>
+      <id>https://manus.im/blog/introducing-manus-2-0</id>
+      <title>Introducing Manus 2.0</title>
+      <link href="https://manus.im/blog/introducing-manus-2-0" />
     </source>
   </entry>
   <entry>
