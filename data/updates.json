@@ -32,7 +32,7 @@
       "toolName": "Pydantic AI",
       "category": "agents",
       "type": "release",
-      "summary": "Pydantic AI 2.55.0 requires Python 3.11+, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5. Version 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp.",
+      "summary": "Pydantic AI 2.55.0 requires Python 3.11+ in every package, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5.",
       "sourceUrl": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.55.0",
       "sourceTitle": "Release v2.55.0 · pydantic/pydantic-ai",
       "impact": "medium"
@@ -380,7 +380,7 @@
       "toolName": "LangFlow",
       "category": "orchestration",
       "type": "release",
-      "summary": "Langflow 1.12.5 fixes MCP session leaks and timeouts, restricts built-in code execution to administrators and upgrades vulnerable dependencies.",
+      "summary": "LangFlow 1.12.5 fixes MCP session leaks and timeouts, restricts built-in code execution to administrators and upgrades vulnerable dependencies.",
       "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.12.5",
       "sourceTitle": "Release v1.12.5 · langflow-ai/langflow",
       "impact": "medium"
@@ -552,6 +552,18 @@
       "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
       "sourceTitle": "Gemini Enterprise release notes",
       "impact": "low"
+    },
+    {
+      "id": "update-2026-10-01-03",
+      "date": "2026-10-01",
+      "toolId": "pydantic-ai",
+      "toolName": "Pydantic AI",
+      "category": "agents",
+      "type": "release",
+      "summary": "Pydantic AI 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp, where a streamed request through ConcurrencyLimitedModel could keep its concurrency slot and block other requests sharing the limiter. Pydantic AI v1 is not affected.",
+      "sourceUrl": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0",
+      "sourceTitle": "Release v2.53.0 · pydantic/pydantic-ai",
+      "impact": "medium"
     },
     {
       "id": "update-2026-09-30-02",

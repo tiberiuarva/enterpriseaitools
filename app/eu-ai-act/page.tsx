@@ -43,6 +43,11 @@ const FAQ_ITEMS = [
       "Since 2 February 2025: the Article 5 prohibitions on unacceptable-risk practices and the Article 4 AI-literacy duty. Since 2 August 2025: transparency obligations for general-purpose AI model providers (Articles 53-55). Commission enforcement powers over GPAI providers begin 2 August 2026.",
   },
   {
+    question: "What changes on 2 December 2026?",
+    answer:
+      "Regulation (EU) 2026/1744 adds Article 5 prohibitions on AI systems that generate non-consensual intimate imagery of identifiable people or child sexual abuse material, applying from 2 December 2026. Generative AI systems placed on the market before 2 August 2026 must also meet the Article 50(2) content-marking duty by that date.",
+  },
+  {
     question: "When do high-risk AI system obligations apply?",
     answer:
       "Regulation (EU) 2026/1744 fixes the application date for Sections 1-3 of the high-risk chapter at 2 December 2027 for stand-alone Annex III systems and 2 August 2028 for high-risk systems embedded in Annex I regulated products.",

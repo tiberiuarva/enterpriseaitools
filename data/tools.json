@@ -3110,7 +3110,7 @@
       "license": "Proprietary",
       "docsUrl": "https://cloud.google.com/gemini/docs/codeassist/overview",
       "websiteUrl": "https://cloud.google.com/products/gemini/code-assist",
-      "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise.",
+      "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise for existing subscribers only; closed to new purchases since 2026-10-09.",
       "pricingModel": "paid",
       "status": "deprecated",
       "tags": [
@@ -5648,7 +5648,7 @@
       "clouds": [
         "gcp"
       ],
-      "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; Gemini Code Assist Standard/Enterprise access is unchanged.",
+      "statusNote": "Launched in public preview on 2025-11-20. Since 2026-06-18, consumer Gemini Code Assist and Gemini CLI users are directed to Antigravity; new Gemini Code Assist Standard/Enterprise subscriptions ended on 2026-10-09 and Google points those customers to Antigravity.",
       "tags": [
         "assistants",
         "coding",
