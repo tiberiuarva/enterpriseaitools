@@ -22,7 +22,7 @@
     "license": "Proprietary",
     "docsUrl": "https://cloud.google.com/gemini/docs/codeassist/overview",
     "websiteUrl": "https://cloud.google.com/products/gemini/code-assist",
-    "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise.",
+    "pricing": "$19/user/mo Standard; ~$45/user/mo Enterprise for existing subscribers only; closed to new purchases since 2026-10-09.",
     "pricingModel": "paid",
     "status": "deprecated",
     "tags": [

@@ -39,7 +39,7 @@
     <title>Pydantic AI — release</title>
     <updated>2026-10-09T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-03" />
-    <summary>Pydantic AI 2.55.0 requires Python 3.11+, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5. Version 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp.</summary>
+    <summary>Pydantic AI 2.55.0 requires Python 3.11+ in every package, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
     <source>
@@ -445,7 +445,7 @@
     <title>LangFlow — release</title>
     <updated>2026-10-06T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-06-05" />
-    <summary>Langflow 1.12.5 fixes MCP session leaks and timeouts, restricts built-in code execution to administrators and upgrades vulnerable dependencies.</summary>
+    <summary>LangFlow 1.12.5 fixes MCP session leaks and timeouts, restricts built-in code execution to administrators and upgrades vulnerable dependencies.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, release, medium" />
     <source>
@@ -648,6 +648,20 @@
       <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
       <title>Gemini Enterprise release notes</title>
       <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-03</id>
+    <title>Pydantic AI — release</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-03" />
+    <summary>Pydantic AI 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp, where a streamed request through ConcurrencyLimitedModel could keep its concurrency slot and block other requests sharing the limiter. Pydantic AI v1 is not affected.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0</id>
+      <title>Release v2.53.0 · pydantic/pydantic-ai</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0" />
     </source>
   </entry>
   <entry>

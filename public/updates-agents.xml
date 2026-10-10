@@ -11,7 +11,7 @@
     <title>Pydantic AI — release</title>
     <updated>2026-10-09T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-09-03" />
-    <summary>Pydantic AI 2.55.0 requires Python 3.11+, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5. Version 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp.</summary>
+    <summary>Pydantic AI 2.55.0 requires Python 3.11+ in every package, adds a Conversation object and Postgres step and media stores, and supports Claude Haiku 5.5.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, medium" />
     <source>
@@ -144,6 +144,20 @@
       <id>https://github.com/openai/openai-agents-python/releases/tag/v0.23.1</id>
       <title>Release v0.23.1 · openai/openai-agents-python</title>
       <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.23.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-03</id>
+    <title>Pydantic AI — release</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-03" />
+    <summary>Pydantic AI 2.53.0 fixed high-severity advisory GHSA-6fqq-452j-qhrp, where a streamed request through ConcurrencyLimitedModel could keep its concurrency slot and block other requests sharing the limiter. Pydantic AI v1 is not affected.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0</id>
+      <title>Release v2.53.0 · pydantic/pydantic-ai</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0" />
     </source>
   </entry>
   <entry>
