@@ -26,6 +26,17 @@
       "sourceUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689"
     },
     {
+      "id": "prohibited-intimate-imagery-csam",
+      "articles": "Article 5(1)(ba)–(bb), 5(1a)–(1b)",
+      "title": "Prohibited non-consensual intimate imagery and CSAM generation",
+      "actors": ["provider", "deployer"],
+      "riskTiers": ["prohibited"],
+      "kind": "mandatory",
+      "appliesFrom": "2026-12-02",
+      "summary": "Added by Regulation (EU) 2026/1744: AI systems that generate or manipulate realistic intimate or sexually explicit depictions of identifiable people without their explicit consent, or child sexual abuse material, are banned. Providers are caught when this is the intended purpose or a foreseeable outcome without adequate safeguards; deployers when they use a system for that purpose.",
+      "sourceUrl": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng"
+    },
+    {
       "id": "gpai-transparency",
       "articles": "Articles 53–54",
       "title": "GPAI model provider obligations",
