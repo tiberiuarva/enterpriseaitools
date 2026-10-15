@@ -170,7 +170,7 @@ A prior PR-stage blocker was:
 That failure mode is retained here as operator context only. If it reappears, the likely fix path is still:
 1. In Azure Static Web Apps, open the intended production app for `enterpriseai.tools`
 2. Regenerate or copy the deployment token from that exact app
-3. Update the GitHub repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`
+3. Update the GitHub repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN_WITTY_GRASS_0A1A9D403`
 4. Confirm the Azure Static Web App is connected to this repository
 5. Re-run the workflow and verify the deploy step reaches a successful upload
 
