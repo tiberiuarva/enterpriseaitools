@@ -83,7 +83,7 @@ export const orchestrationFaqs: HubFaq[] = [
   {
     question: "Are deprecated orchestration platforms still tracked?",
     answer:
-      "Yes — deprecated and archived tools remain on the hub with a clear 'deprecated' status and a status note explaining the deprecation, so teams evaluating migration paths can see the full picture.",
+      "Yes — deprecated and archived tools remain on the hub with a clear 'Deprecated' or 'Archived' status and a status note explaining why, so teams evaluating migration paths can see the full picture.",
   },
 ];
 

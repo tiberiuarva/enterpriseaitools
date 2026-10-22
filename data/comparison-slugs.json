@@ -27,7 +27,7 @@
     "slug": "langgraph-vs-autogen-vs-crewai",
     "toolIds": ["langgraph", "autogen", "crewai"],
     "title": "LangGraph vs AutoGen vs CrewAI",
-    "description": "Three of the most-evaluated open-source agent orchestration frameworks compared on governance dimensions and license posture."
+    "description": "Three widely evaluated open-source agent frameworks compared on governance and license posture. AutoGen is now archived, so weigh its status first."
   },
   {
     "slug": "azure-ai-content-safety-vs-aws-bedrock-guardrails-vs-google-model-armor",
