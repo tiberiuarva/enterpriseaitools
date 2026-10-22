@@ -11,7 +11,7 @@
     <title>Phoenix 20.24.0 tightens dependency security</title>
     <updated>2026-10-21T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-03" />
-    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to distrust the compromised emSign root, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
+    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="observability, release, medium" />
     <source>

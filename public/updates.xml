@@ -53,7 +53,7 @@
     <title>Phoenix 20.24.0 tightens dependency security</title>
     <updated>2026-10-21T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-03" />
-    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to distrust the compromised emSign root, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
+    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="observability, release, medium" />
     <source>
@@ -203,11 +203,11 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-04</id>
     <title>Pydantic AI 2.58.0 fixes MCP credential leak in traces</title>
-    <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
-    <summary>Pydantic AI 2.58.0 fixes GHSA-xv4x-g8mx-ch56 (medium): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-04" />
+    <summary>Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, high" />
     <source>
@@ -217,10 +217,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-02</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
     <title>Foundry browser automation tool is generally available</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-02" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
     <summary>Microsoft Foundry&apos;s browser automation tool is GA: agents get a managed Playwright Workspaces browser that can reach private sites over an Azure virtual network, with an MCP-compatible endpoint, Live View, approval gates and allow lists.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, feature, medium" />
@@ -231,10 +231,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-02</id>
     <title>Copilot deprecates six models</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-02" />
     <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
@@ -245,10 +245,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
     <title>Copilot model policy API is generally available</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
     <summary>REST endpoints to read and set Copilot model policies are GA at enterprise, enterprise-team, agent-app and organization level. Enterprise policy can delegate model control to organizations or to teams and apps.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, medium" />
@@ -259,24 +259,24 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-05</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
     <title>Guardrails grounding checks add a Standard tier</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-05" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
     <summary>Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, feature, medium" />
     <source>
-      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html</id>
-      <title>Use contextual grounding check to filter hallucinations in responses</title>
-      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html" />
+      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html</id>
+      <title>Document history for the Amazon Bedrock User Guide</title>
+      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html" />
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-06</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-05</id>
     <title>Kiro adds Memory and CLI workspace trust</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-06" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-05" />
     <summary>Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, release, medium" />
@@ -333,7 +333,7 @@
     <title>Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra</title>
     <updated>2026-10-15T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-02" />
-    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.</summary>
+    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna. Opus 4.8 stays available to individual annual-plan subscribers.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
     <source>
@@ -501,7 +501,7 @@
     <title>Gemini 4 Argon GA in Gemini Enterprise</title>
     <updated>2026-10-13T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-03" />
-    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from October 14, 2026. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
+    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app (off by default until October 27, 2026), mobile app and AI developer tools, and in Workflow Builder from October 14. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, model-addition, medium" />
     <source>

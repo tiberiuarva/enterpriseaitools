@@ -35,17 +35,17 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-05</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
     <title>Guardrails grounding checks add a Standard tier</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-05" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
     <summary>Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, feature, medium" />
     <source>
-      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html</id>
-      <title>Use contextual grounding check to filter hallucinations in responses</title>
-      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html" />
+      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html</id>
+      <title>Document history for the Amazon Bedrock User Guide</title>
+      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html" />
     </source>
   </entry>
   <entry>

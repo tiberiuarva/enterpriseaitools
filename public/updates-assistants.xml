@@ -35,10 +35,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-02</id>
     <title>Copilot deprecates six models</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-02" />
     <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
@@ -49,10 +49,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
     <title>Copilot model policy API is generally available</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
     <summary>REST endpoints to read and set Copilot model policies are GA at enterprise, enterprise-team, agent-app and organization level. Enterprise policy can delegate model control to organizations or to teams and apps.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, medium" />
@@ -63,10 +63,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-06</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-05</id>
     <title>Kiro adds Memory and CLI workspace trust</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-06" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-05" />
     <summary>Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, release, medium" />
@@ -81,7 +81,7 @@
     <title>Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra</title>
     <updated>2026-10-15T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-02" />
-    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.</summary>
+    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna. Opus 4.8 stays available to individual annual-plan subscribers.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
     <source>
@@ -207,7 +207,7 @@
     <title>Gemini 4 Argon GA in Gemini Enterprise</title>
     <updated>2026-10-13T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-03" />
-    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from October 14, 2026. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
+    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app (off by default until October 27, 2026), mobile app and AI developer tools, and in Workflow Builder from October 14. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, model-addition, medium" />
     <source>

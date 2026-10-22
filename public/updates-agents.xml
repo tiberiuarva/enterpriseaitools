@@ -35,11 +35,11 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-04</id>
     <title>Pydantic AI 2.58.0 fixes MCP credential leak in traces</title>
-    <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
-    <summary>Pydantic AI 2.58.0 fixes GHSA-xv4x-g8mx-ch56 (medium): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-04" />
+    <summary>Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, release, high" />
     <source>
@@ -49,10 +49,10 @@
     </source>
   </entry>
   <entry>
-    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-02</id>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
     <title>Foundry browser automation tool is generally available</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
-    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-02" />
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
     <summary>Microsoft Foundry&apos;s browser automation tool is GA: agents get a managed Playwright Workspaces browser that can reach private sites over an Azure virtual network, with an MCP-compatible endpoint, Live View, approval gates and allow lists.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, feature, medium" />
