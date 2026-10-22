@@ -11,7 +11,7 @@
     <title>Unity Gateway screens MCP tool calls for jailbreaks</title>
     <updated>2026-10-21T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-09" />
-    <summary>Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts, with the Jailbreak guardrail applied to input, output or both. Beta.</summary>
+    <summary>Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts in beta, with the Jailbreak guardrail applied to input, output or both.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="gateways, feature, medium" />
     <source>

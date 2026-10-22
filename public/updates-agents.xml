@@ -67,13 +67,13 @@
     <title>AutoGen is archived and no longer maintained</title>
     <updated>2026-10-16T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-16-01" />
-    <summary>Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes. Microsoft points users to Microsoft Agent Framework. The last release was python-v0.7.5 on 30 September 2026.</summary>
+    <summary>Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes, and points users to Microsoft Agent Framework. The last release was python-v0.7.5 on September 30, 2025.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="agents, deprecation, high" />
     <source>
-      <id>https://github.com/microsoft/autogen</id>
-      <title>microsoft/autogen README</title>
-      <link href="https://github.com/microsoft/autogen" />
+      <id>https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278</id>
+      <title>docs: clarify AutoGen is archived and no longer maintained (#8366)</title>
+      <link href="https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278" />
     </source>
   </entry>
   <entry>

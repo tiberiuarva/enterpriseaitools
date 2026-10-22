@@ -39,7 +39,7 @@
     <title>Copilot deprecates six models</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
-    <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on 19 October. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
+    <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
     <source>
@@ -67,7 +67,7 @@
     <title>Kiro adds Memory and CLI workspace trust</title>
     <updated>2026-10-19T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-06" />
-    <summary>Kiro IDE 1.4.0 (19 Oct) adds Memory across chat sessions; IDE 1.4.10 (20 Oct) turns Memory off by default. Kiro CLI 2.33.0 (20 Oct) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
+    <summary>Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, release, medium" />
     <source>
@@ -81,7 +81,7 @@
     <title>Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra</title>
     <updated>2026-10-15T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-02" />
-    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on 16 November 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.</summary>
+    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, medium" />
     <source>
@@ -151,7 +151,7 @@
     <title>Claude Sonnet 4 reaches end of life in Kiro</title>
     <updated>2026-10-14T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-14-01" />
-    <summary>Claude Sonnet 4 reached end of life in Kiro on 14 October 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.</summary>
+    <summary>Claude Sonnet 4 reached end of life in Kiro on October 14, 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, deprecation, low" />
     <source>
@@ -207,7 +207,7 @@
     <title>Gemini 4 Argon GA in Gemini Enterprise</title>
     <updated>2026-10-13T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-03" />
-    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from 14 October. Gemini 3.8 Flash also became GA in the UK region on 14 October.</summary>
+    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from October 14, 2026. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, model-addition, medium" />
     <source>

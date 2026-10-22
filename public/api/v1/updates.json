@@ -28,7 +28,7 @@
       "category": "orchestration",
       "type": "release",
       "title": "Langflow 1.12.7 ships a batch of security fixes",
-      "summary": "Langflow 1.12.7 labels most of its 15 fixes as security fixes, including enforcing admin policy on public component builds and rejecting process and code loader capabilities. 1.12.8 (22 Oct) follows with two bug fixes.",
+      "summary": "Langflow 1.12.7 labels most of its 15 fixes as security fixes, including enforcing admin policy on public component builds and rejecting process and code loader capabilities. 1.12.8 followed on October 22, 2026 with two bug fixes.",
       "sourceUrl": "https://github.com/langflow-ai/langflow/releases/tag/v1.12.7",
       "sourceTitle": "Release 1.12.7 · langflow-ai/langflow",
       "impact": "high"
@@ -44,7 +44,7 @@
       "summary": "Haystack 3.4.1 requires certifi 2026.10.19 or later (GHSA-6q48-6c7w-9gw2), because earlier certifi versions trust eMudhra/emSign certificate authorities whose private keys were compromised. Users who pin certifi should raise the pin.",
       "sourceUrl": "https://github.com/deepset-ai/haystack/releases/tag/v3.4.1",
       "sourceTitle": "Release v3.4.1 · deepset-ai/haystack",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-21-03",
@@ -92,8 +92,8 @@
       "toolName": "ServiceNow AI Control Tower",
       "category": "control-planes",
       "type": "feature",
-      "title": "ServiceNow Arc agent GA under its control tower",
-      "summary": "ServiceNow made Arc, a personal long-running enterprise agent, GA in EmployeeWorks, governed by what the release calls the Super Intelligence Control Tower. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes in a future release.",
+      "title": "ServiceNow control tower now governs its Arc agent",
+      "summary": "ServiceNow's control tower, called the Super Intelligence Control Tower in the release, now sets policy for Arc, a personal enterprise agent made GA on October 21, 2026. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes later.",
       "sourceUrl": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/",
       "sourceTitle": "ServiceNow delivers industry-first personal enterprise agent and policy enforcement with NVIDIA",
       "impact": "medium"
@@ -106,7 +106,7 @@
       "category": "governance",
       "type": "feature",
       "title": "Org policies can mandate Model Armor filters",
-      "summary": "Custom organization policies can now require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection. Generally available.",
+      "summary": "Custom organization policies, now generally available, can require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection.",
       "sourceUrl": "https://docs.cloud.google.com/model-armor/release-notes",
       "sourceTitle": "Model Armor release notes",
       "impact": "medium"
@@ -132,7 +132,7 @@
       "category": "gateways",
       "type": "feature",
       "title": "Unity Gateway screens MCP tool calls for jailbreaks",
-      "summary": "Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts, with the Jailbreak guardrail applied to input, output or both. Beta.",
+      "summary": "Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts in beta, with the Jailbreak guardrail applied to input, output or both.",
       "sourceUrl": "https://docs.databricks.com/aws/en/release-notes/unity-gateway/",
       "sourceTitle": "Unity Gateway release notes",
       "impact": "medium"
@@ -223,7 +223,7 @@
       "category": "assistants",
       "type": "deprecation",
       "title": "Copilot deprecates six models",
-      "summary": "GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on 19 October. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.",
+      "summary": "GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.",
       "sourceUrl": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026",
       "sourceTitle": "GitHub Copilot models deprecated on October 19, 2026",
       "impact": "medium"
@@ -262,7 +262,7 @@
       "category": "assistants",
       "type": "release",
       "title": "Kiro adds Memory and CLI workspace trust",
-      "summary": "Kiro IDE 1.4.0 (19 Oct) adds Memory across chat sessions; IDE 1.4.10 (20 Oct) turns Memory off by default. Kiro CLI 2.33.0 (20 Oct) asks users to trust a folder before loading its hooks, agents and MCP servers.",
+      "summary": "Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers.",
       "sourceUrl": "https://kiro.dev/changelog/",
       "sourceTitle": "Kiro changelog",
       "impact": "medium"
@@ -275,9 +275,9 @@
       "category": "agents",
       "type": "deprecation",
       "title": "AutoGen is archived and no longer maintained",
-      "summary": "Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes. Microsoft points users to Microsoft Agent Framework. The last release was python-v0.7.5 on 30 September 2026.",
-      "sourceUrl": "https://github.com/microsoft/autogen",
-      "sourceTitle": "microsoft/autogen README",
+      "summary": "Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes, and points users to Microsoft Agent Framework. The last release was python-v0.7.5 on September 30, 2025.",
+      "sourceUrl": "https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278",
+      "sourceTitle": "docs: clarify AutoGen is archived and no longer maintained (#8366)",
       "impact": "high"
     },
     {
@@ -314,7 +314,7 @@
       "category": "assistants",
       "type": "deprecation",
       "title": "Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra",
-      "summary": "GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on 16 November 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.",
+      "summary": "GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.",
       "sourceUrl": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
       "sourceTitle": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
       "impact": "medium"
@@ -418,7 +418,7 @@
       "category": "assistants",
       "type": "deprecation",
       "title": "Claude Sonnet 4 reaches end of life in Kiro",
-      "summary": "Claude Sonnet 4 reached end of life in Kiro on 14 October 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.",
+      "summary": "Claude Sonnet 4 reached end of life in Kiro on October 14, 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.",
       "sourceUrl": "https://kiro.dev/changelog/",
       "sourceTitle": "Kiro changelog",
       "impact": "low"
@@ -470,7 +470,7 @@
       "category": "assistants",
       "type": "model-addition",
       "title": "Gemini 4 Argon GA in Gemini Enterprise",
-      "summary": "Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from 14 October. Gemini 3.8 Flash also became GA in the UK region on 14 October.",
+      "summary": "Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from October 14, 2026. Gemini 3.8 Flash also became GA in the UK region on October 14.",
       "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
       "sourceTitle": "Gemini Enterprise release notes",
       "impact": "medium"

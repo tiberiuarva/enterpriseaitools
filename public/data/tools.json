@@ -465,7 +465,7 @@
         "agents",
         "opensource",
         "microsoft",
-        "maintenance"
+        "archived"
       ],
       "logoKind": "project-logo",
       "logoNotes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
@@ -477,7 +477,8 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance.",
+      "practitionerNote": "Archived: use Microsoft Agent Framework for new work. Existing deployments get no bug or security fixes, so plan a migration rather than extending them.",
+      "lastRelease": "2025-09-30",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -486,7 +487,7 @@
         },
         "deployment": {
           "status": "yes",
-          "detail": "pip-installed OSS framework; no Microsoft-managed hosting (maintenance mode).",
+          "detail": "pip-installed OSS framework; no Microsoft-managed hosting (archived October 2026).",
           "sourceUrl": "https://github.com/microsoft/autogen",
           "models": [
             "self-hosted"
@@ -521,8 +522,7 @@
           "level": "low"
         },
         "reviewedAt": "2026-05-26"
-      },
-      "lastRelease": "2026-09-30"
+      }
     },
     {
       "id": "llamaindex",

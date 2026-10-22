@@ -11,7 +11,7 @@
     <title>Org policies can mandate Model Armor filters</title>
     <updated>2026-10-21T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-07" />
-    <summary>Custom organization policies can now require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection. Generally available.</summary>
+    <summary>Custom organization policies, now generally available, can require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="governance, feature, medium" />
     <source>

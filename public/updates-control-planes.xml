@@ -8,10 +8,10 @@
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-06</id>
-    <title>ServiceNow Arc agent GA under its control tower</title>
+    <title>ServiceNow control tower now governs its Arc agent</title>
     <updated>2026-10-21T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-06" />
-    <summary>ServiceNow made Arc, a personal long-running enterprise agent, GA in EmployeeWorks, governed by what the release calls the Super Intelligence Control Tower. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes in a future release.</summary>
+    <summary>ServiceNow&apos;s control tower, called the Super Intelligence Control Tower in the release, now sets policy for Arc, a personal enterprise agent made GA on October 21, 2026. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes later.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="control-planes, feature, medium" />
     <source>
