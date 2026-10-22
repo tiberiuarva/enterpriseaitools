@@ -67,6 +67,11 @@ export const agentsFaqs: HubFaq[] = [
     answer:
       "Every per-tool page records the exact license label and an explicit license-risk level (low / medium / high). Source-available or restrictive clauses (Commons Clause, BSL, SSPL, Elastic License) are flagged in plain language on the tool page.",
   },
+  {
+    question: "Are archived agent frameworks still listed?",
+    answer:
+      "Yes. Archived frameworks such as AutoGen stay on the hub with an 'Archived' status and a note naming the successor, so teams running them can plan a migration.",
+  },
 ];
 
 export const orchestrationFaqs: HubFaq[] = [

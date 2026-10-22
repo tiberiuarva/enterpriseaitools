@@ -48,7 +48,7 @@
       "category": "observability",
       "type": "release",
       "title": "Phoenix 20.24.0 tightens dependency security",
-      "summary": "Arize Phoenix 20.24.0 requires certifi 2026.10.18 to distrust the compromised emSign root, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.",
+      "summary": "Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.",
       "sourceUrl": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0",
       "sourceTitle": "Release arize-phoenix: v20.24.0 · Arize-ai/phoenix",
       "impact": "medium"
@@ -184,20 +184,20 @@
       "impact": "low"
     },
     {
-      "id": "update-2026-10-19-01",
-      "date": "2026-10-19",
+      "id": "update-2026-10-20-04",
+      "date": "2026-10-20",
       "toolId": "pydantic-ai",
       "toolName": "Pydantic AI",
       "category": "agents",
       "type": "release",
       "title": "Pydantic AI 2.58.0 fixes MCP credential leak in traces",
-      "summary": "Pydantic AI 2.58.0 fixes GHSA-xv4x-g8mx-ch56 (medium): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.",
+      "summary": "Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.",
       "sourceUrl": "https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0",
       "sourceTitle": "Release v2.58.0 · pydantic/pydantic-ai",
       "impact": "high"
     },
     {
-      "id": "update-2026-10-19-02",
+      "id": "update-2026-10-19-01",
       "date": "2026-10-19",
       "toolId": "microsoft-foundry-agent-service",
       "toolName": "Microsoft Foundry Agent Service",
@@ -210,7 +210,7 @@
       "impact": "medium"
     },
     {
-      "id": "update-2026-10-19-03",
+      "id": "update-2026-10-19-02",
       "date": "2026-10-19",
       "toolId": "github-copilot",
       "toolName": "GitHub Copilot",
@@ -223,7 +223,7 @@
       "impact": "medium"
     },
     {
-      "id": "update-2026-10-19-04",
+      "id": "update-2026-10-19-03",
       "date": "2026-10-19",
       "toolId": "github-copilot",
       "toolName": "GitHub Copilot",
@@ -236,7 +236,7 @@
       "impact": "medium"
     },
     {
-      "id": "update-2026-10-19-05",
+      "id": "update-2026-10-19-04",
       "date": "2026-10-19",
       "toolId": "aws-bedrock-guardrails",
       "toolName": "Amazon Bedrock Guardrails",
@@ -244,12 +244,12 @@
       "type": "feature",
       "title": "Guardrails grounding checks add a Standard tier",
       "summary": "Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default.",
-      "sourceUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-contextual-grounding-check.html",
-      "sourceTitle": "Use contextual grounding check to filter hallucinations in responses",
+      "sourceUrl": "https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html",
+      "sourceTitle": "Document history for the Amazon Bedrock User Guide",
       "impact": "medium"
     },
     {
-      "id": "update-2026-10-19-06",
+      "id": "update-2026-10-19-05",
       "date": "2026-10-19",
       "toolId": "kiro",
       "toolName": "Kiro",
@@ -308,7 +308,7 @@
       "category": "assistants",
       "type": "deprecation",
       "title": "Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra",
-      "summary": "GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.",
+      "summary": "GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna. Opus 4.8 stays available to individual annual-plan subscribers.",
       "sourceUrl": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november",
       "sourceTitle": "Upcoming deprecation of selected GitHub Copilot models in mid-November",
       "impact": "medium"
@@ -464,7 +464,7 @@
       "category": "assistants",
       "type": "model-addition",
       "title": "Gemini 4 Argon GA in Gemini Enterprise",
-      "summary": "Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from October 14, 2026. Gemini 3.8 Flash also became GA in the UK region on October 14.",
+      "summary": "Gemini 4 Argon is GA in the Gemini Enterprise web app (off by default until October 27, 2026), mobile app and AI developer tools, and in Workflow Builder from October 14. Gemini 3.8 Flash also became GA in the UK region on October 14.",
       "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
       "sourceTitle": "Gemini Enterprise release notes",
       "impact": "medium"
