@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/mlflow/mlflow",
-    "version": "3.17.0",
-    "lastRelease": "2026-10-07",
+    "version": "3.17.2",
+    "lastRelease": "2026-10-21",
     "docsUrl": "https://mlflow.org/docs/latest/genai/",
     "websiteUrl": "https://mlflow.org",
     "pricing": "Free and open source. Trace data stays on your own infrastructure. Managed hosting is billed by the cloud provider.",

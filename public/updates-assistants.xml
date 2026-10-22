@@ -2,10 +2,220 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-01</id>
+    <title>Antigravity Enterprise Gateway is generally available</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-01" />
+    <summary>Organizations can route Antigravity app, CLI and IDE extension model requests through a central gateway for inspection, policy enforcement and gateway API-key authentication. These requests use pay-as-you-go billing, not seat quotas.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-02</id>
+    <title>Gemini for government services enters preview</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-02" />
+    <summary>Google announced Gemini for government services in preview, built on the Gemini agent and deployable inside the Assured Workloads FedRAMP High data boundary with VPC Service Controls and CMEK. No product-wide authorization status is stated.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-government-services</id>
+      <title>Introducing Gemini for government services</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-government-services" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
+    <title>Copilot deprecates six models</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
+    <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on 19 October. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026</id>
+      <title>GitHub Copilot models deprecated on October 19, 2026</title>
+      <link href="https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
+    <title>Copilot model policy API is generally available</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
+    <summary>REST endpoints to read and set Copilot model policies are GA at enterprise, enterprise-team, agent-app and organization level. Enterprise policy can delegate model control to organizations or to teams and apps.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams</id>
+      <title>Copilot model policy API for enterprise, orgs, and teams</title>
+      <link href="https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-06</id>
+    <title>Kiro adds Memory and CLI workspace trust</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-06" />
+    <summary>Kiro IDE 1.4.0 (19 Oct) adds Memory across chat sessions; IDE 1.4.10 (20 Oct) turns Memory off by default. Kiro CLI 2.33.0 (20 Oct) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-02</id>
+    <title>Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-02" />
+    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on 16 November 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november</id>
+      <title>Upcoming deprecation of selected GitHub Copilot models in mid-November</title>
+      <link href="https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-03</id>
+    <title>Agentic autofix for code scanning alerts is GA</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-03" />
+    <summary>Assigning a code scanning alert to Copilot now produces a validated fix as a draft pull request. It needs GitHub Code Security or Advanced Security on Enterprise Cloud, uses AI Credits and Actions minutes, and must be enabled by admin policy.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability</id>
+      <title>Agentic autofix for code scanning alerts general availability</title>
+      <link href="https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-04</id>
+    <title>Kimi K3 added to Kiro (experimental)</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-04" />
+    <summary>Kimi K3 is available in Kiro with experimental support for Pro, Pro+, Pro Max and Power customers in the US geography, at a 2.4x credit multiplier.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, low" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-05</id>
+    <title>Claude Opus 5.5 and Sonnet 5.5 GA in Gemini Enterprise</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-05" />
+    <summary>Admins can make Claude Opus 5.5 and Claude Sonnet 5.5 available in the Gemini Enterprise app (global, us and eu locations) by enabling third-party models; usage is billed pay-as-you-go.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-07</id>
+    <title>Genie Code SQL converter is generally available</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-07" />
+    <summary>The agentic code converter powered by Genie Code is GA for SQL, converting T-SQL, Snowflake, Redshift, Oracle, BigQuery and Teradata dialects to Databricks SQL and validating the output.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-14-01</id>
+    <title>Claude Sonnet 4 reaches end of life in Kiro</title>
+    <updated>2026-10-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-14-01" />
+    <summary>Claude Sonnet 4 reached end of life in Kiro on 14 October 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, low" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-14-02</id>
+    <title>GPT-5.5 retired in Codex for ChatGPT sign-in</title>
+    <updated>2026-10-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-14-02" />
+    <summary>GPT-5.5 is no longer available in Codex for users signed in with ChatGPT; API-key sessions are unaffected. OpenAI points users to gpt-6.1-sol and says to update saved configs, agents and scheduled tasks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT / Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-01</id>
+    <title>Gemini 4 Argon is generally available in Copilot</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-01" />
+    <summary>Gemini 4 Argon is GA for Copilot Pro+, Max, Business and Enterprise with a gradual rollout. Business and Enterprise admins control it through model policy; billing is usage-based at provider list pricing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot</id>
+      <title>Gemini 4 Argon in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-02</id>
+    <title>Copilot clients can fail closed on stale policy</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-02" />
+    <summary>Enterprise admins can set forceRemoteSettingsRefresh so Copilot CLI, VS Code and the Copilot app fail closed when they cannot confirm current policy. The sandbox key now enforces a minimum client version.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates</id>
+      <title>Enterprise managed settings enforcement updates</title>
+      <link href="https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-03</id>
+    <title>Gemini 4 Argon GA in Gemini Enterprise</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-03" />
+    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app, mobile app and AI developer tools, and in Workflow Builder from 14 October. Gemini 3.8 Flash also became GA in the UK region on 14 October.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-01</id>
     <title>Gemini Code Assist — deprecation</title>

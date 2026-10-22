@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "MIT",
     "githubUrl": "https://github.com/pydantic/pydantic-ai",
-    "version": "2.55.0",
-    "lastRelease": "2026-10-09",
+    "version": "2.59.0",
+    "lastRelease": "2026-10-20",
     "docsUrl": "https://pydantic.dev/docs/ai/overview/",
     "pricingModel": "freemium",
     "languages": [

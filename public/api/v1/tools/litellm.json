@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -21,8 +21,8 @@
     "license": "MIT core + EE paths",
     "licenseWarning": "Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.",
     "githubUrl": "https://github.com/BerriAI/litellm",
-    "version": "1.104.2",
-    "lastRelease": "2026-10-08",
+    "version": "1.106.2",
+    "lastRelease": "2026-10-21",
     "docsUrl": "https://docs.litellm.ai/",
     "websiteUrl": "https://www.litellm.ai/ai-gateway",
     "pricingModel": "freemium",

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/strands-agents/harness-sdk",
-    "version": "1.59.0",
-    "lastRelease": "2026-10-08",
+    "version": "1.62.0",
+    "lastRelease": "2026-10-21",
     "docsUrl": "https://strandsagents.com/",
     "pricingModel": "free",
     "languages": [

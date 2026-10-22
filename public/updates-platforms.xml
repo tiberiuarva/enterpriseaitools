@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-platforms.xml</id>
   <title>enterpriseai.tools weekly updates — platforms</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-platforms.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-08</id>
+    <title>OpenAI GPT-6 models enter Google Cloud Model Garden</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-08" />
+    <summary>GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out in private preview to select enterprise customers in Google Cloud&apos;s Model Garden. Gemini for business and Antigravity support are listed as coming soon.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers</id>
+      <title>Google Cloud expands model choice and flexibility, bringing OpenAI models to customers</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-04</id>
+    <title>Gemini 4 Argon GA on Gemini Enterprise Agent Platform</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-04" />
+    <summary>Gemini 4 Argon and Gemini 4 Argon Cyber Permissive are GA on the Gemini Enterprise Agent Platform with 1,048,576-token input and output limits. Cyber Permissive is limited to an allowlist program.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-06-13-05</id>
     <title>Amazon Bedrock — deprecation</title>

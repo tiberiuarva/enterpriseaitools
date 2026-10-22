@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
   <title>enterpriseai.tools weekly updates — gateways</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-09</id>
+    <title>Unity Gateway screens MCP tool calls for jailbreaks</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-09" />
+    <summary>Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts, with the Jailbreak guardrail applied to input, output or both. Beta.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-10</id>
+    <title>Cloudflare AI provider packages deprecated for createAI</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-10" />
+    <summary>Cloudflare feature-froze and deprecated workers-ai-provider and ai-gateway-provider. The Agents SDK createAI replaces them, covering Workers AI, AI Gateway catalog models, dynamic routes and vendor models.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, deprecation, low" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/post/2026-10-21-createai/</id>
+      <title>Cloudflare changelog: createAI</title>
+      <link href="https://developers.cloudflare.com/changelog/post/2026-10-21-createai/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-06</id>
+    <title>Unity Gateway consumer access is GA</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-06" />
+    <summary>Users with the consumer access entitlement no longer need an account admin to enable a preview before querying shared model services through Unity Gateway. Admins can still set budgets and rate limits.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-05</id>
+    <title>Gemini 4 Argon added to Unity Gateway</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-05" />
+    <summary>Google Gemini 4 Argon is available on Databricks Unity Gateway through Foundation Model APIs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, model-addition, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-03</id>
+    <title>Kong Gateway 3.16.0.1 adds A2A v1.0 in AI Gateway</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-03" />
+    <summary>Kong Gateway 3.16.0.1 adds the A2A v1.0 wire format to ai-a2a-proxy alongside v0.3, prompt cache-control mappings for OpenAI, Anthropic and Bedrock in ai-proxy-advanced, and several routing and telemetry fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, low" />
+    <source>
+      <id>https://developer.konghq.com/gateway/changelog/</id>
+      <title>Kong Gateway changelog</title>
+      <link href="https://developer.konghq.com/gateway/changelog/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-08-08</id>
     <title>LiteLLM — release</title>

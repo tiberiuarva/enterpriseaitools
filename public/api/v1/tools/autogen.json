@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "agents",
     "type": "opensource",
     "vendor": "Microsoft",
-    "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
+    "description": "Multi-agent framework from Microsoft, now archived and no longer maintained; Microsoft Agent Framework is the successor.",
     "strengths": [
       "Conversable agent patterns",
       "Microsoft research lineage",
@@ -21,8 +21,8 @@
     "version": "0.7.5",
     "docsUrl": "https://microsoft.github.io/autogen/",
     "pricingModel": "free",
-    "status": "maintenance",
-    "statusNote": "Maintenance mode. Microsoft merged AutoGen with Semantic Kernel into the Microsoft Agent Framework.",
+    "status": "archived",
+    "statusNote": "Archived: as of 16 October 2026 the README states the project is no longer maintained by Microsoft (no bug or security fixes) and points to Microsoft Agent Framework.",
     "tags": [
       "agents",
       "opensource",
@@ -83,6 +83,7 @@
         "level": "low"
       },
       "reviewedAt": "2026-05-26"
-    }
+    },
+    "lastRelease": "2026-09-30"
   }
 }

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,8 +18,8 @@
     "license": "MIT core + EE paths",
     "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
     "githubUrl": "https://github.com/langfuse/langfuse",
-    "version": "4.56.0",
-    "lastRelease": "2026-10-09",
+    "version": "4.68.0",
+    "lastRelease": "2026-10-22",
     "docsUrl": "https://langfuse.com/docs",
     "websiteUrl": "https://langfuse.com",
     "pricing": "Self-hosted MIT core is free. Cloud: Hobby free (50k units/month), Core $29/month, Pro $199/month, Enterprise $2,499/month.",
