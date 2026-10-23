@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-control-planes.xml</id>
   <title>enterpriseai.tools weekly updates — control-planes</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-control-planes.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-06</id>
+    <title>ServiceNow control tower now governs its Arc agent</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-06" />
+    <summary>ServiceNow&apos;s control tower, called the Super Intelligence Control Tower in the release, now sets policy for Arc, a personal enterprise agent made GA on October 21, 2026. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes later.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/</id>
+      <title>ServiceNow delivers industry-first personal enterprise agent and policy enforcement with NVIDIA</title>
+      <link href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-01</id>
+    <title>Paperclip lets Claude Code, Codex and MCP clients join</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-01" />
+    <summary>Paperclip v2026.1012.0 adds an experimental, off-by-default option for Claude Code, Codex, OpenCode and other MCP clients to connect as signed-in users via OAuth or device-code consent, with opt-out write access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.1012.0</id>
+      <title>Release v2026.1012.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.1012.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-05-01</id>
     <title>Paperclip — release</title>

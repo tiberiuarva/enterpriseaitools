@@ -2,10 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-governance.xml</id>
   <title>enterpriseai.tools weekly updates — governance</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-governance.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-07</id>
+    <title>Org policies can mandate Model Armor filters</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-07" />
+    <summary>Custom organization policies, now generally available, can require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/model-armor/release-notes</id>
+      <title>Model Armor release notes</title>
+      <link href="https://docs.cloud.google.com/model-armor/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-03</id>
+    <title>NemoClaw v0.0.137 defaults to Nemotron 3.5 Super VL</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-03" />
+    <summary>NemoClaw v0.0.137 makes Nemotron 3.5 Super VL the default hosted model for new OpenClaw and Hermes onboarding and improves uninstall recovery, managed image security and policy recovery.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, low" />
+    <source>
+      <id>https://docs.nvidia.com/nemoclaw/latest/user-guide/openclaw/release-notes</id>
+      <title>NemoClaw release notes</title>
+      <link href="https://docs.nvidia.com/nemoclaw/latest/user-guide/openclaw/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
+    <title>Guardrails grounding checks add a Standard tier</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
+    <summary>Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html</id>
+      <title>Document history for the Amazon Bedrock User Guide</title>
+      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-07</id>
     <title>Google Model Armor — feature</title>

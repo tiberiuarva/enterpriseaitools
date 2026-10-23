@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -18,8 +18,8 @@
     "license": "MIT",
     "githubUrl": "https://github.com/microsoft/agent-framework",
     "githubStars": 13498,
-    "version": "1.21.0",
-    "lastRelease": "2026-10-08",
+    "version": "1.23.0",
+    "lastRelease": "2026-10-22",
     "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
     "pricingModel": "free",
     "status": "active",

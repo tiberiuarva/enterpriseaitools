@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10",
+  "lastUpdated": "2026-10-22",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -369,7 +369,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
       "githubStars": 58436,
-      "version": "1.15.27",
+      "version": "1.15.28",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -389,7 +389,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-10-09",
+      "lastRelease": "2026-10-14",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -441,7 +441,7 @@
       "category": "agents",
       "type": "opensource",
       "vendor": "Microsoft",
-      "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
+      "description": "Multi-agent framework from Microsoft, now archived and no longer maintained; Microsoft Agent Framework is the successor.",
       "strengths": [
         "Conversable agent patterns",
         "Microsoft research lineage",
@@ -453,13 +453,13 @@
       "version": "0.7.5",
       "docsUrl": "https://microsoft.github.io/autogen/",
       "pricingModel": "free",
-      "status": "maintenance",
-      "statusNote": "Maintenance mode. Microsoft merged AutoGen with Semantic Kernel into the Microsoft Agent Framework.",
+      "status": "archived",
+      "statusNote": "Archived: as of 16 October 2026 the README states the project is no longer maintained by Microsoft (no bug or security fixes) and points to Microsoft Agent Framework.",
       "tags": [
         "agents",
         "opensource",
         "microsoft",
-        "maintenance"
+        "archived"
       ],
       "logoKind": "project-logo",
       "logoNotes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
@@ -471,7 +471,8 @@
         "azure",
         "gcp"
       ],
-      "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance.",
+      "practitionerNote": "Archived: use Microsoft Agent Framework for new work. Existing deployments get no bug or security fixes, so plan a migration rather than extending them.",
+      "lastRelease": "2025-09-30",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -480,7 +481,7 @@
         },
         "deployment": {
           "status": "yes",
-          "detail": "pip-installed OSS framework; no Microsoft-managed hosting (maintenance mode).",
+          "detail": "pip-installed OSS framework; no Microsoft-managed hosting (archived October 2026).",
           "sourceUrl": "https://github.com/microsoft/autogen",
           "models": [
             "self-hosted"
@@ -695,8 +696,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
       "githubStars": 13498,
-      "version": "1.21.0",
-      "lastRelease": "2026-10-08",
+      "version": "1.23.0",
+      "lastRelease": "2026-10-22",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -783,7 +784,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 41553,
-      "version": "1.2.14",
+      "version": "1.2.16",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
       "status": "active",
@@ -802,7 +803,7 @@
       "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
       "logoUrl": "/logos/langgraph.svg",
       "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-      "lastRelease": "2026-10-06",
+      "lastRelease": "2026-10-16",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -875,7 +876,7 @@
       ],
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 27994,
-      "version": "1.75.0",
+      "version": "1.79.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
       "status": "active",
@@ -896,7 +897,7 @@
       "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
       "logoSourceUrl": "https://mastra.ai/",
       "logoUrl": "/logos/mastra.png",
-      "lastRelease": "2026-10-07",
+      "lastRelease": "2026-10-21",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -957,7 +958,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
       "githubStars": 29401,
-      "version": "0.23.1",
+      "version": "0.24.0",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -976,7 +977,7 @@
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-10-02",
+      "lastRelease": "2026-10-15",
       "logoUrl": "/logos/openai.svg",
       "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
       "governance": {
@@ -1039,7 +1040,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/Eigenwise/atomic-agents",
       "githubStars": 6238,
-      "version": "2.10.3",
+      "version": "2.15.0",
       "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
       "pricingModel": "free",
       "status": "active",
@@ -1102,7 +1103,7 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "lastRelease": "2026-09-27"
+      "lastRelease": "2026-10-21"
     },
     {
       "id": "beeai-framework",
@@ -1540,7 +1541,7 @@
       ],
       "githubUrl": "https://github.com/n8n-io/n8n",
       "githubStars": 204144,
-      "version": "2.42.6",
+      "version": "2.44.6",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
       "pricingModel": "freemium",
@@ -1562,7 +1563,7 @@
         "gcp"
       ],
       "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-      "lastRelease": "2026-10-09",
+      "lastRelease": "2026-10-22",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1630,8 +1631,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/paperclipai/paperclip",
       "githubStars": 80570,
-      "version": "v2026.1005.0",
-      "lastRelease": "2026-10-05",
+      "version": "v2026.1012.0",
+      "lastRelease": "2026-10-12",
       "docsUrl": "https://paperclip.ing/docs",
       "websiteUrl": "https://paperclip.ing/",
       "pricingModel": "free",
@@ -1716,7 +1717,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
       "githubStars": 154700,
-      "version": "1.12.5",
+      "version": "1.12.8",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -1737,7 +1738,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-10-06",
+      "lastRelease": "2026-10-22",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -1974,7 +1975,7 @@
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/deepset-ai/haystack",
       "githubStars": 26493,
-      "version": "3.3.0",
+      "version": "3.4.1",
       "docsUrl": "https://docs.haystack.deepset.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -1994,7 +1995,7 @@
         "gcp"
       ],
       "practitionerNote": "Strong option when retrieval pipelines and modular backend orchestration matter more than no-code UX or broad business-user automation.",
-      "lastRelease": "2026-10-01",
+      "lastRelease": "2026-10-21",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -4019,8 +4020,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openclaw/openclaw",
-      "version": "2026.9.9",
-      "lastRelease": "2026-10-08",
+      "version": "2026.10.6",
+      "lastRelease": "2026-10-22",
       "docsUrl": "https://docs.openclaw.ai",
       "websiteUrl": "https://openclaw.ai",
       "pricing": "Free and open source; no subscription or hosted tier (model provider costs are separate).",
@@ -4478,8 +4479,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/NousResearch/hermes-agent",
-      "version": "0.21.6",
-      "lastRelease": "2026-10-08",
+      "version": "0.22.4",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://hermes-agent.nousresearch.com/docs/",
       "pricing": "Free and open source; model and hosting costs are separate.",
       "pricingModel": "free",
@@ -4639,8 +4640,8 @@
       "license": "MIT core + EE paths",
       "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
       "githubUrl": "https://github.com/langfuse/langfuse",
-      "version": "4.56.0",
-      "lastRelease": "2026-10-09",
+      "version": "4.68.0",
+      "lastRelease": "2026-10-22",
       "docsUrl": "https://langfuse.com/docs",
       "websiteUrl": "https://langfuse.com",
       "pricing": "Self-hosted MIT core is free. Cloud: Hobby free (50k units/month), Core $29/month, Pro $199/month, Enterprise $2,499/month.",
@@ -4726,8 +4727,8 @@
       "license": "Elastic License 2.0",
       "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
       "githubUrl": "https://github.com/Arize-ai/phoenix",
-      "version": "20.20.0",
-      "lastRelease": "2026-10-09",
+      "version": "20.24.0",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://arize.com/docs/phoenix",
       "websiteUrl": "https://arize.com/pricing/",
       "pricing": "Phoenix open source is free and self-hosted. The commercial Arize AX has Free ($0), Pro ($50/month) and custom Enterprise tiers.",
@@ -4809,8 +4810,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/mlflow/mlflow",
-      "version": "3.17.0",
-      "lastRelease": "2026-10-07",
+      "version": "3.17.2",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://mlflow.org/docs/latest/genai/",
       "websiteUrl": "https://mlflow.org",
       "pricing": "Free and open source. Trace data stays on your own infrastructure. Managed hosting is billed by the cloud provider.",
@@ -4892,8 +4893,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/comet-ml/opik",
-      "version": "2.2.96",
-      "lastRelease": "2026-10-09",
+      "version": "2.2.117",
+      "lastRelease": "2026-10-22",
       "docsUrl": "https://www.comet.com/docs/opik/quickstart",
       "websiteUrl": "https://www.comet.com/site/pricing/",
       "pricing": "Open source is free. Cloud: Free $0 (25k spans/month, 10 members), Pro $19/month (100k spans/month), Enterprise custom.",
@@ -5320,8 +5321,8 @@
       "license": "Apache 2.0 (CLI); Proprietary (cloud)",
       "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
       "githubUrl": "https://github.com/openai/codex",
-      "version": "0.159.2",
-      "lastRelease": "2026-09-29",
+      "version": "0.163.0",
+      "lastRelease": "2026-10-15",
       "docsUrl": "https://learn.chatgpt.com/docs",
       "websiteUrl": "https://learn.chatgpt.com/docs/pricing",
       "pricing": "Included in ChatGPT Free, Go ($8/mo), Plus ($20/mo), Pro (from $100/mo), Business ($20/user/mo annual, 2+ users) and Enterprise/Edu (contact sales); or API-key usage at API rates.",
@@ -6283,8 +6284,8 @@
       "license": "MIT core + EE paths",
       "licenseWarning": "Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.",
       "githubUrl": "https://github.com/BerriAI/litellm",
-      "version": "1.104.2",
-      "lastRelease": "2026-10-08",
+      "version": "1.106.2",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://docs.litellm.ai/",
       "websiteUrl": "https://www.litellm.ai/ai-gateway",
       "pricingModel": "freemium",
@@ -7608,8 +7609,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/pydantic/pydantic-ai",
-      "version": "2.55.0",
-      "lastRelease": "2026-10-09",
+      "version": "2.59.0",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://pydantic.dev/docs/ai/overview/",
       "pricingModel": "freemium",
       "languages": [
@@ -7687,8 +7688,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/strands-agents/harness-sdk",
-      "version": "1.59.0",
-      "lastRelease": "2026-10-08",
+      "version": "1.62.0",
+      "lastRelease": "2026-10-21",
       "docsUrl": "https://strandsagents.com/",
       "pricingModel": "free",
       "languages": [
@@ -7773,8 +7774,8 @@
       "license": "MIT (SDK wrapper); Proprietary (bundled Claude Code)",
       "licenseWarning": "The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.",
       "githubUrl": "https://github.com/anthropics/claude-agent-sdk-python",
-      "version": "0.2.165",
-      "lastRelease": "2026-10-08",
+      "version": "0.2.172",
+      "lastRelease": "2026-10-22",
       "docsUrl": "https://code.claude.com/docs/en/agent-sdk/overview",
       "pricingModel": "paid",
       "languages": [

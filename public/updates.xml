@@ -2,10 +2,612 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-01</id>
+    <title>OpenClaw 2026.10.6 requires patched Node releases</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-01" />
+    <summary>OpenClaw 2026.10.6 requires Node 24.22.1+ or 26.12.1+, following the October 2026 Node.js security release. `openclaw update` refuses to install on older Node versions and prints recovery guidance instead.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, high" />
+    <source>
+      <id>https://github.com/openclaw/openclaw/releases/tag/v2026.10.6</id>
+      <title>Release openclaw 2026.10.6 · openclaw/openclaw</title>
+      <link href="https://github.com/openclaw/openclaw/releases/tag/v2026.10.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-01</id>
+    <title>Langflow 1.12.7 ships a batch of security fixes</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-01" />
+    <summary>Langflow 1.12.7 labels most of its 15 fixes as security fixes, including enforcing admin policy on public component builds and rejecting process and code loader capabilities. 1.12.8 followed on October 22, 2026 with two bug fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.12.7</id>
+      <title>Release 1.12.7 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.12.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-02</id>
+    <title>Haystack 3.4.1 drops trust in compromised emSign CAs</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-02" />
+    <summary>Haystack 3.4.1 requires certifi 2026.10.19 or later (GHSA-6q48-6c7w-9gw2), because earlier certifi versions trust eMudhra/emSign certificate authorities whose private keys were compromised. Users who pin certifi should raise the pin.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v3.4.1</id>
+      <title>Release v3.4.1 · deepset-ai/haystack</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v3.4.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-03</id>
+    <title>Phoenix 20.24.0 tightens dependency security</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-03" />
+    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, medium" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0</id>
+      <title>Release arize-phoenix: v20.24.0 · Arize-ai/phoenix</title>
+      <link href="https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-04</id>
+    <title>Strands Agents 1.62.0 makes middleware public</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-04" />
+    <summary>Strands Agents Python 1.62.0 makes its middleware system public, applies invocation limits and usage tracking across a whole agent tree, adds swarm tooling and an experimental OpenAI Live provider.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/strands-agents/harness-sdk/releases/tag/python/v1.62.0</id>
+      <title>Release python/v1.62.0 · strands-agents/harness-sdk</title>
+      <link href="https://github.com/strands-agents/harness-sdk/releases/tag/python/v1.62.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-05</id>
+    <title>Atomic Agents 2.15.0 emits OpenTelemetry GenAI spans</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-05" />
+    <summary>Atomic Agents 2.15.0 tracing emits OpenTelemetry GenAI semantic-convention spans readable by any OTLP backend, depends only on opentelemetry-api, and can hide inputs and outputs. Phoenix and OpenInference become optional.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/Eigenwise/atomic-agents/releases/tag/v2.15.0</id>
+      <title>Release v2.15.0 · Eigenwise/atomic-agents</title>
+      <link href="https://github.com/Eigenwise/atomic-agents/releases/tag/v2.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-06</id>
+    <title>ServiceNow control tower now governs its Arc agent</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-06" />
+    <summary>ServiceNow&apos;s control tower, called the Super Intelligence Control Tower in the release, now sets policy for Arc, a personal enterprise agent made GA on October 21, 2026. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes later.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/</id>
+      <title>ServiceNow delivers industry-first personal enterprise agent and policy enforcement with NVIDIA</title>
+      <link href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-07</id>
+    <title>Org policies can mandate Model Armor filters</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-07" />
+    <summary>Custom organization policies, now generally available, can require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/model-armor/release-notes</id>
+      <title>Model Armor release notes</title>
+      <link href="https://docs.cloud.google.com/model-armor/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-08</id>
+    <title>OpenAI GPT-6 models enter Google Cloud Model Garden</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-08" />
+    <summary>GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out in private preview to select enterprise customers in Google Cloud&apos;s Model Garden. Gemini for business and Antigravity support are listed as coming soon.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers</id>
+      <title>Google Cloud expands model choice and flexibility, bringing OpenAI models to customers</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-09</id>
+    <title>Unity Gateway screens MCP tool calls for jailbreaks</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-09" />
+    <summary>Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts in beta, with the Jailbreak guardrail applied to input, output or both.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-10</id>
+    <title>Cloudflare AI provider packages deprecated for createAI</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-10" />
+    <summary>Cloudflare feature-froze and deprecated workers-ai-provider and ai-gateway-provider. The Agents SDK createAI replaces them, covering Workers AI, AI Gateway catalog models, dynamic routes and vendor models.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, deprecation, low" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/post/2026-10-21-createai/</id>
+      <title>Cloudflare changelog: createAI</title>
+      <link href="https://developers.cloudflare.com/changelog/post/2026-10-21-createai/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-01</id>
+    <title>Antigravity Enterprise Gateway is generally available</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-01" />
+    <summary>Organizations can route Antigravity app, CLI and IDE extension model requests through a central gateway for inspection, policy enforcement and gateway API-key authentication. These requests use pay-as-you-go billing, not seat quotas.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-02</id>
+    <title>Gemini for government services enters preview</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-02" />
+    <summary>Google announced Gemini for government services in preview, built on the Gemini agent and deployable inside the Assured Workloads FedRAMP High data boundary with VPC Service Controls and CMEK. No product-wide authorization status is stated.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-government-services</id>
+      <title>Introducing Gemini for government services</title>
+      <link href="https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-government-services" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-03</id>
+    <title>NemoClaw v0.0.137 defaults to Nemotron 3.5 Super VL</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-03" />
+    <summary>NemoClaw v0.0.137 makes Nemotron 3.5 Super VL the default hosted model for new OpenClaw and Hermes onboarding and improves uninstall recovery, managed image security and policy recovery.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, low" />
+    <source>
+      <id>https://docs.nvidia.com/nemoclaw/latest/user-guide/openclaw/release-notes</id>
+      <title>NemoClaw release notes</title>
+      <link href="https://docs.nvidia.com/nemoclaw/latest/user-guide/openclaw/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-04</id>
+    <title>Pydantic AI 2.58.0 fixes MCP credential leak in traces</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-04" />
+    <summary>Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0</id>
+      <title>Release v2.58.0 · pydantic/pydantic-ai</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
+    <title>Foundry browser automation tool is generally available</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
+    <summary>Microsoft Foundry&apos;s browser automation tool is GA: agents get a managed Playwright Workspaces browser that can reach private sites over an Azure virtual network, with an MCP-compatible endpoint, Live View, approval gates and allow lists.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/</id>
+      <title>Browser automation tool in Microsoft Foundry is now GA</title>
+      <link href="https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-02</id>
+    <title>Copilot deprecates six models</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-02" />
+    <summary>GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026</id>
+      <title>GitHub Copilot models deprecated on October 19, 2026</title>
+      <link href="https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-03</id>
+    <title>Copilot model policy API is generally available</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-03" />
+    <summary>REST endpoints to read and set Copilot model policies are GA at enterprise, enterprise-team, agent-app and organization level. Enterprise policy can delegate model control to organizations or to teams and apps.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams</id>
+      <title>Copilot model policy API for enterprise, orgs, and teams</title>
+      <link href="https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-04</id>
+    <title>Guardrails grounding checks add a Standard tier</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-04" />
+    <summary>Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, medium" />
+    <source>
+      <id>https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html</id>
+      <title>Document history for the Amazon Bedrock User Guide</title>
+      <link href="https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-05</id>
+    <title>Kiro adds Memory and CLI workspace trust</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-05" />
+    <summary>Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-16-01</id>
+    <title>AutoGen is archived and no longer maintained</title>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-16-01" />
+    <summary>Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes, and points users to Microsoft Agent Framework. The last release was python-v0.7.5 on September 30, 2025.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, deprecation, high" />
+    <source>
+      <id>https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278</id>
+      <title>docs: clarify AutoGen is archived and no longer maintained (#8366)</title>
+      <link href="https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-16-02</id>
+    <title>CrewAI Agent Control Plane is generally available</title>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-16-02" />
+    <summary>CrewAI&apos;s Agent Control Plane is GA on CrewAI AMP, giving fleet visibility and 13 built-in runtime policies (such as PII masking, allowed models and tools, and cost limits) that can be toggled across deployments, plus custom policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://crewai.com/blog/how-to-govern-enterprise-agents-at-runtime-with-the-crewai-agent-control-plane</id>
+      <title>How to govern enterprise agents at runtime with the CrewAI Agent Control Plane</title>
+      <link href="https://crewai.com/blog/how-to-govern-enterprise-agents-at-runtime-with-the-crewai-agent-control-plane" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-01</id>
+    <title>OpenAI Agents SDK 0.24.0 changes saved-run format</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-01" />
+    <summary>OpenAI Agents SDK 0.24.0 adds run-wide tool error formatting and MCP annotations on converted tools. RunState snapshots move to schema 1.21, which older SDKs cannot read; finish older saved runs on their original SDK.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.24.0</id>
+      <title>Release v0.24.0 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.24.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-02</id>
+    <title>Copilot to retire Claude Opus 4.8, Opus 5 and GPT-5.6 Terra</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-02" />
+    <summary>GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna. Opus 4.8 stays available to individual annual-plan subscribers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november</id>
+      <title>Upcoming deprecation of selected GitHub Copilot models in mid-November</title>
+      <link href="https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-03</id>
+    <title>Agentic autofix for code scanning alerts is GA</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-03" />
+    <summary>Assigning a code scanning alert to Copilot now produces a validated fix as a draft pull request. It needs GitHub Code Security or Advanced Security on Enterprise Cloud, uses AI Credits and Actions minutes, and must be enabled by admin policy.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability</id>
+      <title>Agentic autofix for code scanning alerts general availability</title>
+      <link href="https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-04</id>
+    <title>Kimi K3 added to Kiro (experimental)</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-04" />
+    <summary>Kimi K3 is available in Kiro with experimental support for Pro, Pro+, Pro Max and Power customers in the US geography, at a 2.4x credit multiplier.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, low" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-05</id>
+    <title>Claude Opus 5.5 and Sonnet 5.5 GA in Gemini Enterprise</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-05" />
+    <summary>Admins can make Claude Opus 5.5 and Claude Sonnet 5.5 available in the Gemini Enterprise app (global, us and eu locations) by enabling third-party models; usage is billed pay-as-you-go.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-06</id>
+    <title>Unity Gateway consumer access is GA</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-06" />
+    <summary>Users with the consumer access entitlement no longer need an account admin to enable a preview before querying shared model services through Unity Gateway. Admins can still set budgets and rate limits.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-07</id>
+    <title>Genie Code SQL converter is generally available</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-07" />
+    <summary>The agentic code converter powered by Genie Code is GA for SQL, converting T-SQL, Snowflake, Redshift, Oracle, BigQuery and Teradata dialects to Databricks SQL and validating the output.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-08</id>
+    <title>Braintrust evals can run through provider batch APIs</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-08" />
+    <summary>Braintrust eval tasks and scorers can run through OpenAI and Anthropic batch APIs, which those providers price 50% below standard, with results tracked in one experiment. Needs TS SDK 3.37.0+ or Python SDK 0.45.0+.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, medium" />
+    <source>
+      <id>https://www.braintrust.dev/blog/workflow-evals</id>
+      <title>Run evals 50% cheaper with workflow evals</title>
+      <link href="https://www.braintrust.dev/blog/workflow-evals" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-09</id>
+    <title>Descope Agentic Identity Hub 3.0 adds governance suite</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-09" />
+    <summary>Agentic Identity Hub 3.0 adds an Agentic Governance Suite (Enterprise tier), policy engine v2 with explicit deny policies, Agent SSO via Cross-App Access (ID-JAG), and SPIFFE, private_key_jwt and mTLS client authentication.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, release, medium" />
+    <source>
+      <id>https://www.descope.com/blog/post/agentic-identity-hub-3</id>
+      <title>Introducing Descope Agentic Identity Hub 3.0</title>
+      <link href="https://www.descope.com/blog/post/agentic-identity-hub-3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-14-01</id>
+    <title>Claude Sonnet 4 reaches end of life in Kiro</title>
+    <updated>2026-10-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-14-01" />
+    <summary>Claude Sonnet 4 reached end of life in Kiro on October 14, 2026; users relying on it need to switch models. Claude Sonnet 5.5 is the latest Sonnet in Kiro.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, low" />
+    <source>
+      <id>https://kiro.dev/changelog/</id>
+      <title>Kiro changelog</title>
+      <link href="https://kiro.dev/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-14-02</id>
+    <title>GPT-5.5 retired in Codex for ChatGPT sign-in</title>
+    <updated>2026-10-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-14-02" />
+    <summary>GPT-5.5 is no longer available in Codex for users signed in with ChatGPT; API-key sessions are unaffected. OpenAI points users to gpt-6.1-sol and says to update saved configs, agents and scheduled tasks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT / Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-01</id>
+    <title>Gemini 4 Argon is generally available in Copilot</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-01" />
+    <summary>Gemini 4 Argon is GA for Copilot Pro+, Max, Business and Enterprise with a gradual rollout. Business and Enterprise admins control it through model policy; billing is usage-based at provider list pricing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot</id>
+      <title>Gemini 4 Argon in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-02</id>
+    <title>Copilot clients can fail closed on stale policy</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-02" />
+    <summary>Enterprise admins can set forceRemoteSettingsRefresh so Copilot CLI, VS Code and the Copilot app fail closed when they cannot confirm current policy. The sandbox key now enforces a minimum client version.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates</id>
+      <title>Enterprise managed settings enforcement updates</title>
+      <link href="https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-03</id>
+    <title>Gemini 4 Argon GA in Gemini Enterprise</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-03" />
+    <summary>Gemini 4 Argon is GA in the Gemini Enterprise web app (off by default until October 27, 2026), mobile app and AI developer tools, and in Workflow Builder from October 14. Gemini 3.8 Flash also became GA in the UK region on October 14.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-04</id>
+    <title>Gemini 4 Argon GA on Gemini Enterprise Agent Platform</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-04" />
+    <summary>Gemini 4 Argon and Gemini 4 Argon Cyber Permissive are GA on the Gemini Enterprise Agent Platform with 1,048,576-token input and output limits. Cyber Permissive is limited to an allowlist program.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-05</id>
+    <title>Gemini 4 Argon added to Unity Gateway</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-05" />
+    <summary>Google Gemini 4 Argon is available on Databricks Unity Gateway through Foundation Model APIs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, model-addition, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-06</id>
+    <title>LangSmith AI Search for agent traces in public beta</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-06" />
+    <summary>LangSmith adds natural-language search over agent traces (for example user frustration or PII leaks) in public beta on LangSmith Cloud in GCP US, EU and APAC; org admins enable it in settings.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, low" />
+    <source>
+      <id>https://www.langchain.com/blog/agent-traces-ai-search-langsmith</id>
+      <title>Search agent traces by behavior with AI Search in LangSmith</title>
+      <link href="https://www.langchain.com/blog/agent-traces-ai-search-langsmith" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-01</id>
+    <title>Paperclip lets Claude Code, Codex and MCP clients join</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-01" />
+    <summary>Paperclip v2026.1012.0 adds an experimental, off-by-default option for Claude Code, Codex, OpenCode and other MCP clients to connect as signed-in users via OAuth or device-code consent, with opt-out write access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.1012.0</id>
+      <title>Release v2026.1012.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.1012.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-02</id>
+    <title>Knowledge Assistant and Supervisor Agent become legacy</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-02" />
+    <summary>Databricks made Knowledge Assistant and Supervisor Agent legacy, recommending the Agent Bricks CLI for code-based agents and Genie Agents for no-code agents.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, deprecation, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-03</id>
+    <title>Kong Gateway 3.16.0.1 adds A2A v1.0 in AI Gateway</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-03" />
+    <summary>Kong Gateway 3.16.0.1 adds the A2A v1.0 wire format to ai-a2a-proxy alongside v0.3, prompt cache-control mappings for OpenAI, Anthropic and Bedrock in ai-proxy-advanced, and several routing and telemetry fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, low" />
+    <source>
+      <id>https://developer.konghq.com/gateway/changelog/</id>
+      <title>Kong Gateway changelog</title>
+      <link href="https://developer.konghq.com/gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-04</id>
+    <title>Meta releases Muse Wonder agent models</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-04" />
+    <summary>Meta released Muse Wonder, available via the Meta Model API and Muse Code, and Muse Wonder Full for Muse Code subscribers. Muse Wonder will soon power the Muse app, starting with subscribers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, model-addition, medium" />
+    <source>
+      <id>https://about.fb.com/news/2026/10/introducing-muse-wonder-models/</id>
+      <title>Introducing Muse Wonder and Muse Wonder Full</title>
+      <link href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-01</id>
     <title>Gemini Code Assist — deprecation</title>
@@ -270,6 +872,20 @@
       <id>https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165</id>
       <title>Release v0.2.165 · anthropics/claude-agent-sdk-python</title>
       <link href="https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.165" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-09</id>
+    <title>Nous Research raises $90M Series B</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-09" />
+    <summary>Nous Research, maker of Hermes Agent, raised a $90 million Series B at a $1.5 billion valuation led by Robot Ventures, and plans Hermes for Businesses, a version of the agent for companies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, funding, medium" />
+    <source>
+      <id>https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/</id>
+      <title>Nous Research confirms it hit $1.5B valuation, launches AI agents for business users</title>
+      <link href="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/" />
     </source>
   </entry>
   <entry>

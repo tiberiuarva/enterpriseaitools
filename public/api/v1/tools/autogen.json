@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "agents",
     "type": "opensource",
     "vendor": "Microsoft",
-    "description": "Multi-agent framework from Microsoft now in maintenance mode after Agent Framework consolidation.",
+    "description": "Multi-agent framework from Microsoft, now archived and no longer maintained; Microsoft Agent Framework is the successor.",
     "strengths": [
       "Conversable agent patterns",
       "Microsoft research lineage",
@@ -21,13 +21,13 @@
     "version": "0.7.5",
     "docsUrl": "https://microsoft.github.io/autogen/",
     "pricingModel": "free",
-    "status": "maintenance",
-    "statusNote": "Maintenance mode. Microsoft merged AutoGen with Semantic Kernel into the Microsoft Agent Framework.",
+    "status": "archived",
+    "statusNote": "Archived: as of 16 October 2026 the README states the project is no longer maintained by Microsoft (no bug or security fixes) and points to Microsoft Agent Framework.",
     "tags": [
       "agents",
       "opensource",
       "microsoft",
-      "maintenance"
+      "archived"
     ],
     "logoKind": "project-logo",
     "logoNotes": "Official AutoGen logo asset from the owner-controlled microsoft/autogen repo (`python/docs/src/_static/images/logo/logo.svg`).",
@@ -39,7 +39,8 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Flexible for research-heavy agent patterns, though teams normally need to add stronger production discipline around orchestration and runtime governance.",
+    "practitionerNote": "Archived: use Microsoft Agent Framework for new work. Existing deployments get no bug or security fixes, so plan a migration rather than extending them.",
+    "lastRelease": "2025-09-30",
     "governance": {
       "dataResidency": {
         "status": "yes",
@@ -48,7 +49,7 @@
       },
       "deployment": {
         "status": "yes",
-        "detail": "pip-installed OSS framework; no Microsoft-managed hosting (maintenance mode).",
+        "detail": "pip-installed OSS framework; no Microsoft-managed hosting (archived October 2026).",
         "sourceUrl": "https://github.com/microsoft/autogen",
         "models": [
           "self-hosted"

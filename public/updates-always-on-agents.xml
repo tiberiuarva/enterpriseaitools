@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-always-on-agents.xml</id>
   <title>enterpriseai.tools weekly updates — always-on-agents</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-always-on-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-01</id>
+    <title>OpenClaw 2026.10.6 requires patched Node releases</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-01" />
+    <summary>OpenClaw 2026.10.6 requires Node 24.22.1+ or 26.12.1+, following the October 2026 Node.js security release. `openclaw update` refuses to install on older Node versions and prints recovery guidance instead.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, release, high" />
+    <source>
+      <id>https://github.com/openclaw/openclaw/releases/tag/v2026.10.6</id>
+      <title>Release openclaw 2026.10.6 · openclaw/openclaw</title>
+      <link href="https://github.com/openclaw/openclaw/releases/tag/v2026.10.6" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-04</id>
+    <title>Meta releases Muse Wonder agent models</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-04" />
+    <summary>Meta released Muse Wonder, available via the Meta Model API and Muse Code, and Muse Wonder Full for Muse Code subscribers. Muse Wonder will soon power the Muse app, starting with subscribers.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, model-addition, medium" />
+    <source>
+      <id>https://about.fb.com/news/2026/10/introducing-muse-wonder-models/</id>
+      <title>Introducing Muse Wonder and Muse Wonder Full</title>
+      <link href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-02</id>
     <title>NanoClaw — release</title>
@@ -46,6 +74,20 @@
       <id>https://github.com/openclaw/openclaw/releases/tag/v2026.9.9</id>
       <title>Release v2026.9.9 · openclaw/openclaw</title>
       <link href="https://github.com/openclaw/openclaw/releases/tag/v2026.9.9" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-07-09</id>
+    <title>Nous Research raises $90M Series B</title>
+    <updated>2026-10-07T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-07-09" />
+    <summary>Nous Research, maker of Hermes Agent, raised a $90 million Series B at a $1.5 billion valuation led by Robot Ventures, and plans Hermes for Businesses, a version of the agent for companies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, funding, medium" />
+    <source>
+      <id>https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/</id>
+      <title>Nous Research confirms it hit $1.5B valuation, launches AI agents for business users</title>
+      <link href="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/" />
     </source>
   </entry>
   <entry>

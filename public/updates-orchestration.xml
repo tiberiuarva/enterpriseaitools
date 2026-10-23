@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-orchestration.xml</id>
   <title>enterpriseai.tools weekly updates — orchestration</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-orchestration.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-01</id>
+    <title>Langflow 1.12.7 ships a batch of security fixes</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-01" />
+    <summary>Langflow 1.12.7 labels most of its 15 fixes as security fixes, including enforcing admin policy on public component builds and rejecting process and code loader capabilities. 1.12.8 followed on October 22, 2026 with two bug fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.12.7</id>
+      <title>Release 1.12.7 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.12.7" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-02</id>
+    <title>Haystack 3.4.1 drops trust in compromised emSign CAs</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-02" />
+    <summary>Haystack 3.4.1 requires certifi 2026.10.19 or later (GHSA-6q48-6c7w-9gw2), because earlier certifi versions trust eMudhra/emSign certificate authorities whose private keys were compromised. Users who pin certifi should raise the pin.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/deepset-ai/haystack/releases/tag/v3.4.1</id>
+      <title>Release v3.4.1 · deepset-ai/haystack</title>
+      <link href="https://github.com/deepset-ai/haystack/releases/tag/v3.4.1" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-04</id>
     <title>n8n — release</title>

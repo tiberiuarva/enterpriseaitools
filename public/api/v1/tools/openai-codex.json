@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -24,8 +24,8 @@
     "license": "Apache 2.0 (CLI); Proprietary (cloud)",
     "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
     "githubUrl": "https://github.com/openai/codex",
-    "version": "0.159.2",
-    "lastRelease": "2026-09-29",
+    "version": "0.163.0",
+    "lastRelease": "2026-10-15",
     "docsUrl": "https://learn.chatgpt.com/docs",
     "websiteUrl": "https://learn.chatgpt.com/docs/pricing",
     "pricing": "Included in ChatGPT Free, Go ($8/mo), Plus ($20/mo), Pro (from $100/mo), Business ($20/user/mo annual, 2+ users) and Enterprise/Edu (contact sales); or API-key usage at API rates.",

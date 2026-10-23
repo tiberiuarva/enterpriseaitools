@@ -2,10 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-observability.xml</id>
   <title>enterpriseai.tools weekly updates — observability</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-observability.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-03</id>
+    <title>Phoenix 20.24.0 tightens dependency security</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-03" />
+    <summary>Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, medium" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0</id>
+      <title>Release arize-phoenix: v20.24.0 · Arize-ai/phoenix</title>
+      <link href="https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-08</id>
+    <title>Braintrust evals can run through provider batch APIs</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-08" />
+    <summary>Braintrust eval tasks and scorers can run through OpenAI and Anthropic batch APIs, which those providers price 50% below standard, with results tracked in one experiment. Needs TS SDK 3.37.0+ or Python SDK 0.45.0+.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, medium" />
+    <source>
+      <id>https://www.braintrust.dev/blog/workflow-evals</id>
+      <title>Run evals 50% cheaper with workflow evals</title>
+      <link href="https://www.braintrust.dev/blog/workflow-evals" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-06</id>
+    <title>LangSmith AI Search for agent traces in public beta</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-06" />
+    <summary>LangSmith adds natural-language search over agent traces (for example user frustration or PII leaks) in public beta on LangSmith Cloud in GCP US, EU and APAC; org admins enable it in settings.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, feature, low" />
+    <source>
+      <id>https://www.langchain.com/blog/agent-traces-ai-search-langsmith</id>
+      <title>Search agent traces by behavior with AI Search in LangSmith</title>
+      <link href="https://www.langchain.com/blog/agent-traces-ai-search-langsmith" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-05</id>
     <title>Langfuse — release</title>

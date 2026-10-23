@@ -2,10 +2,122 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-agents.xml</id>
   <title>enterpriseai.tools weekly updates — agents</title>
-  <updated>2026-10-10T00:00:00.000Z</updated>
+  <updated>2026-10-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-04</id>
+    <title>Strands Agents 1.62.0 makes middleware public</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-04" />
+    <summary>Strands Agents Python 1.62.0 makes its middleware system public, applies invocation limits and usage tracking across a whole agent tree, adds swarm tooling and an experimental OpenAI Live provider.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/strands-agents/harness-sdk/releases/tag/python/v1.62.0</id>
+      <title>Release python/v1.62.0 · strands-agents/harness-sdk</title>
+      <link href="https://github.com/strands-agents/harness-sdk/releases/tag/python/v1.62.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-05</id>
+    <title>Atomic Agents 2.15.0 emits OpenTelemetry GenAI spans</title>
+    <updated>2026-10-21T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-21-05" />
+    <summary>Atomic Agents 2.15.0 tracing emits OpenTelemetry GenAI semantic-convention spans readable by any OTLP backend, depends only on opentelemetry-api, and can hide inputs and outputs. Phoenix and OpenInference become optional.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/Eigenwise/atomic-agents/releases/tag/v2.15.0</id>
+      <title>Release v2.15.0 · Eigenwise/atomic-agents</title>
+      <link href="https://github.com/Eigenwise/atomic-agents/releases/tag/v2.15.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-20-04</id>
+    <title>Pydantic AI 2.58.0 fixes MCP credential leak in traces</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-20-04" />
+    <summary>Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0</id>
+      <title>Release v2.58.0 · pydantic/pydantic-ai</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-19-01</id>
+    <title>Foundry browser automation tool is generally available</title>
+    <updated>2026-10-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-19-01" />
+    <summary>Microsoft Foundry&apos;s browser automation tool is GA: agents get a managed Playwright Workspaces browser that can reach private sites over an Azure virtual network, with an MCP-compatible endpoint, Live View, approval gates and allow lists.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/</id>
+      <title>Browser automation tool in Microsoft Foundry is now GA</title>
+      <link href="https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-16-01</id>
+    <title>AutoGen is archived and no longer maintained</title>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-16-01" />
+    <summary>Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes, and points users to Microsoft Agent Framework. The last release was python-v0.7.5 on September 30, 2025.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, deprecation, high" />
+    <source>
+      <id>https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278</id>
+      <title>docs: clarify AutoGen is archived and no longer maintained (#8366)</title>
+      <link href="https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-16-02</id>
+    <title>CrewAI Agent Control Plane is generally available</title>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-16-02" />
+    <summary>CrewAI&apos;s Agent Control Plane is GA on CrewAI AMP, giving fleet visibility and 13 built-in runtime policies (such as PII masking, allowed models and tools, and cost limits) that can be toggled across deployments, plus custom policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, medium" />
+    <source>
+      <id>https://crewai.com/blog/how-to-govern-enterprise-agents-at-runtime-with-the-crewai-agent-control-plane</id>
+      <title>How to govern enterprise agents at runtime with the CrewAI Agent Control Plane</title>
+      <link href="https://crewai.com/blog/how-to-govern-enterprise-agents-at-runtime-with-the-crewai-agent-control-plane" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-01</id>
+    <title>OpenAI Agents SDK 0.24.0 changes saved-run format</title>
+    <updated>2026-10-15T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-15-01" />
+    <summary>OpenAI Agents SDK 0.24.0 adds run-wide tool error formatting and MCP annotations on converted tools. RunState snapshots move to schema 1.21, which older SDKs cannot read; finish older saved runs on their original SDK.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, medium" />
+    <source>
+      <id>https://github.com/openai/openai-agents-python/releases/tag/v0.24.0</id>
+      <title>Release v0.24.0 · openai/openai-agents-python</title>
+      <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.24.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-12-02</id>
+    <title>Knowledge Assistant and Supervisor Agent become legacy</title>
+    <updated>2026-10-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-12-02" />
+    <summary>Databricks made Knowledge Assistant and Supervisor Agent legacy, recommending the Agent Bricks CLI for code-based agents and Genie Agents for no-code agents.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, deprecation, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-09-03</id>
     <title>Pydantic AI — release</title>

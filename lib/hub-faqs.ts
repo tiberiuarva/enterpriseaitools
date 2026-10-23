@@ -67,6 +67,11 @@ export const agentsFaqs: HubFaq[] = [
     answer:
       "Every per-tool page records the exact license label and an explicit license-risk level (low / medium / high). Source-available or restrictive clauses (Commons Clause, BSL, SSPL, Elastic License) are flagged in plain language on the tool page.",
   },
+  {
+    question: "Are archived agent frameworks still listed?",
+    answer:
+      "Yes. Archived frameworks such as AutoGen stay on the hub with an 'Archived' status and a note naming the successor, so teams running them can plan a migration.",
+  },
 ];
 
 export const orchestrationFaqs: HubFaq[] = [
@@ -83,7 +88,7 @@ export const orchestrationFaqs: HubFaq[] = [
   {
     question: "Are deprecated orchestration platforms still tracked?",
     answer:
-      "Yes — deprecated and archived tools remain on the hub with a clear 'deprecated' status and a status note explaining the deprecation, so teams evaluating migration paths can see the full picture.",
+      "Yes — deprecated and archived tools remain on the hub with a clear 'Deprecated' or 'Archived' status and a status note explaining why, so teams evaluating migration paths can see the full picture.",
   },
 ];
 

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-10",
+  "generatedAt": "2026-10-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -17,8 +17,8 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/comet-ml/opik",
-    "version": "2.2.96",
-    "lastRelease": "2026-10-09",
+    "version": "2.2.117",
+    "lastRelease": "2026-10-22",
     "docsUrl": "https://www.comet.com/docs/opik/quickstart",
     "websiteUrl": "https://www.comet.com/site/pricing/",
     "pricing": "Open source is free. Cloud: Free $0 (25k spans/month, 10 members), Pro $19/month (100k spans/month), Enterprise custom.",
