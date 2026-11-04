@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-orchestration.xml</id>
   <title>enterpriseai.tools weekly updates — orchestration</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-orchestration.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-01</id>
+    <title>Langflow 1.13.1 ships about 20 security fixes</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-01" />
+    <summary>Langflow 1.13.1 lists about 20 security fixes, including MCP reserved-field protection and destination policy, confining Git and Oracle loader file access, and credential redaction in logs. 1.13.0 (October 22, 2026) added admin team and user APIs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.13.1</id>
+      <title>Release 1.13.1 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.13.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-03</id>
+    <title>Lakeflow Jobs can trigger on upstream job completion</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-03" />
+    <summary>In beta, a Lakeflow job can now run after one or more upstream jobs finish, including jobs in other workspaces on the same Unity Catalog metastore.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-29-01</id>
+    <title>Step Functions workflows can be AI agent tools</title>
+    <updated>2026-10-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-29-01" />
+    <summary>Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. Generally available wherever AgentCore Gateway is offered, at standard rates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/</id>
+      <title>AWS Step Functions workflows now available as AI agent tools</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-03</id>
+    <title>Lakeflow performance observability is generally available</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-03" />
+    <summary>Job-level query metrics and insights for Lakeflow Jobs are now generally available, with an Optimize button that opens Genie Code.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-23-01</id>
+    <title>Dify 1.18.0 needs a coordinated upgrade</title>
+    <updated>2026-10-23T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-23-01" />
+    <summary>Dify 1.18.0 requires upgrading the API, workers, Agent Backend and Agent runtime images together. /runs rejects v1 requests, the old Agent AskHuman tool is removed, local sandboxes need an auth token, and source installs need Python 3.13.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langgenius/dify/releases/tag/1.18.0</id>
+      <title>Release 1.18.0 · langgenius/dify</title>
+      <link href="https://github.com/langgenius/dify/releases/tag/1.18.0" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-01</id>
     <title>Langflow 1.12.7 ships a batch of security fixes</title>

@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-22",
+  "generatedAt": "2026-11-04",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -8,7 +8,7 @@
     "name": "Guardrails AI",
     "category": "governance",
     "type": "opensource",
-    "vendor": "Guardrails AI",
+    "vendor": "Guardrails AI (Harvey)",
     "description": "Validation-focused guardrails framework with a large validator ecosystem and freemium model.",
     "strengths": [
       "50+ validators",
@@ -76,7 +76,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Apache-2.0 upstream (tracked license under data-correction review).",
+        "detail": "Apache-2.0 — permissive, OSI-approved.",
         "sourceUrl": "https://github.com/guardrails-ai/guardrails/blob/main/LICENSE",
         "level": "low"
       },

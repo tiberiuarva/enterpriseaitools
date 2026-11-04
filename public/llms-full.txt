@@ -1,6 +1,6 @@
 # enterpriseai.tools — full content
 
-> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 101 tools across 9 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-10-22.
+> Complete source-backed snapshot of every tracked enterprise AI tool, platform, and recent update, for single-fetch LLM ingestion. 101 tools across 9 categories. Updated weekly; governed by data/SCHEMA.md. Generated 2026-11-04.
 
 Edited through a regulated-enterprise delivery lens. Every asserted governance claim links to a primary source. Analytics are consent-gated: nothing third-party loads unless a visitor opts in, and there is no sign-up, no email capture, and no advertising.
 
@@ -83,7 +83,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### BeeAI Framework
 - Page: https://www.enterpriseai.tools/tools/beeai-framework/
 - Vendor: Linux Foundation | Type: opensource | License: Apache 2.0
-- Status: active | Version: 0.1.85 | Last release: 2026-09-28
+- Status: active | Version: 0.1.86 | Last release: 2026-11-02
 - Open agent framework formerly known as Bee Agent Framework, now under Linux Foundation governance.
 - Strengths: Linux Foundation governance; Agent-oriented framework primitives; IBM/BeeAI lineage
 - Governance posture:
@@ -101,7 +101,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Claude Agent SDK (formerly Claude Code SDK)
 - Page: https://www.enterpriseai.tools/tools/claude-agent-sdk/
 - Vendor: Anthropic | Type: vendor | License: MIT (SDK wrapper); Proprietary (bundled Claude Code) (caution: The SDK wrapper repo is MIT, but it bundles and drives the Claude Code binary, and Anthropic states use of the SDK is governed by its Commercial Terms of Service except where a component's own LICENSE says otherwise.)
-- Status: active | Version: 0.2.172 | Last release: 2026-10-22
+- Status: active | Version: 0.2.178 | Last release: 2026-11-04
 - Anthropic's Python/TypeScript library that embeds Claude Code's agent loop, tools, hooks, subagents and MCP in your own app.
 - Strengths: Claude Code tools, hooks and subagents; Permission modes for tool approval; Bedrock, Vertex and Foundry auth options
 - Governance posture:
@@ -119,7 +119,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### CrewAI
 - Page: https://www.enterpriseai.tools/tools/crewai/
 - Vendor: crewAI Inc. | Type: opensource | License: MIT
-- Status: active | Version: 1.15.28 | Last release: 2026-10-14
+- Status: active | Version: 1.15.35 | Last release: 2026-11-03
 - Open source multi-agent framework focused on autonomous teams and task coordination.
 - Strengths: Large community ecosystem; Crew-based task coordination; Built for multi-agent coordination
 - Governance posture:
@@ -173,7 +173,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LangGraph
 - Page: https://www.enterpriseai.tools/tools/langgraph/
 - Vendor: LangChain | Type: opensource | License: MIT
-- Status: active | Version: 1.2.16 | Last release: 2026-10-16
+- Status: active | Version: 1.2.19 | Last release: 2026-10-30
 - Stateful agent orchestration framework with graph-based execution and durable workflows.
 - Strengths: Popular graph abstraction; Strong agent workflow patterns; LangChain ecosystem fit
 - Governance posture:
@@ -209,7 +209,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Mastra
 - Page: https://www.enterpriseai.tools/tools/mastra/
 - Vendor: Mastra AI | Type: opensource | License: Apache 2.0 core + EE paths (caution: Mastra uses a dual-license model: most of the repo is Apache 2.0, while code under ee/ directories uses the Mastra Enterprise License.)
-- Status: active | Version: 1.79.0 | Last release: 2026-10-21
+- Status: active | Version: 1.81.0 | Last release: 2026-11-02
 - Agent framework focused on composable workflows, tooling, and modern developer ergonomics.
 - Strengths: Apache 2.0 plus enterprise path; Fast growth; Modern DX
 - Governance posture:
@@ -227,7 +227,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Microsoft Agent Framework
 - Page: https://www.enterpriseai.tools/tools/microsoft-agent-framework/
 - Vendor: Microsoft | Type: opensource | License: MIT
-- Status: active | Version: 1.23.0 | Last release: 2026-10-22
+- Status: active | Version: 1.24.0 | Last release: 2026-10-30
 - Microsoft's new multi-language agent framework for building, orchestrating, and deploying agent workflows.
 - Strengths: Multi-language SDKs; Python and .NET support; Graph-based workflows and DevUI
 - Governance posture:
@@ -281,7 +281,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Pydantic AI
 - Page: https://www.enterpriseai.tools/tools/pydantic-ai/
 - Vendor: Pydantic | Type: opensource | License: MIT
-- Status: active | Version: 2.59.0 | Last release: 2026-10-21
+- Status: active | Version: 2.65.0 | Last release: 2026-11-03
 - Type-safe Python agent framework from the Pydantic team with model-agnostic providers and durable execution integrations.
 - Strengths: Typed tools, deps and structured outputs; Temporal/DBOS/Prefect durable execution; OpenTelemetry tracing via Logfire
 - Governance posture:
@@ -299,7 +299,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Semantic Kernel
 - Page: https://www.enterpriseai.tools/tools/semantic-kernel/
 - Vendor: Microsoft | Type: opensource | License: MIT
-- Status: active | Version: 1.45.0 | Last release: 2026-10-06
+- Status: active | Version: 1.46.0 | Last release: 2026-10-28
 - Microsoft orchestration SDK evolving into the unified Microsoft Agent Framework direction.
 - Strengths: Broad language support; Plugin and memory abstractions; Strong Microsoft ecosystem fit
 - Governance posture:
@@ -317,7 +317,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Strands Agents
 - Page: https://www.enterpriseai.tools/tools/strands-agents/
 - Vendor: AWS | Type: opensource | License: Apache 2.0
-- Status: active | Version: 1.62.0 | Last release: 2026-10-21
+- Status: active | Version: 1.63.0 | Last release: 2026-10-30
 - Amazon-maintained open-source SDK and harness for building model-driven AI agents in Python and TypeScript.
 - Strengths: Runs in-process, no hosted control plane; First-class Bedrock, Anthropic, OpenAI, Gemini; Built-in MCP and multi-agent patterns
 - Governance posture:
@@ -391,7 +391,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Dify
 - Page: https://www.enterpriseai.tools/tools/dify/
 - Vendor: Dify | Type: opensource | License: Modified Apache 2.0 (caution: Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.)
-- Status: active | Version: 1.17.1 | Last release: 2026-09-10
+- Status: active | Version: 1.18.0 | Last release: 2026-10-23
 - Application development and workflow platform for LLM apps with plugin and enterprise features.
 - Strengths: App + workflow surface in one stack; Built-in BaaS-style app publishing; Plugin architecture
 - Governance posture:
@@ -463,7 +463,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LangFlow
 - Page: https://www.enterpriseai.tools/tools/langflow/
 - Vendor: LangFlow / DataStax | Type: opensource | License: MIT
-- Status: active | Version: 1.12.8 | Last release: 2026-10-22
+- Status: active | Version: 1.13.1 | Last release: 2026-11-04
 - Visual flow builder for LLM pipelines and agent workflows with self-hosting support.
 - Strengths: Visual workflow canvas; LangChain ecosystem fit; API and playground handoff
 - Governance posture:
@@ -481,7 +481,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### n8n
 - Page: https://www.enterpriseai.tools/tools/n8n/
 - Vendor: n8n | Type: opensource | License: Sustainable Use License (caution: n8n uses a Sustainable Use License, not MIT or Apache 2.0. It is more accurately described as source-available.)
-- Status: active | Version: 2.44.6 | Last release: 2026-10-22
+- Status: active | Version: 2.46.4 | Last release: 2026-11-02
 - Workflow automation platform with strong self-hosting support and broad integration coverage.
 - Strengths: Large integration catalog; Strong workflow automation ecosystem; Low-code orchestration builder
 - Governance posture:
@@ -517,7 +517,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Temporal
 - Page: https://www.enterpriseai.tools/tools/temporal/
 - Vendor: Temporal Technologies | Type: opensource | License: MIT
-- Status: active | Version: 1.32.1 | Last release: 2026-10-08
+- Status: active | Version: 1.32.2 | Last release: 2026-11-02
 - Durable execution platform that makes agent loops and workflows survive crashes, timeouts and multi-day human approvals.
 - Strengths: Crash-proof agent loops via workflows; OpenAI Agents SDK, Pydantic AI, ADK integrations; Self-host MIT server or Temporal Cloud
 - Governance posture:
@@ -645,7 +645,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Paperclip
 - Page: https://www.enterpriseai.tools/tools/paperclip/
 - Vendor: Paperclip | Type: opensource | License: MIT
-- Status: active | Version: v2026.1012.0 | Last release: 2026-10-12
+- Status: active | Version: v2026.1023.0 | Last release: 2026-10-23
 - Open source control plane for orchestrating persistent AI agent teams, budgets, and approvals.
 - Strengths: Persistent multi-agent control plane; Built-in budgets and governance; Human approval gates
 - Governance posture:
@@ -936,7 +936,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Guardrails AI
 - Page: https://www.enterpriseai.tools/tools/guardrails-ai/
-- Vendor: Guardrails AI | Type: opensource | License: Apache 2.0
+- Vendor: Guardrails AI (Harvey) | Type: opensource | License: Apache 2.0
 - Status: active | Version: 0.11.0 | Last release: 2026-08-14
 - Validation-focused guardrails framework with a large validator ecosystem and freemium model.
 - Strengths: 50+ validators; Structured output guardrails; Python-first integration
@@ -948,7 +948,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
   - ISO 27001: not-applicable — Self-hosted library; applies to the operator's ISMS.
   - ISO 42001: not-applicable — Self-hosted library; applies to the operator.
   - EU AI Act: not-applicable (role: not-applicable) — Validation library component; deployers carry obligations.
-  - License risk: yes (risk: low) — Apache-2.0 upstream (tracked license under data-correction review). [source: https://github.com/guardrails-ai/guardrails/blob/main/LICENSE]
+  - License risk: yes (risk: low) — Apache-2.0 — permissive, OSI-approved. [source: https://github.com/guardrails-ai/guardrails/blob/main/LICENSE]
 - Governance reviewed: 2026-05-26
 - Links: docs: https://guardrailsai.com/docs | repo: https://github.com/guardrails-ai/guardrails
 
@@ -1100,8 +1100,8 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Arize Phoenix
 - Page: https://www.enterpriseai.tools/tools/arize-phoenix/
-- Vendor: Arize AI | Type: opensource | License: Elastic License 2.0 (caution: Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.)
-- Status: active | Version: 20.24.0 | Last release: 2026-10-21
+- Vendor: Arize AI (Dynatrace) | Type: opensource | License: Elastic License 2.0 (caution: Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.)
+- Status: active | Version: 21.0.0 | Last release: 2026-10-30
 - Source-available AI observability and evaluation platform: OpenTelemetry/OpenInference tracing, evals, prompt iteration and experiments.
 - Strengths: OpenInference instrumentation on OpenTelemetry; LLM, code and human-label evaluators; Datasets and experiments to compare app versions
 - Governance posture:
@@ -1155,7 +1155,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Langfuse
 - Page: https://www.enterpriseai.tools/tools/langfuse/
 - Vendor: Langfuse (ClickHouse) | Type: opensource | License: MIT core + EE paths (caution: Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).)
-- Status: active | Version: 4.68.0 | Last release: 2026-10-22
+- Status: active | Version: 4.74.0 | Last release: 2026-11-03
 - Open-source LLM engineering platform for tracing, evaluations, prompt management and cost/latency dashboards, built on OpenTelemetry.
 - Strengths: MIT core self-hostable at production scale; Prompt management with versioning and playground; OpenTelemetry-based tracing with 100+ integrations
 - Governance posture:
@@ -1209,7 +1209,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Opik
 - Page: https://www.enterpriseai.tools/tools/opik/
 - Vendor: Comet | Type: opensource | License: Apache 2.0
-- Status: active | Version: 2.2.117 | Last release: 2026-10-22
+- Status: active | Version: 2.2.139 | Last release: 2026-11-03
 - Open-source platform to trace, evaluate and monitor LLM apps, RAG systems and agents, with LLM-as-a-judge metrics and prompt optimization.
 - Strengths: Apache 2.0 server and UI self-hostable; PyTest integration for LLM CI checks; Python and TypeScript SDKs plus OpenTelemetry
 - Governance posture:
@@ -1229,7 +1229,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### agentgateway
 - Page: https://www.enterpriseai.tools/tools/agentgateway/
 - Vendor: Linux Foundation | Type: opensource | License: Apache 2.0
-- Status: active | Version: 1.6.0 | Last release: 2026-10-02
+- Status: active | Version: 1.7.0 | Last release: 2026-10-27
 - Rust proxy for agent traffic that governs MCP, A2A and LLM calls with CEL-based RBAC, budgets and guardrails; runs standalone or on Kubernetes.
 - Strengths: MCP, A2A and LLM in one proxy; CEL policy engine for fine-grained RBAC; Kubernetes Gateway API controller built in
 - Governance posture:
@@ -1337,7 +1337,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### LiteLLM
 - Page: https://www.enterpriseai.tools/tools/litellm/
 - Vendor: BerriAI | Type: opensource | License: MIT core + EE paths (caution: Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.)
-- Status: active | Version: 1.106.2 | Last release: 2026-10-21
+- Status: active | Version: 1.108.0 | Last release: 2026-11-04
 - Self-hostable AI gateway and Python SDK that calls 100+ LLM APIs in OpenAI format with virtual keys, spend tracking and guardrails.
 - Strengths: Virtual keys with per-team spend tracking; 100+ providers behind one OpenAI-format API; Built-in MCP and agent gateway
 - Governance posture:
@@ -1500,7 +1500,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ### Cursor
 - Page: https://www.enterpriseai.tools/tools/cursor/
-- Vendor: Anysphere | Type: commercial | License: Proprietary
+- Vendor: Anysphere (SpaceX) | Type: commercial | License: Proprietary
 - Status: active
 - Standalone AI coding IDE with rapid enterprise growth and credit-based pricing controversy.
 - Strengths: Strong adoption; Standalone IDE UX; High-end coding focus
@@ -1681,7 +1681,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### OpenAI Codex
 - Page: https://www.enterpriseai.tools/tools/openai-codex/
 - Vendor: OpenAI | Type: vendor | License: Apache 2.0 (CLI); Proprietary (cloud) (caution: Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.)
-- Status: active | Version: 0.163.0 | Last release: 2026-10-15
+- Status: active | Version: 0.166.0 | Last release: 2026-10-29
 - OpenAI coding agent available as an open-source CLI, IDE extension, ChatGPT app surfaces and hosted Codex Cloud tasks.
 - Strengths: Apache 2.0 Rust CLI; Included in ChatGPT plans; Compliance API codex_log events
 - Governance posture:
@@ -1755,7 +1755,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### Hermes Agent
 - Page: https://www.enterpriseai.tools/tools/hermes-agent/
 - Vendor: Nous Research | Type: opensource | License: MIT
-- Status: active | Version: 0.22.4 | Last release: 2026-10-21
+- Status: active | Version: 0.22.7 | Last release: 2026-11-03
 - Self-improving open-source agent with persistent memory, built-in cron and a gateway to 20+ chat apps; runs on a laptop, VPS or cloud sandbox.
 - Strengths: Learns and reuses its own skills; Cron jobs deliver to any chat platform; 7 terminal backends incl. Docker, SSH, Modal
 - Governance posture:
@@ -1845,7 +1845,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### OpenClaw (formerly Clawd, Clawdbot, Moltbot)
 - Page: https://www.enterpriseai.tools/tools/openclaw/
 - Vendor: OpenClaw Foundation | Type: opensource | License: MIT
-- Status: active | Version: 2026.10.6 | Last release: 2026-10-22
+- Status: active | Version: 2026.10.10 | Last release: 2026-11-03
 - Self-hosted personal AI agent that runs on your own machine and acts for you through WhatsApp, Telegram, Slack, Teams and 20+ chat apps.
 - Strengths: Gateway bridges 20+ messaging channels; Built-in `openclaw security audit` command; Foundation-stewarded, no paid tier
 - Governance posture:
@@ -1862,50 +1862,48 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 
 ## Recent updates
 
+- 2026-11-04 — LangFlow (release, high impact): Langflow 1.13.1 lists about 20 security fixes, including MCP reserved-field protection and destination policy, confining Git and Oracle loader file access, and credential redaction in logs. 1.13.0 (October 22, 2026) added admin team and user APIs. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.13.1]
+- 2026-11-03 — NVIDIA NemoClaw (release, medium impact): NemoClaw v0.0.141 sends installer and CLI operation telemetry to NVIDIA by default. To opt out, set NEMOCLAW_DISABLE_TELEMETRY=1 in each shell before installing or using the CLI. [source: https://docs.nvidia.com/nemoclaw/latest/about/release-notes]
+- 2026-11-03 — Cloudflare AI Gateway (feature, medium impact): New Cloudflare AI Gateways now have authentication on by default, and it cannot be turned off once enabled; requests to disable it return HTTP 400. Existing gateways without authentication keep working. [source: https://developers.cloudflare.com/changelog/post/2026-11-03-required-authentication/]
+- 2026-11-03 — Databricks Lakeflow Jobs (feature, medium impact): In beta, a Lakeflow job can now run after one or more upstream jobs finish, including jobs in other workspaces on the same Unity Catalog metastore. [source: https://docs.databricks.com/aws/en/release-notes/product/2026/november]
+- 2026-11-03 — Kiro (release, high impact): Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; `kiro-cli --v2` keeps the V2 agent. [source: https://kiro.dev/changelog/cli/]
+- 2026-11-02 — Kiro (feature, medium impact): Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, the third Claude 5.5 model offered there. [source: https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-haiku-5-5-aws-govcloud-us/]
+- 2026-11-01 — Databricks Unity Gateway (feature, medium impact): From November 1, 2026, Unity Gateway budgets include spend from task-specific AI Functions such as ai_parse_document, ai_extract and ai_classify, in both batch and real-time execution. [source: https://docs.databricks.com/aws/en/release-notes/product/2026/november]
+- 2026-10-31 — Claude Code (deprecation, medium impact): Claude Code 2.1.316 deprecates fast mode for Claude Opus 4.8, effective October 30, 2026, with removal on November 30, 2026. Anthropic points users to Opus 5.5. The same release adds pooled group budgets to the Claude apps gateway. [source: https://code.claude.com/docs/en/changelog]
+- 2026-10-30 — Arize Phoenix (release, high impact): Arize Phoenix 21.0.0 enables authentication by default without requiring PHOENIX_SECRET, applies the configured initial admin password on upgrade, and changes the API-key and password-reset schema. A migration guide covers the upgrade. [source: https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v21.0.0]
+- 2026-10-30 — Kiro (model-addition, medium impact): Claude Opus 5.5 and GPT-5.6 Sol are generally available in Kiro. Experimental labels are removed and the Kiro Excluded Models indemnity exception no longer applies to them; plans, regions and multipliers are unchanged. [source: https://kiro.dev/changelog/models/gpt-5-6-sol-and-claude-opus-5-5-generally-available/]
+- 2026-10-30 — Amazon Bedrock (feature, medium impact): OpenAI GPT-5.6 Terra and Luna are available on Bedrock in AWS GovCloud (US) via the Responses, Converse and Chat Completions APIs, with cross-Region inference across both GovCloud Regions that keeps data in the US. [source: https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/]
+- 2026-10-30 — Gemini Enterprise Agent Platform (feature, medium impact): The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also GA. [source: https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes]
+- 2026-10-29 — AWS Step Functions (feature, medium impact): Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. Generally available wherever AgentCore Gateway is offered, at standard rates. [source: https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/]
+- 2026-10-29 — Google Model Armor (feature, low impact): Model Armor is available in southamerica-east1 with prompt-injection and jailbreak detection, responsible AI filters and Sensitive Data Protection. [source: https://docs.cloud.google.com/model-armor/release-notes]
+- 2026-10-28 — GitHub Copilot (rename, high impact): GitHub is renaming the Copilot SDK to Microsoft Copilot SDK, the interface to the shared Microsoft Copilot harness, and moving its repository to the Microsoft organization in phases. No action is needed yet; package names may still say GitHub. [source: https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk]
+- 2026-10-28 — GitHub Copilot (feature, high impact): Through an account team, GitHub Enterprise Cloud can now include Copilot for every licensed user, with AI usage metered against the enterprise budget instead of seats. Copilot Standalone costs $10 per user per month. Self-serve access comes later. [source: https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot]
+- 2026-10-28 — GitHub Copilot (feature, high impact): Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool. [source: https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience]
+- 2026-10-28 — GitHub Copilot (feature, medium impact): Copilot Fusion routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses. [source: https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion]
+- 2026-10-28 — GitHub Copilot (feature, medium impact): Admins can approve plugin marketplaces, require some plugins and block others across VS Code, Copilot CLI and the Copilot app. Enterprise controls need GitHub Enterprise Cloud plus Copilot Business or Enterprise. [source: https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available]
+- 2026-10-28 — GitHub Copilot (feature, medium impact): Copilot code review adds a Max level in public preview that runs several review agents across providers. Copilot approvals are generally available, off by default and path-limited, and count toward required approvals. [source: https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals]
+- 2026-10-28 — GitHub Copilot (feature, medium impact): GitHub Agentic Workflows lets teams define agent automations in Markdown that compile to Actions YAML, with read-only default permissions and a threat-detection job. The default engine needs a Copilot license. [source: https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available]
+- 2026-10-28 — Microsoft Foundry Agent Service (feature, high impact): Foundry Agent Service adds the Microsoft Copilot harness in public preview for long-running agents with skills, MCP tools, approvals and subagents. Harness runtime is free until December 1, 2026, then consumption-billed. [source: https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/]
+- 2026-10-28 — Amazon Bedrock AgentCore (release, medium impact): The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. An `agentcore migrate` command moves earlier projects. [source: https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/]
+- 2026-10-28 — Gemini Enterprise (feature, medium impact): Gemini Enterprise is generally available, with an allowlist, in a Brazil (br) region that keeps data residency and ML processing in-country. [source: https://docs.cloud.google.com/gemini/enterprise/docs/release-notes]
+- 2026-10-27 — agentgateway (release, high impact): agentgateway 1.7.0 always encrypts MCP sessions in standalone mode (older sessions are rejected), extends prompt guards to tool outputs by default, and blocks dynamic backends from reaching loopback and link-local addresses such as cloud metadata. [source: https://github.com/agentgateway/agentgateway/releases/tag/v1.7.0]
+- 2026-10-27 — Claude Enterprise (feature, high impact): A new GSA agreement gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API, including state and local governments. Claude Enterprise is in process for FedRAMP Moderate through FedRAMP 20x. [source: https://www.anthropic.com/news/expanding-partnership-gsa]
+- 2026-10-27 — OpenAI Codex (feature, medium impact): Codex CLI 0.165.0 adds a built-in Google Cloud Vertex AI provider, puts GPT-6.1 Terra in its model catalogs and turns on Memory v2 by default for new profiles. 0.166.0 (October 29, 2026) adds Terra to the Vertex AI and Bedrock catalogs. [source: https://learn.chatgpt.com/docs/changelog]
+- 2026-10-27 — Muse (feature, medium impact): Meta launched Muse in Singapore on iOS, Android and the web with partners including Shopee, Grab and Singapore Airlines. Muse runs in a cloud Muse Secure VM and asks the user to approve sensitive actions. [source: https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/]
+- 2026-10-27 — Databricks Unity Gateway (feature, medium impact): The Unity Gateway Usage Dashboard v1.0 adds coding-agent adoption, harness usage, estimated session spend, model and user spend analysis, and tag-based spend attribution. GPT-6.1 Terra also became available the same day. [source: https://docs.databricks.com/aws/en/release-notes/unity-gateway/]
+- 2026-10-27 — GitHub Copilot (feature, medium impact): In public preview, services built on the Copilot SDK can call Copilot with an installed GitHub App's organization identity. Usage is billed to that organization, and its model policies and budgets apply. [source: https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication]
+- 2026-10-26 — Claude Enterprise (funding, high impact): Anthropic filed a Form S-1 with the SEC on October 26, 2026 for a proposed IPO of Class A common stock on the Nasdaq Global Select Market under the ticker ANT. The number of shares and the price range have not been set. [source: https://www.anthropic.com/news/s1-sec]
 - 2026-10-22 — OpenClaw (release, high impact): OpenClaw 2026.10.6 requires Node 24.22.1+ or 26.12.1+, following the October 2026 Node.js security release. `openclaw update` refuses to install on older Node versions and prints recovery guidance instead. [source: https://github.com/openclaw/openclaw/releases/tag/v2026.10.6]
 - 2026-10-21 — LangFlow (release, high impact): Langflow 1.12.7 labels most of its 15 fixes as security fixes, including enforcing admin policy on public component builds and rejecting process and code loader capabilities. 1.12.8 followed on October 22, 2026 with two bug fixes. [source: https://github.com/langflow-ai/langflow/releases/tag/v1.12.7]
-- 2026-10-21 — Haystack (release, medium impact): Haystack 3.4.1 requires certifi 2026.10.19 or later (GHSA-6q48-6c7w-9gw2), because earlier certifi versions trust eMudhra/emSign certificate authorities whose private keys were compromised. Users who pin certifi should raise the pin. [source: https://github.com/deepset-ai/haystack/releases/tag/v3.4.1]
-- 2026-10-21 — Arize Phoenix (release, medium impact): Arize Phoenix 20.24.0 requires certifi 2026.10.18 to drop the emSign root whose intermediates were compromised, requires Node releases from the October 2026 security release, and excludes a litellm release its changelog describes as compromised. [source: https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v20.24.0]
-- 2026-10-21 — Strands Agents (release, medium impact): Strands Agents Python 1.62.0 makes its middleware system public, applies invocation limits and usage tracking across a whole agent tree, adds swarm tooling and an experimental OpenAI Live provider. [source: https://github.com/strands-agents/harness-sdk/releases/tag/python/v1.62.0]
-- 2026-10-21 — Atomic Agents (release, medium impact): Atomic Agents 2.15.0 tracing emits OpenTelemetry GenAI semantic-convention spans readable by any OTLP backend, depends only on opentelemetry-api, and can hide inputs and outputs. Phoenix and OpenInference become optional. [source: https://github.com/Eigenwise/atomic-agents/releases/tag/v2.15.0]
-- 2026-10-21 — ServiceNow AI Control Tower (feature, medium impact): ServiceNow's control tower, called the Super Intelligence Control Tower in the release, now sets policy for Arc, a personal enterprise agent made GA on October 21, 2026. AI Passport enforcement, including on NVIDIA OpenShell and BlueField, comes later. [source: https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/]
-- 2026-10-21 — Google Model Armor (feature, medium impact): Custom organization policies, now generally available, can require that all new or updated Model Armor templates enforce mandatory filters, such as responsible AI and prompt-injection and jailbreak detection. [source: https://docs.cloud.google.com/model-armor/release-notes]
-- 2026-10-21 — Gemini Enterprise Agent Platform (model-addition, medium impact): GPT-6 Astra, GPT-6.1 Sol and GPT-6 Luna are rolling out in private preview to select enterprise customers in Google Cloud's Model Garden. Gemini for business and Antigravity support are listed as coming soon. [source: https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers]
-- 2026-10-21 — Databricks Unity Gateway (feature, medium impact): Unity Gateway can now screen MCP tool calls and their results for jailbreak and prompt-injection attempts in beta, with the Jailbreak guardrail applied to input, output or both. [source: https://docs.databricks.com/aws/en/release-notes/unity-gateway/]
-- 2026-10-21 — Cloudflare AI Gateway (deprecation, low impact): Cloudflare feature-froze and deprecated workers-ai-provider and ai-gateway-provider. The Agents SDK createAI replaces them, covering Workers AI, AI Gateway catalog models, dynamic routes and vendor models. [source: https://developers.cloudflare.com/changelog/post/2026-10-21-createai/]
 - 2026-10-20 — Google Antigravity (feature, high impact): Organizations can route Antigravity app, CLI and IDE extension model requests through a central gateway for inspection, policy enforcement and gateway API-key authentication. These requests use pay-as-you-go billing, not seat quotas. [source: https://docs.cloud.google.com/gemini/enterprise/docs/release-notes]
-- 2026-10-20 — Gemini Enterprise (feature, medium impact): Google announced Gemini for government services in preview, built on the Gemini agent and deployable inside the Assured Workloads FedRAMP High data boundary with VPC Service Controls and CMEK. No product-wide authorization status is stated. [source: https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-government-services]
-- 2026-10-20 — NVIDIA NemoClaw (release, low impact): NemoClaw v0.0.137 makes Nemotron 3.5 Super VL the default hosted model for new OpenClaw and Hermes onboarding and improves uninstall recovery, managed image security and policy recovery. [source: https://docs.nvidia.com/nemoclaw/latest/user-guide/openclaw/release-notes]
 - 2026-10-20 — Pydantic AI (release, high impact): Pydantic AI 2.58.0 fixes advisory GHSA-xv4x-g8mx-ch56 (moderate): provider-native MCP configuration could expose server URLs, authorization tokens and custom headers in OpenTelemetry traces, even with include_content=False. Rotate exposed credentials. [source: https://github.com/pydantic/pydantic-ai/releases/tag/v2.58.0]
-- 2026-10-19 — Microsoft Foundry Agent Service (feature, medium impact): Microsoft Foundry's browser automation tool is GA: agents get a managed Playwright Workspaces browser that can reach private sites over an Azure virtual network, with an MCP-compatible endpoint, Live View, approval gates and allow lists. [source: https://devblogs.microsoft.com/foundry/browser-automation-tool-ga/]
-- 2026-10-19 — GitHub Copilot (deprecation, medium impact): GitHub deprecated Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini and Grok 4.5 across Copilot on October 19, 2026. Suggested replacements are Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna and Grok 4.7. [source: https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026]
-- 2026-10-19 — GitHub Copilot (feature, medium impact): REST endpoints to read and set Copilot model policies are GA at enterprise, enterprise-team, agent-app and organization level. Enterprise policy can delegate model control to organizations or to teams and apps. [source: https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams]
-- 2026-10-19 — Amazon Bedrock Guardrails (feature, medium impact): Bedrock Guardrails contextual grounding checks now support the Standard tier, which handles reasoning and conversational responses with more consistent scores and more languages. It needs cross-Region inference; Classic stays the default. [source: https://docs.aws.amazon.com/bedrock/latest/userguide/doc-history.html]
-- 2026-10-19 — Kiro (release, medium impact): Kiro IDE 1.4.0 (October 19, 2026) adds Memory across chat sessions, and IDE 1.4.10 (October 20) turns it off by default. Kiro CLI 2.33.0 (October 20) asks users to trust a folder before loading its hooks, agents and MCP servers. [source: https://kiro.dev/changelog/]
 - 2026-10-16 — AutoGen (deprecation, high impact): Microsoft updated the AutoGen README to state the project is archived and no longer maintained, with no bug or security fixes, and points users to Microsoft Agent Framework. The last release was python-v0.7.5 on September 30, 2025. [source: https://github.com/microsoft/autogen/commit/004749e6b7102c8fd317b9b1499ce5807223c278]
-- 2026-10-16 — CrewAI (feature, medium impact): CrewAI's Agent Control Plane is GA on CrewAI AMP, giving fleet visibility and 13 built-in runtime policies (such as PII masking, allowed models and tools, and cost limits) that can be toggled across deployments, plus custom policies. [source: https://crewai.com/blog/how-to-govern-enterprise-agents-at-runtime-with-the-crewai-agent-control-plane]
-- 2026-10-15 — OpenAI Agents SDK (release, medium impact): OpenAI Agents SDK 0.24.0 adds run-wide tool error formatting and MCP annotations on converted tools. RunState snapshots move to schema 1.21, which older SDKs cannot read; finish older saved runs on their original SDK. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.24.0]
-- 2026-10-15 — GitHub Copilot (deprecation, medium impact): GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on November 16, 2026, pointing to Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna. Opus 4.8 stays available to individual annual-plan subscribers. [source: https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november]
-- 2026-10-15 — GitHub Copilot (feature, medium impact): Assigning a code scanning alert to Copilot now produces a validated fix as a draft pull request. It needs GitHub Code Security or Advanced Security on Enterprise Cloud, uses AI Credits and Actions minutes, and must be enabled by admin policy. [source: https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability]
-- 2026-10-15 — Kiro (model-addition, low impact): Kimi K3 is available in Kiro with experimental support for Pro, Pro+, Pro Max and Power customers in the US geography, at a 2.4x credit multiplier. [source: https://kiro.dev/changelog/]
-- 2026-10-15 — Gemini Enterprise (model-addition, medium impact): Admins can make Claude Opus 5.5 and Claude Sonnet 5.5 available in the Gemini Enterprise app (global, us and eu locations) by enabling third-party models; usage is billed pay-as-you-go. [source: https://docs.cloud.google.com/gemini/enterprise/docs/release-notes]
-- 2026-10-15 — Databricks Unity Gateway (feature, medium impact): Users with the consumer access entitlement no longer need an account admin to enable a preview before querying shared model services through Unity Gateway. Admins can still set budgets and rate limits. [source: https://docs.databricks.com/aws/en/release-notes/unity-gateway/]
-- 2026-10-15 — Databricks Genie Code (feature, medium impact): The agentic code converter powered by Genie Code is GA for SQL, converting T-SQL, Snowflake, Redshift, Oracle, BigQuery and Teradata dialects to Databricks SQL and validating the output. [source: https://docs.databricks.com/aws/en/release-notes/product/2026/october]
-- 2026-10-15 — Braintrust (feature, medium impact): Braintrust eval tasks and scorers can run through OpenAI and Anthropic batch APIs, which those providers price 50% below standard, with results tracked in one experiment. Needs TS SDK 3.37.0+ or Python SDK 0.45.0+. [source: https://www.braintrust.dev/blog/workflow-evals]
 - 2026-10-09 — Gemini Code Assist (deprecation, high impact): Google stopped selling new Gemini Code Assist Standard and Enterprise subscriptions on October 9, 2026. Existing subscriptions auto-renew through 2026, auto-renewal ends in 2027, and Google points customers to Antigravity. [source: https://docs.cloud.google.com/gemini/docs/release-notes]
 - 2026-10-09 — NanoClaw (release, high impact): NanoClaw v2026.10.0 moved to calendar versioning with stable, beta and edge update channels. OneCLI installs must upgrade the gateway to 1.42.0 to close a credential-injection bypass, and a WhatsApp message-spoofing flaw was patched. [source: https://github.com/nanocoai/nanoclaw/releases/tag/v2026.10.0]
 - 2026-10-07 — MLflow (release, high impact): MLflow 3.17.0 adds typed judge decisions, fine-grained permissions for shared resources and faster SQL trace analytics. It requires a coordinated database upgrade. [source: https://github.com/mlflow/mlflow/releases/tag/v3.17.0]
 - 2026-10-06 — SailPoint Agent Identity Security (feature, high impact): At Navigate 2026 SailPoint announced autonomous identity security agents, AI identity security posture management, an agent kill switch, runtime authorization, shadow-AI discovery and just-in-time provisioning for agents. [source: https://www.sailpoint.com/press-releases/sailpoint-unlocks-a-secure-agentic-era-with-autonomous-identity-security]
 - 2026-09-28 — Manus (feature, high impact): Manus 2.0 added the Cascade harness, Cloud Computer for always-on projects, event-triggered Automations, Manus Studio, Computer Use and the Cue personal-agent app in early access. [source: https://manus.im/blog/introducing-manus-2-0]
 - 2026-09-25 — Microsoft Autopilot (rename, high impact): Microsoft renamed its always-on agent Microsoft Scout to Autopilot in the new Copilot, with usage-based billing and a private preview expanding to more Frontier customers at the end of September. [source: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/]
-- 2026-09-18 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.19.0 added generic vector-store provider protocols with MongoDB and Azure DocumentDB connectors, with breaking changes to cookie persistence and MCP skill archives. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0]
-- 2026-09-18 — Amazon Bedrock AgentCore (feature, high impact): AWS released the new AgentCore Runtime (V2) with consumption-based memory billing and about 2-second P75 cold starts, in five regions. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/]
-- 2026-09-11 — Mastra (release, high impact): Mastra core 1.66.0 added deploy-scoped worker manifests, richer trace and feedback queries, observability-signal deletion, observational-memory transform hooks, and a first-chunk streaming timeout. [source: https://github.com/mastra-ai/mastra/releases/tag/%40mastra/core%401.66.0]
-- 2026-09-10 — Microsoft Agent Framework (release, high impact): Microsoft Agent Framework Python 1.18.0 added shared vector-store abstractions and Azure AI Search, Redis, Qdrant, and pgvector connectors, plus bounded tool-loop duration and several credential, file, and checkpoint hardening changes. [source: https://github.com/microsoft/agent-framework/releases/tag/python-1.18.0]
-- 2026-09-10 — Cursor (feature, high impact): Cursor launched Projects in beta for long-lived bodies of work, with a coordinator that delegates to parallel cloud and local agents, shared project context, and scheduled or event-driven subscriptions. [source: https://cursor.com/changelog/projects]
-- 2026-09-10 — GitHub Copilot (feature, high impact): GitHub Copilot added Jira-to-implementation context in the Copilot app, experimental adaptive model routing in Copilot CLI, recurring agent automations in VS Code, and centrally managed JetBrains sandbox policies. [source: https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/]
-- 2026-09-09 — OpenAI Agents SDK (release, high impact): OpenAI Agents SDK 0.22.2 added current image-generation tool options and hardened UnixLocal sandbox file handling against symlink races, following the broader MCP guardrail and isolation work in 0.22.1. [source: https://github.com/openai/openai-agents-python/releases/tag/v0.22.2]
-- 2026-09-08 — Amazon Bedrock Agents (feature, high impact): Amazon Bedrock made OpenAI GPT-6 Astra generally available with up to a 1 million-token input context window and support for advanced computer and browser use in agent workflows. [source: https://aws.amazon.com/about-aws/whats-new/2026/09/openai-gpt-6-astra-on-amazon-bedrock/]
 
 ## Data access
 - Tools dataset (JSON): https://www.enterpriseai.tools/data/tools.json

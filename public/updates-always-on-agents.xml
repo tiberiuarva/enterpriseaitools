@@ -2,10 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-always-on-agents.xml</id>
   <title>enterpriseai.tools weekly updates — always-on-agents</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-always-on-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-04</id>
+    <title>Meta launches Muse in Singapore</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-04" />
+    <summary>Meta launched Muse in Singapore on iOS, Android and the web with partners including Shopee, Grab and Singapore Airlines. Muse runs in a cloud Muse Secure VM and asks the user to approve sensitive actions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, feature, medium" />
+    <source>
+      <id>https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/</id>
+      <title>Muse Is Now Available in Singapore</title>
+      <link href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-01</id>
     <title>OpenClaw 2026.10.6 requires patched Node releases</title>

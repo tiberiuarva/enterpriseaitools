@@ -2,10 +2,640 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates.xml</id>
   <title>enterpriseai.tools weekly updates</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-04T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-01</id>
+    <title>Langflow 1.13.1 ships about 20 security fixes</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-01" />
+    <summary>Langflow 1.13.1 lists about 20 security fixes, including MCP reserved-field protection and destination policy, confining Git and Oracle loader file access, and credential redaction in logs. 1.13.0 (October 22, 2026) added admin team and user APIs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, high" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.13.1</id>
+      <title>Release 1.13.1 · langflow-ai/langflow</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.13.1" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-01</id>
+    <title>NemoClaw turns on telemetry by default</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-01" />
+    <summary>NemoClaw v0.0.141 sends installer and CLI operation telemetry to NVIDIA by default. To opt out, set NEMOCLAW_DISABLE_TELEMETRY=1 in each shell before installing or using the CLI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, release, medium" />
+    <source>
+      <id>https://docs.nvidia.com/nemoclaw/latest/about/release-notes</id>
+      <title>NemoClaw release notes</title>
+      <link href="https://docs.nvidia.com/nemoclaw/latest/about/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-02</id>
+    <title>New Cloudflare AI Gateways require authentication</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-02" />
+    <summary>New Cloudflare AI Gateways now have authentication on by default, and it cannot be turned off once enabled; requests to disable it return HTTP 400. Existing gateways without authentication keep working.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/post/2026-11-03-required-authentication/</id>
+      <title>New AI Gateways require authentication</title>
+      <link href="https://developers.cloudflare.com/changelog/post/2026-11-03-required-authentication/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-03</id>
+    <title>Lakeflow Jobs can trigger on upstream job completion</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-03" />
+    <summary>In beta, a Lakeflow job can now run after one or more upstream jobs finish, including jobs in other workspaces on the same Unity Catalog metastore.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-04</id>
+    <title>Kiro CLI 3.0 makes V3 the default and retires Classic</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-04" />
+    <summary>Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; `kiro-cli --v2` keeps the V2 agent.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, high" />
+    <source>
+      <id>https://kiro.dev/changelog/cli/</id>
+      <title>Kiro CLI changelog</title>
+      <link href="https://kiro.dev/changelog/cli/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-02-01</id>
+    <title>Kiro brings Claude Haiku 5.5 to AWS GovCloud (US)</title>
+    <updated>2026-11-02T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-02-01" />
+    <summary>Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, the third Claude 5.5 model offered there.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-haiku-5-5-aws-govcloud-us/</id>
+      <title>Haiku 5.5 now available on Kiro in AWS GovCloud (US)</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-haiku-5-5-aws-govcloud-us/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-01-01</id>
+    <title>AI Functions spend now counts toward Unity Gateway budgets</title>
+    <updated>2026-11-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-01-01" />
+    <summary>From November 1, 2026, Unity Gateway budgets include spend from task-specific AI Functions such as ai_parse_document, ai_extract and ai_classify, in both batch and real-time execution.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-31-01</id>
+    <title>Claude Code deprecates fast mode for Opus 4.8</title>
+    <updated>2026-10-31T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-31-01" />
+    <summary>Claude Code 2.1.316 deprecates fast mode for Claude Opus 4.8, effective October 30, 2026, with removal on November 30, 2026. Anthropic points users to Opus 5.5. The same release adds pooled group budgets to the Claude apps gateway.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, medium" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-30-01</id>
+    <title>Phoenix 21.0 turns on authentication by default</title>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-01" />
+    <summary>Arize Phoenix 21.0.0 enables authentication by default without requiring PHOENIX_SECRET, applies the configured initial admin password on upgrade, and changes the API-key and password-reset schema. A migration guide covers the upgrade.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, high" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v21.0.0</id>
+      <title>Release arize-phoenix: v21.0.0 · Arize-ai/phoenix</title>
+      <link href="https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v21.0.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-30-02</id>
+    <title>Claude Opus 5.5 and GPT-5.6 Sol GA in Kiro</title>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-02" />
+    <summary>Claude Opus 5.5 and GPT-5.6 Sol are generally available in Kiro. Experimental labels are removed and the Kiro Excluded Models indemnity exception no longer applies to them; plans, regions and multipliers are unchanged.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/models/gpt-5-6-sol-and-claude-opus-5-5-generally-available/</id>
+      <title>Claude Opus 5.5 and GPT-5.6 Sol Generally Available</title>
+      <link href="https://kiro.dev/changelog/models/gpt-5-6-sol-and-claude-opus-5-5-generally-available/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-30-03</id>
+    <title>Bedrock adds OpenAI models and cross-Region inference in GovCloud</title>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-03" />
+    <summary>OpenAI GPT-5.6 Terra and Luna are available on Bedrock in AWS GovCloud (US) via the Responses, Converse and Chat Completions APIs, with cross-Region inference across both GovCloud Regions that keeps data in the US.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/</id>
+      <title>Amazon Bedrock expands API support and introduces Cross-Region Inferencing for OpenAI models in AWS GovCloud (US)</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-30-04</id>
+    <title>Agent Platform computer use tool is generally available</title>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-04" />
+    <summary>The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also GA.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-29-01</id>
+    <title>Step Functions workflows can be AI agent tools</title>
+    <updated>2026-10-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-29-01" />
+    <summary>Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. Generally available wherever AgentCore Gateway is offered, at standard rates.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/</id>
+      <title>AWS Step Functions workflows now available as AI agent tools</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-29-02</id>
+    <title>Model Armor launches in Brazil</title>
+    <updated>2026-10-29T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-29-02" />
+    <summary>Model Armor is available in southamerica-east1 with prompt-injection and jailbreak detection, responsible AI filters and Sensitive Data Protection.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, feature, low" />
+    <source>
+      <id>https://docs.cloud.google.com/model-armor/release-notes</id>
+      <title>Model Armor release notes</title>
+      <link href="https://docs.cloud.google.com/model-armor/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-01</id>
+    <title>GitHub Copilot SDK is becoming Microsoft Copilot SDK</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-01" />
+    <summary>GitHub is renaming the Copilot SDK to Microsoft Copilot SDK, the interface to the shared Microsoft Copilot harness, and moving its repository to the Microsoft organization in phases. No action is needed yet; package names may still say GitHub.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, rename, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk</id>
+      <title>GitHub Copilot SDK is becoming Microsoft Copilot SDK</title>
+      <link href="https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-02</id>
+    <title>GitHub Enterprise can include Copilot for every user</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-02" />
+    <summary>Through an account team, GitHub Enterprise Cloud can now include Copilot for every licensed user, with AI usage metered against the enterprise budget instead of seats. Copilot Standalone costs $10 per user per month. Self-serve access comes later.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot</id>
+      <title>GitHub Enterprise now includes access to GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-03</id>
+    <title>Copilot cloud sessions generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-03" />
+    <summary>Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience</id>
+      <title>Work from anywhere with a new, connected Copilot cloud experience</title>
+      <link href="https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-04</id>
+    <title>Copilot Fusion multi-model routing is generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-04" />
+    <summary>Copilot Fusion routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion</id>
+      <title>Route and orchestrate models with GitHub Copilot Fusion</title>
+      <link href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-05</id>
+    <title>Copilot enterprise plugin controls are generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-05" />
+    <summary>Admins can approve plugin marketplaces, require some plugins and block others across VS Code, Copilot CLI and the Copilot app. Enterprise controls need GitHub Enterprise Cloud plus Copilot Business or Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available</id>
+      <title>Repository plugin defaults and enterprise plugin controls generally available</title>
+      <link href="https://github.blog/changelog/2026-10-28-repository-plugin-defaults-and-enterprise-plugin-controls-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-06</id>
+    <title>Copilot code review adds Max level and PR approvals</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-06" />
+    <summary>Copilot code review adds a Max level in public preview that runs several review agents across providers. Copilot approvals are generally available, off by default and path-limited, and count toward required approvals.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals</id>
+      <title>Copilot code review: Merge with confidence with Max and approvals</title>
+      <link href="https://github.blog/changelog/2026-10-28-copilot-code-review-merge-with-confidence-with-max-and-approvals" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-07</id>
+    <title>GitHub Agentic Workflows is generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-07" />
+    <summary>GitHub Agentic Workflows lets teams define agent automations in Markdown that compile to Actions YAML, with read-only default permissions and a threat-detection job. The default engine needs a Copilot license.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available</id>
+      <title>GitHub Agentic Workflows generally available</title>
+      <link href="https://github.blog/changelog/2026-10-28-github-agentic-workflows-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-08</id>
+    <title>Microsoft Copilot harness previews in Foundry</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-08" />
+    <summary>Foundry Agent Service adds the Microsoft Copilot harness in public preview for long-running agents with skills, MCP tools, approvals and subagents. Harness runtime is free until December 1, 2026, then consumption-billed.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, high" />
+    <source>
+      <id>https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/</id>
+      <title>Introducing the Microsoft Copilot harness in Foundry Agent Service</title>
+      <link href="https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-09</id>
+    <title>AgentCore CLI 1.0 is generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-09" />
+    <summary>The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. An `agentcore migrate` command moves earlier projects.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/</id>
+      <title>Amazon Bedrock AgentCore CLI version 1.0 is now available</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-10</id>
+    <title>Gemini Enterprise opens an in-country region in Brazil</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-10" />
+    <summary>Gemini Enterprise is generally available, with an allowlist, in a Brazil (br) region that keeps data residency and ML processing in-country.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-01</id>
+    <title>agentgateway 1.7 encrypts MCP sessions by default</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-01" />
+    <summary>agentgateway 1.7.0 always encrypts MCP sessions in standalone mode (older sessions are rejected), extends prompt guards to tool outputs by default, and blocks dynamic backends from reaching loopback and link-local addresses such as cloud metadata.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.7.0</id>
+      <title>Release v1.7.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.7.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-02</id>
+    <title>GSA deal gives US agencies 40% off Claude Enterprise</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-02" />
+    <summary>A new GSA agreement gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API, including state and local governments. Claude Enterprise is in process for FedRAMP Moderate through FedRAMP 20x.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://www.anthropic.com/news/expanding-partnership-gsa</id>
+      <title>Expanding our partnership with GSA</title>
+      <link href="https://www.anthropic.com/news/expanding-partnership-gsa" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-03</id>
+    <title>Codex CLI adds a built-in Vertex AI provider</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-03" />
+    <summary>Codex CLI 0.165.0 adds a built-in Google Cloud Vertex AI provider, puts GPT-6.1 Terra in its model catalogs and turns on Memory v2 by default for new profiles. 0.166.0 (October 29, 2026) adds Terra to the Vertex AI and Bedrock catalogs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT / Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-04</id>
+    <title>Meta launches Muse in Singapore</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-04" />
+    <summary>Meta launched Muse in Singapore on iOS, Android and the web with partners including Shopee, Grab and Singapore Airlines. Muse runs in a cloud Muse Secure VM and asks the user to approve sensitive actions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="always-on-agents, feature, medium" />
+    <source>
+      <id>https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/</id>
+      <title>Muse Is Now Available in Singapore</title>
+      <link href="https://about.fb.com/news/2026/10/muse-is-now-available-in-singapore-the-worlds-first-personal-ai-agent-built-for-everyone/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-05</id>
+    <title>Unity Gateway usage dashboard tracks coding-agent spend</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-05" />
+    <summary>The Unity Gateway Usage Dashboard v1.0 adds coding-agent adoption, harness usage, estimated session spend, model and user spend analysis, and tag-based spend attribution. GPT-6.1 Terra also became available the same day.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-06</id>
+    <title>Copilot SDK server-to-server authentication in preview</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-06" />
+    <summary>In public preview, services built on the Copilot SDK can call Copilot with an installed GitHub App&apos;s organization identity. Usage is billed to that organization, and its model policies and budgets apply.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication</id>
+      <title>GitHub Copilot supports server-to-server authentication</title>
+      <link href="https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-07</id>
+    <title>Admins can deploy custom MCP connectors in Microsoft 365</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-07" />
+    <summary>Per the October 27, 2026 release notes, admins can create custom MCP connectors in the Microsoft 365 admin center and deploy them across the organization to bring proprietary data into Copilot.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes</id>
+      <title>Microsoft 365 Copilot release notes</title>
+      <link href="https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-08</id>
+    <title>Work IQ APIs move to usage-based billing</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-08" />
+    <summary>Per the October 27, 2026 release notes, developers can call Work IQ agents and models without pre-assigned licenses, billed per API request based on the agents and models invoked.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes</id>
+      <title>Microsoft 365 Copilot release notes</title>
+      <link href="https://learn.microsoft.com/en-us/copilot/microsoft-365/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-09</id>
+    <title>xAI Grok 4.7 is generally available on Agent Platform</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-09" />
+    <summary>xAI Grok 4.7 moved from preview to general availability on the Gemini Enterprise Agent Platform global and US multi-region endpoints.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, low" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-10</id>
+    <title>Custom MCP servers get VPC connectivity in Gemini Enterprise</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-10" />
+    <summary>Custom MCP server data stores in Gemini Enterprise gain generally available VPC connectivity and static IP egress through Agent Gateway.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-01</id>
+    <title>Anthropic files S-1 for a proposed IPO</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-01" />
+    <summary>Anthropic filed a Form S-1 with the SEC on October 26, 2026 for a proposed IPO of Class A common stock on the Nasdaq Global Select Market under the ticker ANT. The number of shares and the price range have not been set.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, funding, high" />
+    <source>
+      <id>https://www.anthropic.com/news/s1-sec</id>
+      <title>Anthropic files S-1 with the SEC</title>
+      <link href="https://www.anthropic.com/news/s1-sec" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-02</id>
+    <title>GPT-6.1 Terra arrives in ChatGPT Work for Enterprise</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-02" />
+    <summary>OpenAI made GPT-6.1 Terra available on October 26, 2026 in ChatGPT Work and Codex on Plus, Pro, Business, Enterprise and Edu plans. It is not available in Chat and does not support UAE inference residency.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT / Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-03</id>
+    <title>Lakeflow performance observability is generally available</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-03" />
+    <summary>Job-level query metrics and insights for Lakeflow Jobs are now generally available, with an Optimize button that opens Genie Code.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/october</id>
+      <title>Databricks release notes, October 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/october" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-04</id>
+    <title>GPT-6.1 Terra is generally available in Copilot</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-04" />
+    <summary>GPT-6.1 Terra is generally available in Copilot on Pro, Pro+, Max, Business and Enterprise plans, rolling out gradually and billed at provider list pricing under usage-based billing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, low" />
+    <source>
+      <id>https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot</id>
+      <title>GPT-6.1 Terra in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-26-05</id>
+    <title>OpenAI GPT-6.1 Terra is generally available on Bedrock</title>
+    <updated>2026-10-26T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-05" />
+    <summary>OpenAI GPT-6.1 Terra is generally available through Amazon Bedrock APIs and can also be used from ChatGPT Work and Codex configured to run on Bedrock.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/</id>
+      <title>OpenAI GPT-6.1 Terra is now generally available on Amazon Bedrock</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-24-01</id>
+    <title>Unity Gateway configures Claude and ChatGPT desktop agents</title>
+    <updated>2026-10-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-24-01" />
+    <summary>The Unity Gateway CLI can now configure Claude desktop and ChatGPT desktop work agents with governed models, MCP servers and skills. Subscription relay is available only in Claude desktop.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-23-01</id>
+    <title>Dify 1.18.0 needs a coordinated upgrade</title>
+    <updated>2026-10-23T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-23-01" />
+    <summary>Dify 1.18.0 requires upgrading the API, workers, Agent Backend and Agent runtime images together. /runs rejects v1 requests, the old Agent AskHuman tool is removed, local sandboxes need an auth token, and source installs need Python 3.13.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, medium" />
+    <source>
+      <id>https://github.com/langgenius/dify/releases/tag/1.18.0</id>
+      <title>Release 1.18.0 · langgenius/dify</title>
+      <link href="https://github.com/langgenius/dify/releases/tag/1.18.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-23-02</id>
+    <title>Paperclip widens Operator role and adds model gateways</title>
+    <updated>2026-10-23T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-23-02" />
+    <summary>Paperclip v2026.1023.0 grants the Operator role many new permissions, so member roles need review. Budgets now hold on unpriced usage by default, and teams can bring their own model gateways such as OpenRouter, Bedrock and Gemini.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.1023.0</id>
+      <title>Release v2026.1023.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.1023.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-23-03</id>
+    <title>Devin Desktop overhauls its Agent Window</title>
+    <updated>2026-10-23T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-23-03" />
+    <summary>Devin Desktop v3.11.212 aligns the Agent Window with the Devin web app, adding side-by-side sessions, Files and Changes views and a terminal per session. Agent diff zones and auto-opening of edited files are now off by default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, low" />
+    <source>
+      <id>https://docs.devin.ai/desktop/changelog</id>
+      <title>Devin Desktop changelog</title>
+      <link href="https://docs.devin.ai/desktop/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-02</id>
+    <title>Agent Fabric bridges Copilot Studio agents over A2A</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-02" />
+    <summary>MuleSoft Agent Fabric added an A2A bridge so Microsoft Copilot Studio agents can be discovered, governed and orchestrated alongside native A2A agents, plus scoped Amazon API Gateway policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://docs.mulesoft.com/general/agent-fabric-release-notes</id>
+      <title>Agent Fabric release notes</title>
+      <link href="https://docs.mulesoft.com/general/agent-fabric-release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-03</id>
+    <title>Auth0 lets MCP clients connect without pre-registration</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-03" />
+    <summary>Auth0 added Client ID Metadata Documents (CIMD) with Dynamic Registration in Early Access, so MCP clients and AI agents can connect without being registered in advance.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://auth0.com/docs/get-started/auth0-overview/create-applications/cimd-overview</id>
+      <title>Auth0 CIMD overview</title>
+      <link href="https://auth0.com/docs/get-started/auth0-overview/create-applications/cimd-overview" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-01</id>
     <title>OpenClaw 2026.10.6 requires patched Node releases</title>
@@ -466,6 +1096,20 @@
       <id>https://learn.chatgpt.com/docs/changelog</id>
       <title>ChatGPT / Codex changelog</title>
       <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-07</id>
+    <title>Workday to acquire C1.ai agentic identity platform</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-07" />
+    <summary>Workday agreed to acquire C1.ai, which grants people and AI agents access to business systems when needed and revokes it afterwards. The deal is expected to close in Workday&apos;s fiscal fourth quarter, ending January 31, 2027.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, acquisition, medium" />
+    <source>
+      <id>https://newsroom.workday.com/2026-10-13-Workday-to-Acquire-C1-ai,-a-Leading-Agentic-Identity-Platform-for-People-and-Agents</id>
+      <title>Workday to Acquire C1.ai, a Leading Agentic Identity Platform for People and Agents</title>
+      <link href="https://newsroom.workday.com/2026-10-13-Workday-to-Acquire-C1-ai,-a-Leading-Agentic-Identity-Platform-for-People-and-Agents" />
     </source>
   </entry>
   <entry>
@@ -1239,6 +1883,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-04</id>
+    <title>Dynatrace completes its acquisition of Arize</title>
+    <updated>2026-10-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-01-04" />
+    <summary>Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its open-source platform, and AX, its enterprise platform. Phoenix remains under the Elastic License 2.0.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, acquisition, medium" />
+    <source>
+      <id>https://www.dynatrace.com/news/press-release/dynatrace-completes-acquisition-of-arize/</id>
+      <title>Dynatrace Completes Acquisition of Arize</title>
+      <link href="https://www.dynatrace.com/news/press-release/dynatrace-completes-acquisition-of-arize/" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-01-01</id>
     <title>Haystack — release</title>
     <updated>2026-10-01T00:00:00.000Z</updated>
@@ -1575,6 +2233,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-09-09-03</id>
+    <title>Harvey acquires Guardrails AI</title>
+    <updated>2026-09-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-09-09-03" />
+    <summary>Harvey acquired Guardrails AI on September 9, 2026; co-founders Shreya Rajpal and Zayd Simjee and their team join Harvey&apos;s product and engineering group. The announcement does not say what happens to the open-source Guardrails library.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="governance, acquisition, high" />
+    <source>
+      <id>https://www.harvey.ai/blog/guardrails-ai-joins-harvey</id>
+      <title>Guardrails AI joins Harvey</title>
+      <link href="https://www.harvey.ai/blog/guardrails-ai-joins-harvey" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-09-09-02</id>
     <title>CrewAI — release</title>
     <updated>2026-09-09T00:00:00.000Z</updated>
@@ -1768,6 +2440,20 @@
       <id>https://github.com/openai/openai-agents-python/releases/tag/v0.21.0</id>
       <title>Release v0.21.0 · openai/openai-agents-python</title>
       <link href="https://github.com/openai/openai-agents-python/releases/tag/v0.21.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-08-14-02</id>
+    <title>SpaceX completes its acquisition of Cursor</title>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-02" />
+    <summary>Cursor announced on August 14, 2026 that it has officially been acquired by SpaceX, completing a process that began with a partnership in April. Cursor says it will gain large GPU compute for model training; no pricing or plan changes were announced.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, acquisition, high" />
+    <source>
+      <id>https://cursor.com/blog/joining-spacex</id>
+      <title>Cursor is now a part of SpaceX</title>
+      <link href="https://cursor.com/blog/joining-spacex" />
     </source>
   </entry>
   <entry>
