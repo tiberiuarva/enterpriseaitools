@@ -21,6 +21,7 @@
     "docsUrl": "https://guardrailsai.com/docs",
     "pricingModel": "freemium",
     "status": "active",
+    "statusNote": "Acquired by Harvey in September 2026. Harvey has not said what happens to the open-source library, so check upstream activity before standardising on it.",
     "tags": [
       "governance",
       "validators",

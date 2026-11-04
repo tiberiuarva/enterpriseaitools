@@ -25,9 +25,9 @@
     <title>Kiro brings Claude Haiku 5.5 to AWS GovCloud (US)</title>
     <updated>2026-11-02T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-02-01" />
-    <summary>Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, the third Claude 5.5 model offered there.</summary>
+    <summary>Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, so all three Claude 5.5 models (Opus, Sonnet and Haiku) are now offered there.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, feature, medium" />
+    <category term="assistants, model-addition, medium" />
     <source>
       <id>https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-haiku-5-5-aws-govcloud-us/</id>
       <title>Haiku 5.5 now available on Kiro in AWS GovCloud (US)</title>
@@ -69,7 +69,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-01" />
     <summary>GitHub is renaming the Copilot SDK to Microsoft Copilot SDK, the interface to the shared Microsoft Copilot harness, and moving its repository to the Microsoft organization in phases. No action is needed yet; package names may still say GitHub.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, rename, high" />
+    <category term="assistants, feature, medium" />
     <source>
       <id>https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk</id>
       <title>GitHub Copilot SDK is becoming Microsoft Copilot SDK</title>
@@ -92,7 +92,7 @@
   </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-03</id>
-    <title>Copilot cloud sessions generally available</title>
+    <title>Copilot cloud sessions are generally available</title>
     <updated>2026-10-28T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-03" />
     <summary>Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.</summary>

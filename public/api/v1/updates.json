@@ -78,9 +78,9 @@
       "toolId": "kiro",
       "toolName": "Kiro",
       "category": "assistants",
-      "type": "feature",
+      "type": "model-addition",
       "title": "Kiro brings Claude Haiku 5.5 to AWS GovCloud (US)",
-      "summary": "Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, the third Claude 5.5 model offered there.",
+      "summary": "Claude Haiku 5.5 is available in the Kiro IDE and CLI in the AWS GovCloud (US) Regions, so all three Claude 5.5 models (Opus, Sonnet and Haiku) are now offered there.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/11/kiro-haiku-5-5-aws-govcloud-us/",
       "sourceTitle": "Haiku 5.5 now available on Kiro in AWS GovCloud (US)",
       "impact": "medium"
@@ -171,7 +171,7 @@
       "category": "orchestration",
       "type": "feature",
       "title": "Step Functions workflows can be AI agent tools",
-      "summary": "Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. Generally available wherever AgentCore Gateway is offered, at standard rates.",
+      "summary": "Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. It is generally available wherever AgentCore Gateway is offered, at standard rates.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/",
       "sourceTitle": "AWS Step Functions workflows now available as AI agent tools",
       "impact": "medium"
@@ -195,12 +195,12 @@
       "toolId": "github-copilot",
       "toolName": "GitHub Copilot",
       "category": "assistants",
-      "type": "rename",
+      "type": "feature",
       "title": "GitHub Copilot SDK is becoming Microsoft Copilot SDK",
       "summary": "GitHub is renaming the Copilot SDK to Microsoft Copilot SDK, the interface to the shared Microsoft Copilot harness, and moving its repository to the Microsoft organization in phases. No action is needed yet; package names may still say GitHub.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-github-copilot-sdk-is-becoming-microsoft-copilot-sdk",
       "sourceTitle": "GitHub Copilot SDK is becoming Microsoft Copilot SDK",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-28-02",
@@ -222,7 +222,7 @@
       "toolName": "GitHub Copilot",
       "category": "assistants",
       "type": "feature",
-      "title": "Copilot cloud sessions generally available",
+      "title": "Copilot cloud sessions are generally available",
       "summary": "Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
       "sourceTitle": "Work from anywhere with a new, connected Copilot cloud experience",
@@ -1716,7 +1716,7 @@
       "summary": "Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its open-source platform, and AX, its enterprise platform. Phoenix remains under the Elastic License 2.0.",
       "sourceUrl": "https://www.dynatrace.com/news/press-release/dynatrace-completes-acquisition-of-arize/",
       "sourceTitle": "Dynatrace Completes Acquisition of Arize",
-      "impact": "medium"
+      "impact": "high"
     },
     {
       "id": "update-2026-10-01-01",

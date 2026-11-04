@@ -76,7 +76,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape.",
+        "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; owned by SpaceX since August 2026; no self-hosted escape.",
         "sourceUrl": "https://cursor.com/",
         "level": "high"
       },

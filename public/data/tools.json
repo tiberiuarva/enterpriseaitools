@@ -2563,6 +2563,7 @@
       "docsUrl": "https://guardrailsai.com/docs",
       "pricingModel": "freemium",
       "status": "active",
+      "statusNote": "Acquired by Harvey in September 2026. Harvey has not said what happens to the open-source library, so check upstream activity before standardising on it.",
       "tags": [
         "governance",
         "validators",
@@ -3341,7 +3342,7 @@
         },
         "licenseRisk": {
           "status": "yes",
-          "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape.",
+          "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; owned by SpaceX since August 2026; no self-hosted escape.",
           "sourceUrl": "https://cursor.com/",
           "level": "high"
         },

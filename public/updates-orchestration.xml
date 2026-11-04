@@ -39,7 +39,7 @@
     <title>Step Functions workflows can be AI agent tools</title>
     <updated>2026-10-29T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-29-01" />
-    <summary>Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. Generally available wherever AgentCore Gateway is offered, at standard rates.</summary>
+    <summary>Through AgentCore Gateway, agents can now run Step Functions Standard and Express workflows and check their status. It is generally available wherever AgentCore Gateway is offered, at standard rates.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, feature, medium" />
     <source>
