@@ -1,8 +1,8 @@
-# Automates the mechanical half of the weekly Radar (the standing operational
-# priority in roadmap/README.md): snapshot the dataset, derive diff events, and
-# open a content PR every week without a human in the loop. The editorial half
-# (source-backed research, license verification, updates.json entries) still
-# happens in the PR via the /radar SOP before merge.
+# Manual fallback for the mechanical half of the weekly Radar: snapshot the
+# dataset, derive diff events, and open a content PR. The weekly schedule now
+# runs as a Claude Code routine (every Friday 16:45 Europe/Bucharest), which
+# does the research, snapshot, PR, review loop and merge end to end, so this
+# workflow no longer runs on a cron; trigger it by hand if the routine is down.
 #
 # Note: PRs opened with the default GITHUB_TOKEN do not trigger the
 # pull_request CI workflow (GitHub prevents recursive workflow runs). Close and
@@ -11,8 +11,6 @@
 name: Weekly Radar snapshot
 
 on:
-  schedule:
-    - cron: "0 6 * * 1" # Mondays 06:00 UTC
   workflow_dispatch:
 
 permissions:
