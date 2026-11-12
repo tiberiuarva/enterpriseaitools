@@ -14,12 +14,13 @@ import { execFileSync } from "node:child_process";
 const baseRef = process.argv[2] ?? "origin/main";
 
 // data/SCHEMA.md and hand-maintained public/ files (logos, favicons) stay with
-// a human; the public/ entries mirror the list in check-generated-artifacts.sh.
+// a human; the public/ entries are the build-generated feeds, sitemap, llms
+// files, open-data JSON and api/ tree.
 const ALLOWED_PATHS = [
   /^data\/[^/]+\.json$/,
   /^data\/snapshots\/[^/]+\.json$/,
   /^public\/(sitemap\.xml|robots\.txt|llms\.txt|llms-full\.txt|eu-ai-act-deadlines\.ics)$/,
-  /^public\/updates(-[a-z]+)?\.xml$/,
+  /^public\/updates(-[a-z-]+)?\.xml$/,
   /^public\/data\/[^/]+\.json$/,
   /^public\/api\//,
 ];
