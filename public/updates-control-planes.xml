@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-control-planes.xml</id>
   <title>enterpriseai.tools weekly updates — control-planes</title>
-  <updated>2026-11-04T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-control-planes.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-09</id>
+    <title>AgentCore adds a standalone Web Search API</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-09" />
+    <summary>Amazon Bedrock AgentCore offers a generally available InvokeWebSearch API, previously only an MCP tool through AgentCore Gateway, at $7 per 1,000 queries in six Regions with IAM auth, PrivateLink and CloudTrail data events.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/</id>
+      <title>Amazon Bedrock AgentCore now offers a Web Search API</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-03</id>
+    <title>Agent Fabric MCP Bridge supports OpenAPI 3.1 and 3.2</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-03" />
+    <summary>MuleSoft Agent Fabric&apos;s MCP Bridge can publish OpenAPI 3.1 and 3.2 APIs, including QUERY operations, as MCP tools, and its servers now publish to Exchange as stable versions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, low" />
+    <source>
+      <id>https://docs.mulesoft.com/general/agent-fabric-release-notes</id>
+      <title>Agent Fabric release notes</title>
+      <link href="https://docs.mulesoft.com/general/agent-fabric-release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-05</id>
+    <title>AWS Agent Registry reaches GovCloud (US-West)</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-05" />
+    <summary>AWS Agent Registry, offered through Amazon Bedrock AgentCore, is generally available in AWS GovCloud (US-West) as an approval-controlled catalog of MCP servers, tools, agents and skills with CloudTrail logging.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/aws-agent-registry-govcloud-us-west/</id>
+      <title>Agent Registry now generally available in AWS GovCloud (US-West)</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/aws-agent-registry-govcloud-us-west/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-04</id>
+    <title>AgentCore Web Answer is generally available</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-04" />
+    <summary>Web Answer on Amazon Bedrock AgentCore returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP. It is in US East (N. Virginia) only and billed per tool call.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/</id>
+      <title>Announcing Web Answer on Amazon Bedrock AgentCore</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-09</id>
     <title>AgentCore CLI 1.0 is generally available</title>

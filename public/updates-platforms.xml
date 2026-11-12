@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-platforms.xml</id>
   <title>enterpriseai.tools weekly updates — platforms</title>
-  <updated>2026-11-04T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-platforms.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-11-03</id>
+    <title>Agent Gateway governs agents on other clouds (preview)</title>
+    <updated>2026-11-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-03" />
+    <summary>Agent Gateway for cross-cloud governance is in limited preview, free during preview. It applies identity, registry and traffic policy to agents on conformant Kubernetes clusters outside Google Cloud, such as EKS, AKS and OpenShift.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-08</id>
+    <title>OpenAI Daybreak security models on Bedrock</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-08" />
+    <summary>OpenAI&apos;s Daybreak Blue (GPT-5.6 Sol) and Daybreak Red (GPT-5.6 Cyber) are on Bedrock&apos;s bedrock-runtime endpoint for customers enrolled in OpenAI&apos;s Daybreak program; inference data is not used for training.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/</id>
+      <title>Bedrock adds bedrock-runtime endpoint support for Daybreak models</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-11</id>
+    <title>Gemini 4 Carbon GA on Agent Platform</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-11" />
+    <summary>Gemini 4 Carbon and Gemini 4 Carbon for cyber are generally available on Gemini Enterprise Agent Platform; the cyber variant is limited to an allowlist program.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-07</id>
+    <title>Claude Fable 5.2 arrives on Amazon Bedrock</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-07" />
+    <summary>Claude Fable 5.2 is available on Amazon Bedrock and Claude Platform on AWS. Anthropic designates Fable 5.2 and Mythos 5.2 as covered models that require data retention, though eligible customers can use Fable 5.2 with zero data retention for now.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws/</id>
+      <title>Claude Fable 5.2 is now available on AWS</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-08</id>
+    <title>Claude Fable 5.2 GA in Agent Platform Model Garden</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-08" />
+    <summary>Anthropic&apos;s Claude Fable 5.2 is generally available in Model Garden on Gemini Enterprise Agent Platform, and fast mode for Claude models is generally available starting with Fable 5.2.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="platforms, model-addition, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-30-03</id>
     <title>Bedrock adds OpenAI models and cross-Region inference in GovCloud</title>

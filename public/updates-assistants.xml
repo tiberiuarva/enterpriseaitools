@@ -2,10 +2,304 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-11-04T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-12-01</id>
+    <title>Genie ZeroOps is available in beta</title>
+    <updated>2026-11-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-12-01" />
+    <summary>Databricks Genie ZeroOps, in beta, runs in the background to watch jobs, pipelines and tables, detects failures and data quality issues, finds root causes and proposes fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-11-01</id>
+    <title>Genie One connects to Claude, ChatGPT and Cursor</title>
+    <updated>2026-11-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-01" />
+    <summary>Databricks added Genie plugins and connectors so Claude, ChatGPT and Grok Bot/Cursor users can query their data through Genie One, with each user signing in with a Databricks account.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-03</id>
+    <title>Anthropic launches its IPO roadshow</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-03" />
+    <summary>Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825,000,000 Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, funding, medium" />
+    <source>
+      <id>https://www.anthropic.com/news/roadshow-launch</id>
+      <title>Anthropic launches roadshow for proposed initial public offering</title>
+      <link href="https://www.anthropic.com/news/roadshow-launch" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-05</id>
+    <title>Gemini 4 Carbon is generally available in Copilot</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-05" />
+    <summary>Gemini 4 Carbon is generally available in Copilot, rolling out to Pro+, Max, Business and Enterprise and billed at provider list pricing under usage-based billing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot</id>
+      <title>Gemini 4 Carbon in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-06</id>
+    <title>GitHub Apps can manage enterprise Copilot seats</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-06" />
+    <summary>Enterprise GitHub Apps can now use the enterprise Copilot seat management APIs through a new fine-grained permission, controlling which users and enterprise teams receive Copilot seats.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management</id>
+      <title>GitHub App support for Enterprise Copilot seat management</title>
+      <link href="https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-07</id>
+    <title>Kiro Enterprise Management enters preview</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-07" />
+    <summary>Kiro Enterprise Management, in preview, lets admins write one policy in the AWS console for the IDE, CLI, Web and Crew LTS. It covers new profiles in US East (N. Virginia) with IAM Identity Center, Okta or Entra ID.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://kiro.dev/changelog/general/enterprise-management-preview/</id>
+      <title>Enterprise Management preview</title>
+      <link href="https://kiro.dev/changelog/general/enterprise-management-preview/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-10</id>
+    <title>Gemini 4 Carbon GA in Gemini Enterprise</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-10" />
+    <summary>Gemini 4 Carbon is generally available in the Gemini Enterprise web and mobile apps, Workflow Builder and AI developer tools in the global, us and eu multi-regions. It is off by default in the apps.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-01</id>
+    <title>Anthropic releases Claude Fable 5.2 and Mythos 5.2</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-01" />
+    <summary>Claude Fable 5.2 is available to all users at $8/$40 per million input/output tokens, including on AWS, Google Cloud and Azure. Mythos 5.2 is limited to vetted organizations, but Claude Enterprise customers can use it through Claude Security.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, high" />
+    <source>
+      <id>https://www.anthropic.com/claude-fable-and-mythos-5-2</id>
+      <title>Introducing Claude Fable 5.2 and Claude Mythos 5.2</title>
+      <link href="https://www.anthropic.com/claude-fable-and-mythos-5-2" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-02</id>
+    <title>Claude Code 2.1.321 fixes MCP OAuth and sandbox flaws</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-02" />
+    <summary>Claude Code 2.1.321 makes Claude Fable 5.2 the default Fable model. It fixes MCP OAuth requests sending refresh tokens to another host after a redirect, and a read-only Bash command running outside the sandbox without a prompt.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, high" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-05</id>
+    <title>Genie Ontology and Genie Search are generally available</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-05" />
+    <summary>Genie Ontology, the business-context layer for Genie agents, and Genie Search are generally available. Search indexes sources such as Google Drive, Jira, Confluence and Workday while keeping source document permissions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-06</id>
+    <title>Claude Fable 5.2 is generally available in Copilot</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-06" />
+    <summary>Claude Fable 5.2 is generally available in Copilot, rolling out to Pro+, Max, Business and Enterprise. Business and Enterprise admins must enable its model policy, which is off by default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot</id>
+      <title>Claude Fable 5.2 in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-01</id>
+    <title>Claude Code 2.1.319 fixes permission-check bypasses</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-01" />
+    <summary>Claude Code 2.1.319 fixes a Bash permission bypass where a crafted environment prefix could hide part of a command, a sed command skipping checks in accept-edits and auto mode, and a sandbox escape when creating a worktree.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, high" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-02</id>
+    <title>Codex CLI 0.167 adds an agent command center</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-02" />
+    <summary>Codex CLI 0.167.0 adds codex agents --no-daemon, a terminal backend picker, a Google Cloud Vertex AI setup wizard and opt-in system proxy support. 0.167.2 (November 11, 2026) sends tool updates incrementally on Vertex AI by default.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT / Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-03</id>
+    <title>@GitHub in Slack and Teams is generally available</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-03" />
+    <summary>@GitHub in Slack and Microsoft Teams is generally available, letting users investigate bugs, create issues, implement changes and open pull requests from chat.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available</id>
+      <title>@GitHub in Slack and Teams is generally available</title>
+      <link href="https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-04</id>
+    <title>Copilot code review settings get REST and GraphQL APIs</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-04" />
+    <summary>Copilot code review settings can be managed through REST and GraphQL from enterprise policy down to repositories. Enterprise and organization endpoints do not support GitHub Apps or fine-grained tokens.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates</id>
+      <title>Copilot code review API management and review overview updates</title>
+      <link href="https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-06</id>
+    <title>Gemini Code Assist bundled entitlement ends March 31, 2027</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-06" />
+    <summary>Gemini Code Assist entitlements bundled with existing Gemini Enterprise Standard and Plus subscriptions end on March 31, 2027, with support limited to Gemini 3.x until then. Subscriptions from October 9, 2026 no longer include it.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, high" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-01</id>
+    <title>Claude Enterprise adds a security center and inference hooks</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-01" />
+    <summary>Inference hooks (prompt and pre-tool-call) are generally available for Claude Enterprise. A security center, centralized management, a self-serve IP allowlist and EDR in Cowork on macOS and Windows are in beta.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://claude.com/blog/claude-enterprise-security-updates</id>
+      <title>More visibility and control over Claude Enterprise for security teams</title>
+      <link href="https://claude.com/blog/claude-enterprise-security-updates" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-02</id>
+    <title>Cursor adds Live Apps with admin publish controls</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-02" />
+    <summary>Cursor cloud agents can now build web apps with a database, auth and hosting. Publishing runs security checks first, and team admins can view apps and secrets and approve or unpublish them.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://cursor.com/changelog</id>
+      <title>Cursor changelog</title>
+      <link href="https://cursor.com/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-03</id>
+    <title>Q Developer in the AWS console becomes the AWS assistant</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-03" />
+    <summary>AWS renamed Amazon Q Developer in the Management Console and Console Mobile Apps to the AWS assistant, offered free and globally; Pro subscribers keep their Pro Tier capabilities. The post does not mention the IDE or CLI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, rename, high" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/q-developer-renamed-aws-assistant/</id>
+      <title>Amazon Q Developer in console is now the AWS assistant</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/q-developer-renamed-aws-assistant/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-05</id>
+    <title>Gemini Enterprise adds prepaid credits</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-05" />
+    <summary>Prepaid credits are generally available for self-serve billing accounts, covering pay-as-you-go and over-quota usage in the Gemini Enterprise app, Agent Platform and AI developer tools. Usage stops at a zero balance.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-06</id>
+    <title>Claude Haiku 5.5 and Kimi K3 GA in Kiro</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-06" />
+    <summary>Claude Haiku 5.5 and Kimi K3 are generally available in Kiro across the IDE, CLI, Crew and Web. The indemnity exclusion no longer applies to Haiku 5.5, but Kimi K3 remains an Excluded Model.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/models/claude-haiku-5-5-and-kimi-k3-generally-available/</id>
+      <title>Claude Haiku 5.5 and Kimi K3 generally available</title>
+      <link href="https://kiro.dev/changelog/models/claude-haiku-5-5-and-kimi-k3-generally-available/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-04</id>
     <title>Kiro CLI 3.0 makes V3 the default and retires Classic</title>

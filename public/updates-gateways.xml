@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
   <title>enterpriseai.tools weekly updates — gateways</title>
-  <updated>2026-11-04T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-11-02</id>
+    <title>Unity Gateway supports bring-your-own ChatGPT for Codex</title>
+    <updated>2026-11-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-02" />
+    <summary>Codex and the ChatGPT desktop app can run on a user&apos;s own ChatGPT Go, Plus, Pro or Enterprise plan through Unity Gateway. Usage bills to that subscription while Unity Gateway governs access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-04</id>
+    <title>Kong AI Gateway patches cache, SAML and SQL flaws</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-04" />
+    <summary>Kong AI Gateway 2.2.1 stops four cache plugins caching authenticated responses, enforces the SAML audience restriction (CVE-2026-92439) and fixes SQL escaping in LLM usage counters (CVE-2026-92544). 2.3.1 applies nginx security patches.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://developer.konghq.com/ai-gateway/changelog/</id>
+      <title>Kong AI Gateway changelog</title>
+      <link href="https://developer.konghq.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-03</id>
+    <title>Kong AI Gateway 2.3 adds Cedar policies and Token Vault</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-03" />
+    <summary>Kong AI Gateway 2.3.0 adds a Cedar-based access-policy-engine plugin, Token Vault plugins, dynamic model pricing and Baseten support. Breaking: the NeMo guardrail auth prefix default is now empty and GraphQL cache_control defaults to true.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://developer.konghq.com/ai-gateway/changelog/</id>
+      <title>Kong AI Gateway changelog</title>
+      <link href="https://developer.konghq.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-04</id>
+    <title>Cloudflare AI Gateway adds model aliases</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-04" />
+    <summary>Cloudflare AI Gateway model aliases let an app call one name that maps to a pool of models, trying them in order with fallback or smart routing. Aliases can change without redeploying the app.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, low" />
+    <source>
+      <id>https://developers.cloudflare.com/ai-gateway/changelog/</id>
+      <title>AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-02</id>
     <title>New Cloudflare AI Gateways require authentication</title>
