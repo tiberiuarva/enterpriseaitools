@@ -737,7 +737,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Copilot cloud sessions are generally available",
-      "summary": "Connected Copilot cloud sessions are generally available on paid plans and run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.",
+      "summary": "Connected Copilot cloud sessions are generally available on paid plans. They run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
       "sourceTitle": "Work from anywhere with a new, connected Copilot cloud experience",
       "impact": "high"
@@ -750,7 +750,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Copilot Fusion multi-model routing is generally available",
-      "summary": "Copilot Fusion is generally available and routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.",
+      "summary": "Copilot Fusion is generally available. It routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
       "sourceTitle": "Route and orchestrate models with GitHub Copilot Fusion",
       "impact": "medium"
