@@ -64,7 +64,9 @@ deterministic, machine-readable boundary.
   event (date, fromLicense, toLicense, direction, sourceUrl), and add a
   `license-change` entry to `data/updates.json` — all in the same PR. The
   snapshot diff flags license drift as high-impact; never publish the change
-  without the upstream verification.
+  without the upstream verification. The scheduled routine does not make these
+  edits: it opens a "License correction" issue with the upstream evidence and
+  leaves the change to a human (see §8).
 - Append a new entry to `data/updates.json` for every newsworthy change with
   a valid `sourceUrl`.
 - If `githubStars` or `version` was refreshed, update `lastRelease` too.
@@ -121,23 +123,30 @@ Run `/ship-check`. Push only if green.
 
 Spawn `pr-reviewer` (3-iteration cap). License accuracy and `sourceUrl`
 presence are P0 — block merge if either is missing on any record. The
-scheduled routine runs the reviewer twice: first on Opus, then on Fable (a
-second, independent Claude model), each until it returns a clean approval
-(see §8).
+scheduled routine runs the reviewer twice, overriding the agent's default
+model: first on Opus, then on Fable (a second, independent Claude model). Each
+run is capped at 5 passes; if either has not returned a clean approval by then,
+the routine stops and reports to a human (see §8).
 
 ## 8. Merge (scheduled routine only)
 
 The weekly Claude Code routine ("Weekly Radar update (enterpriseai.tools)",
 Fridays 16:45 Europe/Bucharest, configured in claude.ai → Routines by the
 repository owner) is pre-authorised by the owner to squash-merge its own
-Radar PR, but only when all of these hold on the current head:
+Radar PR, but only when all of these hold on the current head SHA:
 
-- `pr-reviewer` run with Opus, then with Fable, each ends with
-  "VERDICT: APPROVED (clean)";
-- CI ("Build and Deploy Job") is green;
-- the PR is mergeable;
-- no `license`, `licenseWarning` or `licenseHistory` field changes, and no
-  `license-change` entry is added to `data/updates.json`.
+- `npm run check-radar-automerge` passes. It fails, and so blocks the merge,
+  when the diff touches any path outside `data/` and `public/`, adds or
+  removes a tool or platform record, changes any `license`, `licenseWarning`,
+  `licenseHistory`, `type` or `governance.licenseRisk` value, or adds a
+  `license-change` entry to `data/updates.json`;
+- `pr-reviewer` on Opus, then on Fable, each returned
+  `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
+  class, suggestions and nits included. Any commit pushed after an approval
+  means both reviewers run again on the new head;
+- the `Build and Deploy Job` check run for this head SHA has completed with
+  conclusion `success` (not pending, not missing);
+- the PR is mergeable.
 
 Otherwise it stops and reports to a human. Manual `/radar` runs never merge
 on their own; a human merges them.
@@ -145,3 +154,7 @@ on their own; a human merges them.
 Merging to `main` also triggers the production deploy
 (`.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml` runs on
 every push to `main`), so a routine merge is an unattended production release.
+After merging, the routine waits for that `main` run and then runs
+`npm run smoke-test-live-site -- root https://www.enterpriseai.tools`. If either
+fails, it reports to a human at once; the rollback is a PR that reverts the
+squash commit.

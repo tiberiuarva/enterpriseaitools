@@ -5,7 +5,8 @@
 # (enterpriseai.tools)", Fridays 16:45 Europe/Bucharest, in claude.ai →
 # Routines, owned by the repository owner) that does the whole /radar SOP and
 # merges under .claude/commands/radar.md §8, so this workflow has no cron.
-# If no weekly scan PR has landed by the following Monday, dispatch this by hand.
+# If no weekly scan PR has landed by the following Monday, dispatch this by hand,
+# then run /radar manually for the editorial half; a human merges that PR.
 #
 # Note: PRs opened with the default GITHUB_TOKEN do not trigger the
 # pull_request CI workflow (GitHub prevents recursive workflow runs). Close and

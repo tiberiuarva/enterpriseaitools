@@ -14,7 +14,9 @@ ship a regression to `www.enterpriseai.tools`.
 - The current branch and its diff against `origin/main`.
 - `CLAUDE.md` (architecture principles, do-not list, CI gates).
 - `data/SCHEMA.md` (the data contract).
-- `AGENTS.md` (Next.js 16 caveat, Radar SOP).
+- `AGENTS.md` (Next.js 16 caveat).
+- `.claude/commands/radar.md` (Radar SOP, including the §8 merge gate for the
+  scheduled routine).
 - `.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml` (CI parity).
 
 ## Review checklist — apply every item, every time
@@ -83,7 +85,14 @@ After each pass, return a structured report:
 - schema compliance: OK | violations: <list>
 - source provenance: OK | broken: <list>
 - license accuracy: OK | suspicious: <list>
+
+VERDICT: APPROVED (clean) | CHANGES REQUESTED
 ```
+
+`VERDICT: APPROVED (clean)` means zero findings of any class, non-blocking
+suggestions included. The scheduled Radar routine merges only on that verdict
+(`.claude/commands/radar.md` §8); it may run this agent on a model other than
+the default above.
 
 If there are no BLOCKING items, approve. If there are, request changes and
 provide a concrete fix for each (file path, before/after, or exact command).

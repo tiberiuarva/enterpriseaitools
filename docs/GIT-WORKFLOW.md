@@ -10,8 +10,8 @@ checks against.
 - `main` is the only long-lived branch. **Never commit directly to `main`.**
 - All work happens on a short-lived branch, opened off the latest `origin/main`,
   and lands back via a squash-merged PR.
-- Production deploys are explicit (`workflow_dispatch` or tag) — never automatic
-  on every push to `main`.
+- Every push to `main` deploys to production (the Azure workflow runs on push),
+  so merging a PR is the release.
 
 ## Branch naming
 
