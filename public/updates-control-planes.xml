@@ -53,7 +53,7 @@
     <title>AgentCore Web Answer is generally available</title>
     <updated>2026-11-05T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-04" />
-    <summary>Web Answer on Amazon Bedrock AgentCore returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP. It is in US East (N. Virginia) only and billed per tool call.</summary>
+    <summary>Web Answer on Amazon Bedrock AgentCore is generally available. It returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP, in US East (N. Virginia) only, billed per tool call.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="control-planes, feature, medium" />
     <source>
@@ -67,7 +67,7 @@
     <title>AgentCore CLI 1.0 is generally available</title>
     <updated>2026-10-28T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-09" />
-    <summary>The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. An `agentcore migrate` command moves earlier projects.</summary>
+    <summary>The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. The agentcore migrate command moves earlier projects.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="control-planes, release, medium" />
     <source>

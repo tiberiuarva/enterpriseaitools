@@ -25,7 +25,7 @@
     <title>Genie One connects to Claude, ChatGPT and Cursor</title>
     <updated>2026-11-11T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-01" />
-    <summary>Databricks added Genie plugins and connectors so Claude, ChatGPT and Grok Bot/Cursor users can query their data through Genie One, with each user signing in with a Databricks account.</summary>
+    <summary>Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor users (Databricks lists the last as Grok Bot/Cursor) can query their data through Genie One, with each user signing in with a Databricks account.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, medium" />
     <source>
@@ -41,7 +41,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-03" />
     <summary>Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825,000,000 Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, funding, medium" />
+    <category term="assistants, funding, high" />
     <source>
       <id>https://www.anthropic.com/news/roadshow-launch</id>
       <title>Anthropic launches roadshow for proposed initial public offering</title>
@@ -83,7 +83,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-07" />
     <summary>Kiro Enterprise Management, in preview, lets admins write one policy in the AWS console for the IDE, CLI, Web and Crew LTS. It covers new profiles in US East (N. Virginia) with IAM Identity Center, Okta or Entra ID.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, feature, high" />
+    <category term="assistants, feature, medium" />
     <source>
       <id>https://kiro.dev/changelog/general/enterprise-management-preview/</id>
       <title>Enterprise Management preview</title>
@@ -97,7 +97,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-10" />
     <summary>Gemini 4 Carbon is generally available in the Gemini Enterprise web and mobile apps, Workflow Builder and AI developer tools in the global, us and eu multi-regions. It is off by default in the apps.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, model-addition, high" />
+    <category term="assistants, model-addition, medium" />
     <source>
       <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
       <title>Gemini Enterprise release notes</title>
@@ -305,7 +305,7 @@
     <title>Kiro CLI 3.0 makes V3 the default and retires Classic</title>
     <updated>2026-11-03T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-04" />
-    <summary>Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; `kiro-cli --v2` keeps the V2 agent.</summary>
+    <summary>Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; running kiro-cli --v2 keeps the V2 agent.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, release, high" />
     <source>
@@ -587,7 +587,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-04" />
     <summary>GPT-6.1 Terra is generally available in Copilot on Pro, Pro+, Max, Business and Enterprise plans, rolling out gradually and billed at provider list pricing under usage-based billing.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, model-addition, low" />
+    <category term="assistants, model-addition, medium" />
     <source>
       <id>https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot</id>
       <title>GPT-6.1 Terra in GitHub Copilot</title>
