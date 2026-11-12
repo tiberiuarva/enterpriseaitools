@@ -59,12 +59,15 @@ execution sequence, revised by the 2026-07-17 roadmap audit (rationale below).
 `reviewedAt` stamps batch-dated 2026-05-26 (~7 weeks stale). "Freshness as a feature" is
 the pillar most at risk, and it is failing operationally, not in code.
 
-*Status: shipped.* The weekly cadence runs as a Claude Code routine every Friday at 16:45
-Europe/Bucharest. It runs the full `/radar` SOP: source-backed research, `snapshot-weekly`
-and `diff-snapshots`, the content PR, the reviewer loop and the merge once reviews and CI
-are clean. `.github/workflows/weekly-radar.yml` remains as a manual (`workflow_dispatch`)
-fallback for the mechanical half only. Still manual: rotating the stale governance
-`reviewedAt` stamps.
+*Status: shipped.* The weekly cadence runs as a Claude Code routine ("Weekly Radar update
+(enterpriseai.tools)", every Friday at 16:45 Europe/Bucharest, configured in claude.ai →
+Routines by the repository owner). It runs the full `/radar` SOP (source-backed research,
+`snapshot-weekly` and `diff-snapshots`, the content PR, the reviewer loop) and then
+squash-merges under the conditions in `.claude/commands/radar.md` §8.
+`.github/workflows/weekly-radar.yml` remains as a manual (`workflow_dispatch`) fallback for
+the mechanical half only. Still manual: re-reviewing governance postures and rotating
+`reviewedAt`. The routine reports stale records via `check-data-freshness` but does not
+re-stamp them.
 
 ## Daily value = daily presence, not daily visits
 

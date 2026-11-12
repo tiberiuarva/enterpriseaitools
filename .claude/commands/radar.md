@@ -121,3 +121,20 @@ Run `/ship-check`. Push only if green.
 
 Spawn `pr-reviewer` (3-iteration cap). License accuracy and `sourceUrl`
 presence are P0 — block merge if either is missing on any record.
+
+## 8. Merge (scheduled routine only)
+
+The weekly Claude Code routine ("Weekly Radar update (enterpriseai.tools)",
+Fridays 16:45 Europe/Bucharest, configured in claude.ai → Routines by the
+repository owner) is pre-authorised by the owner to squash-merge its own
+Radar PR, but only when all of these hold on the current head:
+
+- `pr-reviewer` run with Opus, then with Fable, each ends with
+  "VERDICT: APPROVED (clean)";
+- CI ("Build and Deploy Job") is green;
+- the PR is mergeable;
+- no `license` field is edited.
+
+Otherwise it stops and reports to a human. Manual `/radar` runs never merge
+on their own; a human merges them.
+

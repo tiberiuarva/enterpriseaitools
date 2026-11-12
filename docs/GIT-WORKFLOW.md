@@ -133,6 +133,9 @@ It iterates up to 3 times; if still red, a human is paged.
 
 - Never push to `main` directly.
 - Never merge a PR whose CI is red.
+- The only automated merge is the owner-authorised weekly Radar routine, under
+  the conditions in `.claude/commands/radar.md` §8. Everything else is merged
+  by a human.
 - Never skip hooks (`--no-verify`) or bypass a gate to make it pass.
 - Never `git add -A` — stage files by name to avoid committing secrets or
   build artifacts.

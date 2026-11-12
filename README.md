@@ -51,7 +51,7 @@ The normal update flow is:
 3. Changes ship through pull requests, not direct production edits
 4. The public updates feed reflects the approved changes once merged
 
-See `AGENTS.md` for how the Radar automation agent handles weekly updates.
+See `.claude/commands/radar.md` for the weekly Radar procedure, which runs as a scheduled Claude Code routine.
 
 ## Contribute
 
