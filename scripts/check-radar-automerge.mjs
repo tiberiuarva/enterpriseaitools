@@ -53,7 +53,14 @@ function readJsonAt(rev, path) {
 function recordsById(rev, path, key) {
   const list = readJsonAt(rev, path)?.[key];
   if (!Array.isArray(list)) throw new Error(`${rev.slice(0, 12)}:${path} has no "${key}" array`);
-  return new Map(list.map((record) => [record.id, record]));
+  // A duplicate or missing id would collapse in the Map and hide a record.
+  const map = new Map();
+  for (const record of list) {
+    if (typeof record?.id !== "string" || record.id === "") throw new Error(`${rev.slice(0, 12)}:${path} has a record without an id`);
+    if (map.has(record.id)) throw new Error(`${rev.slice(0, 12)}:${path} has duplicate id: ${record.id}`);
+    map.set(record.id, record);
+  }
+  return map;
 }
 
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);

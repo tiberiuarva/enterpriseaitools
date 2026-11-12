@@ -140,11 +140,11 @@ Radar PR, but only when all of these hold on the current head SHA:
   pushed head with a clean working tree, passes. It fails, and so blocks the
   merge, when the diff touches any path other than `data/*.json`,
   `data/snapshots/*.json` and the build-generated `public/` artifacts (feeds,
-  sitemap, `llms*.txt`, `public/data/`, `public/api/`) — so `data/SCHEMA.md`
-  and logos wait for a human, adds or removes a tool or platform record, changes any
-  `license`, `licenseWarning`, `licenseHistory`, `type` or
-  `governance.licenseRisk` value, or adds, edits or removes a
-  `license-change` entry in `data/updates.json`;
+  sitemap, `llms*.txt`, `public/data/`, `public/api/`), so `data/SCHEMA.md`
+  and logos wait for a human. It also fails when the diff adds or removes a
+  tool or platform record; changes any `license`, `licenseWarning`,
+  `licenseHistory`, `type` or `governance.licenseRisk` value; or adds, edits
+  or removes a `license-change` entry in `data/updates.json`;
 - `pr-reviewer` on Opus, then on Fable, each returned
   `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
   class, suggestions and nits included. Any commit pushed after an approval
