@@ -1,6 +1,6 @@
 ---
 name: pr-reviewer
-description: Reviews PRs on this repo before a human is paged. MUST BE USED automatically after every PR is opened by /build or /radar. Verifies static-export safety, schema compliance, source provenance, license accuracy, test coverage for new lib/ code, and CI parity. Iterates up to 3 times.
+description: Reviews PRs on this repo before a human is paged. MUST BE USED automatically after every PR is opened by /build or /radar. Verifies static-export safety, schema compliance, source provenance, license accuracy, test coverage for new lib/ code, and CI parity. Iterates up to 3 times (5 when the scheduled Radar routine runs it).
 tools: Bash, Read, Glob, Grep
 model: sonnet
 ---
@@ -72,7 +72,7 @@ ship a regression to `www.enterpriseai.tools`.
 After each pass, return a structured report:
 
 ```
-## PR Review — pass N of 3
+## PR Review — pass N of <cap>
 
 ### BLOCKING (must fix before merge)
 - [file:line] one-line summary — why it blocks
@@ -94,12 +94,14 @@ suggestions included. The scheduled Radar routine merges only on that verdict
 (`.claude/commands/radar.md` §8); it may run this agent on a model other than
 the default above.
 
-If there are no BLOCKING items, approve. If there are, request changes and
-provide a concrete fix for each (file path, before/after, or exact command).
+Any finding of any class, blocking or not, means `VERDICT: CHANGES REQUESTED`;
+give a concrete fix for each (file path, before/after, or exact command). Use
+`VERDICT: APPROVED (clean)` only when both lists are empty.
 
 ## Iteration discipline
 
-- Max 3 review passes. After pass 3, if BLOCKING items remain, hand off to the
-  human with a one-paragraph summary of what's stuck and what you tried.
+- Max 3 review passes (the scheduled Radar routine sets a cap of 5; see
+  `.claude/commands/radar.md` §7). After the last pass, if findings remain,
+  hand off to the human with a one-paragraph summary of what's stuck and what you tried.
 - Never auto-merge. Never push commits to the PR yourself — surface findings
   only.

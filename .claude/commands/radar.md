@@ -121,7 +121,7 @@ Run `/ship-check`. Push only if green.
 
 ## 7. Review loop
 
-Spawn `pr-reviewer` (3-iteration cap). License accuracy and `sourceUrl`
+Spawn `pr-reviewer` (3-iteration cap for manual runs). License accuracy and `sourceUrl`
 presence are P0 — block merge if either is missing on any record. The
 scheduled routine runs the reviewer twice, overriding the agent's default
 model: first on Opus, then on Fable (a second, independent Claude model). Each
@@ -135,11 +135,16 @@ Fridays 16:45 Europe/Bucharest, configured in claude.ai → Routines by the
 repository owner) is pre-authorised by the owner to squash-merge its own
 Radar PR, but only when all of these hold on the current head SHA:
 
-- `npm run check-radar-automerge` passes. It fails, and so blocks the merge,
-  when the diff touches any path outside `data/` and `public/`, adds or
-  removes a tool or platform record, changes any `license`, `licenseWarning`,
-  `licenseHistory`, `type` or `governance.licenseRisk` value, or adds a
-  `license-change` entry to `data/updates.json`;
+- `scripts/check-radar-automerge.mjs` exists on `origin/main`, and
+  `npm run check-radar-automerge`, run after `git fetch origin main` on the
+  pushed head with a clean working tree, passes. It fails, and so blocks the
+  merge, when the diff touches any path other than `data/*.json`,
+  `data/snapshots/*.json` and the generated `public/` artifacts listed in
+  `scripts/check-generated-artifacts.sh` (so `data/SCHEMA.md` and logos wait
+  for a human), adds or removes a tool or platform record, changes any
+  `license`, `licenseWarning`, `licenseHistory`, `type` or
+  `governance.licenseRisk` value, or adds, edits or removes a
+  `license-change` entry in `data/updates.json`;
 - `pr-reviewer` on Opus, then on Fable, each returned
   `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
   class, suggestions and nits included. Any commit pushed after an approval
