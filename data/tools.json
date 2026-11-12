@@ -3091,7 +3091,7 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "statusNote": "Announced April 30, 2026: new signups blocked from May 15, 2026 and IDE plugins plus paid subscriptions end support on April 30, 2027. Amazon Q in the AWS console, docs, and Slack/Teams chat is unaffected."
+      "statusNote": "Announced April 30, 2026: new signups blocked from May 15, 2026 and IDE plugins plus paid subscriptions end support on April 30, 2027. The AWS console surface was renamed the AWS assistant on November 5, 2026; Amazon Q in docs and Slack/Teams chat is unaffected."
     },
     {
       "id": "gemini-code-assist",
@@ -8180,14 +8180,14 @@
       "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
       "pricingModel": "free",
       "status": "active",
-      "statusNote": "Alpha project per the README (checked 2026-09-30): maintainers respond on a best-effort basis; no tagged releases yet.",
+      "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.141 on November 3, 2026), although the GitHub Releases page lists none.",
       "tags": [
         "governance",
         "sandboxing",
         "agent-security",
         "openclaw"
       ],
-      "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Alpha status and no releases mean it is a pilot tool, not a production control.",
+      "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Its alpha status and rapid 0.0.x release cadence make it a pilot tool, not a production control.",
       "logoKind": "fallback",
       "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
       "logoReviewedAt": "2026-09-30",

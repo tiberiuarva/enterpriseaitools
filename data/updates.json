@@ -22,7 +22,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Genie One connects to Claude, ChatGPT and Cursor",
-      "summary": "Databricks added Genie plugins and connectors so Claude, ChatGPT and Grok Bot/Cursor users can query their data through Genie One, with each user signing in with a Databricks account.",
+      "summary": "Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor users (Databricks lists the last as Grok Bot/Cursor) can query their data through Genie One, with each user signing in with a Databricks account.",
       "sourceUrl": "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
       "sourceTitle": "Databricks release notes, November 2026",
       "impact": "medium"
@@ -90,7 +90,7 @@
       "summary": "Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825,000,000 Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.",
       "sourceUrl": "https://www.anthropic.com/news/roadshow-launch",
       "sourceTitle": "Anthropic launches roadshow for proposed initial public offering",
-      "impact": "medium"
+      "impact": "high"
     },
     {
       "id": "update-2026-11-10-04",
@@ -142,7 +142,7 @@
       "summary": "Kiro Enterprise Management, in preview, lets admins write one policy in the AWS console for the IDE, CLI, Web and Crew LTS. It covers new profiles in US East (N. Virginia) with IAM Identity Center, Okta or Entra ID.",
       "sourceUrl": "https://kiro.dev/changelog/general/enterprise-management-preview/",
       "sourceTitle": "Enterprise Management preview",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-10-08",
@@ -151,7 +151,7 @@
       "toolName": "Amazon Bedrock",
       "category": "platforms",
       "type": "model-addition",
-      "title": "OpenAI Daybreak security models on Bedrock",
+      "title": "OpenAI Daybreak security models arrive on Bedrock",
       "summary": "OpenAI's Daybreak Blue (GPT-5.6 Sol) and Daybreak Red (GPT-5.6 Cyber) are on Bedrock's bedrock-runtime endpoint for customers enrolled in OpenAI's Daybreak program; inference data is not used for training.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/",
       "sourceTitle": "Bedrock adds bedrock-runtime endpoint support for Daybreak models",
@@ -181,7 +181,7 @@
       "summary": "Gemini 4 Carbon is generally available in the Gemini Enterprise web and mobile apps, Workflow Builder and AI developer tools in the global, us and eu multi-regions. It is off by default in the apps.",
       "sourceUrl": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
       "sourceTitle": "Gemini Enterprise release notes",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-10-11",
@@ -194,7 +194,7 @@
       "summary": "Gemini 4 Carbon and Gemini 4 Carbon for cyber are generally available on Gemini Enterprise Agent Platform; the cyber variant is limited to an allowlist program.",
       "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
       "sourceTitle": "Gemini Enterprise Agent Platform release notes",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-09-01",
@@ -285,7 +285,7 @@
       "summary": "Claude Fable 5.2 is available on Amazon Bedrock and Claude Platform on AWS. Anthropic designates Fable 5.2 and Mythos 5.2 as covered models that require data retention, though eligible customers can use Fable 5.2 with zero data retention for now.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/11/claude-fable-5-2-aws/",
       "sourceTitle": "Claude Fable 5.2 is now available on AWS",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-09-08",
@@ -425,7 +425,7 @@
       "category": "control-planes",
       "type": "feature",
       "title": "AgentCore Web Answer is generally available",
-      "summary": "Web Answer on Amazon Bedrock AgentCore returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP. It is in US East (N. Virginia) only and billed per tool call.",
+      "summary": "Web Answer on Amazon Bedrock AgentCore is generally available. It returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP, in US East (N. Virginia) only, billed per tool call.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/",
       "sourceTitle": "Announcing Web Answer on Amazon Bedrock AgentCore",
       "impact": "medium"
@@ -581,7 +581,7 @@
       "category": "assistants",
       "type": "release",
       "title": "Kiro CLI 3.0 makes V3 the default and retires Classic",
-      "summary": "Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; `kiro-cli --v2` keeps the V2 agent.",
+      "summary": "Kiro CLI 3.0.0 makes V3 the default agent harness for interactive sessions. The Classic (V1) interface, the desktop app and inline shell autocomplete are retired; running kiro-cli --v2 keeps the V2 agent.",
       "sourceUrl": "https://kiro.dev/changelog/cli/",
       "sourceTitle": "Kiro CLI changelog",
       "impact": "high"
@@ -815,7 +815,7 @@
       "category": "control-planes",
       "type": "release",
       "title": "AgentCore CLI 1.0 is generally available",
-      "summary": "The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. An `agentcore migrate` command moves earlier projects.",
+      "summary": "The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. The agentcore migrate command moves earlier projects.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/",
       "sourceTitle": "Amazon Bedrock AgentCore CLI version 1.0 is now available",
       "impact": "medium"
@@ -1013,7 +1013,7 @@
       "summary": "GPT-6.1 Terra is generally available in Copilot on Pro, Pro+, Max, Business and Enterprise plans, rolling out gradually and billed at provider list pricing under usage-based billing.",
       "sourceUrl": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot",
       "sourceTitle": "GPT-6.1 Terra in GitHub Copilot",
-      "impact": "low"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-26-05",
@@ -2227,7 +2227,7 @@
       "category": "observability",
       "type": "acquisition",
       "title": "Dynatrace completes its acquisition of Arize",
-      "summary": "Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its open-source platform, and AX, its enterprise platform. Phoenix remains under the Elastic License 2.0.",
+      "summary": "Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its open-source platform, and AX, its enterprise platform.",
       "sourceUrl": "https://www.dynatrace.com/news/press-release/dynatrace-completes-acquisition-of-arize/",
       "sourceTitle": "Dynatrace Completes Acquisition of Arize",
       "impact": "high"
