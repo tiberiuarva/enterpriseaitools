@@ -2233,7 +2233,7 @@
       "category": "observability",
       "type": "acquisition",
       "title": "Dynatrace completes its acquisition of Arize",
-      "summary": "Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its open-source platform, and AX, its enterprise platform.",
+      "summary": "Dynatrace completed its acquisition of Arize on October 1, 2026. Arize says it will keep supporting both Phoenix, its source-available platform, and AX, its enterprise platform.",
       "sourceUrl": "https://www.dynatrace.com/news/press-release/dynatrace-completes-acquisition-of-arize/",
       "sourceTitle": "Dynatrace Completes Acquisition of Arize",
       "impact": "high"
