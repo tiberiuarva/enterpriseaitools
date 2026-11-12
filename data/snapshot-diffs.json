@@ -263,6 +263,26 @@
       "highImpact": false
     },
     {
+      "toolId": "nvidia-nemoclaw",
+      "toolName": "NVIDIA NemoClaw",
+      "from": "2026-11-04",
+      "to": "2026-11-12",
+      "field": "lastRelease",
+      "previous": null,
+      "current": "2026-11-10",
+      "highImpact": false
+    },
+    {
+      "toolId": "nvidia-nemoclaw",
+      "toolName": "NVIDIA NemoClaw",
+      "from": "2026-11-04",
+      "to": "2026-11-12",
+      "field": "version",
+      "previous": null,
+      "current": "0.0.143",
+      "highImpact": false
+    },
+    {
       "toolId": "openai-codex",
       "toolName": "OpenAI Codex",
       "from": "2026-11-04",

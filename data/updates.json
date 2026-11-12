@@ -22,7 +22,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Genie One connects to Claude, ChatGPT and Cursor",
-      "summary": "Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor users (Databricks lists the last as Grok Bot/Cursor) can query their data through Genie One, with each user signing in with a Databricks account.",
+      "summary": "Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor (listed as Grok Bot/Cursor) users can query their data through Genie One, with each user signing in with a Databricks account.",
       "sourceUrl": "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
       "sourceTitle": "Databricks release notes, November 2026",
       "impact": "medium"
@@ -87,10 +87,10 @@
       "category": "assistants",
       "type": "funding",
       "title": "Anthropic launches its IPO roadshow",
-      "summary": "Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825,000,000 Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.",
+      "summary": "Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825 million Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.",
       "sourceUrl": "https://www.anthropic.com/news/roadshow-launch",
       "sourceTitle": "Anthropic launches roadshow for proposed initial public offering",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-10-04",
@@ -415,7 +415,7 @@
       "summary": "AWS renamed Amazon Q Developer in the Management Console and Console Mobile Apps to the AWS assistant, offered free and globally; Pro subscribers keep their Pro Tier capabilities. The post does not mention the IDE or CLI.",
       "sourceUrl": "https://aws.amazon.com/about-aws/whats-new/2026/11/q-developer-renamed-aws-assistant/",
       "sourceTitle": "Amazon Q Developer in console is now the AWS assistant",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-11-05-04",
@@ -490,7 +490,7 @@
       "category": "orchestration",
       "type": "feature",
       "title": "Lakeflow Jobs adds AI Function tasks in beta",
-      "summary": "Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.",
+      "summary": "In beta, Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.",
       "sourceUrl": "https://docs.databricks.com/aws/en/release-notes/product/2026/november",
       "sourceTitle": "Databricks release notes, November 2026",
       "impact": "low"
@@ -672,7 +672,7 @@
       "category": "platforms",
       "type": "feature",
       "title": "Agent Platform computer use tool is generally available",
-      "summary": "The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also GA.",
+      "summary": "The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also generally available.",
       "sourceUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes",
       "sourceTitle": "Gemini Enterprise Agent Platform release notes",
       "impact": "medium"
@@ -737,7 +737,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Copilot cloud sessions are generally available",
-      "summary": "Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.",
+      "summary": "Connected Copilot cloud sessions are generally available on paid plans and run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-work-from-anywhere-with-a-new-connected-copilot-cloud-experience",
       "sourceTitle": "Work from anywhere with a new, connected Copilot cloud experience",
       "impact": "high"
@@ -750,7 +750,7 @@
       "category": "assistants",
       "type": "feature",
       "title": "Copilot Fusion multi-model routing is generally available",
-      "summary": "Copilot Fusion routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.",
+      "summary": "Copilot Fusion is generally available and routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.",
       "sourceUrl": "https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion",
       "sourceTitle": "Route and orchestrate models with GitHub Copilot Fusion",
       "impact": "medium"
@@ -805,7 +805,7 @@
       "summary": "Foundry Agent Service adds the Microsoft Copilot harness in public preview for long-running agents with skills, MCP tools, approvals and subagents. Harness runtime is free until December 1, 2026, then consumption-billed.",
       "sourceUrl": "https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/",
       "sourceTitle": "Introducing the Microsoft Copilot harness in Foundry Agent Service",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-28-09",
@@ -857,7 +857,7 @@
       "summary": "A new GSA agreement gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API, including state and local governments. Claude Enterprise is in process for FedRAMP Moderate through FedRAMP 20x.",
       "sourceUrl": "https://www.anthropic.com/news/expanding-partnership-gsa",
       "sourceTitle": "Expanding our partnership with GSA",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-27-03",
@@ -974,7 +974,7 @@
       "summary": "Anthropic filed a Form S-1 with the SEC on October 26, 2026 for a proposed IPO of Class A common stock on the Nasdaq Global Select Market under the ticker ANT. The number of shares and the price range have not been set.",
       "sourceUrl": "https://www.anthropic.com/news/s1-sec",
       "sourceTitle": "Anthropic files S-1 with the SEC",
-      "impact": "high"
+      "impact": "medium"
     },
     {
       "id": "update-2026-10-26-02",
@@ -2709,7 +2709,7 @@
       "category": "assistants",
       "type": "acquisition",
       "title": "SpaceX completes its acquisition of Cursor",
-      "summary": "Cursor announced on August 14, 2026 that it has officially been acquired by SpaceX, completing a process that began with a partnership in April. Cursor says it will gain large GPU compute for model training; no pricing or plan changes were announced.",
+      "summary": "Cursor announced on August 14, 2026 that it has officially been acquired by SpaceX, completing a process that began with a partnership in April 2026. Cursor says it will gain large GPU compute for model training; no pricing or plan changes were announced.",
       "sourceUrl": "https://cursor.com/blog/joining-spacex",
       "sourceTitle": "Cursor is now a part of SpaceX",
       "impact": "high"
