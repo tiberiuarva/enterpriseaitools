@@ -47,11 +47,11 @@ Schemas and field expectations are documented in `data/SCHEMA.md`.
 The normal update flow is:
 
 1. Weekly research identifies source-backed changes across platforms and tracked tools
-2. Proposed data changes are reviewed before application
+2. Proposed data changes are reviewed before application; the weekly run merges on its own only under the gate in `.claude/commands/radar.md` §8, and license changes always wait for a human
 3. Changes ship through pull requests, not direct production edits
 4. The public updates feed reflects the approved changes once merged
 
-See `AGENTS.md` for how the Radar automation agent handles weekly updates.
+See `.claude/commands/radar.md` for the weekly Radar procedure, which runs as a scheduled Claude Code routine.
 
 ## Contribute
 

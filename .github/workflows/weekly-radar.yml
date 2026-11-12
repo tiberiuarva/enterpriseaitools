@@ -1,18 +1,20 @@
-# Automates the mechanical half of the weekly Radar (the standing operational
-# priority in roadmap/README.md): snapshot the dataset, derive diff events, and
-# open a content PR every week without a human in the loop. The editorial half
-# (source-backed research, license verification, updates.json entries) still
-# happens in the PR via the /radar SOP before merge.
+# Manual fallback for the mechanical half of the weekly Radar: snapshot the
+# dataset, derive diff events, push a content/<week>-radar-auto branch and open
+# a PR (or, while Actions may not create PRs here, a tracking issue linking it).
+# The weekly run is now a Claude Code routine ("Weekly Radar update
+# (enterpriseai.tools)", Fridays 16:45 Europe/Bucharest, in claude.ai →
+# Routines, owned by the repository owner) that does the whole /radar SOP and
+# merges under .claude/commands/radar.md §8, so this workflow has no cron.
+# If no weekly scan PR has landed by the following Monday, dispatch this by hand,
+# then run /radar manually for the editorial half; a human merges that PR.
 #
 # Note: PRs opened with the default GITHUB_TOKEN do not trigger the
 # pull_request CI workflow (GitHub prevents recursive workflow runs). Close and
 # reopen the PR — or push any commit to its branch — to run CI, or configure a
 # fine-grained PAT in RADAR_PR_TOKEN to lift the limitation.
-name: Weekly Radar snapshot
+name: Weekly Radar snapshot (manual fallback)
 
 on:
-  schedule:
-    - cron: "0 6 * * 1" # Mondays 06:00 UTC
   workflow_dispatch:
 
 permissions:
