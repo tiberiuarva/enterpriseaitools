@@ -21,7 +21,7 @@
     "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
     "pricingModel": "free",
     "status": "active",
-    "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.141 on November 3, 2026), although the GitHub Releases page lists none.",
+    "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.143 on November 10, 2026), although the GitHub Releases page lists none.",
     "tags": [
       "governance",
       "sandboxing",

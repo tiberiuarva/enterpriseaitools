@@ -4757,7 +4757,7 @@
       "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
       "logoReviewedAt": "2026-09-30",
       "publishedAt": "2026-09-30",
-      "practitionerNote": "A strong local-first option for internal tracing and evals, and OpenInference instrumentation keeps traces portable. The ELv2 license rules out reselling Phoenix as a managed service, and certifications (SOC 2, ISO 27001) belong to Arize's commercial AX platform, not to a self-hosted Phoenix. Arize is part of Dynatrace since October 2026, which says it will keep supporting Phoenix.",
+      "practitionerNote": "A strong local-first option for internal tracing and evals, and OpenInference instrumentation keeps traces portable. The ELv2 license rules out reselling Phoenix as a managed service, and certifications (SOC 2, ISO 27001) belong to Arize's commercial AX platform, not to a self-hosted Phoenix. Arize has been part of Dynatrace since October 2026 and says it will keep supporting Phoenix.",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -8187,7 +8187,7 @@
       "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
       "pricingModel": "free",
       "status": "active",
-      "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.141 on November 3, 2026), although the GitHub Releases page lists none.",
+      "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.143 on November 10, 2026), although the GitHub Releases page lists none.",
       "tags": [
         "governance",
         "sandboxing",
