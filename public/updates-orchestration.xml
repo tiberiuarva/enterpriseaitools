@@ -39,7 +39,7 @@
     <title>Lakeflow Jobs adds AI Function tasks in beta</title>
     <updated>2026-11-04T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-05" />
-    <summary>Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.</summary>
+    <summary>In beta, Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, feature, low" />
     <source>

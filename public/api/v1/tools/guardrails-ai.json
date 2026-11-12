@@ -21,7 +21,7 @@
     "docsUrl": "https://guardrailsai.com/docs",
     "pricingModel": "freemium",
     "status": "active",
-    "statusNote": "Acquired by Harvey in September 2026. Harvey has not said what happens to the open-source library, so check upstream activity before standardising on it.",
+    "statusNote": "Acquired by Harvey in September 2026. Harvey has not said what happens to the open-source library.",
     "tags": [
       "governance",
       "validators",
@@ -36,7 +36,7 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
+    "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform. Since the Harvey acquisition, check upstream activity before standardising on it.",
     "logoUrl": "/logos/guardrails-ai.svg",
     "logoSourceUrl": "https://github.com/guardrails-ai/guardrails",
     "lastRelease": "2026-08-14",

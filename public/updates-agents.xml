@@ -27,7 +27,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-08" />
     <summary>Foundry Agent Service adds the Microsoft Copilot harness in public preview for long-running agents with skills, MCP tools, approvals and subagents. Harness runtime is free until December 1, 2026, then consumption-billed.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, feature, high" />
+    <category term="agents, feature, medium" />
     <source>
       <id>https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/</id>
       <title>Introducing the Microsoft Copilot harness in Foundry Agent Service</title>

@@ -95,7 +95,7 @@
     <title>Agent Platform computer use tool is generally available</title>
     <updated>2026-10-30T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-04" />
-    <summary>The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also GA.</summary>
+    <summary>The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also generally available.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="platforms, feature, medium" />
     <source>

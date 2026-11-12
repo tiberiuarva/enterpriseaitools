@@ -25,7 +25,7 @@
     <title>Genie One connects to Claude, ChatGPT and Cursor</title>
     <updated>2026-11-11T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-01" />
-    <summary>Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor users (Databricks lists the last as Grok Bot/Cursor) can query their data through Genie One, with each user signing in with a Databricks account.</summary>
+    <summary>Databricks added Genie plugins and a connector so Claude, ChatGPT and Cursor (listed as Grok Bot/Cursor) users can query their data through Genie One, with each user signing in with a Databricks account.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, medium" />
     <source>
@@ -95,9 +95,9 @@
     <title>Anthropic launches its IPO roadshow</title>
     <updated>2026-11-10T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-03" />
-    <summary>Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825,000,000 Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.</summary>
+    <summary>Anthropic began the roadshow for its proposed IPO on November 10, 2026: 825 million Class A shares at $70 to $78 each, to list on the Nasdaq Global Select Market as ANT. The registration statement is not yet effective.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, funding, high" />
+    <category term="assistants, funding, medium" />
     <source>
       <id>https://www.anthropic.com/news/roadshow-launch</id>
       <title>Anthropic launches roadshow for proposed initial public offering</title>
@@ -447,7 +447,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-03" />
     <summary>AWS renamed Amazon Q Developer in the Management Console and Console Mobile Apps to the AWS assistant, offered free and globally; Pro subscribers keep their Pro Tier capabilities. The post does not mention the IDE or CLI.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, rename, high" />
+    <category term="assistants, rename, medium" />
     <source>
       <id>https://aws.amazon.com/about-aws/whats-new/2026/11/q-developer-renamed-aws-assistant/</id>
       <title>Amazon Q Developer in console is now the AWS assistant</title>
@@ -529,7 +529,7 @@
     <title>Lakeflow Jobs adds AI Function tasks in beta</title>
     <updated>2026-11-04T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-05" />
-    <summary>Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.</summary>
+    <summary>In beta, Lakeflow job tasks can run ai_parse_document, ai_extract or ai_classify on files or table rows without SQL, processing only new or changed inputs and writing to a Unity Catalog table.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="orchestration, feature, low" />
     <source>
@@ -725,7 +725,7 @@
     <title>Agent Platform computer use tool is generally available</title>
     <updated>2026-10-30T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-30-04" />
-    <summary>The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also GA.</summary>
+    <summary>The Gemini Enterprise Agent Platform computer use tool is generally available with human-in-the-loop safety controls and organization-wide guardrails. Inference request metadata logging, without prompts or responses, is also generally available.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="platforms, feature, medium" />
     <source>
@@ -795,7 +795,7 @@
     <title>Copilot cloud sessions are generally available</title>
     <updated>2026-10-28T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-03" />
-    <summary>Connected Copilot cloud sessions run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.</summary>
+    <summary>Connected Copilot cloud sessions are generally available on paid plans and run in GitHub-managed sandboxes and continue across github.com, mobile, CLI, VS Code, Slack and Teams. Sandbox billing starts in November 2026, and the Actions entitlement becomes a shared dollar pool.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, high" />
     <source>
@@ -809,7 +809,7 @@
     <title>Copilot Fusion multi-model routing is generally available</title>
     <updated>2026-10-28T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-04" />
-    <summary>Copilot Fusion routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.</summary>
+    <summary>Copilot Fusion is generally available and routes and orchestrates tasks across models, with Standard, High and Max effort levels. Each model is billed at its own rate, with a limited-time 30% discount, and admins can restrict which models it uses.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, feature, medium" />
     <source>
@@ -867,7 +867,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-08" />
     <summary>Foundry Agent Service adds the Microsoft Copilot harness in public preview for long-running agents with skills, MCP tools, approvals and subagents. Harness runtime is free until December 1, 2026, then consumption-billed.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="agents, feature, high" />
+    <category term="agents, feature, medium" />
     <source>
       <id>https://devblogs.microsoft.com/foundry/microsoft-copilot-harness-in-foundry/</id>
       <title>Introducing the Microsoft Copilot harness in Foundry Agent Service</title>
@@ -923,7 +923,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-02" />
     <summary>A new GSA agreement gives government buyers 40% off Claude Enterprise, Claude for Government and the Claude API, including state and local governments. Claude Enterprise is in process for FedRAMP Moderate through FedRAMP 20x.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, feature, high" />
+    <category term="assistants, feature, medium" />
     <source>
       <id>https://www.anthropic.com/news/expanding-partnership-gsa</id>
       <title>Expanding our partnership with GSA</title>
@@ -1049,7 +1049,7 @@
     <link href="https://www.enterpriseai.tools/updates/#update-2026-10-26-01" />
     <summary>Anthropic filed a Form S-1 with the SEC on October 26, 2026 for a proposed IPO of Class A common stock on the Nasdaq Global Select Market under the ticker ANT. The number of shares and the price range have not been set.</summary>
     <author><name>enterpriseai.tools</name></author>
-    <category term="assistants, funding, high" />
+    <category term="assistants, funding, medium" />
     <source>
       <id>https://www.anthropic.com/news/s1-sec</id>
       <title>Anthropic files S-1 with the SEC</title>
@@ -3007,7 +3007,7 @@
     <title>SpaceX completes its acquisition of Cursor</title>
     <updated>2026-08-14T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-08-14-02" />
-    <summary>Cursor announced on August 14, 2026 that it has officially been acquired by SpaceX, completing a process that began with a partnership in April. Cursor says it will gain large GPU compute for model training; no pricing or plan changes were announced.</summary>
+    <summary>Cursor announced on August 14, 2026 that it has officially been acquired by SpaceX, completing a process that began with a partnership in April 2026. Cursor says it will gain large GPU compute for model training; no pricing or plan changes were announced.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="assistants, acquisition, high" />
     <source>

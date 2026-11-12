@@ -17,6 +17,7 @@
     ],
     "license": "Apache 2.0",
     "githubUrl": "https://github.com/NVIDIA/NemoClaw",
+    "version": "0.0.143",
     "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
     "pricingModel": "free",
     "status": "active",
@@ -28,6 +29,7 @@
       "openclaw"
     ],
     "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Its alpha status and rapid 0.0.x release cadence make it a pilot tool, not a production control.",
+    "lastRelease": "2026-11-10",
     "logoKind": "fallback",
     "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
     "logoReviewedAt": "2026-09-30",
