@@ -120,7 +120,10 @@ Run `/ship-check`. Push only if green.
 ## 7. Review loop
 
 Spawn `pr-reviewer` (3-iteration cap). License accuracy and `sourceUrl`
-presence are P0 — block merge if either is missing on any record.
+presence are P0 — block merge if either is missing on any record. The
+scheduled routine runs the reviewer twice: first on Opus, then on Fable (a
+second, independent Claude model), each until it returns a clean approval
+(see §8).
 
 ## 8. Merge (scheduled routine only)
 
@@ -133,8 +136,12 @@ Radar PR, but only when all of these hold on the current head:
   "VERDICT: APPROVED (clean)";
 - CI ("Build and Deploy Job") is green;
 - the PR is mergeable;
-- no `license` field is edited.
+- no `license`, `licenseWarning` or `licenseHistory` field changes, and no
+  `license-change` entry is added to `data/updates.json`.
 
 Otherwise it stops and reports to a human. Manual `/radar` runs never merge
 on their own; a human merges them.
 
+Merging to `main` also triggers the production deploy
+(`.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml` runs on
+every push to `main`), so a routine merge is an unattended production release.
