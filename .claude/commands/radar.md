@@ -135,25 +135,41 @@ Fridays 16:45 Europe/Bucharest, configured in claude.ai → Routines by the
 repository owner) is pre-authorised by the owner to squash-merge its own
 Radar PR, but only when all of these hold on the current head SHA:
 
-- `scripts/check-radar-automerge.mjs` exists on `origin/main`, and
-  `npm run check-radar-automerge`, run after `git fetch origin main` on the
-  pushed head with a clean working tree, passes. It fails, and so blocks the
-  merge, when the diff touches any path other than `data/*.json`,
-  `data/snapshots/*.json` and the build-generated `public/` artifacts (feeds,
-  sitemap, `llms*.txt`, `public/data/`, `public/api/`), so `data/SCHEMA.md`
-  and logos wait for a human. It also fails when the diff adds or removes a
-  tool or platform record; changes any `license`, `licenseWarning`,
-  `licenseHistory`, `type` or `governance.licenseRisk` value; or adds, edits
-  or removes a `license-change` entry in `data/updates.json`;
+- the gate passes when run from `origin/main`'s copy, never the head's (so a
+  PR cannot weaken the check that judges it), after `git fetch origin main`,
+  on the pushed head, with a clean working tree:
+
+  ```bash
+  git show origin/main:scripts/check-radar-automerge.mjs > "${TMPDIR:-/tmp}/radar-gate.mjs"
+  node "${TMPDIR:-/tmp}/radar-gate.mjs" origin/main
+  ```
+
+  If the script is not on `origin/main`, do not merge. The gate fails when
+  the diff touches any path other than `data/tools.json`,
+  `data/platforms.json`, `data/updates.json`, `data/eu-ai-act.json`,
+  `data/eu-ai-act-obligations.json`, `data/snapshot-diffs.json`,
+  `data/logo-inventory.json` (vendor mirroring only), `data/snapshots/*.json`
+  and the build-generated `public/` artifacts (feeds, sitemap, `robots.txt`,
+  `llms.txt`, `llms-full.txt`, `eu-ai-act-deadlines.ics`, `public/data/`,
+  `public/api/`). So `data/SCHEMA.md`, `data/comparison-slugs.json`, new
+  data files and logo images wait for a human. It also fails when the diff
+  adds or removes a tool or platform record; changes any `license`,
+  `licenseWarning`, `licenseHistory`, `type`, `governance.licenseRisk`,
+  `logoKind`, `logoUrl`, `logoSourceUrl` or `logoReviewedAt` value; or adds,
+  edits or removes a `license-change` entry in `data/updates.json`;
 - `pr-reviewer` on Opus, then on Fable, each returned
   `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
   class, suggestions and nits included. Any commit pushed after an approval
-  means both reviewers run again on the new head;
+  means both reviewers run again on the new head. Pass counts are cumulative
+  per reviewer across re-runs; a new head does not reset the 5-pass cap;
 - the `Build and Deploy Job` check run for this head SHA has completed with
   conclusion `success` (not pending, not missing);
 - the PR is mergeable.
 
-Otherwise it stops and reports to a human. Manual `/radar` runs never merge
+The squash-merge is pinned to the SHA the gate and both reviewers judged
+(`expectedHeadSha` in the GitHub API, or `--match-head-commit <sha>` with
+`gh pr merge`), so a later push cannot ride along unreviewed. Otherwise it
+stops and reports to a human. Manual `/radar` runs never merge
 on their own; a human merges them.
 
 Merging to `main` also triggers the production deploy

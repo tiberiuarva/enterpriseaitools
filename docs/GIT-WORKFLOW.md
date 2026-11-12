@@ -127,7 +127,9 @@ checks, every time:
    no needless new dependencies.
 7. **CI parity** — `/ship-check` green locally.
 
-It iterates up to 3 times; if still red, a human is paged.
+It iterates up to 3 times (the scheduled Radar routine runs it on two models,
+5 passes each; see `.claude/commands/radar.md` §7); if still red, a human is
+paged.
 
 ## Hard rules
 

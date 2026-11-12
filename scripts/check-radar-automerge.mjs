@@ -7,24 +7,38 @@
 //
 // It judges the committed HEAD against its merge-base with baseRef, so run it
 // on the pushed head after `git fetch origin main`, with a clean working tree.
+// The routine must run main's copy, not the head's, so a PR cannot weaken the
+// gate that judges it (radar.md §8):
+//   git show origin/main:scripts/check-radar-automerge.mjs > "${TMPDIR:-/tmp}/radar-gate.mjs"
+//   node "${TMPDIR:-/tmp}/radar-gate.mjs" origin/main
 //
 // Usage: node scripts/check-radar-automerge.mjs [baseRef]   (default origin/main)
 import { execFileSync } from "node:child_process";
 
 const baseRef = process.argv[2] ?? "origin/main";
 
-// data/SCHEMA.md and hand-maintained public/ files (logos, favicons) stay with
+// Only files a Radar run edits. data/SCHEMA.md, data/comparison-slugs.json (it
+// defines routes), any new data file and hand-maintained public/ files stay with
 // a human; the public/ entries are the build-generated feeds, sitemap, llms
 // files, open-data JSON and api/ tree.
 const ALLOWED_PATHS = [
-  /^data\/[^/]+\.json$/,
+  /^data\/(tools|platforms|updates|eu-ai-act|eu-ai-act-obligations|snapshot-diffs|logo-inventory)\.json$/,
   /^data\/snapshots\/[^/]+\.json$/,
   /^public\/(sitemap\.xml|robots\.txt|llms\.txt|llms-full\.txt|eu-ai-act-deadlines\.ics)$/,
   /^public\/updates(-[a-z-]+)?\.xml$/,
   /^public\/data\/[^/]+\.json$/,
   /^public\/api\//,
 ];
-const GUARDED_FIELDS = ["license", "licenseWarning", "licenseHistory", "type"];
+const GUARDED_FIELDS = [
+  "license",
+  "licenseWarning",
+  "licenseHistory",
+  "type",
+  "logoKind",
+  "logoUrl",
+  "logoSourceUrl",
+  "logoReviewedAt",
+];
 
 function git(args) {
   return execFileSync("git", args, { encoding: "utf8" });
@@ -69,6 +83,33 @@ const problems = [];
 const changedPaths = git(["diff", "--name-only", `${base}..HEAD`]).split("\n").filter(Boolean);
 for (const path of changedPaths) {
   if (!ALLOWED_PATHS.some((pattern) => pattern.test(path))) problems.push(`path not allowed for auto-merge: ${path}`);
+}
+
+const NEW_FILE_ALLOWED = [/^data\/snapshots\/[^/]+\.json$/, /^public\/api\//];
+const addedPaths = git(["diff", "--name-only", "--diff-filter=A", `${base}..HEAD`]).split("\n").filter(Boolean);
+for (const path of addedPaths) {
+  if (!NEW_FILE_ALLOWED.some((pattern) => pattern.test(path))) problems.push(`new file not allowed for auto-merge: ${path}`);
+}
+
+// A Radar run may only mirror a vendor rename into the logo inventory.
+if (changedPaths.includes("data/logo-inventory.json")) {
+  const byName = (rev) => {
+    const items = readJsonAt(rev, "data/logo-inventory.json")?.items;
+    if (!Array.isArray(items)) throw new Error(`${rev.slice(0, 12)}:data/logo-inventory.json has no "items" array`);
+    return new Map(
+      items.map((item) => {
+        const rest = { ...item };
+        delete rest.vendor;
+        return [item.name, rest];
+      }),
+    );
+  };
+  const before = byName(base);
+  const after = byName("HEAD");
+  if (before.size !== after.size) problems.push("data/logo-inventory.json: items added or removed");
+  for (const [name, item] of after) {
+    if (!same(before.get(name), item)) problems.push(`data/logo-inventory.json: ${name} changed beyond vendor`);
+  }
 }
 
 for (const [path, key] of [["data/tools.json", "tools"], ["data/platforms.json", "platforms"]]) {
