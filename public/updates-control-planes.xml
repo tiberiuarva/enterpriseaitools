@@ -2,10 +2,108 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-control-planes.xml</id>
   <title>enterpriseai.tools weekly updates — control-planes</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-control-planes.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-09</id>
+    <title>AgentCore adds a standalone Web Search API</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-09" />
+    <summary>Amazon Bedrock AgentCore offers a generally available InvokeWebSearch API, previously only an MCP tool through AgentCore Gateway, at $7 per 1,000 queries in six Regions with IAM auth, PrivateLink and CloudTrail data events.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/</id>
+      <title>Amazon Bedrock AgentCore now offers a Web Search API</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-03</id>
+    <title>Agent Fabric MCP Bridge supports OpenAPI 3.1 and 3.2</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-03" />
+    <summary>MuleSoft Agent Fabric&apos;s MCP Bridge can publish OpenAPI 3.1 and 3.2 APIs, including QUERY operations, as MCP tools, and its servers now publish to Exchange as stable versions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, low" />
+    <source>
+      <id>https://docs.mulesoft.com/general/agent-fabric-release-notes</id>
+      <title>Agent Fabric release notes</title>
+      <link href="https://docs.mulesoft.com/general/agent-fabric-release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-06-05</id>
+    <title>AWS Agent Registry reaches GovCloud (US-West)</title>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-06-05" />
+    <summary>AWS Agent Registry, offered through Amazon Bedrock AgentCore, is generally available in AWS GovCloud (US-West) as an approval-controlled catalog of MCP servers, tools, agents and skills with CloudTrail logging.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/aws-agent-registry-govcloud-us-west/</id>
+      <title>Agent Registry now generally available in AWS GovCloud (US-West)</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/aws-agent-registry-govcloud-us-west/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-05-04</id>
+    <title>AgentCore Web Answer is generally available</title>
+    <updated>2026-11-05T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-05-04" />
+    <summary>Web Answer on Amazon Bedrock AgentCore is generally available. It returns a synthesized, cited answer from one call through an AgentCore Gateway target over MCP, in US East (N. Virginia) only, billed per tool call.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/</id>
+      <title>Announcing Web Answer on Amazon Bedrock AgentCore</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/web-answer-amazon-bedrock/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-28-09</id>
+    <title>AgentCore CLI 1.0 is generally available</title>
+    <updated>2026-10-28T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-28-09" />
+    <summary>The Amazon Bedrock AgentCore CLI reaches version 1.0 with direct resource commands, a redesigned terminal UI and a thin CDK app. The agentcore migrate command moves earlier projects.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/</id>
+      <title>Amazon Bedrock AgentCore CLI version 1.0 is now available</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-bedrock-agentcore-cli-version-1-0-available/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-23-02</id>
+    <title>Paperclip widens Operator role and adds model gateways</title>
+    <updated>2026-10-23T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-23-02" />
+    <summary>Paperclip v2026.1023.0 grants the Operator role many new permissions, so member roles need review. Budgets now hold on unpriced usage by default, and teams can bring their own model gateways such as OpenRouter, Bedrock and Gemini.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, release, medium" />
+    <source>
+      <id>https://github.com/paperclipai/paperclip/releases/tag/v2026.1023.0</id>
+      <title>Release v2026.1023.0 · paperclipai/paperclip</title>
+      <link href="https://github.com/paperclipai/paperclip/releases/tag/v2026.1023.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-02</id>
+    <title>Agent Fabric bridges Copilot Studio agents over A2A</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-02" />
+    <summary>MuleSoft Agent Fabric added an A2A bridge so Microsoft Copilot Studio agents can be discovered, governed and orchestrated alongside native A2A agents, plus scoped Amazon API Gateway policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, medium" />
+    <source>
+      <id>https://docs.mulesoft.com/general/agent-fabric-release-notes</id>
+      <title>Agent Fabric release notes</title>
+      <link href="https://docs.mulesoft.com/general/agent-fabric-release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-06</id>
     <title>ServiceNow control tower now governs its Arc agent</title>
@@ -18,6 +116,20 @@
       <id>https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/</id>
       <title>ServiceNow delivers industry-first personal enterprise agent and policy enforcement with NVIDIA</title>
       <link href="https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-delivers-industry-first-personal-enterprise-agent-and-policy-enforcement-with-NVIDIA-extending-AI-governance-across-software-and-silicon/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-13-07</id>
+    <title>Workday to acquire C1.ai agentic identity platform</title>
+    <updated>2026-10-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-13-07" />
+    <summary>Workday agreed to acquire C1.ai, which grants people and AI agents access to business systems when needed and revokes it afterwards. The deal is expected to close in Workday&apos;s fiscal fourth quarter, ending January 31, 2027.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, acquisition, medium" />
+    <source>
+      <id>https://newsroom.workday.com/2026-10-13-Workday-to-Acquire-C1-ai,-a-Leading-Agentic-Identity-Platform-for-People-and-Agents</id>
+      <title>Workday to Acquire C1.ai, a Leading Agentic Identity Platform for People and Agents</title>
+      <link href="https://newsroom.workday.com/2026-10-13-Workday-to-Acquire-C1-ai,-a-Leading-Agentic-Identity-Platform-for-People-and-Agents" />
     </source>
   </entry>
   <entry>

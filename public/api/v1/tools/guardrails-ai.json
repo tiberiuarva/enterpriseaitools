@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-22",
+  "generatedAt": "2026-11-12",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -8,7 +8,7 @@
     "name": "Guardrails AI",
     "category": "governance",
     "type": "opensource",
-    "vendor": "Guardrails AI",
+    "vendor": "Guardrails AI (Harvey)",
     "description": "Validation-focused guardrails framework with a large validator ecosystem and freemium model.",
     "strengths": [
       "50+ validators",
@@ -21,6 +21,7 @@
     "docsUrl": "https://guardrailsai.com/docs",
     "pricingModel": "freemium",
     "status": "active",
+    "statusNote": "Acquired by Harvey in September 2026. Harvey has not said what happens to the open-source library.",
     "tags": [
       "governance",
       "validators",
@@ -35,7 +36,7 @@
       "azure",
       "gcp"
     ],
-    "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform.",
+    "practitionerNote": "Practical for Python-heavy application teams that want validator-style output controls in app code rather than buying a full enterprise governance platform. Since the Harvey acquisition, check upstream activity before standardising on it.",
     "logoUrl": "/logos/guardrails-ai.svg",
     "logoSourceUrl": "https://github.com/guardrails-ai/guardrails",
     "lastRelease": "2026-08-14",
@@ -76,7 +77,7 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Apache-2.0 upstream (tracked license under data-correction review).",
+        "detail": "Apache-2.0 — permissive, OSI-approved.",
         "sourceUrl": "https://github.com/guardrails-ai/guardrails/blob/main/LICENSE",
         "level": "low"
       },

@@ -2,10 +2,136 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
   <title>enterpriseai.tools weekly updates — gateways</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-11-02</id>
+    <title>Unity Gateway supports bring-your-own ChatGPT for Codex</title>
+    <updated>2026-11-11T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-11-02" />
+    <summary>Codex and the ChatGPT desktop app can run on a user&apos;s own ChatGPT Go, Plus, Pro or Enterprise plan through Unity Gateway. Usage bills to that subscription while Unity Gateway governs access.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-04</id>
+    <title>Kong AI Gateway patches cache, SAML and SQL flaws</title>
+    <updated>2026-11-10T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-10-04" />
+    <summary>Kong AI Gateway 2.2.1 stops four cache plugins caching authenticated responses, enforces the SAML audience restriction (CVE-2026-92439) and fixes SQL escaping in LLM usage counters (CVE-2026-92544). 2.3.1 applies nginx security patches.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://developer.konghq.com/ai-gateway/changelog/</id>
+      <title>Kong AI Gateway changelog</title>
+      <link href="https://developer.konghq.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-03</id>
+    <title>Kong AI Gateway 2.3 adds Cedar policies and Token Vault</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-03" />
+    <summary>Kong AI Gateway 2.3.0 adds a Cedar-based access-policy-engine plugin, Token Vault plugins, dynamic model pricing and Baseten support. Breaking: the NeMo guardrail auth prefix default is now empty and GraphQL cache_control defaults to true.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://developer.konghq.com/ai-gateway/changelog/</id>
+      <title>Kong AI Gateway changelog</title>
+      <link href="https://developer.konghq.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-04</id>
+    <title>Cloudflare AI Gateway adds model aliases</title>
+    <updated>2026-11-04T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-04-04" />
+    <summary>Cloudflare AI Gateway model aliases let an app call one name that maps to a pool of models, trying them in order with fallback or smart routing. Aliases can change without redeploying the app.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, low" />
+    <source>
+      <id>https://developers.cloudflare.com/ai-gateway/changelog/</id>
+      <title>AI Gateway changelog</title>
+      <link href="https://developers.cloudflare.com/ai-gateway/changelog/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-03-02</id>
+    <title>New Cloudflare AI Gateways require authentication</title>
+    <updated>2026-11-03T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-03-02" />
+    <summary>New Cloudflare AI Gateways now have authentication on by default, and it cannot be turned off once enabled; requests to disable it return HTTP 400. Existing gateways without authentication keep working.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://developers.cloudflare.com/changelog/post/2026-11-03-required-authentication/</id>
+      <title>New AI Gateways require authentication</title>
+      <link href="https://developers.cloudflare.com/changelog/post/2026-11-03-required-authentication/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-01-01</id>
+    <title>AI Functions spend now counts toward Unity Gateway budgets</title>
+    <updated>2026-11-01T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-01-01" />
+    <summary>From November 1, 2026, Unity Gateway budgets include spend from task-specific AI Functions such as ai_parse_document, ai_extract and ai_classify, in both batch and real-time execution.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-01</id>
+    <title>agentgateway 1.7 encrypts MCP sessions by default</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-01" />
+    <summary>agentgateway 1.7.0 always encrypts MCP sessions in standalone mode (older sessions are rejected), extends prompt guards to tool outputs by default, and blocks dynamic backends from reaching loopback and link-local addresses such as cloud metadata.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, release, high" />
+    <source>
+      <id>https://github.com/agentgateway/agentgateway/releases/tag/v1.7.0</id>
+      <title>Release v1.7.0 · agentgateway/agentgateway</title>
+      <link href="https://github.com/agentgateway/agentgateway/releases/tag/v1.7.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-27-05</id>
+    <title>Unity Gateway usage dashboard tracks coding-agent spend</title>
+    <updated>2026-10-27T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-27-05" />
+    <summary>The Unity Gateway Usage Dashboard v1.0 adds coding-agent adoption, harness usage, estimated session spend, model and user spend analysis, and tag-based spend attribution. GPT-6.1 Terra also became available the same day.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-24-01</id>
+    <title>Unity Gateway configures Claude and ChatGPT desktop agents</title>
+    <updated>2026-10-24T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-24-01" />
+    <summary>The Unity Gateway CLI can now configure Claude desktop and ChatGPT desktop work agents with governed models, MCP servers and skills. Subscription relay is available only in Claude desktop.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-21-09</id>
     <title>Unity Gateway screens MCP tool calls for jailbreaks</title>

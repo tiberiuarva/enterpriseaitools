@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-22",
+  "generatedAt": "2026-11-12",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -83,6 +83,6 @@
       },
       "reviewedAt": "2026-05-26"
     },
-    "statusNote": "From October 9, 2026, new Gemini Code Assist Standard and Enterprise subscriptions can no longer be purchased; existing subscriptions auto-renew through 2026 and auto-renewal ends in 2027. Google points customers to Antigravity."
+    "statusNote": "From October 9, 2026, new Gemini Code Assist Standard and Enterprise subscriptions can no longer be purchased; existing subscriptions auto-renew through 2026 and auto-renewal ends in 2027. Google points customers to Antigravity. Entitlements bundled with Gemini Enterprise Standard and Plus end on March 31, 2027, with support limited to Gemini 3.x until then."
   }
 }

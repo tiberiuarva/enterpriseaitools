@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-10-22",
+  "generatedAt": "2026-11-12",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -9,7 +9,7 @@
     "category": "assistants",
     "subcategory": "coding",
     "type": "commercial",
-    "vendor": "Anysphere",
+    "vendor": "Anysphere (SpaceX)",
     "description": "Standalone AI coding IDE with rapid enterprise growth and credit-based pricing controversy.",
     "strengths": [
       "Strong adoption",
@@ -22,7 +22,7 @@
     "pricing": "$20 Pro; $60 Pro+; $200 Ultra.",
     "pricingModel": "paid",
     "status": "active",
-    "statusNote": "Switched to credit-based pricing in June 2025, causing backlash.",
+    "statusNote": "Acquired by SpaceX in August 2026. Switched to credit-based pricing in June 2025, causing backlash.",
     "tags": [
       "assistants",
       "coding",
@@ -76,8 +76,8 @@
       },
       "licenseRisk": {
         "status": "yes",
-        "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; smaller vendor, no self-hosted escape.",
-        "sourceUrl": "https://cursor.com/",
+        "detail": "Proprietary SaaS; 2025 credit-pricing change controversy; owned by SpaceX since August 2026; no self-hosted escape.",
+        "sourceUrl": "https://cursor.com/blog/joining-spacex",
         "level": "high"
       },
       "reviewedAt": "2026-09-13"

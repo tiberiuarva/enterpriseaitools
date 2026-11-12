@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-agent-identity.xml</id>
   <title>enterpriseai.tools weekly updates — agent-identity</title>
-  <updated>2026-10-22T00:00:00.000Z</updated>
+  <updated>2026-11-12T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-agent-identity.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-04</id>
+    <title>Auth0 launches Auth for UCP in Early Access</title>
+    <updated>2026-11-09T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-09-04" />
+    <summary>Auth0 Auth for UCP, in Early Access, secures Universal Commerce Protocol servers by linking a shopper&apos;s agent identity to their account with a business.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, low" />
+    <source>
+      <id>https://auth0.com/docs/ai-agents-mcp/auth-for-ucp</id>
+      <title>Auth0 Auth for UCP</title>
+      <link href="https://auth0.com/docs/ai-agents-mcp/auth-for-ucp" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-10-22-03</id>
+    <title>Auth0 lets MCP clients connect without pre-registration</title>
+    <updated>2026-10-22T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-10-22-03" />
+    <summary>Auth0 added Client ID Metadata Documents (CIMD) with Dynamic Registration in Early Access, so MCP clients and AI agents can connect without being registered in advance.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://auth0.com/docs/get-started/auth0-overview/create-applications/cimd-overview</id>
+      <title>Auth0 CIMD overview</title>
+      <link href="https://auth0.com/docs/get-started/auth0-overview/create-applications/cimd-overview" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-10-15-09</id>
     <title>Descope Agentic Identity Hub 3.0 adds governance suite</title>

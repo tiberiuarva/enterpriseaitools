@@ -24,7 +24,7 @@ Top-level shape:
 | `alsoCovers` | ToolCategory[] | no | Secondary categories for suites that span several functions (e.g. a control-plane suite that also ships identity and monitoring). Never includes the primary `category`; values come from the same enum. The tool is listed under "Also covers this" on each of those hubs. Set only when the record's own description or sources state the capability. |
 | `subcategory` | string | no | Used mainly for assistants (`coding`, `productivity`, `build-your-own`) |
 | `type` | `vendor \| opensource \| commercial` | yes | Rendering and filtering type. `opensource` means the self-hostable code is public; source-available or open-core licenses (Elastic, Sustainable Use, EE paths) keep `opensource` but must carry `licenseWarning`, which renders on the tool page and in the hub's "Important notes". |
-| `vendor` | string | no | Parent company or maintainer |
+| `vendor` | string | no | Parent company or maintainer. When one company owns another, name both with the owner in parentheses, for example "Portkey (Palo Alto Networks)" after an acquisition. Some older records instead put the subsidiary in parentheses, as in "Salesforce (MuleSoft)". Keep the value identical in `data/logo-inventory.json`. |
 | `description` | string | yes | One sentence, max 150 chars target |
 | `strengths` | string[] | yes | 2-3 short strengths |
 | `practitionerNote` | string | no | Concise editorial implementation note grounded in the tool's deployment fit, trade-offs, or enterprise usage pattern |
@@ -169,7 +169,7 @@ Top-level shape:
 |---|---|---:|---|
 | `name` | string | yes | Display name as currently used in the site data |
 | `category` | `agents \| orchestration \| gateways \| observability \| control-planes \| agent-identity \| governance \| assistants \| always-on-agents \| platforms` | yes | Audit grouping only; matches the record's `category` (or `platforms`) |
-| `vendor` | string | no | Parent company or maintainer |
+| `vendor` | string | no | Parent company or maintainer; must match the record's `vendor` in `tools.json` |
 | `logoUrl` | string | no | Relative asset path under `/public/logos/` |
 | `status` | `classified \| unclassified` | yes | Whether provenance was reviewed yet |
 | `logoKind` | `official-product \| official-vendor \| service-icon \| project-logo \| fallback` | no | Mirrors the site data meaning |
