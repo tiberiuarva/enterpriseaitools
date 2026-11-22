@@ -3,7 +3,7 @@
 // (.claude/commands/radar.md §8). It never decides that a PR is good; it only
 // finds the changes that must wait for a human: paths other than data JSON and
 // the generated public/ artifacts, added or removed tool/platform records,
-// licence edits, and any touched license-change update entry.
+// licence and governance edits, and any touched license-change update entry.
 //
 // It judges the committed HEAD against its merge-base with baseRef, so run it
 // on the pushed head after `git fetch origin main`, with a clean working tree.
@@ -121,7 +121,7 @@ if (changedPaths.includes("data/snapshot-diffs.json")) {
   for (const event of afterEvents) {
     if (beforeKeys.has(key(event))) continue;
     const field = String(event?.field ?? "");
-    if (field === "license" || field === "tracked" || field.startsWith("governance.licenseRisk")) {
+    if (field === "license" || field === "tracked" || field.startsWith("governance.")) {
       problems.push(`data/snapshot-diffs.json: new ${field} event for ${event?.toolId}`);
     }
   }
@@ -162,9 +162,8 @@ for (const [path, key] of [["data/tools.json", "tools"], ["data/platforms.json",
     for (const field of GUARDED_FIELDS) {
       if (!same(previous[field], record[field])) problems.push(`${path}: ${id}.${field} changed`);
     }
-    if (!same(previous.governance?.licenseRisk, record.governance?.licenseRisk)) {
-      problems.push(`${path}: ${id}.governance.licenseRisk changed`);
-    }
+    // Governance postures, certifications and reviewedAt stay with a human.
+    if (!same(previous.governance, record.governance)) problems.push(`${path}: ${id}.governance changed`);
   }
 }
 

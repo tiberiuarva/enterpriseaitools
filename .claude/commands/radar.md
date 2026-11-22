@@ -161,13 +161,14 @@ Radar PR, but only when all of these hold on the current head SHA:
   `data/SCHEMA.md`, `data/comparison-slugs.json`, new data files and logo
   images wait for a human. It also fails when the diff adds or removes a tool
   or platform record; changes any `license`, `licenseWarning`,
-  `licenseHistory`, `type`, `governance.licenseRisk`, `logoKind`, `logoUrl`,
+  `licenseHistory`, `type`, any `governance` value (postures, certifications,
+  `licenseRisk`, `reviewedAt`), `logoKind`, `logoUrl`,
   `logoSourceUrl` or `logoReviewedAt` value; changes a logo-inventory item
   beyond its `vendor` (so tool or platform renames and category moves, which
   change the inventory key, wait for a human); edits or removes an existing
   snapshot (snapshots are add-only); changes or removes an existing event in
   `data/snapshot-diffs.json`, or adds one whose field is `license`, `tracked`
-  or `governance.licenseRisk*`; or adds, edits or removes a `license-change`
+  or `governance.*`; or adds, edits or removes a `license-change`
   entry in `data/updates.json`;
 - `pr-reviewer` on Opus, then on Fable, each returned
   `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
