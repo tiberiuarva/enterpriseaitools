@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-11-12",
+  "generatedAt": "2026-11-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -25,7 +25,7 @@
       "azure"
     ],
     "status": "active",
-    "statusNote": "Private preview: announced as Microsoft Scout on 2026-06-02 for Frontier program organisations, renamed Autopilot on 2026-09-25 with private preview expanding at end of September 2026. Not Windows Autopilot (device provisioning).",
+    "statusNote": "Announced as Microsoft Scout on 2026-06-02 for Frontier program organisations and renamed Autopilot on 2026-09-25. Began rolling out to Frontier customers on 2026-11-17; no general availability date has been given. Not Windows Autopilot (device provisioning).",
     "tags": [
       "always-on-agents",
       "microsoft-365",

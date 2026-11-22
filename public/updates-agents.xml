@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-agents.xml</id>
   <title>enterpriseai.tools weekly updates — agents</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-agents.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-01</id>
+    <title>Pydantic AI 2.70.0 fixes two high-severity harness advisories</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-01" />
+    <summary>Pydantic AI 2.70.0, released November 17, 2026, fixes GHSA-m4cr-m4qc-9hh3 (quadratic-time ANSI stripping in ToolOutputLimits) and GHSA-5m5q-5qj4-gx9h (backtracking in the JWT redaction pattern), both rated high, in pydantic-ai-harness 0.70.0.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, release, high" />
+    <source>
+      <id>https://github.com/pydantic/pydantic-ai/releases/tag/v2.70.0</id>
+      <title>Pydantic AI v2.70.0 release notes</title>
+      <link href="https://github.com/pydantic/pydantic-ai/releases/tag/v2.70.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-16-02</id>
+    <title>Deferred tier for ADK agents is GA at a 50% discount</title>
+    <updated>2026-11-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-16-02" />
+    <summary>Google said on November 16, 2026 that a deferred tier for autonomous agent scheduling is generally available. ADK agents on google-adk 2.10.0 or later can set ServiceTier.DEFERRED for a 50% inference discount.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agents, feature, low" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes</id>
+      <title>Gemini Enterprise Agent Platform release notes</title>
+      <link href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-04-02</id>
     <title>Pydantic AI 2.66.0 fixes nine security advisories</title>

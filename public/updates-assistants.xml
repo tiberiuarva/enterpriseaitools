@@ -2,10 +2,290 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-assistants.xml</id>
   <title>enterpriseai.tools weekly updates — assistants</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-assistants.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-02</id>
+    <title>Claude Code 2.1.330 adds Enterprise Admin Console sign-in</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-02" />
+    <summary>Claude Code 2.1.330, released November 20, 2026, adds sign-in to organizations managed in Anthropic&apos;s Enterprise Admin Console. More rm commands aimed at root, home or top-level folders now ask for approval, and recurring scheduled tasks run up to 30 days.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://code.claude.com/docs/en/changelog</id>
+      <title>Claude Code changelog</title>
+      <link href="https://code.claude.com/docs/en/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-03</id>
+    <title>Computer use enters beta for Team and Enterprise plans</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-03" />
+    <summary>Claude computer use is in beta for Team and Enterprise plans as of November 20, 2026, rolling out gradually. Claude can see the user&apos;s screen and work in permitted desktop apps.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans</id>
+      <title>Set up computer use for Team and Enterprise plans</title>
+      <link href="https://support.claude.com/en/articles/18483812-set-up-computer-use-for-team-and-enterprise-plans" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-04</id>
+    <title>Codex CLI 0.171.0 makes GPT-6.2 Sol the default model</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-04" />
+    <summary>Codex CLI 0.171.0, released November 20, 2026, adds GPT-6.2 Sol and Astra with Sol as the default and turns on the TUI workspace by default. It also adds codex exec --remote and /rc remote-control pairing.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://github.com/openai/codex/releases/tag/rust-v0.171.0</id>
+      <title>Codex rust-v0.171.0 release notes</title>
+      <link href="https://github.com/openai/codex/releases/tag/rust-v0.171.0" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-06</id>
+    <title>Gemini-powered data classification in Drive is GA</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-06" />
+    <summary>Google said on November 20, 2026 that Gemini-powered data classification in Google Drive is generally available, so admins can apply natural-language classification rules to Drive files at scale.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://workspaceupdates.googleblog.com/2026/11/gemini-powered-data-classification-in-Google-Drive-is-now-generally-available.html</id>
+      <title>Gemini-powered data classification in Google Drive is now generally available</title>
+      <link href="https://workspaceupdates.googleblog.com/2026/11/gemini-powered-data-classification-in-Google-Drive-is-now-generally-available.html" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-19-03</id>
+    <title>Kiro cloud sessions can connect to your VPC</title>
+    <updated>2026-11-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-19-03" />
+    <summary>Kiro said on November 19, 2026 that Enterprise organizations can connect cloud sessions to private resources in their Amazon VPC. It needs an IAM Identity Center profile in US East (N. Virginia) with Controls enabled.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/general/connect-cloud-sessions-to-your-vpc/</id>
+      <title>Connect Cloud Sessions to Your VPC</title>
+      <link href="https://kiro.dev/changelog/general/connect-cloud-sessions-to-your-vpc/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-19-04</id>
+    <title>Kiro for VS Code ships on the Marketplace and Open VSX</title>
+    <updated>2026-11-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-19-04" />
+    <summary>Kiro released Kiro for VS Code (Extensions 1.5.0) on November 19, 2026 on the Visual Studio Marketplace and Open VSX. It needs VS Code 1.145 or later and is included in every Kiro plan.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, release, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/extensions/kiro-for-vs-code/</id>
+      <title>Introducing Kiro for VS Code</title>
+      <link href="https://kiro.dev/changelog/extensions/kiro-for-vs-code/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-18-01</id>
+    <title>Genie Code CLI is generally available</title>
+    <updated>2026-11-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-18-01" />
+    <summary>Databricks made the Genie Code CLI generally available on November 18, 2026. It is managed like Genie Code in the workspace, with one shared budget, and free monthly Genie usage applies in the CLI.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november#genie-code-cli-is-now-generally-available</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november#genie-code-cli-is-now-generally-available" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-18-04</id>
+    <title>Gemini 4 Neon is generally available in GitHub Copilot</title>
+    <updated>2026-11-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-18-04" />
+    <summary>GitHub made Gemini 4 Neon generally available in Copilot on November 18, 2026 for Copilot Pro+, Max, Business and Enterprise, rolling out gradually.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, low" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot</id>
+      <title>Gemini 4 Neon in GitHub Copilot</title>
+      <link href="https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-18-05</id>
+    <title>Gemini 4 Neon becomes Antigravity&apos;s default model</title>
+    <updated>2026-11-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-18-05" />
+    <summary>Google&apos;s Antigravity changelog says Gemini 4 Neon became available on Google AI Ultra, AI Pro and Gemini Enterprise on November 18, 2026 and is the default model, with an Orchestrator that plans with Neon and implements with Gemini 4 Hydrogen.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://antigravity.google/docs/changelog</id>
+      <title>Antigravity changelog</title>
+      <link href="https://antigravity.google/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-05</id>
+    <title>GPT-6.2 Astra and Sol arrive in ChatGPT Work and Codex</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-05" />
+    <summary>OpenAI made GPT-6.2 Astra and Sol available in ChatGPT Work and Codex on November 17, 2026 for Plus, Pro, Enterprise and Edu users. Astra targets the hardest projects and Sol everyday coding and multistep work.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, model-addition, medium" />
+    <source>
+      <id>https://learn.chatgpt.com/docs/changelog</id>
+      <title>ChatGPT and Codex changelog</title>
+      <link href="https://learn.chatgpt.com/docs/changelog" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-09</id>
+    <title>Copilot Home and Office in Copilot are generally available</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-09" />
+    <summary>Microsoft said on November 17, 2026 that Home and Office in Copilot are generally available, while Home&apos;s Today feature is in private preview. Copilot Code is due to be generally available in the coming weeks.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/</id>
+      <title>Copilot at Microsoft Ignite: expanding what&apos;s possible with intelligence built for work</title>
+      <link href="https://www.microsoft.com/en-us/copilot/blog/2026/11/17/copilot-at-microsoft-ignite-expanding-whats-possible-with-intelligence-built-for-work/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-10</id>
+    <title>Windows 365 for Agents works as a Copilot Studio computer-use tool</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-10" />
+    <summary>Microsoft said on November 17, 2026 that builders can use Windows 365 for Agents as a computer-use tool in the Copilot Studio standard harness, with a Microsoft Copilot harness preview starting in December.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://techcommunity.microsoft.com/blog/windows-itpro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities-for-people-agen/4570006</id>
+      <title>Windows 365 at Ignite 2026</title>
+      <link href="https://techcommunity.microsoft.com/blog/windows-itpro-blog/windows-365-at-ignite-2026-introducing-new-cloud-pc-capabilities-for-people-agen/4570006" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-11</id>
+    <title>GitHub Copilot Evals enters public preview</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-11" />
+    <summary>GitHub said on November 17, 2026 that Copilot Evals is in public preview. Teams can create, run and compare repeatable tests for skills, custom agents and MCP tools on Copilot Individual, Business and Enterprise.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview</id>
+      <title>GitHub Copilot Evals is now in public preview</title>
+      <link href="https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-12</id>
+    <title>Copilot CLI adds Microsoft Entra sign-in in preview</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-12" />
+    <summary>GitHub opened a public preview of Microsoft Entra sign-in for Copilot CLI on Windows and macOS on November 17, 2026, with Linux to follow. Copilot Business and Enterprise users sign in to a linked Enterprise Managed User account.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview</id>
+      <title>GitHub Copilot CLI adds Microsoft Entra sign-in as a preview</title>
+      <link href="https://github.blog/changelog/2026-11-17-github-copilot-cli-adds-microsoft-entra-sign-in-as-a-preview" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-13</id>
+    <title>Copilot app adds GHES support and Azure DevOps preview</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-13" />
+    <summary>GitHub said on November 17, 2026 that GitHub Enterprise Server support in the Copilot app is generally available, while Azure DevOps repositories and browser use are in public preview. Cloud sessions are not available for those repositories.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases</id>
+      <title>GitHub Copilot app, Microsoft Ignite releases</title>
+      <link href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-14</id>
+    <title>Copilot retires MAI-Code-1.1-Flash on December 18</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-14" />
+    <summary>GitHub said on November 17, 2026 that MAI-Code-1.1-Flash will be deprecated on December 18, 2026, with the latest MAI Code Flash model as the alternative. Enterprise admins may need to enable it in model policies.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, deprecation, low" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-17-upcoming-deprecation-of-mai-code-1-1-flash-in-december</id>
+      <title>Upcoming deprecation of MAI-Code-1.1-Flash in December</title>
+      <link href="https://github.blog/changelog/2026-11-17-upcoming-deprecation-of-mai-code-1-1-flash-in-december" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-15</id>
+    <title>Kiro adds local sandbox controls to Enterprise Management</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-15" />
+    <summary>Kiro said on November 17, 2026 that administrators can require local sandboxing for commands and local stdio MCP servers in the IDE and CLI, and set file and network defaults. It is in preview in US East (N. Virginia).</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://kiro.dev/changelog/general/enterprise-management-local-sandbox/</id>
+      <title>Local Sandbox Controls in Enterprise Management</title>
+      <link href="https://kiro.dev/changelog/general/enterprise-management-local-sandbox/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-17</id>
+    <title>Copilot activity can be monitored through Microsoft Agent 365</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-17" />
+    <summary>GitHub said on November 17, 2026 that GitHub Copilot agent activity can be streamed into Microsoft Agent 365, where admins review sessions, prompts, responses, tool calls and usage trends. It is for GitHub Enterprise Cloud customers with Enterprise Managed Users.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, high" />
+    <source>
+      <id>https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365</id>
+      <title>Monitor GitHub Copilot activity through Microsoft Agent 365</title>
+      <link href="https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-13-05</id>
+    <title>Gemini Enterprise adds single-user quotas for AI developer tools</title>
+    <updated>2026-11-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-13-05" />
+    <summary>Google said on November 13, 2026 that single-user quota limits for AI developer tools, including Google Antigravity, apply to the Standard and Plus editions and reset on each user&apos;s seven-day cycle.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-12-03</id>
+    <title>Claude Meetings rolls out in beta for Team and Enterprise</title>
+    <updated>2026-11-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-12-03" />
+    <summary>Claude Meetings began rolling out in beta on Team and Enterprise plans on November 12, 2026. Claude can join a Google Meet call as a visible participant, take notes, answer questions and create docs and slides.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="assistants, feature, medium" />
+    <source>
+      <id>https://support.claude.com/en/articles/18325154-use-claude-meetings</id>
+      <title>Use Claude Meetings</title>
+      <link href="https://support.claude.com/en/articles/18325154-use-claude-meetings" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-12-01</id>
     <title>Genie ZeroOps is available in beta</title>

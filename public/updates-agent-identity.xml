@@ -2,10 +2,66 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-agent-identity.xml</id>
   <title>enterpriseai.tools weekly updates — agent-identity</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-agent-identity.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-05</id>
+    <title>Token Vault Cross-App Access supports SAML in early access</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-05" />
+    <summary>On November 20, 2026 Auth0 extended Token Vault&apos;s Cross-App Access to users who sign in through SAML enterprise connections, in early access. The IdP must exchange SAML assertions and issue ID-JAGs.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, low" />
+    <source>
+      <id>https://auth0.com/docs/secure/call-apis-on-users-behalf/token-vault/xaa-with-token-vault#use-token-vault-with-a-saml-idp</id>
+      <title>Auth0 Token Vault documentation</title>
+      <link href="https://auth0.com/docs/secure/call-apis-on-users-behalf/token-vault/xaa-with-token-vault#use-token-vault-with-a-saml-idp" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-07</id>
+    <title>Entra Agent ID covers local agents; lifecycle management is GA</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-07" />
+    <summary>Microsoft said on November 17, 2026 that Entra Agent ID for discovered local agents is in preview and automated lifecycle management of agent identities is generally available. An out-of-the-box policy disables agent identities inactive for 60 days.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, high" />
+    <source>
+      <id>https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-entra-helps-you-stay-ahead-/4556456</id>
+      <title>AI is changing access: see how Entra helps you stay ahead</title>
+      <link href="https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-entra-helps-you-stay-ahead-/4556456" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-13-02</id>
+    <title>Okta for AI Agents works with third-party identity providers</title>
+    <updated>2026-11-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-13-02" />
+    <summary>Okta said on November 13, 2026 that third-party IdP support is generally available for Okta for AI Agents and Agent SSO, built on Cross App Access and needing no custom connector.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://www.okta.com/newsroom/press-releases/okta-for-ai-agents-now-works-out-of-the-box-with-multiple-third-party-identity-providers/</id>
+      <title>Okta press release</title>
+      <link href="https://www.okta.com/newsroom/press-releases/okta-for-ai-agents-now-works-out-of-the-box-with-multiple-third-party-identity-providers/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-13-04</id>
+    <title>Agent Identity auth manager adds 3-legged OAuth for A2A agents</title>
+    <updated>2026-11-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-13-04" />
+    <summary>Google said on November 13, 2026 that 3-legged OAuth with the Agent Identity auth manager is generally available, so A2A agents built with ADK on Agent Runtime can call MCP servers, Google Cloud and third-party APIs for the signed-in user.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="agent-identity, feature, medium" />
+    <source>
+      <id>https://docs.cloud.google.com/gemini/enterprise/docs/release-notes</id>
+      <title>Gemini Enterprise release notes</title>
+      <link href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-09-04</id>
     <title>Auth0 launches Auth for UCP in Early Access</title>

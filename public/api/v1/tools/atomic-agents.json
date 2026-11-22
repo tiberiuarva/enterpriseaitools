@@ -1,6 +1,6 @@
 {
   "source": "https://www.enterpriseai.tools",
-  "generatedAt": "2026-11-12",
+  "generatedAt": "2026-11-22",
   "schemaVersion": "1.0.0",
   "datasetLicense": "MIT",
   "tool": {
@@ -8,7 +8,7 @@
     "name": "Atomic Agents",
     "category": "agents",
     "type": "opensource",
-    "vendor": "BrainBlend AI",
+    "vendor": "Eigenwise",
     "description": "Minimalist agent framework emphasizing composability and predictable building blocks.",
     "strengths": [
       "Schema-first building blocks",
@@ -18,8 +18,8 @@
     "license": "MIT",
     "githubUrl": "https://github.com/Eigenwise/atomic-agents",
     "githubStars": 6238,
-    "version": "2.15.0",
-    "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
+    "version": "2.16.2",
+    "docsUrl": "https://eigenwise.github.io/atomic-agents/",
     "pricingModel": "free",
     "status": "active",
     "tags": [
@@ -54,7 +54,7 @@
       "auditLogging": {
         "status": "partial",
         "detail": "Minimalist design; observability is intentionally operator-configured.",
-        "sourceUrl": "https://brainblend-ai.github.io/atomic-agents/"
+        "sourceUrl": "https://eigenwise.github.io/atomic-agents/"
       },
       "soc2": {
         "status": "not-applicable",
@@ -81,6 +81,6 @@
       },
       "reviewedAt": "2026-05-26"
     },
-    "lastRelease": "2026-10-21"
+    "lastRelease": "2026-11-17"
   }
 }

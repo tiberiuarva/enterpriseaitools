@@ -2,10 +2,80 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-gateways.xml</id>
   <title>enterpriseai.tools weekly updates — gateways</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-gateways.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-19-02</id>
+    <title>GPT-5 and GPT-5 mini retire on Unity Gateway December 11</title>
+    <updated>2026-11-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-19-02" />
+    <summary>Databricks said on November 19, 2026 that GPT-5 and GPT-5 mini retire on December 11, 2026. GPT-6.1 Sol replaces GPT-5 and GPT-6.1 Terra replaces GPT-5 mini.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, deprecation, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november#gpt-5-and-gpt-5-mini-will-be-retired-on-december-11-2026</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november#gpt-5-and-gpt-5-mini-will-be-retired-on-december-11-2026" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-18-02</id>
+    <title>Smart Routing can send coding agents to external models</title>
+    <updated>2026-11-18T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-18-02" />
+    <summary>In the Managed Configuration beta, Unity Gateway Smart Routing can send coding-agent subagents to external models behind a model provider service, per the November 18, 2026 release notes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-03</id>
+    <title>Unity Gateway Insights enters beta</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-03" />
+    <summary>Databricks introduced Unity Gateway Insights in beta on November 17, 2026. It reports how people use agents and where tokens are wasted, based on a sample of unified trace table sessions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november#analyze-agent-usage-and-find-wasted-tokens-with-unity-gateway-insights-beta</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november#analyze-agent-usage-and-find-wasted-tokens-with-unity-gateway-insights-beta" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-04</id>
+    <title>GPT-6.2 Astra and Sol are available on Unity Gateway</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-04" />
+    <summary>OpenAI GPT-6.2 Astra and Sol became available on Unity Gateway on November 17, 2026 through Foundation Model APIs, with text and image input, function calling, reasoning and priority pay-per-token.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, model-addition, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-12-02</id>
+    <title>Unity Gateway budgets support daily thresholds</title>
+    <updated>2026-11-12T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-12-02" />
+    <summary>As of November 12, 2026, Unity Gateway budgets, including Genie budgets, can set daily per-user thresholds, monthly thresholds or both, each with its own alert, webhook or block action. Daily thresholds reset at 00:00 UTC.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="gateways, feature, medium" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/unity-gateway/</id>
+      <title>Unity Gateway release notes</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/unity-gateway/" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-11-02</id>
     <title>Unity Gateway supports bring-your-own ChatGPT for Codex</title>
