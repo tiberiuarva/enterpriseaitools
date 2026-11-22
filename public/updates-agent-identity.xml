@@ -22,7 +22,7 @@
   </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-07</id>
-    <title>Entra Agent ID covers local agents; lifecycle management is GA</title>
+    <title>Entra Agent ID previews local agents; lifecycle management is GA</title>
     <updated>2026-11-17T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-07" />
     <summary>Microsoft said on November 17, 2026 that Entra Agent ID for discovered local agents is in preview and automated lifecycle management of agent identities is generally available. An out-of-the-box policy disables agent identities inactive for 60 days.</summary>

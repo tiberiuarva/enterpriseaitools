@@ -330,7 +330,7 @@
   </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-07</id>
-    <title>Entra Agent ID covers local agents; lifecycle management is GA</title>
+    <title>Entra Agent ID previews local agents; lifecycle management is GA</title>
     <updated>2026-11-17T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-07" />
     <summary>Microsoft said on November 17, 2026 that Entra Agent ID for discovered local agents is in preview and automated lifecycle management of agent identities is generally available. An out-of-the-box policy disables agent identities inactive for 60 days.</summary>
@@ -459,7 +459,7 @@
     <title>Agent 365 makes plugin governance GA and previews Business Analytics</title>
     <updated>2026-11-17T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-16" />
-    <summary>Microsoft said on November 17, 2026 that Agent 365 plugins and skills governance is generally available, Business Analytics starts in Frontier preview and an Action center follows in preview in December. Premium capabilities still need an Agent 365 or ME7 license.</summary>
+    <summary>Microsoft said on November 17, 2026 that Agent 365 plugins and skills governance is generally available, Business Analytics starts in Frontier preview and an Action center follows in preview in December. Premium capabilities still need an Agent 365 or Microsoft 365 E7 license.</summary>
     <author><name>enterpriseai.tools</name></author>
     <category term="control-planes, feature, high" />
     <source>

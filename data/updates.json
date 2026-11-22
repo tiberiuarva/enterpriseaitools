@@ -307,7 +307,7 @@
       "toolName": "Microsoft Entra Agent ID",
       "category": "agent-identity",
       "type": "feature",
-      "title": "Entra Agent ID covers local agents; lifecycle management is GA",
+      "title": "Entra Agent ID previews local agents; lifecycle management is GA",
       "summary": "Microsoft said on November 17, 2026 that Entra Agent ID for discovered local agents is in preview and automated lifecycle management of agent identities is generally available. An out-of-the-box policy disables agent identities inactive for 60 days.",
       "sourceUrl": "https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-entra-helps-you-stay-ahead-/4556456",
       "sourceTitle": "AI is changing access: see how Entra helps you stay ahead",
@@ -425,7 +425,7 @@
       "category": "control-planes",
       "type": "feature",
       "title": "Agent 365 makes plugin governance GA and previews Business Analytics",
-      "summary": "Microsoft said on November 17, 2026 that Agent 365 plugins and skills governance is generally available, Business Analytics starts in Frontier preview and an Action center follows in preview in December. Premium capabilities still need an Agent 365 or ME7 license.",
+      "summary": "Microsoft said on November 17, 2026 that Agent 365 plugins and skills governance is generally available, Business Analytics starts in Frontier preview and an Action center follows in preview in December. Premium capabilities still need an Agent 365 or Microsoft 365 E7 license.",
       "sourceUrl": "https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753",
       "sourceTitle": "What's new in Microsoft Agent 365: Ignite 2026",
       "impact": "high"
