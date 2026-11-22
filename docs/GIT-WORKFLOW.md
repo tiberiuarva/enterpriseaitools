@@ -10,8 +10,8 @@ checks against.
 - `main` is the only long-lived branch. **Never commit directly to `main`.**
 - All work happens on a short-lived branch, opened off the latest `origin/main`,
   and lands back via a squash-merged PR.
-- Production deploys are explicit (`workflow_dispatch` or tag) — never automatic
-  on every push to `main`.
+- Every push to `main` deploys to production (the Azure workflow runs on push),
+  so merging a PR is the release.
 
 ## Branch naming
 
@@ -127,12 +127,17 @@ checks, every time:
    no needless new dependencies.
 7. **CI parity** — `/ship-check` green locally.
 
-It iterates up to 3 times; if still red, a human is paged.
+It iterates up to 3 times (the scheduled Radar routine runs it on two models,
+5 passes each; see `.claude/commands/radar.md` §7); if still red, a human is
+paged.
 
 ## Hard rules
 
 - Never push to `main` directly.
 - Never merge a PR whose CI is red.
+- The only automated merge is the owner-authorised weekly Radar routine, under
+  the conditions in `.claude/commands/radar.md` §8. Everything else is merged
+  by a human.
 - Never skip hooks (`--no-verify`) or bypass a gate to make it pass.
 - Never `git add -A` — stage files by name to avoid committing secrets or
   build artifacts.

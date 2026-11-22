@@ -22,7 +22,9 @@ npm run check-data-freshness
 Tools whose `governance.reviewedAt` is older than the documented freshness
 threshold are listed in age order. Re-verify those first during research so the
 weekly scan stays on top of records that have not been spot-checked recently.
-Informational gate — does not block the run.
+Informational gate — does not block the run. The scheduled routine only lists
+the stale records in its PR body; re-reviewing governance postures and
+rotating `reviewedAt` stay with a human.
 
 ## 1c. EU AI Act freshness check (M7)
 
@@ -64,7 +66,9 @@ deterministic, machine-readable boundary.
   event (date, fromLicense, toLicense, direction, sourceUrl), and add a
   `license-change` entry to `data/updates.json` — all in the same PR. The
   snapshot diff flags license drift as high-impact; never publish the change
-  without the upstream verification.
+  without the upstream verification. The scheduled routine does not make these
+  edits: it opens a "License correction" issue with the upstream evidence and
+  leaves the change to a human (see §8).
 - Append a new entry to `data/updates.json` for every newsworthy change with
   a valid `sourceUrl`.
 - If `githubStars` or `version` was refreshed, update `lastRelease` too.
@@ -119,5 +123,73 @@ Run `/ship-check`. Push only if green.
 
 ## 7. Review loop
 
-Spawn `pr-reviewer` (3-iteration cap). License accuracy and `sourceUrl`
-presence are P0 — block merge if either is missing on any record.
+Spawn `pr-reviewer` (3-iteration cap for manual runs). License accuracy and `sourceUrl`
+presence are P0 — block merge if either is missing on any record. The
+scheduled routine runs the reviewer twice, overriding the agent's default
+model: first on Opus, then on Fable (a second, independent Claude model). Each
+run is capped at 5 passes; if either has not returned a clean approval by then,
+the routine stops and reports to a human (see §8).
+
+## 8. Merge (scheduled routine only)
+
+The weekly Claude Code routine ("Weekly Radar update (enterpriseai.tools)",
+Fridays 16:45 Europe/Bucharest, configured in claude.ai → Routines by the
+repository owner) is pre-authorised by the owner to squash-merge its own
+Radar PR, but only when all of these hold on the current head SHA:
+
+- the gate passes when run from `origin/main`'s copy, never the head's (so a
+  PR cannot weaken the check that judges it), after `git fetch origin main`,
+  on the pushed head, with a clean working tree:
+
+  ```bash
+  set -euo pipefail
+  gate="${TMPDIR:-/tmp}/radar-gate.mjs"
+  git show origin/main:scripts/check-radar-automerge.mjs > "$gate"
+  test -s "$gate"
+  node "$gate" origin/main | tee /dev/stderr | grep -q '^Radar auto-merge gate: PASS'
+  ```
+
+  The merge needs exit 0 and the `Radar auto-merge gate: PASS` line;
+  anything else, including a script missing on `origin/main`, blocks it. The gate fails when
+  the diff touches any path other than `data/tools.json`,
+  `data/platforms.json`, `data/updates.json`, `data/eu-ai-act.json`,
+  `data/eu-ai-act-obligations.json`, `data/snapshot-diffs.json`,
+  `data/logo-inventory.json` (vendor mirroring only), `data/snapshots/*.json`
+  and the build-generated `public/` artifacts (feeds, sitemap, `robots.txt`,
+  `llms.txt`, `llms-full.txt`, `eu-ai-act-deadlines.ics`, `public/data/`,
+  `public/api/v1/`). Renames are counted as a delete plus an add. So
+  `data/SCHEMA.md`, `data/comparison-slugs.json`, new data files and logo
+  images wait for a human. It also fails when the diff adds or removes a tool
+  or platform record; changes any `license`, `licenseWarning`,
+  `licenseHistory`, `type`, any `governance` value (postures, certifications,
+  `licenseRisk`, `reviewedAt`), `logoKind`, `logoUrl`,
+  `logoSourceUrl` or `logoReviewedAt` value; changes a logo-inventory item
+  beyond its `vendor` (so tool or platform renames and category moves, which
+  change the inventory key, wait for a human); edits or removes an existing
+  snapshot (snapshots are add-only); changes or removes an existing event in
+  `data/snapshot-diffs.json`, or adds one whose field is `license`, `tracked`
+  or `governance.*`; or adds, edits or removes a `license-change`
+  entry in `data/updates.json`;
+- `pr-reviewer` on Opus, then on Fable, each returned
+  `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
+  class, suggestions and nits included. Any commit pushed after an approval
+  means both reviewers run again on the new head. Pass counts are cumulative
+  per reviewer across re-runs; a new head does not reset the 5-pass cap;
+- the `Build and Deploy Job` check run for this head SHA has completed with
+  conclusion `success` (not pending, not missing);
+- the PR is mergeable.
+
+The gate's PASS line prints `head=<sha>`. That SHA must equal the PR's head
+SHA from the GitHub API, and the squash-merge is pinned to it
+(`expectedHeadSha` in the GitHub API, or `--match-head-commit <sha>` with
+`gh pr merge`), so a later push cannot ride along unreviewed. Otherwise it
+stops and reports to a human. Manual `/radar` runs never merge
+on their own; a human merges them.
+
+Merging to `main` also triggers the production deploy
+(`.github/workflows/azure-static-web-apps-witty-grass-0a1a9d403.yml` runs on
+every push to `main`), so a routine merge is an unattended production release.
+After merging, the routine waits for that `main` run and then runs
+`npm run smoke-test-live-site -- root https://www.enterpriseai.tools`. If either
+fails, it reports to a human at once; the rollback is a PR that reverts the
+squash commit.
