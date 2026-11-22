@@ -9,7 +9,8 @@
 (code + JSON data + tests + docs), runs the full local gate, opens a PR, and lets the
 `pr-reviewer` subagent iterate (max 3 rounds) before a human is paged.
 
-Weekly data-only updates go through `/radar` and the SOP in `AGENTS.md`. Both flows
+Weekly data-only updates go through `/radar` and the SOP in `.claude/commands/radar.md`
+(run weekly by a Claude Code routine; see its §8 for the only automated merge). Both flows
 end in `/ship-check` — the gate that mirrors CI exactly so nothing red ever reaches
 GitHub Actions.
 
@@ -25,7 +26,7 @@ GitHub Actions.
 | `public/` | Static assets (logos, favicons, robots/sitemap inputs) |
 | `docs/` | Architecture, ops, research, and audit notes |
 | `roadmap/` | Staged build plan, one milestone per file |
-| `directives/` | Operational SOPs (Radar weekly update flow, source-verification SOP) |
+| `directives/` | Operational SOPs (created on demand; the Radar SOP is `.claude/commands/radar.md`) |
 | `execution/` | Scripts that directives invoke (created on demand) |
 | `.claude/skills/` | Procedural techniques, auto-loaded by skill name |
 | `.claude/rules/` | Path-scoped conventions (data, routes, components) |
@@ -91,10 +92,11 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
 - Code milestones: `milestone/N-name`; weekly data updates: `content/YYYY-WW-radar`;
   ad-hoc fixes: `fix/short-description`
 - PR required; squash-merge
-- Production deploys: explicit `workflow_dispatch` or tag — never automatic on every
-  push to `main` once the gating is in place
+- Every push to `main` deploys to production (the Azure workflow runs on push), so
+  merging a PR is the release
 - The `pr-reviewer` subagent reviews every PR before a human is pinged (max 3
-  iterations; escalate if still red)
+  iterations; escalate if still red). Only the weekly Radar routine may merge its
+  own PR, under `.claude/commands/radar.md` §8
 - Full workflow: `docs/GIT-WORKFLOW.md`
 
 ## CI gates (always run locally first)
@@ -185,7 +187,8 @@ a successful Azure SWA upload.
 
 ## See also
 
-- `AGENTS.md` — Next.js 16 caveat + Radar weekly update SOP
+- `AGENTS.md` — Next.js 16 caveat
+- `.claude/commands/radar.md` — Radar weekly update SOP and the routine's merge gate
 - `README.md` — public project description
 - `data/SCHEMA.md` — canonical data contract
 - `DEPLOYMENT.md` — Azure SWA deploy and verification
