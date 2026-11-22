@@ -9,10 +9,10 @@
 (code + JSON data + tests + docs), runs the full local gate, opens a PR, and lets the
 `pr-reviewer` subagent iterate (max 3 rounds) before a human is paged.
 
-Weekly data-only updates go through `/radar` and the SOP in `.claude/commands/radar.md`
-(run weekly by a Claude Code routine; see its §8 for the only automated merge). Both flows
-end in `/ship-check` — the gate that mirrors CI exactly so nothing red ever reaches
-GitHub Actions.
+Weekly data-only updates go through `/radar` and the SOP in
+`.claude/commands/radar.md` (run weekly by a Claude Code routine; see its §8 for
+the only automated merge). Both flows end in `/ship-check` — the gate that
+mirrors CI exactly so nothing red ever reaches GitHub Actions.
 
 ## Project layout
 
