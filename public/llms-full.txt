@@ -1027,7 +1027,7 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ### NVIDIA NemoClaw
 - Page: https://www.enterpriseai.tools/tools/nvidia-nemoclaw/
 - Vendor: NVIDIA | Type: opensource | License: Apache 2.0
-- Status: active | Version: 0.0.145 | Last release: 2026-11-19
+- Status: active | Version: 0.0.145 | Last release: 2026-11-18
 - Open-source reference stack that runs always-on agents like OpenClaw inside NVIDIA OpenShell sandboxes with policy and managed inference.
 - Strengths: OpenShell sandbox with network policy; Credential custody outside the agent; Local or remote inference routing
 - Governance posture:

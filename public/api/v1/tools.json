@@ -8187,7 +8187,7 @@
       "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
       "pricingModel": "free",
       "status": "active",
-      "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.143 on November 10, 2026), although the GitHub Releases page lists none.",
+      "statusNote": "Alpha project per the README (checked November 22, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.145 on November 18, 2026), although the GitHub Releases page lists none.",
       "tags": [
         "governance",
         "sandboxing",
@@ -8195,7 +8195,7 @@
         "openclaw"
       ],
       "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Its alpha status and rapid 0.0.x release cadence make it a pilot tool, not a production control.",
-      "lastRelease": "2026-11-19",
+      "lastRelease": "2026-11-18",
       "logoKind": "fallback",
       "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
       "logoReviewedAt": "2026-09-30",

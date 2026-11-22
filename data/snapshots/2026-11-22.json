@@ -1,6 +1,6 @@
 {
   "snapshotDate": "2026-11-22",
-  "toolsLastUpdated": "2026-11-12",
+  "toolsLastUpdated": "2026-11-22",
   "tools": [
     {
       "id": "aembit-iam-for-agentic-ai",
@@ -3356,7 +3356,7 @@
       "category": "governance",
       "license": "Apache 2.0",
       "version": "0.0.145",
-      "lastRelease": "2026-11-19",
+      "lastRelease": "2026-11-18",
       "status": "active",
       "githubStars": null,
       "governance": {
