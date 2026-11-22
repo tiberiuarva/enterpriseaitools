@@ -80,6 +80,19 @@
       "impact": "medium"
     },
     {
+      "id": "update-2026-11-20-07",
+      "date": "2026-11-20",
+      "toolId": "arize-phoenix",
+      "toolName": "Arize Phoenix",
+      "category": "observability",
+      "type": "release",
+      "title": "Arize Phoenix 22.0.0 needs no migration steps",
+      "summary": "Arize Phoenix 22.0.0, released November 20, 2026, needs no manual migration steps per the project's migration guide. Version 22 calculates costs for decision and embedding spans; 22.0.1 followed on November 21, 2026.",
+      "sourceUrl": "https://github.com/Arize-ai/phoenix/blob/main/MIGRATION.md",
+      "sourceTitle": "Arize Phoenix migration guide",
+      "impact": "low"
+    },
+    {
       "id": "update-2026-11-19-01",
       "date": "2026-11-19",
       "toolId": "nemo-guardrails",

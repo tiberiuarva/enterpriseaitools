@@ -91,6 +91,20 @@
     </source>
   </entry>
   <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-07</id>
+    <title>Arize Phoenix 22.0.0 needs no migration steps</title>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-07" />
+    <summary>Arize Phoenix 22.0.0, released November 20, 2026, needs no manual migration steps per the project&apos;s migration guide. Version 22 calculates costs for decision and embedding spans; 22.0.1 followed on November 21, 2026.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="observability, release, low" />
+    <source>
+      <id>https://github.com/Arize-ai/phoenix/blob/main/MIGRATION.md</id>
+      <title>Arize Phoenix migration guide</title>
+      <link href="https://github.com/Arize-ai/phoenix/blob/main/MIGRATION.md" />
+    </source>
+  </entry>
+  <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-19-01</id>
     <title>NeMo Guardrails 0.25.0 adds a Gateway and drops Python 3.10</title>
     <updated>2026-11-19T00:00:00.000Z</updated>
