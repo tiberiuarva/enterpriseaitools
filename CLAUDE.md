@@ -34,7 +34,7 @@ GitHub Actions.
 | `.claude/agents/` | Specialised subagents (pr-reviewer, data-researcher, seo-auditor) |
 
 Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT.md`,
-`CUSTOM_DOMAIN.md`, `CHANGELOG.md`.
+`CUSTOM_DOMAIN.md`, `CONTRIBUTING.md`, `MILESTONES.md`.
 
 ## Tech stack
 
@@ -95,7 +95,8 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
 - Every push to `main` deploys to production (the Azure workflow runs on push), so
   merging a PR is the release
 - The `pr-reviewer` subagent reviews every PR before a human is pinged (max 3
-  iterations; escalate if still red). Only the weekly Radar routine may merge its
+  iterations; escalate if still red; the scheduled Radar routine runs it on two
+  models, 5 passes each, per `.claude/commands/radar.md` §7). Only the weekly Radar routine may merge its
   own PR, under `.claude/commands/radar.md` §8
 - Full workflow: `docs/GIT-WORKFLOW.md`
 
@@ -106,24 +107,26 @@ find a lint error is wasteful.
 
 | Gate | Command |
 |---|---|
+| Logo provenance | `npm run check-logo-provenance` && `npm run check-logo-audit-report` |
 | Color literals | `npm run check-color-literals` |
 | Lint | `npm run lint` |
 | Typecheck | `npx tsc --noEmit` |
-| Unit tests | `npm run test:eu-ai-act` (plus any new `node --test` suites under `lib/`) |
-| Build | `npm run build` (runs `generate-seo-artifacts`, `next build`, `check-static-export-image-paths`) |
-| SEO readiness | `npm run check-seo-readiness` |
+| Governance data | `npm run check-governance-data` |
 | Updates data | `npm run check-updates-data` |
-| Tool card data | `npm run check-tool-card-data` |
-| Logo provenance | `npm run check-logo-provenance` && `npm run check-logo-audit-report` |
+| Unit tests | `npm test` in CI (every `lib/*.test.ts`); `/ship-check` runs `npm run test:eu-ai-act` |
+| Build | `npm run build` (runs `generate-seo-artifacts`, `next build`, `check-static-export-image-paths`) |
 | Generated artifacts | `npm run check-generated-artifacts` |
 | Open-data artifacts | `npm run check-open-data` |
-| Deploy readiness | `npm run check-deploy-readiness` |
+| SEO readiness | `npm run check-seo-readiness` |
+| Tool card data | `npm run check-tool-card-data` |
+| Deploy readiness | `npm run check-deploy-readiness` (local only; not a CI step) |
 
-`/ship-check` runs them in order and stops on the first failure.
+`/ship-check` runs them in this order (see `.claude/commands/ship-check.md`) and
+stops on the first failure.
 
 Coverage thresholds (when added to a test runner): 70% lines/functions/statements,
-65% branches on `lib/**`. The deploy job is gated on every check above passing plus
-a successful Azure SWA upload.
+65% branches on `lib/**`. The deploy step runs only after every CI check above
+passes (all except `check-deploy-readiness`, which is local-only).
 
 ## Token budget rules
 
@@ -196,5 +199,4 @@ a successful Azure SWA upload.
 - `AUDIT.md` — open-issue audit log
 - `docs/GIT-WORKFLOW.md` — branching, PR, review flow
 - `roadmap/README.md` — milestone catalogue
-- `CHANGELOG.md` — shipped changes
 - `.claude/skills/`, `.claude/rules/`, `.claude/commands/`, `.claude/agents/`
