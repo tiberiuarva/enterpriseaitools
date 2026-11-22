@@ -96,8 +96,8 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
   merging a PR is the release
 - The `pr-reviewer` subagent reviews every PR before a human is pinged (max 3
   iterations; escalate if still red; the scheduled Radar routine runs it on two
-  models, 5 passes each, per `.claude/commands/radar.md` §7). Only the weekly Radar routine may merge its
-  own PR, under `.claude/commands/radar.md` §8
+  models, 5 passes each, per `.claude/commands/radar.md` §7). Only the weekly
+  Radar routine may merge its own PR, under `.claude/commands/radar.md` §8
 - Full workflow: `docs/GIT-WORKFLOW.md`
 
 ## CI gates (always run locally first)
