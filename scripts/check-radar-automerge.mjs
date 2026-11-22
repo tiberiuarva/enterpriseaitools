@@ -9,8 +9,12 @@
 // on the pushed head after `git fetch origin main`, with a clean working tree.
 // The routine must run main's copy, not the head's, so a PR cannot weaken the
 // gate that judges it (radar.md §8):
-//   git show origin/main:scripts/check-radar-automerge.mjs > "${TMPDIR:-/tmp}/radar-gate.mjs"
-//   node "${TMPDIR:-/tmp}/radar-gate.mjs" origin/main
+//   set -euo pipefail
+//   gate="${TMPDIR:-/tmp}/radar-gate.mjs"
+//   git show origin/main:scripts/check-radar-automerge.mjs > "$gate"
+//   test -s "$gate"
+//   node "$gate" origin/main | tee /dev/stderr | grep -q '^Radar auto-merge gate: PASS'
+// Anything but exit 0 with the PASS line blocks the merge.
 //
 // Usage: node scripts/check-radar-automerge.mjs [baseRef]   (default origin/main)
 import { execFileSync } from "node:child_process";
@@ -93,16 +97,19 @@ for (const path of addedPaths) {
 
 // A Radar run may only mirror a vendor rename into the logo inventory.
 if (changedPaths.includes("data/logo-inventory.json")) {
+  // Keyed like check-logo-provenance.mjs; a duplicate key would hide an item.
   const byName = (rev) => {
     const items = readJsonAt(rev, "data/logo-inventory.json")?.items;
     if (!Array.isArray(items)) throw new Error(`${rev.slice(0, 12)}:data/logo-inventory.json has no "items" array`);
-    return new Map(
-      items.map((item) => {
-        const rest = { ...item };
-        delete rest.vendor;
-        return [item.name, rest];
-      }),
-    );
+    const map = new Map();
+    for (const item of items) {
+      const key = `${item?.category}:${item?.name}`;
+      if (map.has(key)) throw new Error(`${rev.slice(0, 12)}:data/logo-inventory.json has duplicate item: ${key}`);
+      const rest = { ...item };
+      delete rest.vendor;
+      map.set(key, rest);
+    }
+    return map;
   };
   const before = byName(base);
   const after = byName("HEAD");

@@ -140,11 +140,15 @@ Radar PR, but only when all of these hold on the current head SHA:
   on the pushed head, with a clean working tree:
 
   ```bash
-  git show origin/main:scripts/check-radar-automerge.mjs > "${TMPDIR:-/tmp}/radar-gate.mjs"
-  node "${TMPDIR:-/tmp}/radar-gate.mjs" origin/main
+  set -euo pipefail
+  gate="${TMPDIR:-/tmp}/radar-gate.mjs"
+  git show origin/main:scripts/check-radar-automerge.mjs > "$gate"
+  test -s "$gate"
+  node "$gate" origin/main | tee /dev/stderr | grep -q '^Radar auto-merge gate: PASS'
   ```
 
-  If the script is not on `origin/main`, do not merge. The gate fails when
+  The merge needs exit 0 and the `Radar auto-merge gate: PASS` line;
+  anything else, including a script missing on `origin/main`, blocks it. The gate fails when
   the diff touches any path other than `data/tools.json`,
   `data/platforms.json`, `data/updates.json`, `data/eu-ai-act.json`,
   `data/eu-ai-act-obligations.json`, `data/snapshot-diffs.json`,
