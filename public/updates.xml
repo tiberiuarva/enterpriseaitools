@@ -92,7 +92,7 @@
   </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-20-07</id>
-    <title>Arize Phoenix 22.0.0 needs no migration steps</title>
+    <title>Arize Phoenix 22.0.0 adds cost tracking for decision and embedding spans</title>
     <updated>2026-11-20T00:00:00.000Z</updated>
     <link href="https://www.enterpriseai.tools/updates/#update-2026-11-20-07" />
     <summary>Arize Phoenix 22.0.0, released November 20, 2026, calculates costs for decision and embedding spans. The release links migration notes for upgrading from v21, and the project&apos;s migration guide lists no manual steps.</summary>
