@@ -87,9 +87,9 @@
       "category": "observability",
       "type": "release",
       "title": "Arize Phoenix 22.0.0 needs no migration steps",
-      "summary": "Arize Phoenix 22.0.0, released November 20, 2026, needs no manual migration steps per the project's migration guide. Version 22 calculates costs for decision and embedding spans; 22.0.1 followed on November 21, 2026.",
-      "sourceUrl": "https://github.com/Arize-ai/phoenix/blob/main/MIGRATION.md",
-      "sourceTitle": "Arize Phoenix migration guide",
+      "summary": "Arize Phoenix 22.0.0, released November 20, 2026, calculates costs for decision and embedding spans. The release links migration notes for upgrading from v21, and the project's migration guide lists no manual steps.",
+      "sourceUrl": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v22.0.0",
+      "sourceTitle": "Release arize-phoenix: v22.0.0 · Arize-ai/phoenix",
       "impact": "low"
     },
     {
