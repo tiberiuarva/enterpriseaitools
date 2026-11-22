@@ -11,8 +11,9 @@
 
 Weekly data-only updates go through `/radar` and the SOP in
 `.claude/commands/radar.md` (run weekly by a Claude Code routine; see its §8 for
-the only automated merge). Both flows end in `/ship-check` — the gate that
-mirrors CI exactly so nothing red ever reaches GitHub Actions.
+the only automated merge). Both flows end in `/ship-check` — the local gate that
+runs every CI check (see the CI gates table for where it differs) so nothing red
+ever reaches GitHub Actions.
 
 ## Project layout
 
@@ -97,7 +98,7 @@ Root docs already in the repo: `README.md`, `AGENTS.md`, `AUDIT.md`, `DEPLOYMENT
 - The `pr-reviewer` subagent reviews every PR before a human is pinged (max 3
   iterations; escalate if still red; the scheduled Radar routine runs it on two
   models, 5 passes each, per `.claude/commands/radar.md` §7). Only the weekly
-  Radar routine may merge its own PR, under `.claude/commands/radar.md` §8
+  Radar routine may merge its own PR, under `.claude/commands/radar.md` §8.
 - Full workflow: `docs/GIT-WORKFLOW.md`
 
 ## CI gates (always run locally first)
