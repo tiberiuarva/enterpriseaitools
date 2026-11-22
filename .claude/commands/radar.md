@@ -22,7 +22,9 @@ npm run check-data-freshness
 Tools whose `governance.reviewedAt` is older than the documented freshness
 threshold are listed in age order. Re-verify those first during research so the
 weekly scan stays on top of records that have not been spot-checked recently.
-Informational gate — does not block the run.
+Informational gate — does not block the run. The scheduled routine only lists
+the stale records in its PR body; re-reviewing governance postures and
+rotating `reviewedAt` stay with a human.
 
 ## 1c. EU AI Act freshness check (M7)
 
@@ -155,12 +157,18 @@ Radar PR, but only when all of these hold on the current head SHA:
   `data/logo-inventory.json` (vendor mirroring only), `data/snapshots/*.json`
   and the build-generated `public/` artifacts (feeds, sitemap, `robots.txt`,
   `llms.txt`, `llms-full.txt`, `eu-ai-act-deadlines.ics`, `public/data/`,
-  `public/api/`). So `data/SCHEMA.md`, `data/comparison-slugs.json`, new
-  data files and logo images wait for a human. It also fails when the diff
-  adds or removes a tool or platform record; changes any `license`,
-  `licenseWarning`, `licenseHistory`, `type`, `governance.licenseRisk`,
-  `logoKind`, `logoUrl`, `logoSourceUrl` or `logoReviewedAt` value; or adds,
-  edits or removes a `license-change` entry in `data/updates.json`;
+  `public/api/v1/`). Renames are counted as a delete plus an add. So
+  `data/SCHEMA.md`, `data/comparison-slugs.json`, new data files and logo
+  images wait for a human. It also fails when the diff adds or removes a tool
+  or platform record; changes any `license`, `licenseWarning`,
+  `licenseHistory`, `type`, `governance.licenseRisk`, `logoKind`, `logoUrl`,
+  `logoSourceUrl` or `logoReviewedAt` value; changes a logo-inventory item
+  beyond its `vendor` (so tool or platform renames and category moves, which
+  change the inventory key, wait for a human); edits or removes an existing
+  snapshot (snapshots are add-only); changes or removes an existing event in
+  `data/snapshot-diffs.json`, or adds one whose field is `license`, `tracked`
+  or `governance.licenseRisk*`; or adds, edits or removes a `license-change`
+  entry in `data/updates.json`;
 - `pr-reviewer` on Opus, then on Fable, each returned
   `VERDICT: APPROVED (clean)` on this head. Clean means zero findings of any
   class, suggestions and nits included. Any commit pushed after an approval
@@ -170,7 +178,8 @@ Radar PR, but only when all of these hold on the current head SHA:
   conclusion `success` (not pending, not missing);
 - the PR is mergeable.
 
-The squash-merge is pinned to the SHA the gate and both reviewers judged
+The gate's PASS line prints `head=<sha>`. That SHA must equal the PR's head
+SHA from the GitHub API, and the squash-merge is pinned to it
 (`expectedHeadSha` in the GitHub API, or `--match-head-commit <sha>` with
 `gh pr merge`), so a later push cannot ride along unreviewed. Otherwise it
 stops and reports to a human. Manual `/radar` runs never merge

@@ -24,14 +24,14 @@ const baseRef = process.argv[2] ?? "origin/main";
 // Only files a Radar run edits. data/SCHEMA.md, data/comparison-slugs.json (it
 // defines routes), any new data file and hand-maintained public/ files stay with
 // a human; the public/ entries are the build-generated feeds, sitemap, llms
-// files, open-data JSON and api/ tree.
+// files, open-data JSON and public/api/v1/ tree.
 const ALLOWED_PATHS = [
   /^data\/(tools|platforms|updates|eu-ai-act|eu-ai-act-obligations|snapshot-diffs|logo-inventory)\.json$/,
   /^data\/snapshots\/[^/]+\.json$/,
   /^public\/(sitemap\.xml|robots\.txt|llms\.txt|llms-full\.txt|eu-ai-act-deadlines\.ics)$/,
   /^public\/updates(-[a-z-]+)?\.xml$/,
   /^public\/data\/[^/]+\.json$/,
-  /^public\/api\//,
+  /^public\/api\/v1\//,
 ];
 const GUARDED_FIELDS = [
   "license",
@@ -45,7 +45,7 @@ const GUARDED_FIELDS = [
 ];
 
 function git(args) {
-  return execFileSync("git", args, { encoding: "utf8" });
+  return execFileSync("git", ["-c", "core.quotePath=off", ...args], { encoding: "utf8" });
 }
 
 function fail(problems) {
@@ -84,15 +84,47 @@ function recordsById(rev, path, key) {
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const problems = [];
 
-const changedPaths = git(["diff", "--name-only", `${base}..HEAD`]).split("\n").filter(Boolean);
+// --no-renames: a rename would otherwise list only its destination and hide
+// the deletion of a path outside the allowlist.
+const nameStatus = git(["diff", "--no-renames", "--name-status", `${base}..HEAD`])
+  .split("\n")
+  .filter(Boolean)
+  .map((line) => {
+    const [status, path] = line.split("\t");
+    return { status, path };
+  });
+const changedPaths = nameStatus.map(({ path }) => path);
 for (const path of changedPaths) {
   if (!ALLOWED_PATHS.some((pattern) => pattern.test(path))) problems.push(`path not allowed for auto-merge: ${path}`);
 }
 
-const NEW_FILE_ALLOWED = [/^data\/snapshots\/[^/]+\.json$/, /^public\/api\//];
-const addedPaths = git(["diff", "--name-only", "--diff-filter=A", `${base}..HEAD`]).split("\n").filter(Boolean);
-for (const path of addedPaths) {
-  if (!NEW_FILE_ALLOWED.some((pattern) => pattern.test(path))) problems.push(`new file not allowed for auto-merge: ${path}`);
+const NEW_FILE_ALLOWED = [/^data\/snapshots\/[^/]+\.json$/, /^public\/api\/v1\//];
+for (const { status, path } of nameStatus) {
+  if (status === "A" && !NEW_FILE_ALLOWED.some((pattern) => pattern.test(path))) problems.push(`new file not allowed for auto-merge: ${path}`);
+  // Snapshot history is add-only.
+  if (status !== "A" && /^data\/snapshots\//.test(path)) problems.push(`existing snapshot changed or removed: ${path}`);
+}
+
+// snapshot-diffs.json is rendered on /updates; history must not change and no
+// new event may carry a licence or tracking change.
+if (changedPaths.includes("data/snapshot-diffs.json")) {
+  const events = (rev) => {
+    const list = readJsonAt(rev, "data/snapshot-diffs.json")?.events;
+    if (!Array.isArray(list)) throw new Error(`${rev.slice(0, 12)}:data/snapshot-diffs.json has no "events" array`);
+    return list;
+  };
+  const key = (event) => JSON.stringify(Object.keys(event).sort().map((k) => [k, event[k]]));
+  const afterEvents = events("HEAD");
+  const afterKeys = new Set(afterEvents.map(key));
+  const beforeKeys = new Set(events(base).map(key));
+  for (const k of beforeKeys) if (!afterKeys.has(k)) problems.push(`data/snapshot-diffs.json: existing event changed or removed: ${k}`);
+  for (const event of afterEvents) {
+    if (beforeKeys.has(key(event))) continue;
+    const field = String(event?.field ?? "");
+    if (field === "license" || field === "tracked" || field.startsWith("governance.licenseRisk")) {
+      problems.push(`data/snapshot-diffs.json: new ${field} event for ${event?.toolId}`);
+    }
+  }
 }
 
 // A Radar run may only mirror a vendor rename into the logo inventory.
@@ -146,4 +178,5 @@ for (const id of new Set([...oldUpdates.keys(), ...newUpdates.keys()])) {
 }
 
 if (problems.length > 0) fail(problems);
-console.log(`Radar auto-merge gate: PASS (HEAD vs merge-base ${base.slice(0, 12)} of ${baseRef}; ${changedPaths.length} changed paths, all allowed).`);
+const head = git(["rev-parse", "HEAD"]).trim();
+console.log(`Radar auto-merge gate: PASS head=${head} (vs merge-base ${base.slice(0, 12)} of ${baseRef}; ${changedPaths.length} changed paths, all allowed).`);
