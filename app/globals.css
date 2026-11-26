@@ -556,9 +556,32 @@ code {
   }
   .vo-leader {
     fill: none;
-    stroke: var(--color-border-strong);
-    stroke-width: 1;
-    transition: stroke var(--motion-fast) var(--ease-out);
+    stroke: color-mix(in srgb, var(--color-accent) 55%, var(--color-text-tertiary));
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition:
+      stroke var(--motion-fast) var(--ease-out),
+      stroke-width var(--motion-fast) var(--ease-out);
+  }
+  .vo-leader-dot {
+    fill: var(--color-bg-card);
+    stroke: color-mix(in srgb, var(--color-accent) 70%, var(--color-text-tertiary));
+    stroke-width: 2;
+  }
+  .vo-tower:has([data-for="1"]:is(:hover, :focus-visible)) [data-leader="1"],
+  .vo-tower:has([data-for="2"]:is(:hover, :focus-visible)) [data-leader="2"],
+  .vo-tower:has([data-for="3"]:is(:hover, :focus-visible)) [data-leader="3"],
+  .vo-tower:has([data-for="4"]:is(:hover, :focus-visible)) [data-leader="4"],
+  .vo-tower:has([data-for="5"]:is(:hover, :focus-visible)) [data-leader="5"],
+  .vo-tower:has([data-for="6"]:is(:hover, :focus-visible)) [data-leader="6"] {
+    --leader: var(--color-accent);
+  }
+  [data-leader] .vo-leader {
+    stroke: var(--leader, color-mix(in srgb, var(--color-accent) 55%, var(--color-text-tertiary)));
+  }
+  [data-leader] .vo-leader-dot {
+    stroke: var(--leader, color-mix(in srgb, var(--color-accent) 70%, var(--color-text-tertiary)));
   }
   .vo-label {
     position: absolute;
@@ -635,10 +658,10 @@ code {
   .vo-lens input:focus-visible + label {
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
   }
-  [data-lens-count] {
+  .vo-hero [data-lens-count] {
     display: none;
   }
-  [data-lens-count="all"] {
+  .vo-hero [data-lens-count="all"] {
     display: inline;
   }
   .vo-hero:has(.vo-lens input:checked:not([value="all"])) [data-lens-count="all"] {
@@ -892,7 +915,7 @@ code {
     scroll-snap-align: start;
   }
   .vo-fade-x {
-    mask-image: linear-gradient(90deg, transparent, #000 1.5rem, #000 calc(100% - 2.5rem), transparent);
+    mask-image: linear-gradient(90deg, transparent, black 1.5rem, black calc(100% - 2.5rem), transparent);
   }
 
   /* Compact catalog cards (repeated ~170 times: keep the class list short) */

@@ -206,8 +206,18 @@ export function toPercent(point: Point, viewBox: TowerLayout["viewBox"]): { left
   };
 }
 
+// The vendor's flagship product line, named after its model family ("Claude
+// models" → "Claude"), so page copy can say "ways to get Claude" without
+// hardcoding a vendor. Falls back to the vendor name.
+export function flagshipName(overview: Pick<VendorOverview, "name" | "domains">): string {
+  const models = overview.domains.find((domain) => domain.cluster === "products" && / models$/i.test(domain.label));
+  return models ? models.label.replace(/ models$/i, "") : overview.name;
+}
+
 // ── Audience lens ──────────────────────────────────────────────────────────
 
+// The lens ids are mirrored by static :has(#lens-<id>:checked) rules in
+// app/globals.css (search "Audience lens"); add a rule there for any new id.
 export const LENSES = [
   { id: "developers", label: "Developers", audiences: ["developers"], catalogAudience: "developers" },
   { id: "enterprise", label: "Enterprise & IT", audiences: ["enterprise", "admins"], catalogAudience: "enterprise" },

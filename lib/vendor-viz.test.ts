@@ -3,7 +3,9 @@ import { readFileSync } from "node:fs";
 import { describe, test } from "node:test";
 import type { VendorModel, VendorOverview, VendorTimelineEvent } from "./types.ts";
 import {
+  LENSES,
   audienceLens,
+  flagshipName,
   availabilityByChannel,
   governanceSummary,
   groupBreakdown,
@@ -134,6 +136,26 @@ describe("audienceLens", () => {
     assert.equal(domains.get("a")?.byLens.developers, 1);
     assert.equal(domains.get("b")?.byLens.public, 1);
     assert.equal(totals.enterprise, 2);
+  });
+});
+
+describe("LENSES", () => {
+  test("ids match the static lens rules in app/globals.css", () => {
+    const css = readFileSync(new URL("../app/globals.css", import.meta.url), "utf8");
+    assert.deepEqual(LENSES.map((lens) => lens.id), ["developers", "enterprise", "everyone", "researchers", "public"]);
+    for (const lens of LENSES) {
+      assert.ok(css.includes(`#lens-${lens.id}:checked) [data-lens-count="${lens.id}"]`), `missing count rule for ${lens.id}`);
+      assert.ok(css.includes(`#lens-${lens.id}:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-${lens.id}`), `missing dim rule for ${lens.id}`);
+    }
+  });
+});
+
+describe("flagshipName", () => {
+  test("derives the product line from the models family", () => {
+    assert.equal(flagshipName({ name: "Anthropic", domains: [{ cluster: "products", label: "Claude models" }] } as never), "Claude");
+  });
+  test("falls back to the vendor name", () => {
+    assert.equal(flagshipName({ name: "Acme", domains: [{ cluster: "products", label: "Tools" }] } as never), "Acme");
   });
 });
 

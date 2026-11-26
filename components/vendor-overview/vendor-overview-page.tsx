@@ -13,6 +13,7 @@ import { RelatedUpdates, SourceList } from "./panels";
 import { OverviewSection } from "./primitives";
 import { SectionNav, type SectionNavCluster } from "./section-nav";
 import { StackHero } from "./stack-hero";
+import { flagshipName } from "@/lib/vendor-viz";
 import { AslSteps, ChannelTree, CompanyBand, DomainTiles, EcosystemOrbit, PlanTags, RoadmapHorizon, TimelineRiver, TrustWall } from "./visuals";
 
 type Props = {
@@ -33,6 +34,9 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   const domain = (id: string) => overview.domains.find((candidate) => candidate.id === id);
   const toolLinks = overview.entries.filter((entry) => entry.toolId);
   const industries = domain("industry-solutions");
+  const flagship = flagshipName(overview);
+  const modelsDomain = domain("claude-models") ?? overview.domains.find((item) => item.cluster === "products");
+  const batch = overview.entries.find((entry) => entry.id === "batch-api");
 
   const clusters: SectionNavCluster[] = [
     { label: "Overview", links: [{ id: "overview", label: "The stack" }] },
@@ -47,7 +51,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
       ],
     },
     {
-      label: "Beyond Claude",
+      label: `Beyond ${flagship}`,
       links: [
         { id: "ecosystem", label: "Ecosystem" },
         { id: "company-partners", label: "Company" },
@@ -120,20 +124,20 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
 
       <SectionNav clusters={clusters} />
 
-      <OverviewSection id="claude-models" eyebrow="Models" title="Every Claude model, on one map" intro={domain("claude-models")?.intro}>
+      <OverviewSection id="claude-models" eyebrow="Models" title={`Every ${flagship} model, on one map`} intro={modelsDomain?.intro}>
         <div className="flex flex-col gap-10">
-          <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} />
-          <PriceLadder models={overview.models} />
+          <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} label={`${flagship} model`} />
+          <PriceLadder models={overview.models} footnote={batch ? { text: `${batch.name}: ${batch.description}`, sourceUrl: batch.sourceUrl } : undefined} />
         </div>
       </OverviewSection>
 
       <OverviewSection
         id="availability"
         eyebrow="Where to run"
-        title={`${overview.availability.length} ways to get Claude`}
+        title={`${overview.availability.length} ways to get ${flagship}`}
         intro="Buy direct, run it inside your cloud, or use it inside products you already have. Who operates the service decides who processes your data."
       >
-        <ChannelTree availability={overview.availability} />
+        <ChannelTree availability={overview.availability} hub={flagship} />
       </OverviewSection>
 
       <OverviewSection id="pricing" eyebrow="Plans" title="What it costs" intro="List prices in US dollars, as published. Each plan links to the page it was checked against.">
@@ -178,11 +182,11 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
 
       <OverviewSection
         id="ecosystem"
-        eyebrow="Beyond Claude"
+        eyebrow={`Beyond ${flagship}`}
         title={`What surrounds the products`}
         intro={`${overview.name} also writes open standards, publishes research and safety policy, and runs programs for learners, scientists and partners.`}
       >
-        <EcosystemOrbit overview={overview} counts={counts} />
+        <EcosystemOrbit overview={overview} counts={counts} flagship={flagship} />
       </OverviewSection>
 
       <OverviewSection id="company-partners" eyebrow="Company" title={`${overview.name}, the company`} intro={domain("company-partners")?.tagline}>
@@ -256,7 +260,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
       <div id="faq" className="scroll-mt-[calc(var(--site-header-height)+4rem)]">
         <HubFaqs
           faqs={overview.faqs.map((faq) => ({ question: faq.question, answer: faq.answer }))}
-          title={`Questions about ${overview.name} and Claude`}
+          title={`Questions about ${overview.name} and ${flagship}`}
           headingId="faq-heading"
         />
       </div>

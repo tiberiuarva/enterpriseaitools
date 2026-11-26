@@ -50,12 +50,12 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
 
         <dl className="grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5">
           {stats.map((stat) => (
-            <div key={stat.label} className="min-w-0">
-              <dd className="text-[2rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)]">
+            <div key={stat.label} className="flex min-w-0 flex-col-reverse">
+              <dt className="text-caption leading-tight text-[var(--color-text-secondary)]">{stat.label}</dt>
+              <dd className="mb-1.5 text-[2rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)]">
                 <span aria-hidden="true" className="vo-count" style={{ "--to": stat.value } as CSSProperties} />
                 <span className="sr-only">{stat.value}</span>
               </dd>
-              <dt className="mt-1.5 text-caption leading-tight text-[var(--color-text-secondary)]">{stat.label}</dt>
             </div>
           ))}
         </dl>
@@ -129,9 +129,12 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
               </a>
             </g>
           ))}
-          {[...tower.slabs.map((slab) => ({ from: slab.anchor, to: slab.label, key: slab.domainId })), { from: tower.baseAnchor, to: tower.baseLabel, key: "base" }].map(
-            ({ from, to, key }) => (
-              <polyline key={key} className="vo-leader hidden sm:inline" points={`${from[0] + 4},${from[1]} ${to[0] - 22},${to[1]} ${to[0] - 6},${to[1]}`} />
+          {[...tower.slabs.map((slab) => ({ from: slab.anchor, to: slab.label, key: slab.domainId, slot: String(slab.slot) })), { from: tower.baseAnchor, to: tower.baseLabel, key: "base", slot: "base" }].map(
+            ({ from, to, key, slot }) => (
+              <g key={key} data-leader={slot} className="hidden sm:inline">
+                <polyline className="vo-leader" points={`${from[0] + 3},${from[1]} ${to[0] - 26},${to[1]} ${to[0] - 8},${to[1]}`} />
+                <circle className="vo-leader-dot" cx={from[0] + 3} cy={from[1]} r={3.5} />
+              </g>
             ),
           )}
         </svg>

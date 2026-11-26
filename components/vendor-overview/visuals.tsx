@@ -35,13 +35,13 @@ const year = (date: string | undefined) => (date ? date.slice(0, 4) : null);
 
 // ── Where to run: a tree from Claude to every channel ─────────────────────
 
-export function ChannelTree({ availability }: { availability: VendorAvailability[] }) {
+export function ChannelTree({ availability, hub }: { availability: VendorAvailability[]; hub: string }) {
   const groups = availabilityByChannel(availability);
   return (
     <div className="flex flex-col items-stretch">
       <div className="flex justify-center">
         <span className="vo-orbit-core inline-flex items-center gap-2 rounded-full px-6 py-3 text-lg font-semibold text-[var(--color-text-inverse)]">
-          Claude
+          {hub}
           <span className="rounded-full bg-[color-mix(in_srgb,var(--color-text-inverse)_18%,transparent)] px-2 py-0.5 text-xs tabular-nums">
             {availability.length} ways in
           </span>
@@ -300,7 +300,7 @@ const CORNERS = [
   { side: "left", vertical: "top", anchor: [204, 58] },
 ] as const;
 
-export function EcosystemOrbit({ overview, counts }: { overview: VendorOverview; counts: Record<string, number> }) {
+export function EcosystemOrbit({ overview, counts, flagship }: { overview: VendorOverview; counts: Record<string, number>; flagship: string }) {
   const domains = overview.domains.filter((domain) => domain.cluster === "ecosystem");
   const chips = domains.map((domain) => headlineEntries(overview.entries, domain.id, 3));
   const cx = ORBIT.width / 2;
@@ -348,7 +348,7 @@ export function EcosystemOrbit({ overview, counts }: { overview: VendorOverview;
           </svg>
           <div className="vo-orbit-core absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full text-center text-[var(--color-text-inverse)]">
             <span className="text-xl font-semibold">{overview.name}</span>
-            <span className="text-xs opacity-80">and Claude</span>
+            <span className="text-xs opacity-80">and {flagship}</span>
           </div>
           {domains.map((domain, index) => {
             const corner = CORNERS[index];

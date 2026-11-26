@@ -57,7 +57,7 @@ function StationCard({ model }: { model: VendorModel }) {
   );
 }
 
-export function ModelMap({ models, today, statusSource }: { models: VendorModel[]; today: string; statusSource?: SourceRef }) {
+export function ModelMap({ models, today, statusSource, label }: { models: VendorModel[]; today: string; statusSource?: SourceRef; label: string }) {
   const map = modelMap(models, today);
   const laneIndex = new Map(map.lanes.map((lane, index) => [lane.tier, index]));
   const current = models.filter((model) => model.status === "current").length;
@@ -76,7 +76,7 @@ export function ModelMap({ models, today, statusSource }: { models: VendorModel[
         {statusSource ? <SourceLink href={statusSource.sourceUrl} label={`Status: ${statusSource.sourceTitle ?? "source"}`} /> : null}
       </div>
 
-      <div role="region" aria-label="Claude model map, scrolls horizontally" tabIndex={0} className="vo-fade-x vo-scroll-end relative -mx-2 overflow-x-auto px-2 pb-2">
+      <div role="region" aria-label={`${label} map, scrolls horizontally`} tabIndex={0} className="vo-fade-x vo-scroll-end relative -mx-2 overflow-x-auto px-2 pb-2">
         <div className="relative min-w-[1040px]" style={{ height: `${map.lanes.length * LANE_H + 40}px` }}>
           {/* Year grid, today line and same-day interchanges sit behind the lanes. */}
           <div aria-hidden="true" className="absolute inset-y-0 left-24 right-6">
@@ -86,8 +86,8 @@ export function ModelMap({ models, today, statusSource }: { models: VendorModel[
               </div>
             ))}
             <div className="absolute bottom-0 top-6 border-l-2 border-dashed border-[var(--color-accent)]" style={{ left: `${map.today}%` }}>
-              <span className="absolute -left-5 -top-6 rounded-full bg-[var(--color-accent)] px-2 py-0.5 text-[0.6875rem] font-semibold text-[var(--color-text-inverse)]">
-                Today
+              <span className="absolute -right-1 -top-6 whitespace-nowrap rounded-full bg-[var(--color-accent)] px-2 py-0.5 text-[0.6875rem] font-semibold text-[var(--color-text-inverse)]">
+                As of {formatPartialDate(today)}
               </span>
             </div>
             {map.interchanges.map((change) => {
@@ -143,7 +143,7 @@ export function ModelMap({ models, today, statusSource }: { models: VendorModel[
         </div>
       </div>
       <p className="text-caption text-[var(--color-text-tertiary)]">
-        {models.length} models on {map.lanes.length} lines, {current} current. Hover or focus a station for dates, context and price.
+        {models.length} models on {map.lanes.length} lines, {current} current. Hover or focus a station for dates, context and price; every detail is also in the tables below.
       </p>
       <details className="group">
         <summary className="inline-flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
@@ -157,7 +157,7 @@ export function ModelMap({ models, today, statusSource }: { models: VendorModel[
   );
 }
 
-export function PriceLadder({ models }: { models: VendorModel[] }) {
+export function PriceLadder({ models, footnote }: { models: VendorModel[]; footnote?: { text: string; sourceUrl: string } }) {
   const ladder = priceLadder(models);
   if (ladder.rows.length === 0) return null;
   return (
@@ -215,7 +215,13 @@ export function PriceLadder({ models }: { models: VendorModel[] }) {
       <p className="text-caption text-[var(--color-text-tertiary)]">
         US dollars per million tokens, API list price.
         {ladder.sharedContext ? ` Every current model has a ${ladder.sharedContext} context window` : ""}
-        {ladder.sharedContext && ladder.sharedOutput ? ` and up to ${ladder.sharedOutput} output tokens.` : ladder.sharedContext ? "." : ""} Batch processing is half price.
+        {ladder.sharedContext && ladder.sharedOutput ? ` and up to ${ladder.sharedOutput} output tokens.` : ladder.sharedContext ? "." : ""}
+        {footnote ? (
+          <>
+            {" "}
+            {footnote.text} <SourceLink href={footnote.sourceUrl} />
+          </>
+        ) : null}
       </p>
     </div>
   );
