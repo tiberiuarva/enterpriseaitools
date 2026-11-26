@@ -134,6 +134,8 @@ export function ModelLineage({ models, statusSource, label }: { models: VendorMo
                   <th scope="row" className="px-3 py-2.5 text-left font-medium text-[var(--color-text-primary)]">
                     {model.name}
                     {model.apiId ? <code className="mt-0.5 block text-xs font-normal text-[var(--color-text-tertiary)]">{model.apiId}</code> : null}
+                    {/* The note carries conditions on the listed price (e.g. a prompt-size tier), so it sits with the row. */}
+                    {model.highlight ? <span className="mt-1 block max-w-xs text-xs font-normal leading-5 text-[var(--color-text-secondary)]">{model.highlight}</span> : null}
                   </th>
                   <td className="px-3 py-2.5">
                     <span className={`badge-dot ${STATUS_DOT[model.status]} whitespace-nowrap`}>
