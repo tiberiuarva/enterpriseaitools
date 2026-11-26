@@ -1,7 +1,7 @@
 # Rules for `data/*.json`
 
 Applies to: `data/tools.json`, `data/platforms.json`, `data/updates.json`,
-`data/eu-ai-act.json`, `data/logo-inventory.json`.
+`data/eu-ai-act.json`, `data/logo-inventory.json`, `data/stacks/<vendor>.json`.
 
 Always pair with the `schema-discipline` and `source-provenance` skills.
 
@@ -26,6 +26,13 @@ Always pair with the `schema-discipline` and `source-provenance` skills.
 8. **Numbers are numbers.** `githubStars: 19002`, not `"19,002"` or `"19k"`.
 9. **No comments in JSON.** The schema doc explains the field; the data file
    is data.
+
+10. **Vendor overviews (`data/stacks/<vendor>.json`).** Every entry, model,
+    event, plan, channel, safety level, roadmap item and company fact carries
+    its own `sourceUrl` + `verifiedAt`, on a host in `primarySourceHosts`.
+    The cited page must back the specific claim — dates, prices and numbers
+    included — or the claim is dropped. Roadmap items are vendor-stated only.
+    Run `npm run check-stack-data`.
 
 ## Common mistakes to flag
 

@@ -147,8 +147,21 @@ Acceptance:
 - LCP and CLS targets met on a representative page test (homepage + a per-tool page).
 Depends on: none.
 
+## M13 — Vendor stack overviews, starting with Anthropic  [ ] in review
+Goal: one page per vendor that answers "what does this company offer, how did it get here, and what is next", source-backed claim by claim. Anthropic first; the schema is vendor-neutral so Microsoft, AWS and Google can follow without a route change.
+In scope:
+- `data/stacks/<vendor>.json` (contract in `data/SCHEMA.md`): offering families and entries, model lineage, timeline, plans, availability channels, vendor-level governance, safety levels, vendor-stated roadmap, company facts and partnerships, FAQs. Every record carries its own `sourceUrl` + `verifiedAt` on an allowlisted primary host.
+- `lib/vendor-overview.ts` validator + view helpers with colocated tests; `npm run check-stack-data` in CI and `/ship-check`.
+- `/stacks/anthropic/` renders the rich overview through the existing `/stacks/[vendor]` route: stack diagram, searchable catalog, model lineage, plans, where to run, enterprise posture, ecosystem panels, timeline, roadmap, market stack map, FAQ (FAQPage JSON-LD) and a full source list.
+- Anthropic joins `VENDOR_STACKS` (nav, footer, search, tool-page cross-links), the sitemap, `llms.txt` and `llms-full.txt`.
+Acceptance:
+- Every claim on the page traces to a cited primary source that backs it; all cited URLs resolve.
+- The page is fully static, works without JavaScript (filters are progressive enhancement), and has no horizontal scroll at 360px.
+- All CI gates stay green.
+Depends on: the `/stacks` vendor pages (done).
+
 ## Dependencies at a glance
-- M0–M12 are done.
+- M0–M12 are done; M13 is in review.
 - M7 depends on M4 (snapshot pipeline).
 - M8 depends on M5 (FAQ JSON-LD helper).
 - M9 depends on M2 (governance posture).

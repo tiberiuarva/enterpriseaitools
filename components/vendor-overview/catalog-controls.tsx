@@ -1,0 +1,176 @@
+"use client";
+
+import { Search, X } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+type Option = { id: string; label: string; count?: number };
+
+export const STATUS_GROUPS: Record<string, readonly string[]> = {
+  available: ["ga", "active"],
+  preview: ["beta", "preview", "research-preview"],
+  ending: ["deprecated", "retired"],
+};
+
+// Thin controller over the server-rendered catalog: it only toggles `hidden`
+// and `open` on elements carrying data-* attributes, so the full catalog stays
+// in the HTML (indexable, usable without JS) and no entry data ships as props.
+export function CatalogControls({
+  targetId,
+  domains,
+  audiences,
+  total,
+}: {
+  targetId: string;
+  domains: Option[];
+  audiences: Option[];
+  total: number;
+}) {
+  const [query, setQuery] = useState("");
+  const [domain, setDomain] = useState("all");
+  const [status, setStatus] = useState("all");
+  const [audience, setAudience] = useState("all");
+  // The count is written straight into the DOM from the effect that filters it.
+  const shownRef = useRef<HTMLSpanElement>(null);
+  const filtering = query.trim() !== "" || domain !== "all" || status !== "all" || audience !== "all";
+
+  const statusOptions = useMemo<Option[]>(
+    () => [
+      { id: "all", label: "Any status" },
+      { id: "available", label: "Available" },
+      { id: "preview", label: "Preview or beta" },
+      { id: "ending", label: "Deprecated or retired" },
+    ],
+    [],
+  );
+
+  useEffect(() => {
+    const root = document.getElementById(targetId);
+    if (!root) return;
+    const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let count = 0;
+    root.querySelectorAll<HTMLElement>("[data-entry]").forEach((el) => {
+      const matches =
+        (domain === "all" || el.dataset.domain === domain) &&
+        (status === "all" || (el.dataset.status ?? "").split(" ").some((value) => STATUS_GROUPS[status]?.includes(value))) &&
+        (audience === "all" || (el.dataset.audience ?? "").split(" ").includes(audience)) &&
+        terms.every((term) => (el.dataset.search ?? "").includes(term));
+      el.hidden = !matches;
+      if (matches) count += Number(el.dataset.weight ?? "1");
+    });
+    root.querySelectorAll<HTMLElement>("[data-filter-group]").forEach((group) => {
+      group.hidden = group.querySelector("[data-entry]:not([hidden])") === null;
+    });
+    root.querySelectorAll<HTMLDetailsElement>("details[data-domain-block]").forEach((details) => {
+      if (filtering && details.querySelector("[data-entry]:not([hidden])")) details.open = true;
+    });
+    root.querySelectorAll<HTMLDetailsElement>("details[data-more]").forEach((details) => {
+      const hasMatch = details.querySelector("[data-entry]:not([hidden])") !== null;
+      details.hidden = filtering && !hasMatch;
+      if (filtering && hasMatch) details.open = true;
+    });
+    const empty = root.querySelector<HTMLElement>("[data-empty]");
+    if (empty) empty.hidden = count > 0;
+    if (shownRef.current) shownRef.current.textContent = String(count);
+  }, [targetId, query, domain, status, audience, filtering]);
+
+  // Deep links (map tiles, highlights, shared URLs) can point inside a closed
+  // catalog family, "show more" list or timeline year: open every enclosing
+  // <details>, then scroll. One listener serves the whole page.
+  useEffect(() => {
+    const reveal = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      target.querySelector<HTMLDetailsElement>(":scope > details[data-domain-block]")?.setAttribute("open", "");
+      for (let node = target.parentElement; node; node = node.parentElement) {
+        if (node instanceof HTMLDetailsElement) node.open = true;
+      }
+      target.scrollIntoView({ block: "start" });
+    };
+    reveal();
+    window.addEventListener("hashchange", reveal);
+    return () => window.removeEventListener("hashchange", reveal);
+  }, []);
+
+  const reset = () => {
+    setQuery("");
+    setDomain("all");
+    setStatus("all");
+    setAudience("all");
+  };
+
+  const chip = (active: boolean) =>
+    `inline-flex min-h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 text-sm font-medium transition ${
+      active
+        ? "border-[var(--color-accent)] bg-[var(--color-accent-soft)] text-[var(--color-accent)]"
+        : "border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)]"
+    }`;
+
+  return (
+    <div className="flex flex-col gap-3" role="search" aria-label="Filter Anthropic offerings">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+        <label className="relative flex min-w-0 flex-1 items-center">
+          <span className="sr-only">Search offerings</span>
+          <Search size={16} aria-hidden="true" className="pointer-events-none absolute left-3 text-[var(--color-text-tertiary)]" />
+          <input
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search by name, former name or description"
+            className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] py-2 pl-9 pr-3 text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-tertiary)] focus:border-[var(--color-accent)]"
+          />
+        </label>
+        <div className="flex gap-2">
+          <label className="flex min-w-0 flex-1 sm:flex-none">
+            <span className="sr-only">Status</span>
+            <select
+              value={status}
+              onChange={(event) => setStatus(event.target.value)}
+              className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 text-sm text-[var(--color-text-primary)]"
+            >
+              {statusOptions.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex min-w-0 flex-1 sm:flex-none">
+            <span className="sr-only">Audience</span>
+            <select
+              value={audience}
+              onChange={(event) => setAudience(event.target.value)}
+              className="min-h-11 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-primary)] px-3 text-sm text-[var(--color-text-primary)]"
+            >
+              <option value="all">Any audience</option>
+              {audiences.map((option) => (
+                <option key={option.id} value={option.id}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+      </div>
+      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Product family">
+        {[{ id: "all", label: "All", count: total }, ...domains].map((option) => (
+          <button key={option.id} type="button" aria-pressed={domain === option.id} onClick={() => setDomain(option.id)} className={chip(domain === option.id)}>
+            {option.label}
+            {option.count !== undefined ? <span className="tabular-nums opacity-70">{option.count}</span> : null}
+          </button>
+        ))}
+      </div>
+      <div className="flex items-center justify-between gap-3 text-sm text-[var(--color-text-secondary)]">
+        <p aria-live="polite">
+          Showing <span ref={shownRef} className="font-semibold tabular-nums text-[var(--color-text-primary)]">{total}</span> of {total} offerings
+        </p>
+        {filtering ? (
+          <button type="button" onClick={reset} className="inline-flex min-h-9 items-center gap-1 rounded-full px-2 font-medium text-[var(--color-accent)] hover:underline">
+            <X size={14} aria-hidden="true" />
+            Clear filters
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+}

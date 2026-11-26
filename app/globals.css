@@ -281,6 +281,26 @@ body {
     color: var(--color-text-secondary);
   }
 
+  /* ── Source link — external citation used hundreds of times on vendor
+        overview pages, so the arrow is drawn in CSS instead of an inline SVG
+        per link (keeps the HTML and RSC payload small) ──────────────────── */
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.125rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .source-link::after {
+    content: "\2197";
+    font-size: 0.6875rem;
+  }
+  .source-link:hover {
+    text-decoration: underline;
+  }
+
   /* ── Theme toggle icons — flip on html.light without depending on a runtime
         attribute the inline script can't set before the button renders ─────── */
   .theme-icon-when-dark {

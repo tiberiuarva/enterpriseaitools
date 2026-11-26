@@ -1,4 +1,4 @@
-import { mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import toolsData from "../data/tools.json" with { type: "json" };
 import platformsData from "../data/platforms.json" with { type: "json" };
@@ -7,6 +7,23 @@ import euAiActTimeline from "../data/eu-ai-act.json" with { type: "json" };
 import siteRoutes from "../seo-route-inventory.json" with { type: "json" };
 import comparisonSlugs from "../data/comparison-slugs.json" with { type: "json" };
 import euAiActObligations from "../data/eu-ai-act-obligations.json" with { type: "json" };
+
+// Mirrors VENDOR_STACKS in lib/stacks.ts (slug + display name); scripts cannot import TS.
+const VENDOR_STACK_NAMES = [
+  ["microsoft", "Microsoft"],
+  ["aws", "AWS"],
+  ["google", "Google"],
+  ["anthropic", "Anthropic"],
+];
+
+// Rich vendor overviews, one per data/stacks/<vendor>.json, sorted by vendor slug.
+const stacksDir = new URL("../data/stacks/", import.meta.url);
+const vendorOverviews = await Promise.all(
+  (await readdir(stacksDir))
+    .filter((file) => file.endsWith(".json"))
+    .sort()
+    .map(async (file) => JSON.parse(await readFile(new URL(file, stacksDir), "utf8"))),
+);
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://www.enterpriseai.tools").replace(/\/$/, "");
 // `data/tools.json` carries a top-level `lastUpdated` calendar date (see
@@ -50,6 +67,7 @@ function latestDate(dates) {
 const DATA_DRIVEN_ROUTE_DATES = {
   "/updates": updatesLastModified,
   "/eu-ai-act": euAiActObligations.asOf,
+  ...Object.fromEntries(vendorOverviews.map((overview) => [`/stacks/${overview.vendor}`, overview.reviewedAt])),
 };
 
 function siteRouteLastModified(route) {
@@ -386,7 +404,8 @@ Every tracked tool is indexed at ${siteUrl}/tools/ and has its own page at \`/to
   - [AI Assistants](${siteUrl}/assistants/): coding, productivity, build-your-own.
   - [Always-on AI Agents](${siteUrl}/always-on-agents/): persistent personal and team agents, with their security record.
 - [Start with your question](${siteUrl}/start/): step-by-step paths across the stack (assistants rollout, first agent in production, governing existing agents, always-on agents).
-- Vendor stacks ([${siteUrl}/stacks/](${siteUrl}/stacks/)): what Microsoft ([${siteUrl}/stacks/microsoft/](${siteUrl}/stacks/microsoft/)), AWS ([${siteUrl}/stacks/aws/](${siteUrl}/stacks/aws/)) and Google ([${siteUrl}/stacks/google/](${siteUrl}/stacks/google/)) offer at each layer.
+- Vendor stacks ([${siteUrl}/stacks/](${siteUrl}/stacks/)): what ${listWithAnd(VENDOR_STACK_NAMES.map(([slug, name]) => `${name} ([${siteUrl}/stacks/${slug}/](${siteUrl}/stacks/${slug}/))`))} offer at each layer.
+${vendorOverviews.map((overview) => `  - [${overview.title}](${siteUrl}/stacks/${overview.vendor}/): ${overview.description}`).join("\n")}
 - [Weekly updates](${siteUrl}/updates/): high-impact market intelligence + release log.
 - [EU AI Act tracker](${siteUrl}/eu-ai-act/): obligations by role, application timeline, and a subscribable deadline calendar (${siteUrl}/eu-ai-act-deadlines.ics).
 - [Help me evaluate](${siteUrl}/evaluate/): guided client-side flow that ranks tools by governance fit.
@@ -468,6 +487,35 @@ function toolBlock(tool) {
   return lines.join("\n");
 }
 
+function listWithAnd(items) {
+  return items.length <= 1 ? items.join("") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`;
+}
+
+function vendorOverviewBlock(overview) {
+  const families = overview.domains
+    .map((domain) => {
+      const entries = overview.entries
+        .filter((entry) => entry.domainId === domain.id)
+        .map((entry) => `- ${entry.name}${entry.formerNames?.length ? ` (formerly ${entry.formerNames.join(", ")})` : ""} [${entry.status}${entry.license ? `; license: ${entry.license}` : ""}]: ${entry.description} [source: ${entry.sourceUrl}]`)
+        .join("\n");
+      return `#### ${domain.label}\n${domain.intro}\n${entries}`;
+    })
+    .join("\n\n");
+  const models = overview.models
+    .filter((model) => model.status !== "retired")
+    .map((model) => `- ${model.name}${model.apiId ? ` (${model.apiId})` : ""}: ${model.status}, released ${model.releasedAt}${model.contextWindow ? `, ${model.contextWindow} context` : ""}${model.pricing ? `, $${model.pricing.inputPerMTok}/$${model.pricing.outputPerMTok} per MTok in/out as of ${model.pricing.asOf}` : ""}${model.retiresAt ? `, retires ${model.retiresAt}` : ""} [source: ${model.sourceUrl}]`)
+    .join("\n");
+  const timeline = overview.timeline
+    .slice(0, 25)
+    .map((event) => `- ${event.date} (${event.type}): ${event.title}. ${event.summary} [source: ${event.sourceUrl}]`)
+    .join("\n");
+  const roadmap = overview.roadmap
+    .map((item) => `- ${item.title}${item.expected ? ` (${item.expected})` : ""}: ${item.summary} Stated ${item.announcedAt}. [source: ${item.sourceUrl}]`)
+    .join("\n");
+  const faqs = overview.faqs.map((faq) => `- Q: ${faq.question}\n  A: ${faq.answer}`).join("\n");
+  return `### ${overview.title}\n\nPage: ${siteUrl}/stacks/${overview.vendor}/ | Reviewed ${overview.reviewedAt}\n\n${overview.answer}\n\n${families}\n\n#### Models available today\n${models}\n\n#### Recent milestones\n${timeline}\n\n#### Announced plans\n${roadmap}\n\n#### FAQ\n${faqs}`;
+}
+
 function generateLlmsFullTxt() {
   const sortedTools = [...toolsData.tools].sort(
     (a, b) => a.category.localeCompare(b.category) || a.id.localeCompare(b.id),
@@ -513,6 +561,10 @@ Edited through a regulated-enterprise delivery lens. Every asserted governance c
 ${platformSection}
 
 ${categorySections}
+
+## Vendor overviews
+
+${vendorOverviews.map(vendorOverviewBlock).join("\n\n")}
 
 ## Recent updates
 

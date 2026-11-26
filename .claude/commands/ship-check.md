@@ -19,6 +19,7 @@ npm run lint
 npx tsc --noEmit
 npm run check-governance-data
 npm run check-updates-data
+npm run check-stack-data
 npm run test:eu-ai-act
 npm run build
 npm run check-generated-artifacts
