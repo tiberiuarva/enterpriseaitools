@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import type { CSSProperties } from "react";
 import type {
   GovernanceStatus,
@@ -178,53 +178,74 @@ function StatusRing({ status }: { status: GovernanceStatus }) {
 export function TrustWall({ rows }: { rows: VendorGovernanceRow[] }) {
   const { counts, ordered } = governanceSummary(rows);
   const total = rows.length || 1;
+  const caveats = ordered.filter((row) => row.claim.status !== "yes");
+  const passes = ordered.filter((row) => row.claim.status === "yes");
   return (
-    <div className="flex flex-col gap-5">
-      <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+    <div className="flex flex-col gap-6">
+      <div className="flex max-w-xl flex-col gap-2">
         <p className="flex flex-wrap items-baseline gap-x-6 gap-y-1">
           <span>
             <span className="text-[2.25rem] font-semibold tabular-nums text-[var(--color-success)]">{counts.yes}</span>{" "}
             <span className="text-sm text-[var(--color-text-secondary)]">controls in place</span>
           </span>
           <span>
-            <span className="text-[2.25rem] font-semibold tabular-nums text-[var(--color-warning)]">{counts.partial}</span>{" "}
+            <span className="text-[2.25rem] font-semibold tabular-nums text-[var(--color-warning)]">{caveats.length}</span>{" "}
             <span className="text-sm text-[var(--color-text-secondary)]">with limits worth reading</span>
           </span>
         </p>
-        <div aria-hidden="true" className="flex h-2.5 w-full overflow-hidden rounded-full bg-[var(--color-bg-hover)] md:w-72">
+        <div aria-hidden="true" className="flex h-2.5 w-full overflow-hidden rounded-full bg-[var(--color-bg-hover)]">
           <div className="vo-bar rounded-none bg-[var(--color-success)]" style={{ width: `${(counts.yes / total) * 100}%` }} />
-          <div
-            className="vo-bar rounded-none bg-[var(--color-warning)]"
-            style={
-              {
-                width: `${(counts.partial / total) * 100}%`,
-                "--i": 3,
-              } as CSSProperties
-            }
-          />
+          <div className="vo-bar rounded-none bg-[var(--color-warning)]" style={{ width: `${(caveats.length / total) * 100}%`, "--i": 3 } as CSSProperties} />
         </div>
       </div>
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {ordered.map((row, index) => (
-          <li key={row.id} className="vo-entry vo-reveal" style={{ "--i": index % 6 } as CSSProperties}>
-            <div className="flex items-center gap-3">
-              <StatusRing status={row.claim.status} />
-              <div className="min-w-0">
-                <p className="vo-entry-name">{row.label}</p>
-                <p className="text-caption" style={{ color: CLAIM_COLOR[row.claim.status] }}>
-                  {CLAIM_LABEL[row.claim.status]}
-                </p>
-              </div>
-            </div>
-            <p className={`vo-entry-desc ${row.claim.status === "yes" ? "line-clamp-3" : ""}`}>{row.claim.detail}</p>
-            {row.claim.sourceUrl ? (
-              <div className="mt-auto pt-1">
-                <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle ?? "Source"} />
-              </div>
-            ) : null}
-          </li>
-        ))}
-      </ul>
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+        {/* The caveats are what a buyer has to read, so they come first and in full. */}
+        <div className="flex flex-col gap-3">
+          <h4 className="text-caption uppercase tracking-[0.14em] text-[var(--color-warning)]">Read the limits</h4>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {caveats.map((row) => (
+              <li key={row.id} className="vo-entry border-[color-mix(in_srgb,var(--color-warning)_45%,var(--color-border))]">
+                <div className="flex items-center gap-3">
+                  <StatusRing status={row.claim.status} />
+                  <div className="min-w-0">
+                    <p className="vo-entry-name">{row.label}</p>
+                    <p className="text-caption" style={{ color: CLAIM_COLOR[row.claim.status] }}>
+                      {CLAIM_LABEL[row.claim.status]}
+                    </p>
+                  </div>
+                </div>
+                <p className="vo-entry-desc">{row.claim.detail}</p>
+                {row.claim.sourceUrl ? (
+                  <div className="mt-auto pt-1">
+                    <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle ?? "Source"} />
+                  </div>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="flex flex-col gap-3">
+          <h4 className="text-caption uppercase tracking-[0.14em] text-[var(--color-success)]">In place</h4>
+          <ul className="flex flex-col divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
+            {passes.map((row) => (
+              <li key={row.id}>
+                <details className="group/claim">
+                  <summary className="flex cursor-pointer list-none items-center gap-3 px-3 py-2.5 hover:bg-[var(--color-bg-hover)] [&::-webkit-details-marker]:hidden">
+                    <StatusRing status={row.claim.status} />
+                    <span className="min-w-0 flex-1 text-sm font-medium text-[var(--color-text-primary)]">{row.label}</span>
+                    <ChevronDown size={14} aria-hidden="true" className="shrink-0 text-[var(--color-text-tertiary)] transition group-open/claim:rotate-180" />
+                  </summary>
+                  <div className="flex flex-col gap-1.5 px-3 pb-3 pl-[3.25rem]">
+                    <p className="vo-entry-desc">{row.claim.detail}</p>
+                    {row.claim.sourceUrl ? <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle ?? "Source"} /> : null}
+                  </div>
+                </details>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
@@ -237,54 +258,41 @@ const SAFETY_STATE: Record<VendorSafetyLevel["state"], string> = {
   "not-yet-defined": "Not yet defined",
 };
 
+// Each level is a block drawn on its own card, one step taller than the last.
 export function AslSteps({ levels }: { levels: VendorSafetyLevel[] }) {
-  const boxes: Box[] = levels.map((_, index) => ({
-    x: index * 70,
-    y: -index * 70,
-    z: 0,
-    w: 64,
-    d: 64,
-    h: 36 + index * 34,
-  }));
-  const vb = prismsViewBox(boxes, 6);
+  const maxH = 30 + (levels.length - 1) * 26;
+  const boxes: Box[] = levels.map((_, index) => ({ x: 0, y: 0, z: 0, w: 46, d: 46, h: 30 + index * 26 }));
+  const vb = prismsViewBox([{ x: 0, y: 0, z: 0, w: 46, d: 46, h: maxH }], 4);
   return (
-    <div id="safety-levels" className="flex scroll-mt-40 flex-col gap-4">
-      <svg viewBox={`${vb.x} ${vb.y} ${vb.width} ${vb.height}`} aria-hidden="true" className="mx-auto block w-full max-w-md">
-        {boxes.map((box, index) => {
-          const faces = isoPrism(box);
-          const lit = levels[index].state === "in-force";
-          return (
-            <g key={levels[index].id} className="vo-drop" style={{ "--i": index } as CSSProperties}>
-              <g className="vo-slab" data-slot={lit ? index + 1 : 6} style={lit ? undefined : { opacity: 0.55 }}>
-                <polygon className="vo-face-left" points={faces.left} strokeDasharray={lit ? undefined : "4 3"} />
-                <polygon className="vo-face-right" points={faces.right} />
-                <polygon className="vo-face-top" points={faces.top} />
-              </g>
-            </g>
-          );
-        })}
-      </svg>
-      <ol className="grid grid-cols-1 gap-3 sm:grid-cols-3" aria-label="AI Safety Levels">
-        {levels.map((level) => (
-          <li
-            key={level.id}
-            className={`vo-entry ${level.state === "in-force" ? "" : "border-dashed"}`}
-            data-prominence={level.state === "in-force" ? "headline" : undefined}
-          >
-            <div className="flex items-baseline justify-between gap-2">
-              <span className="text-lg font-semibold text-[var(--color-text-primary)]">{level.label}</span>
-              <span className={`text-caption ${level.state === "in-force" ? "text-[var(--color-accent)]" : "text-[var(--color-text-tertiary)]"}`}>
-                {SAFETY_STATE[level.state]}
-              </span>
+    <ol id="safety-levels" className="grid scroll-mt-40 grid-cols-1 items-stretch gap-3 sm:grid-cols-3" aria-label="AI Safety Levels">
+      {levels.map((level, index) => {
+        const lit = level.state === "in-force";
+        const faces = isoPrism(boxes[index]);
+        return (
+          <li key={level.id} className={`vo-entry ${lit ? "" : "border-dashed"}`} data-prominence={lit ? "headline" : undefined}>
+            <div className="flex items-end gap-4">
+              <svg viewBox={`${vb.x} ${vb.y} ${vb.width} ${vb.height}`} aria-hidden="true" className="h-24 w-auto shrink-0 overflow-visible">
+                <g className="vo-drop" style={{ "--i": index } as CSSProperties}>
+                  <g className="vo-slab" data-slot={lit ? index + 1 : 6} style={lit ? undefined : { opacity: 0.5 }}>
+                    <polygon className="vo-face-left" points={faces.left} />
+                    <polygon className="vo-face-right" points={faces.right} />
+                    <polygon className="vo-face-top" points={faces.top} />
+                  </g>
+                </g>
+              </svg>
+              <div className="flex min-w-0 flex-col pb-1">
+                <span className="text-xl font-semibold text-[var(--color-text-primary)]">{level.label}</span>
+                <span className={`text-caption ${lit ? "text-[var(--color-accent)]" : "text-[var(--color-text-tertiary)]"}`}>{SAFETY_STATE[level.state]}</span>
+              </div>
             </div>
             <p className="vo-entry-desc">{level.summary}</p>
             <div className="mt-auto pt-1">
               <SourceLink href={level.sourceUrl} />
             </div>
           </li>
-        ))}
-      </ol>
-    </div>
+        );
+      })}
+    </ol>
   );
 }
 

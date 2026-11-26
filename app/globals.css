@@ -754,8 +754,23 @@ code {
   }
   /* Lift the active station above its neighbours so its card is never
      painted under another station's label. */
-  .vo-station:is(:hover, :focus-visible, :focus-within) {
+  .vo-station:is(:hover, :focus-visible, :focus-within, :target) {
     z-index: 30;
+  }
+  /* A lineup card links to its station: the targeted station opens its card. */
+  .vo-station {
+    scroll-margin-block: 18rem;
+  }
+  .vo-station:target::before {
+    transform: scale(1.35);
+  }
+  .vo-station:target > .vo-pop {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+  .vo-station:target > .vo-pop:is([data-align="start"], [data-align="end"]) {
+    transform: translate(0, 0);
   }
   .vo-station:is(:hover, :focus-visible)::before {
     transform: scale(1.35);

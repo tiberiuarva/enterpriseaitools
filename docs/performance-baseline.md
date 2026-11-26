@@ -57,7 +57,7 @@ Lighthouse, run locally against `out/` served with gzip:
 
 | Route | Mobile | Desktop | Mobile LCP |
 |---|---:|---:|---:|
-| `/stacks/anthropic/` | 0.96 | 1.00 | 2.62 s |
+| `/stacks/anthropic/` | 0.92 | 1.00 | 3.22 s |
 | `/stacks/microsoft/` | 0.98 | 1.00 | 2.46 s |
 | `/` | 0.98 | 1.00 | 2.37 s |
 

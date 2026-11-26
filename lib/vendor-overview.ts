@@ -669,6 +669,7 @@ export function formatPartialDate(date: string): string {
   return dayOfMonth ? `${Number(dayOfMonth)} ${label}` : label;
 }
 
+// "$8" for whole dollars; cents always as two digits ("$0.10", "$0.25").
 export function formatUsd(value: number): string {
-  return Number.isInteger(value) ? `$${value}` : `$${value.toFixed(2).replace(/0$/, "")}`;
+  return Number.isInteger(value) ? `$${value}` : `$${value.toFixed(2)}`;
 }

@@ -233,7 +233,7 @@ describe("view helpers", () => {
     assert.equal(formatPartialDate("2026-11-09"), "9 Nov 2026");
     assert.equal(dateKey("2026-05"), "2026-05-01");
     assert.equal(formatUsd(8), "$8");
-    assert.equal(formatUsd(0.1), "$0.1");
+    assert.equal(formatUsd(0.1), "$0.10");
     assert.equal(formatUsd(0.25), "$0.25");
     assert.ok(hostMatches("https://www.anthropic.com/news", ["anthropic.com"]));
     assert.ok(!hostMatches("https://anthropic.com.evil.net/", ["anthropic.com"]));

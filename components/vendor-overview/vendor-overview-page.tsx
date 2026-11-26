@@ -1,19 +1,20 @@
 import { ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
 import { CATEGORIES } from "@/lib/categories";
 import { withBasePath } from "@/lib/site";
 import { VENDOR_STACKS, buildVendorStack, vendorStackGaps, type VendorStack } from "@/lib/stacks";
 import type { Platform, Tool, UpdateEntry, VendorOverview } from "@/lib/types";
-import { currentModels, domainCounts, formatPartialDate, overviewSources, relatedUpdates } from "@/lib/vendor-overview";
+import { currentModels, domainCounts, formatPartialDate, formatUsd, overviewSources, relatedUpdates } from "@/lib/vendor-overview";
 import { HubFaqs } from "@/components/hub-faqs";
 import { StackMap } from "@/components/stack-map";
 import { EntryCatalog } from "./entry-catalog";
 import { EvolutionTimeline } from "./evolution-timeline";
-import { ModelMap, PriceLadder } from "./model-map";
+import { ModelLineup, ModelMap } from "./model-map";
 import { RelatedUpdates, SourceList } from "./panels";
-import { OverviewSection } from "./primitives";
+import { OverviewSection, SourceLink } from "./primitives";
 import { SectionNav, type SectionNavCluster } from "./section-nav";
-import { StackHero } from "./stack-hero";
-import { flagshipName } from "@/lib/vendor-viz";
+import { StackHero, type HeroStat } from "./stack-hero";
+import { faqLead, flagshipName, governanceSummary, planPriceRange } from "@/lib/vendor-viz";
 import { AslSteps, ChannelTree, CompanyBand, DomainTiles, EcosystemOrbit, PlanTags, RoadmapHorizon, TimelineRiver, TrustWall } from "./visuals";
 
 type Props = {
@@ -37,6 +38,29 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   const flagship = flagshipName(overview);
   const modelsDomain = domain("claude-models") ?? overview.domains.find((item) => item.cluster === "products");
   const batch = overview.entries.find((entry) => entry.id === "batch-api");
+  // Section headings ask the questions the page's own FAQ answers; the lead
+  // line is that answer's first sentence, with its source.
+  const question = (faqId: string, fallback: string) => faqLead(overview.faqs, faqId)?.question ?? fallback;
+  const lead = (faqId: string, fallback?: ReactNode): ReactNode => {
+    const item = faqLead(overview.faqs, faqId);
+    if (!item) return fallback;
+    return (
+      <>
+        {item.lead} {item.sourceUrl ? <SourceLink href={item.sourceUrl} /> : null}
+      </>
+    );
+  };
+  // A sub-question answered inline, for sections that carry more than one.
+  const qa = (faqId: string): ReactNode => {
+    const item = faqLead(overview.faqs, faqId);
+    if (!item) return null;
+    return (
+      <span className="block">
+        <span className="font-semibold text-[var(--color-text-primary)]">{item.question}</span> {item.lead}{" "}
+        {item.sourceUrl ? <SourceLink href={item.sourceUrl} /> : null}
+      </span>
+    );
+  };
 
   const clusters: SectionNavCluster[] = [
     { label: "Overview", links: [{ id: "overview", label: "The stack" }] },
@@ -44,8 +68,8 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
       label: "Products",
       links: [
         { id: "claude-models", label: "Models" },
-        { id: "availability", label: "Where to run" },
         { id: "pricing", label: "Plans" },
+        { id: "availability", label: "Where to run" },
         { id: "enterprise", label: "Trust & safety" },
         ...(industries ? [{ id: "industry-solutions", label: "Industries" }] : []),
       ],
@@ -70,12 +94,21 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
     },
   ];
 
-  const stats = [
-    { label: "offerings", value: overview.entries.length },
-    { label: "families", value: overview.domains.length },
-    { label: "current models", value: current.length },
-    { label: "ways to run", value: overview.availability.length },
-    { label: "years of history", value: Number(overview.reviewedAt.slice(0, 4)) - Number([...overview.timeline].sort((a, b) => a.date.localeCompare(b.date))[0]?.date.slice(0, 4) ?? overview.reviewedAt.slice(0, 4)) },
+  const lowestInput = Math.min(...current.flatMap((model) => (model.pricing ? [model.pricing.inputPerMTok] : [])));
+  const individualRange = planPriceRange(overview.plans, ["individual"]);
+  const governance = governanceSummary(overview.governance);
+  const directOrCloud = overview.availability.filter((item) => item.channel !== "partner").length;
+  const stats: HeroStat[] = [
+    { value: current.length, label: "current models", detail: Number.isFinite(lowestInput) ? `from ${formatUsd(lowestInput)} per M tokens` : undefined, href: "#claude-models" },
+    {
+      value: overview.plans.length,
+      label: "plans",
+      detail: individualRange ? `${formatUsd(individualRange.min)}–${formatUsd(individualRange.max)}/mo for individuals` : undefined,
+      href: "#pricing",
+    },
+    { value: overview.availability.length, label: "ways to run", detail: `${directOrCloud} direct or in your cloud`, href: "#availability" },
+    { value: governance.counts.yes, label: `of ${overview.governance.length} controls in place`, href: "#enterprise" },
+    { value: overview.entries.length, label: "offerings", detail: `in ${overview.domains.length} families`, href: "#catalog" },
   ];
 
   return (
@@ -124,24 +157,36 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
 
       <SectionNav clusters={clusters} />
 
-      <OverviewSection id="claude-models" eyebrow="Models" title={`Every ${flagship} model, on one map`} intro={modelsDomain?.intro}>
+      <OverviewSection
+        id="claude-models"
+        eyebrow={`${flagship} today`}
+        title={question("best-model", `Which ${flagship} model should I use?`)}
+        intro={lead("best-model", modelsDomain?.intro)}
+      >
         <div className="flex flex-col gap-10">
-          <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} label={`${flagship} model`} />
-          <PriceLadder models={overview.models} footnote={batch ? { text: `${batch.name}: ${batch.description}`, sourceUrl: batch.sourceUrl } : undefined} />
+          <ModelLineup
+            models={overview.models}
+            today={overview.reviewedAt}
+            footnote={batch ? { text: `${batch.name}: ${batch.description}`, sourceUrl: batch.sourceUrl } : undefined}
+          />
+          <div className="flex flex-col gap-3">
+            <h3 className="text-h3 text-[var(--color-text-primary)]">Every {flagship} model, on one map</h3>
+            <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} label={`${flagship} model`} />
+          </div>
         </div>
+      </OverviewSection>
+
+      <OverviewSection id="pricing" eyebrow="Plans" title={`What does ${flagship} cost?`} intro={lead("plans", "List prices in US dollars, as published.")}>
+        <PlanTags plans={overview.plans} />
       </OverviewSection>
 
       <OverviewSection
         id="availability"
         eyebrow="Where to run"
-        title={`${overview.availability.length} ways to get ${flagship}`}
-        intro="Buy direct, run it inside your cloud, or use it inside products you already have. Who operates the service decides who processes your data."
+        title={question("where-run", `Where can I run ${flagship}?`)}
+        intro={lead("where-run", "Buy direct, run it inside your cloud, or use it inside products you already have.")}
       >
         <ChannelTree availability={overview.availability} hub={flagship} />
-      </OverviewSection>
-
-      <OverviewSection id="pricing" eyebrow="Plans" title="What it costs" intro="List prices in US dollars, as published. Each plan links to the page it was checked against.">
-        <PlanTags plans={overview.plans} />
       </OverviewSection>
 
       <OverviewSection
@@ -150,7 +195,15 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
         title="Can an enterprise trust it?"
         intro={
           <>
-            Vendor-level controls across the commercial products, then the safety levels models ship under. Per-product posture:{" "}
+            {qa("training-data")}
+            {qa("eu-residency")}
+          </>
+        }
+      >
+        <div className="flex flex-col gap-10">
+          <TrustWall rows={overview.governance} />
+          <p className="-mt-6 text-caption text-[var(--color-text-tertiary)]">
+            Per-product governance posture:{" "}
             {toolLinks.map((entry, index) => (
               <span key={entry.id}>
                 {index > 0 ? ", " : null}
@@ -160,11 +213,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
               </span>
             ))}
             .
-          </>
-        }
-      >
-        <div className="flex flex-col gap-10">
-          <TrustWall rows={overview.governance} />
+          </p>
           {overview.safetyLevels.length > 0 ? (
             <div className="flex flex-col gap-3">
               <h3 className="text-h3 text-[var(--color-text-primary)]">AI Safety Levels under the Responsible Scaling Policy</h3>
@@ -175,7 +224,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
       </OverviewSection>
 
       {industries ? (
-        <OverviewSection id="industry-solutions" eyebrow="Industries" title={industries.label} intro={industries.tagline}>
+        <OverviewSection id="industry-solutions" eyebrow={industries.label} title={`Is there a ${flagship} for my sector?`} intro={industries.tagline}>
           <DomainTiles domain={industries} entries={overview.entries} count={counts[industries.id]} />
         </OverviewSection>
       ) : null}
@@ -183,17 +232,22 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
       <OverviewSection
         id="ecosystem"
         eyebrow={`Beyond ${flagship}`}
-        title={`What surrounds the products`}
+        title={`What does ${overview.name} do besides ${flagship}?`}
         intro={`${overview.name} also writes open standards, publishes research and safety policy, and runs programs for learners, scientists and partners.`}
       >
         <EcosystemOrbit overview={overview} counts={counts} flagship={flagship} />
       </OverviewSection>
 
-      <OverviewSection id="company-partners" eyebrow="Company" title={`${overview.name}, the company`} intro={domain("company-partners")?.tagline}>
+      <OverviewSection
+        id="company-partners"
+        eyebrow="Company"
+        title={question("what-is-anthropic", `Who is ${overview.name}?`)}
+        intro={lead("what-is-anthropic", domain("company-partners")?.tagline)}
+      >
         <CompanyBand company={overview.company} />
       </OverviewSection>
 
-      <OverviewSection id="timeline" eyebrow="History" title={`How ${overview.name} got here`} intro={`${overview.timeline.length} events. Each dot is one; the larger ones are key milestones. Select a dot to read it.`}>
+      <OverviewSection id="timeline" eyebrow="History" title={`How did ${overview.name} get here?`} intro={`${overview.timeline.length} events. Each dot is one; the larger ones are key milestones. Select a dot to read it.`}>
         <TimelineRiver events={overview.timeline} />
         <details className="group/history mt-8 border-t border-[var(--color-border)] pt-5">
           <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
@@ -215,7 +269,12 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
         ) : null}
       </OverviewSection>
 
-      <OverviewSection id="roadmap" eyebrow="What's next" title="Announced plans" intro="Only what the vendor has said publicly, in its own words, with the date it said it.">
+      <OverviewSection
+        id="roadmap"
+        eyebrow="What's next"
+        title={`What has ${overview.name} said is coming?`}
+        intro="Only what the vendor has said publicly, in its own words, with the date it said it."
+      >
         <RoadmapHorizon items={overview.roadmap} />
       </OverviewSection>
 

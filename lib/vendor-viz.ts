@@ -477,3 +477,34 @@ export function orbitPoint(angle: number, radiusPct: number): { left: number; to
   const radians = (angle * Math.PI) / 180;
   return { left: round(50 + radiusPct * Math.sin(radians)), top: round(50 - radiusPct * Math.cos(radians)) };
 }
+
+// ── Copy helpers ──────────────────────────────────────────────────────────
+
+// Percent change from an earlier price, rounded; 0 when unchanged.
+export function priceDelta(now: number, before: number): number {
+  if (before <= 0) return 0;
+  return Math.round(((now - before) / before) * 100);
+}
+
+// The first n sentences of a paragraph. A sentence ends at ".", "!" or "?"
+// followed by a space and a capital, so "$0.10" or "v3.4" never split.
+export function firstSentences(text: string, count = 1): string {
+  const parts = text.split(/(?<=[.!?])\s+(?=[A-Z])/);
+  return parts.slice(0, count).join(" ");
+}
+
+// Monthly list prices of plain "$N" or "$N/mo" plans in the given segments.
+export function planPriceRange(plans: readonly Pick<VendorOverview["plans"][number], "price" | "segment">[], segments: readonly string[]) {
+  const prices = plans
+    .filter((plan) => segments.includes(plan.segment))
+    .map((plan) => /^\$(\d+(?:\.\d+)?)(?:\/mo)?$/.exec(plan.price.trim()))
+    .flatMap((match) => (match ? [Number(match[1])] : []));
+  return prices.length > 0 ? { min: Math.min(...prices), max: Math.max(...prices) } : undefined;
+}
+
+// A section's lead line from the FAQ that belongs to it: its question, the
+// first sentence of the answer and the answer's first source.
+export function faqLead(faqs: readonly VendorOverview["faqs"][number][], id: string) {
+  const faq = faqs.find((item) => item.id === id);
+  return faq ? { question: faq.question, lead: firstSentences(faq.answer, 1), sourceUrl: faq.sourceUrls[0] } : undefined;
+}

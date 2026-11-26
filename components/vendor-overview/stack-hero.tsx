@@ -1,10 +1,10 @@
 import type { CSSProperties } from "react";
 import type { VendorOverview } from "@/lib/types";
 import { domainCounts, formatPartialDate } from "@/lib/vendor-overview";
-import { LENSES, audienceLens, lensStrength, toPercent, towerLayout, type LensCounts } from "@/lib/vendor-viz";
+import { LENSES, audienceLens, firstSentences, lensStrength, toPercent, towerLayout, type LensCounts } from "@/lib/vendor-viz";
 import { withBasePath } from "@/lib/site";
 
-type Stat = { label: string; value: number };
+export type HeroStat = { label: string; value: number; href: string; detail?: string };
 
 // Channels are not audience-specific, so their label never dims under a lens.
 const FULL_LENS = Object.fromEntries(LENSES.map((lens) => [`--s-${lens.id}`, 1])) as CSSProperties;
@@ -31,7 +31,7 @@ function LensCount({ counts, unit = "offerings" }: { counts: LensCounts | undefi
   );
 }
 
-export function StackHero({ overview, stats, sourcesCount }: { overview: VendorOverview; stats: Stat[]; sourcesCount: number }) {
+export function StackHero({ overview, stats, sourcesCount }: { overview: VendorOverview; stats: HeroStat[]; sourcesCount: number }) {
   const tower = towerLayout(overview);
   const counts = domainCounts(overview);
   const lens = audienceLens(overview.entries);
@@ -47,26 +47,31 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
   const vb = tower.viewBox;
 
   return (
-    <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-6">
-      <div className="flex min-w-0 flex-col gap-5">
-        <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Vendor stack · {overview.name}</p>
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-x-6 lg:gap-y-6">
+      <div className="flex min-w-0 flex-col gap-4 max-lg:order-1 lg:col-start-1 lg:row-start-1">
+        <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">{overview.title}</p>
         <h1 id="overview-heading" className="vo-gradient-text text-display">
-          {overview.title}
+          Everything {overview.name} makes, on one page
         </h1>
-        <p className="max-w-xl text-body text-[var(--color-text-secondary)]">{overview.description}</p>
+        <p className="max-w-xl text-body text-[var(--color-text-secondary)]">{firstSentences(overview.answer, 2)}</p>
+      </div>
 
-        <dl className="grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5">
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex min-w-0 flex-col-reverse justify-end">
-              <dt className="text-caption leading-tight text-[var(--color-text-secondary)]">{stat.label}</dt>
-              <dd className="mb-1.5 text-[2rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)]">
+      <ul className="vo-lens-row -mx-1 flex min-w-0 gap-x-5 overflow-x-auto px-1 pb-1 max-lg:order-3 lg:col-start-1 lg:row-start-2 lg:grid lg:grid-cols-3 lg:gap-y-5 lg:overflow-visible">
+        {stats.map((stat) => (
+          <li key={stat.label} className="shrink-0">
+            <a href={stat.href} className="group flex min-w-0 flex-col rounded-lg">
+              <span className="text-[2rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)] transition group-hover:text-[var(--color-accent)]">
                 <span aria-hidden="true" className="vo-count" style={{ "--to": stat.value } as CSSProperties} />
                 <span className="sr-only">{stat.value}</span>
-              </dd>
-            </div>
-          ))}
-        </dl>
+              </span>
+              <span className="mt-1.5 text-caption leading-tight text-[var(--color-text-secondary)]">{stat.label}</span>
+              {stat.detail ? <span className="text-[0.6875rem] leading-tight text-[var(--color-text-tertiary)]">{stat.detail}</span> : null}
+            </a>
+          </li>
+        ))}
+      </ul>
 
+      <div className="flex min-w-0 flex-col gap-4 max-lg:order-4 lg:col-start-1 lg:row-start-3">
         <fieldset className="vo-lens flex min-w-0 flex-col gap-2">
           <legend className="mb-2 text-caption text-[var(--color-text-secondary)]">Light up the stack for</legend>
           <div className="vo-lens-row -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:flex-wrap">
@@ -100,7 +105,7 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
         </p>
       </div>
 
-      <figure id="map" className="vo-tower m-0 min-w-0 scroll-mt-40 max-sm:overflow-hidden" aria-labelledby="tower-caption">
+      <figure id="map" className="vo-tower m-0 min-w-0 scroll-mt-40 self-center max-sm:overflow-hidden max-lg:order-2 lg:col-start-2 lg:row-span-3 lg:row-start-1" aria-labelledby="tower-caption">
         <svg
           viewBox={`${vb.x} ${vb.y} ${vb.width} ${vb.height}`}
           aria-hidden="true"

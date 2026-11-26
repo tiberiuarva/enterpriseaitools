@@ -5,7 +5,11 @@ import type { VendorModel, VendorOverview, VendorTimelineEvent } from "./types.t
 import {
   LENSES,
   audienceLens,
+  faqLead,
+  firstSentences,
   flagshipName,
+  planPriceRange,
+  priceDelta,
   availabilityByChannel,
   governanceSummary,
   groupBreakdown,
@@ -332,5 +336,38 @@ describe("published overview renders", () => {
     for (const lane of map.lanes) for (const station of lane.stations) assert.ok(station.x >= 0 && station.x <= 100);
     assert.ok(priceLadder(overview.models).rows.length > 0);
     assert.equal(timelineDensity(overview.timeline).reduce((sum, year) => sum + year.count, 0), overview.timeline.length);
+  });
+});
+
+describe("copy helpers", () => {
+  test("priceDelta rounds the percent change", () => {
+    assert.equal(priceDelta(40, 50), -20);
+    assert.equal(priceDelta(10, 10), 0);
+    assert.equal(priceDelta(0.5, 5), -90);
+    assert.equal(priceDelta(5, 0), 0);
+  });
+  test("firstSentences keeps decimals and versions intact", () => {
+    assert.equal(firstSentences("Costs $0.10 per token. Then more.", 1), "Costs $0.10 per token.");
+    assert.equal(firstSentences("RSP v3.4 applies. Next. Last.", 2), "RSP v3.4 applies. Next.");
+    assert.equal(firstSentences("No end", 1), "No end");
+  });
+  test("planPriceRange reads plain monthly prices only", () => {
+    const range = planPriceRange(
+      [
+        { segment: "individual", price: "$0" },
+        { segment: "individual", price: "$200/mo" },
+        { segment: "individual", price: "$20/mo" },
+        { segment: "team", price: "$25/seat/mo" },
+        { segment: "individual", price: "Contact sales" },
+      ],
+      ["individual"],
+    );
+    assert.deepEqual(range, { min: 0, max: 200 });
+    assert.equal(planPriceRange([{ segment: "team", price: "$25/seat/mo" }], ["team"]), undefined);
+  });
+  test("faqLead pulls the question, first sentence and first source", () => {
+    const lead = faqLead([{ id: "a", question: "Q?", answer: "One. Two.", sourceUrls: ["https://x"] }], "a");
+    assert.deepEqual(lead, { question: "Q?", lead: "One.", sourceUrl: "https://x" });
+    assert.equal(faqLead([], "a"), undefined);
   });
 });

@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { SourceRef, VendorModel, VendorModelStatus } from "@/lib/types";
 import { formatPartialDate, formatUsd } from "@/lib/vendor-overview";
-import { modelMap, priceLadder } from "@/lib/vendor-viz";
+import { modelMap, priceDelta, priceLadder } from "@/lib/vendor-viz";
 import { ModelLineage } from "./model-lineage";
 import { SourceLink } from "./primitives";
 
@@ -128,6 +128,7 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
                       {lane.stations.map((station) => (
                         <li
                           key={station.model.id}
+                          id={`model-${station.model.id}`}
                           tabIndex={0}
                           className="vo-station"
                           data-status={station.model.status}
@@ -165,65 +166,64 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
   );
 }
 
-export function PriceLadder({ models, footnote }: { models: VendorModel[]; footnote?: { text: string; sourceUrl: string } }) {
+// The models you can use today, one card each in its map lane's colour:
+// price, context, and how the price moved against the previous model in the
+// tier. Selecting a card opens that station on the map below.
+export function ModelLineup({ models, today, footnote }: { models: VendorModel[]; today: string; footnote?: { text: string; sourceUrl: string } }) {
   const ladder = priceLadder(models);
-  if (ladder.rows.length === 0) return null;
+  const lanes = modelMap(models, today).lanes;
+  const laneOf = new Map(lanes.map((lane, index) => [lane.tier, index]));
+  const rows = models
+    .filter((model) => model.status === "current")
+    .sort((a, b) => (laneOf.get(a.tier) ?? 0) - (laneOf.get(b.tier) ?? 0))
+    .map((model) => ({ model, price: ladder.rows.find((row) => row.model.id === model.id) }));
+  if (rows.length === 0) return null;
+
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex flex-wrap items-baseline justify-between gap-2">
-        <h3 className="text-h3 text-[var(--color-text-primary)]">What today&apos;s models cost</h3>
-        <div className="flex flex-wrap items-center gap-3 text-caption text-[var(--color-text-secondary)]">
-          <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden="true" className="h-2 w-4 rounded-full bg-[color-mix(in_srgb,var(--color-accent)_45%,transparent)]" /> Input
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden="true" className="h-2 w-4 rounded-full bg-[var(--color-accent)]" /> Output
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden="true" className="h-3 w-0 border-l-2 border-dashed border-[var(--color-text-tertiary)]" /> Previous model in the tier
-          </span>
-        </div>
-      </div>
-      <ol className="flex flex-col gap-4">
-        {ladder.rows.map((row, index) => (
-          <li key={row.model.id} className="grid grid-cols-1 gap-2 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-6">
-            <div>
-              <p className="text-sm font-semibold text-[var(--color-text-primary)]">{row.model.name}</p>
-              {row.previous ? (
-                <p className="text-caption text-[var(--color-text-tertiary)]">
-                  was {formatUsd(row.previous.input)} / {formatUsd(row.previous.output)} on {row.previous.name.replace(/^Claude\s+/, "")}
-                </p>
-              ) : row.model.highlight ? (
-                <p className="text-caption text-[var(--color-text-tertiary)] line-clamp-2">{row.model.highlight}</p>
-              ) : null}
-            </div>
-            <div className="flex flex-col gap-1.5">
-              {(
-                [
-                  ["in", row.input, row.inputPct, row.previous?.inputPct, "bg-[color-mix(in_srgb,var(--color-accent)_45%,transparent)]"],
-                  ["out", row.output, row.outputPct, row.previous?.outputPct, "bg-[var(--color-accent)]"],
-                ] as const
-              ).map(([kind, value, pct, previous, tone]) => (
-                <div key={kind} className="flex items-center gap-3">
-                  <div className="relative h-3 flex-1 rounded-full bg-[var(--color-bg-hover)]">
-                    <div className={`vo-bar ${tone}`} style={{ width: `max(${pct}%, 4px)`, "--i": index } as CSSProperties} />
-                    {previous !== undefined ? (
-                      <span aria-hidden="true" className="absolute -top-1 h-5 border-l-2 border-dashed border-[var(--color-text-tertiary)]" style={{ left: `${previous}%` }} />
-                    ) : null}
-                  </div>
-                  <span className="w-28 shrink-0 text-right text-sm tabular-nums text-[var(--color-text-primary)]">
-                    <span className="font-semibold">{formatUsd(value)}</span> <span className="text-caption text-[var(--color-text-tertiary)]">{kind === "in" ? "input" : "output"}</span>
+    <div className="flex flex-col gap-3">
+      <ol className="vo-rail vo-fade-x md:!grid-cols-2 lg:!grid-cols-3 xl:!grid-cols-5">
+        {rows.map(({ model, price }) => {
+          const lane = laneOf.get(model.tier) ?? 0;
+          const delta = price?.previous ? priceDelta(price.output, price.previous.output) : undefined;
+          return (
+            <li key={model.id} className="vo-entry" style={{ "--lane": laneColor(lane, true), borderTop: "3px solid var(--lane)" } as CSSProperties}>
+              <a href={`#model-${model.id}`} className="flex h-full flex-col gap-1.5 outline-none">
+                <span className="flex items-baseline justify-between gap-2">
+                  <span className="text-xl font-semibold tracking-tight" style={{ color: "var(--lane)" }}>
+                    {model.tier}
                   </span>
-                </div>
-              ))}
-            </div>
-          </li>
-        ))}
+                  <span className="text-caption text-[var(--color-text-tertiary)]">{model.name.replace(/^Claude\s+/, "").replace(model.tier, "").trim()}</span>
+                </span>
+                <span className="vo-entry-desc line-clamp-3 min-h-[3.6rem]">{model.highlight ?? ""}</span>
+                {price ? (
+                  <span className="mt-auto flex flex-col gap-1 pt-2">
+                    <span className="text-lg font-semibold tabular-nums text-[var(--color-text-primary)]">
+                      {formatUsd(price.input)} <span className="text-[var(--color-text-tertiary)]">/</span> {formatUsd(price.output)}
+                    </span>
+                    <span className="text-caption text-[var(--color-text-tertiary)]">per M tokens, in / out</span>
+                    <span aria-hidden="true" className="relative mt-1 h-1.5 rounded-full bg-[var(--color-bg-hover)]">
+                      <span className="vo-bar absolute inset-y-0 left-0" style={{ width: `max(${price.outputPct}%, 4px)`, background: "var(--lane)", "--i": lane } as CSSProperties} />
+                    </span>
+                  </span>
+                ) : (
+                  <span className="mt-auto pt-2 text-caption text-[var(--color-text-tertiary)]">No list price published</span>
+                )}
+                <span className="vo-entry-meta">
+                  {model.contextWindow ? <span>{model.contextWindow} context</span> : null}
+                  {model.maxOutput ? <span>{model.maxOutput} out</span> : null}
+                  {delta !== undefined && price?.previous ? (
+                    <span className={delta < 0 ? "font-semibold text-[var(--color-success)]" : delta > 0 ? "font-semibold text-[var(--color-warning)]" : undefined}>
+                      {delta === 0 ? "same price as" : `${delta > 0 ? "+" : "−"}${Math.abs(delta)}% vs`} {price.previous.name.replace(/^Claude\s+/, "").replace(model.tier, "").trim()}
+                    </span>
+                  ) : null}
+                </span>
+              </a>
+            </li>
+          );
+        })}
       </ol>
       <p className="text-caption text-[var(--color-text-tertiary)]">
-        US dollars per million tokens, API list price.
-        {ladder.sharedContext ? ` Every current model has a ${ladder.sharedContext} context window` : ""}
-        {ladder.sharedContext && ladder.sharedOutput ? ` and up to ${ladder.sharedOutput} output tokens.` : ladder.sharedContext ? "." : ""}
+        API list prices in US dollars; bars share one scale.
         {footnote ? (
           <>
             {" "}
