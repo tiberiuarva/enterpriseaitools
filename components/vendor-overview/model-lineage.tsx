@@ -24,7 +24,6 @@ const STATUS_DOT: Record<VendorModelStatus, string> = {
   retired: "badge-dot-muted",
 };
 
-
 function Legend() {
   return (
     <ul className="flex flex-wrap gap-x-4 gap-y-1" aria-label="Model status legend">
