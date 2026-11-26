@@ -1,13 +1,15 @@
 import { STACK_LAYERS, type StackLayer } from "./categories.ts";
 import type { Tool, ToolCategory } from "./types.ts";
 
-export type VendorStackSlug = "microsoft" | "aws" | "google";
+export type VendorStackSlug = "microsoft" | "aws" | "google" | "anthropic";
 
 export type VendorStack = {
   slug: VendorStackSlug;
   name: string;
   // Platform record that forms this vendor's foundation layer (data/platforms.json id).
-  platformId: string;
+  // Model vendors own no cloud platform; they list the platforms they run on instead.
+  platformId?: string;
+  runsOn?: readonly string[];
   // Exact `vendor` values in data/tools.json that belong to this vendor.
   vendorNames: readonly string[];
 };
@@ -16,7 +18,14 @@ export const VENDOR_STACKS: readonly VendorStack[] = [
   { slug: "microsoft", name: "Microsoft", platformId: "microsoft-foundry", vendorNames: ["Microsoft", "GitHub/Microsoft"] },
   { slug: "aws", name: "AWS", platformId: "aws-bedrock", vendorNames: ["AWS"] },
   { slug: "google", name: "Google", platformId: "google-vertex-ai", vendorNames: ["Google", "Google Cloud"] },
+  { slug: "anthropic", name: "Anthropic", runsOn: ["aws-bedrock", "google-vertex-ai", "microsoft-foundry"], vendorNames: ["Anthropic"] },
 ];
+
+// The foundation platforms a vendor stack sits on: its own platform, or the
+// clouds a model vendor is distributed through.
+export function vendorFoundationIds(stack: Pick<VendorStack, "platformId" | "runsOn">): readonly string[] {
+  return stack.platformId ? [stack.platformId] : stack.runsOn ?? [];
+}
 
 // Products a buyer can still adopt: excludes archived and deprecated records.
 export function isCurrentTool(tool: Pick<Tool, "status">): boolean {

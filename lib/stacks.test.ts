@@ -4,6 +4,7 @@ import { describe, it } from "node:test";
 import { STACK_LAYERS, getStackLayer } from "./categories.ts";
 import {
   VENDOR_STACKS,
+  vendorFoundationIds,
   buildVendorStack,
   countCoveredCategories,
   countUpdatesByTool,
@@ -136,8 +137,12 @@ describe("vendor stacks match the dataset", () => {
   const tools = (JSON.parse(readFileSync(new URL("../data/tools.json", import.meta.url), "utf8")) as { tools: Tool[] }).tools;
 
   for (const stack of VENDOR_STACKS) {
-    it(`${stack.slug}: platformId exists and every vendor name has a current tool`, () => {
-      assert.ok(platforms.some((platform) => platform.id === stack.platformId), `${stack.platformId} is not in data/platforms.json`);
+    it(`${stack.slug}: foundation platforms exist and every vendor name has a current tool`, () => {
+      const foundation = vendorFoundationIds(stack);
+      assert.ok(foundation.length > 0, `${stack.slug} has neither platformId nor runsOn`);
+      for (const platformId of foundation) {
+        assert.ok(platforms.some((platform) => platform.id === platformId), `${platformId} is not in data/platforms.json`);
+      }
       for (const vendorName of stack.vendorNames) {
         assert.ok(
           tools.some((record) => record.vendor === vendorName && isCurrentTool(record)),

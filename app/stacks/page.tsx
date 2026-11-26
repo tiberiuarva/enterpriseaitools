@@ -3,14 +3,14 @@ import { ArrowUpRight } from "lucide-react";
 import { HomeShell } from "@/components/home-shell";
 import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/components/json-ld";
 import { CATEGORY_ORDER } from "@/lib/categories";
-import { lastUpdated, tools } from "@/lib/data";
+import { lastUpdated, tools, vendorOverviews } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import { VENDOR_STACKS, buildVendorStack, countCoveredCategories, vendorStackTools } from "@/lib/stacks";
 
 const title = "Enterprise AI stacks by vendor";
 const description =
-  "Compare what Microsoft, AWS and Google each offer across the enterprise AI stack, from cloud platform to control plane and assistants, with gaps shown.";
+  "Compare what Microsoft, AWS, Google and Anthropic each offer across the enterprise AI stack, from cloud platform to control plane and assistants, with gaps shown.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/stacks" });
 
@@ -18,7 +18,7 @@ export default function StacksIndexPage() {
   const pageUrl = `${siteUrl}/stacks/`;
   const summaries = VENDOR_STACKS.map((stack) => {
     const rows = buildVendorStack(stack, tools);
-    return { stack, covered: countCoveredCategories(rows), products: vendorStackTools(rows).length };
+    return { stack, covered: countCoveredCategories(rows), products: vendorStackTools(rows).length, overview: vendorOverviews[stack.slug] };
   });
   const jsonLd = [
     buildBreadcrumbJsonLd([
@@ -39,19 +39,21 @@ export default function StacksIndexPage() {
             stack map and lists the categories where nothing of theirs is tracked yet.
           </p>
         </section>
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {summaries.map(({ stack, covered, products }) => (
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {summaries.map(({ stack, covered, products, overview }) => (
             <li key={stack.slug}>
               <a
                 href={withBasePath(`/stacks/${stack.slug}`)}
                 className="card group flex h-full flex-col gap-2 p-5 transition hover:border-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
               >
                 <h2 className="inline-flex items-center gap-1 text-h3 text-[var(--color-text-primary)] group-hover:text-[var(--color-primary)]">
-                  {stack.name} stack
+                  {overview ? overview.title : `${stack.name} stack`}
                   <ArrowUpRight size={16} aria-hidden="true" />
                 </h2>
                 <p className="text-sm text-[var(--color-text-secondary)]">
-                  {products} current products covering {covered} of {CATEGORY_ORDER.length} categories.
+                  {overview
+                    ? `Full overview: ${overview.entries.length} offerings in ${overview.domains.length} families, every model, pricing, where to run it and its history.`
+                    : `${products} current products covering ${covered} of ${CATEGORY_ORDER.length} categories.`}
                 </p>
               </a>
             </li>

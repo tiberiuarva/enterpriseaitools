@@ -64,6 +64,25 @@
   --vendor-aws-border: color-mix(in srgb, var(--vendor-aws) 28%, transparent);
   --vendor-gcp-border: color-mix(in srgb, var(--vendor-gcp) 28%, transparent);
 
+  /* Vendor overview visuals — categorical hues for model lanes, timeline
+     families and the ecosystem ring; the product stack ramps the accent. */
+  --viz-cat-1: var(--color-accent);
+  --viz-cat-2: #c084fc;
+  --viz-cat-3: #fbbf24;
+  --viz-cat-4: #2dd4bf;
+  --viz-cat-5: #fb7185;
+  --viz-eco: var(--viz-cat-4);
+  --viz-co: var(--viz-cat-5);
+  --viz-shade: #000000;
+  --viz-highlight: #ffffff;
+  --viz-glow: color-mix(in srgb, var(--color-accent) 28%, transparent);
+  --viz-seq-1: color-mix(in srgb, var(--color-accent) 96%, var(--color-bg-card));
+  --viz-seq-2: color-mix(in srgb, var(--color-accent) 80%, var(--color-bg-card));
+  --viz-seq-3: color-mix(in srgb, var(--color-accent) 64%, var(--color-bg-card));
+  --viz-seq-4: color-mix(in srgb, var(--viz-cat-2) 70%, var(--color-bg-card));
+  --viz-seq-5: color-mix(in srgb, var(--color-accent) 58%, var(--color-bg-card));
+  --viz-seq-6: color-mix(in srgb, var(--color-accent) 48%, var(--color-bg-card));
+
   /* Logo badge gradient stops (service-icon variant) */
   --color-logo-badge-from: rgba(255, 255, 255, 0.08);
   --color-logo-badge-to: rgba(255, 255, 255, 0.02);
@@ -125,6 +144,19 @@ html.light {
   --vendor-azure-border: color-mix(in srgb, var(--vendor-azure) 22%, transparent);
   --vendor-aws-border: color-mix(in srgb, var(--vendor-aws) 22%, transparent);
   --vendor-gcp-border: color-mix(in srgb, var(--vendor-gcp) 22%, transparent);
+
+  --viz-cat-2: #7e22ce;
+  --viz-cat-3: #b45309;
+  --viz-cat-4: #0f766e;
+  --viz-cat-5: #be123c;
+  --viz-shade: #1e1b4b;
+  --viz-glow: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  --viz-seq-1: color-mix(in srgb, var(--color-accent) 92%, var(--color-bg-card));
+  --viz-seq-2: color-mix(in srgb, var(--color-accent) 74%, var(--color-bg-card));
+  --viz-seq-3: color-mix(in srgb, var(--color-accent) 58%, var(--color-bg-card));
+  --viz-seq-4: color-mix(in srgb, var(--viz-cat-2) 52%, var(--color-bg-card));
+  --viz-seq-5: color-mix(in srgb, var(--color-accent) 40%, var(--color-bg-card));
+  --viz-seq-6: color-mix(in srgb, var(--color-accent) 28%, var(--color-bg-card));
 
   --color-logo-badge-from: rgba(0, 0, 0, 0.04);
   --color-logo-badge-to: rgba(0, 0, 0, 0.01);
@@ -281,6 +313,26 @@ body {
     color: var(--color-text-secondary);
   }
 
+  /* ── Source link — external citation used hundreds of times on vendor
+        overview pages, so the arrow is drawn in CSS instead of an inline SVG
+        per link (keeps the HTML and RSC payload small) ──────────────────── */
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.125rem;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .source-link::after {
+    content: "\2197";
+    font-size: 0.6875rem;
+  }
+  .source-link:hover {
+    text-decoration: underline;
+  }
+
   /* ── Theme toggle icons — flip on html.light without depending on a runtime
         attribute the inline script can't set before the button renders ─────── */
   .theme-icon-when-dark {
@@ -353,4 +405,708 @@ body {
 
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* ── Vendor overview visuals (components/vendor-overview) ────────────────── */
+@property --vo-n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes vo-count {
+  from {
+    --vo-n: 0;
+  }
+}
+@keyframes vo-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-48px);
+  }
+}
+@keyframes vo-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@keyframes vo-flow {
+  to {
+    stroke-dashoffset: -64;
+  }
+}
+@keyframes vo-pulse {
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+@keyframes vo-rise-step {
+  from {
+    transform: scaleY(0);
+  }
+}
+@keyframes vo-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@layer components {
+  /* Hero */
+  .vo-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .vo-hero::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10% auto 35%;
+    height: 120%;
+    z-index: -1;
+    background: radial-gradient(closest-side, var(--viz-glow), transparent 70%);
+    pointer-events: none;
+  }
+  .vo-gradient-text {
+    background: linear-gradient(100deg, var(--color-text-primary) 30%, var(--color-accent) 70%, var(--viz-cat-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Counting stats: the number is drawn by a counter so it can animate
+     without JavaScript; the real value sits in an sr-only span. */
+  /* --vo-n does not inherit, so the counter is reset on the element itself
+     and only read by its ::after. */
+  .vo-count {
+    --vo-n: var(--to);
+    animation: vo-count 1400ms var(--ease-out) both;
+    counter-reset: vo var(--vo-n);
+    font-variant-numeric: tabular-nums;
+  }
+  .vo-count::after {
+    content: counter(vo);
+  }
+
+  /* Isometric tower */
+  .vo-tower {
+    position: relative;
+  }
+  .vo-tower > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .vo-drop {
+    animation: vo-drop 700ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms + 100ms);
+  }
+  .vo-slab {
+    --slab: var(--viz-seq-1);
+    cursor: pointer;
+    transition:
+      transform var(--motion-base) var(--ease-out),
+      opacity var(--motion-base) var(--ease-out);
+  }
+  :is(.vo-slab, .vo-swatch)[data-slot="2"] { --slab: var(--viz-seq-2); }
+  :is(.vo-slab, .vo-swatch)[data-slot="3"] { --slab: var(--viz-seq-3); }
+  :is(.vo-slab, .vo-swatch)[data-slot="4"] { --slab: var(--viz-seq-4); }
+  :is(.vo-slab, .vo-swatch)[data-slot="5"] { --slab: var(--viz-seq-5); }
+  :is(.vo-slab, .vo-swatch)[data-slot="6"] { --slab: var(--viz-seq-6); }
+  .vo-face-top {
+    fill: var(--slab);
+    stroke: color-mix(in srgb, var(--slab) 55%, var(--viz-highlight));
+    stroke-width: 1;
+    stroke-linejoin: round;
+  }
+  .vo-face-left {
+    fill: color-mix(in srgb, var(--slab) 70%, var(--viz-shade));
+  }
+  .vo-face-right {
+    fill: color-mix(in srgb, var(--slab) 50%, var(--viz-shade));
+  }
+  .vo-plate .vo-face-top {
+    fill: color-mix(in srgb, var(--color-text-tertiary) 30%, var(--color-bg-card));
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 5 4;
+  }
+  .vo-plate .vo-face-left {
+    fill: color-mix(in srgb, var(--color-text-tertiary) 50%, var(--color-bg-card));
+  }
+  .vo-plate .vo-face-right {
+    fill: color-mix(in srgb, var(--color-text-tertiary) 38%, var(--color-bg-card));
+  }
+  .vo-stud {
+    fill: var(--color-accent);
+  }
+  .vo-ring {
+    fill: none;
+    stroke: color-mix(in srgb, var(--viz-eco) 60%, transparent);
+    stroke-width: 1.5;
+    stroke-dasharray: 2 6;
+    animation: vo-flow 6s linear infinite;
+  }
+  .vo-dot {
+    fill: var(--viz-eco);
+    transition: opacity var(--motion-base) var(--ease-out);
+  }
+  .vo-dot-halo {
+    fill: color-mix(in srgb, var(--viz-eco) 25%, transparent);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: vo-pulse 3.2s ease-in-out infinite;
+  }
+  .vo-leader {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-accent) 55%, var(--color-text-tertiary));
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition:
+      stroke var(--motion-fast) var(--ease-out),
+      stroke-width var(--motion-fast) var(--ease-out);
+  }
+  .vo-leader-dot {
+    fill: var(--color-bg-card);
+    stroke: color-mix(in srgb, var(--color-accent) 70%, var(--color-text-tertiary));
+    stroke-width: 2;
+  }
+  .vo-tower:has([data-for="1"]:is(:hover, :focus-visible)) [data-leader="1"],
+  .vo-tower:has([data-for="2"]:is(:hover, :focus-visible)) [data-leader="2"],
+  .vo-tower:has([data-for="3"]:is(:hover, :focus-visible)) [data-leader="3"],
+  .vo-tower:has([data-for="4"]:is(:hover, :focus-visible)) [data-leader="4"],
+  .vo-tower:has([data-for="5"]:is(:hover, :focus-visible)) [data-leader="5"],
+  .vo-tower:has([data-for="6"]:is(:hover, :focus-visible)) [data-leader="6"],
+  .vo-tower:has([data-for="eco"]:is(:hover, :focus-visible)) [data-leader="eco"] {
+    --leader: var(--color-accent);
+  }
+  [data-leader] .vo-leader {
+    stroke: var(--leader, color-mix(in srgb, var(--color-accent) 55%, var(--color-text-tertiary)));
+  }
+  [data-leader] .vo-leader-dot {
+    stroke: var(--leader, color-mix(in srgb, var(--color-accent) 70%, var(--color-text-tertiary)));
+  }
+  .vo-label {
+    position: absolute;
+    white-space: nowrap;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    max-width: 15rem;
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
+    transition: background-color var(--motion-fast) var(--ease-out);
+  }
+  .vo-label:hover,
+  .vo-label:focus-visible {
+    background: var(--color-bg-hover);
+  }
+  .vo-swatch {
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 3px;
+    background: var(--slab, var(--viz-seq-1));
+    flex-shrink: 0;
+  }
+
+  /* Hovering a slab, or its label, lifts it and quiets the rest. */
+  .vo-slab:hover {
+    transform: translateY(-12px);
+  }
+  .vo-tower:has([data-for]:is(:hover, :focus-visible)) .vo-slab {
+    opacity: 0.35;
+  }
+  .vo-tower:has([data-for="1"]:is(:hover, :focus-visible)) .vo-slab[data-slot="1"],
+  .vo-tower:has([data-for="2"]:is(:hover, :focus-visible)) .vo-slab[data-slot="2"],
+  .vo-tower:has([data-for="3"]:is(:hover, :focus-visible)) .vo-slab[data-slot="3"],
+  .vo-tower:has([data-for="4"]:is(:hover, :focus-visible)) .vo-slab[data-slot="4"],
+  .vo-tower:has([data-for="5"]:is(:hover, :focus-visible)) .vo-slab[data-slot="5"],
+  .vo-tower:has([data-for="6"]:is(:hover, :focus-visible)) .vo-slab[data-slot="6"] {
+    opacity: 1;
+    transform: translateY(-14px);
+  }
+
+  /* Audience lens: radios light each family by how much of it fits. */
+  .vo-lens input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .vo-lens label {
+    display: inline-flex;
+    min-height: 2.25rem;
+    align-items: center;
+    gap: 0.375rem;
+    white-space: nowrap;
+    border-radius: 9999px;
+    border: 1px solid var(--color-border);
+    padding: 0 0.875rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--motion-fast) var(--ease-out);
+  }
+  .vo-lens label:hover {
+    border-color: var(--color-border-strong);
+    color: var(--color-text-primary);
+  }
+  .vo-lens input:checked + label {
+    border-color: var(--color-accent);
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+  }
+  .vo-lens input:focus-visible + label {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+  .vo-hero [data-lens-count] {
+    display: none;
+  }
+  .vo-hero [data-lens-count="all"] {
+    display: inline;
+  }
+  .vo-hero:has(.vo-lens input:checked:not([value="all"])) [data-lens-count="all"] {
+    display: none;
+  }
+  .vo-hero:has(#lens-developers:checked) [data-lens-count="developers"],
+  .vo-hero:has(#lens-enterprise:checked) [data-lens-count="enterprise"],
+  .vo-hero:has(#lens-everyone:checked) [data-lens-count="everyone"],
+  .vo-hero:has(#lens-researchers:checked) [data-lens-count="researchers"],
+  .vo-hero:has(#lens-public:checked) [data-lens-count="public"] {
+    display: inline;
+  }
+  .vo-hero:has(#lens-developers:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-developers, 0.1); }
+  .vo-hero:has(#lens-enterprise:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-enterprise, 0.1); }
+  .vo-hero:has(#lens-everyone:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-everyone, 0.1); }
+  .vo-hero:has(#lens-researchers:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-researchers, 0.1); }
+  .vo-hero:has(#lens-public:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-public, 0.1); }
+  /* Under a lens, unmatched slabs fade to wireframes rather than ghosts. */
+  .vo-slab polygon {
+    fill-opacity: var(--lens, 1);
+    transition: fill-opacity var(--motion-base) var(--ease-out);
+  }
+  .vo-slab .vo-face-top {
+    stroke-opacity: max(var(--lens, 1), 0.6);
+  }
+  .vo-dot {
+    opacity: var(--lens, 1);
+  }
+  .vo-hero:has(#lens-developers:checked) .vo-label { opacity: max(var(--s-developers, 0.1), 0.45); }
+  .vo-hero:has(#lens-enterprise:checked) .vo-label { opacity: max(var(--s-enterprise, 0.1), 0.45); }
+  .vo-hero:has(#lens-everyone:checked) .vo-label { opacity: max(var(--s-everyone, 0.1), 0.45); }
+  .vo-hero:has(#lens-researchers:checked) .vo-label { opacity: max(var(--s-researchers, 0.1), 0.45); }
+  .vo-hero:has(#lens-public:checked) .vo-label { opacity: max(var(--s-public, 0.1), 0.45); }
+
+  /* Model subway map */
+  .vo-lane-line {
+    position: absolute;
+    top: 50%;
+    height: 4px;
+    margin-top: -2px;
+    border-radius: 9999px;
+    background: var(--lane);
+    transform-origin: left center;
+    animation: vo-grow 900ms var(--ease-out) both;
+  }
+  .vo-lane-line[data-live="false"] {
+    background: repeating-linear-gradient(90deg, var(--lane) 0 6px, transparent 6px 10px);
+  }
+  .vo-station {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: -0.75rem 0 0 -0.75rem;
+    border-radius: 9999px;
+    outline: none;
+  }
+  .vo-station::before {
+    content: "";
+    width: 0.875rem;
+    height: 0.875rem;
+    border-radius: 9999px;
+    border: 3px solid var(--lane);
+    background: var(--color-bg-card);
+    transition: transform var(--motion-fast) var(--ease-out);
+  }
+  .vo-station[data-status="current"]::before {
+    width: 1.125rem;
+    height: 1.125rem;
+    background: var(--lane);
+    border-color: var(--color-bg-card);
+    box-shadow: 0 0 0 3px var(--lane), 0 0 18px 2px color-mix(in srgb, var(--lane) 60%, transparent);
+  }
+  .vo-station[data-status="deprecated"]::before {
+    width: 1rem;
+    height: 1rem;
+    border: 2px dashed var(--color-text-primary);
+    background: var(--color-bg-card);
+    box-shadow: 0 0 0 2px var(--color-bg-card);
+  }
+  .vo-station[data-status="retired"]::before {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    border-width: 2px;
+    border-color: color-mix(in srgb, var(--lane) 70%, var(--color-text-tertiary));
+  }
+  /* Lift the active station above its neighbours so its card is never
+     painted under another station's label. */
+  .vo-station:is(:hover, :focus-visible, :focus-within, :target) {
+    z-index: 30;
+  }
+  /* A lineup card links to its station: the targeted station opens its card. */
+  .vo-station {
+    scroll-margin-block: 18rem;
+  }
+  .vo-station:target::before {
+    transform: scale(1.35);
+  }
+  .vo-station:target > .vo-pop {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+  .vo-station:target > .vo-pop:is([data-align="start"], [data-align="end"]) {
+    transform: translate(0, 0);
+  }
+  .vo-station:is(:hover, :focus-visible)::before {
+    transform: scale(1.35);
+  }
+  .vo-station-label {
+    position: absolute;
+    bottom: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-text-secondary);
+    pointer-events: none;
+  }
+  .vo-station[data-status="current"] .vo-station-label {
+    color: var(--color-text-primary);
+  }
+  .vo-pop {
+    position: absolute;
+    left: 50%;
+    z-index: 20;
+    width: 17rem;
+    transform: translate(-50%, 6px);
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    box-shadow: var(--shadow-3);
+    padding: 0.875rem 1rem;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--motion-fast) var(--ease-out),
+      transform var(--motion-fast) var(--ease-out),
+      visibility var(--motion-fast);
+  }
+  .vo-pop[data-side="below"] {
+    top: calc(100% + 8px);
+  }
+  .vo-pop[data-side="above"] {
+    bottom: calc(100% + 14px);
+  }
+  .vo-pop[data-align="start"] {
+    left: 0;
+    transform: translate(0, 6px);
+  }
+  .vo-pop[data-align="end"] {
+    left: auto;
+    right: 0;
+    transform: translate(0, 6px);
+  }
+  :is(.vo-station, .vo-has-pop):is(:hover, :focus-visible, :focus-within) > .vo-pop {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+  :is(.vo-station, .vo-has-pop):is(:hover, :focus-visible, :focus-within) > .vo-pop:is([data-align="start"], [data-align="end"]) {
+    transform: translate(0, 0);
+  }
+
+  /* Bars (price ladder, family breakdown, governance) */
+  .vo-bar {
+    height: 100%;
+    border-radius: 9999px;
+    transform-origin: left center;
+    animation: vo-grow 900ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 80ms);
+  }
+
+  /* Plan staircase: a lit step whose height is the monthly price. */
+  .vo-step {
+    background: linear-gradient(180deg, var(--slab), color-mix(in srgb, var(--slab) 70%, var(--viz-shade)));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--slab) 50%, var(--viz-highlight));
+    transform-origin: bottom center;
+    animation: vo-rise-step 800ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+
+  /* Channel tree */
+  .vo-branch {
+    position: relative;
+  }
+  .vo-branch::before {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    top: 0;
+    bottom: 1.5rem;
+    width: 2px;
+    background: linear-gradient(var(--color-accent), color-mix(in srgb, var(--color-accent) 10%, transparent));
+  }
+  .vo-branch-item {
+    position: relative;
+    padding-left: 2.75rem;
+  }
+  .vo-branch-item::before {
+    content: "";
+    position: absolute;
+    left: 1.25rem;
+    top: 1.5rem;
+    width: 1.25rem;
+    height: 2px;
+    background: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  }
+  .vo-branch-item::after {
+    content: "";
+    position: absolute;
+    left: calc(1.25rem - 4px);
+    top: calc(1.5rem - 4px);
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
+  }
+
+  /* Ecosystem orbit */
+  .vo-orbit-core {
+    background: radial-gradient(circle at 30% 30%, var(--viz-cat-2), var(--color-accent) 70%);
+    box-shadow: 0 0 60px 10px var(--viz-glow);
+  }
+  .vo-orbit-arc {
+    fill: none;
+    stroke: color-mix(in srgb, var(--viz-eco) 45%, transparent);
+    stroke-width: 0.9;
+    stroke-linecap: round;
+    transition: stroke var(--motion-base) var(--ease-out), stroke-width var(--motion-base) var(--ease-out);
+  }
+
+  /* Timeline river */
+  .vo-family-models { --fam: var(--viz-cat-1); }
+  .vo-family-products { --fam: var(--viz-cat-3); }
+  .vo-family-safety { --fam: var(--viz-cat-4); }
+  .vo-family-company { --fam: var(--viz-cat-5); }
+  .vo-family-neutral { --fam: var(--color-text-secondary); }
+  .vo-tdot {
+    display: block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    background: var(--fam);
+    opacity: 0.85;
+    transition: transform var(--motion-fast) var(--ease-out);
+  }
+  .vo-tdot[data-high="true"] {
+    width: 0.875rem;
+    height: 0.875rem;
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--color-bg-card), 0 0 0 3.5px var(--fam);
+  }
+  a:is(:hover, :focus-visible) > .vo-tdot {
+    transform: scale(1.5);
+  }
+  .vo-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 17rem);
+    gap: 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0.25rem;
+    padding: 0.25rem 0.25rem 0.75rem;
+    overscroll-behavior-x: contain;
+  }
+  .vo-rail > * {
+    scroll-snap-align: start;
+  }
+  /* Horizontal scrollers that should open on their newest (right-hand) end:
+     an rtl scroll container starts at the right; content stays ltr. */
+  .vo-scroll-end {
+    direction: rtl;
+  }
+  .vo-scroll-end > * {
+    direction: ltr;
+  }
+  .vo-track {
+    display: grid;
+    width: max-content;
+    min-width: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 17rem);
+    gap: 0.75rem;
+    padding: 0.25rem 0.25rem 0.75rem;
+  }
+  .vo-track > * {
+    scroll-snap-align: start;
+  }
+  .vo-fade-x.vo-scroll-end {
+    mask-image: linear-gradient(90deg, transparent, black 2rem);
+  }
+  /* The model map's sticky lane labels stay solid; lanes fade in after them. */
+  .vo-fade-lanes {
+    mask-image: linear-gradient(90deg, black 6rem, transparent 6rem, black 8rem);
+  }
+  .vo-fade-x {
+    mask-image: linear-gradient(90deg, transparent, black 1.5rem, black calc(100% - 2.5rem), transparent);
+  }
+
+  /* Compact catalog cards (repeated ~170 times: keep the class list short) */
+  .vo-entry {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.375rem;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-card);
+    padding: 0.875rem 1rem;
+    scroll-margin-top: 10rem;
+    transition: border-color var(--motion-fast) var(--ease-out), box-shadow var(--motion-fast) var(--ease-out);
+  }
+  .vo-entry:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-2);
+  }
+  .vo-entry[data-prominence="headline"] {
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+    background: linear-gradient(160deg, var(--color-accent-soft), transparent 55%), var(--color-bg-card);
+  }
+  .vo-entry-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+  }
+  .vo-entry-desc {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--color-text-secondary);
+  }
+  .vo-entry-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.625rem;
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+  }
+  .vo-entry-kids {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .vo-entry-kids > li {
+    border-radius: 9999px;
+    background: var(--color-bg-hover);
+    padding: 0.125rem 0.5rem;
+    font-size: 0.6875rem;
+    color: var(--color-text-secondary);
+    scroll-margin-top: 10rem;
+  }
+  .vo-entry-warn {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--color-warning);
+  }
+
+  .vo-reveal {
+    animation: vo-rise 600ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 60ms);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .vo-reveal {
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+      animation-delay: 0ms;
+    }
+  }
+}
+
+/* Responsive overrides for the vendor overview. They come after the base
+   .vo-* rules in the same layer, so they win at equal specificity while
+   Tailwind utilities can still override them. */
+@layer components {
+  /* Phones: centre the hero glow behind the tower instead of a tall stripe,
+     and fade the lens chip row so cut-off chips read as scrollable. */
+  @media (max-width: 1023px) {
+    .vo-hero::before {
+      inset: auto -25% 0 -25%;
+      height: 55%;
+    }
+  }
+  @media (max-width: 639px) {
+    .vo-lens-row {
+      mask-image: linear-gradient(90deg, black calc(100% - 2.5rem), transparent);
+    }
+  }
+  /* Rails scroll on phones only; from md up they wrap into a grid. */
+  @media (min-width: 768px) {
+    .vo-rail {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      overflow: visible;
+      mask-image: none;
+    }
+  }
+  .vo-pop-close {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+  .vo-station:target .vo-pop-close {
+    display: inline-block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vo-ring,
+  .vo-dot-halo {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  .vo-orbit:has([data-q="0"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="0"],
+  .vo-orbit:has([data-q="1"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="1"],
+  .vo-orbit:has([data-q="2"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="2"],
+  .vo-orbit:has([data-q="3"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="3"],
+  .vo-orbit:has([data-q="4"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="4"],
+  .vo-orbit:has([data-q="5"]:is(:hover, :focus-visible)) .vo-orbit-arc[data-q="5"] {
+    stroke: var(--viz-eco);
+    stroke-width: 1.8;
+  }
 }

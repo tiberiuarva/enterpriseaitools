@@ -184,6 +184,60 @@ Rules:
 - `logoKind: fallback` means the current checked-in asset is intentionally treated as a reviewed fallback, not that an official mark can never exist.
 - `logoKind: service-icon` means the rendered asset comes from a vendor service/icon library and should be presented distinctly from a product/project logo in UI treatment.
 
+## `stacks/<vendor>.json` (vendor stack overviews)
+
+One file per vendor with a rich overview page at `/stacks/<vendor>/`. The file
+name must equal `vendor`, and `vendor` must be a `VENDOR_STACKS` slug in
+`lib/stacks.ts`. Validated by `npm run check-stack-data` (rules in
+`lib/vendor-overview.ts`, shared with the page loader and unit tests).
+
+**Provenance rule.** Every record below that includes `SourceRef` carries its
+own `sourceUrl` (absolute https, host in `primarySourceHosts`), optional
+`sourceTitle`, and `verifiedAt` (ISO date, not after `reviewedAt`). The cited
+page must back the specific claim: dates, prices, counts and names. A claim
+the page does not carry is dropped, not left unsourced.
+
+### Top level
+
+| Field | Type | Required | Notes |
+|---|---|---:|---|
+| `vendor` | string | yes | Slug; equals the file name |
+| `name` | string | yes | Display name, e.g. `Anthropic` |
+| `title` | string | yes | Page title and H1 (max 60 chars) |
+| `description` | string | yes | Meta description (max 170 chars) |
+| `reviewedAt` | ISO date | yes | Last full review; drives sitemap `lastmod` and `article:modified_time` |
+| `primarySourceHosts` | string[] | yes | Allowed source hosts (subdomains included) |
+| `modelStatusSource` | SourceRef | no | Vendor lifecycle page backing every model `status` / `retiresAt` |
+| `answer` | string | yes | Direct one-paragraph answer shown in the hero (max 900 chars) |
+| `answerSources` | string[] | yes | Sources backing `answer` |
+| `domains` | VendorDomain[] | yes | Offering families, rendered in array order |
+| `entries` | VendorEntry[] | yes | The catalog |
+| `models` | VendorModel[] | yes | Model lineage; tier rows follow first appearance |
+| `timeline` | VendorTimelineEvent[] | yes | Newest first, no future dates |
+| `plans` | VendorPlan[] | yes | Plans and list prices |
+| `availability` | VendorAvailability[] | yes | Ways to buy or run the vendor's products |
+| `governance` | `{ id, label, claim: GovernanceClaim }[]` | yes | Vendor-level posture; same claim rules as `tool.governance` |
+| `safetyLevels` | VendorSafetyLevel[] | yes | May be empty |
+| `roadmap` | VendorRoadmapItem[] | yes | Vendor-stated plans only, never analyst speculation |
+| `company` | `{ facts: VendorFact[], partnerships: VendorPartnership[] }` | yes | |
+| `faqs` | VendorFaq[] | yes | Plain-text Q/A; emitted as FAQPage JSON-LD |
+
+### Records
+
+| Record | Fields | Rules |
+|---|---|---|
+| `VendorDomain` | `id`, `label`, `tagline`, `intro`, `cluster` (`products \| ecosystem \| company`), `groups: { id, label }[]` | Ids are permanent once published; every domain needs at least one entry and at most 6 `headline` entries |
+| `VendorEntry` (+SourceRef) | `id`, `name`, `kind`, `domainId`, `groupId?`, `parentId?`, `prominence` (`headline \| standard \| detail`), `status`, `audience[]`, `description` (max 180), `launchedAt?` (`YYYY-MM` or `YYYY-MM-DD`), `formerNames?`, `docsUrl?`, `toolId?`, `license?`, `licenseWarning?`, `githubUrl?` | `kind`: `model-family \| product \| feature \| solution \| standard \| open-source \| resource \| research \| framework \| program \| partnership`. `status`: `ga \| beta \| preview \| research-preview \| active \| deprecated \| retired`. `audience`: `everyone \| developers \| enterprise \| admins \| researchers \| public-sector \| education`. A child (`parentId`) shares its parent's domain, max depth 2, never `headline`. `toolId` must exist in `tools.json`, and every current tool of the vendor must be referenced by one entry. `open-source` entries require `license` + `githubUrl`; any `license` requires the `githubUrl` whose LICENSE file it was read from; `licenseWarning` requires `license` |
+| `VendorModel` (+SourceRef) | `id`, `name`, `apiId?`, `tier`, `generation`, `releasedAt`, `status` (`current \| legacy \| deprecated \| retired`), `retiresAt?`, `contextWindow?`, `maxOutput?`, `highlight?`, `pricing?: { inputPerMTok, outputPerMTok, currency: "USD", asOf }` | `legacy` is a site label for a model the vendor still serves but has superseded. `retired` requires `retiresAt`. Prices are USD per million tokens |
+| `VendorTimelineEvent` (+SourceRef) | `id`, `date` (`YYYY-MM` or `YYYY-MM-DD`), `type`, `title` (max 120), `summary` (max 320), `entryIds?`, `modelIds?`, `updateId?`, `impact?` | `type`: `model \| product \| platform \| enterprise \| safety-policy \| research \| open-source \| program \| partnership \| company \| deprecation`. Foreign keys must resolve (`updateId` into `updates.json`) |
+| `VendorPlan` (+SourceRef) | `id`, `name`, `segment`, `price` (max 80), `priceNote?`, `includes[]` | `segment`: `individual \| team \| enterprise \| developer \| public-sector \| education` |
+| `VendorAvailability` (+SourceRef) | `id`, `name`, `channel` (`direct \| cloud \| partner`), `platformId?`, `since?`, `offers[]`, `note`, `operatedBy?` (max 80) | `platformId` must exist in `platforms.json`. `operatedBy` names who runs the service (and so processes the data) only where the cited page says so; omit it when the page is silent |
+| `VendorSafetyLevel` (+SourceRef) | `id`, `label`, `summary`, `state` (`in-force \| defined \| not-yet-defined`) | |
+| `VendorRoadmapItem` (+SourceRef) | `id`, `title`, `summary`, `announcedAt`, `stage` (`announced \| preview \| rolling-out`), `expected?` (vendor's own wording, max 80), `expectedAt?` (`YYYY-MM` or `YYYY-MM-DD`) | `announcedAt` is when the vendor stated it. `expectedAt` is the earliest date `expected` names, for ordering only; it requires `expected`, and its year must appear in `expected` |
+| `VendorFact` (+SourceRef) | `id`, `label`, `value`, `figures?: { value, label }[]` (1-2; value max 24, label max 48) | Funding, ownership and listing facts need a vendor or regulator source. Each `figures[].value` must appear verbatim in `value`: figures highlight the sourced text, never add to it |
+| `VendorPartnership` (+SourceRef) | `id`, `partner`, `type`, `date?`, `summary` | `type`: `cloud \| investment \| distribution \| government \| research \| consulting \| technology` |
+| `VendorFaq` | `id`, `question` (max 160), `answer` (max 700), `sourceUrls[]` (min 1), `sectionId?` | |
+
 ## `updates.json`
 
 Top-level shape, with illustrative dates:

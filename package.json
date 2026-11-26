@@ -15,6 +15,7 @@
     "check-open-data": "node scripts/check-open-data.mjs",
     "check-live-performance": "node scripts/check-live-performance.mjs",
     "check-updates-data": "node scripts/check-updates-data.mjs",
+    "check-stack-data": "node --experimental-strip-types scripts/check-stack-data.mjs",
     "check-logo-provenance": "node scripts/check-logo-provenance.mjs",
     "check-logo-audit-report": "node scripts/check-logo-audit-report.mjs",
     "check-tool-card-data": "node scripts/check-tool-card-data.mjs",

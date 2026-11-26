@@ -71,6 +71,14 @@ deterministic, machine-readable boundary.
   leaves the change to a human (see §8).
 - Append a new entry to `data/updates.json` for every newsworthy change with
   a valid `sourceUrl`.
+- Vendor overviews (`data/stacks/<vendor>.json`, currently Anthropic): when a
+  change touches that vendor (new model, product launch, rename, price, plan,
+  retirement, policy version, partnership), update the matching `entries`,
+  `models`, `plans` or `roadmap` record, prepend a `timeline` event (newest
+  first) and set `verifiedAt` on each record you re-checked and `reviewedAt`
+  on the file. The cited page must back every date, price and number. Run
+  `npm run check-stack-data`. Edits under `data/stacks/` are outside the
+  auto-merge allowlist on purpose, so they always get a human review.
 - If `githubStars` or `version` was refreshed, update `lastRelease` too.
 - For any record whose logo provenance changed, refresh `logoReviewedAt` and
   re-run `npm run check-logo-provenance`.

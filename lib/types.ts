@@ -168,3 +168,212 @@ export type UpdateEntry = {
   sourceTitle?: string;
   impact?: UpdateImpact;
 };
+
+// ── Vendor stack overviews (data/stacks/<vendor>.json) ──────────────────────
+// Every published fact carries its own primary source and the date it was
+// last checked against that source. See data/SCHEMA.md.
+
+export type SourceRef = {
+  sourceUrl: string;
+  sourceTitle?: string;
+  verifiedAt: ISODateString;
+};
+
+export type VendorCluster = "products" | "ecosystem" | "company";
+
+export type VendorDomainGroup = { id: string; label: string };
+
+export type VendorDomain = {
+  id: string;
+  label: string;
+  tagline: string;
+  intro: string;
+  cluster: VendorCluster;
+  groups: VendorDomainGroup[];
+};
+
+export type VendorEntryKind =
+  | "model-family"
+  | "product"
+  | "feature"
+  | "solution"
+  | "standard"
+  | "open-source"
+  | "resource"
+  | "research"
+  | "framework"
+  | "program"
+  | "partnership";
+
+export type VendorEntryStatus = "ga" | "beta" | "preview" | "research-preview" | "active" | "deprecated" | "retired";
+
+export type VendorAudience =
+  | "everyone"
+  | "developers"
+  | "enterprise"
+  | "admins"
+  | "researchers"
+  | "public-sector"
+  | "education";
+
+export type VendorProminence = "headline" | "standard" | "detail";
+
+export type VendorEntry = SourceRef & {
+  id: string;
+  name: string;
+  kind: VendorEntryKind;
+  domainId: string;
+  groupId?: string;
+  parentId?: string;
+  prominence: VendorProminence;
+  status: VendorEntryStatus;
+  audience: VendorAudience[];
+  description: string;
+  launchedAt?: string;
+  formerNames?: string[];
+  docsUrl?: string;
+  toolId?: string;
+  availableOn?: string[];
+  license?: string;
+  licenseWarning?: string;
+  githubUrl?: string;
+};
+
+export type VendorModelStatus = "current" | "legacy" | "deprecated" | "retired";
+
+export type VendorModel = SourceRef & {
+  id: string;
+  name: string;
+  apiId?: string;
+  tier: string;
+  generation: string;
+  releasedAt: ISODateString;
+  status: VendorModelStatus;
+  retiresAt?: ISODateString;
+  contextWindow?: string;
+  maxOutput?: string;
+  highlight?: string;
+  pricing?: { inputPerMTok: number; outputPerMTok: number; currency: "USD"; asOf: ISODateString };
+};
+
+export type VendorTimelineType =
+  | "model"
+  | "product"
+  | "platform"
+  | "enterprise"
+  | "safety-policy"
+  | "research"
+  | "open-source"
+  | "program"
+  | "partnership"
+  | "company"
+  | "deprecation";
+
+export type VendorTimelineEvent = SourceRef & {
+  id: string;
+  date: string;
+  type: VendorTimelineType;
+  title: string;
+  summary: string;
+  entryIds?: string[];
+  modelIds?: string[];
+  updateId?: string;
+  impact?: UpdateImpact;
+};
+
+export type VendorPlanSegment = "individual" | "team" | "enterprise" | "developer" | "public-sector" | "education";
+
+export type VendorPlan = SourceRef & {
+  id: string;
+  name: string;
+  segment: VendorPlanSegment;
+  price: string;
+  priceNote?: string;
+  includes: string[];
+};
+
+export type VendorAvailability = SourceRef & {
+  id: string;
+  name: string;
+  channel: "direct" | "cloud" | "partner";
+  platformId?: string;
+  since?: string;
+  offers: string[];
+  note: string;
+  // Who runs the service and so processes the data, as the cited page states.
+  operatedBy?: string;
+};
+
+export type VendorGovernanceRow = {
+  id: string;
+  label: string;
+  claim: GovernanceClaim;
+};
+
+export type VendorSafetyLevel = SourceRef & {
+  id: string;
+  label: string;
+  summary: string;
+  state: "in-force" | "defined" | "not-yet-defined";
+};
+
+export type VendorRoadmapStage = "announced" | "preview" | "rolling-out";
+
+export type VendorRoadmapItem = SourceRef & {
+  id: string;
+  title: string;
+  summary: string;
+  announcedAt: ISODateString;
+  stage: VendorRoadmapStage;
+  expected?: string;
+  // The earliest date named in `expected`, machine-readable, for ordering.
+  expectedAt?: string;
+};
+
+// A short figure lifted verbatim from a fact's value, for the big-number band.
+export type VendorFactFigure = { value: string; label: string };
+
+export type VendorFact = SourceRef & { id: string; label: string; value: string; figures?: VendorFactFigure[] };
+
+export type VendorPartnershipType = "cloud" | "investment" | "distribution" | "government" | "research" | "consulting" | "technology";
+
+export type VendorPartnership = SourceRef & {
+  id: string;
+  partner: string;
+  type: VendorPartnershipType;
+  date?: string;
+  summary: string;
+};
+
+export type VendorFaq = {
+  id: string;
+  question: string;
+  answer: string;
+  sourceUrls: string[];
+  sectionId?: string;
+};
+
+export type VendorOverview = {
+  vendor: string;
+  name: string;
+  title: string;
+  description: string;
+  reviewedAt: ISODateString;
+  primarySourceHosts: string[];
+  // Backs every model's status and retirement date (the vendor's lifecycle page),
+  // so each model's own sourceUrl only has to back its release facts.
+  modelStatusSource?: SourceRef;
+  answer: string;
+  answerSources: string[];
+  domains: VendorDomain[];
+  entries: VendorEntry[];
+  models: VendorModel[];
+  timeline: VendorTimelineEvent[];
+  plans: VendorPlan[];
+  availability: VendorAvailability[];
+  governance: VendorGovernanceRow[];
+  safetyLevels: VendorSafetyLevel[];
+  roadmap: VendorRoadmapItem[];
+  company: { facts: VendorFact[]; partnerships: VendorPartnership[] };
+  faqs: VendorFaq[];
+};

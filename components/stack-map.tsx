@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CATEGORIES, FOUNDATION_LINK, STACK_LAYERS, type LayerId } from "@/lib/categories";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
 import { withBasePath } from "@/lib/site";
-import { VENDOR_STACKS, buildVendorStack, isCurrentTool, previewTools, type VendorStack } from "@/lib/stacks";
+import { VENDOR_STACKS, buildVendorStack, isCurrentTool, previewTools, vendorFoundationIds, type VendorStack } from "@/lib/stacks";
 import type { Platform, Tool } from "@/lib/types";
 
 type StackMapProps = {
@@ -41,7 +41,7 @@ function ToolChip({ tool }: { tool: Tool }) {
 export function StackMap({ tools, activity, platforms, vendor, headingLevel = "h2" }: StackMapProps) {
   const Heading = headingLevel;
   const vendorRows = vendor ? buildVendorStack(vendor, tools) : null;
-  const foundation = vendor ? platforms.filter((platform) => platform.id === vendor.platformId) : platforms;
+  const foundation = vendor ? platforms.filter((platform) => vendorFoundationIds(vendor).includes(platform.id)) : platforms;
 
   return (
     <div className="flex flex-col gap-3">

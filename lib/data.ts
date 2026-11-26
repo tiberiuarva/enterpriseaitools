@@ -3,8 +3,10 @@ import snapshotDiffsData from "@/data/snapshot-diffs.json";
 import toolsData from "@/data/tools.json";
 import updatesData from "@/data/updates.json";
 import { filterToolsByCategory, latestIsoDate } from "@/lib/dataset-metrics";
-import { countUpdatesByTool } from "@/lib/stacks";
-import type { Platform, SnapshotDiffEvent, Tool, ToolCategory, UpdateEntry } from "@/lib/types";
+import anthropicOverview from "@/data/stacks/anthropic.json";
+import { VENDOR_STACKS, countUpdatesByTool, isCurrentTool, type VendorStackSlug } from "@/lib/stacks";
+import type { Platform, SnapshotDiffEvent, Tool, ToolCategory, UpdateEntry, VendorOverview } from "@/lib/types";
+import { parseVendorOverview } from "@/lib/vendor-overview";
 
 export const tools = toolsData.tools as Tool[];
 export const platforms = platformsData.platforms as Platform[];
@@ -60,3 +62,22 @@ export function getPlatformsForCategory(category: ToolCategory) {
 
 // Update-feed activity per tool, used to pick recognisable preview tools.
 export const updateCountByTool = countUpdatesByTool(updates);
+
+// Rich vendor overviews (data/stacks/<vendor>.json). Parsed with the same
+// validator as `npm run check-stack-data`, so a bad file fails the build.
+function loadVendorOverview(slug: VendorStackSlug, raw: unknown): VendorOverview {
+  const stack = VENDOR_STACKS.find((candidate) => candidate.slug === slug);
+  return parseVendorOverview(raw, {
+    toolIds: new Set(tools.map((tool) => tool.id)),
+    platformIds: new Set(platforms.map((platform) => platform.id)),
+    updateIds: new Set(updates.map((update) => update.id)),
+    vendorToolIds: tools
+      .filter((tool) => tool.vendor !== undefined && stack?.vendorNames.includes(tool.vendor) && isCurrentTool(tool))
+      .map((tool) => tool.id),
+    today: new Date().toISOString().slice(0, 10),
+  });
+}
+
+export const vendorOverviews: Partial<Record<VendorStackSlug, VendorOverview>> = {
+  anthropic: loadVendorOverview("anthropic", anthropicOverview),
+};

@@ -46,6 +46,8 @@ jobs:
         run: npm run check-governance-data
       - name: Check updates data
         run: npm run check-updates-data
+      - name: Check vendor stack data
+        run: npm run check-stack-data
       - name: Check tool-card data
         run: npm run check-tool-card-data
       - name: Typecheck

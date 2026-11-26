@@ -22,7 +22,7 @@ ever reaches GitHub Actions.
 | `app/` | Next.js 16 App Router routes — every leaf is a static-export target |
 | `components/` | Shared React components |
 | `lib/` | Pure TS utilities + colocated `*.test.ts` files (node test runner) |
-| `data/` | Canonical JSON dataset (`tools.json`, `platforms.json`, `updates.json`, `eu-ai-act.json`, `logo-inventory.json`) governed by `data/SCHEMA.md` — the product's source of truth |
+| `data/` | Canonical JSON dataset (`tools.json`, `platforms.json`, `updates.json`, `eu-ai-act.json`, `logo-inventory.json`, `stacks/<vendor>.json`) governed by `data/SCHEMA.md` — the product's source of truth |
 | `scripts/` | Generators and validators invoked by npm scripts |
 | `public/` | Static assets (logos, favicons, robots/sitemap inputs) |
 | `docs/` | Architecture, ops, research, and audit notes |
@@ -114,6 +114,7 @@ find a lint error is wasteful.
 | Typecheck | `npx tsc --noEmit` |
 | Governance data | `npm run check-governance-data` |
 | Updates data | `npm run check-updates-data` |
+| Vendor stack data | `npm run check-stack-data` |
 | Unit tests | `npm test` in CI (every `lib/*.test.ts`); `/ship-check` runs `npm run test:eu-ai-act` |
 | Build | `npm run build` (runs `generate-seo-artifacts`, `next build`, `check-static-export-image-paths`) |
 | Generated artifacts | `npm run check-generated-artifacts` |
@@ -154,6 +155,7 @@ passes (all except `check-deploy-readiness`, which is local-only).
 | Unit tests | `npm run test:eu-ai-act` |
 | Validate tool cards | `npm run check-tool-card-data` |
 | Validate updates data | `npm run check-updates-data` |
+| Validate vendor overviews | `npm run check-stack-data` |
 | Validate logos | `npm run check-logo-provenance` |
 | Sync logo audit | `npm run check-logo-audit-report` |
 | Audit logo report | `npm run report-logo-audit` |

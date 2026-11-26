@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { HomeShell } from "@/components/home-shell";
-import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
+import { JsonLd, buildBreadcrumbJsonLd, buildCollectionPageJsonLd, buildFaqPageJsonLd, buildToolListJsonLd } from "@/components/json-ld";
 import { StackMap } from "@/components/stack-map";
+import { VendorOverviewPage } from "@/components/vendor-overview/vendor-overview-page";
 import { CATEGORIES, CATEGORY_ORDER } from "@/lib/categories";
-import { lastUpdated, platforms, tools, updateCountByTool } from "@/lib/data";
+import { lastUpdated, platforms, tools, updateCountByTool, updates, vendorOverviews } from "@/lib/data";
 import { buildMetadata, siteUrl } from "@/lib/metadata";
 import { withBasePath } from "@/lib/site";
 import { VENDOR_STACKS, buildVendorStack, countCoveredCategories, getVendorStack, vendorStackGaps, vendorStackTools } from "@/lib/stacks";
@@ -23,6 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ vendor: s
   const { vendor } = await params;
   const stack = getVendorStack(vendor);
   if (!stack) notFound();
+  const overview = vendorOverviews[stack.slug];
+  if (overview) {
+    return buildMetadata({ title: overview.title, description: overview.description, path: `/stacks/${stack.slug}`, modifiedTime: overview.reviewedAt });
+  }
   return buildMetadata({ title: `${stack.name} enterprise AI stack`, description: describe(stack.name), path: `/stacks/${stack.slug}` });
 }
 
@@ -30,6 +35,30 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
   const { vendor } = await params;
   const stack = getVendorStack(vendor);
   if (!stack) notFound();
+
+  const overview = vendorOverviews[stack.slug];
+  if (overview) {
+    const overviewUrl = `${siteUrl}/stacks/${stack.slug}/`;
+    const overviewTools = vendorStackTools(buildVendorStack(stack, tools));
+    const overviewJsonLd = [
+      buildBreadcrumbJsonLd([
+        { name: "Home", url: `${siteUrl}/` },
+        { name: "Vendor stacks", url: `${siteUrl}/stacks/` },
+        { name: overview.title, url: overviewUrl },
+      ]),
+      buildCollectionPageJsonLd({ name: overview.title, url: overviewUrl, description: overview.description }),
+      buildToolListJsonLd(overviewTools, overview.title, overview.description, overviewUrl),
+      buildFaqPageJsonLd(overview.faqs),
+    ];
+    return (
+      <HomeShell lastUpdated={lastUpdated} currentPath={`/stacks/${stack.slug}`}>
+        <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 md:gap-8 md:py-14 lg:px-8">
+          <JsonLd data={overviewJsonLd} />
+          <VendorOverviewPage overview={overview} stack={stack} tools={tools} platforms={platforms} updates={updates} activity={updateCountByTool} />
+        </main>
+      </HomeShell>
+    );
+  }
 
   const rows = buildVendorStack(stack, tools);
   const covered = countCoveredCategories(rows);

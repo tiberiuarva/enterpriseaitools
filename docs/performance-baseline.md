@@ -27,6 +27,47 @@ materially changes the bundle or page count.
 | Mid-tier HTML routes | `/agents/`, `/orchestration/`, `/updates/` at 180–220 KB | Filter bar + tool grid + JSON-LD. |
 | Smallest tool-page HTML | `/tools/<id>/` between 30–60 KB | Driven by a single tool record with no large client component. |
 
+## M13 — vendor stack overviews (2026-11-26)
+
+`/stacks/anthropic/` is now the largest HTML route: 1.70 MB uncompressed and
+180 KB gzipped (after the visual redesign: isometric stack, model map, channel
+tree, timeline river). For comparison, `/stacks/microsoft/` is 250 KB and `/` is 307 KB.
+
+**Why it is large.** The page renders the full source-backed catalog
+server-side so that every offering is crawlable and deep-linkable:
+
+- 168 offerings, 34 models, 70 timeline events and their citations.
+- The React flight payload repeats that tree.
+
+**What keeps it fast.**
+
+- Families, the full event history and the source list start collapsed in
+  `<details>`.
+- Diagrams are server-rendered SVG and CSS (no chart library); hover, the
+  audience lens and the counting stats use `:has()`, radios and `@property`,
+  so they add no JavaScript. Motion is transform/opacity only and stops under
+  `prefers-reduced-motion`.
+- Catalog cards use short `.vo-entry*` classes from `globals.css` instead of
+  long utility strings repeated 168 times.
+- Filters are thin client islands that toggle `hidden` on server-rendered
+  nodes, so entry data never ships as props.
+- First-load JS grows only by those islands.
+
+Lighthouse, run locally against `out/` served with gzip:
+
+| Route | Mobile | Desktop | Mobile LCP |
+|---|---:|---:|---:|
+| `/stacks/anthropic/` | 0.92 | 1.00 | 3.22 s |
+| `/stacks/microsoft/` | 0.98 | 1.00 | 2.46 s |
+| `/` | 0.98 | 1.00 | 2.37 s |
+
+The same day, production scored `/` at 0.99 / 1.00 and `/stacks/microsoft/` at
+0.98 / 1.00, so the local numbers track production.
+
+If a second vendor overview pushes past the mobile 0.8 budget, split the
+ecosystem families onto `/stacks/<vendor>/<family>/` sub-routes rather than
+trimming sourced content.
+
 ## Targets
 
 - **Per-route JS:** new milestones must not grow any route's first-load JS by
