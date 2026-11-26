@@ -67,7 +67,9 @@ export function ChannelTree({ availability, hub, hubVendor }: { availability: Ve
                     {item.since ? <span className="shrink-0 text-caption text-[var(--color-text-tertiary)]">since {year(item.since)}</span> : null}
                   </div>
                   {item.operatedBy ? (
-                    <p className={`text-caption font-semibold ${item.operatedBy === hubVendor ? "text-[var(--color-accent)]" : "text-[var(--color-text-secondary)]"}`}>
+                    <p
+                      className={`text-caption font-semibold ${item.operatedBy === hubVendor ? "text-[var(--color-accent)]" : "text-[var(--color-text-secondary)]"}`}
+                    >
                       Run by {item.operatedBy}
                     </p>
                   ) : null}
@@ -163,6 +165,12 @@ export function PlanTags({ plans }: { plans: VendorPlan[] }) {
                     <div className="hidden sm:block">
                       <PlanIncludes plan={plan} />
                     </div>
+                    <details className="sm:hidden">
+                      <summary className="cursor-pointer text-caption font-medium text-[var(--color-accent)]">What&apos;s included</summary>
+                      <div className="mt-1.5">
+                        <PlanIncludes plan={plan} />
+                      </div>
+                    </details>
                     <SourceLink href={plan.sourceUrl} />
                   </div>
                 </li>
@@ -527,17 +535,17 @@ export function CompanyBand({ company }: { company: VendorOverview["company"] })
   return (
     <div className="flex flex-col gap-6">
       {figures.length > 0 ? (
-        <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4">
           {figures.map((figure, index) => (
-            <div key={`${figure.fact.id}-${figure.value}`} className="vo-entry vo-reveal" data-prominence="headline" style={{ "--i": index } as CSSProperties}>
-              <dd className="text-[1.75rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)] sm:text-[2.25rem]">{figure.value}</dd>
-              <dt className="text-caption text-[var(--color-text-secondary)]">{figure.label}</dt>
-              <dd className="mt-auto pt-1">
+            <li key={`${figure.fact.id}-${figure.value}`} className="vo-entry vo-reveal" data-prominence="headline" style={{ "--i": index } as CSSProperties}>
+              <p className="text-[1.5rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)] sm:text-[2rem]">{figure.value}</p>
+              <p className="text-caption text-[var(--color-text-secondary)]">{figure.label}</p>
+              <p className="mt-auto pt-1">
                 <SourceLink href={figure.fact.sourceUrl} label={figure.fact.sourceTitle ?? "Source"} />
-              </dd>
-            </div>
+              </p>
+            </li>
           ))}
-        </dl>
+        </ul>
       ) : null}
       <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {rest.map((fact) => (
@@ -557,7 +565,9 @@ export function CompanyBand({ company }: { company: VendorOverview["company"] })
             <li key={partnership.id} className="vo-entry">
               <div className="flex items-baseline justify-between gap-2">
                 <p className="vo-entry-name">{partnership.partner}</p>
-                {partnership.date ? <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span> : null}
+                {partnership.date ? (
+                  <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span>
+                ) : null}
               </div>
               <p className="text-caption text-[var(--color-text-tertiary)]">{PARTNER_TYPE_LABEL[partnership.type] ?? partnership.type}</p>
               <p className="vo-entry-desc">{partnership.summary}</p>
@@ -597,7 +607,12 @@ export function TimelineRiver({ events }: { events: VendorTimelineEvent[] }) {
             Key milestone
           </li>
         </ul>
-        <div role="region" aria-label="Events per quarter, scrolls horizontally" tabIndex={0} className="vo-fade-x vo-scroll-end -mx-2 overflow-x-auto px-2 md:[mask-image:none]">
+        <div
+          role="region"
+          aria-label="Events per quarter, scrolls horizontally"
+          tabIndex={0}
+          className="vo-fade-x vo-scroll-end -mx-2 overflow-x-auto px-2 md:[mask-image:none]"
+        >
           <ol className="flex min-w-[640px] items-end gap-3">
             {density.map((item) => (
               <li key={item.year} className="flex flex-col gap-2" style={{ flex: `${Math.max(1.2, Math.sqrt(item.count))} 1 0%` }}>
@@ -702,7 +717,10 @@ function RoadmapCard({ item }: { item: VendorRoadmapItem }) {
 // names, soonest first, then whatever was announced without a date.
 export function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
   const { years, undated } = roadmapByYear(items);
-  const columns = [...years.map((group) => ({ key: group.year, label: group.year, items: group.items })), ...(undated.length > 0 ? [{ key: "undated", label: "No date given", items: undated }] : [])];
+  const columns = [
+    ...years.map((group) => ({ key: group.year, label: group.year, items: group.items })),
+    ...(undated.length > 0 ? [{ key: "undated", label: "No date given", items: undated }] : []),
+  ];
   return (
     <div className="flex flex-col gap-3">
       <div aria-hidden="true" className="hidden items-center gap-3 text-caption font-semibold text-[var(--color-text-tertiary)] md:flex">
@@ -711,19 +729,21 @@ export function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
         <span>Ahead</span>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-[repeat(var(--cols),minmax(0,1fr))] md:gap-4" style={{ "--cols": columns.length } as CSSProperties}>
-          {columns.map((column) => (
-            <section key={column.key} aria-label={column.label} className="flex flex-col gap-3">
-              <h3 className="flex items-baseline justify-between border-b-2 border-[var(--color-border-strong)] pb-1.5">
-                <span className={`text-lg font-semibold ${column.key === "undated" ? "text-[var(--color-text-tertiary)]" : "text-[var(--color-text-primary)]"}`}>{column.label}</span>
-                <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{column.items.length}</span>
-              </h3>
-              <ol className="flex flex-col gap-3">
-                {column.items.map((item) => (
-                  <RoadmapCard key={item.id} item={item} />
-                ))}
-              </ol>
-            </section>
-          ))}
+        {columns.map((column) => (
+          <section key={column.key} aria-label={column.label} className="flex flex-col gap-3">
+            <h3 className="flex items-baseline justify-between border-b-2 border-[var(--color-border-strong)] pb-1.5">
+              <span className={`text-lg font-semibold ${column.key === "undated" ? "text-[var(--color-text-tertiary)]" : "text-[var(--color-text-primary)]"}`}>
+                {column.label}
+              </span>
+              <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{column.items.length}</span>
+            </h3>
+            <ol className="flex flex-col gap-3">
+              {column.items.map((item) => (
+                <RoadmapCard key={item.id} item={item} />
+              ))}
+            </ol>
+          </section>
+        ))}
       </div>
     </div>
   );
