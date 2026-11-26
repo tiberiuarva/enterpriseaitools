@@ -300,6 +300,8 @@ export type VendorAvailability = SourceRef & {
   since?: string;
   offers: string[];
   note: string;
+  // Who runs the service and so processes the data, as the cited page states.
+  operatedBy?: string;
 };
 
 export type VendorGovernanceRow = {
@@ -324,9 +326,14 @@ export type VendorRoadmapItem = SourceRef & {
   announcedAt: ISODateString;
   stage: VendorRoadmapStage;
   expected?: string;
+  // The earliest date named in `expected`, machine-readable, for ordering.
+  expectedAt?: string;
 };
 
-export type VendorFact = SourceRef & { id: string; label: string; value: string };
+// A short figure lifted verbatim from a fact's value, for the big-number band.
+export type VendorFactFigure = { value: string; label: string };
+
+export type VendorFact = SourceRef & { id: string; label: string; value: string; figures?: VendorFactFigure[] };
 
 export type VendorPartnershipType = "cloud" | "investment" | "distribution" | "government" | "research" | "consulting" | "technology";
 

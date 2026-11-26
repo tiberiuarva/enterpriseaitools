@@ -4863,6 +4863,7 @@
         "Claude Code"
       ],
       "note": "Anthropic processes the data and stores it in the US, with optional US-only inference.",
+      "operatedBy": "Anthropic",
       "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/data-residency",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Data residency"
@@ -4877,6 +4878,7 @@
         "Claude models"
       ],
       "note": "Claude generally available on Amazon Bedrock since September 2023, operated by AWS in its own regions.",
+      "operatedBy": "AWS",
       "sourceUrl": "https://claude.com/blog/amazon-bedrock-general-availability",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude on Amazon Bedrock"
@@ -4890,6 +4892,7 @@
         "Claude API"
       ],
       "note": "Anthropic operates the API; AWS provides IAM, Marketplace billing and PrivateLink. Not HIPAA-eligible.",
+      "operatedBy": "Anthropic",
       "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/claude-platform-on-aws",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude Platform on AWS"
@@ -4904,6 +4907,7 @@
         "Claude models"
       ],
       "note": "Claude generally available on Google Cloud since March 2024, operated by Google.",
+      "operatedBy": "Google",
       "sourceUrl": "https://www.anthropic.com/news/google-vertex-general-availability",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude 3 on Vertex AI"
@@ -4917,6 +4921,7 @@
         "Claude API"
       ],
       "note": "Anthropic operates the API at claude.googleapis.com; global location only; Marketplace billing.",
+      "operatedBy": "Anthropic",
       "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/overview",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude models on Google Cloud"
@@ -4931,6 +4936,7 @@
         "Claude models"
       ],
       "note": "Hosted on Azure (Global or US Data Zone, model subset) or on Anthropic (all models); some API features missing.",
+      "operatedBy": "Microsoft (Azure) or Anthropic",
       "sourceUrl": "https://platform.claude.com/docs/en/build-with-claude/claude-in-microsoft-foundry",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude in Microsoft Foundry"
@@ -4943,6 +4949,7 @@
         "Claude models in Copilot"
       ],
       "note": "GitHub serves the Claude models in Copilot from Amazon Web Services, Anthropic and Google Cloud.",
+      "operatedBy": "GitHub, serving from AWS, Anthropic and Google Cloud",
       "sourceUrl": "https://docs.github.com/en/copilot/reference/ai-models/model-hosting",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Model hosting in GitHub Copilot"
@@ -5143,6 +5150,7 @@
       "announcedAt": "2026-10-19",
       "stage": "announced",
       "expected": "Due 15 Dec 2026",
+      "expectedAt": "2026-12-15",
       "sourceUrl": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Frontier Safety Roadmap"
@@ -5154,6 +5162,7 @@
       "announcedAt": "2026-10-19",
       "stage": "announced",
       "expected": "Due 15 Jan 2027",
+      "expectedAt": "2027-01-15",
       "sourceUrl": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Frontier Safety Roadmap"
@@ -5186,6 +5195,7 @@
       "announcedAt": "2026-11-26",
       "stage": "announced",
       "expected": "Q4 2026 to Q2 2027",
+      "expectedAt": "2026-10",
       "sourceUrl": "https://trust.anthropic.com/",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Anthropic Trust Center"
@@ -5197,6 +5207,7 @@
       "announcedAt": "2026-10-02",
       "stage": "announced",
       "expected": "By end of 2027",
+      "expectedAt": "2027-12",
       "sourceUrl": "https://www.anthropic.com/news/claude-frontier-academy",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude Frontier Academy"
@@ -5208,6 +5219,7 @@
       "announcedAt": "2026-04-20",
       "stage": "rolling-out",
       "expected": "From end of 2026",
+      "expectedAt": "2026-12",
       "sourceUrl": "https://www.anthropic.com/news/anthropic-amazon-compute",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Anthropic and Amazon expand partnership"
@@ -5219,6 +5231,7 @@
       "announcedAt": "2026-04-06",
       "stage": "announced",
       "expected": "From 2027",
+      "expectedAt": "2027-01",
       "sourceUrl": "https://www.anthropic.com/news/google-broadcom-partnership-compute",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Google and Broadcom compute partnership"
@@ -5230,6 +5243,7 @@
       "announcedAt": "2026-11-23",
       "stage": "announced",
       "expected": "30 Nov 2026 and 22 Jan 2027",
+      "expectedAt": "2026-11-30",
       "sourceUrl": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Model deprecations"
@@ -5260,6 +5274,12 @@
         "id": "listing",
         "label": "Listing",
         "value": "Nasdaq: ANT, trading since 19 Nov 2026",
+        "figures": [
+          {
+            "value": "Nasdaq: ANT",
+            "label": "Trading since 19 Nov 2026"
+          }
+        ],
         "sourceUrl": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
         "verifiedAt": "2026-11-26",
         "sourceTitle": "Anthropic prices its IPO"
@@ -5268,6 +5288,16 @@
         "id": "ipo",
         "label": "IPO",
         "value": "1.127B Class A shares at $83.00, about $93.5B gross proceeds; closed 20 Nov 2026",
+        "figures": [
+          {
+            "value": "$83.00",
+            "label": "IPO price per Class A share"
+          },
+          {
+            "value": "$93.5B",
+            "label": "Gross IPO proceeds"
+          }
+        ],
         "sourceUrl": "https://www.anthropic.com/news/ipo-close",
         "verifiedAt": "2026-11-26",
         "sourceTitle": "Anthropic closes its IPO"
@@ -5276,6 +5306,12 @@
         "id": "last-private-round",
         "label": "Last private round",
         "value": "Series H, $65B at a $965B post-money valuation (May 2026)",
+        "figures": [
+          {
+            "value": "$965B",
+            "label": "Post-money valuation, May 2026"
+          }
+        ],
         "sourceUrl": "https://www.anthropic.com/news/series-h",
         "verifiedAt": "2026-11-26",
         "sourceTitle": "Series H"

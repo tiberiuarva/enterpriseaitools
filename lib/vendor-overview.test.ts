@@ -102,6 +102,52 @@ describe("validateVendorOverview", () => {
     }
   });
 
+  it("ties roadmap expectedAt to a year the vendor's wording names", () => {
+    const ok = fixture();
+    ok.roadmap[0] = { ...ok.roadmap[0], expected: "Q4 2026 to Q2 2027", expectedAt: "2026-10" };
+    assert.deepEqual(validateVendorOverview(ok, ctx), []);
+
+    const wrongYear = fixture();
+    wrongYear.roadmap[0] = { ...wrongYear.roadmap[0], expected: "From 2027", expectedAt: "2028-01" };
+    assert.ok(validateVendorOverview(wrongYear, ctx).some((error) => error.includes("does not appear in expected")));
+
+    const noWording = fixture();
+    noWording.roadmap[0] = { ...noWording.roadmap[0], expectedAt: "2027-01" };
+    assert.ok(validateVendorOverview(noWording, ctx).some((error) => error.includes("expectedAt: requires expected")));
+
+    const badDate = fixture();
+    badDate.roadmap[0] = { ...badDate.roadmap[0], expected: "Soon in 2027", expectedAt: "2027" };
+    assert.ok(validateVendorOverview(badDate, ctx).some((error) => error.includes("is not YYYY-MM or YYYY-MM-DD")));
+  });
+
+  it("only accepts fact figures that appear verbatim in the fact's value", () => {
+    const ok = fixture();
+    ok.company.facts[0] = { ...ok.company.facts[0], value: "IPO at $83.00 per share", figures: [{ value: "$83.00", label: "IPO price" }] };
+    assert.deepEqual(validateVendorOverview(ok, ctx), []);
+
+    const invented = fixture();
+    invented.company.facts[0] = { ...invented.company.facts[0], value: "IPO at $83.00 per share", figures: [{ value: "$90.00", label: "IPO price" }] };
+    assert.ok(validateVendorOverview(invented, ctx).some((error) => error.includes("does not appear verbatim")));
+
+    const tooMany = fixture();
+    tooMany.company.facts[0] = {
+      ...tooMany.company.facts[0],
+      value: "a b c",
+      figures: [
+        { value: "a", label: "A" },
+        { value: "b", label: "B" },
+        { value: "c", label: "C" },
+      ],
+    };
+    assert.ok(validateVendorOverview(tooMany, ctx).some((error) => error.includes("1-2 figures")));
+  });
+
+  it("caps operatedBy at 80 characters", () => {
+    const data = fixture();
+    data.availability[0] = { ...data.availability[0], operatedBy: "x".repeat(81) };
+    assert.ok(validateVendorOverview(data, ctx).some((error) => error.includes("operatedBy: is 81 chars")));
+  });
+
   it("requires every current vendor tool to be referenced", () => {
     const errors = validateVendorOverview(fixture(), { ...ctx, vendorToolIds: ["tool-a", "tool-b"] });
     assert.ok(errors.some((error) => error.includes('"tool-b" is not referenced')));

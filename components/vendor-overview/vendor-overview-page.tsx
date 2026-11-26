@@ -38,6 +38,11 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   const flagship = flagshipName(overview);
   const modelsDomain = domain("claude-models") ?? overview.domains.find((item) => item.cluster === "products");
   const batch = overview.entries.find((entry) => entry.id === "batch-api");
+  // Pricing modifiers shown under the model tables, each from its own sourced entry.
+  const priceNotes = ["batch-api", "prompt-caching"].flatMap((id) => {
+    const entry = overview.entries.find((item) => item.id === id);
+    return entry ? [{ text: `${entry.name}: ${entry.description}`, sourceUrl: entry.sourceUrl }] : [];
+  });
   // Section headings ask the questions the page's own FAQ answers; the lead
   // line is that answer's first sentence, with its source.
   const question = (faqId: string, fallback: string) => faqLead(overview.faqs, faqId)?.question ?? fallback;
@@ -171,7 +176,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
           />
           <div className="flex flex-col gap-3">
             <h3 className="text-h3 text-[var(--color-text-primary)]">Every {flagship} model, on one map</h3>
-            <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} label={`${flagship} model`} />
+            <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} label={`${flagship} model`} priceNotes={priceNotes} />
           </div>
         </div>
       </OverviewSection>
@@ -186,7 +191,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
         title={question("where-run", `Where can I run ${flagship}?`)}
         intro={lead("where-run", "Buy direct, run it inside your cloud, or use it inside products you already have.")}
       >
-        <ChannelTree availability={overview.availability} hub={flagship} />
+        <ChannelTree availability={overview.availability} hub={flagship} hubVendor={overview.name} />
       </OverviewSection>
 
       <OverviewSection

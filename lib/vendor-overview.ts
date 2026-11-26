@@ -316,6 +316,7 @@ export function validateVendorOverview(raw: unknown, ctx: ValidationContext): st
     partialDate(item, "since", path, false);
     strArray(item, "offers", path, { min: 1 });
     str(item, "note", path, { max: SUMMARY_MAX });
+    str(item, "operatedBy", path, { required: false, max: 80 });
   });
 
   // Entries
@@ -503,7 +504,13 @@ export function validateVendorOverview(raw: unknown, ctx: ValidationContext): st
     const announcedAt = day(item, "announcedAt", path);
     if (announcedAt && announcedAt > ctx.today) fail(`${path}.announcedAt`, `${announcedAt} is in the future`);
     oneOf(item, "stage", ROADMAP_STAGES, path);
-    str(item, "expected", path, { required: false, max: 80 });
+    const expected = str(item, "expected", path, { required: false, max: 80 });
+    const expectedAt = partialDate(item, "expectedAt", path, false);
+    if (expectedAt !== undefined) {
+      // expectedAt only restates a date the vendor's own wording names.
+      if (expected === undefined) fail(`${path}.expectedAt`, "requires expected");
+      else if (!expected.includes(expectedAt.slice(0, 4))) fail(`${path}.expectedAt`, `year ${expectedAt.slice(0, 4)} does not appear in expected "${expected}"`);
+    }
   });
 
   // Company
@@ -516,7 +523,19 @@ export function validateVendorOverview(raw: unknown, ctx: ValidationContext): st
     facts.forEach((fact, index) => {
       sourceRef(fact, `company.facts[${index}]`);
       str(fact, "label", `company.facts[${index}]`);
-      str(fact, "value", `company.facts[${index}]`, { max: SUMMARY_MAX });
+      const value = str(fact, "value", `company.facts[${index}]`, { max: SUMMARY_MAX });
+      if (fact.figures !== undefined) {
+        const figures = Array.isArray(fact.figures) ? fact.figures : [];
+        if (!Array.isArray(fact.figures) || figures.length === 0 || figures.length > 2) fail(`company.facts[${index}].figures`, "must be an array of 1-2 figures");
+        figures.forEach((figure, figureIndex) => {
+          const figurePath = `company.facts[${index}].figures[${figureIndex}]`;
+          if (!isRecord(figure)) return fail(figurePath, "must be an object");
+          const shown = str(figure, "value", figurePath, { max: 24 });
+          str(figure, "label", figurePath, { max: 48 });
+          // A figure is only a highlight of the sourced value, never new data.
+          if (shown !== undefined && value !== undefined && !value.includes(shown)) fail(`${figurePath}.value`, `"${shown}" does not appear verbatim in the fact's value`);
+        });
+      }
     });
     const partnerships = Array.isArray(company.partnerships) ? company.partnerships.filter(isRecord) : [];
     if (!Array.isArray(company.partnerships)) fail("company.partnerships", "must be an array");

@@ -495,10 +495,10 @@ export function firstSentences(text: string, count = 1): string {
 
 // Monthly list prices of plain "$N" or "$N/mo" plans in the given segments.
 export function planPriceRange(plans: readonly Pick<VendorOverview["plans"][number], "price" | "segment">[], segments: readonly string[]) {
-  const prices = plans
-    .filter((plan) => segments.includes(plan.segment))
-    .map((plan) => /^\$(\d+(?:\.\d+)?)(?:\/mo)?$/.exec(plan.price.trim()))
-    .flatMap((match) => (match ? [Number(match[1])] : []));
+  const prices = plans.filter((plan) => segments.includes(plan.segment)).flatMap((plan) => {
+    const monthly = monthlyPrice(plan.price);
+    return monthly === undefined ? [] : [monthly];
+  });
   return prices.length > 0 ? { min: Math.min(...prices), max: Math.max(...prices) } : undefined;
 }
 
@@ -507,4 +507,38 @@ export function planPriceRange(plans: readonly Pick<VendorOverview["plans"][numb
 export function faqLead(faqs: readonly VendorOverview["faqs"][number][], id: string) {
   const faq = faqs.find((item) => item.id === id);
   return faq ? { question: faq.question, lead: firstSentences(faq.answer, 1), sourceUrl: faq.sourceUrls[0] } : undefined;
+}
+
+// ── Plans staircase and roadmap buckets ───────────────────────────────────
+
+// Monthly list price of a plain "$N" or "$N/mo" plan, else undefined.
+export function monthlyPrice(price: string): number | undefined {
+  const match = /^\$(\d+(?:\.\d+)?)(?:\/mo)?$/.exec(price.trim());
+  return match ? Number(match[1]) : undefined;
+}
+
+// Plans in the given segments that have a plain monthly price, cheapest first,
+// each with a step height: a floor (so a free plan still reads as a step) plus
+// the rest of the height in proportion to price, so every step stays ordered.
+export function planSteps<T extends Pick<VendorOverview["plans"][number], "price" | "segment">>(plans: readonly T[], segments: readonly string[], floor = 10) {
+  const priced = plans
+    .filter((plan) => segments.includes(plan.segment))
+    .flatMap((plan) => {
+      const monthly = monthlyPrice(plan.price);
+      return monthly === undefined ? [] : [{ plan, monthly }];
+    })
+    .sort((a, b) => a.monthly - b.monthly);
+  const max = Math.max(1, ...priced.map((step) => step.monthly));
+  return priced.map((step) => ({ ...step, heightPct: round(floor + (100 - floor) * (step.monthly / max)) }));
+}
+
+// Roadmap items grouped by the year of expectedAt (oldest first, each sorted
+// by date), with undated items last under `undated`.
+export function roadmapByYear<T extends Pick<VendorOverview["roadmap"][number], "expectedAt">>(items: readonly T[]) {
+  const dated = items.filter((item) => item.expectedAt).sort((a, b) => (a.expectedAt ?? "").localeCompare(b.expectedAt ?? ""));
+  const years = [...new Set(dated.map((item) => (item.expectedAt ?? "").slice(0, 4)))];
+  return {
+    years: years.map((year) => ({ year, items: dated.filter((item) => (item.expectedAt ?? "").startsWith(year)) })),
+    undated: items.filter((item) => !item.expectedAt),
+  };
 }

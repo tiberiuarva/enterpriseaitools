@@ -20,6 +20,8 @@ import {
   governanceSummary,
   isoPrism,
   orbitAngles,
+  planSteps,
+  roadmapByYear,
   orbitPoint,
   prismsViewBox,
   timelineDensity,
@@ -35,7 +37,7 @@ const year = (date: string | undefined) => (date ? date.slice(0, 4) : null);
 
 // ── Where to run: a tree from Claude to every channel ─────────────────────
 
-export function ChannelTree({ availability, hub }: { availability: VendorAvailability[]; hub: string }) {
+export function ChannelTree({ availability, hub, hubVendor }: { availability: VendorAvailability[]; hub: string; hubVendor: string }) {
   const groups = availabilityByChannel(availability);
   return (
     <div className="flex flex-col items-stretch">
@@ -64,6 +66,11 @@ export function ChannelTree({ availability, hub }: { availability: VendorAvailab
                     <h4 className="vo-entry-name">{item.name}</h4>
                     {item.since ? <span className="shrink-0 text-caption text-[var(--color-text-tertiary)]">since {year(item.since)}</span> : null}
                   </div>
+                  {item.operatedBy ? (
+                    <p className={`text-caption font-semibold ${item.operatedBy === hubVendor ? "text-[var(--color-accent)]" : "text-[var(--color-text-secondary)]"}`}>
+                      Run by {item.operatedBy}
+                    </p>
+                  ) : null}
                   <ul className="vo-entry-kids" aria-label={`Available on ${item.name}`}>
                     {item.offers.map((offer) => (
                       <li key={offer}>{offer}</li>
@@ -94,41 +101,92 @@ export function ChannelTree({ availability, hub }: { availability: VendorAvailab
 // ── Plans as price tags ───────────────────────────────────────────────────
 
 const SEGMENTS: { id: VendorPlanSegment[]; label: string }[] = [
-  { id: ["individual"], label: "For individuals" },
   { id: ["team", "enterprise"], label: "For teams and enterprises" },
-  {
-    id: ["developer", "education", "public-sector"],
-    label: "For developers, education and government",
-  },
+  { id: ["developer", "education", "public-sector"], label: "For developers, education and government" },
 ];
 
-export function PlanTags({ plans }: { plans: VendorPlan[] }) {
+function PlanIncludes({ plan }: { plan: VendorPlan }) {
   return (
-    <div className="flex flex-col gap-6">
+    <ul className="flex flex-col gap-1">
+      {plan.includes.map((line) => (
+        <li key={line} className="flex gap-2 text-[0.8125rem] leading-5 text-[var(--color-text-secondary)]">
+          <Check size={14} aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--color-success)]" />
+          {line}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function PlanCard({ plan }: { plan: VendorPlan }) {
+  return (
+    <li className="vo-entry">
+      <p className="text-sm font-semibold text-[var(--color-text-secondary)]">{plan.name}</p>
+      <p className="text-[1.5rem] font-semibold leading-tight tracking-tight text-[var(--color-text-primary)]">{plan.price}</p>
+      {plan.priceNote ? <p className="text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</p> : null}
+      <div className="mt-1">
+        <PlanIncludes plan={plan} />
+      </div>
+      <div className="mt-auto pt-1">
+        <SourceLink href={plan.sourceUrl} />
+      </div>
+    </li>
+  );
+}
+
+// Individual plans as a staircase: each step's height is its monthly price,
+// so "how much more do I pay for the next tier" reads at a glance.
+export function PlanTags({ plans }: { plans: VendorPlan[] }) {
+  const steps = planSteps(plans, ["individual"]);
+  const unstepped = plans.filter((plan) => plan.segment === "individual" && !steps.some((step) => step.plan.id === plan.id));
+  return (
+    <div className="flex flex-col gap-8">
+      {steps.length > 0 ? (
+        <div>
+          <h3 className="mb-3 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">For individuals, per month</h3>
+          <ol className="grid gap-2 sm:gap-3" style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}>
+            {steps.map(({ plan, heightPct }, index) => {
+              const seq = steps.length > 1 ? 5 - Math.round((index * 4) / (steps.length - 1)) : 1;
+              return (
+                <li key={plan.id} className="flex min-w-0 flex-col">
+                  <div className="flex h-44 flex-col justify-end sm:h-56">
+                    <p className="mb-1.5 text-lg font-semibold leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-[1.75rem]">{plan.price}</p>
+                    <div
+                      aria-hidden="true"
+                      className="vo-step rounded-t-xl"
+                      style={{ height: `${heightPct}%`, "--slab": `var(--viz-seq-${seq})`, "--i": index } as CSSProperties}
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1.5 border-t-2 border-[var(--color-border-strong)] pt-2.5">
+                    <p className="text-sm font-semibold text-[var(--color-text-primary)]">{plan.name}</p>
+                    {plan.priceNote ? <p className="text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</p> : null}
+                    <div className="hidden sm:block">
+                      <PlanIncludes plan={plan} />
+                    </div>
+                    <SourceLink href={plan.sourceUrl} />
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+          {unstepped.length > 0 ? (
+            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {unstepped.map((plan) => (
+                <PlanCard key={plan.id} plan={plan} />
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      ) : null}
       {SEGMENTS.map((segment) => {
         const items = plans.filter((plan) => segment.id.includes(plan.segment));
         if (items.length === 0) return null;
         return (
           <div key={segment.label}>
             <h3 className="mb-3 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{segment.label}</h3>
-            <ul className="vo-rail vo-fade-x sm:grid-flow-row sm:grid-cols-2 sm:overflow-visible sm:[mask-image:none] lg:grid-cols-4">
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {items.map((plan) => (
-                <li key={plan.id} className="vo-entry">
-                  <p className="text-sm font-semibold text-[var(--color-text-secondary)]">{plan.name}</p>
-                  <p className="text-[1.75rem] font-semibold leading-tight tracking-tight text-[var(--color-text-primary)]">{plan.price}</p>
-                  {plan.priceNote ? <p className="text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</p> : null}
-                  <ul className="mt-1 flex flex-col gap-1">
-                    {plan.includes.map((line) => (
-                      <li key={line} className="flex gap-2 text-[0.8125rem] leading-5 text-[var(--color-text-secondary)]">
-                        <Check size={14} aria-hidden="true" className="mt-0.5 shrink-0 text-[var(--color-success)]" />
-                        {line}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="mt-auto pt-1">
-                    <SourceLink href={plan.sourceUrl} />
-                  </div>
-                </li>
+                <PlanCard key={plan.id} plan={plan} />
               ))}
             </ul>
           </div>
@@ -464,20 +522,28 @@ const PARTNER_TYPE_LABEL: Record<string, string> = {
 };
 
 export function CompanyBand({ company }: { company: VendorOverview["company"] }) {
-  const [lead, ...rest] = company.facts;
+  const figures = company.facts.flatMap((fact) => (fact.figures ?? []).map((figure) => ({ ...figure, fact })));
+  const rest = company.facts.filter((fact) => !fact.figures?.length);
   return (
     <div className="flex flex-col gap-6">
+      {figures.length > 0 ? (
+        <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {figures.map((figure, index) => (
+            <div key={`${figure.fact.id}-${figure.value}`} className="vo-entry vo-reveal" data-prominence="headline" style={{ "--i": index } as CSSProperties}>
+              <dd className="text-[1.75rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)] sm:text-[2.25rem]">{figure.value}</dd>
+              <dt className="text-caption text-[var(--color-text-secondary)]">{figure.label}</dt>
+              <dd className="mt-auto pt-1">
+                <SourceLink href={figure.fact.sourceUrl} label={figure.fact.sourceTitle ?? "Source"} />
+              </dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
       <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {[lead, ...rest].filter(Boolean).map((fact, index) => (
-          <div key={fact.id} className="vo-entry vo-reveal" style={{ "--i": index % 6 } as CSSProperties} data-prominence={index < 2 ? "headline" : undefined}>
+        {rest.map((fact) => (
+          <div key={fact.id} className="vo-entry">
             <dt className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">{fact.label}</dt>
-            <dd
-              className={
-                index < 2 ? "text-lg font-semibold leading-snug text-[var(--color-text-primary)]" : "text-sm leading-6 text-[var(--color-text-primary)]"
-              }
-            >
-              {fact.value}
-            </dd>
+            <dd className="text-sm leading-6 text-[var(--color-text-primary)]">{fact.value}</dd>
             <dd className="mt-auto">
               <SourceLink href={fact.sourceUrl} />
             </dd>
@@ -491,9 +557,7 @@ export function CompanyBand({ company }: { company: VendorOverview["company"] })
             <li key={partnership.id} className="vo-entry">
               <div className="flex items-baseline justify-between gap-2">
                 <p className="vo-entry-name">{partnership.partner}</p>
-                {partnership.date ? (
-                  <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span>
-                ) : null}
+                {partnership.date ? <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span> : null}
               </div>
               <p className="text-caption text-[var(--color-text-tertiary)]">{PARTNER_TYPE_LABEL[partnership.type] ?? partnership.type}</p>
               <p className="vo-entry-desc">{partnership.summary}</p>
@@ -619,33 +683,48 @@ const STAGE_LABEL: Record<VendorRoadmapItem["stage"], string> = {
   "rolling-out": "Rolling out",
 };
 
+function RoadmapCard({ item }: { item: VendorRoadmapItem }) {
+  return (
+    <li className="vo-entry" data-prominence={item.stage === "announced" ? undefined : "headline"}>
+      <p className="text-base font-semibold leading-tight text-[var(--color-text-primary)]">{item.expected ?? "Timing not stated"}</p>
+      {item.stage !== "announced" ? <span className="text-caption text-[var(--color-accent)]">{STAGE_LABEL[item.stage]}</span> : null}
+      <p className="vo-entry-name">{item.title}</p>
+      <p className="vo-entry-desc">{item.summary}</p>
+      <div className="mt-auto flex flex-wrap items-center gap-x-3 pt-1">
+        <span className="text-caption text-[var(--color-text-tertiary)]">Stated {formatPartialDate(item.announcedAt)}</span>
+        <SourceLink href={item.sourceUrl} />
+      </div>
+    </li>
+  );
+}
+
+// Vendor-stated plans laid out on a horizon: one column per year the vendor
+// names, soonest first, then whatever was announced without a date.
 export function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
+  const { years, undated } = roadmapByYear(items);
+  const columns = [...years.map((group) => ({ key: group.year, label: group.year, items: group.items })), ...(undated.length > 0 ? [{ key: "undated", label: "No date given", items: undated }] : [])];
   return (
     <div className="flex flex-col gap-3">
-      <div aria-hidden="true" className="flex items-center gap-3 text-caption font-semibold text-[var(--color-text-tertiary)]">
+      <div aria-hidden="true" className="hidden items-center gap-3 text-caption font-semibold text-[var(--color-text-tertiary)] md:flex">
         <span className="rounded-full bg-[var(--color-accent)] px-2 py-0.5 text-[var(--color-text-inverse)]">Now</span>
-        <span
-          className="h-0.5 flex-1"
-          style={{
-            background: "linear-gradient(90deg, var(--color-accent), var(--viz-cat-2), transparent)",
-          }}
-        />
+        <span className="h-0.5 flex-1" style={{ background: "linear-gradient(90deg, var(--color-accent), var(--viz-cat-2), transparent)" }} />
         <span>Ahead</span>
       </div>
-      <ol className="vo-rail vo-fade-x">
-        {items.map((item) => (
-          <li key={item.id} className="vo-entry" data-prominence={item.stage === "announced" ? undefined : "headline"}>
-            <p className="text-lg font-semibold leading-tight text-[var(--color-text-primary)]">{item.expected ?? "Timing not stated"}</p>
-            <span className="text-caption text-[var(--color-accent)]">{STAGE_LABEL[item.stage]}</span>
-            <p className="vo-entry-name">{item.title}</p>
-            <p className="vo-entry-desc">{item.summary}</p>
-            <div className="mt-auto flex flex-wrap items-center gap-x-3 pt-1">
-              <span className="text-caption text-[var(--color-text-tertiary)]">Stated {formatPartialDate(item.announcedAt)}</span>
-              <SourceLink href={item.sourceUrl} />
-            </div>
-          </li>
-        ))}
-      </ol>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-[repeat(var(--cols),minmax(0,1fr))] md:gap-4" style={{ "--cols": columns.length } as CSSProperties}>
+          {columns.map((column) => (
+            <section key={column.key} aria-label={column.label} className="flex flex-col gap-3">
+              <h3 className="flex items-baseline justify-between border-b-2 border-[var(--color-border-strong)] pb-1.5">
+                <span className={`text-lg font-semibold ${column.key === "undated" ? "text-[var(--color-text-tertiary)]" : "text-[var(--color-text-primary)]"}`}>{column.label}</span>
+                <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{column.items.length}</span>
+              </h3>
+              <ol className="flex flex-col gap-3">
+                {column.items.map((item) => (
+                  <RoadmapCard key={item.id} item={item} />
+                ))}
+              </ol>
+            </section>
+          ))}
+      </div>
     </div>
   );
 }

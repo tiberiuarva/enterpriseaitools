@@ -58,7 +58,19 @@ function StationCard({ model }: { model: VendorModel }) {
   );
 }
 
-export function ModelMap({ models, today, statusSource, label }: { models: VendorModel[]; today: string; statusSource?: SourceRef; label: string }) {
+export function ModelMap({
+  models,
+  today,
+  statusSource,
+  label,
+  priceNotes = [],
+}: {
+  models: VendorModel[];
+  today: string;
+  statusSource?: SourceRef;
+  label: string;
+  priceNotes?: { text: string; sourceUrl: string }[];
+}) {
   const map = modelMap(models, today);
   const laneIndex = new Map(map.lanes.map((lane, index) => [lane.tier, index]));
   const current = models.filter((model) => model.status === "current").length;
@@ -168,7 +180,7 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
           View as tables
         </summary>
         <div className="mt-4">
-          <ModelLineage models={models} statusSource={statusSource} label={label} />
+          <ModelLineage models={models} statusSource={statusSource} label={label} priceNotes={priceNotes} />
         </div>
       </details>
     </div>

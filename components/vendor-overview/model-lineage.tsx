@@ -39,7 +39,17 @@ function Legend() {
 
 // Lane chart of every model: one row per tier, one column per generation.
 // A real table so the grid survives without CSS and reads row by row.
-export function ModelLineage({ models, statusSource, label }: { models: VendorModel[]; statusSource?: SourceRef; label: string }) {
+export function ModelLineage({
+  models,
+  statusSource,
+  label,
+  priceNotes = [],
+}: {
+  models: VendorModel[];
+  statusSource?: SourceRef;
+  label: string;
+  priceNotes?: { text: string; sourceUrl: string }[];
+}) {
   const lineage = modelLineage(models);
   const available = models
     .filter((model) => model.status !== "retired")
@@ -112,7 +122,13 @@ export function ModelLineage({ models, statusSource, label }: { models: VendorMo
       <div>
         <h3 className="text-h3 text-[var(--color-text-primary)]">Models you can use today</h3>
         <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">
-          API list prices in US dollars per million tokens, input / output. Batch processing is 50% off; prompt caching reduces repeated input.
+          API list prices in US dollars per million tokens, input / output.
+          {priceNotes.map((note) => (
+            <span key={note.text}>
+              {" "}
+              {note.text} <SourceLink href={note.sourceUrl} />
+            </span>
+          ))}
         </p>
         <div role="region" aria-label={`Available ${label}s, scrolls horizontally`} tabIndex={0} className="relative mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
           <table className="w-full min-w-[44rem] border-collapse text-sm">

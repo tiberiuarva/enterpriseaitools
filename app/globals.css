@@ -442,6 +442,11 @@ code {
     transform: scale(1.08);
   }
 }
+@keyframes vo-rise-step {
+  from {
+    transform: scaleY(0);
+  }
+}
 @keyframes vo-grow {
   from {
     transform: scaleX(0);
@@ -840,6 +845,15 @@ code {
     transform-origin: left center;
     animation: vo-grow 900ms var(--ease-out) both;
     animation-delay: calc(var(--i, 0) * 80ms);
+  }
+
+  /* Plan staircase: a lit step whose height is the monthly price. */
+  .vo-step {
+    background: linear-gradient(180deg, var(--slab), color-mix(in srgb, var(--slab) 70%, var(--viz-shade)));
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--slab) 50%, var(--viz-highlight));
+    transform-origin: bottom center;
+    animation: vo-rise-step 800ms var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
   }
 
   /* Channel tree */

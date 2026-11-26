@@ -4,6 +4,9 @@ import { describe, test } from "node:test";
 import type { VendorModel, VendorOverview, VendorTimelineEvent } from "./types.ts";
 import {
   LENSES,
+  monthlyPrice,
+  planSteps,
+  roadmapByYear,
   audienceLens,
   faqLead,
   firstSentences,
@@ -369,5 +372,40 @@ describe("copy helpers", () => {
     const lead = faqLead([{ id: "a", question: "Q?", answer: "One. Two.", sourceUrls: ["https://x"] }], "a");
     assert.deepEqual(lead, { question: "Q?", lead: "One.", sourceUrl: "https://x" });
     assert.equal(faqLead([], "a"), undefined);
+  });
+});
+
+describe("plans and roadmap helpers", () => {
+  test("monthlyPrice reads plain monthly prices only", () => {
+    assert.equal(monthlyPrice("$0"), 0);
+    assert.equal(monthlyPrice("$20/mo"), 20);
+    assert.equal(monthlyPrice("$25/seat/mo"), undefined);
+    assert.equal(monthlyPrice("Pay per token"), undefined);
+  });
+  test("planSteps sorts cheapest first and keeps every step proportional above the floor", () => {
+    const steps = planSteps(
+      [
+        { segment: "individual", price: "$200/mo" },
+        { segment: "individual", price: "$0" },
+        { segment: "individual", price: "$20/mo" },
+        { segment: "team", price: "$25/seat/mo" },
+      ],
+      ["individual"],
+    );
+    assert.deepEqual(steps.map((step) => step.monthly), [0, 20, 200]);
+    assert.deepEqual(steps.map((step) => step.heightPct), [10, 19, 100]);
+  });
+  test("roadmapByYear groups dated items by year and keeps undated last", () => {
+    const grouped = roadmapByYear([
+      { id: "b", expectedAt: "2027-01-15" },
+      { id: "u" },
+      { id: "a", expectedAt: "2026-12" },
+      { id: "c", expectedAt: "2026-11-30" },
+    ] as { id: string; expectedAt?: string }[]);
+    assert.deepEqual(grouped.years.map((group) => [group.year, group.items.map((item) => item.id)]), [
+      ["2026", ["c", "a"]],
+      ["2027", ["b"]],
+    ]);
+    assert.deepEqual(grouped.undated.map((item) => item.id), ["u"]);
   });
 });
