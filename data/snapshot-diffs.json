@@ -1,7 +1,447 @@
 {
-  "generatedAt": "2026-11-12",
-  "snapshotCount": 9,
+  "generatedAt": "2026-11-22",
+  "snapshotCount": 10,
   "events": [
+    {
+      "toolId": "arize-phoenix",
+      "toolName": "Arize Phoenix",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-10-30",
+      "current": "2026-11-21",
+      "highImpact": false
+    },
+    {
+      "toolId": "arize-phoenix",
+      "toolName": "Arize Phoenix",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "21.0.0",
+      "current": "22.0.1",
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-10-21",
+      "current": "2026-11-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "atomic-agents",
+      "toolName": "Atomic Agents",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2.15.0",
+      "current": "2.16.2",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-11",
+      "current": "2026-11-19",
+      "highImpact": false
+    },
+    {
+      "toolId": "crewai",
+      "toolName": "CrewAI",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.15.40",
+      "current": "1.15.44",
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-04",
+      "current": "2026-11-18",
+      "highImpact": false
+    },
+    {
+      "toolId": "dify",
+      "toolName": "Dify",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.19.0",
+      "current": "1.20.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "hermes-agent",
+      "toolName": "Hermes Agent",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-10",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "hermes-agent",
+      "toolName": "Hermes Agent",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.23.1",
+      "current": "0.23.3",
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-10",
+      "current": "2026-11-17",
+      "highImpact": false
+    },
+    {
+      "toolId": "langflow",
+      "toolName": "LangFlow",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.13.2",
+      "current": "1.13.3",
+      "highImpact": false
+    },
+    {
+      "toolId": "langfuse",
+      "toolName": "Langfuse",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-10",
+      "current": "2026-11-19",
+      "highImpact": false
+    },
+    {
+      "toolId": "langfuse",
+      "toolName": "Langfuse",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "4.78.0",
+      "current": "4.83.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-05",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "langgraph",
+      "toolName": "LangGraph",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.2.20",
+      "current": "1.2.24",
+      "highImpact": false
+    },
+    {
+      "toolId": "litellm",
+      "toolName": "LiteLLM",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-12",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "litellm",
+      "toolName": "LiteLLM",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.109.1",
+      "current": "1.110.2",
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-09-21",
+      "current": "2026-11-13",
+      "highImpact": false
+    },
+    {
+      "toolId": "llamaindex",
+      "toolName": "LlamaIndex",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.14.25",
+      "current": "0.14.26",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-04",
+      "current": "2026-11-18",
+      "highImpact": false
+    },
+    {
+      "toolId": "mastra",
+      "toolName": "Mastra",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.82.0",
+      "current": "1.85.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-07",
+      "current": "2026-11-12",
+      "highImpact": false
+    },
+    {
+      "toolId": "microsoft-agent-framework",
+      "toolName": "Microsoft Agent Framework",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.25.0",
+      "current": "1.26.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-11",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "n8n",
+      "toolName": "n8n",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2.47.4",
+      "current": "2.48.7",
+      "highImpact": false
+    },
+    {
+      "toolId": "nanoclaw",
+      "toolName": "NanoClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-10-09",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "nanoclaw",
+      "toolName": "NanoClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2026.10.0",
+      "current": "2026.11.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-09-16",
+      "current": "2026-11-19",
+      "highImpact": false
+    },
+    {
+      "toolId": "nemo-guardrails",
+      "toolName": "NeMo Guardrails",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.24.1",
+      "current": "0.25.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "nvidia-nemoclaw",
+      "toolName": "NVIDIA NemoClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-10",
+      "current": "2026-11-18",
+      "highImpact": false
+    },
+    {
+      "toolId": "nvidia-nemoclaw",
+      "toolName": "NVIDIA NemoClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.0.143",
+      "current": "0.0.145",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-10-15",
+      "current": "2026-11-18",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-agents-sdk",
+      "toolName": "OpenAI Agents SDK",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.24.0",
+      "current": "0.25.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-codex",
+      "toolName": "OpenAI Codex",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-11",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "openai-codex",
+      "toolName": "OpenAI Codex",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "0.167.2",
+      "current": "0.171.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "openclaw",
+      "toolName": "OpenClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-10",
+      "current": "2026-11-19",
+      "highImpact": false
+    },
+    {
+      "toolId": "openclaw",
+      "toolName": "OpenClaw",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2026.11.3",
+      "current": "2026.11.6",
+      "highImpact": false
+    },
+    {
+      "toolId": "opik",
+      "toolName": "Opik",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-06",
+      "current": "2026-11-20",
+      "highImpact": false
+    },
+    {
+      "toolId": "opik",
+      "toolName": "Opik",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2.2.143",
+      "current": "2.2.152",
+      "highImpact": false
+    },
+    {
+      "toolId": "pydantic-ai",
+      "toolName": "Pydantic AI",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-12",
+      "current": "2026-11-19",
+      "highImpact": false
+    },
+    {
+      "toolId": "pydantic-ai",
+      "toolName": "Pydantic AI",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "2.68.0",
+      "current": "2.71.0",
+      "highImpact": false
+    },
+    {
+      "toolId": "strands-agents",
+      "toolName": "Strands Agents",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "lastRelease",
+      "previous": "2026-11-04",
+      "current": "2026-11-13",
+      "highImpact": false
+    },
+    {
+      "toolId": "strands-agents",
+      "toolName": "Strands Agents",
+      "from": "2026-11-12",
+      "to": "2026-11-22",
+      "field": "version",
+      "previous": "1.64.0",
+      "current": "1.65.0",
+      "highImpact": false
+    },
     {
       "toolId": "claude-agent-sdk",
       "toolName": "Claude Agent SDK",

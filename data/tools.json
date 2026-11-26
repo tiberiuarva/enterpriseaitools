@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12",
+  "lastUpdated": "2026-11-22",
   "tools": [
     {
       "id": "microsoft-foundry-agent-service",
@@ -369,7 +369,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/crewAIInc/crewAI",
       "githubStars": 58436,
-      "version": "1.15.40",
+      "version": "1.15.44",
       "docsUrl": "https://docs.crewai.com/",
       "pricingModel": "free",
       "status": "active",
@@ -389,7 +389,7 @@
         "gcp"
       ],
       "practitionerNote": "Good for fast multi-agent prototypes, but larger regulated deployments usually need extra guardrails around observability, change control, and execution boundaries.",
-      "lastRelease": "2026-11-11",
+      "lastRelease": "2026-11-19",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -533,7 +533,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/run-llama/llama_index",
       "githubStars": 52144,
-      "version": "0.14.25",
+      "version": "0.14.26",
       "docsUrl": "https://docs.llamaindex.ai/",
       "pricingModel": "free",
       "status": "active",
@@ -553,7 +553,7 @@
       "practitionerNote": "Often a pragmatic fit when retrieval and data connectors matter as much as agent logic, especially for knowledge-heavy enterprise workflows.",
       "logoSourceUrl": "https://www.llamaindex.ai/brand",
       "logoUrl": "/logos/llamaindex.svg",
-      "lastRelease": "2026-09-21",
+      "lastRelease": "2026-11-13",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -696,8 +696,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/microsoft/agent-framework",
       "githubStars": 13498,
-      "version": "1.25.0",
-      "lastRelease": "2026-11-07",
+      "version": "1.26.0",
+      "lastRelease": "2026-11-12",
       "docsUrl": "https://learn.microsoft.com/en-us/agent-framework/",
       "pricingModel": "free",
       "status": "active",
@@ -784,7 +784,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langchain-ai/langgraph",
       "githubStars": 41553,
-      "version": "1.2.20",
+      "version": "1.2.24",
       "docsUrl": "https://langchain-ai.github.io/langgraph/",
       "pricingModel": "freemium",
       "status": "active",
@@ -803,7 +803,7 @@
       "practitionerNote": "Strong option when teams want explicit stateful control over agent flows instead of opaque black-box autonomy.",
       "logoUrl": "/logos/langgraph.svg",
       "logoSourceUrl": "https://github.com/langchain-ai/langgraph",
-      "lastRelease": "2026-11-05",
+      "lastRelease": "2026-11-20",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -876,7 +876,7 @@
       ],
       "githubUrl": "https://github.com/mastra-ai/mastra",
       "githubStars": 27994,
-      "version": "1.82.0",
+      "version": "1.85.0",
       "docsUrl": "https://mastra.ai/docs",
       "pricingModel": "free",
       "status": "active",
@@ -897,7 +897,7 @@
       "practitionerNote": "Promising TypeScript-first framework for product teams that want modern developer ergonomics, but enterprise proof points are still earlier than older stacks.",
       "logoSourceUrl": "https://mastra.ai/",
       "logoUrl": "/logos/mastra.png",
-      "lastRelease": "2026-11-04",
+      "lastRelease": "2026-11-18",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -958,7 +958,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/openai/openai-agents-python",
       "githubStars": 29401,
-      "version": "0.24.0",
+      "version": "0.25.0",
       "docsUrl": "https://openai.github.io/openai-agents-python/",
       "pricingModel": "free",
       "status": "active",
@@ -977,7 +977,7 @@
         "gcp"
       ],
       "practitionerNote": "Fast path for OpenAI-centric agent builds, though portability and provider concentration should be weighed before making it a platform default.",
-      "lastRelease": "2026-10-15",
+      "lastRelease": "2026-11-18",
       "logoUrl": "/logos/openai.svg",
       "logoSourceUrl": "https://developers.openai.com/api/docs/guides/agents",
       "governance": {
@@ -1030,7 +1030,7 @@
       "name": "Atomic Agents",
       "category": "agents",
       "type": "opensource",
-      "vendor": "BrainBlend AI",
+      "vendor": "Eigenwise",
       "description": "Minimalist agent framework emphasizing composability and predictable building blocks.",
       "strengths": [
         "Schema-first building blocks",
@@ -1040,8 +1040,8 @@
       "license": "MIT",
       "githubUrl": "https://github.com/Eigenwise/atomic-agents",
       "githubStars": 6238,
-      "version": "2.15.0",
-      "docsUrl": "https://brainblend-ai.github.io/atomic-agents/",
+      "version": "2.16.2",
+      "docsUrl": "https://eigenwise.github.io/atomic-agents/",
       "pricingModel": "free",
       "status": "active",
       "tags": [
@@ -1076,7 +1076,7 @@
         "auditLogging": {
           "status": "partial",
           "detail": "Minimalist design; observability is intentionally operator-configured.",
-          "sourceUrl": "https://brainblend-ai.github.io/atomic-agents/"
+          "sourceUrl": "https://eigenwise.github.io/atomic-agents/"
         },
         "soc2": {
           "status": "not-applicable",
@@ -1103,7 +1103,7 @@
         },
         "reviewedAt": "2026-05-26"
       },
-      "lastRelease": "2026-10-21"
+      "lastRelease": "2026-11-17"
     },
     {
       "id": "beeai-framework",
@@ -1541,7 +1541,7 @@
       ],
       "githubUrl": "https://github.com/n8n-io/n8n",
       "githubStars": 204144,
-      "version": "2.47.4",
+      "version": "2.48.7",
       "docsUrl": "https://docs.n8n.io/",
       "websiteUrl": "https://n8n.io/",
       "pricingModel": "freemium",
@@ -1563,7 +1563,7 @@
         "gcp"
       ],
       "practitionerNote": "Often the fastest path for ops-heavy teams that want broad integrations and self-hosting, though complex enterprise controls may need extra discipline around change management.",
-      "lastRelease": "2026-11-11",
+      "lastRelease": "2026-11-20",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -1717,7 +1717,7 @@
       "license": "MIT",
       "githubUrl": "https://github.com/langflow-ai/langflow",
       "githubStars": 154700,
-      "version": "1.13.2",
+      "version": "1.13.3",
       "docsUrl": "https://docs.langflow.org/",
       "pricingModel": "free",
       "status": "active",
@@ -1738,7 +1738,7 @@
         "gcp"
       ],
       "practitionerNote": "Useful for visual experimentation and internal workflow builds, though larger enterprise rollouts should validate long-term governance and platform direction after the IBM/DataStax shift.",
-      "lastRelease": "2026-11-10",
+      "lastRelease": "2026-11-17",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -1799,7 +1799,7 @@
       "licenseWarning": "Dify's modified Apache 2.0 restricts multi-tenant deployment and requires retaining Dify branding without a commercial license.",
       "githubUrl": "https://github.com/langgenius/dify",
       "githubStars": 155576,
-      "version": "1.19.0",
+      "version": "1.20.0",
       "docsUrl": "https://docs.dify.ai/en/use-dify/getting-started/introduction",
       "pricingModel": "freemium",
       "status": "active",
@@ -1819,7 +1819,7 @@
         "gcp"
       ],
       "practitionerNote": "Good fit for teams that want one self-hostable surface for apps, workflows, and model operations, but the license and commercial boundary need review before standardising widely.",
-      "lastRelease": "2026-11-04",
+      "lastRelease": "2026-11-18",
       "governance": {
         "dataResidency": {
           "status": "partial",
@@ -2482,7 +2482,7 @@
         "opensource",
         "nvidia"
       ],
-      "version": "0.24.1",
+      "version": "0.25.0",
       "logoKind": "official-vendor",
       "logoNotes": "NVIDIA does not expose a standalone public NeMo Guardrails logo on the official docs surface; this uses the owner-controlled NVIDIA logo asset referenced by the docs theme (`_static/nvidia-logo-horiz-rgb-blk-for-screen.svg`) as the shared vendor mark.",
       "logoReviewedAt": "2026-05-15",
@@ -2494,7 +2494,7 @@
       "practitionerNote": "Good fit when teams want code-defined conversational and retrieval guardrails they can run themselves, accepting more engineering ownership than a managed service.",
       "logoUrl": "/logos/nvidia.svg",
       "logoSourceUrl": "https://docs.nvidia.com/nemo/guardrails/latest/",
-      "lastRelease": "2026-09-16",
+      "lastRelease": "2026-11-19",
       "governance": {
         "dataResidency": {
           "status": "yes",
@@ -4021,8 +4021,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/openclaw/openclaw",
-      "version": "2026.11.3",
-      "lastRelease": "2026-11-10",
+      "version": "2026.11.6",
+      "lastRelease": "2026-11-19",
       "docsUrl": "https://docs.openclaw.ai",
       "websiteUrl": "https://openclaw.ai",
       "pricing": "Free and open source; no subscription or hosted tier (model provider costs are separate).",
@@ -4112,7 +4112,7 @@
         "azure"
       ],
       "status": "active",
-      "statusNote": "Private preview: announced as Microsoft Scout on 2026-06-02 for Frontier program organisations, renamed Autopilot on 2026-09-25 with private preview expanding at end of September 2026. Not Windows Autopilot (device provisioning).",
+      "statusNote": "Announced as Microsoft Scout on 2026-06-02 for Frontier program organisations and renamed Autopilot on 2026-09-25. Began rolling out to Frontier customers on 2026-11-17; no general availability date has been given. Not Windows Autopilot (device provisioning).",
       "tags": [
         "always-on-agents",
         "microsoft-365",
@@ -4480,8 +4480,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/NousResearch/hermes-agent",
-      "version": "0.23.1",
-      "lastRelease": "2026-11-10",
+      "version": "0.23.3",
+      "lastRelease": "2026-11-20",
       "docsUrl": "https://hermes-agent.nousresearch.com/docs/",
       "pricing": "Free and open source; model and hosting costs are separate.",
       "pricingModel": "free",
@@ -4560,8 +4560,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/nanocoai/nanoclaw",
-      "version": "2026.10.0",
-      "lastRelease": "2026-10-09",
+      "version": "2026.11.0",
+      "lastRelease": "2026-11-20",
       "docsUrl": "https://docs.nanoclaw.dev",
       "pricing": "Free and open source; you bring your own model provider account.",
       "pricingModel": "free",
@@ -4641,8 +4641,8 @@
       "license": "MIT core + EE paths",
       "licenseWarning": "Langfuse is open core: everything outside the ee/, web/src/ee/ and worker/src/ee/ directories is MIT, but code in those directories needs a commercial Langfuse Enterprise License for production use (development and testing are allowed without one).",
       "githubUrl": "https://github.com/langfuse/langfuse",
-      "version": "4.78.0",
-      "lastRelease": "2026-11-10",
+      "version": "4.83.0",
+      "lastRelease": "2026-11-19",
       "docsUrl": "https://langfuse.com/docs",
       "websiteUrl": "https://langfuse.com",
       "pricing": "Self-hosted MIT core is free. Cloud: Hobby free (50k units/month), Core $29/month, Pro $199/month, Enterprise $2,499/month.",
@@ -4728,8 +4728,8 @@
       "license": "Elastic License 2.0",
       "licenseWarning": "Phoenix uses the Elastic License 2.0, which is source-available rather than OSI open source. It forbids offering Phoenix to third parties as a hosted or managed service and forbids circumventing license-key features. Internal self-hosting is allowed.",
       "githubUrl": "https://github.com/Arize-ai/phoenix",
-      "version": "21.0.0",
-      "lastRelease": "2026-10-30",
+      "version": "22.0.1",
+      "lastRelease": "2026-11-21",
       "docsUrl": "https://arize.com/docs/phoenix",
       "websiteUrl": "https://arize.com/pricing/",
       "pricing": "Self-hosted Phoenix is free under the source-available Elastic License 2.0. The commercial Arize AX has Free ($0), Pro ($50/month) and custom Enterprise tiers.",
@@ -4894,8 +4894,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/comet-ml/opik",
-      "version": "2.2.143",
-      "lastRelease": "2026-11-06",
+      "version": "2.2.152",
+      "lastRelease": "2026-11-20",
       "docsUrl": "https://www.comet.com/docs/opik/quickstart",
       "websiteUrl": "https://www.comet.com/site/pricing/",
       "pricing": "Open source is free. Cloud: Free $0 (25k spans/month, 10 members), Pro $19/month (100k spans/month), Enterprise custom.",
@@ -5322,8 +5322,8 @@
       "license": "Apache 2.0 (CLI); Proprietary (cloud)",
       "licenseWarning": "Only the Codex CLI in openai/codex is Apache 2.0. Codex Cloud, the ChatGPT app surfaces and the models it calls are proprietary OpenAI services under ChatGPT or API terms.",
       "githubUrl": "https://github.com/openai/codex",
-      "version": "0.167.2",
-      "lastRelease": "2026-11-11",
+      "version": "0.171.0",
+      "lastRelease": "2026-11-20",
       "docsUrl": "https://learn.chatgpt.com/docs",
       "websiteUrl": "https://learn.chatgpt.com/docs/pricing",
       "pricing": "Included in ChatGPT Free, Go ($8/mo), Plus ($20/mo), Pro (from $100/mo), Business ($20/user/mo annual, 2+ users) and Enterprise/Edu (contact sales); or API-key usage at API rates.",
@@ -6285,8 +6285,8 @@
       "license": "MIT core + EE paths",
       "licenseWarning": "Open core: code outside the enterprise/ directory is MIT, but enterprise/ is under the BerriAI Enterprise License, which allows production use only with a paid BerriAI subscription (dev/test use is free). Enterprise features such as SSO and audit logs sit behind that license.",
       "githubUrl": "https://github.com/BerriAI/litellm",
-      "version": "1.109.1",
-      "lastRelease": "2026-11-12",
+      "version": "1.110.2",
+      "lastRelease": "2026-11-20",
       "docsUrl": "https://docs.litellm.ai/",
       "websiteUrl": "https://www.litellm.ai/ai-gateway",
       "pricingModel": "freemium",
@@ -7610,8 +7610,8 @@
       ],
       "license": "MIT",
       "githubUrl": "https://github.com/pydantic/pydantic-ai",
-      "version": "2.68.0",
-      "lastRelease": "2026-11-12",
+      "version": "2.71.0",
+      "lastRelease": "2026-11-19",
       "docsUrl": "https://pydantic.dev/docs/ai/overview/",
       "pricingModel": "freemium",
       "languages": [
@@ -7689,8 +7689,8 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/strands-agents/harness-sdk",
-      "version": "1.64.0",
-      "lastRelease": "2026-11-04",
+      "version": "1.65.0",
+      "lastRelease": "2026-11-13",
       "docsUrl": "https://strandsagents.com/",
       "pricingModel": "free",
       "languages": [
@@ -8177,11 +8177,11 @@
       ],
       "license": "Apache 2.0",
       "githubUrl": "https://github.com/NVIDIA/NemoClaw",
-      "version": "0.0.143",
+      "version": "0.0.145",
       "docsUrl": "https://docs.nvidia.com/nemoclaw/latest/",
       "pricingModel": "free",
       "status": "active",
-      "statusNote": "Alpha project per the README (checked November 12, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.143 on November 10, 2026), although the GitHub Releases page lists none.",
+      "statusNote": "Alpha project per the README (checked November 22, 2026): maintainers respond on a best-effort basis. NVIDIA publishes versioned release notes in its docs (v0.0.145 on November 18, 2026), although the GitHub Releases page lists none.",
       "tags": [
         "governance",
         "sandboxing",
@@ -8189,7 +8189,7 @@
         "openclaw"
       ],
       "practitionerNote": "Useful for containing personal or always-on agents (OpenClaw, Hermes, Deep Agents) with Balanced/Restricted/Open policy tiers, especially on DGX Spark or Linux/macOS/WSL hosts. Its alpha status and rapid 0.0.x release cadence make it a pilot tool, not a production control.",
-      "lastRelease": "2026-11-10",
+      "lastRelease": "2026-11-18",
       "logoKind": "fallback",
       "logoNotes": "Fallback: no reviewed logo asset sourced yet.",
       "logoReviewedAt": "2026-09-30",

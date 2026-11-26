@@ -114,7 +114,7 @@
     {
       "name": "Atomic Agents",
       "category": "agents",
-      "vendor": "BrainBlend AI",
+      "vendor": "Eigenwise",
       "status": "classified",
       "sourceUrl": "https://github.com/Eigenwise/atomic-agents",
       "notes": "Official Atomic Agents logo asset from the owner-controlled Eigenwise/atomic-agents repo (`.assets/logo.png`), committed here as an optimized downscaled copy for badge use.",

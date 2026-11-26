@@ -2,10 +2,52 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-control-planes.xml</id>
   <title>enterpriseai.tools weekly updates — control-planes</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-control-planes.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-19-05</id>
+    <title>AWS Marketplace supports agentic payments through AgentCore</title>
+    <updated>2026-11-19T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-19-05" />
+    <summary>AWS said on November 19, 2026 that AWS Marketplace supports agentic payments over the x402 protocol through AgentCore payments, charged in US dollars to the customer&apos;s AWS bill with spending limits and CloudTrail records.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, low" />
+    <source>
+      <id>https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/</id>
+      <title>AWS Marketplace now supports agentic payments with AgentCore</title>
+      <link href="https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-16</id>
+    <title>Agent 365 makes plugin governance GA and previews Business Analytics</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-16" />
+    <summary>Microsoft said on November 17, 2026 that Agent 365 plugins and skills governance is generally available, Business Analytics starts in Frontier preview and an Action center follows in preview in December. Premium capabilities still need an Agent 365 or Microsoft 365 E7 license.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, high" />
+    <source>
+      <id>https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753</id>
+      <title>What&apos;s new in Microsoft Agent 365: Ignite 2026</title>
+      <link href="https://techcommunity.microsoft.com/blog/agent-365-blog/whats-new-in-microsoft-agent-365-ignite-2026/4571753" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-16-01</id>
+    <title>Agent networks 2.0 deploys on Hyperforce with mTLS</title>
+    <updated>2026-11-16T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-16-01" />
+    <summary>As of November 16, 2026, MuleSoft Agent Fabric agent networks 2.0 can be deployed on Hyperforce, and the network YAML can set a TLS context for an agent broker and turn on mTLS for proxy-to-upstream connections.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="control-planes, feature, low" />
+    <source>
+      <id>https://docs.mulesoft.com/release-notes/agent-fabric/agent-fabric-release-notes</id>
+      <title>MuleSoft Agent Fabric release notes</title>
+      <link href="https://docs.mulesoft.com/release-notes/agent-fabric/agent-fabric-release-notes" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-09</id>
     <title>AgentCore adds a standalone Web Search API</title>

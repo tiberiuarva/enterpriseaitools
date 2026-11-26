@@ -2,10 +2,38 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://www.enterpriseai.tools/updates-orchestration.xml</id>
   <title>enterpriseai.tools weekly updates — orchestration</title>
-  <updated>2026-11-12T00:00:00.000Z</updated>
+  <updated>2026-11-22T00:00:00.000Z</updated>
   <link href="https://www.enterpriseai.tools/updates-orchestration.xml" rel="self" />
   <link href="https://www.enterpriseai.tools/updates/" rel="alternate" />
   <subtitle>High-impact market intelligence for enterprise AI tooling, with an expandable release log for lower-signal product changes.</subtitle>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-17-02</id>
+    <title>Langflow 1.13.3 patches dependencies and session handling</title>
+    <updated>2026-11-17T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-17-02" />
+    <summary>Langflow 1.13.3, released November 17, 2026, patches security-related dependencies and invalidates native sessions after a password change. The rest of the release is bug fixes.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, release, low" />
+    <source>
+      <id>https://github.com/langflow-ai/langflow/releases/tag/v1.13.3</id>
+      <title>Langflow v1.13.3 release notes</title>
+      <link href="https://github.com/langflow-ai/langflow/releases/tag/v1.13.3" />
+    </source>
+  </entry>
+  <entry>
+    <id>https://www.enterpriseai.tools/updates/#update-2026-11-13-01</id>
+    <title>Declarative Automation Bundles add AI Function tasks</title>
+    <updated>2026-11-13T00:00:00.000Z</updated>
+    <link href="https://www.enterpriseai.tools/updates/#update-2026-11-13-01" />
+    <summary>Databricks added AI Function task support to Declarative Automation Bundles in beta on November 13, 2026, so AI Function tasks can be part of bundle job definitions.</summary>
+    <author><name>enterpriseai.tools</name></author>
+    <category term="orchestration, feature, low" />
+    <source>
+      <id>https://docs.databricks.com/aws/en/release-notes/product/2026/november#ai-function-task-support-in-declarative-automation-bundles-beta</id>
+      <title>Databricks release notes, November 2026</title>
+      <link href="https://docs.databricks.com/aws/en/release-notes/product/2026/november#ai-function-task-support-in-declarative-automation-bundles-beta" />
+    </source>
+  </entry>
   <entry>
     <id>https://www.enterpriseai.tools/updates/#update-2026-11-10-01</id>
     <title>Haystack 3.5.0 raises minimums and changes defaults</title>
