@@ -80,8 +80,8 @@
   --viz-seq-2: color-mix(in srgb, var(--color-accent) 80%, var(--color-bg-card));
   --viz-seq-3: color-mix(in srgb, var(--color-accent) 64%, var(--color-bg-card));
   --viz-seq-4: color-mix(in srgb, var(--viz-cat-2) 70%, var(--color-bg-card));
-  --viz-seq-5: color-mix(in srgb, var(--color-accent) 46%, var(--color-bg-card));
-  --viz-seq-6: color-mix(in srgb, var(--color-accent) 34%, var(--color-bg-card));
+  --viz-seq-5: color-mix(in srgb, var(--color-accent) 58%, var(--color-bg-card));
+  --viz-seq-6: color-mix(in srgb, var(--color-accent) 48%, var(--color-bg-card));
 
   /* Logo badge gradient stops (service-icon variant) */
   --color-logo-badge-from: rgba(255, 255, 255, 0.08);
@@ -524,15 +524,15 @@ code {
     fill: color-mix(in srgb, var(--slab) 50%, var(--viz-shade));
   }
   .vo-plate .vo-face-top {
-    fill: color-mix(in srgb, var(--color-text-tertiary) 22%, var(--color-bg-card));
+    fill: color-mix(in srgb, var(--color-text-tertiary) 30%, var(--color-bg-card));
     stroke: var(--color-border-strong);
     stroke-dasharray: 5 4;
   }
   .vo-plate .vo-face-left {
-    fill: color-mix(in srgb, var(--color-text-tertiary) 30%, var(--color-bg-card));
+    fill: color-mix(in srgb, var(--color-text-tertiary) 50%, var(--color-bg-card));
   }
   .vo-plate .vo-face-right {
-    fill: color-mix(in srgb, var(--color-text-tertiary) 20%, var(--color-bg-card));
+    fill: color-mix(in srgb, var(--color-text-tertiary) 38%, var(--color-bg-card));
   }
   .vo-stud {
     fill: var(--color-accent);
@@ -574,7 +574,8 @@ code {
   .vo-tower:has([data-for="3"]:is(:hover, :focus-visible)) [data-leader="3"],
   .vo-tower:has([data-for="4"]:is(:hover, :focus-visible)) [data-leader="4"],
   .vo-tower:has([data-for="5"]:is(:hover, :focus-visible)) [data-leader="5"],
-  .vo-tower:has([data-for="6"]:is(:hover, :focus-visible)) [data-leader="6"] {
+  .vo-tower:has([data-for="6"]:is(:hover, :focus-visible)) [data-leader="6"],
+  .vo-tower:has([data-for="eco"]:is(:hover, :focus-visible)) [data-leader="eco"] {
     --leader: var(--color-accent);
   }
   [data-leader] .vo-leader {
@@ -674,11 +675,22 @@ code {
   .vo-hero:has(#lens-public:checked) [data-lens-count="public"] {
     display: inline;
   }
-  .vo-hero:has(#lens-developers:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-developers, 0.1); }
-  .vo-hero:has(#lens-enterprise:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-enterprise, 0.1); }
-  .vo-hero:has(#lens-everyone:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-everyone, 0.1); }
-  .vo-hero:has(#lens-researchers:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-researchers, 0.1); }
-  .vo-hero:has(#lens-public:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-public, 0.1); }
+  .vo-hero:has(#lens-developers:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-developers, 0.1); }
+  .vo-hero:has(#lens-enterprise:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-enterprise, 0.1); }
+  .vo-hero:has(#lens-everyone:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-everyone, 0.1); }
+  .vo-hero:has(#lens-researchers:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-researchers, 0.1); }
+  .vo-hero:has(#lens-public:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-public, 0.1); }
+  /* Under a lens, unmatched slabs fade to wireframes rather than ghosts. */
+  .vo-slab polygon {
+    fill-opacity: var(--lens, 1);
+    transition: fill-opacity var(--motion-base) var(--ease-out);
+  }
+  .vo-slab .vo-face-top {
+    stroke-opacity: max(var(--lens, 1), 0.6);
+  }
+  .vo-dot {
+    opacity: var(--lens, 1);
+  }
   .vo-hero:has(#lens-developers:checked) .vo-label { opacity: max(var(--s-developers, 0.1), 0.45); }
   .vo-hero:has(#lens-enterprise:checked) .vo-label { opacity: max(var(--s-enterprise, 0.1), 0.45); }
   .vo-hero:has(#lens-everyone:checked) .vo-label { opacity: max(var(--s-everyone, 0.1), 0.45); }
@@ -728,13 +740,22 @@ code {
     box-shadow: 0 0 0 3px var(--lane), 0 0 18px 2px color-mix(in srgb, var(--lane) 60%, transparent);
   }
   .vo-station[data-status="deprecated"]::before {
-    border: 2px dashed var(--color-warning);
+    width: 1rem;
+    height: 1rem;
+    border: 2px dashed var(--color-text-primary);
+    background: var(--color-bg-card);
+    box-shadow: 0 0 0 2px var(--color-bg-card);
   }
   .vo-station[data-status="retired"]::before {
     width: 0.5625rem;
     height: 0.5625rem;
     border-width: 2px;
     border-color: color-mix(in srgb, var(--lane) 70%, var(--color-text-tertiary));
+  }
+  /* Lift the active station above its neighbours so its card is never
+     painted under another station's label. */
+  .vo-station:is(:hover, :focus-visible, :focus-within) {
+    z-index: 30;
   }
   .vo-station:is(:hover, :focus-visible)::before {
     transform: scale(1.35);
@@ -862,6 +883,7 @@ code {
   .vo-family-products { --fam: var(--viz-cat-3); }
   .vo-family-safety { --fam: var(--viz-cat-4); }
   .vo-family-company { --fam: var(--viz-cat-5); }
+  .vo-family-neutral { --fam: var(--color-text-secondary); }
   .vo-tdot {
     display: block;
     width: 0.625rem;
@@ -913,6 +935,13 @@ code {
   }
   .vo-track > * {
     scroll-snap-align: start;
+  }
+  .vo-fade-x.vo-scroll-end {
+    mask-image: linear-gradient(90deg, transparent, black 2rem);
+  }
+  /* The model map's sticky lane labels stay solid; lanes fade in after them. */
+  .vo-fade-lanes {
+    mask-image: linear-gradient(90deg, black 6rem, transparent 6rem, black 8rem);
   }
   .vo-fade-x {
     mask-image: linear-gradient(90deg, transparent, black 1.5rem, black calc(100% - 2.5rem), transparent);
@@ -991,6 +1020,29 @@ code {
       animation-range: entry 0% entry 40%;
       animation-delay: 0ms;
     }
+  }
+}
+
+/* Phones: centre the hero glow behind the tower instead of a tall stripe,
+   and fade the lens chip row so cut-off chips read as scrollable. */
+@media (max-width: 1023px) {
+  .vo-hero::before {
+    inset: auto -25% 0 -25%;
+    height: 55%;
+  }
+}
+@media (max-width: 639px) {
+  .vo-lens-row {
+    mask-image: linear-gradient(90deg, black calc(100% - 2.5rem), transparent);
+  }
+}
+/* Rails scroll on phones only; from md up they wrap into a grid. */
+@media (min-width: 768px) {
+  .vo-rail {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    overflow: visible;
+    mask-image: none;
   }
 }
 

@@ -92,6 +92,8 @@ export type TowerLayout = {
   base: Prism;
   baseAnchor: Point;
   baseLabel: Point;
+  ecoAnchor: Point;
+  ecoLabel: Point;
   studs: Point[];
   ring: { cx: number; cy: number; rx: number; ry: number };
   dots: TowerDot[];
@@ -140,7 +142,9 @@ export function towerLayout(overview: Pick<VendorOverview, "domains" | "availabi
     } else {
       const half = (size - PAIR_GAP) / 2;
       ids.forEach((id, index) => {
-        boxes.push({ domainId: id, level, box: { x: origin + index * (half + PAIR_GAP), y: origin, z, w: half, d: size, h: SLAB_H } });
+        // Split front/back (along y) so each half keeps a visible right-hand
+        // corner for its leader line; the back half is drawn first.
+        boxes.push({ domainId: id, level, box: { x: origin, y: origin + index * (half + PAIR_GAP), z, w: size, d: half, h: SLAB_H } });
       });
     }
   });
@@ -172,7 +176,8 @@ export function towerLayout(overview: Pick<VendorOverview, "domains" | "availabi
   // Anchor each label at the slab's right-hand top corner, then spread.
   const anchors = boxes.map(({ box }) => isoPoint(box.x + box.w, box.y, box.z + box.h));
   const baseAnchor = isoPoint(PLATE, PLATE / 2, PLATE_H);
-  const spread = spreadLabels([...anchors.map(([, py]) => py), baseAnchor[1]], LABEL_GAP);
+  const ecoAnchor: Point = dots.length > 0 ? dots.reduce((best, dot) => (dot.at[0] > best[0] ? dot.at : best), dots[0].at) : [maxX, ring.cy];
+  const spread = spreadLabels([...anchors.map(([, py]) => py), baseAnchor[1], ecoAnchor[1]], LABEL_GAP);
 
   const slabs: TowerSlab[] = boxes.map(({ domainId, level, box }, index) => ({
     domainId,
@@ -188,13 +193,15 @@ export function towerLayout(overview: Pick<VendorOverview, "domains" | "availabi
     viewBox: { x: round(minX), y: round(minY), width: round(labelX + LABEL_GUTTER - minX), height: round(height) },
     base: isoPrism(baseBox),
     baseAnchor,
-    baseLabel: [labelX, round(spread[spread.length - 1])],
+    baseLabel: [labelX, round(spread[spread.length - 2])],
+    ecoAnchor,
+    ecoLabel: [labelX, round(spread[spread.length - 1])],
     studs,
     ring,
     dots,
     slabs,
     labelX,
-    drawingShare: round((maxX + 12 - minX) / (labelX + LABEL_GUTTER - minX)),
+    drawingShare: round((maxX + 40 - minX) / (labelX + LABEL_GUTTER - minX)),
   };
 }
 

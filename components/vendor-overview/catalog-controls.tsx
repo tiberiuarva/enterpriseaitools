@@ -164,7 +164,7 @@ export function CatalogControls({
           </label>
         </div>
       </div>
-      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1" role="group" aria-label="Product family">
+      <div className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 md:flex-wrap md:overflow-visible" role="group" aria-label="Product family">
         {[{ id: "all", label: "All", count: total }, ...domains].map((option) => (
           <button key={option.id} type="button" aria-pressed={domain === option.id} onClick={() => setDomain(option.id)} className={chip(domain === option.id)}>
             {option.label}

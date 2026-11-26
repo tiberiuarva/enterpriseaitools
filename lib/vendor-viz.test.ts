@@ -102,6 +102,15 @@ describe("towerLayout", () => {
     assert.deepEqual(layout.slabs.map((slab) => slab.domainId), ["m", "p", "c", "a", "i"]);
     assert.deepEqual(layout.slabs.map((slab) => slab.level), [0, 1, 2, 2, 3]);
   });
+  test("paired families split front and back so both corners face the labels", () => {
+    const [back, front] = layout.slabs.filter((slab) => slab.level === 2);
+    assert.ok(back.anchor[1] < front.anchor[1], "back half sits higher on screen");
+    assert.ok(back.anchor[0] > front.anchor[0], "back half's corner is further right");
+  });
+  test("the ecosystem label anchors on the right-most ring dot", () => {
+    const rightMost = Math.max(...layout.dots.map((dot) => dot.at[0]));
+    assert.equal(layout.ecoAnchor[0], rightMost);
+  });
   test("studs count direct and cloud channels only", () => {
     assert.equal(layout.studs.length, 2);
   });
@@ -109,7 +118,7 @@ describe("towerLayout", () => {
     assert.deepEqual(layout.dots.map((dot) => dot.domainId), ["e1", "e2"]);
   });
   test("labels sit right of the drawing and never overlap", () => {
-    const ys = [...layout.slabs.map((slab) => slab.label[1]), layout.baseLabel[1]].sort((a, b) => a - b);
+    const ys = [...layout.slabs.map((slab) => slab.label[1]), layout.baseLabel[1], layout.ecoLabel[1]].sort((a, b) => a - b);
     for (let index = 1; index < ys.length; index += 1) assert.ok(ys[index] - ys[index - 1] >= 53.9);
     for (const slab of layout.slabs) assert.ok(slab.label[0] > slab.anchor[0]);
   });
@@ -145,7 +154,7 @@ describe("LENSES", () => {
     assert.deepEqual(LENSES.map((lens) => lens.id), ["developers", "enterprise", "everyone", "researchers", "public"]);
     for (const lens of LENSES) {
       assert.ok(css.includes(`#lens-${lens.id}:checked) [data-lens-count="${lens.id}"]`), `missing count rule for ${lens.id}`);
-      assert.ok(css.includes(`#lens-${lens.id}:checked) :is(.vo-slab, .vo-dot, .vo-label) { opacity: var(--s-${lens.id}`), `missing dim rule for ${lens.id}`);
+      assert.ok(css.includes(`#lens-${lens.id}:checked) :is(.vo-slab, .vo-dot) { --lens: var(--s-${lens.id}`), `missing dim rule for ${lens.id}`);
     }
   });
 });

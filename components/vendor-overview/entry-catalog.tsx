@@ -63,13 +63,13 @@ function FamilyBar({ domain, entries }: { domain: VendorDomain; entries: VendorE
     <div className="mt-3 flex flex-col gap-1.5" aria-hidden="true">
       <div className="flex h-1.5 gap-0.5 overflow-hidden rounded-full">
         {parts.map((part, index) => (
-          <span key={part.id} className="h-full" style={{ width: `${part.share}%`, background: `var(--viz-seq-${(index % 6) + 1})` }} />
+          <span key={part.id} className="h-full" style={{ width: `${part.share}%`, background: `var(--viz-cat-${(index % 5) + 1})` }} />
         ))}
       </div>
       <p className="hidden flex-wrap gap-x-3 text-[0.6875rem] text-[var(--color-text-tertiary)] md:flex">
         {parts.map((part, index) => (
           <span key={part.id} className="inline-flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full" style={{ background: `var(--viz-seq-${(index % 6) + 1})` }} />
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: `var(--viz-cat-${(index % 5) + 1})` }} />
             {part.label} {part.count}
           </span>
         ))}
@@ -110,7 +110,7 @@ function DomainBlock({ domain, entries, all, count }: { domain: VendorDomain; en
               <div key={group.id || "ungrouped"} data-filter-group="">
                 {group.label ? <p className="mb-2 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{group.label}</p> : null}
                 {main.length > 0 ? (
-                  <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+                  <ul className="grid grid-cols-1 items-start gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
                     {main.map((entry) => (
                       <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
                     ))}
@@ -123,7 +123,7 @@ function DomainBlock({ domain, entries, all, count }: { domain: VendorDomain; en
                       <span className="group-open/more:hidden">Show {detail.length} more</span>
                       <span className="hidden group-open/more:inline">Show fewer</span>
                     </summary>
-                    <ul className="mt-2 grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+                    <ul className="mt-2 grid grid-cols-1 items-start gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
                       {detail.map((entry) => (
                         <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
                       ))}

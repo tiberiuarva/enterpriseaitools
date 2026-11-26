@@ -6,6 +6,9 @@ import { withBasePath } from "@/lib/site";
 
 type Stat = { label: string; value: number };
 
+// Channels are not audience-specific, so their label never dims under a lens.
+const FULL_LENS = Object.fromEntries(LENSES.map((lens) => [`--s-${lens.id}`, 1])) as CSSProperties;
+
 function lensStyle(counts: LensCounts | undefined): CSSProperties {
   const style: Record<string, number> = {};
   for (const lens of LENSES) style[`--s-${lens.id}`] = lensStrength(counts?.byLens[lens.id] ?? 0, counts?.total ?? 0);
@@ -35,6 +38,10 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
   const domain = (id: string) => overview.domains.find((candidate) => candidate.id === id);
   const ecosystem = overview.domains.filter((item) => item.cluster === "ecosystem");
   const ecosystemCount = ecosystem.reduce((sum, item) => sum + (counts[item.id] ?? 0), 0);
+  const ecoCounts: LensCounts = {
+    total: ecosystemCount,
+    byLens: Object.fromEntries(LENSES.map((item) => [item.id, ecosystem.reduce((sum, family) => sum + (lens.domains.get(family.id)?.byLens[item.id] ?? 0), 0)])) as LensCounts["byLens"],
+  };
   const direct = overview.availability.filter((item) => item.channel !== "partner").length;
   const partner = overview.availability.length - direct;
   const vb = tower.viewBox;
@@ -50,7 +57,7 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
 
         <dl className="grid grid-cols-3 gap-x-4 gap-y-4 sm:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex min-w-0 flex-col-reverse">
+            <div key={stat.label} className="flex min-w-0 flex-col-reverse justify-end">
               <dt className="text-caption leading-tight text-[var(--color-text-secondary)]">{stat.label}</dt>
               <dd className="mb-1.5 text-[2rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)]">
                 <span aria-hidden="true" className="vo-count" style={{ "--to": stat.value } as CSSProperties} />
@@ -62,7 +69,7 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
 
         <fieldset className="vo-lens flex min-w-0 flex-col gap-2">
           <legend className="mb-2 text-caption text-[var(--color-text-secondary)]">Light up the stack for</legend>
-          <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:flex-wrap">
+          <div className="vo-lens-row -mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:flex-wrap">
             <input type="radio" name="vo-lens" id="lens-all" value="all" defaultChecked />
             <label htmlFor="lens-all">Everyone</label>
             {LENSES.map((item) => (
@@ -129,7 +136,11 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
               </a>
             </g>
           ))}
-          {[...tower.slabs.map((slab) => ({ from: slab.anchor, to: slab.label, key: slab.domainId, slot: String(slab.slot) })), { from: tower.baseAnchor, to: tower.baseLabel, key: "base", slot: "base" }].map(
+          {[
+            ...tower.slabs.map((slab) => ({ from: slab.anchor, to: slab.label, key: slab.domainId, slot: String(slab.slot) })),
+            { from: tower.baseAnchor, to: tower.baseLabel, key: "base", slot: "base" },
+            { from: tower.ecoAnchor, to: tower.ecoLabel, key: "eco", slot: "eco" },
+          ].map(
             ({ from, to, key, slot }) => (
               <g key={key} data-leader={slot} className="hidden sm:inline">
                 <polyline className="vo-leader" points={`${from[0] + 3},${from[1]} ${to[0] - 26},${to[1]} ${to[0] - 8},${to[1]}`} />
@@ -164,7 +175,7 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
             <a
               href="#availability"
               className="vo-label"
-              style={{ left: `${toPercent(tower.baseLabel, vb).left}%`, top: `${toPercent(tower.baseLabel, vb).top}%` }}
+              style={{ left: `${toPercent(tower.baseLabel, vb).left}%`, top: `${toPercent(tower.baseLabel, vb).top}%`, ...FULL_LENS }}
             >
               <span className="flex items-center gap-2 text-sm font-semibold text-[var(--color-text-primary)]">
                 <span className="vo-swatch" aria-hidden="true" style={{ background: "var(--color-text-tertiary)" }} />
@@ -176,21 +187,24 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
             </a>
           </li>
           <li>
-            <a href="#ecosystem" className="vo-label" style={{ left: "0%", top: "94%" }}>
+            <a
+              href="#ecosystem"
+              data-for="eco"
+              className="vo-label"
+              style={{ left: `${toPercent(tower.ecoLabel, vb).left}%`, top: `${toPercent(tower.ecoLabel, vb).top}%`, ...lensStyle(ecoCounts) }}
+            >
               <span className="flex items-center gap-2 text-sm font-semibold text-[var(--viz-eco)]">
                 <span className="vo-swatch" aria-hidden="true" style={{ background: "var(--viz-eco)", borderRadius: "9999px" }} />
                 Ecosystem
               </span>
-              <span className="text-caption text-[var(--color-text-tertiary)]">
-                {ecosystem.length} families · {ecosystemCount} offerings
-              </span>
+              <LensCount counts={ecoCounts} />
             </a>
           </li>
         </ol>
 
         {/* Small screens: the same labels as a keyed list under the drawing. */}
         <ol className="mt-4 grid grid-cols-1 gap-1 sm:hidden">
-          {[...tower.slabs].reverse().map((slab) => (
+          {[...tower.slabs].sort((a, b) => a.label[1] - b.label[1]).map((slab) => (
             <li key={slab.domainId}>
               <a href={`#catalog-${slab.domainId}`} className="flex items-center justify-between gap-3 rounded-lg px-2 py-1.5 hover:bg-[var(--color-bg-hover)]">
                 <span className="flex items-center gap-2 text-sm font-semibold text-[var(--color-text-primary)]">
@@ -207,7 +221,7 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
                 <span className="vo-swatch" aria-hidden="true" style={{ background: "var(--viz-eco)" }} />
                 Ecosystem
               </span>
-              <span className="text-caption text-[var(--color-text-tertiary)]">{ecosystemCount} offerings</span>
+              <LensCount counts={ecoCounts} />
             </a>
           </li>
         </ol>

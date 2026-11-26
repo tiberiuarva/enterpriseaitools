@@ -371,7 +371,7 @@ export function EcosystemOrbit({ overview, counts, flagship }: { overview: Vendo
                   <a
                     key={entry.id}
                     href={`#entry-${entry.id}`}
-                    className="max-w-full truncate rounded-full border border-[color-mix(in_srgb,var(--viz-eco)_40%,var(--color-border))] bg-[var(--color-bg-card)] px-2.5 py-1 text-xs font-medium text-[var(--color-text-primary)] shadow-[var(--shadow-1)] transition hover:border-[var(--viz-eco)]"
+                    className="max-w-full rounded-2xl border border-[color-mix(in_srgb,var(--viz-eco)_40%,var(--color-border))] bg-[var(--color-bg-card)] px-2.5 py-1 text-xs font-medium text-[var(--color-text-primary)] shadow-[var(--shadow-1)] transition hover:border-[var(--viz-eco)]"
                   >
                     {entry.name}
                   </a>
@@ -399,7 +399,7 @@ function EcosystemCard({ domain, entries, count }: { domain: VendorDomain; entri
         <span className="text-caption tabular-nums text-[var(--viz-eco)]">{count}</span>
       </div>
       <p className="vo-entry-desc">{domain.tagline}</p>
-      <ul className="vo-entry-kids">
+      <ul className="vo-entry-kids lg:hidden">
         {entries.map((entry) => (
           <li key={entry.id}>
             <a href={`#entry-${entry.id}`} className="hover:text-[var(--color-accent)]">
@@ -487,8 +487,8 @@ export function CompanyBand({ company }: { company: VendorOverview["company"] })
                   <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span>
                 ) : null}
               </div>
-              <p className="text-caption text-[var(--viz-co)]">{PARTNER_TYPE_LABEL[partnership.type] ?? partnership.type}</p>
-              <p className="vo-entry-desc line-clamp-2">{partnership.summary}</p>
+              <p className="text-caption text-[var(--color-text-tertiary)]">{PARTNER_TYPE_LABEL[partnership.type] ?? partnership.type}</p>
+              <p className="vo-entry-desc">{partnership.summary}</p>
               <SourceLink href={partnership.sourceUrl} />
             </li>
           ))}
@@ -520,15 +520,15 @@ export function TimelineRiver({ events }: { events: VendorTimelineEvent[] }) {
               {family.label} <span className="tabular-nums text-[var(--color-text-tertiary)]">{family.count}</span>
             </li>
           ))}
-          <li className="vo-family-models inline-flex items-center gap-2">
+          <li className="vo-family-neutral inline-flex items-center gap-2">
             <span className="vo-tdot" data-high="true" aria-hidden="true" />
             Key milestone
           </li>
         </ul>
-        <div role="region" aria-label="Events per quarter, scrolls horizontally" tabIndex={0} className="vo-fade-x vo-scroll-end -mx-2 overflow-x-auto px-2">
+        <div role="region" aria-label="Events per quarter, scrolls horizontally" tabIndex={0} className="vo-fade-x vo-scroll-end -mx-2 overflow-x-auto px-2 md:[mask-image:none]">
           <ol className="flex min-w-[640px] items-end gap-3">
             {density.map((item) => (
-              <li key={item.year} className="flex flex-1 flex-col gap-2">
+              <li key={item.year} className="flex flex-col gap-2" style={{ flex: `${Math.max(1.2, Math.sqrt(item.count))} 1 0%` }}>
                 <div
                   className="flex items-end justify-around gap-1 border-b border-[var(--color-border)] pb-1.5"
                   style={{ minHeight: `${maxStack * 15 + 8}px` }}

@@ -13,6 +13,7 @@ const STATUS_LABEL: Record<VendorModelStatus, string> = {
 };
 
 const LANE_H = 56;
+const POP_H = 230;
 
 function laneColor(index: number, live: boolean) {
   return live ? `var(--viz-cat-${(index % 5) + 1})` : "var(--color-text-tertiary)";
@@ -61,6 +62,10 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
   const map = modelMap(models, today);
   const laneIndex = new Map(map.lanes.map((lane, index) => [lane.tier, index]));
   const current = models.filter((model) => model.status === "current").length;
+  const height = map.lanes.length * LANE_H + 40;
+  // A station card is about 230px tall and the scroller clips vertically, so
+  // each lane opens its cards on whichever side has room.
+  const side = (index: number) => (40 + index * LANE_H + LANE_H / 2 + POP_H <= height ? "below" : "above");
 
   return (
     <div className="flex flex-col gap-4">
@@ -72,12 +77,16 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
               {STATUS_LABEL[status]}
             </li>
           ))}
+          <li className="inline-flex items-center gap-2">
+            <span aria-hidden="true" className="h-4 w-2.5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-bg-hover)]" />
+            Released together
+          </li>
         </ul>
         {statusSource ? <SourceLink href={statusSource.sourceUrl} label={`Status: ${statusSource.sourceTitle ?? "source"}`} /> : null}
       </div>
 
-      <div role="region" aria-label={`${label} map, scrolls horizontally`} tabIndex={0} className="vo-fade-x vo-scroll-end relative -mx-2 overflow-x-auto px-2 pb-2">
-        <div className="relative min-w-[1040px]" style={{ height: `${map.lanes.length * LANE_H + 40}px` }}>
+      <div role="region" aria-label={`${label} map, scrolls horizontally`} tabIndex={0} className="vo-fade-lanes vo-scroll-end relative overflow-x-auto pb-2">
+        <div className="relative min-w-[1040px]" style={{ height: `${height}px` }}>
           {/* Year grid, today line and same-day interchanges sit behind the lanes. */}
           <div aria-hidden="true" className="absolute inset-y-0 left-24 right-6">
             {map.ticks.map((tick) => (
@@ -107,7 +116,6 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
           <ol className="absolute inset-x-0 bottom-0 top-10">
             {map.lanes.map((lane, index) => {
               const lineStyle = { left: `${lane.start}%`, width: `${Math.max(lane.end - lane.start, 0.6)}%`, "--lane": laneColor(index, lane.live) } as CSSProperties;
-              const side = index < map.lanes.length / 2 ? "below" : "above";
               return (
                 <li key={lane.tier} className="flex" style={{ height: `${LANE_H}px`, "--lane": laneColor(index, lane.live) } as CSSProperties}>
                   <div className="sticky left-0 z-10 flex w-24 shrink-0 items-center gap-2 bg-[var(--color-bg-card)] pr-2">
@@ -129,7 +137,7 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
                           <span className="vo-station-label" aria-hidden="true">
                             {station.label}
                           </span>
-                          <span className="vo-pop" data-side={side} data-align={station.x < 14 ? "start" : station.x > 86 ? "end" : undefined}>
+                          <span className="vo-pop" data-side={side(index)} data-align={station.x < 14 ? "start" : station.x > 86 ? "end" : undefined}>
                             <StationCard model={station.model} />
                           </span>
                         </li>
@@ -143,7 +151,7 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
         </div>
       </div>
       <p className="text-caption text-[var(--color-text-tertiary)]">
-        {models.length} models on {map.lanes.length} lines, {current} current. Hover or focus a station for dates, context and price; every detail is also in the tables below.
+        {models.length} models on {map.lanes.length} lines, {current} current. Select a station for dates, context and price; every detail is also in the tables below.
       </p>
       <details className="group">
         <summary className="inline-flex cursor-pointer list-none items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
