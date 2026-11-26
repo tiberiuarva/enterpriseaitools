@@ -1038,26 +1038,43 @@ code {
   }
 }
 
-/* Phones: centre the hero glow behind the tower instead of a tall stripe,
-   and fade the lens chip row so cut-off chips read as scrollable. */
-@media (max-width: 1023px) {
-  .vo-hero::before {
-    inset: auto -25% 0 -25%;
-    height: 55%;
+/* Responsive overrides for the vendor overview. They come after the base
+   .vo-* rules in the same layer, so they win at equal specificity while
+   Tailwind utilities can still override them. */
+@layer components {
+  /* Phones: centre the hero glow behind the tower instead of a tall stripe,
+     and fade the lens chip row so cut-off chips read as scrollable. */
+  @media (max-width: 1023px) {
+    .vo-hero::before {
+      inset: auto -25% 0 -25%;
+      height: 55%;
+    }
   }
-}
-@media (max-width: 639px) {
-  .vo-lens-row {
-    mask-image: linear-gradient(90deg, black calc(100% - 2.5rem), transparent);
+  @media (max-width: 639px) {
+    .vo-lens-row {
+      mask-image: linear-gradient(90deg, black calc(100% - 2.5rem), transparent);
+    }
   }
-}
-/* Rails scroll on phones only; from md up they wrap into a grid. */
-@media (min-width: 768px) {
-  .vo-rail {
-    grid-auto-flow: row;
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    overflow: visible;
-    mask-image: none;
+  /* Rails scroll on phones only; from md up they wrap into a grid. */
+  @media (min-width: 768px) {
+    .vo-rail {
+      grid-auto-flow: row;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      overflow: visible;
+      mask-image: none;
+    }
+  }
+  .vo-pop-close {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.875rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+  .vo-station:target .vo-pop-close {
+    display: inline-block;
   }
 }
 

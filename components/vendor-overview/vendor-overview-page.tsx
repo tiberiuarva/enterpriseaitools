@@ -99,14 +99,14 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   const governance = governanceSummary(overview.governance);
   const directOrCloud = overview.availability.filter((item) => item.channel !== "partner").length;
   const stats: HeroStat[] = [
-    { value: current.length, label: "current models", detail: Number.isFinite(lowestInput) ? `from ${formatUsd(lowestInput)} per M tokens` : undefined, href: "#claude-models" },
+    { value: current.length, label: "current models", detail: Number.isFinite(lowestInput) ? `from ${formatUsd(lowestInput)} per M input tokens` : undefined, href: "#claude-models" },
     {
       value: overview.plans.length,
       label: "plans",
       detail: individualRange ? `${formatUsd(individualRange.min)}–${formatUsd(individualRange.max)}/mo for individuals` : undefined,
       href: "#pricing",
     },
-    { value: overview.availability.length, label: "ways to run", detail: `${directOrCloud} direct or in your cloud`, href: "#availability" },
+    { value: overview.availability.length, label: "ways to run", detail: `${directOrCloud} direct or via a cloud provider`, href: "#availability" },
     { value: governance.counts.yes, label: `of ${overview.governance.length} controls in place`, href: "#enterprise" },
     { value: overview.entries.length, label: "offerings", detail: `in ${overview.domains.length} families`, href: "#catalog" },
   ];

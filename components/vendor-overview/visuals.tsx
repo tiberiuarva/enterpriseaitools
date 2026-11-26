@@ -202,7 +202,7 @@ export function TrustWall({ rows }: { rows: VendorGovernanceRow[] }) {
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         {/* The caveats are what a buyer has to read, so they come first and in full. */}
         <div className="flex flex-col gap-3">
-          <h4 className="text-caption uppercase tracking-[0.14em] text-[var(--color-warning)]">Read the limits</h4>
+          <h3 className="text-caption uppercase tracking-[0.14em] text-[var(--color-warning)]">Read the limits</h3>
           <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {caveats.map((row) => (
               <li key={row.id} className="vo-entry border-[color-mix(in_srgb,var(--color-warning)_45%,var(--color-border))]">
@@ -226,7 +226,7 @@ export function TrustWall({ rows }: { rows: VendorGovernanceRow[] }) {
           </ul>
         </div>
         <div className="flex flex-col gap-3">
-          <h4 className="text-caption uppercase tracking-[0.14em] text-[var(--color-success)]">In place</h4>
+          <h3 className="text-caption uppercase tracking-[0.14em] text-[var(--color-success)]">In place</h3>
           <ul className="flex flex-col divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
             {passes.map((row) => (
               <li key={row.id}>

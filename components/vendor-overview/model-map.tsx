@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { SourceRef, VendorModel, VendorModelStatus } from "@/lib/types";
 import { formatPartialDate, formatUsd } from "@/lib/vendor-overview";
-import { modelMap, priceDelta, priceLadder } from "@/lib/vendor-viz";
+import { modelMap, priceDelta, priceLadder, stationLabel } from "@/lib/vendor-viz";
 import { ModelLineage } from "./model-lineage";
 import { SourceLink } from "./primitives";
 
@@ -85,7 +85,13 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
         {statusSource ? <SourceLink href={statusSource.sourceUrl} label={`Status: ${statusSource.sourceTitle ?? "source"}`} /> : null}
       </div>
 
-      <div role="region" aria-label={`${label} map, scrolls horizontally`} tabIndex={0} className="vo-fade-lanes vo-scroll-end relative overflow-x-auto pb-2">
+      <div
+        role="region"
+        id="model-map"
+        aria-label={`${label} map, scrolls horizontally`}
+        tabIndex={0}
+        className="vo-fade-lanes vo-scroll-end relative overflow-x-auto pb-2"
+      >
         <div className="relative min-w-[1040px]" style={{ height: `${height}px` }}>
           {/* Year grid, today line and same-day interchanges sit behind the lanes. */}
           <div aria-hidden="true" className="absolute inset-y-0 left-24 right-6">
@@ -140,6 +146,9 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
                           </span>
                           <span className="vo-pop" data-side={side(index)} data-align={station.x < 14 ? "start" : station.x > 86 ? "end" : undefined}>
                             <StationCard model={station.model} />
+                            <a href="#model-map" className="vo-pop-close">
+                              Close
+                            </a>
                           </span>
                         </li>
                       ))}
@@ -159,7 +168,7 @@ export function ModelMap({ models, today, statusSource, label }: { models: Vendo
           View as tables
         </summary>
         <div className="mt-4">
-          <ModelLineage models={models} statusSource={statusSource} />
+          <ModelLineage models={models} statusSource={statusSource} label={label} />
         </div>
       </details>
     </div>
@@ -192,7 +201,7 @@ export function ModelLineup({ models, today, footnote }: { models: VendorModel[]
                   <span className="text-xl font-semibold tracking-tight" style={{ color: "var(--lane)" }}>
                     {model.tier}
                   </span>
-                  <span className="text-caption text-[var(--color-text-tertiary)]">{model.name.replace(/^Claude\s+/, "").replace(model.tier, "").trim()}</span>
+                  <span className="text-caption text-[var(--color-text-tertiary)]">{stationLabel(model)}</span>
                 </span>
                 <span className="vo-entry-desc line-clamp-3 min-h-[3.6rem]">{model.highlight ?? ""}</span>
                 {price ? (
@@ -213,7 +222,7 @@ export function ModelLineup({ models, today, footnote }: { models: VendorModel[]
                   {model.maxOutput ? <span>{model.maxOutput} out</span> : null}
                   {delta !== undefined && price?.previous ? (
                     <span className={delta < 0 ? "font-semibold text-[var(--color-success)]" : delta > 0 ? "font-semibold text-[var(--color-warning)]" : undefined}>
-                      {delta === 0 ? "same price as" : `${delta > 0 ? "+" : "−"}${Math.abs(delta)}% vs`} {price.previous.name.replace(/^Claude\s+/, "").replace(model.tier, "").trim()}
+                      {delta === 0 ? "same price as" : `${delta > 0 ? "+" : "−"}${Math.abs(delta)}% vs`} {stationLabel({ name: price.previous.name, tier: model.tier })}
                     </span>
                   ) : null}
                 </span>

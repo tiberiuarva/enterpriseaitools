@@ -1,5 +1,6 @@
 import type { SourceRef, VendorModel, VendorModelStatus } from "@/lib/types";
 import { formatPartialDate, formatUsd, modelLineage } from "@/lib/vendor-overview";
+import { stationLabel } from "@/lib/vendor-viz";
 import { SourceLink } from "./primitives";
 
 const STATUS_LABEL: Record<VendorModelStatus, string> = {
@@ -23,9 +24,6 @@ const STATUS_DOT: Record<VendorModelStatus, string> = {
   retired: "badge-dot-muted",
 };
 
-function shortName(model: VendorModel) {
-  return model.name.replace(/^Claude\s+/, "").replace(new RegExp(`^${model.tier}\\s+`), "") || model.name;
-}
 
 function Legend() {
   return (
@@ -42,7 +40,7 @@ function Legend() {
 
 // Lane chart of every model: one row per tier, one column per generation.
 // A real table so the grid survives without CSS and reads row by row.
-export function ModelLineage({ models, statusSource }: { models: VendorModel[]; statusSource?: SourceRef }) {
+export function ModelLineage({ models, statusSource, label }: { models: VendorModel[]; statusSource?: SourceRef; label: string }) {
   const lineage = modelLineage(models);
   const available = models
     .filter((model) => model.status !== "retired")
@@ -57,9 +55,9 @@ export function ModelLineage({ models, statusSource }: { models: VendorModel[]; 
             <SourceLink href={statusSource.sourceUrl} label={`Status and retirement dates: ${statusSource.sourceTitle ?? "source"}`} />
           ) : null}
         </div>
-        <div role="region" aria-label="Claude model lineage, scrolls horizontally" tabIndex={0} className="relative overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <div role="region" aria-label={`${label} lineage, scrolls horizontally`} tabIndex={0} className="relative overflow-x-auto rounded-xl border border-[var(--color-border)]">
           <table className="w-full min-w-[56rem] border-collapse text-sm">
-            <caption className="sr-only">Claude models by tier and generation, oldest generation on the left</caption>
+            <caption className="sr-only">{label}s by tier and generation, oldest generation on the left</caption>
             <thead>
               <tr className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)]">
                 <th scope="col" className="sticky left-0 z-10 w-24 bg-[var(--color-bg-primary)] px-3 py-2.5 text-left text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">
@@ -90,7 +88,7 @@ export function ModelLineage({ models, statusSource }: { models: VendorModel[]; 
                                   title={`${model.name}: released ${formatPartialDate(model.releasedAt)}, ${STATUS_LABEL[model.status].toLowerCase()}`}
                                   className={`inline-flex whitespace-nowrap rounded-md border px-2 py-0.5 text-xs font-medium ${STATUS_PILL[model.status]}`}
                                 >
-                                  {shortName(model)}
+                                  {stationLabel(model)}
                                   <span className="sr-only">
                                     {" "}
                                     ({model.name}, released {formatPartialDate(model.releasedAt)}, {STATUS_LABEL[model.status]})
@@ -117,9 +115,9 @@ export function ModelLineage({ models, statusSource }: { models: VendorModel[]; 
         <p className="mt-1 text-body-sm text-[var(--color-text-secondary)]">
           API list prices in US dollars per million tokens, input / output. Batch processing is 50% off; prompt caching reduces repeated input.
         </p>
-        <div role="region" aria-label="Available Claude models, scrolls horizontally" tabIndex={0} className="relative mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
+        <div role="region" aria-label={`Available ${label}s, scrolls horizontally`} tabIndex={0} className="relative mt-3 overflow-x-auto rounded-xl border border-[var(--color-border)]">
           <table className="w-full min-w-[44rem] border-collapse text-sm">
-            <caption className="sr-only">Claude models that are current, still available or deprecated, with API prices</caption>
+            <caption className="sr-only">{label}s that are current, still available or deprecated, with API prices</caption>
             <thead>
               <tr className="border-b border-[var(--color-border)] bg-[var(--color-bg-primary)] text-left text-caption uppercase tracking-[0.1em] text-[var(--color-text-tertiary)]">
                 <th scope="col" className="px-3 py-2.5">Model</th>
