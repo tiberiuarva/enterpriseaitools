@@ -29,8 +29,9 @@ materially changes the bundle or page count.
 
 ## M13 — vendor stack overviews (2026-11-26)
 
-`/stacks/anthropic/` is now the largest HTML route: 1.58 MB uncompressed and
-157 KB gzipped. For comparison, `/stacks/microsoft/` is 250 KB and `/` is 307 KB.
+`/stacks/anthropic/` is now the largest HTML route: 1.70 MB uncompressed and
+180 KB gzipped (after the visual redesign: isometric stack, model map, channel
+tree, timeline river). For comparison, `/stacks/microsoft/` is 250 KB and `/` is 307 KB.
 
 **Why it is large.** The page renders the full source-backed catalog
 server-side so that every offering is crawlable and deep-linkable:
@@ -40,8 +41,14 @@ server-side so that every offering is crawlable and deep-linkable:
 
 **What keeps it fast.**
 
-- Families, older timeline years and the source list start collapsed in
+- Families, the full event history and the source list start collapsed in
   `<details>`.
+- Diagrams are server-rendered SVG and CSS (no chart library); hover, the
+  audience lens and the counting stats use `:has()`, radios and `@property`,
+  so they add no JavaScript. Motion is transform/opacity only and stops under
+  `prefers-reduced-motion`.
+- Catalog cards use short `.vo-entry*` classes from `globals.css` instead of
+  long utility strings repeated 168 times.
 - Filters are thin client islands that toggle `hidden` on server-rendered
   nodes, so entry data never ships as props.
 - First-load JS grows only by those islands.
@@ -50,7 +57,7 @@ Lighthouse, run locally against `out/` served with gzip:
 
 | Route | Mobile | Desktop | Mobile LCP |
 |---|---:|---:|---:|
-| `/stacks/anthropic/` | 0.94 | 1.00 | 3.02 s |
+| `/stacks/anthropic/` | 0.96 | 1.00 | 2.62 s |
 | `/stacks/microsoft/` | 0.98 | 1.00 | 2.46 s |
 | `/` | 0.98 | 1.00 | 2.37 s |
 

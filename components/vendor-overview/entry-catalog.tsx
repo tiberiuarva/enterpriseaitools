@@ -1,13 +1,10 @@
 import { ChevronDown } from "lucide-react";
 import type { VendorDomain, VendorEntry, VendorOverview } from "@/lib/types";
 import { AUDIENCE_LABELS, ENTRY_KIND_LABELS, childrenOf, domainCounts, entriesByDomain, entrySearchText } from "@/lib/vendor-overview";
+import { groupBreakdown } from "@/lib/vendor-viz";
 import { withBasePath } from "@/lib/site";
 import { CatalogControls } from "./catalog-controls";
-import { Chip, SourceLink, StatusBadge } from "./primitives";
-
-function year(date: string | undefined) {
-  return date ? date.slice(0, 4) : null;
-}
+import { SourceLink, StatusBadge } from "./primitives";
 
 function filterAttributes(entry: VendorEntry, children: VendorEntry[]) {
   const all = [entry, ...children];
@@ -21,90 +18,63 @@ function filterAttributes(entry: VendorEntry, children: VendorEntry[]) {
   };
 }
 
-function EntryLinks({ entry }: { entry: VendorEntry }) {
+// One compact card per offering. Repeated ~170 times, so it leans on the short
+// .vo-entry* classes in globals.css instead of long utility strings.
+function EntryCard({ entry, items }: { entry: VendorEntry; items: VendorEntry[] }) {
   return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-      {entry.docsUrl ? <SourceLink href={entry.docsUrl} label="Docs" /> : null}
-      <SourceLink href={entry.sourceUrl} label="Source" />
-      {entry.githubUrl ? <SourceLink href={entry.githubUrl} label="Code" /> : null}
-      {entry.toolId ? (
-        <a href={withBasePath(`/tools/${entry.toolId}`)} className="text-xs font-medium text-[var(--color-accent)] hover:underline">
-          Governance posture →
-        </a>
+    <li id={`entry-${entry.id}`} data-prominence={entry.prominence} {...filterAttributes(entry, items)} className="vo-entry">
+      <h4 className="vo-entry-name">{entry.name}</h4>
+      <div className="vo-entry-meta">
+        <StatusBadge status={entry.status} />
+        <span>{ENTRY_KIND_LABELS[entry.kind]}</span>
+        {entry.launchedAt ? <span>since {entry.launchedAt.slice(0, 4)}</span> : null}
+        {entry.license ? <span className={entry.licenseWarning ? "text-[var(--color-warning)]" : undefined}>{entry.license}</span> : null}
+      </div>
+      {entry.formerNames?.length ? <p className="vo-entry-meta">Formerly {entry.formerNames.join(", ")}</p> : null}
+      <p className="vo-entry-desc">{entry.description}</p>
+      {entry.licenseWarning ? <p className="vo-entry-warn">{entry.licenseWarning}</p> : null}
+      {items.length > 0 ? (
+        <ul className="vo-entry-kids" aria-label={`Inside ${entry.name}`}>
+          {items.map((child) => (
+            <li key={child.id} id={`entry-${child.id}`} title={child.description}>
+              {child.name}
+            </li>
+          ))}
+        </ul>
       ) : null}
-    </div>
-  );
-}
-
-function EntryMeta({ entry }: { entry: VendorEntry }) {
-  return (
-    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
-      <StatusBadge status={entry.status} />
-      <Chip>{ENTRY_KIND_LABELS[entry.kind]}</Chip>
-      {entry.license ? <Chip tone={entry.licenseWarning ? "warning" : "default"}>{entry.license}</Chip> : null}
-      {year(entry.launchedAt) ? <span className="text-caption text-[var(--color-text-tertiary)]">Since {year(entry.launchedAt)}</span> : null}
-    </div>
-  );
-}
-
-function ChildList({ items }: { items: VendorEntry[] }) {
-  if (items.length === 0) return null;
-  return (
-    <ul className="mt-3 flex flex-col gap-2 border-l border-[var(--color-border)] pl-3">
-      {items.map((child) => (
-        <li key={child.id} id={`entry-${child.id}`} className="scroll-mt-40 text-sm">
-          <div className="flex flex-wrap items-baseline gap-x-2">
-            <span className="font-medium text-[var(--color-text-primary)]">{child.name}</span>
-            <StatusBadge status={child.status} />
-          </div>
-          <p className="text-xs leading-5 text-[var(--color-text-secondary)]">
-            {child.description} <SourceLink href={child.sourceUrl} />
-          </p>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function FormerNames({ entry }: { entry: VendorEntry }) {
-  return entry.formerNames && entry.formerNames.length > 0 ? (
-    <p className="text-caption text-[var(--color-text-tertiary)]">Formerly {entry.formerNames.join(", ")}</p>
-  ) : null;
-}
-
-function HeadlineCard({ entry, items }: { entry: VendorEntry; items: VendorEntry[] }) {
-  return (
-    <li id={`entry-${entry.id}`} {...filterAttributes(entry, items)} className="card flex min-w-0 scroll-mt-40 flex-col gap-2.5 p-4">
-      <h4 className="text-h3 text-[var(--color-text-primary)]">{entry.name}</h4>
-      <FormerNames entry={entry} />
-      <EntryMeta entry={entry} />
-      <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{entry.description}</p>
-      {entry.licenseWarning ? <p className="text-xs leading-5 text-[var(--color-warning)]">{entry.licenseWarning}</p> : null}
-      <div className="mt-auto pt-1">
-        <EntryLinks entry={entry} />
-      </div>
-      <ChildList items={items} />
-    </li>
-  );
-}
-
-function EntryRow({ entry, items }: { entry: VendorEntry; items: VendorEntry[] }) {
-  return (
-    <li id={`entry-${entry.id}`} {...filterAttributes(entry, items)} className="scroll-mt-40 py-3.5">
-      <div className="flex flex-col gap-1.5 md:flex-row md:gap-6">
-        <div className="md:w-64 md:shrink-0">
-          <h4 className="text-sm font-semibold text-[var(--color-text-primary)]">{entry.name}</h4>
-          <FormerNames entry={entry} />
-        </div>
-        <div className="flex min-w-0 flex-1 flex-col gap-1.5">
-          <EntryMeta entry={entry} />
-          <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{entry.description}</p>
-          {entry.licenseWarning ? <p className="text-xs leading-5 text-[var(--color-warning)]">{entry.licenseWarning}</p> : null}
-          <EntryLinks entry={entry} />
-          <ChildList items={items} />
-        </div>
+      <div className="vo-entry-meta mt-auto pt-1">
+        {entry.docsUrl ? <SourceLink href={entry.docsUrl} label="Docs" /> : null}
+        <SourceLink href={entry.sourceUrl} />
+        {entry.githubUrl ? <SourceLink href={entry.githubUrl} label="Code" /> : null}
+        {entry.toolId ? (
+          <a href={withBasePath(`/tools/${entry.toolId}`)} className="font-medium text-[var(--color-accent)] hover:underline">
+            Governance →
+          </a>
+        ) : null}
       </div>
     </li>
+  );
+}
+
+function FamilyBar({ domain, entries }: { domain: VendorDomain; entries: VendorEntry[] }) {
+  const parts = groupBreakdown(domain, entries);
+  if (parts.length < 2) return null;
+  return (
+    <div className="mt-3 flex flex-col gap-1.5" aria-hidden="true">
+      <div className="flex h-1.5 gap-0.5 overflow-hidden rounded-full">
+        {parts.map((part, index) => (
+          <span key={part.id} className="h-full" style={{ width: `${part.share}%`, background: `var(--viz-seq-${(index % 6) + 1})` }} />
+        ))}
+      </div>
+      <p className="hidden flex-wrap gap-x-3 text-[0.6875rem] text-[var(--color-text-tertiary)] md:flex">
+        {parts.map((part, index) => (
+          <span key={part.id} className="inline-flex items-center gap-1">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: `var(--viz-seq-${(index % 6) + 1})` }} />
+            {part.label} {part.count}
+          </span>
+        ))}
+      </p>
+    </div>
   );
 }
 
@@ -112,55 +82,50 @@ function DomainBlock({ domain, entries, all, count }: { domain: VendorDomain; en
   const groups = [...domain.groups, { id: "", label: "" }]
     .map((group) => ({ group, items: entries.filter((entry) => (entry.groupId ?? "") === group.id) }))
     .filter(({ items }) => items.length > 0);
+  const tone = domain.cluster === "ecosystem" ? "var(--viz-eco)" : domain.cluster === "company" ? "var(--viz-co)" : "var(--color-accent)";
 
   return (
     <section id={`catalog-${domain.id}`} data-filter-group="" aria-labelledby={`catalog-${domain.id}-heading`} className="scroll-mt-40">
-      <details data-domain-block="" className="group/domain rounded-xl border border-[var(--color-border)]">
-        <summary className="flex cursor-pointer list-none items-start gap-3 rounded-xl p-4 transition hover:bg-[var(--color-bg-hover)] sm:p-5 [&::-webkit-details-marker]:hidden">
+      <details data-domain-block="" className="group/domain rounded-2xl border border-[var(--color-border)]">
+        <summary className="flex cursor-pointer list-none items-start gap-3 rounded-2xl p-4 transition hover:bg-[var(--color-bg-hover)] sm:p-5 [&::-webkit-details-marker]:hidden">
+          <span aria-hidden="true" className="mt-1.5 h-3 w-3 shrink-0 rounded-full" style={{ background: tone }} />
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               <h3 id={`catalog-${domain.id}-heading`} className="text-h2 text-[var(--color-text-primary)]">
                 {domain.label}
               </h3>
-              <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{count} offerings</span>
+              <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{count}</span>
             </div>
-            <p className="mt-1 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">{domain.tagline}</p>
+            <p className="mt-0.5 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">{domain.tagline}</p>
+            <FamilyBar domain={domain} entries={all} />
           </div>
           <ChevronDown size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)] transition group-open/domain:rotate-180" />
         </summary>
         <div className="flex flex-col gap-5 border-t border-[var(--color-border)] p-4 sm:p-5">
           <p className="max-w-3xl text-body-sm text-[var(--color-text-secondary)]">{domain.intro}</p>
           {groups.map(({ group, items }) => {
-            const headlines = items.filter((entry) => entry.prominence === "headline");
-            const standard = items.filter((entry) => entry.prominence === "standard");
+            const main = items.filter((entry) => entry.prominence !== "detail");
             const detail = items.filter((entry) => entry.prominence === "detail");
             return (
               <div key={group.id || "ungrouped"} data-filter-group="">
                 {group.label ? <p className="mb-2 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{group.label}</p> : null}
-                {headlines.length > 0 ? (
-                  <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
-                    {headlines.map((entry) => (
-                      <HeadlineCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
-                    ))}
-                  </ul>
-                ) : null}
-                {standard.length > 0 ? (
-                  <ul className="divide-y divide-[var(--color-border)]">
-                    {standard.map((entry) => (
-                      <EntryRow key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
+                {main.length > 0 ? (
+                  <ul className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
+                    {main.map((entry) => (
+                      <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
                     ))}
                   </ul>
                 ) : null}
                 {detail.length > 0 ? (
-                  <details data-more="" className="group/more">
+                  <details data-more="" className="group/more mt-2">
                     <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1 rounded-full text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
                       <ChevronDown size={14} aria-hidden="true" className="transition group-open/more:rotate-180" />
                       <span className="group-open/more:hidden">Show {detail.length} more</span>
                       <span className="hidden group-open/more:inline">Show fewer</span>
                     </summary>
-                    <ul className="divide-y divide-[var(--color-border)]">
+                    <ul className="mt-2 grid grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
                       {detail.map((entry) => (
-                        <EntryRow key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
+                        <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
                       ))}
                     </ul>
                   </details>

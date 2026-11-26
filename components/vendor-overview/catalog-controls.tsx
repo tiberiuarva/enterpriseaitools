@@ -92,6 +92,18 @@ export function CatalogControls({
     return () => window.removeEventListener("hashchange", reveal);
   }, []);
 
+  // Links elsewhere on the page (the hero's audience lens) can preset the
+  // audience filter with data-catalog-audience before jumping here.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const link = (event.target as Element | null)?.closest<HTMLElement>("[data-catalog-audience]");
+      const value = link?.dataset.catalogAudience;
+      if (value && audiences.some((option) => option.id === value)) setAudience(value);
+    };
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [audiences]);
+
   const reset = () => {
     setQuery("");
     setDomain("all");

@@ -1,3 +1,4 @@
+import { ChevronDown } from "lucide-react";
 import { CATEGORIES } from "@/lib/categories";
 import { withBasePath } from "@/lib/site";
 import { VENDOR_STACKS, buildVendorStack, vendorStackGaps, type VendorStack } from "@/lib/stacks";
@@ -7,23 +8,12 @@ import { HubFaqs } from "@/components/hub-faqs";
 import { StackMap } from "@/components/stack-map";
 import { EntryCatalog } from "./entry-catalog";
 import { EvolutionTimeline } from "./evolution-timeline";
-import { ModelLineage } from "./model-lineage";
-import {
-  AvailabilityGrid,
-  CompanyPanel,
-  DomainHighlights,
-  GovernancePanel,
-  PlanGrid,
-  RelatedUpdates,
-  RoadmapPanel,
-  SafetyScale,
-  SourceList,
-} from "./panels";
+import { ModelMap, PriceLadder } from "./model-map";
+import { RelatedUpdates, SourceList } from "./panels";
 import { OverviewSection } from "./primitives";
 import { SectionNav, type SectionNavCluster } from "./section-nav";
-import { VendorStackDiagram } from "./vendor-stack-diagram";
-
-const ECOSYSTEM_SECTIONS = ["industry-solutions", "open-standards", "research", "safety-policy", "programs"] as const;
+import { StackHero } from "./stack-hero";
+import { AslSteps, ChannelTree, CompanyBand, DomainTiles, EcosystemOrbit, PlanTags, RoadmapHorizon, TimelineRiver, TrustWall } from "./visuals";
 
 type Props = {
   overview: VendorOverview;
@@ -42,35 +32,34 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   const gaps = vendorStackGaps(buildVendorStack(stack, tools));
   const domain = (id: string) => overview.domains.find((candidate) => candidate.id === id);
   const toolLinks = overview.entries.filter((entry) => entry.toolId);
+  const industries = domain("industry-solutions");
 
   const clusters: SectionNavCluster[] = [
-    { label: "Overview", links: [{ id: "overview", label: "Summary" }, { id: "map", label: "Stack map" }, { id: "market", label: "Market map" }] },
+    { label: "Overview", links: [{ id: "overview", label: "The stack" }] },
     {
       label: "Products",
       links: [
-        { id: "catalog", label: "All offerings" },
         { id: "claude-models", label: "Models" },
-        { id: "pricing", label: "Plans & pricing" },
         { id: "availability", label: "Where to run" },
-        { id: "enterprise", label: "Enterprise & trust" },
-        { id: "industry-solutions", label: "Industries" },
+        { id: "pricing", label: "Plans" },
+        { id: "enterprise", label: "Trust & safety" },
+        ...(industries ? [{ id: "industry-solutions", label: "Industries" }] : []),
       ],
     },
     {
-      label: "Ecosystem",
+      label: "Beyond Claude",
       links: [
-        { id: "open-standards", label: "Open standards" },
-        { id: "research", label: "Research" },
-        { id: "safety-policy", label: "Safety & policy" },
-        { id: "programs", label: "Programs" },
-      ],
-    },
-    {
-      label: "Company & history",
-      links: [
+        { id: "ecosystem", label: "Ecosystem" },
         { id: "company-partners", label: "Company" },
-        { id: "timeline", label: "Timeline" },
+        { id: "timeline", label: "History" },
         { id: "roadmap", label: "What's next" },
+      ],
+    },
+    {
+      label: "Reference",
+      links: [
+        { id: "catalog", label: "All offerings" },
+        { id: "market", label: "Market map" },
         { id: "faq", label: "FAQ" },
         { id: "sources", label: "Sources" },
       ],
@@ -78,11 +67,11 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
   ];
 
   const stats = [
-    { label: "Offerings tracked", value: String(overview.entries.length) },
-    { label: "Product families", value: String(overview.domains.length) },
-    { label: "Current Claude models", value: String(current.length) },
-    { label: "Ways to run Claude", value: String(overview.availability.length) },
-    { label: "Sources cited", value: String(sources.length) },
+    { label: "offerings", value: overview.entries.length },
+    { label: "families", value: overview.domains.length },
+    { label: "current models", value: current.length },
+    { label: "ways to run", value: overview.availability.length },
+    { label: "years of history", value: Number(overview.reviewedAt.slice(0, 4)) - Number([...overview.timeline].sort((a, b) => a.date.localeCompare(b.date))[0]?.date.slice(0, 4) ?? overview.reviewedAt.slice(0, 4)) },
   ];
 
   return (
@@ -104,29 +93,16 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
         </ol>
       </nav>
 
-      <section id="overview" aria-labelledby="overview-heading" className="card-flat scroll-mt-[calc(var(--site-header-height)+4rem)] p-6 md:p-10">
-        <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">Vendor stack</p>
-        <h1 id="overview-heading" className="mt-3 text-display text-[var(--color-text-primary)]">
-          {overview.title}
-        </h1>
-        <p className="mt-4 max-w-3xl text-body text-[var(--color-text-secondary)]">{overview.answer}</p>
-        <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {stats.map((stat) => (
-            <div key={stat.label} className="rounded-xl border border-[var(--color-border)] px-4 py-3">
-              <dt className="text-caption text-[var(--color-text-secondary)]">{stat.label}</dt>
-              <dd className="mt-0.5 text-2xl font-semibold tabular-nums text-[var(--color-text-primary)]">{stat.value}</dd>
-            </div>
-          ))}
-        </dl>
-        <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-          <span className="text-[var(--color-text-secondary)]">
-            Last reviewed <time dateTime={overview.reviewedAt}>{formatPartialDate(overview.reviewedAt)}</time> against {sources.length} primary sources.
-          </span>
-          <a href={withBasePath("/methodology")} className="font-medium text-[var(--color-accent)] hover:underline">
-            How we source data
-          </a>
-        </div>
-        <nav aria-label="Other vendor stacks" className="mt-4 flex flex-wrap gap-2 text-sm">
+      <section id="overview" aria-labelledby="overview-heading" className="vo-hero card-flat scroll-mt-[calc(var(--site-header-height)+4rem)] p-6 md:p-10">
+        <StackHero overview={overview} stats={stats} sourcesCount={sources.length} />
+        <details className="group/answer mt-8 border-t border-[var(--color-border)] pt-5">
+          <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-medium text-[var(--color-text-primary)] [&::-webkit-details-marker]:hidden">
+            <ChevronDown size={16} aria-hidden="true" className="text-[var(--color-text-secondary)] transition group-open/answer:rotate-180" />
+            {overview.name} in one paragraph
+          </summary>
+          <p className="mt-3 max-w-4xl text-body-sm text-[var(--color-text-secondary)]">{overview.answer}</p>
+        </details>
+        <nav aria-label="Other vendor stacks" className="mt-5 flex flex-wrap gap-2 text-sm">
           {[
             ...VENDOR_STACKS.filter((other) => other.slug !== stack.slug).map((other) => ({ href: `/stacks/${other.slug}`, label: `${other.name} stack` })),
             { href: "/stacks", label: "All vendor stacks" },
@@ -134,7 +110,7 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
             <a
               key={link.href}
               href={withBasePath(link.href)}
-              className="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-hover)] px-3 py-1.5 font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+              className="rounded-full border border-[var(--color-border)] px-3 py-1.5 font-medium text-[var(--color-text-secondary)] transition hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
             >
               {link.label}
             </a>
@@ -144,58 +120,33 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
 
       <SectionNav clusters={clusters} />
 
-      <OverviewSection
-        id="map"
-        eyebrow="Overview"
-        title={`How the ${overview.name} stack fits together`}
-        intro={`${overview.domains.length} families of offerings in three rows. Claude is the largest product family; open standards, research, safety policy and programs surround it. Select a family to jump to its full list.`}
-      >
-        <VendorStackDiagram overview={overview} />
-      </OverviewSection>
-
-      <OverviewSection
-        id="catalog"
-        eyebrow="Products"
-        title="Every offering, by family"
-        intro="Search or filter the full catalog. Each entry shows its status, launch year and the primary source it comes from. Renamed products list their former names."
-      >
-        <EntryCatalog overview={overview} />
-      </OverviewSection>
-
-      <OverviewSection
-        id="claude-models"
-        eyebrow="Products"
-        title="Claude models: lineage and what's available"
-        intro={domain("claude-models")?.intro}
-      >
-        <ModelLineage models={overview.models} statusSource={overview.modelStatusSource} />
-      </OverviewSection>
-
-      <OverviewSection
-        id="pricing"
-        eyebrow="Products"
-        title="Plans and pricing"
-        intro="List prices in US dollars as published by the vendor. Every price links to the page it was checked against and shows when."
-      >
-        <PlanGrid plans={overview.plans} />
+      <OverviewSection id="claude-models" eyebrow="Models" title="Every Claude model, on one map" intro={domain("claude-models")?.intro}>
+        <div className="flex flex-col gap-10">
+          <ModelMap models={overview.models} today={overview.reviewedAt} statusSource={overview.modelStatusSource} />
+          <PriceLadder models={overview.models} />
+        </div>
       </OverviewSection>
 
       <OverviewSection
         id="availability"
-        eyebrow="Products"
-        title="Where you can run Claude"
-        intro="Buy direct from Anthropic, run the models inside your cloud, or use Claude inside partner products. Who operates the service determines who processes your data."
+        eyebrow="Where to run"
+        title={`${overview.availability.length} ways to get Claude`}
+        intro="Buy direct, run it inside your cloud, or use it inside products you already have. Who operates the service decides who processes your data."
       >
-        <AvailabilityGrid availability={overview.availability} />
+        <ChannelTree availability={overview.availability} />
+      </OverviewSection>
+
+      <OverviewSection id="pricing" eyebrow="Plans" title="What it costs" intro="List prices in US dollars, as published. Each plan links to the page it was checked against.">
+        <PlanTags plans={overview.plans} />
       </OverviewSection>
 
       <OverviewSection
         id="enterprise"
-        eyebrow="Products"
-        title="Enterprise, security and compliance"
+        eyebrow="Trust & safety"
+        title="Can an enterprise trust it?"
         intro={
           <>
-            Vendor-level posture across the commercial products. Per-product governance posture lives on the tool pages:{" "}
+            Vendor-level controls across the commercial products, then the safety levels models ship under. Per-product posture:{" "}
             {toolLinks.map((entry, index) => (
               <span key={entry.id}>
                 {index > 0 ? ", " : null}
@@ -208,38 +159,47 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
           </>
         }
       >
-        <GovernancePanel rows={overview.governance} />
-      </OverviewSection>
-
-      {ECOSYSTEM_SECTIONS.map((id) => {
-        const item = domain(id);
-        if (!item) return null;
-        return (
-          <OverviewSection key={id} id={id} eyebrow={id === "industry-solutions" ? "Products" : "Ecosystem"} title={item.label} intro={item.intro}>
-            <div className="flex flex-col gap-6">
-              {id === "safety-policy" && overview.safetyLevels.length > 0 ? (
-                <div>
-                  <h3 className="mb-3 text-h3 text-[var(--color-text-primary)]">AI Safety Levels under the Responsible Scaling Policy</h3>
-                  <SafetyScale levels={overview.safetyLevels} />
-                </div>
-              ) : null}
-              <DomainHighlights domain={item} entries={overview.entries} count={counts[id]} />
+        <div className="flex flex-col gap-10">
+          <TrustWall rows={overview.governance} />
+          {overview.safetyLevels.length > 0 ? (
+            <div className="flex flex-col gap-3">
+              <h3 className="text-h3 text-[var(--color-text-primary)]">AI Safety Levels under the Responsible Scaling Policy</h3>
+              <AslSteps levels={overview.safetyLevels} />
             </div>
-          </OverviewSection>
-        );
-      })}
-
-      <OverviewSection id="company-partners" eyebrow="Company" title="Company and partners" intro={domain("company-partners")?.intro}>
-        <CompanyPanel company={overview.company} />
+          ) : null}
+        </div>
       </OverviewSection>
+
+      {industries ? (
+        <OverviewSection id="industry-solutions" eyebrow="Industries" title={industries.label} intro={industries.tagline}>
+          <DomainTiles domain={industries} entries={overview.entries} count={counts[industries.id]} />
+        </OverviewSection>
+      ) : null}
 
       <OverviewSection
-        id="timeline"
-        eyebrow="History"
-        title={`How ${overview.name} got here`}
-        intro="Models, products, platform launches, safety policy, research, partnerships and company milestones from the first funding round to today. Filter by type or show only the key milestones."
+        id="ecosystem"
+        eyebrow="Beyond Claude"
+        title={`What surrounds the products`}
+        intro={`${overview.name} also writes open standards, publishes research and safety policy, and runs programs for learners, scientists and partners.`}
       >
-        <EvolutionTimeline overview={overview} />
+        <EcosystemOrbit overview={overview} counts={counts} />
+      </OverviewSection>
+
+      <OverviewSection id="company-partners" eyebrow="Company" title={`${overview.name}, the company`} intro={domain("company-partners")?.tagline}>
+        <CompanyBand company={overview.company} />
+      </OverviewSection>
+
+      <OverviewSection id="timeline" eyebrow="History" title={`How ${overview.name} got here`} intro={`${overview.timeline.length} events. Each dot is one; the larger ones are key milestones. Select a dot to read it.`}>
+        <TimelineRiver events={overview.timeline} />
+        <details className="group/history mt-8 border-t border-[var(--color-border)] pt-5">
+          <summary className="flex cursor-pointer list-none items-center gap-2 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
+            <ChevronDown size={16} aria-hidden="true" className="transition group-open/history:rotate-180" />
+            Full history · {overview.timeline.length} events
+          </summary>
+          <div className="mt-5">
+            <EvolutionTimeline overview={overview} />
+          </div>
+        </details>
         {feed.length > 0 ? (
           <div className="mt-8 border-t border-[var(--color-border)] pt-6">
             <h3 className="text-h3 text-[var(--color-text-primary)]">Latest from the weekly change feed</h3>
@@ -251,13 +211,17 @@ export function VendorOverviewPage({ overview, stack, tools, platforms, updates,
         ) : null}
       </OverviewSection>
 
+      <OverviewSection id="roadmap" eyebrow="What's next" title="Announced plans" intro="Only what the vendor has said publicly, in its own words, with the date it said it.">
+        <RoadmapHorizon items={overview.roadmap} />
+      </OverviewSection>
+
       <OverviewSection
-        id="roadmap"
-        eyebrow="What's next"
-        title="Announced plans"
-        intro="Only plans the vendor has stated publicly, in its own words, with the date it said so. No analyst speculation."
+        id="catalog"
+        eyebrow="Reference"
+        title={`All ${overview.entries.length} offerings`}
+        intro="Search or filter everything above. Each card shows status, launch year and its primary source; renamed products list former names."
       >
-        <RoadmapPanel items={overview.roadmap} />
+        <EntryCatalog overview={overview} />
       </OverviewSection>
 
       <section id="market" aria-labelledby="market-heading" className="card-flat scroll-mt-[calc(var(--site-header-height)+4rem)] p-5 sm:p-6 md:p-8">
