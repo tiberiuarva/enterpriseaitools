@@ -3,7 +3,7 @@
   "name": "Anthropic",
   "title": "Anthropic stack overview",
   "description": "Everything Anthropic offers in one view: Claude models, apps, Claude Code and the Developer Platform, plus open standards, research, safety and programs.",
-  "reviewedAt": "2026-11-26",
+  "reviewedAt": "2026-11-27",
   "primarySourceHosts": [
     "anthropic.com",
     "claude.com",
@@ -623,6 +623,25 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "mcp-tunnels",
+      "name": "MCP tunnels",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "tools",
+      "prominence": "detail",
+      "status": "research-preview",
+      "audience": [
+        "developers",
+        "enterprise"
+      ],
+      "description": "Connects the API and Managed Agents to MCP servers inside a private network over an outbound-only tunnel, with no inbound ports.",
+      "launchedAt": "2026-05-19",
+      "docsUrl": "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
       "id": "programmatic-tool-calling",
       "name": "Programmatic tool calling and tool search",
       "kind": "feature",
@@ -710,6 +729,25 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "dreams",
+      "name": "Dreams",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "research-preview",
+      "audience": [
+        "developers"
+      ],
+      "description": "Reorganises a Managed Agents memory store from past session transcripts, merging duplicates, replacing stale entries and surfacing insights.",
+      "launchedAt": "2026-05-06",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/dreams",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
       "id": "extended-thinking",
       "name": "Extended and adaptive thinking",
       "kind": "feature",
@@ -741,6 +779,24 @@
       "launchedAt": "2025-11-24",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "task-budgets",
+      "name": "Task budgets",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Advisory token budget for a whole agentic loop; the model sees a running countdown and paces its work to finish gracefully.",
+      "launchedAt": "2026-04-16",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/task-budgets",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Release notes"
     },
     {
@@ -792,6 +848,24 @@
       "launchedAt": "2024-08-14",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "cache-diagnostics",
+      "name": "Cache diagnostics",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Reports where a prompt-cache prefix diverged from the previous turn and why it missed; out of beta on the Claude API since Sep 2026.",
+      "launchedAt": "2026-05-13",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Release notes"
     },
     {
@@ -864,7 +938,7 @@
     },
     {
       "id": "memory-tool",
-      "name": "Memory tool and context editing",
+      "name": "Memory tool",
       "kind": "feature",
       "domainId": "claude-developer-platform",
       "groupId": "context",
@@ -873,10 +947,29 @@
       "audience": [
         "developers"
       ],
-      "description": "File-based memory across sessions plus automatic clearing of stale tool results.",
+      "description": "Client-side memory directory Claude reads and writes across conversations; no beta header needed since Feb 2026.",
       "launchedAt": "2025-09-29",
+      "docsUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "context-editing",
+      "name": "Context editing",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Automatically clears older tool results and thinking blocks from a growing conversation to keep context focused.",
+      "launchedAt": "2025-09-29",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/context-editing",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Release notes"
     },
     {
@@ -894,6 +987,24 @@
       "launchedAt": "2026-02-05",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "message-threads",
+      "name": "Message threads",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Keeps a conversation on the server so each request sends only the new messages, for smaller requests and lower time to first token.",
+      "launchedAt": "2026-11-02",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/message-threads",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Release notes"
     },
     {
@@ -932,6 +1043,117 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "usage-cost-analytics-api",
+      "name": "Usage and Cost Analytics API",
+      "kind": "product",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "parentId": "admin-api",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins"
+      ],
+      "description": "Token usage and cost by model, workspace, API key and actor for Console and Enterprise organisations; supersedes the legacy Usage and Cost API.",
+      "launchedAt": "2026-10-29",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "admin-reporting-apis",
+      "name": "Claude Code Analytics and Rate Limits APIs",
+      "kind": "product",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "parentId": "admin-api",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins"
+      ],
+      "description": "Daily Claude Code usage and productivity metrics per user, and programmatic reads of the rate limits set for an organisation and its workspaces.",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/claude-code-analytics-api",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "user-profiles",
+      "name": "User profiles",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers",
+        "admins"
+      ],
+      "description": "Attributes API requests to the end customers a platform serves, so a safety enforcement action applies to one profile, not the whole organisation.",
+      "launchedAt": "2026-10-20",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/user-profiles",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "linked-billing",
+      "name": "Claude Platform OAuth and Linked billing",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Customers link their own Claude organisation to your app and pay for the Claude usage in it; each request chooses who pays.",
+      "launchedAt": "2026-11-17",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/linked-billing",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "organization-webhooks",
+      "name": "Organization webhooks",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins"
+      ],
+      "description": "Admin API webhook endpoints for events about customer-managed encryption keys and customer-owned storage; user-profile events can be registered but are not yet sent.",
+      "launchedAt": "2026-10-20",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/organization-webhooks",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "opentelemetry-export",
+      "name": "OpenTelemetry export",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers",
+        "admins"
+      ],
+      "description": "Traces Messages API requests and Managed Agents sessions as OpenTelemetry spans in the customer's own observability platform.",
+      "launchedAt": "2026-10-14",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/opentelemetry",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
       "id": "compliance-api",
       "name": "Compliance API",
       "kind": "product",
@@ -947,6 +1169,42 @@
       "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Compliance API"
+    },
+    {
+      "id": "inference-hooks",
+      "name": "Inference hooks",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "standard",
+      "status": "ga",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Holds each governed Claude Enterprise prompt for an allow or deny verdict from the customer's AI security server before inference runs.",
+      "launchedAt": "2026-08-05",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/inference-hooks",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "access-transparency",
+      "name": "Access Transparency",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Records each human view of retained data by Anthropic staff in the Compliance API Activity Feed for eligible customers; its transparency log is in beta.",
+      "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/access-transparency",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Access Transparency"
     },
     {
       "id": "cmek",
@@ -1093,7 +1351,7 @@
     },
     {
       "id": "claude-code-web",
-      "name": "Claude Code on the web and mobile",
+      "name": "Claude Code in the cloud",
       "kind": "product",
       "domainId": "claude-code",
       "groupId": "surfaces",
@@ -1104,8 +1362,12 @@
       ],
       "description": "Cloud sandboxed sessions at claude.ai/code, also available in the Claude iOS app.",
       "launchedAt": "2025-10-20",
+      "formerNames": [
+        "Claude Code on the web"
+      ],
+      "docsUrl": "https://code.claude.com/docs/en/claude-code-on-the-web",
       "sourceUrl": "https://claude.com/blog/claude-code-on-the-web",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Claude Code on the web"
     },
     {
@@ -1154,15 +1416,15 @@
       "domainId": "claude-code",
       "groupId": "extend",
       "prominence": "headline",
-      "status": "beta",
+      "status": "ga",
       "audience": [
         "developers"
       ],
-      "description": "Installable bundles of slash commands, subagents, hooks and MCP servers.",
-      "launchedAt": "2025-10-09",
-      "sourceUrl": "https://claude.com/blog/claude-code-plugins",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Claude Code plugins"
+      "description": "Installable bundles of skills, subagents, hooks and MCP servers from marketplaces; available on every provider.",
+      "docsUrl": "https://code.claude.com/docs/en/plugins/overview",
+      "sourceUrl": "https://code.claude.com/docs/en/feature-availability",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Feature availability"
     },
     {
       "id": "subagents",
@@ -1293,11 +1555,10 @@
       "audience": [
         "developers"
       ],
-      "description": "Classifier-reviewed permission mode; default for new Pro, Max and Team sessions since Aug 2026.",
-      "launchedAt": "2026-03",
-      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "What's new in Claude Code"
+      "description": "Classifier-reviewed permission mode; since Claude Code v2.1.283 the starting mode for interactive sessions on every plan and provider.",
+      "sourceUrl": "https://code.claude.com/docs/en/permission-modes",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Permission modes"
     },
     {
       "id": "remote-control",
@@ -1316,8 +1577,25 @@
       "sourceTitle": "Remote Control"
     },
     {
-      "id": "code-review",
-      "name": "Code Review",
+      "id": "agent-view",
+      "name": "Agent view and cross-session messaging",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "automate",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "claude agents shows every session on one screen, with what is running, blocked or done; sessions can also message each other.",
+      "launchedAt": "2026-05",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "What's new in Claude Code"
+    },
+    {
+      "id": "claude-ship",
+      "name": "Claude Ship",
       "kind": "product",
       "domainId": "claude-code",
       "groupId": "review",
@@ -1327,29 +1605,69 @@
         "developers",
         "enterprise"
       ],
-      "description": "Managed multi-agent pull request review for Team and Enterprise.",
-      "launchedAt": "2026-03-09",
-      "sourceUrl": "https://claude.com/blog/code-review",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Code Review"
+      "description": "Pull request suite on GitHub for Team and Enterprise: Code Review reviews, PR Steward fixes and Claude Approvals approves by policy (the last two in beta).",
+      "launchedAt": "2026-11-23",
+      "sourceUrl": "https://claude.com/resources/articles/introducing-claude-ship",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Introducing Claude Ship"
     },
     {
-      "id": "claude-ship",
-      "name": "Claude Ship",
+      "id": "code-review",
+      "name": "Code Review",
       "kind": "product",
       "domainId": "claude-code",
       "groupId": "review",
-      "parentId": "code-review",
+      "parentId": "claude-ship",
       "prominence": "standard",
+      "status": "ga",
+      "audience": [
+        "developers",
+        "enterprise"
+      ],
+      "description": "Managed multi-agent pull request review for Team and Enterprise.",
+      "launchedAt": "2026-03-09",
+      "sourceUrl": "https://claude.com/blog/code-review",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Code Review"
+    },
+    {
+      "id": "pr-steward",
+      "name": "PR Steward",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "review",
+      "parentId": "claude-ship",
+      "prominence": "detail",
       "status": "beta",
       "audience": [
         "developers",
         "enterprise"
       ],
-      "description": "Pull request suite: Code Review plus PR Steward and Claude Approvals (beta) on GitHub.",
+      "description": "Keeps pull requests passing by working through failing CI checks, merge conflicts and review feedback; it is designed not to approve or merge.",
       "launchedAt": "2026-11-23",
+      "docsUrl": "https://code.claude.com/docs/en/pr-steward",
       "sourceUrl": "https://claude.com/resources/articles/introducing-claude-ship",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Introducing Claude Ship"
+    },
+    {
+      "id": "claude-approvals",
+      "name": "Claude Approvals",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "review",
+      "parentId": "claude-ship",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers",
+        "enterprise"
+      ],
+      "description": "Applies a team-written approval policy file in the repository to approve routine changes or require human sign-off.",
+      "launchedAt": "2026-11-23",
+      "docsUrl": "https://code.claude.com/docs/en/approvals",
+      "sourceUrl": "https://claude.com/resources/articles/introducing-claude-ship",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Introducing Claude Ship"
     },
     {
@@ -1368,6 +1686,24 @@
       "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "ultrareview",
+      "name": "Ultrareview",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "review",
+      "prominence": "standard",
+      "status": "research-preview",
+      "audience": [
+        "developers"
+      ],
+      "description": "Sends a fleet of bug-hunting agents into the cloud to review your changes; verified findings land back in the CLI or Desktop.",
+      "launchedAt": "2026-04",
+      "docsUrl": "https://code.claude.com/docs/en/ultrareview",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "What's new in Claude Code"
     },
     {
       "id": "claude-security",
@@ -1421,6 +1757,25 @@
       "sourceTitle": "Sandboxing"
     },
     {
+      "id": "self-hosted-environments",
+      "name": "Self-hosted environments",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "enterprise",
+      "prominence": "standard",
+      "status": "beta",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Runs Claude Code cloud sessions on runners inside the customer's own network; public beta on Team and Enterprise plans.",
+      "launchedAt": "2026-08",
+      "docsUrl": "https://code.claude.com/docs/en/self-hosted-environments",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "What's new in Claude Code"
+    },
+    {
       "id": "cc-telemetry",
       "name": "OpenTelemetry monitoring",
       "kind": "feature",
@@ -1452,6 +1807,24 @@
       "sourceUrl": "https://code.claude.com/docs/en/third-party-integrations",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Enterprise deployment overview"
+    },
+    {
+      "id": "claude-apps-gateway",
+      "name": "Claude apps gateway",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "enterprise",
+      "parentId": "cc-gateways",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Anthropic's self-hosted gateway for Bedrock, Claude Platform on AWS, Google Cloud and Foundry, with SSO, per-group model access and OTLP telemetry.",
+      "sourceUrl": "https://code.claude.com/docs/en/claude-apps-gateway",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude apps gateway"
     },
     {
       "id": "claude-ai",
@@ -1506,6 +1879,24 @@
       "sourceTitle": "Team plan and iOS app"
     },
     {
+      "id": "claude-desktop-3p",
+      "name": "Claude Desktop on third-party platforms",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "surfaces",
+      "parentId": "claude-ai",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Claude Desktop with Chat, Cowork and Code, routing inference through Bedrock, Google Cloud, Foundry, a gateway or the Claude API.",
+      "sourceUrl": "https://claude.com/docs/third-party/claude-desktop/overview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude Desktop on third-party platforms"
+    },
+    {
       "id": "claude-in-chrome",
       "name": "Claude in Chrome",
       "kind": "product",
@@ -1540,8 +1931,25 @@
       "sourceTitle": "Claude for Microsoft 365"
     },
     {
+      "id": "claude-google-workspace",
+      "name": "Claude for Google Workspace",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "surfaces",
+      "prominence": "standard",
+      "status": "beta",
+      "audience": [
+        "everyone",
+        "enterprise"
+      ],
+      "description": "Add-on that brings Claude into Google Docs, Sheets and Slides; admins can deploy it to a domain or to groups.",
+      "sourceUrl": "https://claude.com/claude-for-google-workspace",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude for Google Workspace"
+    },
+    {
       "id": "claude-tag",
-      "name": "Claude Tag (Claude in Slack)",
+      "name": "Claude Tag",
       "kind": "product",
       "domainId": "claude-apps",
       "groupId": "surfaces",
@@ -1550,10 +1958,15 @@
       "audience": [
         "enterprise"
       ],
-      "description": "@Claude in Slack as a shared organisation identity for Team and Enterprise.",
-      "sourceUrl": "https://claude.com/docs/claude-tag/overview",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Claude Tag overview"
+      "description": "Tag @Claude in Slack to delegate work, for Team and Enterprise organisations; it replaced the Claude in Slack app.",
+      "launchedAt": "2026-06-23",
+      "formerNames": [
+        "Claude in Slack"
+      ],
+      "docsUrl": "https://claude.com/docs/claude-tag/overview",
+      "sourceUrl": "https://www.anthropic.com/news/introducing-claude-tag",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Introducing Claude Tag"
     },
     {
       "id": "cowork",
@@ -1610,6 +2023,22 @@
       "sourceTitle": "Claude Research"
     },
     {
+      "id": "enterprise-search",
+      "name": "Enterprise search",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "work",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "A dedicated project for searching across an organisation's knowledge sources through connectors, on Team and Enterprise plans.",
+      "sourceUrl": "https://support.claude.com/en/articles/12489464-use-enterprise-search",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Use enterprise search"
+    },
+    {
       "id": "web-search-app",
       "name": "Web search",
       "kind": "feature",
@@ -1641,6 +2070,40 @@
       "launchedAt": "2025-09-11",
       "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "voice-incognito",
+      "name": "Voice mode and incognito chats",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "work",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "everyone"
+      ],
+      "description": "Voice conversations and incognito chats, both listed on every plan from Free to Enterprise.",
+      "sourceUrl": "https://claude.com/pricing",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Plans and pricing"
+    },
+    {
+      "id": "reflect",
+      "name": "Reflect",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "work",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "everyone"
+      ],
+      "description": "Monthly recap in Settings of how you use Claude; launched in beta in Jul 2026 and out of beta for Free, Pro, Max and Ultra since Nov 2026.",
+      "launchedAt": "2026-07-09",
+      "docsUrl": "https://www.anthropic.com/news/reflect-with-claude",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Claude release notes"
     },
     {
@@ -1763,7 +2226,7 @@
     },
     {
       "id": "claude-data",
-      "name": "Claude Data, Sheets and Whiteboards",
+      "name": "Claude Data",
       "kind": "feature",
       "domainId": "claude-apps",
       "groupId": "create",
@@ -1772,14 +2235,48 @@
       "audience": [
         "everyone"
       ],
-      "description": "Data dashboards (GA), plus spreadsheets and shared whiteboards in beta. Data was formerly Dashboards.",
+      "description": "Data dashboards built with Claude, formerly Claude Dashboards; certified queries and live sharing are still in beta.",
       "launchedAt": "2026-11-10",
       "formerNames": [
         "Claude Dashboards"
       ],
       "sourceUrl": "https://claude.com/resources/articles/sheets-whiteboards-data",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Sheets, Whiteboards and Data"
+    },
+    {
+      "id": "claude-sheets-whiteboards",
+      "name": "Claude Sheets and Whiteboards",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "create",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "everyone",
+        "enterprise"
+      ],
+      "description": "Shared spreadsheets Claude builds and edits with you, and team whiteboards that turn ideas into docs, decks or boards.",
+      "launchedAt": "2026-11-10",
+      "sourceUrl": "https://claude.com/resources/articles/sheets-whiteboards-data",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Sheets, Whiteboards and Data"
+    },
+    {
+      "id": "claude-motion",
+      "name": "Claude Motion",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "create",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Turns your content into short animations exported as MP4, on Team and Enterprise; off on Enterprise until an owner turns it on.",
+      "sourceUrl": "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Get started with Claude Motion"
     },
     {
       "id": "claude-science",
@@ -1792,10 +2289,9 @@
       "audience": [
         "researchers"
       ],
-      "description": "Research workbench app for scientists on macOS and Linux.",
-      "launchedAt": "2026-06-30",
-      "sourceUrl": "https://www.anthropic.com/news/claude-science-ai-workbench",
-      "verifiedAt": "2026-11-26",
+      "description": "Research workbench app for scientists on macOS, Windows and Linux, for Pro, Max, Ultra, Team and Enterprise.",
+      "sourceUrl": "https://claude.com/product/claude-science",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Claude Science"
     },
     {
@@ -1872,6 +2368,24 @@
       "sourceUrl": "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Setting up SSO"
+    },
+    {
+      "id": "groups-custom-roles",
+      "name": "Groups and custom roles",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins"
+      ],
+      "description": "Role-based access control for Enterprise: organise users into groups, manually or through SCIM, and assign custom roles.",
+      "launchedAt": "2026-04-09",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude release notes"
     },
     {
       "id": "audit-logs",
@@ -2150,6 +2664,22 @@
       "sourceTitle": "Claude for Creative Work"
     },
     {
+      "id": "claude-for-legal",
+      "name": "Claude for Legal",
+      "kind": "solution",
+      "domainId": "industry-solutions",
+      "groupId": "other",
+      "prominence": "standard",
+      "status": "ga",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Ready-to-use legal artifacts, practice-area plugins for contract review and NDA triage, and connectors such as iManage, Ironclad and Everlaw.",
+      "sourceUrl": "https://claude.com/solutions/legal",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude for Legal"
+    },
+    {
       "id": "claude-for-manufacturing",
       "name": "Claude for Manufacturing",
       "kind": "solution",
@@ -2222,6 +2752,41 @@
       "sourceTitle": "About the MCP Registry"
     },
     {
+      "id": "mcp-sdks",
+      "name": "MCP SDKs, reference servers and Inspector",
+      "kind": "resource",
+      "domainId": "open-standards",
+      "groupId": "standards",
+      "parentId": "mcp",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "developers"
+      ],
+      "description": "Official SDKs in 10 languages, from Python and TypeScript to Swift and Kotlin, plus the reference servers and the Inspector testing tool.",
+      "sourceUrl": "https://github.com/orgs/modelcontextprotocol/repositories?type=source&sort=stargazers",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Model Context Protocol repositories"
+    },
+    {
+      "id": "mcp-extensions",
+      "name": "MCP extensions",
+      "kind": "standard",
+      "domainId": "open-standards",
+      "groupId": "standards",
+      "parentId": "mcp",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "developers"
+      ],
+      "description": "Opt-in protocol extensions negotiated through capabilities, including Tasks, Skills over MCP and MCP Apps for interactive UI in chat.",
+      "docsUrl": "https://modelcontextprotocol.io/extensions/overview",
+      "sourceUrl": "https://modelcontextprotocol.io/specification/latest",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "MCP specification"
+    },
+    {
       "id": "agent-skills-standard",
       "name": "Agent Skills",
       "kind": "standard",
@@ -2233,9 +2798,9 @@
         "developers"
       ],
       "description": "SKILL.md folder format that gives agents procedural knowledge; donated to the Agentic AI Foundation in Oct 2026.",
-      "launchedAt": "2025-10-16",
+      "launchedAt": "2025-10",
       "sourceUrl": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Donating Agent Skills to the Agentic AI Foundation"
     },
     {
@@ -2255,6 +2820,25 @@
       "sourceUrl": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Donating MCP and establishing the Agentic AI Foundation"
+    },
+    {
+      "id": "model-hardware-standard",
+      "name": "Model Hardware Standard",
+      "kind": "standard",
+      "domainId": "open-standards",
+      "groupId": "standards",
+      "prominence": "standard",
+      "status": "research-preview",
+      "audience": [
+        "developers",
+        "researchers",
+        "enterprise"
+      ],
+      "description": "Shared specification for AI agents to safely discover and operate lab and factory equipment; preview for research labs and manufacturers.",
+      "launchedAt": "2026-08-27",
+      "sourceUrl": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Model Hardware Standard research preview"
     },
     {
       "id": "bun",
@@ -2442,10 +3026,10 @@
       "audience": [
         "researchers"
       ],
-      "description": "Reverse-engineering model internals: features, circuits and attribution graphs.",
-      "sourceUrl": "https://www.anthropic.com/research/tracing-thoughts-language-model",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Tracing the thoughts of a large language model"
+      "description": "Studies how large language models work internally, as a foundation for AI safety.",
+      "sourceUrl": "https://www.anthropic.com/research/team/interpretability",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Interpretability team"
     },
     {
       "id": "scaling-monosemanticity",
@@ -2494,10 +3078,10 @@
       "audience": [
         "researchers"
       ],
-      "description": "Research on keeping models honest and controllable, from Constitutional AI to alignment faking.",
-      "sourceUrl": "https://www.anthropic.com/research/alignment-faking",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Alignment faking in large language models"
+      "description": "Works to understand the risks of AI models and develop ways to keep future ones helpful, honest and harmless.",
+      "sourceUrl": "https://www.anthropic.com/research/team/alignment",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Alignment team"
     },
     {
       "id": "constitutional-ai",
@@ -2564,10 +3148,10 @@
         "researchers",
         "public-sector"
       ],
-      "description": "Evaluates dangerous capabilities such as cyber offence; published the Mythos Preview cyber assessment.",
-      "sourceUrl": "https://www.anthropic.com/research/mythos-preview",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Claude Mythos Preview cyber assessment"
+      "description": "Produces evidence of emerging risks by stress-testing models in areas such as cybersecurity, national security and autonomous systems.",
+      "sourceUrl": "https://www.anthropic.com/research/team/frontier-red-team",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Frontier Red Team"
     },
     {
       "id": "societal-impacts",
@@ -2580,10 +3164,10 @@
       "audience": [
         "researchers"
       ],
-      "description": "Privacy-preserving study of real-world use through Clio, now called Anthropic Insights.",
-      "sourceUrl": "https://www.anthropic.com/research/clio",
-      "verifiedAt": "2026-11-26",
-      "sourceTitle": "Clio"
+      "description": "Studies how AI affects people individually and collectively.",
+      "sourceUrl": "https://www.anthropic.com/research/team/societal-impacts",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Societal Impacts team"
     },
     {
       "id": "model-welfare",
@@ -2730,6 +3314,25 @@
       "sourceTitle": "Transparency Hub"
     },
     {
+      "id": "text-watermark",
+      "name": "Text watermark and C2PA Content Credentials",
+      "kind": "feature",
+      "domainId": "safety-policy",
+      "groupId": "transparency",
+      "prominence": "standard",
+      "status": "active",
+      "audience": [
+        "everyone",
+        "developers",
+        "enterprise"
+      ],
+      "description": "SynthID-Text-based watermark rolling out to Claude models, plus signed C2PA metadata on files Claude creates; the detection API is in private preview.",
+      "launchedAt": "2026-08-14",
+      "sourceUrl": "https://www.anthropic.com/news/claude-text-watermark",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude's text watermark"
+    },
+    {
       "id": "independent-evaluators",
       "name": "Independent evaluators",
       "kind": "program",
@@ -2775,13 +3378,10 @@
         "enterprise",
         "public-sector"
       ],
-      "description": "Vetted security teams get reduced cyber classifiers; absorbed Project Glasswing in Oct 2026.",
+      "description": "Vetted security teams get adjusted cyber safeguards; absorbs Project Glasswing, whose members move to its Specialized Access tier.",
       "launchedAt": "2026-10-06",
-      "formerNames": [
-        "Project Glasswing"
-      ],
       "sourceUrl": "https://www.anthropic.com/news/cyber-verification-program",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Cyber Verification Program"
     },
     {
@@ -2926,6 +3526,22 @@
       "sourceTitle": "AI for Science program"
     },
     {
+      "id": "team-plan-for-scientists",
+      "name": "Claude Team plan for scientists",
+      "kind": "program",
+      "domainId": "programs",
+      "groupId": "research-programs",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "researchers"
+      ],
+      "description": "Free Standard or $15/month Premium Team seats for 12 months for principal investigators at universities and nonprofit research institutes.",
+      "sourceUrl": "https://claude.com/programs/team-plan-for-scientists",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Claude Team plan for scientists"
+    },
+    {
       "id": "fellows",
       "name": "Anthropic Fellows Program",
       "kind": "program",
@@ -2992,6 +3608,24 @@
       "sourceUrl": "https://www.anthropic.com/news/claude-frontier-academy",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude Frontier Academy"
+    },
+    {
+      "id": "claude-certification",
+      "name": "Claude Certification Program",
+      "kind": "program",
+      "domainId": "programs",
+      "groupId": "learning",
+      "prominence": "standard",
+      "status": "active",
+      "audience": [
+        "developers",
+        "enterprise"
+      ],
+      "description": "Four role-based certifications for associates, developers and architects; proctored exams are taken through the Claude Partner Network, which is free to join.",
+      "launchedAt": "2026-07-23",
+      "sourceUrl": "https://claude.com/resources/articles/four-role-based-claude-certifications",
+      "verifiedAt": "2026-11-27",
+      "sourceTitle": "Four role-based Claude certifications"
     },
     {
       "id": "builder-clubs",
@@ -3788,10 +4422,13 @@
       "title": "Claude Ship",
       "summary": "A pull request suite bundling Code Review with PR Steward and Claude Approvals.",
       "entryIds": [
-        "claude-ship"
+        "claude-ship",
+        "code-review",
+        "pr-steward",
+        "claude-approvals"
       ],
       "sourceUrl": "https://claude.com/resources/articles/introducing-claude-ship",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Introducing Claude Ship"
     },
     {
@@ -3927,6 +4564,19 @@
       "sourceTitle": "Models overview"
     },
     {
+      "id": "t-model-hardware-standard",
+      "date": "2026-08-27",
+      "type": "open-source",
+      "title": "Model Hardware Standard research preview",
+      "summary": "A shared specification for AI agents to safely operate lab and factory equipment, previewed with research labs and manufacturers.",
+      "entryIds": [
+        "model-hardware-standard"
+      ],
+      "sourceUrl": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "sourceTitle": "Model Hardware Standard research preview",
+      "verifiedAt": "2026-11-27"
+    },
+    {
       "id": "t-computer-use-ga",
       "date": "2026-08-19",
       "type": "platform",
@@ -3967,6 +4617,19 @@
       "sourceUrl": "https://www.anthropic.com/responsible-scaling-policy",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Responsible Scaling Policy"
+    },
+    {
+      "id": "t-claude-tag",
+      "date": "2026-06-23",
+      "type": "product",
+      "title": "Claude Tag replaces Claude in Slack",
+      "summary": "Team and Enterprise users can tag Claude in Slack to delegate work; Claude Tag launched in beta and replaces the Claude in Slack app.",
+      "entryIds": [
+        "claude-tag"
+      ],
+      "sourceUrl": "https://www.anthropic.com/news/introducing-claude-tag",
+      "sourceTitle": "Introducing Claude Tag",
+      "verifiedAt": "2026-11-27"
     },
     {
       "id": "t-fable-suspend",
@@ -4257,13 +4920,14 @@
       "title": "Claude Sonnet 4.5",
       "summary": "Sonnet 4.5 launched, alongside the memory tool and context editing on the Developer Platform.",
       "entryIds": [
-        "memory-tool"
+        "memory-tool",
+        "context-editing"
       ],
       "modelIds": [
         "sonnet-4-5"
       ],
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
-      "verifiedAt": "2026-11-26",
+      "verifiedAt": "2026-11-27",
       "sourceTitle": "Release notes"
     },
     {
