@@ -56,7 +56,12 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
   // One listener serves the whole page.
   useEffect(() => {
     const reveal = () => {
-      const id = decodeURIComponent(window.location.hash.slice(1));
+      let id = "";
+      try {
+        id = decodeURIComponent(window.location.hash.slice(1));
+      } catch {
+        return; // A mangled shared link: ignore it rather than crash the page.
+      }
       const target = id ? document.getElementById(id) : null;
       if (!target) return;
       // The card is a popover: either the target sits inside it (an included
@@ -67,7 +72,7 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
         if (node instanceof HTMLDetailsElement) node.open = true;
       }
       anchor.scrollIntoView({ block: card ? "center" : "start" });
-      if (card && !card.matches(":popover-open")) card.showPopover();
+      if (card && typeof card.showPopover === "function" && !card.matches(":popover-open")) card.showPopover();
     };
     reveal();
     window.addEventListener("hashchange", reveal);
@@ -136,20 +141,20 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
             ))}
           </div>
         </div>
-        <p aria-live="polite" className="flex min-h-8 shrink-0 items-center gap-2 text-sm text-[var(--color-text-secondary)]">
-          <span>
+        <div className="flex min-h-8 shrink-0 items-center gap-2 text-sm text-[var(--color-text-secondary)]">
+          <p aria-live="polite">
             <span ref={litRef} className="font-semibold tabular-nums text-[var(--color-text-primary)]">
               {total}
             </span>{" "}
             {lensing ? `of ${total} lit` : "offerings"}
-          </span>
+          </p>
           {lensing ? (
             <button type="button" onClick={reset} className="inline-flex min-h-8 items-center gap-1 rounded-full px-2 font-medium text-[var(--color-accent)] hover:underline">
               <X size={14} aria-hidden="true" />
               Clear
             </button>
           ) : null}
-        </p>
+        </div>
       </div>
     </div>
   );

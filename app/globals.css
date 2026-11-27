@@ -1347,7 +1347,7 @@ code {
   }
   /* A lens dims what does not match instead of hiding it. */
   [data-lensing] [data-dim] > .vo-mt {
-    opacity: 0.26;
+    opacity: 0.45;
     filter: grayscale(1);
   }
   [data-lensing] [data-dim] > .vo-mt:is(:hover, :focus-visible) {
