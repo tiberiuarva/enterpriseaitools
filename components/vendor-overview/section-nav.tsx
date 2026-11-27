@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export type SectionNavCluster = { label: string; links: { id: string; label: string }[] };
+export type SectionNavLink = { id: string; label: string };
 
 // Sections count as "reached" once their top passes just under the sticky header
 // and this bar.
@@ -10,12 +10,12 @@ const ACTIVE_OFFSET = 160;
 
 // "On this page" bar. Plain anchor links that work without JS; the effect only
 // adds the active-section highlight.
-export function SectionNav({ clusters }: { clusters: SectionNavCluster[] }) {
+export function SectionNav({ links }: { links: SectionNavLink[] }) {
   const [active, setActive] = useState<string | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ids = clusters.flatMap((cluster) => cluster.links.map((link) => link.id));
+    const ids = links.map((link) => link.id);
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -35,7 +35,7 @@ export function SectionNav({ clusters }: { clusters: SectionNavCluster[] }) {
       window.removeEventListener("scroll", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [clusters]);
+  }, [links]);
 
   useEffect(() => {
     if (!active || !listRef.current) return;
@@ -50,32 +50,27 @@ export function SectionNav({ clusters }: { clusters: SectionNavCluster[] }) {
       aria-label="On this page"
       className="sticky top-[var(--site-header-height)] z-40 -mx-4 border-y border-[var(--color-border)] bg-[var(--color-bg-primary)]/90 backdrop-blur-md sm:-mx-6 lg:-mx-8"
     >
-      <div ref={listRef} className="flex snap-x gap-6 overflow-x-auto px-4 py-2.5 [scrollbar-width:none] sm:px-6 lg:px-8 [&::-webkit-scrollbar]:hidden">
-        {clusters.map((cluster) => (
-          <div key={cluster.label} className="flex shrink-0 items-center gap-1">
-            <span className="mr-1 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{cluster.label}</span>
-            <ul className="flex items-center gap-1">
-              {cluster.links.map((link) => {
-                const isActive = active === link.id;
-                return (
-                  <li key={link.id} className="snap-start">
-                    <a
-                      href={`#${link.id}`}
-                      aria-current={isActive ? "true" : undefined}
-                      className={`inline-flex min-h-9 items-center whitespace-nowrap rounded-full px-3 text-sm font-medium transition ${
-                        isActive
-                          ? "bg-[var(--color-accent-soft)] text-[var(--color-accent)]"
-                          : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)]"
-                      }`}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
+      <div ref={listRef} className="flex snap-x overflow-x-auto px-4 py-2.5 [scrollbar-width:none] sm:px-6 lg:px-8 [&::-webkit-scrollbar]:hidden">
+        <ul className="flex shrink-0 items-center gap-1">
+          {links.map((link) => {
+            const isActive = active === link.id;
+            return (
+              <li key={link.id} className="snap-start">
+                <a
+                  href={`#${link.id}`}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`inline-flex min-h-9 items-center whitespace-nowrap rounded-full px-3 text-sm font-medium transition ${
+                    isActive
+                      ? "bg-[var(--color-accent-soft)] text-[var(--color-accent)]"
+                      : "text-[var(--color-text-secondary)] hover:bg-[var(--color-bg-hover)] hover:text-[var(--color-text-primary)]"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </nav>
   );

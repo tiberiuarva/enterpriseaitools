@@ -267,21 +267,41 @@ export function lensStrength(count: number, total: number): number {
   return Math.max(0.1, round(Math.pow(count / total, 0.8) * 100) / 100);
 }
 
-// ── Catalog family breakdown ───────────────────────────────────────────────
+// ── Catalog directory ──────────────────────────────────────────────────────
 
-export function groupBreakdown(
-  domain: Pick<VendorDomain, "id" | "groups">,
-  entries: readonly Pick<VendorEntry, "domainId" | "groupId">[],
-): { id: string; label: string; count: number; share: number }[] {
-  const inDomain = entries.filter((entry) => entry.domainId === domain.id);
-  const total = inDomain.length || 1;
-  const groups = [...domain.groups, { id: "", label: "Other" }];
-  return groups
-    .map((group) => {
-      const count = inDomain.filter((entry) => (entry.groupId ?? "") === group.id).length;
-      return { id: group.id || "other", label: group.label, count, share: round((count / total) * 100) };
-    })
-    .filter((group) => group.count > 0);
+export type CatalogFacet = "new" | "preview";
+export const PREVIEW_STATUSES: readonly string[] = ["beta", "preview", "research-preview"];
+// Launches inside this window, counted in whole calendar months, show as new.
+export const NEW_WINDOW_MONTHS = 3;
+
+// Whole calendar months from a month-precise date to `today`; undefined for
+// year-only dates, which cannot say whether something is recent.
+export function monthsSince(date: string, today: string): number | undefined {
+  if (!/^\d{4}-\d{2}/.test(date) || !/^\d{4}-\d{2}/.test(today)) return undefined;
+  return (Number(today.slice(0, 4)) - Number(date.slice(0, 4))) * 12 + Number(today.slice(5, 7)) - Number(date.slice(5, 7));
+}
+
+export function entryFacets(entry: Pick<VendorEntry, "status" | "launchedAt">, today: string): CatalogFacet[] {
+  const facets: CatalogFacet[] = [];
+  const age = entry.launchedAt ? monthsSince(entry.launchedAt, today) : undefined;
+  if (age !== undefined && age >= 0 && age <= NEW_WINDOW_MONTHS) facets.push("new");
+  if (PREVIEW_STATUSES.includes(entry.status)) facets.push("preview");
+  return facets;
+}
+
+// A family's catalog layout: headline entries up front (or the first three
+// when none are marked), the rest grouped by the family's own groups.
+export function catalogFamily<T extends Pick<VendorEntry, "prominence" | "groupId">>(
+  domain: Pick<VendorDomain, "groups">,
+  entries: readonly T[],
+): { featured: T[]; groups: { id: string; label: string; items: T[] }[] } {
+  const headline = entries.filter((entry) => entry.prominence === "headline");
+  const featured = headline.length > 0 ? headline : entries.slice(0, 3);
+  const rest = entries.filter((entry) => !featured.includes(entry));
+  const groups = [...domain.groups, { id: "", label: "" }]
+    .map((group) => ({ id: group.id, label: group.label, items: rest.filter((entry) => (entry.groupId ?? "") === group.id) }))
+    .filter((group) => group.items.length > 0);
+  return { featured, groups };
 }
 
 // ── Model subway map ───────────────────────────────────────────────────────
@@ -453,29 +473,16 @@ export function timelineDensity(events: readonly VendorTimelineEvent[]): Density
   return years;
 }
 
-export function timelineMilestones<T extends Pick<VendorTimelineEvent, "impact" | "date">>(events: readonly T[]): T[] {
-  return events.filter((event) => event.impact === "high").sort((a, b) => a.date.localeCompare(b.date));
-}
 
-// ── Ecosystem orbit ────────────────────────────────────────────────────────
+// ── Summaries ──────────────────────────────────────────────────────────────
 
-// Evenly spaced angles (degrees, 0 = 12 o'clock, clockwise) for n quadrants
-// with k chips each, chips spread inside their quadrant.
-export function orbitAngles(quadrants: number, perQuadrant: readonly number[]): { center: number; chips: number[] }[] {
-  const span = 360 / Math.max(quadrants, 1);
-  return Array.from({ length: quadrants }, (_, index) => {
-    const center = round(index * span + span / 2);
-    const count = perQuadrant[index] ?? 0;
-    const step = count > 1 ? (span * 0.56) / (count - 1) : 0;
-    const startAngle = center - (step * (count - 1)) / 2;
-    return { center, chips: Array.from({ length: count }, (_, chip) => round(startAngle + chip * step)) };
-  });
-}
+// FAQ ids the overview page asks as section headings or inline sub-questions
+// (models, plans, where to run, training data, EU residency).
+export const SECTION_FAQ_IDS = ["best-model", "plans", "where-run", "training-data", "eu-residency"] as const;
 
-// Point on a circle for an angle measured clockwise from 12 o'clock, in % of a square box.
-export function orbitPoint(angle: number, radiusPct: number): { left: number; top: number } {
-  const radians = (angle * Math.PI) / 180;
-  return { left: round(50 + radiusPct * Math.sin(radians)), top: round(50 - radiusPct * Math.cos(radians)) };
+// FAQs the page already asks as section headings, and the rest.
+export function splitFaqs<T extends { id: string }>(faqs: readonly T[], asked: readonly string[] = SECTION_FAQ_IDS): { asked: T[]; more: T[] } {
+  return { asked: faqs.filter((faq) => asked.includes(faq.id)), more: faqs.filter((faq) => !asked.includes(faq.id)) };
 }
 
 // ── Copy helpers ──────────────────────────────────────────────────────────
@@ -541,4 +548,11 @@ export function roadmapByYear<T extends Pick<VendorOverview["roadmap"][number], 
     years: years.map((year) => ({ year, items: dated.filter((item) => (item.expectedAt ?? "").startsWith(year)) })),
     undated: items.filter((item) => !item.expectedAt),
   };
+}
+
+// The `count` roadmap items expected soonest; undated items never lead.
+export function soonestRoadmap<T extends Pick<VendorOverview["roadmap"][number], "expectedAt">>(items: readonly T[], count: number): T[] {
+  return roadmapByYear(items)
+    .years.flatMap((group) => group.items)
+    .slice(0, Math.max(0, count));
 }

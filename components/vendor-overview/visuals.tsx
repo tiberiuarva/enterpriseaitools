@@ -13,20 +13,16 @@ import type {
   VendorSafetyLevel,
   VendorTimelineEvent,
 } from "@/lib/types";
-import { TIMELINE_TYPE_LABELS, formatPartialDate, headlineEntries } from "@/lib/vendor-overview";
+import { formatPartialDate, headlineEntries } from "@/lib/vendor-overview";
 import {
-  TIMELINE_FAMILIES,
   availabilityByChannel,
   governanceSummary,
   isoPrism,
-  orbitAngles,
   planSteps,
-  roadmapByYear,
-  orbitPoint,
   prismsViewBox,
+  roadmapByYear,
+  soonestRoadmap,
   timelineDensity,
-  timelineFamily,
-  timelineMilestones,
   type Box,
 } from "@/lib/vendor-viz";
 import { getPlatformFragmentId } from "@/lib/platform-fragments";
@@ -50,8 +46,8 @@ export function ChannelTree({ availability, hub, hubVendor }: { availability: Ve
         </span>
       </div>
       <span aria-hidden="true" className="mx-auto hidden h-8 w-0.5 bg-[var(--color-accent)] lg:block" />
-      <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-[1fr_2fr_1fr] lg:gap-0">
-        <span aria-hidden="true" className="absolute left-[12.5%] right-[12.5%] top-0 hidden h-0.5 bg-[var(--color-accent)] lg:block" />
+      <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-0">
+        <span aria-hidden="true" className="absolute left-[16.667%] right-[16.667%] top-0 hidden h-0.5 bg-[var(--color-accent)] lg:block" />
         {groups.map((group) => (
           <div key={group.id} className="relative flex min-w-0 flex-col gap-3 lg:px-2 lg:pt-8">
             <span aria-hidden="true" className="absolute left-1/2 top-0 hidden h-8 w-0.5 bg-[var(--color-accent)] lg:block" />
@@ -59,43 +55,46 @@ export function ChannelTree({ availability, hub, hubVendor }: { availability: Ve
               {group.label}
               <span className="tabular-nums opacity-70">{group.items.length}</span>
             </h3>
-            <ul className={`grid grid-cols-1 gap-3 ${group.id === "cloud" ? "sm:grid-cols-2" : ""}`}>
-              {group.items.map((item, index) => (
-                <li key={item.id} id={`channel-${item.id}`} className="vo-entry vo-reveal scroll-mt-40" style={{ "--i": index } as CSSProperties}>
-                  <div className="flex items-baseline justify-between gap-2">
-                    <h4 className="vo-entry-name">{item.name}</h4>
-                    {item.since ? <span className="shrink-0 text-caption text-[var(--color-text-tertiary)]">since {year(item.since)}</span> : null}
-                  </div>
-                  {item.operatedBy ? (
-                    <p
-                      className={`text-caption font-semibold ${item.operatedBy === hubVendor ? "text-[var(--color-accent)]" : "text-[var(--color-text-secondary)]"}`}
-                    >
-                      Run by {item.operatedBy}
-                    </p>
-                  ) : null}
-                  <ul className="vo-entry-kids" aria-label={`Available on ${item.name}`}>
-                    {item.offers.map((offer) => (
-                      <li key={offer}>{offer}</li>
-                    ))}
-                  </ul>
-                  <p className="vo-entry-desc">{item.note}</p>
-                  <div className="mt-auto flex flex-wrap gap-x-3 pt-1">
-                    <SourceLink href={item.sourceUrl} />
-                    {item.platformId ? (
-                      <a
-                        href={withBasePath(`/platforms#${getPlatformFragmentId(item.platformId)}`)}
-                        className="text-xs font-medium text-[var(--color-accent)] hover:underline"
-                      >
-                        Compare the platform →
-                      </a>
-                    ) : null}
-                  </div>
+            <ul className="flex flex-col divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+              {group.items.map((item) => (
+                <li key={item.id} id={`channel-${item.id}`} className="scroll-mt-40">
+                  <details className="group/channel">
+                    <summary className="flex cursor-pointer list-none items-center gap-3 px-3.5 py-2.5 hover:bg-[var(--color-bg-hover)] [&::-webkit-details-marker]:hidden">
+                      <span className="min-w-0 flex-1">
+                        <span className="block text-sm font-semibold text-[var(--color-text-primary)]">{item.name}</span>
+                        <span className="block text-caption text-[var(--color-text-tertiary)]">
+                          {item.operatedBy ? (
+                            <span className={item.operatedBy === hubVendor ? "font-semibold text-[var(--color-accent)]" : undefined}>Run by {item.operatedBy}</span>
+                          ) : null}
+                          {item.operatedBy && item.since ? " · " : null}
+                          {item.since ? `since ${year(item.since)}` : null}
+                        </span>
+                      </span>
+                      <ChevronDown size={14} aria-hidden="true" className="shrink-0 text-[var(--color-text-tertiary)] transition group-open/channel:rotate-180" />
+                    </summary>
+                    <div className="flex flex-col gap-2 px-3.5 pb-3">
+                      <ul className="vo-entry-kids" aria-label={`Available on ${item.name}`}>
+                        {item.offers.map((offer) => (
+                          <li key={offer}>{offer}</li>
+                        ))}
+                      </ul>
+                      <p className="vo-entry-desc">
+                        {item.note} <SourceLink href={item.sourceUrl} />
+                      </p>
+                      {item.platformId ? (
+                        <a href={withBasePath(`/platforms#${getPlatformFragmentId(item.platformId)}`)} className="text-xs font-medium text-[var(--color-accent)] hover:underline">
+                          Compare the platform →
+                        </a>
+                      ) : null}
+                    </div>
+                  </details>
                 </li>
               ))}
             </ul>
           </div>
         ))}
       </div>
+      <p className="mt-4 text-caption text-[var(--color-text-tertiary)]">Open a channel for the models it offers, its limits and its source.</p>
     </div>
   );
 }
@@ -120,18 +119,18 @@ function PlanIncludes({ plan }: { plan: VendorPlan }) {
   );
 }
 
-function PlanCard({ plan }: { plan: VendorPlan }) {
+// One plan as a single row: name, price, what it adds, source.
+function PlanRow({ plan }: { plan: VendorPlan }) {
   return (
-    <li className="vo-entry">
-      <p className="text-sm font-semibold text-[var(--color-text-secondary)]">{plan.name}</p>
-      <p className="text-[1.5rem] font-semibold leading-tight tracking-tight text-[var(--color-text-primary)]">{plan.price}</p>
-      {plan.priceNote ? <p className="text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</p> : null}
-      <div className="mt-1">
-        <PlanIncludes plan={plan} />
-      </div>
-      <div className="mt-auto pt-1">
-        <SourceLink href={plan.sourceUrl} />
-      </div>
+    <li className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-1 px-4 py-3 sm:grid-cols-[11rem_12rem_minmax(0,1fr)] sm:items-baseline">
+      <p className="text-sm font-semibold text-[var(--color-text-primary)]">{plan.name}</p>
+      <p className="text-right sm:text-left">
+        <span className="text-base font-semibold tabular-nums text-[var(--color-text-primary)]">{plan.price}</span>
+        {plan.priceNote ? <span className="block text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</span> : null}
+      </p>
+      <p className="col-span-2 text-[0.8125rem] leading-5 text-[var(--color-text-secondary)] sm:col-span-1">
+        {plan.includes.join(" · ")} <SourceLink href={plan.sourceUrl} />
+      </p>
     </li>
   );
 }
@@ -151,7 +150,7 @@ export function PlanTags({ plans }: { plans: VendorPlan[] }) {
               const seq = steps.length > 1 ? 5 - Math.round((index * 4) / (steps.length - 1)) : 1;
               return (
                 <li key={plan.id} className="flex min-w-0 flex-col">
-                  <div className="flex h-44 flex-col justify-end sm:h-56">
+                  <div className="flex h-40 flex-col justify-end sm:h-48">
                     <p className="mb-1.5 text-lg font-semibold leading-tight tracking-tight text-[var(--color-text-primary)] sm:text-[1.75rem]">{plan.price}</p>
                     <div
                       aria-hidden="true"
@@ -160,7 +159,9 @@ export function PlanTags({ plans }: { plans: VendorPlan[] }) {
                     />
                   </div>
                   <div className="flex flex-col gap-1.5 border-t-2 border-[var(--color-border-strong)] pt-2.5">
-                    <p className="text-sm font-semibold text-[var(--color-text-primary)]">{plan.name}</p>
+                    <p className="text-sm font-semibold text-[var(--color-text-primary)]">
+                      {plan.name} <SourceLink href={plan.sourceUrl} />
+                    </p>
                     {plan.priceNote ? <p className="text-caption text-[var(--color-text-tertiary)]">{plan.priceNote}</p> : null}
                     <div className="hidden sm:block">
                       <PlanIncludes plan={plan} />
@@ -171,16 +172,15 @@ export function PlanTags({ plans }: { plans: VendorPlan[] }) {
                         <PlanIncludes plan={plan} />
                       </div>
                     </details>
-                    <SourceLink href={plan.sourceUrl} />
                   </div>
                 </li>
               );
             })}
           </ol>
           {unstepped.length > 0 ? (
-            <ul className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="mt-4 divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
               {unstepped.map((plan) => (
-                <PlanCard key={plan.id} plan={plan} />
+                <PlanRow key={plan.id} plan={plan} />
               ))}
             </ul>
           ) : null}
@@ -192,9 +192,9 @@ export function PlanTags({ plans }: { plans: VendorPlan[] }) {
         return (
           <div key={segment.label}>
             <h3 className="mb-3 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{segment.label}</h3>
-            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
               {items.map((plan) => (
-                <PlanCard key={plan.id} plan={plan} />
+                <PlanRow key={plan.id} plan={plan} />
               ))}
             </ul>
           </div>
@@ -284,7 +284,7 @@ export function TrustWall({ rows }: { rows: VendorGovernanceRow[] }) {
                 <p className="vo-entry-desc">{row.claim.detail}</p>
                 {row.claim.sourceUrl ? (
                   <div className="mt-auto pt-1">
-                    <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle ?? "Source"} />
+                    <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle} />
                   </div>
                 ) : null}
               </li>
@@ -293,23 +293,33 @@ export function TrustWall({ rows }: { rows: VendorGovernanceRow[] }) {
         </div>
         <div className="flex flex-col gap-3">
           <h3 className="text-caption uppercase tracking-[0.14em] text-[var(--color-success)]">In place</h3>
-          <ul className="flex flex-col divide-y divide-[var(--color-border)] rounded-xl border border-[var(--color-border)]">
+          <ul className="flex flex-wrap gap-2">
             {passes.map((row) => (
-              <li key={row.id}>
-                <details className="group/claim">
-                  <summary className="flex cursor-pointer list-none items-center gap-3 px-3 py-2.5 hover:bg-[var(--color-bg-hover)] [&::-webkit-details-marker]:hidden">
-                    <StatusRing status={row.claim.status} />
-                    <span className="min-w-0 flex-1 text-sm font-medium text-[var(--color-text-primary)]">{row.label}</span>
-                    <ChevronDown size={14} aria-hidden="true" className="shrink-0 text-[var(--color-text-tertiary)] transition group-open/claim:rotate-180" />
-                  </summary>
-                  <div className="flex flex-col gap-1.5 px-3 pb-3 pl-[3.25rem]">
-                    <p className="vo-entry-desc">{row.claim.detail}</p>
-                    {row.claim.sourceUrl ? <SourceLink href={row.claim.sourceUrl} label={row.claim.sourceTitle ?? "Source"} /> : null}
-                  </div>
-                </details>
+              <li
+                key={row.id}
+                className="inline-flex items-center gap-1.5 rounded-full border border-[color-mix(in_srgb,var(--color-success)_40%,var(--color-border))] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)]"
+              >
+                <Check size={14} aria-hidden="true" className="shrink-0 text-[var(--color-success)]" />
+                {row.label}
               </li>
             ))}
           </ul>
+          <details className="group/pass">
+            <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
+              <ChevronDown size={14} aria-hidden="true" className="transition group-open/pass:rotate-180" />
+              What each covers, with sources
+            </summary>
+            <dl className="mt-2 flex flex-col gap-3">
+              {passes.map((row) => (
+                <div key={row.id}>
+                  <dt className="text-sm font-medium text-[var(--color-text-primary)]">{row.label}</dt>
+                  <dd className="vo-entry-desc">
+                    {row.claim.detail} {row.claim.sourceUrl ? <SourceLink href={row.claim.sourceUrl} /> : null}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </details>
         </div>
       </div>
     </div>
@@ -330,14 +340,17 @@ export function AslSteps({ levels }: { levels: VendorSafetyLevel[] }) {
   const boxes: Box[] = levels.map((_, index) => ({ x: 0, y: 0, z: 0, w: 46, d: 46, h: 30 + index * 26 }));
   const vb = prismsViewBox([{ x: 0, y: 0, z: 0, w: 46, d: 46, h: maxH }], 4);
   return (
-    <ol id="safety-levels" className="grid scroll-mt-40 grid-cols-1 items-stretch gap-3 sm:grid-cols-3" aria-label="AI Safety Levels">
-      {levels.map((level, index) => {
-        const lit = level.state === "in-force";
-        const faces = isoPrism(boxes[index]);
-        return (
-          <li key={level.id} className={`vo-entry ${lit ? "" : "border-dashed"}`} data-prominence={lit ? "headline" : undefined}>
-            <div className="flex items-end gap-4">
-              <svg viewBox={`${vb.x} ${vb.y} ${vb.width} ${vb.height}`} aria-hidden="true" className="h-24 w-auto shrink-0 overflow-visible">
+    <div id="safety-levels" className="flex scroll-mt-40 flex-col gap-3">
+      <ol className="grid grid-cols-3 gap-2 sm:gap-3" aria-label="AI Safety Levels">
+        {levels.map((level, index) => {
+          const lit = level.state === "in-force";
+          const faces = isoPrism(boxes[index]);
+          return (
+            <li
+              key={level.id}
+              className={`flex flex-col gap-2 rounded-xl border p-3 sm:flex-row sm:items-end sm:gap-3 ${lit ? "border-[var(--color-accent)] bg-[var(--color-accent-soft)]" : "border-dashed border-[var(--color-border-strong)]"}`}
+            >
+              <svg viewBox={`${vb.x} ${vb.y} ${vb.width} ${vb.height}`} aria-hidden="true" className="h-12 w-auto shrink-0 self-start overflow-visible sm:h-16 sm:self-auto">
                 <g className="vo-drop" style={{ "--i": index } as CSSProperties}>
                   <g className="vo-slab" data-slot={lit ? index + 1 : 6} style={lit ? undefined : { opacity: 0.5 }}>
                     <polygon className="vo-face-left" points={faces.left} />
@@ -346,121 +359,85 @@ export function AslSteps({ levels }: { levels: VendorSafetyLevel[] }) {
                   </g>
                 </g>
               </svg>
-              <div className="flex min-w-0 flex-col pb-1">
-                <span className="text-xl font-semibold text-[var(--color-text-primary)]">{level.label}</span>
+              <span className="flex min-w-0 flex-col">
+                <span className="text-base font-semibold text-[var(--color-text-primary)] sm:text-lg">{level.label}</span>
                 <span className={`text-caption ${lit ? "text-[var(--color-accent)]" : "text-[var(--color-text-tertiary)]"}`}>{SAFETY_STATE[level.state]}</span>
-              </div>
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+      <details className="group/asl">
+        <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
+          <ChevronDown size={14} aria-hidden="true" className="transition group-open/asl:rotate-180" />
+          What each level means
+        </summary>
+        <dl className="mt-2 flex flex-col gap-3">
+          {levels.map((level) => (
+            <div key={level.id}>
+              <dt className="text-sm font-medium text-[var(--color-text-primary)]">
+                {level.label} · {SAFETY_STATE[level.state]}
+              </dt>
+              <dd className="vo-entry-desc">
+                {level.summary} <SourceLink href={level.sourceUrl} />
+              </dd>
             </div>
-            <p className="vo-entry-desc">{level.summary}</p>
-            <div className="mt-auto pt-1">
-              <SourceLink href={level.sourceUrl} />
-            </div>
-          </li>
-        );
-      })}
-    </ol>
+          ))}
+        </dl>
+      </details>
+    </div>
   );
 }
 
-// ── Ecosystem orbit ───────────────────────────────────────────────────────
+// ── Beyond the flagship ────────────────────────────────────────────────────
 
-// Four ecosystem families as clusters in the corners of a wide figure, each
-// tied by a connector to its arc on a ring around the company core.
-const ORBIT = { width: 880, height: 460, r: 168 };
-const CORNERS = [
-  { side: "right", vertical: "top", anchor: [676, 58] },
-  { side: "right", vertical: "bottom", anchor: [676, 402] },
-  { side: "left", vertical: "bottom", anchor: [204, 402] },
-  { side: "left", vertical: "top", anchor: [204, 58] },
-] as const;
-
-export function EcosystemOrbit({ overview, counts, flagship }: { overview: VendorOverview; counts: Record<string, number>; flagship: string }) {
+// The ecosystem families as tiles, then the sector editions as one chip row.
+// Each name links into the catalog, where every entry carries its source.
+export function BeyondFlagship({
+  overview,
+  counts,
+  industries,
+  flagship,
+}: {
+  overview: VendorOverview;
+  counts: Record<string, number>;
+  industries?: VendorDomain;
+  flagship: string;
+}) {
   const domains = overview.domains.filter((domain) => domain.cluster === "ecosystem");
-  const chips = domains.map((domain) => headlineEntries(overview.entries, domain.id, 3));
-  const cx = ORBIT.width / 2;
-  const cy = ORBIT.height / 2;
-  const circumference = 2 * Math.PI * ORBIT.r;
-  const span = 360 / Math.max(domains.length, 1);
-  const gapDeg = 12;
-  const arc = (circumference * (span - gapDeg)) / 360;
-  const angles = orbitAngles(domains.length, []);
-  const showFigure = domains.length > 0 && domains.length <= CORNERS.length;
-
+  const sectors = industries ? headlineEntries(overview.entries, industries.id, 8) : [];
   return (
     <div className="flex flex-col gap-8">
-      {showFigure ? (
-        <div className="vo-orbit relative mx-auto hidden lg:block" style={{ width: ORBIT.width, height: ORBIT.height }}>
-          <svg viewBox={`0 0 ${ORBIT.width} ${ORBIT.height}`} aria-hidden="true" className="absolute inset-0 h-full w-full">
-            <circle cx={cx} cy={cy} r={ORBIT.r * 0.62} fill="none" stroke="var(--color-border)" strokeWidth="1" strokeDasharray="2 6" />
-            {domains.map((domain, index) => {
-              const at = orbitPoint(angles[index].center, 50);
-              const dot = [cx + (ORBIT.r * (at.left - 50)) / 50, cy + (ORBIT.r * (at.top - 50)) / 50];
-              const anchor = CORNERS[index].anchor;
-              return (
-                <g key={domain.id}>
-                  <circle
-                    className="vo-orbit-arc"
-                    data-q={index}
-                    cx={cx}
-                    cy={cy}
-                    r={ORBIT.r}
-                    strokeWidth={5}
-                    strokeDasharray={`${arc} ${circumference}`}
-                    transform={`rotate(${index * span - 90 + gapDeg / 2} ${cx} ${cy})`}
-                  />
-                  <path
-                    d={`M${dot[0]},${dot[1]} L${anchor[0]},${anchor[1]}`}
-                    stroke="color-mix(in srgb, var(--viz-eco) 55%, transparent)"
-                    strokeWidth="1.5"
-                    strokeDasharray="3 4"
-                    fill="none"
-                  />
-                  <circle cx={dot[0]} cy={dot[1]} r="7" fill="var(--color-bg-card)" stroke="var(--viz-eco)" strokeWidth="3" />
-                </g>
-              );
-            })}
-          </svg>
-          <div className="vo-orbit-core absolute left-1/2 top-1/2 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full text-center text-[var(--color-text-inverse)]">
-            <span className="text-xl font-semibold">{overview.name}</span>
-            <span className="text-xs opacity-80">and {flagship}</span>
-          </div>
-          {domains.map((domain, index) => {
-            const corner = CORNERS[index];
-            const right = corner.side === "right";
-            return (
-              <div
-                key={domain.id}
-                data-q={index}
-                className={`absolute flex w-[196px] flex-col gap-1.5 ${right ? "items-start text-left" : "items-end text-right"}`}
-                style={{
-                  [right ? "left" : "right"]: right ? corner.anchor[0] + 6 : ORBIT.width - corner.anchor[0] + 6,
-                  [corner.vertical]: 12,
-                }}
-              >
-                <a href={`#${domain.id}`} className="rounded-lg px-1 hover:bg-[var(--color-bg-hover)]">
-                  <span className="block text-sm font-semibold text-[var(--viz-eco)]">{domain.label}</span>
-                  <span className="block text-caption tabular-nums text-[var(--color-text-tertiary)]">{counts[domain.id]} offerings</span>
-                </a>
-                {chips[index].map((entry) => (
-                  <a
-                    key={entry.id}
-                    href={`#entry-${entry.id}`}
-                    className="max-w-full rounded-2xl border border-[color-mix(in_srgb,var(--viz-eco)_40%,var(--color-border))] bg-[var(--color-bg-card)] px-2.5 py-1 text-xs font-medium text-[var(--color-text-primary)] shadow-[var(--shadow-1)] transition hover:border-[var(--viz-eco)]"
-                  >
-                    {entry.name}
-                  </a>
-                ))}
-              </div>
-            );
-          })}
-        </div>
-      ) : null}
-
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        {domains.map((domain, index) => (
-          <EcosystemCard key={domain.id} domain={domain} entries={chips[index]} count={counts[domain.id]} />
+        {domains.map((domain) => (
+          <EcosystemCard key={domain.id} domain={domain} entries={headlineEntries(overview.entries, domain.id, 3)} count={counts[domain.id]} />
         ))}
       </ul>
+      {industries ? (
+        <div id={industries.id} className="flex scroll-mt-40 flex-col gap-3">
+          <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <h3 className="text-h3 text-[var(--color-text-primary)]">
+              {flagship} for your sector <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{counts[industries.id]}</span>
+            </h3>
+            <a href={`#catalog-${industries.id}`} className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline">
+              See all in the catalog
+              <ArrowRight size={14} aria-hidden="true" />
+            </a>
+          </div>
+          <ul className="flex flex-wrap gap-2">
+            {sectors.map((entry) => (
+              <li key={entry.id}>
+                <a
+                  href={`#entry-${entry.id}`}
+                  className="inline-flex rounded-full border border-[var(--color-border)] px-3 py-1.5 text-sm font-medium text-[var(--color-text-primary)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                >
+                  {entry.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -470,10 +447,10 @@ function EcosystemCard({ domain, entries, count }: { domain: VendorDomain; entri
     <li id={domain.id} className="vo-entry scroll-mt-40">
       <div className="flex items-baseline justify-between gap-2">
         <h3 className="vo-entry-name">{domain.label}</h3>
-        <span className="text-caption tabular-nums text-[var(--viz-eco)]">{count}</span>
+        <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{count}</span>
       </div>
       <p className="vo-entry-desc">{domain.tagline}</p>
-      <ul className="vo-entry-kids lg:hidden">
+      <ul className="vo-entry-kids">
         {entries.map((entry) => (
           <li key={entry.id}>
             <a href={`#entry-${entry.id}`} className="hover:text-[var(--color-accent)]">
@@ -490,121 +467,24 @@ function EcosystemCard({ domain, entries, count }: { domain: VendorDomain; entri
   );
 }
 
-// ── Industry tiles ────────────────────────────────────────────────────────
-
-export function DomainTiles({ domain, entries, count }: { domain: VendorDomain; entries: VendorEntry[]; count: number }) {
-  const highlights = headlineEntries(entries, domain.id, 6);
-  return (
-    <div className="flex flex-col gap-4">
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {highlights.map((entry, index) => (
-          <li key={entry.id} className="vo-entry vo-reveal" style={{ "--i": index } as CSSProperties}>
-            <a href={`#entry-${entry.id}`} className="vo-entry-name hover:text-[var(--color-accent)]">
-              {entry.name}
-            </a>
-            <p className="vo-entry-desc">{entry.description}</p>
-            <div className="mt-auto pt-1">
-              <SourceLink href={entry.sourceUrl} />
-            </div>
-          </li>
-        ))}
-      </ul>
-      <a href={`#catalog-${domain.id}`} className="inline-flex items-center gap-1 self-start text-sm font-medium text-[var(--color-accent)] hover:underline">
-        See all {count} in the catalog
-        <ArrowRight size={14} aria-hidden="true" />
-      </a>
-    </div>
-  );
-}
-
-// ── Company band ──────────────────────────────────────────────────────────
-
-const PARTNER_TYPE_LABEL: Record<string, string> = {
-  cloud: "Cloud and compute",
-  investment: "Investment",
-  distribution: "Distribution",
-  government: "Government",
-  research: "Research",
-  consulting: "Consulting and services",
-  technology: "Technology",
-};
-
-export function CompanyBand({ company }: { company: VendorOverview["company"] }) {
-  const figures = company.facts.flatMap((fact) => (fact.figures ?? []).map((figure) => ({ ...figure, fact })));
-  const rest = company.facts.filter((fact) => !fact.figures?.length);
-  return (
-    <div className="flex flex-col gap-6">
-      {figures.length > 0 ? (
-        <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {figures.map((figure, index) => (
-            <li key={`${figure.fact.id}-${figure.value}`} className="vo-entry vo-reveal" data-prominence="headline" style={{ "--i": index } as CSSProperties}>
-              <p className="text-[1.5rem] font-semibold leading-none tracking-tight text-[var(--color-text-primary)] sm:text-[2rem]">{figure.value}</p>
-              <p className="text-caption text-[var(--color-text-secondary)]">{figure.label}</p>
-              <p className="mt-auto pt-1">
-                <SourceLink href={figure.fact.sourceUrl} label={figure.fact.sourceTitle ?? "Source"} />
-              </p>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-      <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {rest.map((fact) => (
-          <div key={fact.id} className="vo-entry">
-            <dt className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">{fact.label}</dt>
-            <dd className="text-sm leading-6 text-[var(--color-text-primary)]">{fact.value}</dd>
-            <dd className="mt-auto">
-              <SourceLink href={fact.sourceUrl} />
-            </dd>
-          </div>
-        ))}
-      </dl>
-      <div>
-        <h3 className="mb-3 text-h3 text-[var(--color-text-primary)]">Partners</h3>
-        <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {company.partnerships.map((partnership) => (
-            <li key={partnership.id} className="vo-entry">
-              <div className="flex items-baseline justify-between gap-2">
-                <p className="vo-entry-name">{partnership.partner}</p>
-                {partnership.date ? (
-                  <span className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)]">{year(partnership.date)}</span>
-                ) : null}
-              </div>
-              <p className="text-caption text-[var(--color-text-tertiary)]">{PARTNER_TYPE_LABEL[partnership.type] ?? partnership.type}</p>
-              <p className="vo-entry-desc">{partnership.summary}</p>
-              <SourceLink href={partnership.sourceUrl} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-}
-
 // ── Timeline river ────────────────────────────────────────────────────────
 
 export function TimelineRiver({ events }: { events: VendorTimelineEvent[] }) {
   const density = timelineDensity(events);
-  const milestones = timelineMilestones(events);
   const maxStack = Math.max(1, ...density.flatMap((item) => item.quarters.map((quarter) => quarter.events.length)));
-  const familyCounts = TIMELINE_FAMILIES.map((family) => ({
-    ...family,
-    count: events.filter((event) => timelineFamily(event.type) === family.id).length,
-  }));
-  const first = milestones[0];
+  const keyCount = events.filter((event) => event.impact === "high").length;
 
   return (
     <div className="flex flex-col gap-8">
       <div className="flex flex-col gap-3">
-        <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-caption text-[var(--color-text-secondary)]" aria-label="Event families">
-          {familyCounts.map((family) => (
-            <li key={family.id} className={`vo-family-${family.id} inline-flex items-center gap-2`}>
-              <span className="vo-tdot" aria-hidden="true" />
-              {family.label} <span className="tabular-nums text-[var(--color-text-tertiary)]">{family.count}</span>
-            </li>
-          ))}
-          <li className="vo-family-neutral inline-flex items-center gap-2">
+        <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-caption text-[var(--color-text-secondary)]" aria-label="Legend">
+          <li className="inline-flex items-center gap-2">
+            <span className="vo-tdot" aria-hidden="true" />
+            Event <span className="tabular-nums text-[var(--color-text-tertiary)]">{events.length - keyCount}</span>
+          </li>
+          <li className="inline-flex items-center gap-2">
             <span className="vo-tdot" data-high="true" aria-hidden="true" />
-            Key milestone
+            Key milestone <span className="tabular-nums text-[var(--color-text-tertiary)]">{keyCount}</span>
           </li>
         </ul>
         <div
@@ -627,7 +507,7 @@ export function TimelineRiver({ events }: { events: VendorTimelineEvent[] }) {
                       aria-label={`Q${quarter.quarter} ${item.year}: ${quarter.events.length} events`}
                     >
                       {quarter.events.map((event) => (
-                        <li key={event.id} className={`vo-family-${event.family} flex`}>
+                        <li key={event.id} className="flex">
                           <a href={`#${event.id}`} title={event.title} className="flex">
                             <span className="vo-tdot" data-high={String(event.high)} />
                             <span className="sr-only">{event.title}</span>
@@ -641,46 +521,6 @@ export function TimelineRiver({ events }: { events: VendorTimelineEvent[] }) {
                   <span className="text-sm font-semibold tabular-nums text-[var(--color-text-primary)]">{item.year}</span>
                   <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{item.count}</span>
                 </p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h3 className="text-h3 text-[var(--color-text-primary)]">{milestones.length} moments that shaped it</h3>
-          {first ? (
-            <a href={`#m-${first.id}`} className="text-sm font-medium text-[var(--color-accent)] hover:underline">
-              ← Back to the start
-            </a>
-          ) : null}
-        </div>
-        <div
-          role="region"
-          aria-label="Key milestones, newest on the right"
-          tabIndex={0}
-          className="vo-fade-x vo-scroll-end overflow-x-auto overscroll-x-contain [scroll-snap-type:x_mandatory]"
-        >
-          <ol className="vo-track">
-            {milestones.map((event) => (
-              <li
-                key={event.id}
-                id={`m-${event.id}`}
-                className={`vo-family-${timelineFamily(event.type)} vo-entry scroll-mt-40`}
-                style={{ borderTop: "3px solid var(--fam)" }}
-              >
-                <time dateTime={event.date} className="text-lg font-semibold tabular-nums text-[var(--color-text-primary)]">
-                  {formatPartialDate(event.date)}
-                </time>
-                <span className="text-caption" style={{ color: "var(--fam)" }}>
-                  {TIMELINE_TYPE_LABELS[event.type]}
-                </span>
-                <p className="vo-entry-name">{event.title}</p>
-                <p className="vo-entry-desc line-clamp-3">{event.summary}</p>
-                <div className="mt-auto pt-1">
-                  <SourceLink href={event.sourceUrl} label={event.sourceTitle ?? "Source"} />
-                </div>
               </li>
             ))}
           </ol>
@@ -705,17 +545,43 @@ function RoadmapCard({ item }: { item: VendorRoadmapItem }) {
       {item.stage !== "announced" ? <span className="text-caption text-[var(--color-accent)]">{STAGE_LABEL[item.stage]}</span> : null}
       <p className="vo-entry-name">{item.title}</p>
       <p className="vo-entry-desc">{item.summary}</p>
-      <div className="mt-auto flex flex-wrap items-center gap-x-3 pt-1">
-        <span className="text-caption text-[var(--color-text-tertiary)]">Stated {formatPartialDate(item.announcedAt)}</span>
-        <SourceLink href={item.sourceUrl} />
-      </div>
+      <p className="mt-auto pt-1 text-caption text-[var(--color-text-tertiary)]">
+        Stated {formatPartialDate(item.announcedAt)} <SourceLink href={item.sourceUrl} />
+      </p>
     </li>
+  );
+}
+
+// The few statements expected soonest, then every other one on the horizon.
+export function RoadmapStrip({ items, count = 3 }: { items: VendorRoadmapItem[]; count?: number }) {
+  const soonest = soonestRoadmap(items, count);
+  const rest = items.filter((item) => !soonest.includes(item));
+  return (
+    <div className="flex flex-col gap-3">
+      <ol className="grid grid-cols-1 gap-3 md:grid-cols-3">
+        {soonest.map((item) => (
+          <RoadmapCard key={item.id} item={item} />
+        ))}
+      </ol>
+      {rest.length > 0 ? (
+        <details className="group/roadmap">
+          <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1 text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
+            <ChevronDown size={14} aria-hidden="true" className="transition group-open/roadmap:rotate-180" />
+            <span className="group-open/roadmap:hidden">{rest.length} more statements</span>
+            <span className="hidden group-open/roadmap:inline">Fewer statements</span>
+          </summary>
+          <div className="mt-3">
+            <RoadmapHorizon items={rest} />
+          </div>
+        </details>
+      ) : null}
+    </div>
   );
 }
 
 // Vendor-stated plans laid out on a horizon: one column per year the vendor
 // names, soonest first, then whatever was announced without a date.
-export function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
+function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
   const { years, undated } = roadmapByYear(items);
   const columns = [
     ...years.map((group) => ({ key: group.year, label: group.year, items: group.items })),
@@ -725,7 +591,7 @@ export function RoadmapHorizon({ items }: { items: VendorRoadmapItem[] }) {
     <div className="flex flex-col gap-3">
       <div aria-hidden="true" className="hidden items-center gap-3 text-caption font-semibold text-[var(--color-text-tertiary)] md:flex">
         <span className="rounded-full bg-[var(--color-accent)] px-2 py-0.5 text-[var(--color-text-inverse)]">Now</span>
-        <span className="h-0.5 flex-1" style={{ background: "linear-gradient(90deg, var(--color-accent), var(--viz-cat-2), transparent)" }} />
+        <span className="h-0.5 flex-1" style={{ background: "linear-gradient(90deg, var(--color-accent), transparent)" }} />
         <span>Ahead</span>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-[repeat(var(--cols),minmax(0,1fr))] md:gap-4" style={{ "--cols": columns.length } as CSSProperties}>

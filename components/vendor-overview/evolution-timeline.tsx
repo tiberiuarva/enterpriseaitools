@@ -48,7 +48,7 @@ export function EvolutionTimeline({ overview }: { overview: VendorOverview }) {
                     <p className="mt-1 text-sm font-semibold text-[var(--color-text-primary)]">{event.title}</p>
                     <p className="mt-0.5 text-sm leading-6 text-[var(--color-text-secondary)]">{event.summary}</p>
                     <div className="mt-1 flex flex-wrap gap-x-3">
-                      <SourceLink href={event.sourceUrl} label={event.sourceTitle ?? "Source"} />
+                      <SourceLink href={event.sourceUrl} label={event.sourceTitle} />
                       {event.updateId ? (
                         <a href={withBasePath(`/updates#${event.updateId}`)} className="text-xs font-medium text-[var(--color-accent)] hover:underline">
                           In the change feed →

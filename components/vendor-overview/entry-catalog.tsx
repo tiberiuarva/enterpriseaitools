@@ -1,163 +1,177 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
 import type { VendorDomain, VendorEntry, VendorOverview } from "@/lib/types";
-import { AUDIENCE_LABELS, ENTRY_KIND_LABELS, childrenOf, domainCounts, entriesByDomain, entrySearchText } from "@/lib/vendor-overview";
-import { groupBreakdown } from "@/lib/vendor-viz";
+import { AUDIENCE_LABELS, childrenOf, domainCounts, entriesByDomain, entrySearchText } from "@/lib/vendor-overview";
+import { catalogFamily, entryFacets, NEW_WINDOW_MONTHS, type CatalogFacet } from "@/lib/vendor-viz";
 import { withBasePath } from "@/lib/site";
 import { CatalogControls } from "./catalog-controls";
-import { SourceLink, StatusBadge } from "./primitives";
+import { SourceLink } from "./primitives";
 
-function filterAttributes(entry: VendorEntry, children: VendorEntry[]) {
-  const all = [entry, ...children];
+const STATUS_LABEL: Partial<Record<VendorEntry["status"], string>> = {
+  beta: "Beta",
+  preview: "Preview",
+  "research-preview": "Research preview",
+  deprecated: "Deprecated",
+  retired: "Retired",
+};
+
+function filterAttributes(members: VendorEntry[], today: string) {
   return {
     "data-entry": "",
-    "data-domain": entry.domainId,
-    "data-status": [...new Set(all.map((item) => item.status))].join(" "),
-    "data-audience": [...new Set(all.flatMap((item) => item.audience))].join(" "),
-    "data-search": all.map(entrySearchText).join(" "),
-    "data-weight": String(all.length),
+    "data-facets": [...new Set(members.flatMap((item) => entryFacets(item, today)))].join(" "),
+    "data-audience": [...new Set(members.flatMap((item) => item.audience))].join(" "),
+    "data-search": members.map(entrySearchText).join(" "),
+    "data-weight": String(members.length),
   };
 }
 
-// One compact card per offering. Repeated ~170 times, so it leans on the short
-// .vo-entry* classes in globals.css instead of long utility strings.
-function EntryCard({ entry, items }: { entry: VendorEntry; items: VendorEntry[] }) {
+// Everything about one offering, shown only when its name is selected. A
+// native popover: no script, closes on Escape or a click outside.
+function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry; kids: VendorEntry[]; family: string; today: string; popId: string }) {
+  const status = STATUS_LABEL[entry.status];
+  const isNew = entryFacets(entry, today).includes("new");
+  const formerly = (entry.formerNames ?? []).filter((name) => !entry.description.includes(name));
   return (
-    <li id={`entry-${entry.id}`} data-prominence={entry.prominence} {...filterAttributes(entry, items)} className="vo-entry">
-      <h4 className="vo-entry-name">{entry.name}</h4>
-      <div className="vo-entry-meta">
-        <StatusBadge status={entry.status} />
-        <span>{ENTRY_KIND_LABELS[entry.kind]}</span>
-        {entry.launchedAt ? <span>since {entry.launchedAt.slice(0, 4)}</span> : null}
-        {entry.license ? <span className={entry.licenseWarning ? "text-[var(--color-warning)]" : undefined}>{entry.license}</span> : null}
-      </div>
-      {entry.formerNames?.length ? <p className="vo-entry-meta">Formerly {entry.formerNames.join(", ")}</p> : null}
-      <p className="vo-entry-desc">{entry.description}</p>
-      {entry.licenseWarning ? <p className="vo-entry-warn">{entry.licenseWarning}</p> : null}
-      {items.length > 0 ? (
-        <ul className="vo-entry-kids" aria-label={`Inside ${entry.name}`}>
-          {items.map((child) => (
-            <li key={child.id} id={`entry-${child.id}`} title={child.description}>
-              {child.name}
-            </li>
-          ))}
-        </ul>
-      ) : null}
-      <div className="vo-entry-meta mt-auto pt-1">
-        {entry.docsUrl ? <SourceLink href={entry.docsUrl} label="Docs" /> : null}
-        <SourceLink href={entry.sourceUrl} />
-        {entry.githubUrl ? <SourceLink href={entry.githubUrl} label="Code" /> : null}
-        {entry.toolId ? (
-          <a href={withBasePath(`/tools/${entry.toolId}`)} className="font-medium text-[var(--color-accent)] hover:underline">
-            Governance →
-          </a>
+    <div id={popId} popover="auto" role="dialog" aria-labelledby={`${popId}-title`} className="vo-detail">
+      <div className="flex flex-col gap-3">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <p className="text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{family}</p>
+            <h4 id={`${popId}-title`} className="mt-1 text-lg font-semibold leading-snug text-[var(--color-text-primary)]">
+              {entry.name}
+            </h4>
+          </div>
+          <button type="button" popoverTarget={popId} popoverTargetAction="hide" className="vo-detail-close" aria-label="Close">
+            <X size={16} aria-hidden="true" />
+          </button>
+        </div>
+        {isNew || status ? (
+          <p className="flex flex-wrap gap-1.5">
+            {isNew ? <span className="vo-badge vo-badge-new">New</span> : null}
+            {status ? <span className="vo-badge vo-badge-preview">{status}</span> : null}
+          </p>
         ) : null}
+        <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{entry.description}</p>
+        {entry.licenseWarning ? <p className="text-sm leading-6 text-[var(--color-warning)]">{entry.licenseWarning}</p> : null}
+        {kids.length > 0 ? (
+          <div>
+            <p className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">Includes</p>
+            <ul className="mt-1 flex flex-col gap-1.5 text-sm text-[var(--color-text-primary)]">
+              {kids.map((kid) => (
+                <li key={kid.id} id={`entry-${kid.id}`}>
+                  {kid.name}
+                  {entryFacets(kid, today).includes("new") ? <span className="vo-badge vo-badge-new ml-1.5">New</span> : null}
+                  <span className="block text-caption text-[var(--color-text-tertiary)]">{kid.description}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+        {formerly.length > 0 ? <p className="text-caption text-[var(--color-text-tertiary)]">Formerly {formerly.join(", ")}</p> : null}
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[var(--color-border)] pt-3 text-sm">
+          <a
+            href={entry.docsUrl ?? entry.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 rounded-full bg-[var(--color-accent)] px-3.5 py-1.5 font-medium text-[var(--color-text-inverse)] hover:opacity-90"
+          >
+            Official page
+            <ArrowUpRight size={14} aria-hidden="true" />
+          </a>
+          {entry.docsUrl && entry.docsUrl !== entry.sourceUrl ? <SourceLink href={entry.sourceUrl} label="Source" /> : null}
+          {entry.githubUrl ? <SourceLink href={entry.githubUrl} label={entry.license && !entry.licenseWarning ? `Code · ${entry.license}` : "Code"} /> : null}
+          {entry.toolId ? (
+            <a href={withBasePath(`/tools/${entry.toolId}`)} className="text-xs font-medium text-[var(--color-accent)] hover:underline">
+              Governance profile →
+            </a>
+          ) : null}
+        </div>
       </div>
-    </li>
-  );
-}
-
-function FamilyBar({ domain, entries }: { domain: VendorDomain; entries: VendorEntry[] }) {
-  const parts = groupBreakdown(domain, entries);
-  if (parts.length < 2) return null;
-  return (
-    <div className="mt-3 flex flex-col gap-1.5" aria-hidden="true">
-      <div className="flex h-1.5 gap-0.5 overflow-hidden rounded-full">
-        {parts.map((part, index) => (
-          <span key={part.id} className="h-full" style={{ width: `${part.share}%`, background: `var(--viz-cat-${(index % 5) + 1})` }} />
-        ))}
-      </div>
-      <p className="hidden flex-wrap gap-x-3 text-[0.6875rem] text-[var(--color-text-tertiary)] md:flex">
-        {parts.map((part, index) => (
-          <span key={part.id} className="inline-flex items-center gap-1">
-            <span className="h-1.5 w-1.5 rounded-full" style={{ background: `var(--viz-cat-${(index % 5) + 1})` }} />
-            {part.label} {part.count}
-          </span>
-        ))}
-      </p>
     </div>
   );
 }
 
-function DomainBlock({ domain, entries, all, count }: { domain: VendorDomain; entries: VendorEntry[]; all: VendorEntry[]; count: number }) {
-  const groups = [...domain.groups, { id: "", label: "" }]
-    .map((group) => ({ group, items: entries.filter((entry) => (entry.groupId ?? "") === group.id) }))
-    .filter(({ items }) => items.length > 0);
-  const tone = domain.cluster === "ecosystem" ? "var(--viz-eco)" : domain.cluster === "company" ? "var(--viz-co)" : "var(--color-accent)";
-
+// One product name. Selecting it opens its detail card.
+function EntryName({ entry, kids, family, today }: { entry: VendorEntry; kids: VendorEntry[]; family: string; today: string }) {
+  const popId = `detail-${entry.id}`;
+  const status = STATUS_LABEL[entry.status];
+  const isNew = [entry, ...kids].some((item) => entryFacets(item, today).includes("new"));
   return (
-    <section id={`catalog-${domain.id}`} data-filter-group="" aria-labelledby={`catalog-${domain.id}-heading`} className="scroll-mt-40">
-      <details data-domain-block="" className="group/domain rounded-2xl border border-[var(--color-border)]">
-        <summary className="flex cursor-pointer list-none items-start gap-3 rounded-2xl p-4 transition hover:bg-[var(--color-bg-hover)] sm:p-5 [&::-webkit-details-marker]:hidden">
-          <span aria-hidden="true" className="mt-1.5 h-3 w-3 shrink-0 rounded-full" style={{ background: tone }} />
-          <div className="min-w-0 flex-1">
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-              <h3 id={`catalog-${domain.id}-heading`} className="text-h2 text-[var(--color-text-primary)]">
-                {domain.label}
-              </h3>
-              <span className="text-caption tabular-nums text-[var(--color-text-tertiary)]">{count}</span>
-            </div>
-            <p className="mt-0.5 max-w-3xl text-body-sm text-[var(--color-text-secondary)]">{domain.tagline}</p>
-            <FamilyBar domain={domain} entries={all} />
-          </div>
-          <ChevronDown size={20} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)] transition group-open/domain:rotate-180" />
-        </summary>
-        <div className="flex flex-col gap-5 border-t border-[var(--color-border)] p-4 sm:p-5">
-          <p className="max-w-3xl text-body-sm text-[var(--color-text-secondary)]">{domain.intro}</p>
-          {groups.map(({ group, items }) => {
-            const main = items.filter((entry) => entry.prominence !== "detail");
-            const detail = items.filter((entry) => entry.prominence === "detail");
-            return (
-              <div key={group.id || "ungrouped"} data-filter-group="">
-                {group.label ? <p className="mb-2 text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{group.label}</p> : null}
-                {main.length > 0 ? (
-                  <ul className="grid grid-cols-1 items-start gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-                    {main.map((entry) => (
-                      <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
-                    ))}
-                  </ul>
-                ) : null}
-                {detail.length > 0 ? (
-                  <details data-more="" className="group/more mt-2">
-                    <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1 rounded-full text-sm font-medium text-[var(--color-accent)] hover:underline [&::-webkit-details-marker]:hidden">
-                      <ChevronDown size={14} aria-hidden="true" className="transition group-open/more:rotate-180" />
-                      <span className="group-open/more:hidden">Show {detail.length} more</span>
-                      <span className="hidden group-open/more:inline">Show fewer</span>
-                    </summary>
-                    <ul className="mt-2 grid grid-cols-1 items-start gap-2.5 sm:grid-cols-2 xl:grid-cols-3">
-                      {detail.map((entry) => (
-                        <EntryCard key={entry.id} entry={entry} items={childrenOf(all, entry.id)} />
-                      ))}
-                    </ul>
-                  </details>
-                ) : null}
-              </div>
-            );
-          })}
-        </div>
-      </details>
+    <li id={`entry-${entry.id}`} {...filterAttributes([entry, ...kids], today)} className="scroll-mt-40">
+      <button type="button" popoverTarget={popId} className="vo-name">
+        <span className="min-w-0">{entry.name}</span>
+        {isNew ? <span className="vo-name-tag vo-name-tag-new">New</span> : status ? <span className="vo-name-tag">{status}</span> : null}
+      </button>
+      <EntryDetail entry={entry} kids={kids} family={family} today={today} popId={popId} />
+    </li>
+  );
+}
+
+function FamilyTile({ domain, entries, all, count, today }: { domain: VendorDomain; entries: VendorEntry[]; all: VendorEntry[]; count: number; today: string }) {
+  const { featured, groups } = catalogFamily(domain, entries);
+  const rest = groups.flatMap((group) => group.items);
+  const name = (entry: VendorEntry) => <EntryName key={entry.id} entry={entry} kids={childrenOf(all, entry.id)} family={domain.label} today={today} />;
+  return (
+    <section id={`catalog-${domain.id}`} data-filter-group="" aria-labelledby={`catalog-${domain.id}-heading`} className="vo-tile scroll-mt-40">
+      <h3 id={`catalog-${domain.id}-heading`} title={domain.tagline} className="flex items-baseline justify-between gap-2 text-sm font-semibold text-[var(--color-text-primary)]">
+        {domain.label}
+        <span className="text-caption font-normal tabular-nums text-[var(--color-text-tertiary)]">{count}</span>
+      </h3>
+      <ul className="flex flex-col">{featured.map(name)}</ul>
+      {rest.length > 0 ? (
+        <details data-more="" className="group/more">
+          <summary className="vo-more">
+            <span className="group-open/more:hidden">+{rest.length} more</span>
+            <span className="hidden group-open/more:inline">Show fewer</span>
+          </summary>
+          <ul className="flex flex-col">{rest.map(name)}</ul>
+        </details>
+      ) : null}
     </section>
   );
 }
 
-export function EntryCatalog({ overview }: { overview: VendorOverview }) {
+// How many offerings (rows plus what they include) carry a facet, matching how
+// the filter counts what it shows.
+function facetCount(rows: VendorEntry[][], facet: CatalogFacet, today: string) {
+  return rows.filter((members) => members.some((item) => entryFacets(item, today).includes(facet))).reduce((sum, members) => sum + members.length, 0);
+}
+
+const BANDS: { id: string; label: (flagship: string) => string; clusters: VendorDomain["cluster"][] }[] = [
+  { id: "products", label: () => "Products", clusters: ["products"] },
+  { id: "beyond", label: (flagship) => `Beyond ${flagship}`, clusters: ["ecosystem", "company"] },
+];
+
+export function EntryCatalog({ overview, flagship }: { overview: VendorOverview; flagship: string }) {
   const byDomain = entriesByDomain(overview);
   const counts = domainCounts(overview);
+  const today = overview.reviewedAt;
   const audiences = [...new Set(overview.entries.flatMap((entry) => entry.audience))].map((id) => ({ id, label: AUDIENCE_LABELS[id] }));
+  const rows = [...byDomain.values()].flat().map((entry) => [entry, ...childrenOf(overview.entries, entry.id)]);
+  const facets = [
+    { id: "new", label: `New in the last ${NEW_WINDOW_MONTHS} months`, count: facetCount(rows, "new", today) },
+    { id: "preview", label: "Preview or beta", count: facetCount(rows, "preview", today) },
+  ].filter((facet) => facet.count > 0);
 
   return (
     <div className="flex flex-col gap-6">
-      <CatalogControls
-        targetId="catalog-results"
-        total={overview.entries.length}
-        domains={overview.domains.map((domain) => ({ id: domain.id, label: domain.label, count: counts[domain.id] }))}
-        audiences={audiences}
-      />
-      <div id="catalog-results" className="flex flex-col gap-3">
-        {overview.domains.map((domain) => (
-          <DomainBlock key={domain.id} domain={domain} entries={byDomain.get(domain.id) ?? []} all={overview.entries} count={counts[domain.id]} />
-        ))}
+      <CatalogControls targetId="catalog-results" total={overview.entries.length} facets={facets} audiences={audiences} />
+      <div id="catalog-results" className="flex flex-col gap-8">
+        {BANDS.map((band) => {
+          const domains = overview.domains.filter((domain) => band.clusters.includes(domain.cluster));
+          if (domains.length === 0) return null;
+          return (
+            <div key={band.id} data-filter-group="" className="flex flex-col gap-3">
+              <p className="text-caption uppercase tracking-[0.16em] text-[var(--color-text-tertiary)]">{band.label(flagship)}</p>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
+                {domains.map((domain) => (
+                  <FamilyTile key={domain.id} domain={domain} entries={byDomain.get(domain.id) ?? []} all={overview.entries} count={counts[domain.id]} today={today} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
         <p data-empty="" hidden className="rounded-xl border border-dashed border-[var(--color-border)] p-6 text-center text-sm text-[var(--color-text-secondary)]">
-          No offerings match these filters.
+          No offerings match. Try another word or clear the filters.
         </p>
       </div>
     </div>
