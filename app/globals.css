@@ -1398,6 +1398,12 @@ code {
       font-size: 0.75rem;
     }
   }
+  /* Tablet: blocks are full width, so headline rows use their tablet size. */
+  @media (min-width: 640px) and (max-width: 1023.98px) {
+    .vo-heads > .vo-cell:is([data-tier="anchor"], [data-tier="flagship"]) {
+      flex: 1 1 calc(100% / var(--row-t, 1) - 0.375rem);
+    }
+  }
   @media (min-width: 768px) {
     .vo-jump {
       --gutter: 2rem;

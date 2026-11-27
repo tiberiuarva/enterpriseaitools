@@ -138,12 +138,19 @@ function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry
 
 // One offering: a tile that carries only its name, its status and how much it
 // includes. Selecting it opens the detail card.
-function Tile({ entry, tier, kids, family, today, row }: { entry: VendorEntry; tier: TileTier; kids: VendorEntry[]; family: VendorDomain; today: string; row?: number }) {
+// How many headline tiles share a tile's row on each layout.
+type RowSize = { desktop: number; tablet: number };
+
+// Below the desktop grid every family block is full width; four headline
+// tiles side by side is the most that still leaves room for their names.
+const TABLET_HEADS_PER_ROW = 4;
+
+function Tile({ entry, tier, kids, family, today, row }: { entry: VendorEntry; tier: TileTier; kids: VendorEntry[]; family: VendorDomain; today: string; row?: RowSize }) {
   const popId = `detail-${entry.id}`;
   const kidFacets = kids.flatMap((kid) => entryFacets(kid, today));
   const kidTone = kidFacets.includes("new") ? "new" : kidFacets.includes("preview") ? "pre" : undefined;
   return (
-    <li id={`entry-${entry.id}`} {...filterAttributes([entry, ...kids], today)} data-tier={tier} className="vo-cell" style={row ? ({ "--row": row } as CSSProperties) : undefined}>
+    <li id={`entry-${entry.id}`} {...filterAttributes([entry, ...kids], today)} data-tier={tier} className="vo-cell" style={row ? ({ "--row": row.desktop, "--row-t": row.tablet } as CSSProperties) : undefined}>
       <button type="button" popoverTarget={popId} className="vo-mt" data-kids={kids.length > 0 ? "" : undefined}>
         <span className="vo-mt-name">{entry.name}</span>
         <span className="vo-mt-meta">
@@ -166,11 +173,13 @@ function FamilyBlock({ family, all, today }: { family: Family; all: VendorEntry[
   const { tiles } = family;
   const heads = tiles.filter((tile) => tile.tier === "anchor" || tile.tier === "flagship");
   const rest = tiles.filter((tile) => tile.tier === "core" || tile.tier === "support");
-  // On the desktop grid each headline tile knows how many share its row, so
-  // the rows come out balanced instead of leaving one stray tile.
+  // Each headline tile knows how many share its row, on the desktop grid and
+  // on the full-width tablet block, so rows come out balanced instead of
+  // leaving one stray tile.
   const rows = balancedRows(heads.length, headsPerRow(family.span));
-  const rowSizes = rows.flatMap((size) => Array.from({ length: size }, () => size));
-  const render = ({ entry, tier }: FamilyTile, row?: number) => (
+  const desktop = rows.flatMap((size) => Array.from({ length: size }, () => size));
+  const tablet = balancedRows(heads.length, TABLET_HEADS_PER_ROW).flatMap((size) => Array.from({ length: size }, () => size));
+  const render = ({ entry, tier }: FamilyTile, row?: RowSize) => (
     <Tile key={entry.id} entry={entry} tier={tier} kids={childrenOf(all, entry.id)} family={domain} today={today} row={row} />
   );
   return (
@@ -188,7 +197,7 @@ function FamilyBlock({ family, all, today }: { family: Family; all: VendorEntry[
           {family.count}
         </span>
       </h3>
-      {heads.length > 0 ? <ul className="vo-heads" style={{ "--rows": rows.length } as CSSProperties}>{heads.map((tile, index) => render(tile, rowSizes[index]))}</ul> : null}
+      {heads.length > 0 ? <ul className="vo-heads" style={{ "--rows": rows.length } as CSSProperties}>{heads.map((tile, index) => render(tile, { desktop: desktop[index], tablet: tablet[index] }))}</ul> : null}
       {rest.length > 0 ? <ul className="vo-tiles">{rest.map((tile) => render(tile))}</ul> : null}
     </section>
   );
