@@ -25,6 +25,9 @@ export function CatalogControls({
   // The count is written straight into the DOM from the effect that filters it.
   const shownRef = useRef<HTMLSpanElement>(null);
   const filtering = query.trim() !== "" || facet !== "all" || audience !== "all";
+  // A deep link to an offering the filters hide waits here until the filters
+  // are cleared and the effect below has unhidden it.
+  const pendingReveal = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     const root = document.getElementById(targetId);
@@ -60,13 +63,16 @@ export function CatalogControls({
     const empty = root.querySelector<HTMLElement>("[data-empty]");
     if (empty) empty.hidden = count > 0;
     if (shownRef.current) shownRef.current.textContent = String(count);
+    const pending = pendingReveal.current;
+    pendingReveal.current = null;
+    pending?.();
   }, [targetId, query, facet, audience, filtering]);
 
   // Deep links (map tiles, highlights, shared URLs) can point inside a closed
   // catalog family, "show more" list or timeline year: open every enclosing
   // <details>, then scroll. One listener serves the whole page.
   useEffect(() => {
-    const reveal = (retried = false) => {
+    const reveal = () => {
       const id = decodeURIComponent(window.location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
       if (!target) return;
@@ -75,12 +81,12 @@ export function CatalogControls({
       const card = target.closest<HTMLElement>("[popover]") ?? target.querySelector<HTMLElement>(":scope > [popover]");
       const anchor = (card && document.querySelector<HTMLElement>(`[popovertarget="${card.id}"]`)) || target;
       // A filter can hide the linked offering, and a popover inside a hidden
-      // element never shows: clear the filters, then try once more.
-      if (anchor.closest("[hidden]") && !retried) {
+      // element never shows: clear the filters and reveal once they are applied.
+      if (anchor.closest("[hidden]") && document.getElementById(targetId)?.hasAttribute("data-filtering")) {
+        pendingReveal.current = reveal;
         setQuery("");
         setFacet("all");
         setAudience("all");
-        window.setTimeout(() => reveal(true), 50);
         return;
       }
       for (let node = anchor.parentElement; node; node = node.parentElement) {
@@ -89,11 +95,13 @@ export function CatalogControls({
       anchor.scrollIntoView({ block: card ? "center" : "start" });
       if (card && !card.matches(":popover-open")) card.showPopover();
     };
-    const onHashChange = () => reveal();
     reveal();
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
-  }, []);
+    window.addEventListener("hashchange", reveal);
+    return () => {
+      window.removeEventListener("hashchange", reveal);
+      pendingReveal.current = null;
+    };
+  }, [targetId]);
 
   // Links elsewhere on the page (the hero's audience lens) can preset the
   // audience filter with data-catalog-audience before jumping here.
