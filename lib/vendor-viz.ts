@@ -473,7 +473,6 @@ export function timelineDensity(events: readonly VendorTimelineEvent[]): Density
   return years;
 }
 
-
 // ── Summaries ──────────────────────────────────────────────────────────────
 
 // FAQ ids the overview page asks as section headings or inline sub-questions

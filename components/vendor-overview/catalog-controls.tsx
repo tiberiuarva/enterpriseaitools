@@ -66,7 +66,7 @@ export function CatalogControls({
   // catalog family, "show more" list or timeline year: open every enclosing
   // <details>, then scroll. One listener serves the whole page.
   useEffect(() => {
-    const reveal = () => {
+    const reveal = (retried = false) => {
       const id = decodeURIComponent(window.location.hash.slice(1));
       const target = id ? document.getElementById(id) : null;
       if (!target) return;
@@ -74,15 +74,25 @@ export function CatalogControls({
       // something it includes) scrolls to its name and opens the card.
       const card = target.closest<HTMLElement>("[popover]") ?? target.querySelector<HTMLElement>(":scope > [popover]");
       const anchor = (card && document.querySelector<HTMLElement>(`[popovertarget="${card.id}"]`)) || target;
+      // A filter can hide the linked offering, and a popover inside a hidden
+      // element never shows: clear the filters, then try once more.
+      if (anchor.closest("[hidden]") && !retried) {
+        setQuery("");
+        setFacet("all");
+        setAudience("all");
+        window.setTimeout(() => reveal(true), 50);
+        return;
+      }
       for (let node = anchor.parentElement; node; node = node.parentElement) {
         if (node instanceof HTMLDetailsElement) node.open = true;
       }
       anchor.scrollIntoView({ block: card ? "center" : "start" });
       if (card && !card.matches(":popover-open")) card.showPopover();
     };
+    const onHashChange = () => reveal();
     reveal();
-    window.addEventListener("hashchange", reveal);
-    return () => window.removeEventListener("hashchange", reveal);
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
 
   // Links elsewhere on the page (the hero's audience lens) can preset the
