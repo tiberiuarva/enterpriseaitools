@@ -136,8 +136,6 @@ function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry
   );
 }
 
-// One offering: a tile that carries only its name, its status and how much it
-// includes. Selecting it opens the detail card.
 // How many headline tiles share a tile's row on each layout.
 type RowSize = { desktop: number; tablet: number };
 
@@ -145,6 +143,8 @@ type RowSize = { desktop: number; tablet: number };
 // tiles side by side is the most that still leaves room for their names.
 const TABLET_HEADS_PER_ROW = 4;
 
+// One offering: a tile that carries only its name, its status and how much it
+// includes. Selecting it opens the detail card.
 function Tile({ entry, tier, kids, family, today, row }: { entry: VendorEntry; tier: TileTier; kids: VendorEntry[]; family: VendorDomain; today: string; row?: RowSize }) {
   const popId = `detail-${entry.id}`;
   const kidFacets = kids.flatMap((kid) => entryFacets(kid, today));
