@@ -246,7 +246,7 @@ export function VendorOverviewPage({ overview, stack, tools, updates }: Props) {
         id="catalog"
         eyebrow="Product map"
         title={`All ${overview.entries.length} offerings`}
-        intro="Every offering by family. Select a name to see what it is, its status and its source. Everything is generally available unless marked."
+        intro="Every offering is a tile, and the bigger and bolder the tile, the more central the offering. Select one to see what it is, who it is for and its source. Everything is generally available unless marked."
       >
         <EntryCatalog overview={overview} flagship={flagship} />
       </OverviewSection>

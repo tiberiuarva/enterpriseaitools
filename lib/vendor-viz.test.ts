@@ -18,7 +18,6 @@ import {
   priceDelta,
   availabilityByChannel,
   governanceSummary,
-  catalogFamily,
   entryFacets,
   monthsSince,
   isoPoint,
@@ -197,31 +196,6 @@ describe("catalog directory", () => {
     assert.deepEqual(entryFacets({ status: "ga", launchedAt: "2026-07-31" }, "2026-11-26"), []);
     assert.deepEqual(entryFacets({ status: "ga", launchedAt: "2027-01" }, "2026-11-26"), []);
     assert.deepEqual(entryFacets({ status: "research-preview" }, "2026-11-26"), ["preview"]);
-  });
-  test("catalogFamily features headline entries and groups the rest in family order", () => {
-    const entries = [
-      { id: "a", prominence: "standard", groupId: "g2" },
-      { id: "b", prominence: "headline", groupId: "g1" },
-      { id: "c", prominence: "detail", groupId: "g1" },
-      { id: "d", prominence: "standard" },
-    ] as const;
-    const family = catalogFamily({ groups: [{ id: "g1", label: "One" }, { id: "g2", label: "Two" }] }, entries);
-    assert.deepEqual(family.featured.map((entry) => entry.id), ["b"]);
-    assert.deepEqual(
-      family.groups.map((group) => [group.id, group.items.map((entry) => entry.id)]),
-      [
-        ["g1", ["c"]],
-        ["g2", ["a"]],
-        ["", ["d"]],
-      ],
-    );
-  });
-  test("catalogFamily falls back to the first three when nothing is a headline", () => {
-    const entries = [1, 2, 3, 4].map((n) => ({ id: String(n), prominence: "standard" as const }));
-    assert.deepEqual(
-      catalogFamily({ groups: [] }, entries).featured.map((entry) => entry.id),
-      ["1", "2", "3"],
-    );
   });
 });
 

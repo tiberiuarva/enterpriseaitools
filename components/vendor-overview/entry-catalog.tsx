@@ -1,18 +1,25 @@
 import { ArrowUpRight, X } from "lucide-react";
+import type { CSSProperties } from "react";
 import type { VendorDomain, VendorEntry, VendorOverview } from "@/lib/types";
-import { AUDIENCE_LABELS, childrenOf, domainCounts, entriesByDomain, entrySearchText } from "@/lib/vendor-overview";
-import { catalogFamily, entryFacets, NEW_WINDOW_MONTHS, type CatalogFacet } from "@/lib/vendor-viz";
+import { balancedRows, familyChipLabel, familyTiles, headsPerRow, mosaicSpans, tileWeight, type TileTier } from "@/lib/offerings-mosaic";
+import { AUDIENCE_LABELS, ENTRY_STATUS_LABELS, childrenOf, domainCounts, entriesByDomain, entrySearchText, formatPartialDate } from "@/lib/vendor-overview";
+import { entryFacets, LENSES, NEW_WINDOW_MONTHS, type CatalogFacet } from "@/lib/vendor-viz";
 import { withBasePath } from "@/lib/site";
 import { CatalogControls } from "./catalog-controls";
 import { SourceLink } from "./primitives";
 
-const STATUS_LABEL: Partial<Record<VendorEntry["status"], string>> = {
+// Short status words for the tiles; the detail card spells the status out.
+const TILE_STATUS: Partial<Record<VendorEntry["status"], string>> = {
   beta: "Beta",
   preview: "Preview",
-  "research-preview": "Research preview",
+  "research-preview": "Preview",
   deprecated: "Deprecated",
   retired: "Retired",
 };
+const QUIET_STATUSES: readonly VendorEntry["status"][] = ["ga", "active"];
+
+type FamilyTile = { entry: VendorEntry; tier: TileTier };
+type Family = { domain: VendorDomain; label: string; count: number; quiet: boolean; span: number; tiles: FamilyTile[] };
 
 function filterAttributes(members: VendorEntry[], today: string) {
   return {
@@ -24,19 +31,34 @@ function filterAttributes(members: VendorEntry[], today: string) {
   };
 }
 
-// Everything about one offering, shown only when its name is selected. A
-// native popover: no script, closes on Escape or a click outside.
-function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry; kids: VendorEntry[]; family: string; today: string; popId: string }) {
-  const status = STATUS_LABEL[entry.status];
+// "New" and "Beta" / "Preview", read straight off the tile: no legend needed.
+function StatusTags({ entry, today }: { entry: VendorEntry; today: string }) {
+  const status = TILE_STATUS[entry.status];
   const isNew = entryFacets(entry, today).includes("new");
+  return (
+    <>
+      {isNew ? <span className="vo-tag vo-tag-new">New</span> : null}
+      {status ? <span className="vo-tag vo-tag-pre">{status}</span> : null}
+    </>
+  );
+}
+
+// Everything about one offering, shown only when its tile is selected. A
+// native popover: no script, closes on Escape or a click outside.
+function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry; kids: VendorEntry[]; family: VendorDomain; today: string; popId: string }) {
+  const isNew = entryFacets(entry, today).includes("new");
+  const group = family.groups.find((item) => item.id === entry.groupId)?.label;
   const formerly = (entry.formerNames ?? []).filter((name) => !entry.description.includes(name));
   return (
     <div id={popId} popover="auto" role="dialog" aria-labelledby={`${popId}-title`} className="vo-detail">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3.5">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">{family}</p>
-            <h4 id={`${popId}-title`} className="mt-1 text-lg font-semibold leading-snug text-[var(--color-text-primary)]">
+            <p className="text-caption uppercase tracking-[0.14em] text-[var(--color-text-tertiary)]">
+              {family.label}
+              {group ? ` · ${group}` : ""}
+            </p>
+            <h4 id={`${popId}-title`} className="mt-1 text-xl font-semibold leading-snug tracking-tight text-[var(--color-text-primary)]">
               {entry.name}
             </h4>
           </div>
@@ -44,35 +66,59 @@ function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry
             <X size={16} aria-hidden="true" />
           </button>
         </div>
-        {isNew || status ? (
-          <p className="flex flex-wrap gap-1.5">
-            {isNew ? <span className="vo-badge vo-badge-new">New</span> : null}
-            {status ? <span className="vo-badge vo-badge-preview">{status}</span> : null}
-          </p>
-        ) : null}
+        <p className="flex flex-wrap gap-1.5">
+          {isNew ? <span className="vo-badge vo-badge-new">New</span> : null}
+          <span className={`vo-badge ${QUIET_STATUSES.includes(entry.status) ? "vo-badge-quiet" : "vo-badge-preview"}`}>{ENTRY_STATUS_LABELS[entry.status]}</span>
+        </p>
         <p className="text-sm leading-6 text-[var(--color-text-secondary)]">{entry.description}</p>
-        {entry.licenseWarning ? <p className="text-sm leading-6 text-[var(--color-warning)]">{entry.licenseWarning}</p> : null}
+        {entry.licenseWarning ? <p className="vo-detail-warn">{entry.licenseWarning}</p> : null}
+        <dl className="vo-detail-facts">
+          {entry.launchedAt ? (
+            <div>
+              <dt>Launched</dt>
+              <dd>
+                <time dateTime={entry.launchedAt}>{formatPartialDate(entry.launchedAt)}</time>
+              </dd>
+            </div>
+          ) : null}
+          <div>
+            <dt>For</dt>
+            <dd>{entry.audience.map((id) => AUDIENCE_LABELS[id]).join(", ")}</dd>
+          </div>
+          {formerly.length > 0 ? (
+            <div>
+              <dt>Formerly</dt>
+              <dd>{formerly.join(", ")}</dd>
+            </div>
+          ) : null}
+        </dl>
         {kids.length > 0 ? (
           <div>
             <p className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">Includes</p>
-            <ul className="mt-1 flex flex-col gap-1.5 text-sm text-[var(--color-text-primary)]">
+            <ul className="vo-minis">
               {kids.map((kid) => (
                 <li key={kid.id} id={`entry-${kid.id}`}>
-                  {kid.name}
-                  {entryFacets(kid, today).includes("new") ? <span className="vo-badge vo-badge-new ml-1.5">New</span> : null}
-                  <span className="block text-caption text-[var(--color-text-tertiary)]">{kid.description}</span>
+                  <a href={kid.docsUrl ?? kid.sourceUrl} target="_blank" rel="noreferrer" className="vo-mini">
+                    <span className="flex items-start justify-between gap-2">
+                      <span className="vo-mini-name">{kid.name}</span>
+                      <ArrowUpRight size={13} aria-hidden="true" className="mt-0.5 shrink-0 opacity-60" />
+                    </span>
+                    <span className="vo-mini-desc">{kid.description}</span>
+                    <span className="flex flex-wrap gap-1 empty:hidden">
+                      <StatusTags entry={kid} today={today} />
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
         ) : null}
-        {formerly.length > 0 ? <p className="text-caption text-[var(--color-text-tertiary)]">Formerly {formerly.join(", ")}</p> : null}
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[var(--color-border)] pt-3 text-sm">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-[var(--color-border)] pt-3.5 text-sm">
           <a
             href={entry.docsUrl ?? entry.sourceUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1 rounded-full bg-[var(--color-accent)] px-3.5 py-1.5 font-medium text-[var(--color-text-inverse)] hover:opacity-90"
+            className="inline-flex min-h-9 items-center gap-1 rounded-full bg-[var(--color-accent)] px-4 font-medium text-[var(--color-text-inverse)] hover:opacity-90"
           >
             Official page
             <ArrowUpRight size={14} aria-hidden="true" />
@@ -90,88 +136,138 @@ function EntryDetail({ entry, kids, family, today, popId }: { entry: VendorEntry
   );
 }
 
-// One product name. Selecting it opens its detail card.
-function EntryName({ entry, kids, family, today }: { entry: VendorEntry; kids: VendorEntry[]; family: string; today: string }) {
+// One offering: a tile that carries only its name, its status and how much it
+// includes. Selecting it opens the detail card.
+function Tile({ entry, tier, kids, family, today, row }: { entry: VendorEntry; tier: TileTier; kids: VendorEntry[]; family: VendorDomain; today: string; row?: number }) {
   const popId = `detail-${entry.id}`;
-  const status = STATUS_LABEL[entry.status];
-  const isNew = [entry, ...kids].some((item) => entryFacets(item, today).includes("new"));
+  const kidFacets = kids.flatMap((kid) => entryFacets(kid, today));
+  const kidTone = kidFacets.includes("new") ? "new" : kidFacets.includes("preview") ? "pre" : undefined;
   return (
-    <li id={`entry-${entry.id}`} {...filterAttributes([entry, ...kids], today)} className="scroll-mt-40">
-      <button type="button" popoverTarget={popId} className="vo-name">
-        <span className="min-w-0">{entry.name}</span>
-        {isNew ? <span className="vo-name-tag vo-name-tag-new">New</span> : status ? <span className="vo-name-tag">{status}</span> : null}
+    <li id={`entry-${entry.id}`} {...filterAttributes([entry, ...kids], today)} data-tier={tier} className="vo-cell" style={row ? ({ "--row": row } as CSSProperties) : undefined}>
+      <button type="button" popoverTarget={popId} className="vo-mt" data-kids={kids.length > 0 ? "" : undefined}>
+        <span className="vo-mt-name">{entry.name}</span>
+        <span className="vo-mt-meta">
+          <StatusTags entry={entry} today={today} />
+          {kids.length > 0 ? (
+            <span className="vo-tag vo-tag-kids" data-tone={kidTone}>
+              +{kids.length}
+              <span className="sr-only"> included</span>
+            </span>
+          ) : null}
+        </span>
       </button>
       <EntryDetail entry={entry} kids={kids} family={family} today={today} popId={popId} />
     </li>
   );
 }
 
-function FamilyTile({ domain, entries, all, count, today }: { domain: VendorDomain; entries: VendorEntry[]; all: VendorEntry[]; count: number; today: string }) {
-  const { featured, groups } = catalogFamily(domain, entries);
-  const rest = groups.flatMap((group) => group.items);
-  const name = (entry: VendorEntry) => <EntryName key={entry.id} entry={entry} kids={childrenOf(all, entry.id)} family={domain.label} today={today} />;
+function FamilyBlock({ family, all, today }: { family: Family; all: VendorEntry[]; today: string }) {
+  const { domain } = family;
+  const { tiles } = family;
+  const heads = tiles.filter((tile) => tile.tier === "anchor" || tile.tier === "flagship");
+  const rest = tiles.filter((tile) => tile.tier === "core" || tile.tier === "support");
+  // On the desktop grid each headline tile knows how many share its row, so
+  // the rows come out balanced instead of leaving one stray tile.
+  const rows = balancedRows(heads.length, headsPerRow(family.span));
+  const rowSizes = rows.flatMap((size) => Array.from({ length: size }, () => size));
+  const render = ({ entry, tier }: FamilyTile, row?: number) => (
+    <Tile key={entry.id} entry={entry} tier={tier} kids={childrenOf(all, entry.id)} family={domain} today={today} row={row} />
+  );
   return (
-    <section id={`catalog-${domain.id}`} data-filter-group="" aria-labelledby={`catalog-${domain.id}-heading`} className="vo-tile scroll-mt-40">
-      <h3 id={`catalog-${domain.id}-heading`} title={domain.tagline} className="flex items-baseline justify-between gap-2 text-sm font-semibold text-[var(--color-text-primary)]">
+    <section
+      id={`catalog-${domain.id}`}
+      data-family={domain.id}
+      data-quiet={family.quiet ? "" : undefined}
+      aria-labelledby={`catalog-${domain.id}-heading`}
+      className="vo-block"
+      style={{ "--span": family.span } as CSSProperties}
+    >
+      <h3 id={`catalog-${domain.id}-heading`} title={domain.tagline} className="vo-block-head">
         {domain.label}
-        <span className="text-caption font-normal tabular-nums text-[var(--color-text-tertiary)]">{count}</span>
+        <span data-family-count={domain.id} data-total={family.count}>
+          {family.count}
+        </span>
       </h3>
-      <ul className="flex flex-col">{featured.map(name)}</ul>
-      {rest.length > 0 ? (
-        <details data-more="" className="group/more">
-          <summary className="vo-more">
-            <span className="group-open/more:hidden">+{rest.length} more</span>
-            <span className="hidden group-open/more:inline">Show fewer</span>
-          </summary>
-          <ul className="flex flex-col">{rest.map(name)}</ul>
-        </details>
-      ) : null}
+      {heads.length > 0 ? <ul className="vo-heads" style={{ "--rows": rows.length } as CSSProperties}>{heads.map((tile, index) => render(tile, rowSizes[index]))}</ul> : null}
+      {rest.length > 0 ? <ul className="vo-tiles">{rest.map((tile) => render(tile))}</ul> : null}
     </section>
   );
 }
 
-// How many offerings (rows plus what they include) carry a facet, matching how
-// the filter counts what it shows.
+// How many offerings (tiles plus what they include) carry a facet, matching
+// how the lens counts what it lights up.
 function facetCount(rows: VendorEntry[][], facet: CatalogFacet, today: string) {
   return rows.filter((members) => members.some((item) => entryFacets(item, today).includes(facet))).reduce((sum, members) => sum + members.length, 0);
 }
 
-const BANDS: { id: string; label: (flagship: string) => string; clusters: VendorDomain["cluster"][] }[] = [
-  { id: "products", label: () => "Products", clusters: ["products"] },
-  { id: "beyond", label: (flagship) => `Beyond ${flagship}`, clusters: ["ecosystem", "company"] },
+// Product families sit two to a row; the quieter families beyond the product
+// line sit three to a row.
+const BANDS: { id: string; label: (flagship: string) => string; clusters: VendorDomain["cluster"][]; perRow: number; quiet: boolean }[] = [
+  { id: "products", label: () => "Products", clusters: ["products"], perRow: 2, quiet: false },
+  { id: "beyond", label: (flagship) => `Beyond ${flagship}`, clusters: ["ecosystem", "company"], perRow: 3, quiet: true },
 ];
 
 export function EntryCatalog({ overview, flagship }: { overview: VendorOverview; flagship: string }) {
   const byDomain = entriesByDomain(overview);
   const counts = domainCounts(overview);
   const today = overview.reviewedAt;
-  const audiences = [...new Set(overview.entries.flatMap((entry) => entry.audience))].map((id) => ({ id, label: AUDIENCE_LABELS[id] }));
   const rows = [...byDomain.values()].flat().map((entry) => [entry, ...childrenOf(overview.entries, entry.id)]);
   const facets = [
-    { id: "new", label: `New in the last ${NEW_WINDOW_MONTHS} months`, count: facetCount(rows, "new", today) },
-    { id: "preview", label: "Preview or beta", count: facetCount(rows, "preview", today) },
+    { id: "new", label: "New", title: `Launched in the last ${NEW_WINDOW_MONTHS} months`, count: facetCount(rows, "new", today) },
+    { id: "preview", label: "Beta or preview", title: "Not generally available yet", count: facetCount(rows, "preview", today) },
   ].filter((facet) => facet.count > 0);
+  const lenses = LENSES.filter((lens) => overview.entries.some((entry) => entry.audience.some((audience) => (lens.audiences as readonly string[]).includes(audience)))).map(
+    (lens) => ({ id: lens.id, label: lens.label, audiences: [...lens.audiences], alias: lens.catalogAudience }),
+  );
+  const bands = BANDS.map((band) => {
+    const domains = overview.domains.filter((domain) => band.clusters.includes(domain.cluster));
+    const tiles = domains.map((domain) => familyTiles(byDomain.get(domain.id) ?? [], !band.quiet));
+    // Blocks are sized by what they hold, so neighbours end about level.
+    const spans = mosaicSpans(
+      tiles.map((family) => family.reduce((sum, tile) => sum + tileWeight(tile.tier, tile.entry.name), 0)),
+      band.perRow,
+    );
+    const families: Family[] = domains.map((domain, index) => ({
+      domain,
+      label: familyChipLabel(domain.label, flagship),
+      count: counts[domain.id] ?? 0,
+      quiet: band.quiet,
+      span: spans[index],
+      tiles: tiles[index],
+    }));
+    return { ...band, families };
+  }).filter((band) => band.families.length > 0);
 
   return (
-    <div className="flex flex-col gap-6">
-      <CatalogControls targetId="catalog-results" total={overview.entries.length} facets={facets} audiences={audiences} />
-      <div id="catalog-results" className="flex flex-col gap-8">
-        {BANDS.map((band) => {
-          const domains = overview.domains.filter((domain) => band.clusters.includes(domain.cluster));
-          if (domains.length === 0) return null;
-          return (
-            <div key={band.id} data-filter-group="" className="flex flex-col gap-3">
-              <p className="text-caption uppercase tracking-[0.16em] text-[var(--color-text-tertiary)]">{band.label(flagship)}</p>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
-                {domains.map((domain) => (
-                  <FamilyTile key={domain.id} domain={domain} entries={byDomain.get(domain.id) ?? []} all={overview.entries} count={counts[domain.id]} today={today} />
-                ))}
-              </div>
-            </div>
-          );
-        })}
-        <p data-empty="" hidden className="rounded-xl border border-dashed border-[var(--color-border)] p-6 text-center text-sm text-[var(--color-text-secondary)]">
-          No offerings match. Try another word or clear the filters.
+    <div data-mosaic="" className="flex flex-col gap-4">
+      <CatalogControls targetId="catalog-results" total={overview.entries.length} facets={facets} lenses={lenses} />
+      <nav aria-label="Offering families" className="vo-jump">
+        {bands.map((band) => (
+          <ul key={band.id} aria-label={band.label(flagship)}>
+            {band.families.map((family) => (
+              <li key={family.domain.id}>
+                <a href={`#catalog-${family.domain.id}`} title={family.domain.label}>
+                  {family.label}
+                  <span data-family-count={family.domain.id} data-total={family.count}>
+                    {family.count}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </nav>
+      <div id="catalog-results" className="vo-bento">
+        {bands.map((band) => (
+          <div key={band.id} className="contents">
+            <p className="vo-band">{band.label(flagship)}</p>
+            {band.families.map((family) => (
+              <FamilyBlock key={family.domain.id} family={family} all={overview.entries} today={today} />
+            ))}
+          </div>
+        ))}
+        <p data-empty="" hidden className="vo-empty">
+          Nothing lights up. Try another word or clear the lens.
         </p>
       </div>
     </div>

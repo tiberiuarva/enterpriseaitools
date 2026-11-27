@@ -4,7 +4,6 @@
 import type {
   GovernanceStatus,
   VendorAvailability,
-  VendorDomain,
   VendorEntry,
   VendorGovernanceRow,
   VendorModel,
@@ -287,21 +286,6 @@ export function entryFacets(entry: Pick<VendorEntry, "status" | "launchedAt">, t
   if (age !== undefined && age >= 0 && age <= NEW_WINDOW_MONTHS) facets.push("new");
   if (PREVIEW_STATUSES.includes(entry.status)) facets.push("preview");
   return facets;
-}
-
-// A family's catalog layout: headline entries up front (or the first three
-// when none are marked), the rest grouped by the family's own groups.
-export function catalogFamily<T extends Pick<VendorEntry, "prominence" | "groupId">>(
-  domain: Pick<VendorDomain, "groups">,
-  entries: readonly T[],
-): { featured: T[]; groups: { id: string; label: string; items: T[] }[] } {
-  const headline = entries.filter((entry) => entry.prominence === "headline");
-  const featured = headline.length > 0 ? headline : entries.slice(0, 3);
-  const rest = entries.filter((entry) => !featured.includes(entry));
-  const groups = [...domain.groups, { id: "", label: "" }]
-    .map((group) => ({ id: group.id, label: group.label, items: rest.filter((entry) => (entry.groupId ?? "") === group.id) }))
-    .filter((group) => group.items.length > 0);
-  return { featured, groups };
 }
 
 // ── Model subway map ───────────────────────────────────────────────────────
