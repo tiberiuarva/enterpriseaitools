@@ -5263,6 +5263,14 @@
   "company": {
     "facts": [
       {
+        "id": "listing",
+        "label": "Listing",
+        "value": "Nasdaq: ANT, trading since 19 Nov 2026",
+        "sourceUrl": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+        "verifiedAt": "2026-11-26",
+        "sourceTitle": "Anthropic prices its IPO"
+      },
+      {
         "id": "structure",
         "label": "Legal structure",
         "value": "Public benefit corporation",
@@ -5271,218 +5279,15 @@
         "sourceTitle": "Company"
       },
       {
-        "id": "listing",
-        "label": "Listing",
-        "value": "Nasdaq: ANT, trading since 19 Nov 2026",
-        "figures": [
-          {
-            "value": "Nasdaq: ANT",
-            "label": "Trading since 19 Nov 2026"
-          }
-        ],
-        "sourceUrl": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Anthropic prices its IPO"
-      },
-      {
-        "id": "ipo",
-        "label": "IPO",
-        "value": "1.127B Class A shares at $83.00, about $93.5B gross proceeds; closed 20 Nov 2026",
-        "figures": [
-          {
-            "value": "$83.00",
-            "label": "IPO price per Class A share"
-          },
-          {
-            "value": "about $93.5B",
-            "label": "Gross IPO proceeds"
-          }
-        ],
-        "sourceUrl": "https://www.anthropic.com/news/ipo-close",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Anthropic closes its IPO"
-      },
-      {
-        "id": "last-private-round",
-        "label": "Last private round",
-        "value": "Series H, $65B at a $965B post-money valuation (May 2026)",
-        "figures": [
-          {
-            "value": "$965B",
-            "label": "Post-money valuation, May 2026"
-          }
-        ],
-        "sourceUrl": "https://www.anthropic.com/news/series-h",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Series H"
-      },
-      {
         "id": "governance",
         "label": "Board oversight",
-        "value": "Long-Term Benefit Trust elects a growing share of the board; trustees include Ben Bernanke and Christopher Stubbs",
+        "value": "Long-Term Benefit Trust elects a growing share of the board",
         "sourceUrl": "https://www.anthropic.com/news/the-long-term-benefit-trust",
         "verifiedAt": "2026-11-26",
         "sourceTitle": "The Long-Term Benefit Trust"
-      },
-      {
-        "id": "offices-europe",
-        "label": "European offices",
-        "value": "London, Dublin, Zurich, Paris, Munich and Milan",
-        "sourceUrl": "https://www.anthropic.com/news/milan-office-opening",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Milan office opening"
-      },
-      {
-        "id": "offices-apac",
-        "label": "Asia-Pacific offices",
-        "value": "Tokyo, Bengaluru, Seoul and Sydney, with Singapore added as the fifth in Oct 2026",
-        "sourceUrl": "https://www.anthropic.com/news/singapore-office-opening",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Singapore office opening"
       }
     ],
-    "partnerships": [
-      {
-        "id": "p-amazon",
-        "partner": "Amazon / AWS",
-        "type": "cloud",
-        "date": "2023-09",
-        "summary": "Primary cloud and training partner; up to 5 GW of capacity and $100B+ of AWS commitments announced in Apr 2026.",
-        "sourceUrl": "https://www.anthropic.com/news/anthropic-amazon-compute",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Anthropic and Amazon expand partnership"
-      },
-      {
-        "id": "p-google",
-        "partner": "Google Cloud",
-        "type": "cloud",
-        "date": "2025-10",
-        "summary": "Up to one million Google Cloud TPUs, with well over a gigawatt of capacity coming online in 2026.",
-        "sourceUrl": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Expanding our use of Google Cloud TPUs"
-      },
-      {
-        "id": "p-microsoft-nvidia",
-        "partner": "Microsoft and NVIDIA",
-        "type": "investment",
-        "date": "2025-11",
-        "summary": "$30B Azure commitment; NVIDIA to invest up to $10B and Microsoft up to $5B; Claude in Foundry.",
-        "sourceUrl": "https://www.anthropic.com/news/microsoft-nvidia-anthropic-announce-strategic-partnerships",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Microsoft, NVIDIA and Anthropic partnerships"
-      },
-      {
-        "id": "p-fluidstack",
-        "partner": "Fluidstack",
-        "type": "technology",
-        "date": "2025-11",
-        "summary": "$50B investment in custom US data centres in Texas and New York.",
-        "sourceUrl": "https://www.anthropic.com/news/anthropic-invests-50-billion-in-american-ai-infrastructure",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "$50B in American AI infrastructure"
-      },
-      {
-        "id": "p-snowflake",
-        "partner": "Snowflake",
-        "type": "distribution",
-        "date": "2025-12",
-        "summary": "$200M multi-year agreement bringing Claude to Snowflake customers.",
-        "sourceUrl": "https://www.anthropic.com/news/snowflake-anthropic-expanded-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Snowflake and Anthropic"
-      },
-      {
-        "id": "p-salesforce",
-        "partner": "Salesforce",
-        "type": "distribution",
-        "date": "2025-10",
-        "summary": "Claude a preferred model in Agentforce for regulated industries.",
-        "sourceUrl": "https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Salesforce and Anthropic"
-      },
-      {
-        "id": "p-servicenow",
-        "partner": "ServiceNow",
-        "type": "distribution",
-        "date": "2026-01",
-        "summary": "Claude is the default model for ServiceNow's Build Agent.",
-        "sourceUrl": "https://www.anthropic.com/news/servicenow-anthropic-claude",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "ServiceNow and Anthropic"
-      },
-      {
-        "id": "p-deloitte",
-        "partner": "Deloitte",
-        "type": "consulting",
-        "date": "2025-10",
-        "summary": "Claude for more than 470,000 Deloitte people.",
-        "sourceUrl": "https://www.anthropic.com/news/deloitte-anthropic-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Deloitte and Anthropic"
-      },
-      {
-        "id": "p-accenture",
-        "partner": "Accenture",
-        "type": "consulting",
-        "date": "2025-12",
-        "summary": "Accenture Anthropic Business Group with about 30,000 professionals trained on Claude.",
-        "sourceUrl": "https://www.anthropic.com/news/anthropic-accenture-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Accenture and Anthropic"
-      },
-      {
-        "id": "p-kpmg",
-        "partner": "KPMG",
-        "type": "consulting",
-        "date": "2026-05",
-        "summary": "Global alliance putting Claude in front of more than 276,000 employees.",
-        "sourceUrl": "https://www.anthropic.com/news/anthropic-kpmg",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "KPMG and Anthropic"
-      },
-      {
-        "id": "p-pwc",
-        "partner": "PwC",
-        "type": "consulting",
-        "date": "2026-05",
-        "summary": "Claude Code and Cowork rollout with 30,000 professionals to be certified.",
-        "sourceUrl": "https://www.anthropic.com/news/pwc-expanded-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "PwC and Anthropic"
-      },
-      {
-        "id": "p-gsa",
-        "partner": "US General Services Administration",
-        "type": "government",
-        "date": "2026-10",
-        "summary": "40% government discount on Claude Enterprise, Claude for Government and the API.",
-        "sourceUrl": "https://www.anthropic.com/news/expanding-partnership-gsa",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Expanding our partnership with GSA"
-      },
-      {
-        "id": "p-uk",
-        "partner": "UK Government (DSIT)",
-        "type": "government",
-        "date": "2025-02",
-        "summary": "Memorandum of understanding on AI for public services.",
-        "sourceUrl": "https://www.anthropic.com/news/mou-uk-government",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "MOU with the UK Government"
-      },
-      {
-        "id": "p-gates",
-        "partner": "Gates Foundation",
-        "type": "research",
-        "date": "2026-05",
-        "summary": "$200M over four years in grants, credits and support for health and education.",
-        "sourceUrl": "https://www.anthropic.com/news/gates-foundation-partnership",
-        "verifiedAt": "2026-11-26",
-        "sourceTitle": "Gates Foundation partnership"
-      }
-    ]
+    "partnerships": []
   },
   "faqs": [
     {
