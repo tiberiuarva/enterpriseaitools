@@ -952,7 +952,10 @@
       "docsUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-27",
-      "sourceTitle": "Release notes"
+      "sourceTitle": "Release notes",
+      "formerNames": [
+        "Memory tool and context editing"
+      ]
     },
     {
       "id": "context-editing",
@@ -1363,7 +1366,8 @@
       "description": "Cloud sandboxed sessions at claude.ai/code, also available in the Claude iOS app.",
       "launchedAt": "2025-10-20",
       "formerNames": [
-        "Claude Code on the web"
+        "Claude Code on the web",
+        "Claude Code on the web and mobile"
       ],
       "docsUrl": "https://code.claude.com/docs/en/claude-code-on-the-web",
       "sourceUrl": "https://claude.com/blog/claude-code-on-the-web",
@@ -2238,7 +2242,8 @@
       "description": "Data dashboards built with Claude, formerly Claude Dashboards; certified queries and live sharing are still in beta.",
       "launchedAt": "2026-11-10",
       "formerNames": [
-        "Claude Dashboards"
+        "Claude Dashboards",
+        "Claude Data, Sheets and Whiteboards"
       ],
       "sourceUrl": "https://claude.com/resources/articles/sheets-whiteboards-data",
       "verifiedAt": "2026-11-27",
