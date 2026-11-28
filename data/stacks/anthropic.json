@@ -3,7 +3,7 @@
   "name": "Anthropic",
   "title": "Anthropic stack overview",
   "description": "Everything Anthropic offers in one view: Claude models, apps, Claude Code and the Developer Platform, plus open standards, research, safety and programs.",
-  "reviewedAt": "2026-11-27",
+  "reviewedAt": "2026-11-28",
   "primarySourceHosts": [
     "anthropic.com",
     "claude.com",
@@ -504,6 +504,59 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "fallbacks",
+      "name": "Fallbacks parameter",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "core",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Opt-in parameter that re-runs refused requests on another model, billed at that model's rates; a default mode applies Anthropic's recommended fallback models.",
+      "launchedAt": "2026-06-09",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "apple-foundation-models",
+      "name": "Claude for Apple Foundation Models",
+      "kind": "product",
+      "domainId": "claude-developer-platform",
+      "groupId": "core",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Swift package that adds Claude as a server-side LanguageModel in Apple's Foundation Models framework, called like the on-device model on the OS 27 betas.",
+      "launchedAt": "2026-06-09",
+      "docsUrl": "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "app-attest",
+      "name": "App Attest",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "core",
+      "parentId": "apple-foundation-models",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Lets genuine installs of an iOS or macOS app call the Claude API without shipping an API key or running a proxy, billed to your workspace.",
+      "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/app-attest",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "App Attest for iOS and macOS apps"
+    },
+    {
       "id": "tool-use",
       "name": "Tool use",
       "kind": "feature",
@@ -518,6 +571,41 @@
       "launchedAt": "2024-05-30",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "mid-conversation-tools",
+      "name": "Mid-conversation tool changes",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "tools",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Add, remove or redefine tools between turns, including inside a mid-conversation system message, while preserving the prompt cache.",
+      "launchedAt": "2026-07-24",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "bash-text-editor-tools",
+      "name": "Bash and text editor tools",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "tools",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Anthropic-defined client tools: Claude requests shell commands and views, creates and edits text files, and your application runs them.",
+      "docsUrl": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
       "sourceTitle": "Release notes"
     },
     {
@@ -748,6 +836,102 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "multiagent-orchestration",
+      "name": "Multiagent orchestration",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "One Managed Agents agent coordinates others, each with its own isolated context, through subagents or an advisor model.",
+      "launchedAt": "2026-05-06",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "ma-dynamic-workflows",
+      "name": "Dynamic workflows in Managed Agents",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "The agent writes a workflow, a program that runs many agents in phases in the background and combines their results.",
+      "launchedAt": "2026-10-09",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/workflow-runs",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "outcomes",
+      "name": "Outcomes",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Define what done looks like with a rubric; a separate grader evaluates each attempt and the agent iterates until the outcome is met.",
+      "launchedAt": "2026-05-06",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/define-outcomes",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "scheduled-deployments",
+      "name": "Scheduled deployments",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Run Managed Agents sessions on a cron schedule without managing your own scheduler, with a run history for each deployment.",
+      "launchedAt": "2026-06-09",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "self-hosted-sandboxes",
+      "name": "Self-hosted sandboxes",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "agents",
+      "parentId": "managed-agents",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers",
+        "enterprise"
+      ],
+      "description": "Move a Managed Agents session's tool execution into infrastructure you control while Anthropic keeps running the agent.",
+      "launchedAt": "2026-05-19",
+      "docsUrl": "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
       "id": "extended-thinking",
       "name": "Extended and adaptive thinking",
       "kind": "feature",
@@ -779,6 +963,25 @@
       "launchedAt": "2025-11-24",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "per-message-effort",
+      "name": "Per-message effort",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "parentId": "effort",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "Change effort for later turns with a system message inside messages, preserving the prompt cache.",
+      "launchedAt": "2026-09-01",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/effort-per-message",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
       "sourceTitle": "Release notes"
     },
     {
@@ -917,6 +1120,41 @@
       "launchedAt": "2025-01-23",
       "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "search-results",
+      "name": "Search results",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Search result content blocks let Claude cite your own RAG content with the source and title you supply, like web search citations.",
+      "launchedAt": "2025-07-03",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/search-results",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
+      "id": "vision-pdf",
+      "name": "Vision and PDF support",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "context",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Send images and PDFs in a request; Claude analyses text and visual content such as charts and tables.",
+      "docsUrl": "https://platform.claude.com/docs/en/build-with-claude/pdf-support",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
       "sourceTitle": "Release notes"
     },
     {
@@ -1083,6 +1321,25 @@
       "sourceTitle": "Release notes"
     },
     {
+      "id": "personal-service-account-keys",
+      "name": "Personal and service account keys",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins",
+        "developers"
+      ],
+      "description": "Console API keys that act as you or a service account with the same permissions, and stop working when that account leaves the organisation.",
+      "launchedAt": "2026-08-27",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/authentication#api-keys",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
+    },
+    {
       "id": "user-profiles",
       "name": "User profiles",
       "kind": "feature",
@@ -1172,6 +1429,26 @@
       "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/compliance-api",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Compliance API"
+    },
+    {
+      "id": "security-posture",
+      "name": "Security posture in the Compliance API",
+      "kind": "feature",
+      "domainId": "claude-developer-platform",
+      "groupId": "admin",
+      "parentId": "compliance-api",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Endpoint returning a Claude Enterprise organisation's Security posture results, with attestation changes recorded in the Activity Feed.",
+      "launchedAt": "2026-11-05",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/compliance-security-posture/overview",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
     },
     {
       "id": "inference-hooks",
@@ -1321,6 +1598,24 @@
       "sourceTitle": "Claude 3.7 Sonnet and Claude Code"
     },
     {
+      "id": "voice-dictation",
+      "name": "Voice dictation",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "surfaces",
+      "parentId": "claude-code-cli",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Speak prompts in the CLI with hold-to-record or tap-to-record; needs a claude.ai sign-in.",
+      "docsUrl": "https://code.claude.com/docs/en/voice-dictation",
+      "sourceUrl": "https://code.claude.com/docs/en/voice-dictation",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Voice dictation"
+    },
+    {
       "id": "claude-code-ide",
       "name": "IDE extensions",
       "kind": "product",
@@ -1373,6 +1668,23 @@
       "sourceUrl": "https://claude.com/blog/claude-code-on-the-web",
       "verifiedAt": "2026-11-27",
       "sourceTitle": "Claude Code on the web"
+    },
+    {
+      "id": "cc-projects",
+      "name": "Projects in Claude Code",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "surfaces",
+      "parentId": "claude-code-web",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "developers"
+      ],
+      "description": "One ongoing conversation where Claude runs a stream of related tasks as parallel cloud sessions; public beta on Pro, Max and Ultra.",
+      "sourceUrl": "https://code.claude.com/docs/en/claude-projects",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Let Claude coordinate ongoing work with Projects"
     },
     {
       "id": "claude-agent-sdk-entry",
@@ -1429,6 +1741,24 @@
       "sourceUrl": "https://code.claude.com/docs/en/feature-availability",
       "verifiedAt": "2026-11-27",
       "sourceTitle": "Feature availability"
+    },
+    {
+      "id": "mods",
+      "name": "Mods",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "extend",
+      "parentId": "plugins",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Plugins whose JavaScript or TypeScript handlers add panes, commands and tool call rules to Claude Code.",
+      "docsUrl": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "sourceUrl": "https://code.claude.com/docs/en/plugins/mods/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Mods overview"
     },
     {
       "id": "subagents",
@@ -1511,6 +1841,60 @@
       "sourceUrl": "https://www.anthropic.com/news/enabling-claude-code-to-work-more-autonomously",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Enabling Claude Code to work more autonomously"
+    },
+    {
+      "id": "cc-computer-use",
+      "name": "Computer use in Claude Code",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "extend",
+      "prominence": "detail",
+      "status": "research-preview",
+      "audience": [
+        "developers"
+      ],
+      "description": "Claude opens native apps, clicks through UI and verifies changes from the CLI and the Desktop app, on Pro, Max and Ultra plans.",
+      "launchedAt": "2026-03",
+      "docsUrl": "https://code.claude.com/docs/en/computer-use",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "What's new in Claude Code"
+    },
+    {
+      "id": "cc-artifacts",
+      "name": "Artifacts from sessions",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "extend",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Turn a session's output into a live, shareable page on claude.ai that updates in place as the session works.",
+      "launchedAt": "2026-06",
+      "docsUrl": "https://code.claude.com/docs/en/artifacts",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "What's new in Claude Code"
+    },
+    {
+      "id": "cc-design",
+      "name": "/design",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "extend",
+      "parentId": "cc-artifacts",
+      "prominence": "detail",
+      "status": "research-preview",
+      "audience": [
+        "developers"
+      ],
+      "description": "Brings Claude Design's artboard workflow into the CLI and Desktop: Claude drafts editable artboards for your UI and implements the one you pick.",
+      "launchedAt": "2026-08",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "What's new in Claude Code"
     },
     {
       "id": "routines",
@@ -1596,6 +1980,41 @@
       "sourceUrl": "https://code.claude.com/docs/en/whats-new",
       "verifiedAt": "2026-11-27",
       "sourceTitle": "What's new in Claude Code"
+    },
+    {
+      "id": "goal",
+      "name": "/goal",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "automate",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Set a completion condition and Claude keeps working across turns until it holds.",
+      "launchedAt": "2026-05",
+      "docsUrl": "https://code.claude.com/docs/en/goal",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "What's new in Claude Code"
+    },
+    {
+      "id": "cc-channels",
+      "name": "Channels",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "automate",
+      "prominence": "detail",
+      "status": "research-preview",
+      "audience": [
+        "developers"
+      ],
+      "description": "MCP servers that push messages, alerts and webhooks into a running session, with Telegram, Discord and iMessage plugins.",
+      "docsUrl": "https://code.claude.com/docs/en/channels",
+      "sourceUrl": "https://code.claude.com/docs/en/channels",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Push events into a running session with channels"
     },
     {
       "id": "claude-ship",
@@ -1690,6 +2109,25 @@
       "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "security-guidance-plugin",
+      "name": "Security-guidance plugin",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "review",
+      "parentId": "security-review",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Plugin that reviews Claude's code changes for vulnerabilities as it works.",
+      "launchedAt": "2026-05",
+      "docsUrl": "https://code.claude.com/docs/en/security-guidance",
+      "sourceUrl": "https://code.claude.com/docs/en/whats-new",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "What's new in Claude Code"
     },
     {
       "id": "ultrareview",
@@ -1794,6 +2232,60 @@
       "sourceUrl": "https://code.claude.com/docs/en/monitoring-usage",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Monitoring usage"
+    },
+    {
+      "id": "cc-analytics",
+      "name": "Analytics dashboard",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "enterprise",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Dashboards of Claude Code usage and, on Team and Enterprise, contribution metrics (public beta) for PRs and lines shipped with Claude Code.",
+      "docsUrl": "https://code.claude.com/docs/en/analytics",
+      "sourceUrl": "https://code.claude.com/docs/en/analytics",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Track team usage with analytics"
+    },
+    {
+      "id": "cc-ghes",
+      "name": "GitHub Enterprise Server support",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "enterprise",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Cloud sessions, Code Review and plugin marketplaces on a self-hosted GitHub Enterprise Server instance, for Team and Enterprise.",
+      "docsUrl": "https://code.claude.com/docs/en/github-enterprise-server",
+      "sourceUrl": "https://code.claude.com/docs/en/github-enterprise-server",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude Code with GitHub Enterprise Server"
+    },
+    {
+      "id": "cc-zdr-hipaa",
+      "name": "Zero Data Retention and HIPAA configuration",
+      "kind": "feature",
+      "domainId": "claude-code",
+      "groupId": "enterprise",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "ZDR for Claude Code inference for qualified Enterprise accounts; HIPAA-configured orgs can bring local Claude Code under their BAA.",
+      "docsUrl": "https://code.claude.com/docs/en/hipaa-setup",
+      "sourceUrl": "https://code.claude.com/docs/en/zero-data-retention",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Zero data retention"
     },
     {
       "id": "cc-gateways",
@@ -1971,6 +2463,26 @@
       "sourceUrl": "https://www.anthropic.com/news/introducing-claude-tag",
       "verifiedAt": "2026-11-27",
       "sourceTitle": "Introducing Claude Tag"
+    },
+    {
+      "id": "claude-tag-api",
+      "name": "Claude Tag API",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "surfaces",
+      "parentId": "claude-tag",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "enterprise",
+        "admins"
+      ],
+      "description": "Admin API to read and change Claude Tag settings on Slack channels and workspaces and attach Access bundles, for Claude Enterprise.",
+      "launchedAt": "2026-10-23",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/claude-tag-api",
+      "sourceUrl": "https://platform.claude.com/docs/en/release-notes/overview",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Release notes"
     },
     {
       "id": "cowork",
@@ -2162,6 +2674,40 @@
       "sourceTitle": "Claude Duet"
     },
     {
+      "id": "apps-computer-use",
+      "name": "Computer use for Team and Enterprise",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "work",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Claude uses the computer in the new Claude experience in Claude Desktop, rolling out gradually to Team and Enterprise organisations.",
+      "launchedAt": "2026-11-20",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "personal-finance",
+      "name": "Personal Finance",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "work",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "everyone"
+      ],
+      "description": "Link bank, credit card and loan accounts to see balances and spending on one page and ask Claude about your money; Pro, Max and Ultra, US only.",
+      "launchedAt": "2026-11-05",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
       "id": "artifacts",
       "name": "Artifacts",
       "kind": "feature",
@@ -2175,6 +2721,24 @@
       "description": "Live, shareable outputs such as apps, documents and diagrams, on every plan.",
       "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
       "verifiedAt": "2026-11-26",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "artifact-apps",
+      "name": "Install artifacts as apps",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "create",
+      "parentId": "artifacts",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "everyone"
+      ],
+      "description": "Install an artifact Claude made as an app with its own window and icon on a Mac or Windows computer.",
+      "launchedAt": "2026-11-24",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
       "sourceTitle": "Claude release notes"
     },
     {
@@ -2339,6 +2903,40 @@
       "sourceTitle": "Introducing Agent Skills"
     },
     {
+      "id": "salesforce-in-claude",
+      "name": "Salesforce in Claude",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "connect",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Plugin that brings a seller's Salesforce accounts, opportunities and pipeline into Claude, with 37 pre-built sales skills.",
+      "launchedAt": "2026-09-15",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "plugin-developer-portal",
+      "name": "Plugin developer portal",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "connect",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "developers"
+      ],
+      "description": "Submit plugins to the Claude directory through a developer portal.",
+      "launchedAt": "2026-09-25",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
       "id": "claude-enterprise-plan",
       "name": "Claude Enterprise",
       "kind": "product",
@@ -2442,6 +3040,137 @@
       "sourceUrl": "https://support.claude.com/en/articles/13200993-restrict-access-to-claude-with-ip-allowlisting",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "IP allowlisting"
+    },
+    {
+      "id": "model-entitlements",
+      "name": "Model entitlements",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins"
+      ],
+      "description": "Enterprise admins control which models users can access and which effort levels they can use.",
+      "launchedAt": "2026-07-01",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "skill-plugin-scanning",
+      "name": "Skill and plugin security scanning",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins"
+      ],
+      "description": "Checks third-party skills and plugins for malicious content when they are uploaded or edited.",
+      "launchedAt": "2026-08-06",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "smart-reports",
+      "name": "Smart reports",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Reports on how a team uses Claude and the work getting done, plus costs and friction points.",
+      "launchedAt": "2026-09-10",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "project-tags",
+      "name": "Project tags",
+      "kind": "feature",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Tag projects with existing codes, such as charge codes or client-matter numbers, to see project spend by tag.",
+      "launchedAt": "2026-11-06",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "enterprise-analytics-api",
+      "name": "Enterprise Analytics API",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Programmatic access to Claude Enterprise usage and engagement data.",
+      "launchedAt": "2026-02-13",
+      "sourceUrl": "https://support.claude.com/en/articles/12138966-release-notes",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Claude release notes"
+    },
+    {
+      "id": "plugins-api",
+      "name": "Plugins API",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "beta",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Inventory, publish and version a Claude Enterprise organisation's plugins, control who can use each one and check a marketplace before connecting it.",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/plugins-api",
+      "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/plugins-api",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Plugins API"
+    },
+    {
+      "id": "spend-limits-api",
+      "name": "Spend Limits API",
+      "kind": "product",
+      "domainId": "claude-apps",
+      "groupId": "enterprise",
+      "parentId": "claude-enterprise-plan",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "admins",
+        "enterprise"
+      ],
+      "description": "Set a spend limit on each Claude Enterprise member, see where it is inherited from, and act on requests for a higher limit.",
+      "docsUrl": "https://platform.claude.com/docs/en/manage-claude/spend-limits-api",
+      "sourceUrl": "https://platform.claude.com/docs/en/manage-claude/spend-limits-api",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Spend Limits API"
     },
     {
       "id": "claude-for-financial-services",
@@ -2935,6 +3664,115 @@
       "sourceTitle": "sandbox-runtime"
     },
     {
+      "id": "claude-plugins-official",
+      "name": "Official plugins marketplace",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "developers"
+      ],
+      "description": "Anthropic's own plugins for Claude and the claude-plugins-official marketplace for Claude Code.",
+      "license": "Apache-2.0",
+      "githubUrl": "https://github.com/anthropics/claude-plugins-official",
+      "sourceUrl": "https://github.com/anthropics/claude-plugins-official",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/claude-plugins-official"
+    },
+    {
+      "id": "knowledge-work-plugins",
+      "name": "Knowledge work plugins",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "everyone",
+        "enterprise"
+      ],
+      "description": "Plugins that make Claude a specialist for a role, team or company, primarily for Cowork and also compatible with Claude Code.",
+      "license": "Apache-2.0",
+      "githubUrl": "https://github.com/anthropics/knowledge-work-plugins",
+      "sourceUrl": "https://github.com/anthropics/knowledge-work-plugins",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/knowledge-work-plugins"
+    },
+    {
+      "id": "financial-services-repo",
+      "name": "Financial services plugins",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Reference agents, skills and data connectors for investment banking, equity research, private equity and wealth management.",
+      "license": "Apache-2.0",
+      "githubUrl": "https://github.com/anthropics/financial-services",
+      "sourceUrl": "https://github.com/anthropics/financial-services",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/financial-services"
+    },
+    {
+      "id": "claude-for-legal-repo",
+      "name": "Legal plugins",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "Practice-area plugins, workflow agents and MCP connectors for legal work, usable in Cowork, Claude Code or Managed Agents.",
+      "license": "Apache-2.0",
+      "githubUrl": "https://github.com/anthropics/claude-for-legal",
+      "sourceUrl": "https://github.com/anthropics/claude-for-legal",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/claude-for-legal"
+    },
+    {
+      "id": "claude-code-action-repo",
+      "name": "Claude Code Action",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "developers"
+      ],
+      "description": "General-purpose Claude Code GitHub Action that answers questions and implements code changes on pull requests and issues.",
+      "license": "MIT",
+      "githubUrl": "https://github.com/anthropics/claude-code-action",
+      "sourceUrl": "https://github.com/anthropics/claude-code-action",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/claude-code-action"
+    },
+    {
+      "id": "claude-code-security-review-repo",
+      "name": "Claude Code Security Review action",
+      "kind": "open-source",
+      "domainId": "open-standards",
+      "groupId": "open-source",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "developers"
+      ],
+      "description": "GitHub Action that uses Claude to analyse code changes for security vulnerabilities.",
+      "license": "MIT",
+      "githubUrl": "https://github.com/anthropics/claude-code-security-review",
+      "sourceUrl": "https://github.com/anthropics/claude-code-security-review",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "anthropics/claude-code-security-review"
+    },
+    {
       "id": "petri",
       "name": "Petri",
       "kind": "open-source",
@@ -3175,6 +4013,23 @@
       "sourceTitle": "Societal Impacts team"
     },
     {
+      "id": "economics-research",
+      "name": "Economics",
+      "kind": "research",
+      "domainId": "research",
+      "groupId": "teams",
+      "prominence": "standard",
+      "status": "active",
+      "audience": [
+        "researchers",
+        "public-sector"
+      ],
+      "description": "Studies and monitors AI's impact on individuals, firms and economies, and publishes and funds research for policymakers and the public.",
+      "sourceUrl": "https://www.anthropic.com/research/team/economics",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Economics team"
+    },
+    {
       "id": "model-welfare",
       "name": "Model welfare",
       "kind": "research",
@@ -3301,6 +4156,24 @@
       "sourceTitle": "Usage Policy"
     },
     {
+      "id": "deprecation-commitments",
+      "name": "Model deprecation commitments",
+      "kind": "framework",
+      "domainId": "safety-policy",
+      "groupId": "frameworks",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "everyone",
+        "researchers"
+      ],
+      "description": "Keep the weights of publicly released models for at least Anthropic's lifetime and write a post-deployment report on each deprecated model.",
+      "launchedAt": "2025-11-04",
+      "sourceUrl": "https://www.anthropic.com/news/deprecation-commitments",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Commitments on model deprecation and preservation"
+    },
+    {
       "id": "transparency-hub",
       "name": "Transparency Hub and system cards",
       "kind": "framework",
@@ -3370,6 +4243,24 @@
       "sourceUrl": "https://www.anthropic.com/news/model-safety-bug-bounty",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Model safety bug bounty"
+    },
+    {
+      "id": "threat-intelligence",
+      "name": "Threat Intelligence reports",
+      "kind": "research",
+      "domainId": "safety-policy",
+      "groupId": "transparency",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "everyone",
+        "enterprise",
+        "public-sector"
+      ],
+      "description": "Regular reports from the Threat Intelligence team on real-world cases of misuse of Claude.",
+      "sourceUrl": "https://www.anthropic.com/threat-intelligence",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Threat Intelligence"
     },
     {
       "id": "cyber-verification",
@@ -3514,6 +4405,25 @@
       "sourceTitle": "Economic Futures Program"
     },
     {
+      "id": "economic-index-connector",
+      "name": "Economic Index connector",
+      "kind": "feature",
+      "domainId": "programs",
+      "groupId": "research-programs",
+      "parentId": "economic-index",
+      "prominence": "detail",
+      "status": "ga",
+      "audience": [
+        "everyone",
+        "researchers"
+      ],
+      "description": "Connector that lets anyone query Economic Index data and view the underlying data directly in Claude.",
+      "launchedAt": "2026-07-22",
+      "sourceUrl": "https://www.anthropic.com/news/anthropic-economic-index-connector",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "The Anthropic Economic Index connector"
+    },
+    {
       "id": "ai-for-science",
       "name": "AI for Science",
       "kind": "program",
@@ -3545,6 +4455,22 @@
       "sourceUrl": "https://claude.com/programs/team-plan-for-scientists",
       "verifiedAt": "2026-11-27",
       "sourceTitle": "Claude Team plan for scientists"
+    },
+    {
+      "id": "guest-investigators",
+      "name": "Guest investigators in the life sciences",
+      "kind": "program",
+      "domainId": "programs",
+      "groupId": "research-programs",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "researchers"
+      ],
+      "description": "Selected life-sciences researchers get a no-cost 8 to 12 week collaboration with Anthropic researchers using internal research models and harnesses.",
+      "sourceUrl": "https://www.anthropic.com/guest-investigator-program",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Open call for guest investigators in the life sciences"
     },
     {
       "id": "fellows",
@@ -3847,6 +4773,40 @@
       "sourceUrl": "https://www.anthropic.com/news/anthropic-acquires-stainless",
       "verifiedAt": "2026-11-26",
       "sourceTitle": "Anthropic acquires Stainless"
+    },
+    {
+      "id": "vercept",
+      "name": "Vercept acquisition",
+      "kind": "partnership",
+      "domainId": "company-partners",
+      "groupId": "partners",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "everyone"
+      ],
+      "description": "Anthropic acquired Vercept, which builds AI that sees and acts in everyday software, to advance Claude's computer use.",
+      "launchedAt": "2026-02-25",
+      "sourceUrl": "https://www.anthropic.com/news/acquires-vercept",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Anthropic acquires Vercept"
+    },
+    {
+      "id": "ai-services-company",
+      "name": "Enterprise AI services company",
+      "kind": "partnership",
+      "domainId": "company-partners",
+      "groupId": "partners",
+      "prominence": "detail",
+      "status": "active",
+      "audience": [
+        "enterprise"
+      ],
+      "description": "A new firm built with Blackstone, Hellman & Friedman and Goldman Sachs to bring Claude into the most important operations of mid-sized companies.",
+      "launchedAt": "2026-05-04",
+      "sourceUrl": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "verifiedAt": "2026-11-28",
+      "sourceTitle": "Building a new enterprise AI services company"
     }
   ],
   "models": [
