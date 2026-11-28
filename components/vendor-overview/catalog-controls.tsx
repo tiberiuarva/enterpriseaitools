@@ -74,9 +74,22 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
       anchor.scrollIntoView({ block: card ? "center" : "start" });
       if (card && typeof card.showPopover === "function" && !card.matches(":popover-open")) card.showPopover();
     };
+    // Selecting a link to the hash already in the URL fires no hashchange, so
+    // a card closed after a first visit would never reopen: handle that here.
+    const onSameHashClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = (event.target as Element | null)?.closest<HTMLAnchorElement>("a[href^='#']");
+      if (!link || link.hash === "" || link.hash !== window.location.hash) return;
+      event.preventDefault();
+      reveal();
+    };
     reveal();
     window.addEventListener("hashchange", reveal);
-    return () => window.removeEventListener("hashchange", reveal);
+    document.addEventListener("click", onSameHashClick);
+    return () => {
+      window.removeEventListener("hashchange", reveal);
+      document.removeEventListener("click", onSameHashClick);
+    };
   }, []);
 
   // Links elsewhere on the page (the hero's audience lens) can preset the
