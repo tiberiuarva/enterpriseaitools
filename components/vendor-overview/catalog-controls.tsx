@@ -55,18 +55,21 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
   // every enclosing <details>, scroll, and open the offering's detail card.
   // One listener serves the whole page.
   useEffect(() => {
-    const reveal = () => {
-      let id = "";
+    const targetOf = (hash: string) => {
       try {
-        id = decodeURIComponent(window.location.hash.slice(1));
+        const id = decodeURIComponent(hash.slice(1));
+        return id ? document.getElementById(id) : null;
       } catch {
-        return; // A mangled shared link: ignore it rather than crash the page.
+        return null; // A mangled shared link: ignore it rather than crash the page.
       }
-      const target = id ? document.getElementById(id) : null;
+    };
+    // The card is a popover: either the target sits inside it (an included
+    // offering) or the target is the tile that owns it.
+    const cardOf = (target: HTMLElement) => target.closest<HTMLElement>("[popover]") ?? target.querySelector<HTMLElement>(":scope > [popover]");
+    const reveal = () => {
+      const target = targetOf(window.location.hash);
       if (!target) return;
-      // The card is a popover: either the target sits inside it (an included
-      // offering) or the target is the tile that owns it.
-      const card = target.closest<HTMLElement>("[popover]") ?? target.querySelector<HTMLElement>(":scope > [popover]");
+      const card = cardOf(target);
       const anchor = (card && document.querySelector<HTMLElement>(`[popovertarget="${card.id}"]`)) || target;
       for (let node = anchor.parentElement; node; node = node.parentElement) {
         if (node instanceof HTMLDetailsElement) node.open = true;
@@ -76,10 +79,14 @@ export function CatalogControls({ targetId, facets, lenses, total }: { targetId:
     };
     // Selecting a link to the hash already in the URL fires no hashchange, so
     // a card closed after a first visit would never reopen: handle that here.
+    // Only links to an offering card are taken over; every other in-page link
+    // (section nav, skip link) keeps the browser's own fragment navigation.
     const onSameHashClick = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      const link = (event.target as Element | null)?.closest<HTMLAnchorElement>("a[href^='#']");
+      const link = (event.target as Element | null)?.closest<HTMLAnchorElement>("a[href^='#']:not([target]):not([download])");
       if (!link || link.hash === "" || link.hash !== window.location.hash) return;
+      const target = targetOf(link.hash);
+      if (!target || !cardOf(target)) return;
       event.preventDefault();
       reveal();
     };
