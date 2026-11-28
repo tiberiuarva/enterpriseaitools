@@ -3,6 +3,7 @@ import type { VendorOverview } from "@/lib/types";
 import { domainCounts, formatPartialDate } from "@/lib/vendor-overview";
 import { LENSES, audienceLens, firstSentences, lensStrength, toPercent, towerLayout, type LensCounts } from "@/lib/vendor-viz";
 import { withBasePath } from "@/lib/site";
+import { SourceLink } from "./primitives";
 
 export type HeroStat = { label: string; value: number; href: string; detail?: string };
 
@@ -50,10 +51,23 @@ export function StackHero({ overview, stats, sourcesCount }: { overview: VendorO
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-x-6 lg:gap-y-6">
       <div className="flex min-w-0 flex-col gap-4 max-lg:order-1 lg:col-start-1 lg:row-start-1">
         <p className="text-caption uppercase tracking-[0.2em] text-[var(--color-text-secondary)]">{overview.title}</p>
-        <h1 id="overview-heading" className="vo-gradient-text text-display">
+        <h1 id="overview-heading" className="text-display text-[var(--color-text-primary)]">
           Everything {overview.name} makes, on one page
         </h1>
-        <p className="max-w-xl text-body text-[var(--color-text-secondary)]">{firstSentences(overview.answer, 2)}</p>
+        <p className="max-w-xl text-body text-[var(--color-text-secondary)]">{firstSentences(overview.answer, 1)}</p>
+        {/* Only company facts that rarely change; market figures go stale too fast to keep sourced. */}
+        {overview.company.facts.length > 0 ? (
+          <dl id="company-partners" className="grid max-w-xl scroll-mt-40 grid-cols-[max-content_minmax(0,1fr)] items-baseline gap-x-3 gap-y-1 text-sm">
+            {overview.company.facts.map((fact) => (
+              <div key={fact.id} className="contents">
+                <dt className="text-caption uppercase tracking-[0.12em] text-[var(--color-text-tertiary)]">{fact.label}</dt>
+                <dd className="text-[var(--color-text-primary)]">
+                  {fact.value} <SourceLink href={fact.sourceUrl} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
       </div>
 
       <ul className="vo-lens-row -mx-1 flex min-w-0 gap-x-5 overflow-x-auto px-1 pb-1 max-lg:order-3 lg:col-start-1 lg:row-start-2 lg:grid lg:grid-cols-3 lg:gap-y-5 lg:overflow-visible">

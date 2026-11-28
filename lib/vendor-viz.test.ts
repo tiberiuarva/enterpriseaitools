@@ -7,6 +7,9 @@ import {
   monthlyPrice,
   planSteps,
   roadmapByYear,
+  SECTION_FAQ_IDS,
+  soonestRoadmap,
+  splitFaqs,
   audienceLens,
   faqLead,
   firstSentences,
@@ -15,13 +18,12 @@ import {
   priceDelta,
   availabilityByChannel,
   governanceSummary,
-  groupBreakdown,
+  entryFacets,
+  monthsSince,
   isoPoint,
   lensStrength,
   isoPrism,
   modelMap,
-  orbitAngles,
-  orbitPoint,
   prismsViewBox,
   priceLadder,
   spreadLabels,
@@ -29,7 +31,6 @@ import {
   stationLabel,
   timelineDensity,
   timelineFamily,
-  timelineMilestones,
   toPercent,
   towerLayout,
 } from "./vendor-viz.ts";
@@ -184,17 +185,17 @@ describe("lensStrength", () => {
   });
 });
 
-describe("groupBreakdown", () => {
-  test("shares add up and empty groups drop", () => {
-    const rows = groupBreakdown({ id: "d", groups: [{ id: "g1", label: "One" }, { id: "g2", label: "Two" }, { id: "g3", label: "Three" }] }, [
-      { domainId: "d", groupId: "g1" },
-      { domainId: "d", groupId: "g1" },
-      { domainId: "d", groupId: "g2" },
-      { domainId: "d" },
-      { domainId: "x", groupId: "g3" },
-    ] as never);
-    assert.deepEqual(rows.map((row) => [row.id, row.count]), [["g1", 2], ["g2", 1], ["other", 1]]);
-    assert.equal(rows.reduce((sum, row) => sum + row.share, 0), 100);
+describe("catalog directory", () => {
+  test("monthsSince counts calendar months and ignores year-only dates", () => {
+    assert.equal(monthsSince("2026-08-18", "2026-11-26"), 3);
+    assert.equal(monthsSince("2025-12", "2026-01-05"), 1);
+    assert.equal(monthsSince("2026", "2026-11-26"), undefined);
+  });
+  test("entryFacets marks recent launches and previews", () => {
+    assert.deepEqual(entryFacets({ status: "beta", launchedAt: "2026-10-01" }, "2026-11-26"), ["new", "preview"]);
+    assert.deepEqual(entryFacets({ status: "ga", launchedAt: "2026-07-31" }, "2026-11-26"), []);
+    assert.deepEqual(entryFacets({ status: "ga", launchedAt: "2027-01" }, "2026-11-26"), []);
+    assert.deepEqual(entryFacets({ status: "research-preview" }, "2026-11-26"), ["preview"]);
   });
 });
 
@@ -309,23 +310,24 @@ describe("timeline", () => {
   test("fills empty years between events", () => {
     assert.deepEqual(timelineDensity([event("x", "2021-01-01", "company"), event("y", "2023-01-01", "company")]).map((year) => year.count), [1, 0, 1]);
   });
-  test("milestones are high-impact events, oldest first", () => {
-    assert.deepEqual(timelineMilestones(events).map((item) => item.id), ["a", "c"]);
-  });
 });
 
-describe("orbit", () => {
-  test("quadrant centres are evenly spaced and chips straddle them", () => {
-    const angles = orbitAngles(4, [3, 1, 0, 2]);
-    assert.deepEqual(angles.map((quadrant) => quadrant.center), [45, 135, 225, 315]);
-    assert.equal(angles[0].chips.length, 3);
-    assert.equal(angles[0].chips[1], 45);
-    assert.deepEqual(angles[1].chips, [135]);
-    assert.deepEqual(angles[2].chips, []);
+describe("summaries", () => {
+  test("splitFaqs separates heading questions from the rest, keeping order", () => {
+    const faqs = [{ id: "a" }, { id: "b" }, { id: "c" }];
+    assert.deepEqual(splitFaqs(faqs, ["c", "a"]), { asked: [{ id: "a" }, { id: "c" }], more: [{ id: "b" }] });
   });
-  test("orbitPoint measures clockwise from 12 o'clock", () => {
-    assert.deepEqual(orbitPoint(0, 40), { left: 50, top: 10 });
-    assert.deepEqual(orbitPoint(90, 40), { left: 90, top: 50 });
+  test("soonestRoadmap takes dated items in date order and never undated ones", () => {
+    const items = [{ id: "u" }, { id: "late", expectedAt: "2027-03" }, { id: "soon", expectedAt: "2026-12-15" }, { id: "mid", expectedAt: "2027-01" }];
+    assert.deepEqual(
+      soonestRoadmap(items, 2).map((item) => item.id),
+      ["soon", "mid"],
+    );
+    assert.deepEqual(
+      soonestRoadmap(items, 9).map((item) => item.id),
+      ["soon", "mid", "late"],
+    );
+    assert.deepEqual(soonestRoadmap(items, -1), []);
   });
 });
 
@@ -338,6 +340,8 @@ describe("published overview renders", () => {
     assert.equal(map.lanes.reduce((sum, lane) => sum + lane.stations.length, 0), overview.models.length);
     for (const lane of map.lanes) for (const station of lane.stations) assert.ok(station.x >= 0 && station.x <= 100);
     assert.ok(priceLadder(overview.models).rows.length > 0);
+    // Every question the page asks as a heading has an answer in the data.
+    for (const id of SECTION_FAQ_IDS) assert.ok(overview.faqs.some((faq) => faq.id === id), id);
     assert.equal(timelineDensity(overview.timeline).reduce((sum, year) => sum + year.count, 0), overview.timeline.length);
   });
 });

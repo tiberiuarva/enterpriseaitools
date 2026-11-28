@@ -15,8 +15,10 @@ const STATUS_LABEL: Record<VendorModelStatus, string> = {
 const LANE_H = 56;
 const POP_H = 230;
 
-function laneColor(index: number, live: boolean) {
-  return live ? `var(--viz-cat-${(index % 5) + 1})` : "var(--color-text-tertiary)";
+// Lines still in service take the accent; closed lines go neutral. The tier
+// label at the start of each line names it, so colour need not.
+function laneColor(live: boolean) {
+  return live ? "var(--color-accent)" : "var(--color-text-tertiary)";
 }
 
 function StationCard({ model }: { model: VendorModel }) {
@@ -52,7 +54,7 @@ function StationCard({ model }: { model: VendorModel }) {
       </span>
       {model.highlight ? <span className="mt-2 block text-xs leading-5 text-[var(--color-text-secondary)]">{model.highlight}</span> : null}
       <span className="mt-2 block">
-        <SourceLink href={model.sourceUrl} label={model.sourceTitle ?? "Source"} />
+        <SourceLink href={model.sourceUrl} label={model.sourceTitle} />
       </span>
     </>
   );
@@ -133,9 +135,9 @@ export function ModelMap({
 
           <ol className="absolute inset-x-0 bottom-0 top-10">
             {map.lanes.map((lane, index) => {
-              const lineStyle = { left: `${lane.start}%`, width: `${Math.max(lane.end - lane.start, 0.6)}%`, "--lane": laneColor(index, lane.live) } as CSSProperties;
+              const lineStyle = { left: `${lane.start}%`, width: `${Math.max(lane.end - lane.start, 0.6)}%`, "--lane": laneColor(lane.live) } as CSSProperties;
               return (
-                <li key={lane.tier} className="flex" style={{ height: `${LANE_H}px`, "--lane": laneColor(index, lane.live) } as CSSProperties}>
+                <li key={lane.tier} className="flex" style={{ height: `${LANE_H}px`, "--lane": laneColor(lane.live) } as CSSProperties}>
                   <div className="sticky left-0 z-10 flex w-24 shrink-0 items-center gap-2 bg-[var(--color-bg-card)] pr-2">
                     <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--lane)" }} />
                     <span className={`text-sm font-semibold ${lane.live ? "text-[var(--color-text-primary)]" : "text-[var(--color-text-tertiary)]"}`}>{lane.tier}</span>
@@ -207,7 +209,7 @@ export function ModelLineup({ models, today, footnote }: { models: VendorModel[]
           const lane = laneOf.get(model.tier) ?? 0;
           const delta = price?.previous ? priceDelta(price.output, price.previous.output) : undefined;
           return (
-            <li key={model.id} className="vo-entry" style={{ "--lane": laneColor(lane, true), borderTop: "3px solid var(--lane)" } as CSSProperties}>
+            <li key={model.id} className="vo-entry" style={{ "--lane": laneColor(true), borderTop: "3px solid var(--lane)" } as CSSProperties}>
               <a href={`#model-${model.id}`} className="flex h-full flex-col gap-1.5 outline-none">
                 <span className="flex items-baseline justify-between gap-2">
                   <span className="text-xl font-semibold tracking-tight" style={{ color: "var(--lane)" }}>

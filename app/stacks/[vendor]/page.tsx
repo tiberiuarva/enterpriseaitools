@@ -54,7 +54,7 @@ export default async function VendorStackPage({ params }: { params: Promise<{ ve
       <HomeShell lastUpdated={lastUpdated} currentPath={`/stacks/${stack.slug}`}>
         <main id="main-content" tabIndex={-1} className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 md:gap-8 md:py-14 lg:px-8">
           <JsonLd data={overviewJsonLd} />
-          <VendorOverviewPage overview={overview} stack={stack} tools={tools} platforms={platforms} updates={updates} activity={updateCountByTool} />
+          <VendorOverviewPage overview={overview} stack={stack} tools={tools} updates={updates} />
         </main>
       </HomeShell>
     );

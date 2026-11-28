@@ -1,6 +1,5 @@
+import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
-import type { VendorEntryStatus } from "@/lib/types";
-import { ENTRY_STATUS_LABELS, ENTRY_STATUS_TONE } from "@/lib/vendor-overview";
 
 export function OverviewSection({
   id,
@@ -34,12 +33,18 @@ export function OverviewSection({
   );
 }
 
-export function StatusBadge({ status }: { status: VendorEntryStatus }) {
-  return <span className={`badge-dot badge-dot-${ENTRY_STATUS_TONE[status]} whitespace-nowrap`}>{ENTRY_STATUS_LABELS[status]}</span>;
-}
-
 // External citation. Opens in a new tab like every source link on the site.
-export function SourceLink({ href, label = "Source", className = "" }: { href: string; label?: string; className?: string }) {
+// With a label it reads as text; without one it is a small icon, so a page with
+// hundreds of citations keeps them one click away without repeating "Source".
+export function SourceLink({ href, label, className = "" }: { href: string; label?: string; className?: string }) {
+  if (!label) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" title="Source" className={className ? `source-icon ${className}` : "source-icon"}>
+        <ArrowUpRight size={13} strokeWidth={2.25} aria-hidden="true" />
+        <span className="sr-only">Source</span>
+      </a>
+    );
+  }
   return (
     <a href={href} target="_blank" rel="noreferrer" className={className ? `source-link ${className}` : "source-link"}>
       {label}

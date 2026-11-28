@@ -1,7 +1,7 @@
 import { ChevronDown } from "lucide-react";
-import type { UpdateEntry } from "@/lib/types";
-import { formatPartialDate, type SourceLink as SourceLinkData } from "@/lib/vendor-overview";
-import { withBasePath } from "@/lib/site";
+import type { VendorFaq } from "@/lib/types";
+import type { SourceLink as SourceLinkData } from "@/lib/vendor-overview";
+import { SourceLink } from "./primitives";
 
 // ── Sources and related updates ──────────────────────────────────────────
 
@@ -26,18 +26,28 @@ export function SourceList({ sources }: { sources: SourceLinkData[] }) {
   );
 }
 
-export function RelatedUpdates({ updates }: { updates: UpdateEntry[] }) {
-  if (updates.length === 0) return null;
+// Question-and-answer accordion with each answer's sources.
+export function FaqList({ faqs }: { faqs: VendorFaq[] }) {
+  if (faqs.length === 0) return null;
   return (
-    <ul className="divide-y divide-[var(--color-border)]">
-      {updates.map((update) => (
-        <li key={update.id} className="flex flex-col gap-0.5 py-2.5 sm:flex-row sm:items-baseline sm:gap-4">
-          <time dateTime={update.date} className="shrink-0 text-caption tabular-nums text-[var(--color-text-tertiary)] sm:w-24">
-            {formatPartialDate(update.date)}
-          </time>
-          <a href={withBasePath(`/updates#${update.id}`)} className="text-sm text-[var(--color-text-primary)] hover:text-[var(--color-accent)] hover:underline">
-            {update.title ?? update.summary}
-          </a>
+    <ul className="flex flex-col divide-y divide-[var(--color-border)]">
+      {faqs.map((faq) => (
+        <li key={faq.id}>
+          <details className="group py-1">
+            <summary className="flex cursor-pointer select-none list-none items-start justify-between gap-3 rounded py-3 text-sm font-medium text-[var(--color-text-primary)] transition hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] [&::-webkit-details-marker]:hidden">
+              <span>{faq.question}</span>
+              <ChevronDown size={16} aria-hidden="true" className="mt-1 shrink-0 text-[var(--color-text-secondary)] transition group-open:rotate-180" />
+            </summary>
+            <p className="pb-4 text-sm leading-6 text-[var(--color-text-secondary)]">
+              {faq.answer}
+              {faq.sourceUrls.map((url) => (
+                <span key={url}>
+                  {" "}
+                  <SourceLink href={url} />
+                </span>
+              ))}
+            </p>
+          </details>
         </li>
       ))}
     </ul>
